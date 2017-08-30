@@ -1,0 +1,17 @@
+packages/*.*
+*.pdb
+*/obj/Debug/*.*
+*/obj/Release/*.*
+*.inter
+*.dnk
+*/bin/Release/*.*
+*/bin/Debug/*.*
+*/obj/xdoc/cache/final/*.*
+*/obj/xdoc/cache/obj/*.*
+OrpheusInterfaces/obj/xdoc/cache/final/49638433
+OrpheusCore/Nuget/nuget.exe
+*.nupkg
+OrpheusCore/OrpheusCore.config
+*.mdf
+*.ldf
+*.log
