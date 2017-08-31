@@ -15,3 +15,4 @@ OrpheusCore/OrpheusCore.config
 *.mdf
 *.ldf
 *.log
+*.suo
