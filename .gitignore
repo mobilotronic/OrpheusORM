@@ -16,3 +16,4 @@ OrpheusCore/OrpheusCore.config
 *.ldf
 *.log
 *.suo
+*.ide
