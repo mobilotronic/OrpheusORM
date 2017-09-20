@@ -1,7 +1,0 @@
-- name: Home
-  href: index.md
-- name: API
-  href: obj/temp/docfxapi/
-- name: Examples
-  href: examples/
-  homepage: examples/update_single_table.md    
