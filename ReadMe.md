@@ -17,4 +17,4 @@ Using an OrpheusModule you can save nested data (master-detail-subdetail) with j
 All master-detail relationships and keys will be updated automatically.
 
 ## Documentation
-To get started go to Orpheus's [documentation](https://redacted-user.github.io/OrpheusORM/)
+To get started go to Orpheus's [documentation](https://redacted-user.github.io/OrpheusORM/), where besides a fully documented API, you can also find examples on how to use Orpheus.
