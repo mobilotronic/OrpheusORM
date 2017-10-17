@@ -8,13 +8,14 @@
     <title>Using an OrpheusModule | Orpheus ORM </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Using an OrpheusModule | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -73,11 +74,11 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="using-an-orpheusmodule">Using an OrpheusModule</h1>
 
-<pre><code class="lang-javascript">var sqlServerConnectionString = @&quot;Data Source=[yourserver];Initial Catalog=orpheusTestDB;Integrated Security=True&quot;;
+<pre><code class="lang-csharp">var sqlServerConnectionString = @&quot;Data Source=[yourserver];Initial Catalog=orpheusTestDB;Integrated Security=True&quot;;
 var db = OrpheusIocContainer.Resolve&lt;IOrpheusDatabase&gt;();
 //Connect to the database.
 db.Connect(sqlServerConnectionString);

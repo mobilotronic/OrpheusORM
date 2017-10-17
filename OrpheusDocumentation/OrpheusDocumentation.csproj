@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DocFx\**" />
+    <Compile Remove="_site\**" />
+    <EmbeddedResource Remove="DocFx\**" />
+    <EmbeddedResource Remove="_site\**" />
+    <None Remove="DocFx\**" />
+    <None Remove="_site\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="OrpheusDocumentation.csproj.vspscc" />
+  </ItemGroup>
+
+</Project>

@@ -4,9 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OrpheusCore;
+using OrpheusCore.ServiceProvider;
 using OrpheusInterfaces;
 using System.Linq;
+using OrpheusTestModels;
+using Microsoft.Extensions.Logging;
 
 namespace OrpheusTests
 {
@@ -19,7 +21,7 @@ namespace OrpheusTests
         {
             this.Initialize();
             this.ReCreateSchema();
-            var tableOptions = OrpheusIocContainer.Resolve<IOrpheusTableOptions>();
+            var tableOptions = this.Database.CreateTableOptions();
             tableOptions.TableName = "TestModelUser";
             tableOptions.KeyFields = new List<IOrpheusTableKeyField>();
             var usersTable = this.Database.CreateTable<TestModelUser>(tableOptions);
@@ -53,10 +55,10 @@ namespace OrpheusTests
         {
             this.Initialize();
             this.ReCreateSchema();
-            var tableOptions = OrpheusIocContainer.Resolve<IOrpheusTableOptions>();
+            var tableOptions = this.Database.CreateTableOptions();
             tableOptions.TableName = "TestModelUser";
             tableOptions.KeyFields = new List<IOrpheusTableKeyField>();
-            var keyField = OrpheusIocContainer.Resolve<IOrpheusTableKeyField>();
+            var keyField = this.Database.CreateTableKeyField();
             keyField.Name = "UserId";
             tableOptions.KeyFields.Add(keyField);
 
@@ -108,10 +110,10 @@ namespace OrpheusTests
         {
             this.Initialize();
             this.ReCreateSchema();
-            var tableOptions = OrpheusIocContainer.Resolve<IOrpheusTableOptions>();
+            var tableOptions = this.Database.CreateTableOptions();
             tableOptions.TableName = "TestModelUser";
             tableOptions.KeyFields = new List<IOrpheusTableKeyField>();
-            var keyField = OrpheusIocContainer.Resolve<IOrpheusTableKeyField>();
+            var keyField = this.Database.CreateTableKeyField();
             keyField.Name = "UserId";
             tableOptions.KeyFields.Add(keyField);
             var usersTable = this.Database.CreateTable<TestModelUser>(tableOptions);
@@ -211,10 +213,10 @@ namespace OrpheusTests
             this.Initialize();
             this.ReCreateSchema();
 
-            var tableOptions = OrpheusIocContainer.Resolve<IOrpheusTableOptions>();
+            var tableOptions = this.Database.CreateTableOptions();
             tableOptions.TableName = "TestModelUser";
             tableOptions.KeyFields = new List<IOrpheusTableKeyField>();
-            var keyField = OrpheusIocContainer.Resolve<IOrpheusTableKeyField>();
+            var keyField = this.Database.CreateTableKeyField();
             keyField.Name = "UserId";
             tableOptions.KeyFields.Add(keyField);
 
@@ -263,6 +265,52 @@ namespace OrpheusTests
             Assert.AreEqual(true, usersTable.Data.Where(usr => Guid.Equals(usr.UserId, (Guid)userKeys[0])).Count() == 1);
             Assert.AreEqual(true, usersTable.Data.Where(usr => Guid.Equals(usr.UserId, (Guid)userKeys[1])).Count() == 1);
             Assert.AreEqual(true, usersTable.Data.Where(usr => Guid.Equals(usr.UserId, (Guid)userKeys[2])).Count() == 1);
+        }
+
+        protected void TestLoadBenchMark()
+        {
+            this.Initialize();
+            this.ReCreateSchema();
+
+            var tableOptions = this.Database.CreateTableOptions();
+            tableOptions.TableName = "TestModelUser";
+            tableOptions.KeyFields = new List<IOrpheusTableKeyField>();
+            var keyField = this.Database.CreateTableKeyField();
+            keyField.Name = "UserId";
+            tableOptions.KeyFields.Add(keyField);
+
+            var usersTable = this.Database.CreateTable<TestModelUser>(tableOptions);
+            var usersData = TestDatabase.GetRandomUsersForTesting(500);
+            usersTable.Add(usersData);
+
+            object[] userKeys = new object[] { usersTable.Data[0].UserId, usersTable.Data[10].UserId, usersTable.Data[99].UserId };
+
+            IDbTransaction trans = this.Database.BeginTransaction();
+            try
+            {
+                var insertStopWatch = this.CreateAndStartStopWatch(DateTime.Now.ToString() + " Running TestLoadBenchMark - Inserting " + usersData.Count.ToString() + " records");
+                usersTable.ExecuteInserts(trans);
+                this.StopAndLogWatch(insertStopWatch);
+                trans.Commit();
+            }
+            catch (Exception e)
+            {
+                trans.Rollback();
+                throw e;
+            }
+            usersTable.ClearData();
+
+            var loadStopWatch = this.CreateAndStartStopWatch(DateTime.Now.ToString() + " Running TestLoadBenchMark - Loading " + usersData.Count.ToString() + " records, one at a time");
+            usersData.ForEach(usr =>
+            {
+                usersTable.Load(new List<object>() { usr.UserId });
+            });
+            this.StopAndLogWatch(loadStopWatch);
+
+            var loadAllStopWatch = this.CreateAndStartStopWatch(DateTime.Now.ToString() + " Running TestLoadBenchMark - Loading all " + usersData.Count.ToString() + " records");
+            usersTable.Load();
+            this.StopAndLogWatch(loadAllStopWatch);
+            Trace.Close();
         }
     }
 }

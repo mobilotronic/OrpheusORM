@@ -7,7 +7,6 @@ using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 using System.Runtime.InteropServices;
-using Microsoft.Practices.Unity;
 using OrpheusAttributes;
 using Microsoft.Extensions.Logging;
 
@@ -19,7 +18,7 @@ namespace OrpheusCore.SchemaBuilder
         public string SchemaDescription { get; set; }
         public double Version { get; set; }
         [PrimaryKey]
-        public Guid SchemaId { get; set; }
+        public Guid Id { get; set; }
     }
 
     internal class OrpheusSchemaObject
@@ -31,11 +30,17 @@ namespace OrpheusCore.SchemaBuilder
         public Guid ObjectId { get; set; }
 
         [DataTypeAttribute((int)ExtendedDbTypes.StringBlob)]
-        public string ObjectDDL { get; set; }
+        public string DDL { get; set; }
+
+        [DataTypeAttribute((int)ExtendedDbTypes.StringBlob)]
+        public string ConstraintsDDL { get; set; }
 
         public DateTime CreatedOn { get; set; }
 
         public int ObjectType { get; set; }
+
+        [ForeignKey("OrpheusSchemaInfo","Id")]
+        public Guid SchemaId { get; set; }
     }
 
     internal class OrpheusSchemaModule
@@ -43,6 +48,9 @@ namespace OrpheusCore.SchemaBuilder
         [PrimaryKey]
         public string ModuleName { get; set; }
         public string ModuleDefinition { get; set; }
+
+        [ForeignKey("OrpheusSchemaInfo", "Id")]
+        public Guid SchemaId { get; set; }
     }
 
     public class Schema : ISchema
@@ -62,14 +70,38 @@ namespace OrpheusCore.SchemaBuilder
         private void initializeOrpheusSchema()
         {
 
-            this.internalSchemaObject = this.AddSchemaTable(typeof(OrpheusSchemaObject));
+            this.internalSchemaObject =  new SchemaObjectTable();
+            this.internalSchemaObject.Schema = this;
+            this.internalSchemaObject.CreateFieldsFromModel<OrpheusSchemaObject>();
 
-            this.internalSchemaInfo = this.AddSchemaTable(typeof(OrpheusSchemaInfo));
+
+            this.internalSchemaInfo = new SchemaObjectTable();
+            this.internalSchemaInfo.Schema = this;
+            this.internalSchemaInfo.CreateFieldsFromModel<OrpheusSchemaInfo>();
             var data = new List<OrpheusSchemaInfo>();
-            data.Add(new OrpheusSchemaInfo() { SchemaDescription = this.Description, Version = this.Version, SchemaId = this.id });
+            data.Add(new OrpheusSchemaInfo() { SchemaDescription = this.Description, Version = this.Version, Id = this.id });
             this.internalSchemaInfo.SetData<OrpheusSchemaInfo>(data);
 
-            this.internalSchemaModules = this.AddSchemaTable(typeof(OrpheusSchemaModule));
+
+            this.internalSchemaModules = new SchemaObjectTable();
+            this.internalSchemaModules.Schema = this;
+            this.internalSchemaModules.CreateFieldsFromModel<OrpheusSchemaModule>();
+
+
+            this.SchemaObjects.Add(this.internalSchemaObject);
+        }
+
+        private void executeOrpheusInternalSchema()
+        {
+            this.internalSchemaInfo.Execute();
+            this.internalSchemaObject.Execute();
+            this.internalSchemaModules.Execute();
+        }
+
+        private void dropOrpheusInternalSchema()
+        {
+            this.internalSchemaModules.Drop();
+            this.internalSchemaInfo.Drop();
         }
         
         public IOrpheusDatabase DB { get { return this.db; } }
@@ -87,7 +119,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public Schema()
         {
-            this.logger = OrpheusIocContainer.Resolve<ILogger>();
+            this.logger = ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
         }
 
         /// <summary>
@@ -103,7 +135,7 @@ namespace OrpheusCore.SchemaBuilder
             this.Description = description;
             this.Version = version;
             this.id = id;
-            this.logger = OrpheusIocContainer.Resolve<ILogger>();
+            this.logger = ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
             this.SchemaObjects = new List<ISchemaObject>();
             this.initializeOrpheusSchema();
         }
@@ -133,7 +165,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaTable AddSchemaTable(string tableName, List<ISchemaObject> dependencies = null, object model = null)
         {
-            var result = OrpheusIocContainer.Resolve<ISchemaTable>();
+            var result = new SchemaObjectTable();
             result.SQLName = tableName;
             if(dependencies != null)
             {
@@ -171,6 +203,18 @@ namespace OrpheusCore.SchemaBuilder
         }
 
         /// <summary>
+        /// Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.
+        /// </summary>
+        /// <param name="dependencies"></param>
+        /// <param name="modelType"></param>
+        /// <returns></returns>
+        public ISchemaTable AddSchemaTable<T>(List<ISchemaObject> dependencies = null) where T:class
+        {
+            var modelInstance = Activator.CreateInstance(typeof(T));
+            return this.AddSchemaTable(modelInstance, dependencies);
+        }
+
+        /// <summary>
         /// Removes a schema object from the schema list.
         /// </summary>
         /// <param name="schemaObject"></param>
@@ -184,6 +228,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public void Execute()
         {
+            this.executeOrpheusInternalSchema();
             this.logger.LogDebug("========== Start Creating schema {0}==========", this.Description);
             this.SchemaObjects.ForEach(schObj =>
             {
@@ -199,12 +244,8 @@ namespace OrpheusCore.SchemaBuilder
         {
             this.logger.LogDebug("========== Start Dropping schema {0}==========", this.Description);
             this.internalSchemaObject.Drop();
-            //this.SchemaObjects.ForEach(schObj => {
-            //    ////Due to dependencies it's not guaranteed that the schema objects will be drop sequentially as they are listed.
-            //    ////therefore we only drop schema objects that still do exist.
-            //    //if(schObj.IsCreated)
-            //        schObj.Drop();
-            //});
+            this.internalSchemaModules.Drop();
+            this.internalSchemaInfo.Drop();
             //if the schema is dropped make sure to clear the cache.
             if (this.schemaObjectCache != null)
             {

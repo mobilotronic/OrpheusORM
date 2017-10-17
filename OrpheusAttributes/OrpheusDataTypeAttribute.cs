@@ -17,12 +17,13 @@ namespace OrpheusAttributes
         /// <summary>
         /// Field's data type.
         /// </summary>
+        /// <returns>Data type</returns>
         public DbType DataType { get; private set; }
 
         /// <summary>
         /// Data type attribute constructor.
         /// </summary>
-        /// <param name="dbType"></param>
+        /// <param name="dbType">Data type</param>
         public DataTypeAttribute(DbType dbType)
         {
             this.DataType = dbType;
@@ -31,7 +32,7 @@ namespace OrpheusAttributes
         /// <summary>
         /// Data type attribute constructor.
         /// </summary>
-        /// <param name="dbType"></param>
+        /// <param name="dbType">Casted to System.Data.DbType</param>
         public DataTypeAttribute(int dbType):this((DbType)dbType)
         {
 

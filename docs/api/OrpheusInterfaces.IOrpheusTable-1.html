@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IOrpheusTable&lt;T&gt;
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -75,7 +76,7 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.IOrpheusTable`1">
   
   
@@ -130,7 +131,8 @@ Holds all the data of the connected table.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
-        <td></td>
+        <td><p>Table&apos;s data</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -160,7 +162,8 @@ Holds all the data of the connected table.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">newRecord</span></td>
-        <td></td>
+        <td><p>New record to be added</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -188,7 +191,8 @@ Holds all the data of the connected table.</p>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
         <td><span class="parametername">newRecords</span></td>
-        <td></td>
+        <td><p>New records to be added</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -216,7 +220,8 @@ Holds all the data of the connected table.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">record</span></td>
-        <td></td>
+        <td><p>Record to delete</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -244,7 +249,8 @@ Holds all the data of the connected table.</p>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
         <td><span class="parametername">records</span></td>
-        <td></td>
+        <td><p>Records to be deleted</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -272,7 +278,8 @@ Holds all the data of the connected table.</p>
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">record</span></td>
-        <td></td>
+        <td><p>Record to be updated</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -300,6 +307,59 @@ Holds all the data of the connected table.</p>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
         <td><span class="parametername">records</span></td>
+        <td><p>Records to be updated</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="OrpheusInterfaces_IOrpheusTable_1_OnAfterModify" data-uid="OrpheusInterfaces.IOrpheusTable`1.OnAfterModify">OnAfterModify</h4>
+  <div class="markdown level1 summary"><p>Occurs after a table modifies a record. It is fired on any Add,Update,Delete</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;IModifyRecordEventArguments&lt;T&gt;&gt; OnAfterModify</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments</a>&lt;T&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="OrpheusInterfaces_IOrpheusTable_1_OnBeforeModify" data-uid="OrpheusInterfaces.IOrpheusTable`1.OnBeforeModify">OnBeforeModify</h4>
+  <div class="markdown level1 summary"><p>Occurs before a table modifies a record. It is fired on any Add,Update,Delete</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;IModifyRecordEventArguments&lt;T&gt;&gt; OnBeforeModify</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments</a>&lt;T&gt;&gt;</td>
         <td></td>
       </tr>
     </tbody>

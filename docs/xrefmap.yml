@@ -73,6 +73,36 @@ references:
   commentId: Overload:OrpheusAttributes.DefaultValue.Value
   fullName: OrpheusAttributes.DefaultValue.Value
   nameWithType: DefaultValue.Value
+- uid: OrpheusAttributes.FieldName
+  name: FieldName
+  href: api/OrpheusAttributes.FieldName.html
+  commentId: T:OrpheusAttributes.FieldName
+  fullName: OrpheusAttributes.FieldName
+  nameWithType: FieldName
+- uid: OrpheusAttributes.FieldName.#ctor(System.String)
+  name: FieldName(String)
+  href: api/OrpheusAttributes.FieldName.html#OrpheusAttributes_FieldName__ctor_System_String_
+  commentId: M:OrpheusAttributes.FieldName.#ctor(System.String)
+  fullName: OrpheusAttributes.FieldName.FieldName(System.String)
+  nameWithType: FieldName.FieldName(String)
+- uid: OrpheusAttributes.FieldName.#ctor*
+  name: FieldName
+  href: api/OrpheusAttributes.FieldName.html#OrpheusAttributes_FieldName__ctor_
+  commentId: Overload:OrpheusAttributes.FieldName.#ctor
+  fullName: OrpheusAttributes.FieldName.FieldName
+  nameWithType: FieldName.FieldName
+- uid: OrpheusAttributes.FieldName.Name
+  name: Name
+  href: api/OrpheusAttributes.FieldName.html#OrpheusAttributes_FieldName_Name
+  commentId: P:OrpheusAttributes.FieldName.Name
+  fullName: OrpheusAttributes.FieldName.Name
+  nameWithType: FieldName.Name
+- uid: OrpheusAttributes.FieldName.Name*
+  name: Name
+  href: api/OrpheusAttributes.FieldName.html#OrpheusAttributes_FieldName_Name_
+  commentId: Overload:OrpheusAttributes.FieldName.Name
+  fullName: OrpheusAttributes.FieldName.Name
+  nameWithType: FieldName.Name
 - uid: OrpheusAttributes.ForeignKey
   name: ForeignKey
   href: api/OrpheusAttributes.ForeignKey.html
@@ -295,6 +325,42 @@ references:
   commentId: T:OrpheusAttributes.RequiredField
   fullName: OrpheusAttributes.RequiredField
   nameWithType: RequiredField
+- uid: OrpheusAttributes.SchemaIgnore
+  name: SchemaIgnore
+  href: api/OrpheusAttributes.SchemaIgnore.html
+  commentId: T:OrpheusAttributes.SchemaIgnore
+  fullName: OrpheusAttributes.SchemaIgnore
+  nameWithType: SchemaIgnore
+- uid: OrpheusAttributes.TableName
+  name: TableName
+  href: api/OrpheusAttributes.TableName.html
+  commentId: T:OrpheusAttributes.TableName
+  fullName: OrpheusAttributes.TableName
+  nameWithType: TableName
+- uid: OrpheusAttributes.TableName.#ctor(System.String)
+  name: TableName(String)
+  href: api/OrpheusAttributes.TableName.html#OrpheusAttributes_TableName__ctor_System_String_
+  commentId: M:OrpheusAttributes.TableName.#ctor(System.String)
+  fullName: OrpheusAttributes.TableName.TableName(System.String)
+  nameWithType: TableName.TableName(String)
+- uid: OrpheusAttributes.TableName.#ctor*
+  name: TableName
+  href: api/OrpheusAttributes.TableName.html#OrpheusAttributes_TableName__ctor_
+  commentId: Overload:OrpheusAttributes.TableName.#ctor
+  fullName: OrpheusAttributes.TableName.TableName
+  nameWithType: TableName.TableName
+- uid: OrpheusAttributes.TableName.Name
+  name: Name
+  href: api/OrpheusAttributes.TableName.html#OrpheusAttributes_TableName_Name
+  commentId: P:OrpheusAttributes.TableName.Name
+  fullName: OrpheusAttributes.TableName.Name
+  nameWithType: TableName.Name
+- uid: OrpheusAttributes.TableName.Name*
+  name: Name
+  href: api/OrpheusAttributes.TableName.html#OrpheusAttributes_TableName_Name_
+  commentId: Overload:OrpheusAttributes.TableName.Name
+  fullName: OrpheusAttributes.TableName.Name
+  nameWithType: TableName.Name
 - uid: OrpheusAttributes.UniqueCompositeKey
   name: UniqueCompositeKey
   href: api/OrpheusAttributes.UniqueCompositeKey.html
@@ -418,6 +484,47 @@ references:
   commentId: Overload:OrpheusInterfaces.IForeignKeySchemaConstraint.OnUpdateCascade
   fullName: OrpheusInterfaces.IForeignKeySchemaConstraint.OnUpdateCascade
   nameWithType: IForeignKeySchemaConstraint.OnUpdateCascade
+- uid: OrpheusInterfaces.IModifyRecordEventArguments`1
+  name: IModifyRecordEventArguments<T>
+  href: api/OrpheusInterfaces.IModifyRecordEventArguments-1.html
+  commentId: T:OrpheusInterfaces.IModifyRecordEventArguments`1
+  name.vb: IModifyRecordEventArguments(Of T)
+  fullName: OrpheusInterfaces.IModifyRecordEventArguments<T>
+  fullName.vb: OrpheusInterfaces.IModifyRecordEventArguments(Of T)
+  nameWithType: IModifyRecordEventArguments<T>
+  nameWithType.vb: IModifyRecordEventArguments(Of T)
+- uid: OrpheusInterfaces.IModifyRecordEventArguments`1.ModifyAction
+  name: ModifyAction
+  href: api/OrpheusInterfaces.IModifyRecordEventArguments-1.html#OrpheusInterfaces_IModifyRecordEventArguments_1_ModifyAction
+  commentId: P:OrpheusInterfaces.IModifyRecordEventArguments`1.ModifyAction
+  fullName: OrpheusInterfaces.IModifyRecordEventArguments<T>.ModifyAction
+  fullName.vb: OrpheusInterfaces.IModifyRecordEventArguments(Of T).ModifyAction
+  nameWithType: IModifyRecordEventArguments<T>.ModifyAction
+  nameWithType.vb: IModifyRecordEventArguments(Of T).ModifyAction
+- uid: OrpheusInterfaces.IModifyRecordEventArguments`1.ModifyAction*
+  name: ModifyAction
+  href: api/OrpheusInterfaces.IModifyRecordEventArguments-1.html#OrpheusInterfaces_IModifyRecordEventArguments_1_ModifyAction_
+  commentId: Overload:OrpheusInterfaces.IModifyRecordEventArguments`1.ModifyAction
+  fullName: OrpheusInterfaces.IModifyRecordEventArguments<T>.ModifyAction
+  fullName.vb: OrpheusInterfaces.IModifyRecordEventArguments(Of T).ModifyAction
+  nameWithType: IModifyRecordEventArguments<T>.ModifyAction
+  nameWithType.vb: IModifyRecordEventArguments(Of T).ModifyAction
+- uid: OrpheusInterfaces.IModifyRecordEventArguments`1.Record
+  name: Record
+  href: api/OrpheusInterfaces.IModifyRecordEventArguments-1.html#OrpheusInterfaces_IModifyRecordEventArguments_1_Record
+  commentId: P:OrpheusInterfaces.IModifyRecordEventArguments`1.Record
+  fullName: OrpheusInterfaces.IModifyRecordEventArguments<T>.Record
+  fullName.vb: OrpheusInterfaces.IModifyRecordEventArguments(Of T).Record
+  nameWithType: IModifyRecordEventArguments<T>.Record
+  nameWithType.vb: IModifyRecordEventArguments(Of T).Record
+- uid: OrpheusInterfaces.IModifyRecordEventArguments`1.Record*
+  name: Record
+  href: api/OrpheusInterfaces.IModifyRecordEventArguments-1.html#OrpheusInterfaces_IModifyRecordEventArguments_1_Record_
+  commentId: Overload:OrpheusInterfaces.IModifyRecordEventArguments`1.Record
+  fullName: OrpheusInterfaces.IModifyRecordEventArguments<T>.Record
+  fullName.vb: OrpheusInterfaces.IModifyRecordEventArguments(Of T).Record
+  nameWithType: IModifyRecordEventArguments<T>.Record
+  nameWithType.vb: IModifyRecordEventArguments(Of T).Record
 - uid: OrpheusInterfaces.IOrpheusDatabase
   name: IOrpheusDatabase
   href: api/OrpheusInterfaces.IOrpheusDatabase.html
@@ -547,6 +654,15 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.CreateTable
   fullName: OrpheusInterfaces.IOrpheusDatabase.CreateTable
   nameWithType: IOrpheusDatabase.CreateTable
+- uid: OrpheusInterfaces.IOrpheusDatabase.CreateTable``1
+  name: CreateTable<T>()
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateTable__1
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreateTable``1
+  name.vb: CreateTable(Of T)()
+  fullName: OrpheusInterfaces.IOrpheusDatabase.CreateTable<T>()
+  fullName.vb: OrpheusInterfaces.IOrpheusDatabase.CreateTable(Of T)()
+  nameWithType: IOrpheusDatabase.CreateTable<T>()
+  nameWithType.vb: IOrpheusDatabase.CreateTable(Of T)()
 - uid: OrpheusInterfaces.IOrpheusDatabase.CreateTable``1(OrpheusInterfaces.IOrpheusTableOptions)
   name: CreateTable<T>(IOrpheusTableOptions)
   href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateTable__1_OrpheusInterfaces_IOrpheusTableOptions_
@@ -565,6 +681,30 @@ references:
   fullName.vb: OrpheusInterfaces.IOrpheusDatabase.CreateTable(Of T)(System.String, System.Collections.Generic.List(Of OrpheusInterfaces.IOrpheusTableKeyField))
   nameWithType: IOrpheusDatabase.CreateTable<T>(String, List<IOrpheusTableKeyField>)
   nameWithType.vb: IOrpheusDatabase.CreateTable(Of T)(String, List(Of IOrpheusTableKeyField))
+- uid: OrpheusInterfaces.IOrpheusDatabase.CreateTableKeyField
+  name: CreateTableKeyField()
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateTableKeyField
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreateTableKeyField
+  fullName: OrpheusInterfaces.IOrpheusDatabase.CreateTableKeyField()
+  nameWithType: IOrpheusDatabase.CreateTableKeyField()
+- uid: OrpheusInterfaces.IOrpheusDatabase.CreateTableKeyField*
+  name: CreateTableKeyField
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateTableKeyField_
+  commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.CreateTableKeyField
+  fullName: OrpheusInterfaces.IOrpheusDatabase.CreateTableKeyField
+  nameWithType: IOrpheusDatabase.CreateTableKeyField
+- uid: OrpheusInterfaces.IOrpheusDatabase.CreateTableOptions
+  name: CreateTableOptions()
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateTableOptions
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreateTableOptions
+  fullName: OrpheusInterfaces.IOrpheusDatabase.CreateTableOptions()
+  nameWithType: IOrpheusDatabase.CreateTableOptions()
+- uid: OrpheusInterfaces.IOrpheusDatabase.CreateTableOptions*
+  name: CreateTableOptions
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateTableOptions_
+  commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.CreateTableOptions
+  fullName: OrpheusInterfaces.IOrpheusDatabase.CreateTableOptions
+  nameWithType: IOrpheusDatabase.CreateTableOptions
 - uid: OrpheusInterfaces.IOrpheusDatabase.DDLHelper
   name: DDLHelper
   href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_DDLHelper
@@ -685,6 +825,18 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.DatabaseExists
   fullName: OrpheusInterfaces.IOrpheusDDLHelper.DatabaseExists
   nameWithType: IOrpheusDDLHelper.DatabaseExists
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.DatabaseName
+  name: DatabaseName
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_DatabaseName
+  commentId: P:OrpheusInterfaces.IOrpheusDDLHelper.DatabaseName
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.DatabaseName
+  nameWithType: IOrpheusDDLHelper.DatabaseName
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.DatabaseName*
+  name: DatabaseName
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_DatabaseName_
+  commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.DatabaseName
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.DatabaseName
+  nameWithType: IOrpheusDDLHelper.DatabaseName
 - uid: OrpheusInterfaces.IOrpheusDDLHelper.DB
   name: DB
   href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_DB
@@ -733,6 +885,48 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.DelimitedIndetifierStart
   fullName: OrpheusInterfaces.IOrpheusDDLHelper.DelimitedIndetifierStart
   nameWithType: IOrpheusDDLHelper.DelimitedIndetifierStart
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand
+  name: ModifyColumnCommand
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_ModifyColumnCommand
+  commentId: P:OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand
+  nameWithType: IOrpheusDDLHelper.ModifyColumnCommand
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand*
+  name: ModifyColumnCommand
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_ModifyColumnCommand_
+  commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand
+  nameWithType: IOrpheusDDLHelper.ModifyColumnCommand
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
+  name: SafeFormatAlterTableAddColumn(String, List<String>)
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
+  name.vb: SafeFormatAlterTableAddColumn(String, List(Of String))
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String, System.Collections.Generic.List(Of System.String))
+  nameWithType: IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(String, List<String>)
+  nameWithType.vb: IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(String, List(Of String))
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn*
+  name: SafeFormatAlterTableAddColumn
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_
+  commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn
+  nameWithType: IOrpheusDDLHelper.SafeFormatAlterTableAddColumn
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
+  name: SafeFormatAlterTableDropColumn(String, List<String>)
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
+  name.vb: SafeFormatAlterTableDropColumn(String, List(Of String))
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String, System.Collections.Generic.List(Of System.String))
+  nameWithType: IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(String, List<String>)
+  nameWithType.vb: IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(String, List(Of String))
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn*
+  name: SafeFormatAlterTableDropColumn
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_
+  commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn
+  nameWithType: IOrpheusDDLHelper.SafeFormatAlterTableDropColumn
 - uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatField(System.String)
   name: SafeFormatField(String)
   href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatField_System_String_
@@ -913,6 +1107,18 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusModule.MainTable
   fullName: OrpheusInterfaces.IOrpheusModule.MainTable
   nameWithType: IOrpheusModule.MainTable
+- uid: OrpheusInterfaces.IOrpheusModule.OnAfterSave
+  name: OnAfterSave
+  href: api/OrpheusInterfaces.IOrpheusModule.html#OrpheusInterfaces_IOrpheusModule_OnAfterSave
+  commentId: E:OrpheusInterfaces.IOrpheusModule.OnAfterSave
+  fullName: OrpheusInterfaces.IOrpheusModule.OnAfterSave
+  nameWithType: IOrpheusModule.OnAfterSave
+- uid: OrpheusInterfaces.IOrpheusModule.OnBeforeSave
+  name: OnBeforeSave
+  href: api/OrpheusInterfaces.IOrpheusModule.html#OrpheusInterfaces_IOrpheusModule_OnBeforeSave
+  commentId: E:OrpheusInterfaces.IOrpheusModule.OnBeforeSave
+  fullName: OrpheusInterfaces.IOrpheusModule.OnBeforeSave
+  nameWithType: IOrpheusModule.OnBeforeSave
 - uid: OrpheusInterfaces.IOrpheusModule.ReferenceTables
   name: ReferenceTables
   href: api/OrpheusInterfaces.IOrpheusModule.html#OrpheusInterfaces_IOrpheusModule_ReferenceTables
@@ -1288,6 +1494,30 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusTable.Name
   fullName: OrpheusInterfaces.IOrpheusTable.Name
   nameWithType: IOrpheusTable.Name
+- uid: OrpheusInterfaces.IOrpheusTable.OnAfterSave
+  name: OnAfterSave
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_OnAfterSave
+  commentId: E:OrpheusInterfaces.IOrpheusTable.OnAfterSave
+  fullName: OrpheusInterfaces.IOrpheusTable.OnAfterSave
+  nameWithType: IOrpheusTable.OnAfterSave
+- uid: OrpheusInterfaces.IOrpheusTable.OnBeforeSave
+  name: OnBeforeSave
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_OnBeforeSave
+  commentId: E:OrpheusInterfaces.IOrpheusTable.OnBeforeSave
+  fullName: OrpheusInterfaces.IOrpheusTable.OnBeforeSave
+  nameWithType: IOrpheusTable.OnBeforeSave
+- uid: OrpheusInterfaces.IOrpheusTable.Save(System.Data.IDbTransaction)
+  name: Save(IDbTransaction)
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Save_System_Data_IDbTransaction_
+  commentId: M:OrpheusInterfaces.IOrpheusTable.Save(System.Data.IDbTransaction)
+  fullName: OrpheusInterfaces.IOrpheusTable.Save(System.Data.IDbTransaction)
+  nameWithType: IOrpheusTable.Save(IDbTransaction)
+- uid: OrpheusInterfaces.IOrpheusTable.Save*
+  name: Save
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Save_
+  commentId: Overload:OrpheusInterfaces.IOrpheusTable.Save
+  fullName: OrpheusInterfaces.IOrpheusTable.Save
+  nameWithType: IOrpheusTable.Save
 - uid: OrpheusInterfaces.IOrpheusTable`1
   name: IOrpheusTable<T>
   href: api/OrpheusInterfaces.IOrpheusTable-1.html
@@ -1363,6 +1593,22 @@ references:
   fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Delete
   nameWithType: IOrpheusTable<T>.Delete
   nameWithType.vb: IOrpheusTable(Of T).Delete
+- uid: OrpheusInterfaces.IOrpheusTable`1.OnAfterModify
+  name: OnAfterModify
+  href: api/OrpheusInterfaces.IOrpheusTable-1.html#OrpheusInterfaces_IOrpheusTable_1_OnAfterModify
+  commentId: E:OrpheusInterfaces.IOrpheusTable`1.OnAfterModify
+  fullName: OrpheusInterfaces.IOrpheusTable<T>.OnAfterModify
+  fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).OnAfterModify
+  nameWithType: IOrpheusTable<T>.OnAfterModify
+  nameWithType.vb: IOrpheusTable(Of T).OnAfterModify
+- uid: OrpheusInterfaces.IOrpheusTable`1.OnBeforeModify
+  name: OnBeforeModify
+  href: api/OrpheusInterfaces.IOrpheusTable-1.html#OrpheusInterfaces_IOrpheusTable_1_OnBeforeModify
+  commentId: E:OrpheusInterfaces.IOrpheusTable`1.OnBeforeModify
+  fullName: OrpheusInterfaces.IOrpheusTable<T>.OnBeforeModify
+  fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).OnBeforeModify
+  nameWithType: IOrpheusTable<T>.OnBeforeModify
+  nameWithType.vb: IOrpheusTable(Of T).OnBeforeModify
 - uid: OrpheusInterfaces.IOrpheusTable`1.Update(`0)
   name: Update(T)
   href: api/OrpheusInterfaces.IOrpheusTable-1.html#OrpheusInterfaces_IOrpheusTable_1_Update__0_
@@ -1568,6 +1814,24 @@ references:
   commentId: T:OrpheusInterfaces.IPrimaryKeySchemaConstraint
   fullName: OrpheusInterfaces.IPrimaryKeySchemaConstraint
   nameWithType: IPrimaryKeySchemaConstraint
+- uid: OrpheusInterfaces.ISaveEventArguments
+  name: ISaveEventArguments
+  href: api/OrpheusInterfaces.ISaveEventArguments.html
+  commentId: T:OrpheusInterfaces.ISaveEventArguments
+  fullName: OrpheusInterfaces.ISaveEventArguments
+  nameWithType: ISaveEventArguments
+- uid: OrpheusInterfaces.ISaveEventArguments.Transaction
+  name: Transaction
+  href: api/OrpheusInterfaces.ISaveEventArguments.html#OrpheusInterfaces_ISaveEventArguments_Transaction
+  commentId: P:OrpheusInterfaces.ISaveEventArguments.Transaction
+  fullName: OrpheusInterfaces.ISaveEventArguments.Transaction
+  nameWithType: ISaveEventArguments.Transaction
+- uid: OrpheusInterfaces.ISaveEventArguments.Transaction*
+  name: Transaction
+  href: api/OrpheusInterfaces.ISaveEventArguments.html#OrpheusInterfaces_ISaveEventArguments_Transaction_
+  commentId: Overload:OrpheusInterfaces.ISaveEventArguments.Transaction
+  fullName: OrpheusInterfaces.ISaveEventArguments.Transaction
+  nameWithType: ISaveEventArguments.Transaction
 - uid: OrpheusInterfaces.ISchema
   name: ISchema
   href: api/OrpheusInterfaces.ISchema.html
@@ -1619,6 +1883,15 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchema.AddSchemaTable
   fullName: OrpheusInterfaces.ISchema.AddSchemaTable
   nameWithType: ISchema.AddSchemaTable
+- uid: OrpheusInterfaces.ISchema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
+  name: AddSchemaTable<T>(List<ISchemaObject>)
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_AddSchemaTable__1_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__
+  commentId: M:OrpheusInterfaces.ISchema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
+  name.vb: AddSchemaTable(Of T)(List(Of ISchemaObject))
+  fullName: OrpheusInterfaces.ISchema.AddSchemaTable<T>(System.Collections.Generic.List<OrpheusInterfaces.ISchemaObject>)
+  fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(Of T)(System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject))
+  nameWithType: ISchema.AddSchemaTable<T>(List<ISchemaObject>)
+  nameWithType.vb: ISchema.AddSchemaTable(Of T)(List(Of ISchemaObject))
 - uid: OrpheusInterfaces.ISchema.DB
   name: DB
   href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_DB
@@ -1805,6 +2078,18 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaConstraint.Action
   fullName: OrpheusInterfaces.ISchemaConstraint.Action
   nameWithType: ISchemaConstraint.Action
+- uid: OrpheusInterfaces.ISchemaConstraint.ConstraintSQLCommand
+  name: ConstraintSQLCommand
+  href: api/OrpheusInterfaces.ISchemaConstraint.html#OrpheusInterfaces_ISchemaConstraint_ConstraintSQLCommand
+  commentId: P:OrpheusInterfaces.ISchemaConstraint.ConstraintSQLCommand
+  fullName: OrpheusInterfaces.ISchemaConstraint.ConstraintSQLCommand
+  nameWithType: ISchemaConstraint.ConstraintSQLCommand
+- uid: OrpheusInterfaces.ISchemaConstraint.ConstraintSQLCommand*
+  name: ConstraintSQLCommand
+  href: api/OrpheusInterfaces.ISchemaConstraint.html#OrpheusInterfaces_ISchemaConstraint_ConstraintSQLCommand_
+  commentId: Overload:OrpheusInterfaces.ISchemaConstraint.ConstraintSQLCommand
+  fullName: OrpheusInterfaces.ISchemaConstraint.ConstraintSQLCommand
+  nameWithType: ISchemaConstraint.ConstraintSQLCommand
 - uid: OrpheusInterfaces.ISchemaConstraint.Fields
   name: Fields
   href: api/OrpheusInterfaces.ISchemaConstraint.html#OrpheusInterfaces_ISchemaConstraint_Fields
@@ -2057,6 +2342,15 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaObject.AddDependency
   fullName: OrpheusInterfaces.ISchemaObject.AddDependency
   nameWithType: ISchemaObject.AddDependency
+- uid: OrpheusInterfaces.ISchemaObject.AddDependency``1
+  name: AddDependency<T>()
+  href: api/OrpheusInterfaces.ISchemaObject.html#OrpheusInterfaces_ISchemaObject_AddDependency__1
+  commentId: M:OrpheusInterfaces.ISchemaObject.AddDependency``1
+  name.vb: AddDependency(Of T)()
+  fullName: OrpheusInterfaces.ISchemaObject.AddDependency<T>()
+  fullName.vb: OrpheusInterfaces.ISchemaObject.AddDependency(Of T)()
+  nameWithType: ISchemaObject.AddDependency<T>()
+  nameWithType.vb: ISchemaObject.AddDependency(Of T)()
 - uid: OrpheusInterfaces.ISchemaObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
   name: AddField(String, String, Boolean, String, String, String)
   href: api/OrpheusInterfaces.ISchemaObject.html#OrpheusInterfaces_ISchemaObject_AddField_System_String_System_String_System_Boolean_System_String_System_String_System_String_
@@ -2132,12 +2426,27 @@ references:
   commentId: M:OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel(System.Object)
   fullName: OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel(System.Object)
   nameWithType: ISchemaObject.CreateFieldsFromModel(Object)
+- uid: OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel(System.Type)
+  name: CreateFieldsFromModel(Type)
+  href: api/OrpheusInterfaces.ISchemaObject.html#OrpheusInterfaces_ISchemaObject_CreateFieldsFromModel_System_Type_
+  commentId: M:OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel(System.Type)
+  fullName: OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel(System.Type)
+  nameWithType: ISchemaObject.CreateFieldsFromModel(Type)
 - uid: OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel*
   name: CreateFieldsFromModel
   href: api/OrpheusInterfaces.ISchemaObject.html#OrpheusInterfaces_ISchemaObject_CreateFieldsFromModel_
   commentId: Overload:OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel
   fullName: OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel
   nameWithType: ISchemaObject.CreateFieldsFromModel
+- uid: OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel``1
+  name: CreateFieldsFromModel<T>()
+  href: api/OrpheusInterfaces.ISchemaObject.html#OrpheusInterfaces_ISchemaObject_CreateFieldsFromModel__1
+  commentId: M:OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel``1
+  name.vb: CreateFieldsFromModel(Of T)()
+  fullName: OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel<T>()
+  fullName.vb: OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel(Of T)()
+  nameWithType: ISchemaObject.CreateFieldsFromModel<T>()
+  nameWithType.vb: ISchemaObject.CreateFieldsFromModel(Of T)()
 - uid: OrpheusInterfaces.ISchemaObject.DB
   name: DB
   href: api/OrpheusInterfaces.ISchemaObject.html#OrpheusInterfaces_ISchemaObject_DB

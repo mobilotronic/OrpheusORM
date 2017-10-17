@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace OrpheusCore.SchemaBuilder
 {
@@ -46,12 +47,19 @@ namespace OrpheusCore.SchemaBuilder
             }
             return result;
         }
+
+        /// <summary>
+        /// The constraint SQL command. UNIQUE, PRIMARY KEY etc.
+        /// </summary>
+        public string ConstraintSQLCommand { get; protected set; }
+
         public PrimaryKeySchemaConstraint(ISchemaObject schemaObject)
         {
             this.Fields = new List<string>();
             this.Sort = SchemaSort.ssAsc;
             this.Action = DDLAction.ddlCreate;
             this.schemaObject = schemaObject;
+            this.ConstraintSQLCommand = "PRIMARY KEY";
         }
 
     }
@@ -110,6 +118,7 @@ namespace OrpheusCore.SchemaBuilder
         public ForeignKeySchemaConstraint(ISchemaObject schemaObject) :base(schemaObject)
         {
             this.ForeignKeyFields = new List<string>();
+            this.ConstraintSQLCommand = "PRIMARY KEY";
         }
     }
 
@@ -123,13 +132,19 @@ namespace OrpheusCore.SchemaBuilder
             {
                 case DDLAction.ddlCreate:
                     {
-                        result = String.Format(" ADD CONSTRAINT {0}{1}{2} UNIQUE ({3}{4}{5})",
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierStart,
-                            this.Name,
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierEnd,
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierStart,
-                            string.Join(",", this.Fields.ToArray()),
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierEnd);
+                        //ADD CONSTRAINT {0}{1}{2} PRIMARY KEY ({3} {4})
+                        var sBuilder = new StringBuilder();
+                        sBuilder.Append(" ADD CONSTRAINT ");
+                        sBuilder.Append(String.Format("{0}{1}{2}",this.SchemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                                        this.Name,
+                                        this.SchemaObject.DB.DDLHelper.DelimitedIndetifierEnd));
+
+                        sBuilder.Append(this.ConstraintSQLCommand);
+                        sBuilder.Append(String.Format(" ({0}) ",string.Join(",", this.Fields.Select(fld => string.Format("{0}{1}{2}",
+                                                    this.SchemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                                                    fld,
+                                                    this.SchemaObject.DB.DDLHelper.DelimitedIndetifierEnd)))));
+                        result = sBuilder.ToString();
                         break;
                     }
                 case DDLAction.ddlDrop:
@@ -147,6 +162,7 @@ namespace OrpheusCore.SchemaBuilder
         }
         public UniqueKeySchemaConstraint(ISchemaObject schemaObject) : base(schemaObject)
         {
+            this.ConstraintSQLCommand = "UNIQUE";
         }
     }
 }

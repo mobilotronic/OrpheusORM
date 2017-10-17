@@ -9,6 +9,7 @@ using OrpheusCore;
 using OrpheusInterfaces;
 using System.Reflection;
 using System.IO;
+using OrpheusTestModels;
 
 namespace OrpheusTests
 {
@@ -73,16 +74,16 @@ namespace OrpheusTests
                     {
                         case DbEngine.dbSQLServer:
                             {
-                                OrpheusCore.Orpheus.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
+                                OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
                                 break;
                             }
                         case DbEngine.dbMySQL:
                             {
-                                OrpheusCore.Orpheus.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusMySQL.config");
+                                OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusMySQLServer.config");
                                 break;
                             }
                     }
-                    TestDatabase.db = OrpheusIocContainer.Resolve<IOrpheusDatabase>();
+                    TestDatabase.db = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusDatabase>();
                 }
                 return TestDatabase.db;
             }

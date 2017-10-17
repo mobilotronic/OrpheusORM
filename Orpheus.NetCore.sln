@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusAttributes", "OrpheusAttributes\OrpheusAttributes.csproj", "{63089206-F8D2-437E-ACB2-BF2D101A7BD5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusCore", "OrpheusCore\OrpheusCore.csproj", "{365BB1AE-FFB7-4B00-9591-D935398DA4E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusInterfaces", "OrpheusInterfaces\OrpheusInterfaces.csproj", "{FE8FE773-92DF-41D1-8938-14C333CEEC22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusLogger", "OrpheusLogger\OrpheusLogger.csproj", "{C975B525-F5C4-4064-9B40-C0E4E1793E26}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusMySQLDDLHelper", "OrpheusMySQLDDLHelper\OrpheusMySQLDDLHelper.csproj", "{E256BF9C-4563-401B-B2F3-2A0C41A33EA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusSQLServerDDLHelper", "OrpheusSQLServerDDLHelper\OrpheusSQLServerDDLHelper.csproj", "{8CA94B3F-FC19-4809-B246-9B255E55F020}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusTests", "OrpheusTests\OrpheusTests.csproj", "{31367D68-6AD7-4209-85E6-C6D4B5BDC168}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusTestModels", "OrpheusTestModels\OrpheusTestModels.csproj", "{DCF92FF7-6F40-45F2-83BC-4FD031130030}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusDocumentation", "OrpheusDocumentation\OrpheusDocumentation.csproj", "{0AC15BBA-0A34-4636-93D6-45924BAE1A3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrpheusTestsBenchMark", "OrpheusTestsBenchMark\OrpheusTestsBenchMark.csproj", "{472EA0A3-9A2C-4164-BF6F-905E5FEE8747}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63089206-F8D2-437E-ACB2-BF2D101A7BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63089206-F8D2-437E-ACB2-BF2D101A7BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63089206-F8D2-437E-ACB2-BF2D101A7BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63089206-F8D2-437E-ACB2-BF2D101A7BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{365BB1AE-FFB7-4B00-9591-D935398DA4E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{365BB1AE-FFB7-4B00-9591-D935398DA4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{365BB1AE-FFB7-4B00-9591-D935398DA4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{365BB1AE-FFB7-4B00-9591-D935398DA4E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8FE773-92DF-41D1-8938-14C333CEEC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8FE773-92DF-41D1-8938-14C333CEEC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8FE773-92DF-41D1-8938-14C333CEEC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8FE773-92DF-41D1-8938-14C333CEEC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C975B525-F5C4-4064-9B40-C0E4E1793E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C975B525-F5C4-4064-9B40-C0E4E1793E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C975B525-F5C4-4064-9B40-C0E4E1793E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C975B525-F5C4-4064-9B40-C0E4E1793E26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E256BF9C-4563-401B-B2F3-2A0C41A33EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E256BF9C-4563-401B-B2F3-2A0C41A33EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E256BF9C-4563-401B-B2F3-2A0C41A33EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E256BF9C-4563-401B-B2F3-2A0C41A33EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA94B3F-FC19-4809-B246-9B255E55F020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA94B3F-FC19-4809-B246-9B255E55F020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA94B3F-FC19-4809-B246-9B255E55F020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA94B3F-FC19-4809-B246-9B255E55F020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31367D68-6AD7-4209-85E6-C6D4B5BDC168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31367D68-6AD7-4209-85E6-C6D4B5BDC168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31367D68-6AD7-4209-85E6-C6D4B5BDC168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31367D68-6AD7-4209-85E6-C6D4B5BDC168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF92FF7-6F40-45F2-83BC-4FD031130030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF92FF7-6F40-45F2-83BC-4FD031130030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF92FF7-6F40-45F2-83BC-4FD031130030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF92FF7-6F40-45F2-83BC-4FD031130030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC15BBA-0A34-4636-93D6-45924BAE1A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC15BBA-0A34-4636-93D6-45924BAE1A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC15BBA-0A34-4636-93D6-45924BAE1A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC15BBA-0A34-4636-93D6-45924BAE1A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{472EA0A3-9A2C-4164-BF6F-905E5FEE8747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{472EA0A3-9A2C-4164-BF6F-905E5FEE8747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{472EA0A3-9A2C-4164-BF6F-905E5FEE8747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{472EA0A3-9A2C-4164-BF6F-905E5FEE8747}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A867E0D-5B04-48DB-9D27-464A0233ED87}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://thelanguageexchange.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OrpheusAttributes\\OrpheusAttributes.csproj
+		SccProjectName1 = OrpheusAttributes
+		SccLocalPath1 = OrpheusAttributes
+		SccProjectUniqueName2 = OrpheusCore\\OrpheusCore.csproj
+		SccProjectName2 = OrpheusCore
+		SccLocalPath2 = OrpheusCore
+		SccProjectUniqueName3 = OrpheusInterfaces\\OrpheusInterfaces.csproj
+		SccProjectName3 = OrpheusInterfaces
+		SccLocalPath3 = OrpheusInterfaces
+		SccProjectUniqueName4 = OrpheusLogger\\OrpheusLogger.csproj
+		SccProjectName4 = OrpheusLogger
+		SccLocalPath4 = OrpheusLogger
+		SccProjectUniqueName5 = OrpheusMySQLDDLHelper\\OrpheusMySQLDDLHelper.csproj
+		SccProjectName5 = OrpheusMySQLDDLHelper
+		SccLocalPath5 = OrpheusMySQLDDLHelper
+		SccProjectUniqueName6 = OrpheusSQLServerDDLHelper\\OrpheusSQLServerDDLHelper.csproj
+		SccProjectName6 = OrpheusSQLServerDDLHelper
+		SccLocalPath6 = OrpheusSQLServerDDLHelper
+		SccProjectUniqueName7 = OrpheusTests\\OrpheusTests.csproj
+		SccProjectName7 = OrpheusTests
+		SccLocalPath7 = OrpheusTests
+		SccProjectUniqueName8 = OrpheusTestModels\\OrpheusTestModels.csproj
+		SccProjectName8 = OrpheusTestModels
+		SccLocalPath8 = OrpheusTestModels
+		SccProjectUniqueName9 = OrpheusDocumentation\\OrpheusDocumentation.csproj
+		SccProjectName9 = OrpheusDocumentation
+		SccLocalPath9 = OrpheusDocumentation
+		SccProjectUniqueName10 = OrpheusTestsBenchMark\\OrpheusTestsBenchMark.csproj
+		SccProjectName10 = OrpheusTestsBenchMark
+		SccLocalPath10 = OrpheusTestsBenchMark
+	EndGlobalSection
+EndGlobal

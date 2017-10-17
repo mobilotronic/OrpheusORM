@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Orpheus Table | Orpheus ORM </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Orpheus Table | Orpheus ORM ">
+    <meta name="generator" content="docfx 2.25.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../Images/OrpheusLogo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-12">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="orpheus-table">Orpheus Table</h1>
+
+<p>Orpheus table is the core class of OrpheusORM.
+It is responsible for the actual executing of the</p>
+<ul>
+<li>Delete</li>
+<li>Update</li>
+<li>Insert</li>
+</ul>
+<p>commands to modify data.
+It&#39;s also responsible for loading data, with or without criteria. 
+So you can load all the data of the underlying database table or a subset of it.</p>
+<p>It is model agnostic and you can declaratively define the model for the table. The model for the table
+is/should be basically a representation of the database table fields.</p>
+<h2 id="when-to-use-it">When to use it</h2>
+<p>There is no limitation per se, for when to use the OrpheusTable class. 
+From a logical separation perspective, it would make more sense, if you were saving data to 
+a table that has no detail tables. <a href="orpheus_module.html">Orpheus Module</a> is the class to use,
+when you have multiple tables, with dependencies to each other.</p>
+<h2 id="a-quick-example">A quick example</h2>
+<p>Let&#39;s assume you have the following model</p>
+<pre><code class="lang-csharp">    public enum TestModelTransactorType
+    {
+        ttCustomer,
+        ttSupplier
+    }
+    public class TestModelTransactor
+    {
+        [PrimaryKey]
+        public Guid TransactorId { get; set; }
+
+        [Length(30)]
+        public string Code { get; set; }
+
+        [Length(120)]
+        public string Description { get; set; }
+
+        [Length(120)]
+        public string Address { get; set; }
+
+        [Length(250)]
+        public string Email { get; set; }
+
+        public TestModelTransactorType Type { get; set; }
+    }
+</code></pre><p>You can declare the table in your code</p>
+<pre><code class="lang-csharp">public class TransactorsTable:OrpheusTable&lt;TestModelTransactor&gt;
+{
+}
+var transactorsTable = new TransactorsTable();
+</code></pre><p>or create an instance of the table using the OrpheusDatabase</p>
+<pre><code class="lang-csharp">IOrpheusDatabase db = OrpheusCore.ServiceProvider.Provider.Resolve&lt;IOrpheusDatabase&gt;();
+var transactorsTable = db.CreateTable&lt;TestModelTransactor&gt;();
+</code></pre><p><strong>Note: The database does not keep a reference for the created table.</strong></p>
+<p>After you have a table instance, you can add, update and delete data from your table.</p>
+<pre><code class="lang-csharp">IOrpheusDatabase db = OrpheusCore.ServiceProvider.Provider.Resolve&lt;IOrpheusDatabase&gt;();
+var transactorsTable = db.CreateTable&lt;TestModelTransactor&gt;();
+
+var transactor = new TestModelTransactor(){
+TransactorId = Guid.NewGuid(),
+Code = &#39;001&#39;,
+Description = &#39;Transactor1&#39;
+};
+transactorsTable.Add(transactor);
+transactorsTable.Save();
+</code></pre><p><strong>Note:The table save will be executed within a transaction, so in case of any error, changes will be rolled back.</strong></p>
+</article>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Orpheus ORM - Original Author © 2017
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-99241001-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+  </body>
+</html>

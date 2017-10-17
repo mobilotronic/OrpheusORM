@@ -61,21 +61,25 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Key field name of the main object.
         /// </summary>
+        /// <returns>Key field name of the main object</returns>
         string KeyField { get; set; }
-        
+
         /// <summary>
         /// Key field name of the join object.
         /// </summary>
+        /// <returns>Key field name of the join object</returns>
         string JoinKeyField { get; set; }
-        
+
         /// <summary>
         /// Type of join <see cref="SchemaJoinType"/>.
         /// </summary>
+        /// <returns>Type of join</returns>
         SchemaJoinType JoinType { get; set; }
-        
+
         /// <summary>
         /// Join operator <see cref="SchemaJoinOperator"/>.
         /// </summary>
+        /// <returns>Join operator</returns>
         SchemaJoinOperator JoinOperator { get; set; }
     }
 }

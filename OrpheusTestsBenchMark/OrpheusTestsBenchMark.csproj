@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <StartupObject>OrpheusTestsBenchMark.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.10.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrpheusAttributes\OrpheusAttributes.csproj" />
+    <ProjectReference Include="..\OrpheusCore\OrpheusCore.csproj" />
+    <ProjectReference Include="..\OrpheusInterfaces\OrpheusInterfaces.csproj" />
+    <ProjectReference Include="..\OrpheusMySQLDDLHelper\OrpheusMySQLDDLHelper.csproj" />
+    <ProjectReference Include="..\OrpheusSQLServerDDLHelper\OrpheusSQLServerDDLHelper.csproj" />
+    <ProjectReference Include="..\OrpheusTests\OrpheusTests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="OrpheusSQLServer.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

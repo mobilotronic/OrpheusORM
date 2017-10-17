@@ -10,8 +10,9 @@ namespace OrpheusMySQLDDLHelper
     {
         private Dictionary<Type, string> typeMap = new Dictionary<Type, string>();
         private Dictionary<int, string> dbTypeMap = new Dictionary<int, string>();
-
-        private IDbCommand selectSchemaObjectQuery;
+        private string databaseName;
+        private IDbCommand selectSchemaObjectTable;
+        private IDbCommand selectSchemaObjectConstraint;
         private MySqlConnection secondConnection;
         private IOrpheusDatabase db;
 
@@ -202,19 +203,40 @@ namespace OrpheusMySQLDDLHelper
 
         public bool SchemaObjectExists(string schemaObjectName)
         {
-            var result = false;
-            if (this.DB.Connected)
+            if (this.secondConnection != null)
             {
-                if (this.selectSchemaObjectQuery == null)
-                    this.selectSchemaObjectQuery = this.DB.CreatePreparedQuery("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = @NAME");
+                if (this.selectSchemaObjectTable == null)
+                {
+                    this.selectSchemaObjectTable = this.secondConnection.CreateCommand();
+                    this.selectSchemaObjectTable.CommandText = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = @NAME";
+                    var param = this.selectSchemaObjectTable.CreateParameter();
+                    param.ParameterName = "@NAME";
+                    this.selectSchemaObjectTable.Parameters.Add(param);
+                }
+                if (this.selectSchemaObjectConstraint == null)
+                {
+                    this.selectSchemaObjectConstraint = this.secondConnection.CreateCommand();
+                    this.selectSchemaObjectConstraint.CommandText = "SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE TABLE_NAME = @NAME";
+                    var param = this.selectSchemaObjectConstraint.CreateParameter();
+                    param.ParameterName = "@NAME";
+                    this.selectSchemaObjectConstraint.Parameters.Add(param);
+                }
+                this.secondConnection.Open();
                 IDataReader reader = null;
                 try
                 {
-                    ((IDataParameter)this.selectSchemaObjectQuery.Parameters["@NAME"]).Value = schemaObjectName;
-                    reader = this.selectSchemaObjectQuery.ExecuteReader();
+                    ((IDataParameter)this.selectSchemaObjectTable.Parameters["@NAME"]).Value = schemaObjectName;
+                    reader = this.selectSchemaObjectTable.ExecuteReader();
                     if (reader.Read())
                     {
-                        result = reader.GetValue(0) != null;
+                        return reader.GetValue(0) != null;
+                    }
+                    reader.Close();
+                    ((IDataParameter)this.selectSchemaObjectConstraint.Parameters["@NAME"]).Value = schemaObjectName;
+                    reader = this.selectSchemaObjectTable.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        return reader.GetValue(0) != null;
                     }
                 }
                 catch
@@ -225,9 +247,10 @@ namespace OrpheusMySQLDDLHelper
                 {
                     if (reader != null)
                         reader.Close();
+                    this.secondConnection.Close();
                 }
             }
-            return result;
+            return false;
         }
 
         public IOrpheusDatabase DB
@@ -285,6 +308,49 @@ namespace OrpheusMySQLDDLHelper
         /// <param name="fieldName"></param>
         /// <returns></returns>
         public string SafeFormatField(string fieldName) { return String.Format("{0}{1}{2}", this.DelimitedIndetifierStart, fieldName, this.DelimitedIndetifierEnd); }
+
+        /// <summary>
+        /// Returns the DB specific modify table command.
+        /// </summary>
+        public string ModifyColumnCommand { get{ return " MODIFY COLUMN "; } }
+
+        /// <summary>
+        /// Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.
+        /// </summary>
+        /// <param name="tableName">Table's name that schema is going to change</param>
+        /// <param name="columnsToDelete">Columns for deletion</param>
+        /// <returns></returns>
+        public string SafeFormatAlterTableDropColumn(string tableName, List<string> columnsToDelete)
+        {
+            return String.Format("ALTER TABLE {0} DROP COLUMN {1}", tableName, string.Join(", DROP ", columnsToDelete.ToArray()));
+        }
+
+        /// <summary>
+        /// Properly formats an ALTER TABLE ADD COLUMN command for the underlying database engine.
+        /// </summary>
+        /// <param name="tableName">Table's name that schema is going to change</param>
+        /// <param name="columnsToAdd">Columns for creation</param>
+        /// <returns></returns>
+        public string SafeFormatAlterTableAddColumn(string tableName, List<string> columnsToAdd)
+        {
+            return String.Format("ALTER TABLE {0} ADD {1}", tableName, string.Join(", ADD ", columnsToAdd.ToArray()));
+        }
+
+        /// <summary>
+        /// Gets the database name.
+        /// </summary>
+        public string DatabaseName
+        {
+            get
+            {
+                if (databaseName == null)
+                {
+                    var builder = new MySqlConnectionStringBuilder(this.DB.ConnectionString);
+                    databaseName =  builder.Database;
+                }
+                return databaseName;
+            }
+        }
 
         public OrpheusMySQLServerDDLHelper()
         {

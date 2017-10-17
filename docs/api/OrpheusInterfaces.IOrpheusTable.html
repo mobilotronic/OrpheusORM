@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IOrpheusTable
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -75,7 +76,7 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.IOrpheusTable">
   
   
@@ -114,7 +115,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTable.html">IOrpheusTable</a>&gt;</td>
-        <td></td>
+        <td><p>List of detail tables</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -140,7 +142,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
-        <td></td>
+        <td><p>Table&apos;s key field(s)</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -166,7 +169,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td></td>
+        <td><p>Table&apos;s level</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -174,7 +178,7 @@
   
   <a id="OrpheusInterfaces_IOrpheusTable_MasterTable_" data-uid="OrpheusInterfaces.IOrpheusTable.MasterTable*"></a>
   <h4 id="OrpheusInterfaces_IOrpheusTable_MasterTable" data-uid="OrpheusInterfaces.IOrpheusTable.MasterTable">MasterTable</h4>
-  <div class="markdown level1 summary"><p>Master table name.</p>
+  <div class="markdown level1 summary"><p>Master table name, if the table is a detail table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -192,7 +196,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.IOrpheusTable.html">IOrpheusTable</a></td>
-        <td></td>
+        <td><p>Master table name</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -200,7 +205,7 @@
   
   <a id="OrpheusInterfaces_IOrpheusTable_MasterTableKeyFields_" data-uid="OrpheusInterfaces.IOrpheusTable.MasterTableKeyFields*"></a>
   <h4 id="OrpheusInterfaces_IOrpheusTable_MasterTableKeyFields" data-uid="OrpheusInterfaces.IOrpheusTable.MasterTableKeyFields">MasterTableKeyFields</h4>
-  <div class="markdown level1 summary"><p>Master table&apos;s key field(s)</p>
+  <div class="markdown level1 summary"><p>Master table&apos;s key field(s), if the table is detail table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -218,7 +223,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
-        <td></td>
+        <td><p>Master table key fields</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -244,7 +250,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>True if table data have been modified</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -270,7 +277,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Table name</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -393,7 +401,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Object</span>&gt;</td>
-        <td></td>
+        <td><p>List of current key values</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -462,6 +471,87 @@ Multiple fields are bound with a logical AND</p>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">clearExistingData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="OrpheusInterfaces_IOrpheusTable_Save_" data-uid="OrpheusInterfaces.IOrpheusTable.Save*"></a>
+  <h4 id="OrpheusInterfaces_IOrpheusTable_Save_System_Data_IDbTransaction_" data-uid="OrpheusInterfaces.IOrpheusTable.Save(System.Data.IDbTransaction)">Save(IDbTransaction)</h4>
+  <div class="markdown level1 summary"><p>Save changes to the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Save(IDbTransaction dbTransaction = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="parametername">dbTransaction</span></td>
+        <td><p>Transaction in which the commands will be executed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="OrpheusInterfaces_IOrpheusTable_OnAfterSave" data-uid="OrpheusInterfaces.IOrpheusTable.OnAfterSave">OnAfterSave</h4>
+  <div class="markdown level1 summary"><p>Occurs after the transaction has been committed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;ISaveEventArguments&gt; OnAfterSave</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="OrpheusInterfaces_IOrpheusTable_OnBeforeSave" data-uid="OrpheusInterfaces.IOrpheusTable.OnBeforeSave">OnBeforeSave</h4>
+  <div class="markdown level1 summary"><p>Occurs before records are save in the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;ISaveEventArguments&gt; OnBeforeSave</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>

@@ -77,52 +77,61 @@ namespace OrpheusInterfaces
         /// <summary>
         /// DB Schema name. Any DDL/SQL statement executed will have pre-pent the SchemaName if set.
         /// </summary>
+        /// <returns>Schema name</returns>
         string SchemaName { get; set; }
 
         /// <summary>
         /// The name of the schema object. Could be the name of a table or a view or a stored procedure.
         /// </summary>
+        /// <returns>SQL name of the schema object</returns>
         string SQLName { get; set; }
 
         /// <summary>
         /// Unique generated when the object is created and saved in the DB.
         /// </summary>
+        /// <returns>Schema object unique key</returns>
         Guid UniqueKey { get; set; }
 
         /// <summary>
         /// If DDL is set all other fields and join schema objects are ignored. Dependencies still apply.
         /// </summary>
+        /// <returns>Set raw DDL for the schema object</returns>
         string RawDDL { get; set; }
 
         /// <summary>
         /// Returns the DDL string to be executed.
         /// </summary>
-        string GetDDLString();
+        /// <returns>Get the generated DDL string for the schema object</returns>
+        List<string> GetDDLString();
 
         /// <summary>
         /// Returns the DDL constraints string to be executed. 
         /// </summary>
-        /// <returns></returns>
-        string GetConstraintsDDL();
+        /// <returns>Get the generated DDL string for the schema constraints</returns>
+        List<string> GetConstraintsDDL();
 
         /// <summary>
         /// Fields for the schema object. Applicable mostly when schema object is a table or a view.
         /// </summary>
+        /// <returns>Fields in the schema object</returns>
         List<ISchemaField> Fields { get; set; }
 
         /// <summary>
         /// List of schema object constraints. Primary,foreign or any type of constraint.
         /// </summary>
+        /// <returns>Constraints in the schema object</returns>
         List<ISchemaConstraint> Constraints { get; set; }
 
         /// <summary>
         /// Other schema objects that this object depends upon. First it will iterate through the dependency list and run any schema object that is not yet created.
         /// </summary>
+        /// <returns>Schema object that this object depends upon</returns>
         List<ISchemaObject> SchemaObjectsThatIDepend { get; set; }
 
         /// <summary>
         /// Other schema objects that depend on this object. First it will iterate through the dependency list and run any schema object that is not yet destroyed.
         /// </summary>
+        /// <returns>Schema objects that depend on this object</returns>
         List<ISchemaObject> SchemaObjectsThatDependOnMe { get; set; }
 
         /// <summary>
@@ -133,13 +142,14 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Returns the seed data for the table if defined.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <typeparam name="T">Schema object model type</typeparam>
+        /// <returns>Schema object's data</returns>
         List<T> GetData<T>();
 
         /// <summary>
         /// True if the schema object is created in the DB.
         /// </summary>
+        /// <returns>True if the schema object is created in the DB</returns>
         bool IsCreated { get; }
 
         /// <summary>
@@ -155,69 +165,86 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Orpheus database.
         /// </summary>
+        /// <returns>Database where the schema object exists</returns>>
         IOrpheusDatabase DB { get; }
 
         /// <summary>
         /// Gets the schema type.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Schema type</returns>
         SchemaObjectType GetSchemaType();
 
         /// <summary>
         /// Schema where the schema object belongs to.
         /// </summary>
+        /// <returns>Schema where the schema object exists</returns>
         ISchema Schema { get; set; }
 
         /// <summary>
         /// Creates fields from a given model.
-        /// Supports <see cref="OrpheusAttributes"/> attributes
-        /// <param name="model"></param>
+        /// Supports OrpheusAttributes attributes
+        /// <param name="model">Instance of model</param>
         /// </summary>
         void CreateFieldsFromModel(object model);
 
         /// <summary>
+        /// Creates fields from a given model.
+        /// Supports OrpheusAttributes attributes
+        /// <param name="modelType">Model type</param>
+        /// </summary>
+        void CreateFieldsFromModel(Type modelType);
+
+        /// <summary>
+        /// Creates fields from a given model.
+        /// Supports OrpheusAttributes attributes
+        /// </summary>
+        /// <typeparam name="T">Model type</typeparam>
+        void CreateFieldsFromModel<T>();
+
+        /// <summary>
         /// Creates and adds a field to the field list.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="dataType"></param>
-        /// <param name="defaultValue"></param>
-        /// <param name="size"></param>
-        /// <param name="nullable"></param>
+        /// <param name="name">Field name</param>
+        /// <param name="dataType">Field data type</param>
+        /// <param name="defaultValue">Field default value</param>
+        /// <param name="size">Field size</param>
+        /// <param name="nullable">Nullable</param>
         ISchemaField AddField(string name, string dataType, bool nullable = true, string defaultValue = null, string size = null, string alias = null);
 
         /// <summary>
         /// Adds a primary key constraint.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="fields"></param>
-        /// <param name="sort"></param>
+        /// <param name="name">Constraint name</param>
+        /// <param name="fields">Constraint fields</param>
+        /// <param name="sort">Constraint sort</param>
         /// <returns></returns>
         IPrimaryKeySchemaConstraint AddPrimaryKeyConstraint(string name, List<string> fields, SchemaSort sort = SchemaSort.ssAsc);
 
         /// <summary>
         /// Adds a foreign key constraint.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="fields"></param>
-        /// <param name="foreignKeySchemaObject"></param>
-        /// <param name="foreignKeySchemaFields"></param>
-        /// <param name="onCascadeDelete"></param>
-        /// <param name="onUpdateDelete"></param>
+        /// <param name="name">Constraint name</param>
+        /// <param name="fields">Constraint fields</param>
+        /// <param name="foreignKeySchemaObject">Reference table name</param>
+        /// <param name="foreignKeySchemaFields">Reference table fields</param>
+        /// <param name="onCascadeDelete">Cascade on delete</param>
+        /// <param name="onUpdateDelete">Cascade on update</param>
         /// <returns></returns>
         IForeignKeySchemaConstraint AddForeignKeyConstraint(string name, List<string> fields, string foreignKeySchemaObject, List<string> foreignKeySchemaFields, bool onCascadeDelete = true, bool onUpdateCascade = true);
 
         /// <summary>
         /// Adds a unique key constraint.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="fields"></param>
-        /// <param name="sort"></param>
+        /// <param name="name">Constraint name</param>
+        /// <param name="fields">Constraint fields</param>
+        /// <param name="sort">Constraint sort</param>
         /// <returns></returns>
         IUniqueKeySchemaConstraint AddUniqueKeyConstraint(string name, List<string> fields);
 
         /// <summary>
         /// Defines the DDL action to be taken when schema objects are executed.
         /// </summary>
+        /// <returns>Defines the DDL action to be taken when schema objects are executed</returns>
         DDLAction Action { get; set; }
 
         /// <summary>
@@ -231,6 +258,11 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <param name="modelType"></param>
         void AddDependency(Type modelType);
+
+        /// <summary>
+        /// Adds a dependency to a schema object based on the model type.
+        /// </summary>
+        void AddDependency<T>() where T:class;
     }
 
     /// <summary>
@@ -241,6 +273,7 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Join definition. Defines how schema objects can be joined.
         /// </summary>
+        /// <returns>Join definition</returns>
         ISchemaJoinDefinition JoinDefinition { get; set; }
     }
 
@@ -252,10 +285,12 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Join schema objects. Applicable mostly when schema object is a table or a view.
         /// </summary>
+        /// <returns>Schema objects in the schema view</returns>
         List<ISchemaTable> JoinSchemaObjects { get; set; }
         /// <summary>
         /// Applicable only when DDLCommand = ddcCreateView.
         /// </summary>
+        /// <returns>Table name</returns>
         string TableName { get; set; }
     }
 }

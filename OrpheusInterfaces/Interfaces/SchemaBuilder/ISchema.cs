@@ -21,42 +21,52 @@ namespace OrpheusInterfaces
         /// Adds a schema object to the list.
         /// </summary>
         /// <param name="schemaObject"></param>
-        /// <returns></returns>
+        /// <returns>The schema object that was added</returns>
         ISchemaObject AddSchemaObject(ISchemaObject schemaObject);
 
         /// <summary>
         /// Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.
         /// </summary>
-        /// <param name="tableName"></param>
-        /// <param name="dependencies"></param>
-        /// <param name="model"></param>
+        /// <param name="tableName">Table name</param>
+        /// <param name="dependencies">List of schema objects, that this objects depends upon</param>
+        /// <param name="model">Model will be used to auto-generate fields, primary keys etc, for the schema object</param>
         /// <returns></returns>
         ISchemaTable AddSchemaTable(string tableName,List<ISchemaObject> dependencies = null,object model=null);
 
         /// <summary>
         /// Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.
         /// </summary>
-        /// <param name="dependencies"></param>
-        /// <param name="model"></param>
+        /// <param name="dependencies">List of schema objects, that this objects depends upon</param>
+        /// <param name="model">Model will be used to auto-generate fields, primary keys etc, for the schema object</param>
         /// <returns></returns>
         ISchemaTable AddSchemaTable(object model, List<ISchemaObject> dependencies = null);
 
         /// <summary>
         /// Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.
         /// </summary>
-        /// <param name="dependencies"></param>
-        /// <param name="modelType"></param>
+        /// <param name="dependencies">List of schema objects, that this objects depends upon</param>
+        /// <param name="modelType">Model type will be used to auto-generate fields, primary keys etc, for the schema object</param>
         /// <returns></returns>
         ISchemaTable AddSchemaTable(Type modelType, List<ISchemaObject> dependencies = null);
 
         /// <summary>
+        /// Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dependencies"></param>
+        /// <returns></returns>
+        ISchemaTable AddSchemaTable<T>(List<ISchemaObject> dependencies = null) where T : class;
+
+        /// <summary>
         /// Schema description.
         /// </summary>
+        /// <returns>Schema description</returns>
         string Description { get; }
 
         /// <summary>
         /// Schema version.
         /// </summary>
+        /// <returns>Schema version</returns>
         double Version { get; }
 
         /// <summary>
@@ -84,39 +94,44 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Orpheus database.
         /// </summary>
+        /// <returns>Instance of the Orpheus Database</returns>
         IOrpheusDatabase DB { get;}
 
         /// <summary>
         /// Schema Id.
         /// </summary>
+        /// <returns>Schema unique id</returns>
         Guid Id { get; }
 
         /// <summary>
         /// Removes from the schema list
         /// </summary>
-        /// <param name="schemaObject"></param>
+        /// <param name="schemaObject">Schema object to remove</param>
         void RemoveSchemaObject(ISchemaObject schemaObject);
 
         /// <summary>
         /// Orpheus schema objects table.
         /// </summary>
+        /// <returns>Table name for the Orpheus schema objects table</returns>
         string SchemaObjectsTable { get; }
 
         /// <summary>
         /// Orpheus schema info table.
         /// </summary>
+        /// <returns>Table name for the Orpheus schema information table</returns>
         string SchemaInfoTable { get; }
 
         /// <summary>
         /// Orpheus module definition table.
         /// </summary>
+        /// <returns>Table name for the Orpheus schema modules table</returns>
         string SchemaModulesTable { get; }
 
         /// <summary>
         /// Returns the guid of the schema object it is created.
         /// </summary>
-        /// <param name="schemaObject"></param>
-        /// <returns></returns>
+        /// <param name="schemaObject">Schema object to be checked if it exists</param>
+        /// <returns>The schema object unique id</returns>
         Guid SchemaObjectExists(ISchemaObject schemaObject);
 
     }

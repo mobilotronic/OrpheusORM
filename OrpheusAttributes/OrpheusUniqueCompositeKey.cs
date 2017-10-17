@@ -14,8 +14,8 @@ namespace OrpheusAttributes
         /// <summary>
         /// Primary composite key.
         /// </summary>
-        /// <param name="fields"></param>
-        /// <param name="sort"></param>
+        /// <param name="fields">Fields that are part of the key</param>
+        /// <param name="sort">Sort direction</param>
         public UniqueCompositeKey(string[] fields,string sort = null) : base(fields) { }
     }
 }

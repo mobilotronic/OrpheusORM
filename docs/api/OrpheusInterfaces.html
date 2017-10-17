@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace OrpheusInterfaces
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -75,7 +76,7 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="OrpheusInterfaces">
   
   <h1 id="OrpheusInterfaces" data-uid="OrpheusInterfaces" class="text-break">Namespace OrpheusInterfaces
@@ -87,6 +88,9 @@
   </h3>
       <h4><a class="xref" href="OrpheusInterfaces.IForeignKeySchemaConstraint.html">IForeignKeySchemaConstraint</a></h4>
       <section><p>A foreign key constraint.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments&lt;T&gt;</a></h4>
+      <section><p>Orpheus record modify event. Occurs when data are processed in memory.</p>
 </section>
       <h4><a class="xref" href="OrpheusInterfaces.IOrpheusDatabase.html">IOrpheusDatabase</a></h4>
       <section><p>Orpheus database access component.</p>
@@ -105,9 +109,11 @@ will be saved as well. All master-detail relationships and keys will be updated 
       <section><p>The definition/database properties of a module.</p>
 </section>
       <h4><a class="xref" href="OrpheusInterfaces.IOrpheusReferenceTable.html">IOrpheusReferenceTable</a></h4>
-      <section></section>
+      <section><p>Orpheus reference table.</p>
+</section>
       <h4><a class="xref" href="OrpheusInterfaces.IOrpheusReferenceTable-1.html">IOrpheusReferenceTable&lt;T&gt;</a></h4>
-      <section></section>
+      <section><p>Orpheus reference table.</p>
+</section>
       <h4><a class="xref" href="OrpheusInterfaces.IOrpheusTable.html">IOrpheusTable</a></h4>
       <section><p>Orpheus table is the core Orpheus data object. It is responsible for performing data operations.</p>
 </section>
@@ -123,6 +129,9 @@ Holds all the data of the connected table.</p>
 </section>
       <h4><a class="xref" href="OrpheusInterfaces.IPrimaryKeySchemaConstraint.html">IPrimaryKeySchemaConstraint</a></h4>
       <section><p>A primary key constraint.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.ISaveEventArguments.html">ISaveEventArguments</a></h4>
+      <section><p>Orpheus save event arguments. Occurs when data are actually being save to the database.</p>
 </section>
       <h4><a class="xref" href="OrpheusInterfaces.ISchema.html">ISchema</a></h4>
       <section><p>Represents an Orpheus Schema.</p>

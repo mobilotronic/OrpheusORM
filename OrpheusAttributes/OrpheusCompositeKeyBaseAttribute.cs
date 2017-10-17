@@ -14,11 +14,13 @@ namespace OrpheusAttributes
         /// <summary>
         /// List of fields that are the key.
         /// </summary>
+        /// <returns>Array of field names</returns>
         public string[] Fields { get; private set; }
 
         /// <summary>
         /// Sort for the key.
         /// </summary>
+        /// <returns>Sort direction</returns>
         public string Sort { get; private set; }
 
         /// <summary>

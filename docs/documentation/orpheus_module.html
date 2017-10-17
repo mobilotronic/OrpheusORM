@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Orpheus Module | Orpheus ORM </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Orpheus Module | Orpheus ORM ">
+    <meta name="generator" content="docfx 2.25.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../Images/OrpheusLogo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-12">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="orpheus-module">Orpheus Module</h1>
+
+<p>OrpheusModule class represents a logical division and grouping of a set of tables.</p>
+<p>For example you can have an <code>OrdersModule</code>, which will be comprised from many different tables.
+Orders,Customers,OrderLines etc. </p>
+<p>When you Save from the module level, all pending records in tables that belong to the module
+will be saved as well. </p>
+<p>All master-detail relationships and keys will be updated automatically.</p>
+<h2 id="whats-does-the-above-mean-exactly">Whats does the above mean exactly?</h2>
+<p>You can use an OrpheusModule to logically group/divide your business logic.</p>
+<p>Using the example above, having an <code>OrdersModule</code>, you can have your BL for adding, updating
+and deleting orders in one place.</p>
+<p>The OrpheusModule will manage for you, the master-detail relationships in your module.</p>
+<p>For example an OrderLine must always have an OrderId. 
+If you were to use separate tables
+to achieve the same functionality, you would have to enter and synchronize the master-detail
+key values manually.</p>
+<h2 id="a-quick-example">A quick example</h2>
+<p>Let&#39;s assume that you have the following model:</p>
+<h4 id="transactor-model-customer-supplier">Transactor model (Customer, Supplier)</h4>
+<pre><code class="lang-csharp">    public class TestModelTransactor
+    {
+        [PrimaryKey]
+        public Guid TransactorId { get; set; }
+
+        [Length(30)]
+        public string Code { get; set; }
+
+        [Length(120)]
+        public string Description { get; set; }
+
+        [Length(120)]
+        public string Address { get; set; }
+
+        [Length(250)]
+        public string Email { get; set; }
+
+        public TestModelTransactorType Type { get; set; }
+    }
+</code></pre><h4 id="item-model-the-order-item">Item model, the order item.</h4>
+<pre><code class="lang-csharp">    public class TestModelItem
+    {
+        [PrimaryKey(false)]
+        public Guid ItemId { get; set; }
+
+        [Length(30)]
+        public string Code { get; set; }
+
+        [Length(120)]
+        public string Description { get; set; }
+
+        [DefaultValue(0)]
+        public double Price { get; set; }
+    }
+</code></pre><h4 id="order-models">Order models.</h4>
+<pre><code class="lang-csharp">    public class TestModelOrder
+    {
+        [PrimaryKey]
+        public Guid OrderId { get; set; }
+
+        [ForeignKey(&quot;TestModelTransactor&quot;, &quot;TransactorId&quot;)]
+        public Guid TransactorId { get; set; }
+
+        public DateTime OrderDateTime { get; set; }
+    }
+
+    public class TestModelOrderLine
+    {
+        [PrimaryKey]
+        public Guid OrderLineId { get; set; }
+
+        [ForeignKey(&quot;TestModelOrder&quot;,&quot;OrderId&quot;)]
+        public Guid OrderId { get; set; }
+
+        [ForeignKey(&quot;TestModelItem&quot;, &quot;ItemId&quot;)]
+        public Guid ItemId { get; set; }
+
+        [DefaultValue(0)]
+        public double Quantity { get; set; }
+
+        public double Price { get; set; }
+
+        public double TotalPrice { get; set; }
+    }
+</code></pre><h4 id="creating-an-orpheusmodule">Creating an OrpheusModule</h4>
+<p>There are a couple of ways to instantiate an OrpheusModule, the most straight forward
+way is to use an <code>IOrpheusModuleDefinition</code>.</p>
+<h5 id="creating-the-definition-object">Creating the definition object.</h5>
+<pre><code class="lang-csharp">IOrpheusDatabase db = OrpheusCore.ServiceProvider.Provider.Resolve&lt;IOrpheusDatabase&gt;();
+var moduleDefinition = db.CreateModuleDefinition();
+</code></pre><h5 id="configuring-the-definition-object">Configuring the definition object.</h5>
+<pre><code class="lang-csharp">moduleDefinition.MainTableOptions = moduleDefinition.CreateTableOptions(&quot;TestModelOrder&quot;,typeof(TestModelOrder));
+moduleDefinition.ReferenceTableOptions.Add(moduleDefinition.CreateTableOptions(&quot;TestModelTransactor&quot;, typeof(TestModelTransactor)));
+moduleDefinition.ReferenceTableOptions.Add(moduleDefinition.CreateTableOptions(&quot;TestModelItem&quot;, typeof(TestModelItem)));
+
+var detailTableOptions = moduleDefinition.CreateTableOptions(&quot;TestModelOrderLine&quot;, typeof(TestModelOrderLine));
+detailTableOptions.MasterTableName = &quot;TestModelOrder&quot;;
+detailTableOptions.AddMasterKeyField(&quot;OrderId&quot;);
+moduleDefinition.DetailTableOptions.Add(detailTableOptions);
+</code></pre><h5 id="creating-the-module">Creating the module.</h5>
+<pre><code class="lang-csharp">var module = this.Database.CreateModule(moduleDefinition);
+</code></pre><h5 id="getting-references-to-module-tables">Getting references to module tables.</h5>
+<pre><code class="lang-csharp">var transactors = module.GetReferenceTable&lt;TestModelTransactor&gt;(&quot;TestModelTransactor&quot;);
+var items = module.GetReferenceTable&lt;TestModelItem&gt;(&quot;TestModelItem&quot;);
+var orderLines = module.GetTable&lt;TestModelOrderLine&gt;(&quot;TestModelOrderLine&quot;);
+var order = module.GetTable&lt;TestModelOrder&gt;(&quot;TestModelOrder&quot;);
+</code></pre><h5 id="populating-auxiliary-data">Populating auxiliary data.</h5>
+<pre><code class="lang-csharp">//populating auxiliary data.
+transactors.Add(TestDatabase.GetTransactors());
+items.Add(TestDatabase.GetItems());
+using (var tr = this.Database.BeginTransaction())
+{
+    transactors.ExecuteInserts(tr);
+    items.ExecuteInserts(tr);
+    try
+    {
+        tr.Commit();
+    }
+    catch
+    {
+        throw;
+    }
+}
+
+transactors.Load();
+items.Load();
+</code></pre><h5 id="entering-a-new-order">Entering a new order.</h5>
+<pre><code class="lang-csharp">order.Add(new TestModelOrder()
+{
+    OrderId = Guid.NewGuid(),
+    OrderDateTime = DateTime.Now,
+    TransactorId = transactors.Data.First().TransactorId
+});
+//OrderId will be set automatically.
+orderLines.Add(new TestModelOrderLine()
+{
+    ItemId = items.Data.First().ItemId,
+    OrderLineId = Guid.NewGuid(),
+    Price = 5,
+    Quantity = 10,
+    TotalPrice = 50
+});
+
+module.Save();
+</code></pre></article>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Orpheus ORM - Original Author © 2017
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-99241001-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+  </body>
+</html>

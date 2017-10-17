@@ -8,13 +8,14 @@
     <title>Defining database engine | Orpheus ORM </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Defining database engine | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -73,14 +74,14 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="defining-database-engine">Defining database engine</h1>
 
 <p>OrpheusORM uses <a href="https://www.nuget.org/packages/Unity/">Unity</a> in order to have the same code base for all supported database engines.
 To configure which database engine to use, you need only to update the unity configuration section with the appropriate types.</p>
 <h3 id="sql-server">SQL Server</h3>
-<pre><code class="lang-Html">  &lt;unity xmlns=&quot;http://schemas.microsoft.com/practices/2010/unityx&quot;&gt;
+<pre><code class="lang-xml">  &lt;unity xmlns=&quot;http://schemas.microsoft.com/practices/2010/unityx&quot;&gt;
     &lt;assembly name=&quot;System.Data,4.0.0.0 ,Culture=neutral,PublicKeyToken=b77a5c561934e089&quot;/&gt;
 
     &lt;alias alias=&quot;IDbConnection&quot; type=&quot;System.Data.IDbConnection, System.Data&quot;/&gt;
@@ -90,7 +91,7 @@ To configure which database engine to use, you need only to update the unity con
         &lt;constructor/&gt;
       &lt;/register&gt;
 </code></pre><h3 id="mysql">MySQL</h3>
-<pre><code class="lang-HTML">  &lt;unity xmlns=&quot;http://schemas.microsoft.com/practices/2010/unityx&quot;&gt;
+<pre><code class="lang-xml">  &lt;unity xmlns=&quot;http://schemas.microsoft.com/practices/2010/unityx&quot;&gt;
     &lt;assembly name=&quot;System.Data,4.0.0.0 ,Culture=neutral,PublicKeyToken=b77a5c561934e089&quot;/&gt;
 
     &lt;alias alias=&quot;IDbConnection&quot; type=&quot;System.Data.IDbConnection, System.Data&quot;/&gt;

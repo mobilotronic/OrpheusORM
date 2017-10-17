@@ -15,45 +15,50 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Module name.
         /// </summary>
+        /// <returns>Module name</returns>
         string Name { get; set; }
 
         /// <summary>
         /// Orpheus database.
         /// </summary>
+        /// <returns>Orpheus Database</returns>
         IOrpheusDatabase Database { get; set; }
 
         /// <summary>
         /// Module's main table options.
         /// </summary>
+        /// <returns>Module's main table options</returns>
         IOrpheusTableOptions MainTableOptions { get; set; }
 
         /// <summary>
         /// List of module's detail table options.
         /// </summary>
+        /// <returns>Module's detail table options</returns>
         List<IOrpheusTableOptions> DetailTableOptions { get; set; }
 
         /// <summary>
         /// List of module reference tables.
         /// </summary>
+        /// <returns>Module's reference table options</returns>
         List<IOrpheusTableOptions> ReferenceTableOptions { get; set; }
 
 
         /// <summary>
         /// Creates an instance of OrpheusTableOptions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An IOrpheusTableOptions instance</returns>
         IOrpheusTableOptions CreateTableOptions();
 
         /// <summary>
         /// Creates an instance of OrpheusTableOptions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An IOrpheusTableOptions instance</returns>
         IOrpheusTableOptions CreateTableOptions(string tableName,Type modelType);
 
         /// <summary>
         /// Creates an instance of OrpheusTableOptions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An IOrpheusTableOptions instance</returns>
         IOrpheusTableOptions CreateTableOptions(Type modelType);
 
         /// <summary>

@@ -27,76 +27,106 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Returns true the database exists.
         /// </summary>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
+        /// <param name="dbName">Database name</param>
+        /// <returns>True if the database exists</returns>
         bool DatabaseExists(string dbName);
 
         /// <summary>
         /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
         /// </summary>
-        /// <param name="schemaObjectName"></param>
-        /// <returns></returns>
+        /// <param name="schemaObjectName">Schema object name</param>
+        /// <returns>True if the object exists</returns>
         bool SchemaObjectExists(string schemaObjectName);
 
         /// <summary>
         /// Returns true if a database is successfully created using the underlying db engine settings.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if database was created successfully</returns>
         bool CreateDatabase();
 
         /// <summary>
         /// Returns true if a database is successfully created using the underlying db engine settings.
         /// </summary>
-        /// <param name="dbName"></param>
-        /// <returns></returns>
+        /// <param name="dbName">Database name</param>
+        /// <returns>True if the database was created successfully</returns>
         bool CreateDatabase(string dbName);
 
         /// <summary>
         /// Returns true if a database is successfully created using the passed DDL script.
         /// </summary>
-        /// <param name="ddlString"></param>
-        /// <returns></returns>
+        /// <param name="ddlString">DDL command</param>
+        /// <returns>True if the database was created successfully</returns>
         bool CreateDatabaseWithDDL(string ddlString);
 
         /// <summary>
         /// Database for the DDL helper.
         /// </summary>
+        /// <returns>Database the helper is associated with</returns>
         IOrpheusDatabase DB { get; set; }
 
         /// <summary>
         /// Returns the db engine specific string equivalent, for a .net type
         /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <param name="type">Type</param>
+        /// <returns>String value for the mapped DbType</returns>
         string TypeToString(Type type);
 
         /// <summary>
         /// Returns the db engine specific string equivalent, for a DbType enumeration.
         /// </summary>
-        /// <param name="dataType"></param>
-        /// <returns></returns>
+        /// <param name="dataType">DbType</param>
+        /// <returns>String value for the DbType</returns>
         string DbTypeToString(DbType dataType);
 
         /// <summary>
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
+        /// <returns>Char</returns>
         char DelimitedIndetifierStart { get; }
 
         /// <summary>
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
+        /// <returns>Char</returns>
         char DelimitedIndetifierEnd { get; }
 
         /// <summary>
         /// Returns true if the DBEngine supports natively the Guid type.
         /// </summary>
+        /// <returns>True if the DBEngine supports natively the Guid type</returns>
         bool SupportsGuidType { get; }
 
         /// <summary>
         /// Properly formats a field name, to be used in a SQL statement, in case the field name is a reserved word.
         /// </summary>
-        /// <param name="fieldName"></param>
-        /// <returns></returns>
+        /// <param name="fieldName">Field name</param>
+        /// <returns>Safely formated field name</returns>
         string SafeFormatField(string fieldName);
+
+        /// <summary>
+        /// Returns the DB specific modify table command.
+        /// </summary>
+        string ModifyColumnCommand { get; }
+
+        /// <summary>
+        /// Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.
+        /// </summary>
+        /// <param name="tableName">Table's name that schema is going to change</param>
+        /// <param name="columnsToDelete">Columns for deletion</param>
+        /// <returns></returns>
+        string SafeFormatAlterTableDropColumn(string tableName, List<string> columnsToDelete);
+
+        /// <summary>
+        /// Properly formats an ALTER TABLE ADD COLUMN command for the underlying database engine.
+        /// </summary>
+        /// <param name="tableName">Table's name that schema is going to change</param>
+        /// <param name="columnsToAdd">Columns for creation</param>
+        /// <returns></returns>
+        string SafeFormatAlterTableAddColumn(string tableName, List<string> columnsToAdd);
+
+        /// <summary>
+        /// Gets the database name.
+        /// </summary>
+        string DatabaseName { get; }
     }
 }

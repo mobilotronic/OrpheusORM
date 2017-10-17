@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ISchemaObject
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -75,7 +76,7 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.ISchemaObject">
   
   
@@ -114,7 +115,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.DDLAction.html">DDLAction</a></td>
-        <td></td>
+        <td><p>Defines the DDL action to be taken when schema objects are executed</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -140,7 +142,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaConstraint.html">ISchemaConstraint</a>&gt;</td>
-        <td></td>
+        <td><p>Constraints in the schema object</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -166,7 +169,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
-        <td></td>
+        <td><p>Database where the schema object exists</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -192,7 +196,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaField.html">ISchemaField</a>&gt;</td>
-        <td></td>
+        <td><p>Fields in the schema object</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -218,7 +223,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>True if the schema object is created in the DB</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -244,7 +250,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Set raw DDL for the schema object</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -270,7 +277,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.ISchema.html">ISchema</a></td>
-        <td></td>
+        <td><p>Schema where the schema object exists</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -296,7 +304,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Schema name</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -322,7 +331,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
-        <td></td>
+        <td><p>Schema objects that depend on this object</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -348,7 +358,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
-        <td></td>
+        <td><p>Schema object that this object depends upon</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -374,7 +385,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>SQL name of the schema object</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -400,7 +412,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Guid</span></td>
-        <td></td>
+        <td><p>Schema object unique key</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -464,6 +477,32 @@
   </table>
   
   
+  <a id="OrpheusInterfaces_ISchemaObject_AddDependency_" data-uid="OrpheusInterfaces.ISchemaObject.AddDependency*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaObject_AddDependency__1" data-uid="OrpheusInterfaces.ISchemaObject.AddDependency``1">AddDependency&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Adds a dependency to a schema object based on the model type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddDependency&lt;T&gt;()where T : class</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="OrpheusInterfaces_ISchemaObject_AddField_" data-uid="OrpheusInterfaces.ISchemaObject.AddField*"></a>
   <h4 id="OrpheusInterfaces_ISchemaObject_AddField_System_String_System_String_System_Boolean_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.ISchemaObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)">AddField(String, String, Boolean, String, String, String)</h4>
   <div class="markdown level1 summary"><p>Creates and adds a field to the field list.</p>
@@ -486,27 +525,32 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>Field name</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">dataType</span></td>
-        <td></td>
+        <td><p>Field data type</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">nullable</span></td>
-        <td></td>
+        <td><p>Nullable</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">defaultValue</span></td>
-        <td></td>
+        <td><p>Field default value</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">size</span></td>
-        <td></td>
+        <td><p>Field size</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
@@ -554,27 +598,32 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>Constraint name</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">fields</span></td>
-        <td></td>
+        <td><p>Constraint fields</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">foreignKeySchemaObject</span></td>
-        <td></td>
+        <td><p>Reference table name</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">foreignKeySchemaFields</span></td>
-        <td></td>
+        <td><p>Reference table fields</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">onCascadeDelete</span></td>
-        <td></td>
+        <td><p>Cascade on delete</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
@@ -622,17 +671,20 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>Constraint name</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">fields</span></td>
-        <td></td>
+        <td><p>Constraint fields</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.SchemaSort.html">SchemaSort</a></td>
         <td><span class="parametername">sort</span></td>
-        <td></td>
+        <td><p>Constraint sort</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -675,12 +727,14 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">name</span></td>
-        <td></td>
+        <td><p>Constraint name</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">fields</span></td>
-        <td></td>
+        <td><p>Constraint fields</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -704,8 +758,8 @@
   <a id="OrpheusInterfaces_ISchemaObject_CreateFieldsFromModel_" data-uid="OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel*"></a>
   <h4 id="OrpheusInterfaces_ISchemaObject_CreateFieldsFromModel_System_Object_" data-uid="OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel(System.Object)">CreateFieldsFromModel(Object)</h4>
   <div class="markdown level1 summary"><p>Creates fields from a given model.
-Supports <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a> attributes
-<param name="model"></p>
+Supports OrpheusAttributes attributes
+<param name="model">Instance of model</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -726,6 +780,64 @@ Supports <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a> att
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">model</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="OrpheusInterfaces_ISchemaObject_CreateFieldsFromModel_" data-uid="OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaObject_CreateFieldsFromModel_System_Type_" data-uid="OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel(System.Type)">CreateFieldsFromModel(Type)</h4>
+  <div class="markdown level1 summary"><p>Creates fields from a given model.
+Supports OrpheusAttributes attributes
+<param name="modelType">Model type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CreateFieldsFromModel(Type modelType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">modelType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="OrpheusInterfaces_ISchemaObject_CreateFieldsFromModel_" data-uid="OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaObject_CreateFieldsFromModel__1" data-uid="OrpheusInterfaces.ISchemaObject.CreateFieldsFromModel``1">CreateFieldsFromModel&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Creates fields from a given model.
+Supports OrpheusAttributes attributes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CreateFieldsFromModel&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Model type</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -760,7 +872,7 @@ Supports <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a> att
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string GetConstraintsDDL()</code></pre>
+    <pre><code class="lang-csharp hljs">List&lt;string&gt; GetConstraintsDDL()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -772,8 +884,9 @@ Supports <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a> att
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>Get the generated DDL string for the schema constraints</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -799,7 +912,8 @@ Supports <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a> att
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
-        <td></td>
+        <td><p>Schema object&apos;s data</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -814,7 +928,8 @@ Supports <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a> att
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Schema object model type</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -827,7 +942,7 @@ Supports <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a> att
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string GetDDLString()</code></pre>
+    <pre><code class="lang-csharp hljs">List&lt;string&gt; GetDDLString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -839,8 +954,9 @@ Supports <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a> att
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>Get the generated DDL string for the schema object</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -866,7 +982,8 @@ Supports <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a> att
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.SchemaObjectType.html">SchemaObjectType</a></td>
-        <td></td>
+        <td><p>Schema type</p>
+</td>
       </tr>
     </tbody>
   </table>

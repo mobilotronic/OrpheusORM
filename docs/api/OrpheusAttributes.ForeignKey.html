@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ForeignKey
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -75,7 +76,7 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="OrpheusAttributes.ForeignKey">
   
   
@@ -96,7 +97,7 @@ Decorate a property with attribute to create a foreign key constraint on a schem
   <h6><strong>Assembly</strong>: OrpheusAttributes.dll</h6>
   <h5 id="OrpheusAttributes_ForeignKey_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ForeignKey : OrpheusBaseAttribute, _Attribute</code></pre>
+    <pre><code class="lang-csharp hljs">public class ForeignKey : OrpheusBaseAttribute</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -124,22 +125,26 @@ Decorate a property with attribute to create a foreign key constraint on a schem
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">referenceTable</span></td>
-        <td></td>
+        <td><p>The referenced table name</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">referenceField</span></td>
-        <td></td>
+        <td><p>The referenced field name</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">onDeleteCascade</span></td>
-        <td></td>
+        <td><p>Delete cascade flag</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">onUpdateCascade</span></td>
-        <td></td>
+        <td><p>Update cascade flag</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -167,22 +172,26 @@ Decorate a property with attribute to create a foreign key constraint on a schem
       <tr>
         <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">referenceTableType</span></td>
-        <td></td>
+        <td><p>The referenced table type</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">referenceField</span></td>
-        <td></td>
+        <td><p>The referenced field name</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">onDeleteCascade</span></td>
-        <td></td>
+        <td><p>Delete cascade flag</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><span class="parametername">onUpdateCascade</span></td>
-        <td></td>
+        <td><p>Update cascade flag</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -192,7 +201,7 @@ Decorate a property with attribute to create a foreign key constraint on a schem
   
   <a id="OrpheusAttributes_ForeignKey_OnDeleteCascade_" data-uid="OrpheusAttributes.ForeignKey.OnDeleteCascade*"></a>
   <h4 id="OrpheusAttributes_ForeignKey_OnDeleteCascade" data-uid="OrpheusAttributes.ForeignKey.OnDeleteCascade">OnDeleteCascade</h4>
-  <div class="markdown level1 summary"><p>On delete cascade flag.</p>
+  <div class="markdown level1 summary"><p>Set to true to enable cascade delete.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -210,7 +219,8 @@ Decorate a property with attribute to create a foreign key constraint on a schem
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>Delete cascade flag</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -218,7 +228,7 @@ Decorate a property with attribute to create a foreign key constraint on a schem
   
   <a id="OrpheusAttributes_ForeignKey_OnUpdateCascade_" data-uid="OrpheusAttributes.ForeignKey.OnUpdateCascade*"></a>
   <h4 id="OrpheusAttributes_ForeignKey_OnUpdateCascade" data-uid="OrpheusAttributes.ForeignKey.OnUpdateCascade">OnUpdateCascade</h4>
-  <div class="markdown level1 summary"><p>On update cascade flag.</p>
+  <div class="markdown level1 summary"><p>Set to true to enable cascade update.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -236,7 +246,8 @@ Decorate a property with attribute to create a foreign key constraint on a schem
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>Update cascade flag</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -262,7 +273,8 @@ Decorate a property with attribute to create a foreign key constraint on a schem
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>The referenced table key</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -288,14 +300,11 @@ Decorate a property with attribute to create a foreign key constraint on a schem
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>The referenced table name</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <span class="xref">System.Runtime.InteropServices._Attribute</span>
-  </div>
 </article>
           </div>
         </div>

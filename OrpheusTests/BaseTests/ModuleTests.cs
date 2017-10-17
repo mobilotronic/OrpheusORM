@@ -1,14 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OrpheusCore;
+using OrpheusCore.ServiceProvider;
 using OrpheusInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Practices.Unity;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using OrpheusCore;
+using OrpheusTestModels;
 
 namespace OrpheusTests
 {
@@ -19,10 +20,9 @@ namespace OrpheusTests
             this.Initialize();
             this.ReCreateSchema();
 
-            var module = OrpheusIocContainer.Resolve<IOrpheusModule>(new ResolverOverride[] {
-                new ParameterOverride("database",this.Database)
-            });
-            var tableOptions = OrpheusIocContainer.Resolve<IOrpheusTableOptions>();
+            var module = this.Database.CreateModule();
+
+            var tableOptions = this.Database.CreateTableOptions();
             tableOptions.TableName = "TestModelTransactor";
             var transactorsTable = this.Database.CreateTable<TestModelTransactor>(tableOptions);
 
@@ -48,9 +48,7 @@ namespace OrpheusTests
             this.Initialize();
             this.ReCreateSchema();
 
-            var module = OrpheusIocContainer.Resolve<IOrpheusModule>(new ResolverOverride[] {
-                new ParameterOverride("database",this.Database)
-            });
+            var module = this.Database.CreateModule();
 
             module.ReferenceTables.Add(this.Database.CreateTable<TestModelTransactor>("TestModelTransactor"));
             module.ReferenceTables.Add(this.Database.CreateTable<TestModelItem>("TestModelItem"));
@@ -60,13 +58,13 @@ namespace OrpheusTests
             var order = module.GetTable<TestModelOrder>("TestModelOrder");
 
 
-            var orderLineOptions = OrpheusIocContainer.Resolve<IOrpheusTableOptions>();
+            var orderLineOptions = this.Database.CreateTableOptions();
             orderLineOptions.TableName = "TestModelOrderLine";
             orderLineOptions.MasterTableKeyFields = new List<IOrpheusTableKeyField>();
             orderLineOptions.Database = this.Database;
 
 
-            var orderMasterKeyField = OrpheusIocContainer.Resolve<IOrpheusTableKeyField>();
+            var orderMasterKeyField = this.Database.CreateTableKeyField();
             orderMasterKeyField.Name = "OrderId";
             orderLineOptions.MasterTableKeyFields.Add(orderMasterKeyField);
             orderLineOptions.MasterTableName = "TestModelOrder";
@@ -121,7 +119,7 @@ namespace OrpheusTests
         {
             this.Initialize();
             this.ReCreateSchema();
-            var moduleDefinition = OrpheusIocContainer.Resolve<IOrpheusModuleDefinition>();
+            var moduleDefinition = this.Database.CreateModuleDefinition();
             moduleDefinition.MainTableOptions = moduleDefinition.CreateTableOptions("TestModelOrder",typeof(TestModelOrder));
 
             moduleDefinition.ReferenceTableOptions.Add(moduleDefinition.CreateTableOptions("TestModelTransactor", typeof(TestModelTransactor)));
@@ -182,7 +180,7 @@ namespace OrpheusTests
             this.Initialize();
             var filename = Directory.GetCurrentDirectory() + @"\orpheusModuleDefinition.xml";
 
-            var moduleDefinition = OrpheusIocContainer.Resolve<IOrpheusModuleDefinition>();
+            var moduleDefinition = this.Database.CreateModuleDefinition();
             moduleDefinition.MainTableOptions = moduleDefinition.CreateTableOptions("TEST_MODEL_ORDERS", typeof(TestModelOrder));
 
             moduleDefinition.ReferenceTableOptions.Add(moduleDefinition.CreateTableOptions("TEST_MODEL_TRANSACTORS", typeof(TestModelTransactor)));
@@ -194,7 +192,7 @@ namespace OrpheusTests
             moduleDefinition.DetailTableOptions.Add(detailTableOptions);
             moduleDefinition.SaveTo(filename);
 
-            var newModuleDefinition = OrpheusIocContainer.Resolve<IOrpheusModuleDefinition>();
+            var newModuleDefinition = this.Database.CreateModuleDefinition();
             newModuleDefinition.LoadFrom(filename);
 
             var newDetailTableCount = (from detailTable in moduleDefinition.DetailTableOptions
@@ -346,9 +344,7 @@ namespace OrpheusTests
             this.Initialize();
             this.ReCreateSchema();
 
-            var module = OrpheusIocContainer.Resolve<IOrpheusModule>(new ResolverOverride[] {
-                new ParameterOverride("database",this.Database)
-            });
+            var module = this.Database.CreateModule();
 
             module.ReferenceTables.Add(this.Database.CreateTable<TestModelTransactor>("TestModelTransactor"));
             module.ReferenceTables.Add(this.Database.CreateTable<TestModelItem>("TestModelItem"));
@@ -358,13 +354,13 @@ namespace OrpheusTests
             var order = module.GetTable<TestModelOrder>("TestModelOrder");
 
 
-            var orderLineOptions = OrpheusIocContainer.Resolve<IOrpheusTableOptions>();
+            var orderLineOptions = this.Database.CreateTableOptions();
             orderLineOptions.TableName = "TestModelOrderLine";
             orderLineOptions.MasterTableKeyFields = new List<IOrpheusTableKeyField>();
             orderLineOptions.Database = this.Database;
 
 
-            var orderMasterKeyField = OrpheusIocContainer.Resolve<IOrpheusTableKeyField>();
+            var orderMasterKeyField = this.Database.CreateTableKeyField();
             orderMasterKeyField.Name = "OrderId";
             orderLineOptions.MasterTableKeyFields.Add(orderMasterKeyField);
             orderLineOptions.MasterTableName = "TestModelOrder";

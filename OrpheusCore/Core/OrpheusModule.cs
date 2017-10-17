@@ -217,12 +217,14 @@ namespace OrpheusCore
         public void Save()
         {
             var transaction = this.Database.BeginTransaction();
+            this.OnBeforeSave?.Invoke(this, new SaveEventArguments() { Transaction = transaction });
             try
             {
                 this.saveDeletes(transaction);
                 this.saveUpdates(transaction);
                 this.saveInserts(transaction);
                 transaction.Commit();
+                this.OnAfterSave?.Invoke(this, new SaveEventArguments() { Transaction = transaction });
             }
             catch(Exception exception)
             {
@@ -284,5 +286,15 @@ namespace OrpheusCore
             this.Definition = definition;
             this.initializeModuleDefinition();
         }
+
+        /// <summary>
+        /// Occurs before records are save in the database.
+        /// </summary>
+        public event EventHandler<ISaveEventArguments> OnBeforeSave;
+
+        /// <summary>
+        /// Occurs after the transaction has been committed.
+        /// </summary>
+        public event EventHandler<ISaveEventArguments> OnAfterSave;
     }
 }

@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IOrpheusDDLHelper
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -75,7 +76,7 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.IOrpheusDDLHelper">
   
   
@@ -93,6 +94,32 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   </div>
   <h3 id="properties">Properties
   </h3>
+  
+  
+  <a id="OrpheusInterfaces_IOrpheusDDLHelper_DatabaseName_" data-uid="OrpheusInterfaces.IOrpheusDDLHelper.DatabaseName*"></a>
+  <h4 id="OrpheusInterfaces_IOrpheusDDLHelper_DatabaseName" data-uid="OrpheusInterfaces.IOrpheusDDLHelper.DatabaseName">DatabaseName</h4>
+  <div class="markdown level1 summary"><p>Gets the database name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string DatabaseName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   
   
   <a id="OrpheusInterfaces_IOrpheusDDLHelper_DB_" data-uid="OrpheusInterfaces.IOrpheusDDLHelper.DB*"></a>
@@ -115,7 +142,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
-        <td></td>
+        <td><p>Database the helper is associated with</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -141,7 +169,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
-        <td></td>
+        <td><p>Char</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -167,6 +196,33 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Char</span></td>
+        <td><p>Char</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="OrpheusInterfaces_IOrpheusDDLHelper_ModifyColumnCommand_" data-uid="OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand*"></a>
+  <h4 id="OrpheusInterfaces_IOrpheusDDLHelper_ModifyColumnCommand" data-uid="OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand">ModifyColumnCommand</h4>
+  <div class="markdown level1 summary"><p>Returns the DB specific modify table command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ModifyColumnCommand { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -193,7 +249,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>True if the DBEngine supports natively the Guid type</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -221,7 +278,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>True if database was created successfully</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -249,7 +307,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">dbName</span></td>
-        <td></td>
+        <td><p>Database name</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -264,7 +323,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>True if the database was created successfully</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -292,7 +352,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">ddlString</span></td>
-        <td></td>
+        <td><p>DDL command</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -307,7 +368,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>True if the database was created successfully</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -335,7 +397,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">dbName</span></td>
-        <td></td>
+        <td><p>Database name</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -350,7 +413,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>True if the database exists</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -378,7 +442,109 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
       <tr>
         <td><span class="xref">System.Data.DbType</span></td>
         <td><span class="parametername">dataType</span></td>
+        <td><p>DbType</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>String value for the DbType</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_" data-uid="OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn*"></a>
+  <h4 id="OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})">SafeFormatAlterTableAddColumn(String, List&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE ADD COLUMN command for the underlying database engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string SafeFormatAlterTableAddColumn(string tableName, List&lt;string&gt; columnsToAdd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">tableName</span></td>
+        <td><p>Table&apos;s name that schema is going to change</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">columnsToAdd</span></td>
+        <td><p>Columns for creation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_" data-uid="OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn*"></a>
+  <h4 id="OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})">SafeFormatAlterTableDropColumn(String, List&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string SafeFormatAlterTableDropColumn(string tableName, List&lt;string&gt; columnsToDelete)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">tableName</span></td>
+        <td><p>Table&apos;s name that schema is going to change</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">columnsToDelete</span></td>
+        <td><p>Columns for deletion</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -421,7 +587,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">fieldName</span></td>
-        <td></td>
+        <td><p>Field name</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -436,7 +603,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Safely formated field name</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -464,7 +632,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">schemaObjectName</span></td>
-        <td></td>
+        <td><p>Schema object name</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -479,7 +648,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>True if the object exists</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -507,7 +677,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
       <tr>
         <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">type</span></td>
-        <td></td>
+        <td><p>Type</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -522,7 +693,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>String value for the mapped DbType</p>
+</td>
       </tr>
     </tbody>
   </table>

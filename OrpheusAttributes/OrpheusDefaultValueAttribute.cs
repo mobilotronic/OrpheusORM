@@ -15,12 +15,13 @@ namespace OrpheusAttributes
         /// <summary>
         /// The default value.
         /// </summary>
+        /// <returns>Default value</returns>
         public object Value { get; private set; }
 
         /// <summary>
         /// DefaultValue attribute constructor.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">Property's default value</param>
         public DefaultValue(object value)
         {
             this.Value = value;

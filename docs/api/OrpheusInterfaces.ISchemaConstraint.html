@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ISchemaConstraint
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -75,7 +76,7 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.ISchemaConstraint">
   
   
@@ -114,6 +115,33 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.DDLAction.html">DDLAction</a></td>
+        <td><p>Constraint&apos;s DDLAction</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="OrpheusInterfaces_ISchemaConstraint_ConstraintSQLCommand_" data-uid="OrpheusInterfaces.ISchemaConstraint.ConstraintSQLCommand*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaConstraint_ConstraintSQLCommand" data-uid="OrpheusInterfaces.ISchemaConstraint.ConstraintSQLCommand">ConstraintSQLCommand</h4>
+  <div class="markdown level1 summary"><p>The constraint SQL command. UNIQUE, PRIMARY KEY etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ConstraintSQLCommand { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -140,7 +168,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td></td>
+        <td><p>Fields affected from the constraint</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -148,7 +177,7 @@
   
   <a id="OrpheusInterfaces_ISchemaConstraint_Name_" data-uid="OrpheusInterfaces.ISchemaConstraint.Name*"></a>
   <h4 id="OrpheusInterfaces_ISchemaConstraint_Name" data-uid="OrpheusInterfaces.ISchemaConstraint.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Key name.</p>
+  <div class="markdown level1 summary"><p>Constraint name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -166,7 +195,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Constraint name</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -192,7 +222,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a></td>
-        <td></td>
+        <td><p>The schema object where the constraint exists</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -218,7 +249,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.SchemaSort.html">SchemaSort</a></td>
-        <td></td>
+        <td><p>Schema sort type</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -246,7 +278,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Constraint&apos;s SQL</p>
+</td>
       </tr>
     </tbody>
   </table>

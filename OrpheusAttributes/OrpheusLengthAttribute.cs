@@ -16,12 +16,13 @@ namespace OrpheusAttributes
         /// <summary>
         /// The maximum length value.
         /// </summary>
+        /// <returns>Length</returns>
         public int Value { get; private set; }
 
         /// <summary>
         /// Length attribute constructor.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The max length value</param>
         public Length(int value)
         {
             this.Value = value;

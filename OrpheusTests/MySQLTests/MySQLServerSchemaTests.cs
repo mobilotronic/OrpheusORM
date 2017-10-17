@@ -24,6 +24,12 @@ namespace OrpheusTests.MySQLTests
             this.DropCreateSchema();
         }
 
+        [TestMethod]
+        public void MySQLServerCreateDynamicSchema()
+        {
+            this.CreateDynamicSchema();
+        }
+
         public MySQLServerSchemaTests()
         {
             TestDatabase.DatabaseEngine = DbEngine.dbMySQL;

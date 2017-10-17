@@ -5,6 +5,7 @@ using OrpheusLogger;
 using Microsoft.Extensions.Logging;
 using System.IO;
 using System.Reflection;
+using OrpheusCore.Configuration;
 
 namespace OrpheusTests.LoggerTests
 {
@@ -25,15 +26,15 @@ namespace OrpheusTests.LoggerTests
         [TestMethod]
         public void TestSeverityLevel()
         {
-            OrpheusCore.Orpheus.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
-            var logger = OrpheusCore.OrpheusIocContainer.Resolve<ILogger>();
-            OrpheusLoggerConfiguration.Configuration.Level = "Information";
+            ConfigurationManager.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
+            var logger = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            ConfigurationManager.Configuration.Logging.Level = "Information";
             var errorId = Guid.NewGuid().ToString();
             var informationId = Guid.NewGuid().ToString();
             var debugId = Guid.NewGuid().ToString();
             logger.LogError("Error message {0}", errorId);
             logger.LogInformation("Information message {0}", informationId);
-            OrpheusLoggerConfiguration.Configuration.Level = "Error";
+            ConfigurationManager.Configuration.Logging.Level = "Error";
             logger.LogDebug("Debug message {0}", debugId);
 
             var logFileContents = File.ReadAllText((logger as OrpheusFileLogger).LogFileName);
@@ -49,10 +50,10 @@ namespace OrpheusTests.LoggerTests
         public void TestLogFilePath()
         {
             var newFolder = @"C:\Temp";
-            OrpheusCore.Orpheus.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
+            OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
             Directory.CreateDirectory(newFolder);
-            var logger = OrpheusCore.OrpheusIocContainer.Resolve<ILogger>();
-            OrpheusLoggerConfiguration.Configuration.FilePath = newFolder;
+            var logger = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            ConfigurationManager.Configuration.Logging.FilePath = newFolder;
             if (Directory.Exists(newFolder + @"\Orpheus"))
             {
                 foreach (var fileInfo in Directory.GetFiles(newFolder + @"\Orpheus", "*.log", SearchOption.AllDirectories))
@@ -72,10 +73,10 @@ namespace OrpheusTests.LoggerTests
         [TestMethod]
         public void TestLogFileSize()
         {
-            OrpheusCore.Orpheus.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
-            var logger = OrpheusCore.OrpheusIocContainer.Resolve<ILogger>();
-            OrpheusLoggerConfiguration.Configuration.Level = "Debug";
-            OrpheusLoggerConfiguration.Configuration.MaxFileSize = 1;
+            ConfigurationManager.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
+            var logger = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            ConfigurationManager.Configuration.Logging.Level = "Debug";
+            ConfigurationManager.Configuration.Logging.MaxFileSize = 1;
             var logFilePath = Path.GetDirectoryName((logger as OrpheusFileLogger).LogFileName);
             if (Directory.Exists(logFilePath))
             {

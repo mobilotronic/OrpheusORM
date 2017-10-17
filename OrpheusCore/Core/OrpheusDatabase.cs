@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Practices.Unity;
 using OrpheusInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Text.RegularExpressions;
 
 
@@ -164,12 +164,12 @@ namespace OrpheusCore
         }
         #endregion
 
-        public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper)
+        public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILogger logger)
         {
             this.dbConnection = connection;
             this.ddlHelper = ddlHelper;
             this.modules = new List<IOrpheusModule>();
-            this.logger = OrpheusIocContainer.Resolve<ILogger>();
+            this.logger = logger;
             this.initializeTypeMap();
         }
 
@@ -182,11 +182,25 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusModule CreateModule(IOrpheusModuleDefinition definition = null)
         {
-            return
-                OrpheusIocContainer.Resolve<IOrpheusModule>(new ResolverOverride[] {
-                new ParameterOverride("database",this),
-                new ParameterOverride("definition",definition)
-            });
+            return new OrpheusModule(this, definition);
+        }
+
+        /// <summary>
+        /// Creates an OrpheusTableOptions.
+        /// </summary>
+        /// <returns></returns>
+        public IOrpheusTableOptions CreateTableOptions()
+        {
+            return new OrpheusTableOptions();
+        }
+
+        /// <summary>
+        /// Creates an OrpheusTableKeyField.
+        /// </summary>
+        /// <returns></returns>
+        public IOrpheusTableKeyField CreateTableKeyField()
+        {
+            return new OrpheusTableKeyField();
         }
 
         /// <summary>
@@ -195,7 +209,7 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusModuleDefinition CreateModuleDefinition()
         {
-            var result = OrpheusIocContainer.Resolve<IOrpheusModuleDefinition>();
+            var result = new OrpheusModuleDefinition();
             result.Database = this;
             return result;
         }
@@ -211,7 +225,7 @@ namespace OrpheusCore
             if(options != null)
             {
                 options.Database = this;
-                return OrpheusIocContainer.Resolve<IOrpheusTable<T>>(new ResolverOverride[] {  new ParameterOverride("options",options)});
+                return new OrpheusTable<T>(options);
             }
             return null;
         }
@@ -224,10 +238,21 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusTable<T> CreateTable<T>(string tableName,List<IOrpheusTableKeyField> keyFields = null)
         {
-            var options = OrpheusIocContainer.Resolve<IOrpheusTableOptions>();
+            var options = this.CreateTableOptions();
             options.TableName = tableName;
             options.KeyFields = keyFields == null ? new List<IOrpheusTableKeyField>() : keyFields;
             return this.CreateTable<T>(options);
+        }
+
+        /// <summary>
+        /// Creates an OrpheusTable, using the type name as the table name.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public IOrpheusTable<T> CreateTable<T>()
+        {
+            var tableName = typeof(T).Name;
+            return this.CreateTable<T>(tableName);
         }
 
         /// <summary>
@@ -241,12 +266,7 @@ namespace OrpheusCore
         {
             if (id == Guid.Empty)
                 id = Guid.NewGuid();
-            return OrpheusIocContainer.Resolve<ISchema>(new ResolverOverride[] {
-                new ParameterOverride("db",this),
-                new ParameterOverride("description",description),
-                new ParameterOverride("version",version),
-                new ParameterOverride("id",id)
-            });
+            return new SchemaBuilder.Schema(this, description, version, id);
         }
 
         /// <summary>

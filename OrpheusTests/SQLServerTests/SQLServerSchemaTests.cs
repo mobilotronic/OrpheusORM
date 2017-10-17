@@ -24,6 +24,12 @@ namespace OrpheusTests.SQLServerTests
             this.DropCreateSchema();
         }
 
+        [TestMethod]
+        public void SQLServerCreateDynamicSchema()
+        {
+            this.CreateDynamicSchema();
+        }
+
         public SQLServerSchemaTests()
         {
             TestDatabase.DatabaseEngine = DbEngine.dbSQLServer;

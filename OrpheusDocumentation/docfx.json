@@ -1,0 +1,74 @@
+﻿{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**"],
+          "src": "../OrpheusInterfaces"
+        },
+        {
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**"],
+          "src": "../OrpheusAttributes"
+        }		
+      ],
+      "dest": "obj/temp/docfxapi"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [ "**/*.yml" ],
+        "src": "obj/temp/docfxapi",
+        "dest": "api"
+      },
+      {
+        "files": [
+          "*.{md,yml}",
+          "examples/**/*.{md,yml}",
+          "about/**/*.{md,yml}",
+          "documentation/**/*.{md,yml}"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+				"images/**", 
+				"**/images/**"
+				],
+        "exclude": [ "_site/**", "**/obj/**", "**.meta" ]
+      },
+      {
+        "files": "schemas/**schema.json",
+        "src": ".."
+      }
+    ],
+    "postProcessors": ["ExtractSearchIndex"],
+    "globalMetadata": {
+      "_appTitle": "Orpheus ORM",
+	  "_appLogoPath":"Images/OrpheusLogo.svg",
+	  "_enableNewTab": true,
+	  "_appFooter":"Orpheus ORM - Original Author © 2017",
+	  "_enableSearch":true	  
+    },
+    "fileMetadata": {
+      "priority": {
+        "obj/docfx/**": 1.0,
+        "**.md": 2.5,
+        "installationguides/**.md": 3,
+        "tutorial/**.md": 1.2
+      },
+      "keywords": {
+        "obj/docfx/**": ["API", "Reference"]
+      }
+    },
+    "dest": "_site",
+    "markdownEngineName": "dfm-latest",
+    "template": [
+      "default",
+      "template"
+    ]
+  }
+}

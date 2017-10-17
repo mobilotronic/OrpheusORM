@@ -31,8 +31,8 @@ namespace OrpheusCore
             {
                 List<Type> extraTypes = new List<Type>();
 
-                extraTypes.Add(OrpheusIocContainer.Resolve<IOrpheusTableOptions>().GetType());
-                extraTypes.Add(OrpheusIocContainer.Resolve<IOrpheusTableKeyField>().GetType());
+                extraTypes.Add(this.Database.CreateTableOptions().GetType());
+                extraTypes.Add(this.Database.CreateTableKeyField().GetType());
                 this.serializer = new DataContractSerializer(this.GetType(), extraTypes.ToArray());
             }
         }
@@ -70,7 +70,7 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusTableOptions CreateTableOptions()
         {
-            return OrpheusIocContainer.Resolve<IOrpheusTableOptions>();
+            return this.Database.CreateTableOptions();
         }
 
         /// <summary>

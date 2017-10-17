@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ISchema
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.24.0.0">
+    <meta name="generator" content="docfx 2.25.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     <meta property="docfx:rel" content="../">
@@ -75,7 +76,7 @@
           </div>
         </div>
         <div class="article row grid-right">
-          <div class="col-md-10">
+          <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.ISchema">
   
   
@@ -114,7 +115,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
-        <td></td>
+        <td><p>Instance of the Orpheus Database</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -140,7 +142,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Schema description</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -166,7 +169,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Guid</span></td>
-        <td></td>
+        <td><p>Schema unique id</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -192,7 +196,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Table name for the Orpheus schema information table</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -218,7 +223,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Table name for the Orpheus schema modules table</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -270,7 +276,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Table name for the Orpheus schema objects table</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -296,7 +303,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Double</span></td>
-        <td></td>
+        <td><p>Schema version</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -341,7 +349,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a></td>
-        <td></td>
+        <td><p>The schema object that was added</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -369,12 +378,14 @@
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">model</span></td>
-        <td></td>
+        <td><p>Model will be used to auto-generate fields, primary keys etc, for the schema object</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
         <td><span class="parametername">dependencies</span></td>
-        <td></td>
+        <td><p>List of schema objects, that this objects depends upon</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -417,17 +428,20 @@
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td></td>
+        <td><p>Table name</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
         <td><span class="parametername">dependencies</span></td>
-        <td></td>
+        <td><p>List of schema objects, that this objects depends upon</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">model</span></td>
-        <td></td>
+        <td><p>Model will be used to auto-generate fields, primary keys etc, for the schema object</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -470,8 +484,53 @@
       <tr>
         <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">modelType</span></td>
+        <td><p>Model type will be used to auto-generate fields, primary keys etc, for the schema object</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
+        <td><span class="parametername">dependencies</span></td>
+        <td><p>List of schema objects, that this objects depends upon</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.ISchemaTable.html">ISchemaTable</a></td>
         <td></td>
       </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="OrpheusInterfaces_ISchema_AddSchemaTable_" data-uid="OrpheusInterfaces.ISchema.AddSchemaTable*"></a>
+  <h4 id="OrpheusInterfaces_ISchema_AddSchemaTable__1_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__" data-uid="OrpheusInterfaces.ISchema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})">AddSchemaTable&lt;T&gt;(List&lt;ISchemaObject&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISchemaTable AddSchemaTable&lt;T&gt;(List&lt;ISchemaObject&gt; dependencies = null)where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
         <td><span class="parametername">dependencies</span></td>
@@ -490,6 +549,21 @@
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.ISchemaTable.html">ISchemaTable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -568,7 +642,8 @@
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a></td>
         <td><span class="parametername">schemaObject</span></td>
-        <td></td>
+        <td><p>Schema object to remove</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -624,7 +699,8 @@
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a></td>
         <td><span class="parametername">schemaObject</span></td>
-        <td></td>
+        <td><p>Schema object to be checked if it exists</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -639,7 +715,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Guid</span></td>
-        <td></td>
+        <td><p>The schema object unique id</p>
+</td>
       </tr>
     </tbody>
   </table>

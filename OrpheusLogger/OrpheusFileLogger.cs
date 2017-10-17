@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Logging;
 using System.IO;
+using OrpheusCore.Configuration;
 
 namespace OrpheusLogger
 {
@@ -25,7 +26,7 @@ namespace OrpheusLogger
         #region private methods
         private bool needToStartNewFile()
         {
-            return this.getFileSizeInMB(this.logFileName) > OrpheusLoggerConfiguration.Configuration.MaxFileSize;
+            return this.getFileSizeInMB(this.logFileName) > ConfigurationManager.Configuration.Logging.MaxFileSize;
         }
         private double getFileSizeInMB(string filePath)
         {
@@ -35,8 +36,8 @@ namespace OrpheusLogger
 
         private void createLogFile()
         {
-            var logFilePath = String.IsNullOrWhiteSpace(OrpheusLoggerConfiguration.Configuration.FilePath) ?  Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\" :
-                OrpheusLoggerConfiguration.Configuration.FilePath;
+            var logFilePath = String.IsNullOrWhiteSpace(ConfigurationManager.Configuration.Logging.FilePath) ?  Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\" :
+                ConfigurationManager.Configuration.Logging.FilePath;
             logFilePath = Path.Combine(logFilePath, " ").Trim();
 
             Directory.CreateDirectory(logFilePath + "Orpheus");
@@ -47,7 +48,7 @@ namespace OrpheusLogger
             if(lastLogFile != null)
             {
                 var sizeInMB = this.getFileSizeInMB(lastLogFile);
-                if (sizeInMB > OrpheusLoggerConfiguration.Configuration.MaxFileSize)
+                if (sizeInMB > ConfigurationManager.Configuration.Logging.MaxFileSize)
                     this.logFileName = this.logFileName + string.Format("_{0}", logFiles.Count() + 1) + fileExtension;
                 else
                     this.logFileName = lastLogFile;
@@ -96,7 +97,7 @@ namespace OrpheusLogger
             if (logLevel == LogLevel.None)
                 return false;
             LogLevel configurationLevel = LogLevel.None;
-            Enum.TryParse<LogLevel>(OrpheusLoggerConfiguration.Configuration.Level, out configurationLevel);
+            Enum.TryParse<LogLevel>(ConfigurationManager.Configuration.Logging.Level, out configurationLevel);
 
             //if configured level is none, then do nothing.
             if (configurationLevel == LogLevel.None)
@@ -108,9 +109,9 @@ namespace OrpheusLogger
         {
             lock (this.objectLock)
             {
-                if (!String.IsNullOrWhiteSpace(OrpheusLoggerConfiguration.Configuration.FilePath))
+                if (!String.IsNullOrWhiteSpace(ConfigurationManager.Configuration.Logging.FilePath))
                 {
-                    if (Path.GetFullPath(this.LogFileName).ToLower() != Path.GetFullPath(OrpheusLoggerConfiguration.Configuration.FilePath).ToLower())
+                    if (Path.GetFullPath(this.LogFileName).ToLower() != Path.GetFullPath(ConfigurationManager.Configuration.Logging.FilePath).ToLower())
                         this.initialize();
                 }
                 if (!File.Exists(this.logFileName) ||  this.needToStartNewFile())
