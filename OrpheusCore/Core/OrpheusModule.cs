@@ -254,6 +254,7 @@ namespace OrpheusCore
             }
         }
 
+        /// <summary>
         /// Loads a module's record from the database.
         /// You can configure having multiple fields and multiple values per field.
         /// Multiple field values are bound with a logical OR.
@@ -275,9 +276,13 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// Orpheus module constructor.
+        /// OrpheusModule class represents a logical division and grouping of a set of tables.
+        /// For example you can an OrdersModule, which will be comprised from many different tables.
+        /// Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,
+        /// will be saved as well. All master-detail relationships and keys will be updated automatically.
         /// </summary>
-        /// <param name="database"></param>
+        /// <param name="database">Module's database</param>
+        /// <param name="definition">Module's definition</param>
         public OrpheusModule(IOrpheusDatabase database,IOrpheusModuleDefinition definition = null)
         {
             this.Database = database;

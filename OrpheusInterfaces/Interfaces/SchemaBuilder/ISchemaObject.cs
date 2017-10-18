@@ -209,6 +209,7 @@ namespace OrpheusInterfaces
         /// <param name="defaultValue">Field default value</param>
         /// <param name="size">Field size</param>
         /// <param name="nullable">Nullable</param>
+        /// <param name="alias">Field alias</param>
         ISchemaField AddField(string name, string dataType, bool nullable = true, string defaultValue = null, string size = null, string alias = null);
 
         /// <summary>
@@ -230,15 +231,14 @@ namespace OrpheusInterfaces
         /// <param name="onCascadeDelete">Cascade on delete</param>
         /// <param name="onUpdateDelete">Cascade on update</param>
         /// <returns></returns>
-        IForeignKeySchemaConstraint AddForeignKeyConstraint(string name, List<string> fields, string foreignKeySchemaObject, List<string> foreignKeySchemaFields, bool onCascadeDelete = true, bool onUpdateCascade = true);
+        IForeignKeySchemaConstraint AddForeignKeyConstraint(string name, List<string> fields, string foreignKeySchemaObject, List<string> foreignKeySchemaFields, bool onCascadeDelete = true, bool onUpdateDelete = true);
 
         /// <summary>
         /// Adds a unique key constraint.
         /// </summary>
         /// <param name="name">Constraint name</param>
         /// <param name="fields">Constraint fields</param>
-        /// <param name="sort">Constraint sort</param>
-        /// <returns></returns>
+        /// <returns>An IUniqueKeySchemaConstraint</returns>
         IUniqueKeySchemaConstraint AddUniqueKeyConstraint(string name, List<string> fields);
 
         /// <summary>

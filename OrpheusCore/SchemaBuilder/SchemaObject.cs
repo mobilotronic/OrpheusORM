@@ -13,14 +13,20 @@ using Microsoft.Extensions.Logging;
 
 namespace OrpheusCore.SchemaBuilder
 {
+    /// <summary>
+    /// Base schema object.
+    /// </summary>
     public class SchemaObject : ISchemaObject
     {
         #region private fields
         private IDbCommand registerSchemaPreparedQuery;
         private IDbCommand unregisterSchemaPreparedQuery;
-        protected ILogger logger;
+        private ILogger logger;
         private object dataToSeed;
         private bool objectExistsInDatabase;
+        /// <summary>
+        /// Schema model helper.
+        /// </summary>
         protected OrpheusModelHelper modelHelper;
         #endregion
 
@@ -30,6 +36,10 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         protected IOrpheusTable seedDataTable;
 
+        /// <summary>
+        /// Returns the schema constraints SQL.
+        /// </summary>
+        /// <returns></returns>
         protected string getConstraintsDDL()
         {
             var sBuilder = new StringBuilder();
@@ -66,6 +76,10 @@ namespace OrpheusCore.SchemaBuilder
 
         }
 
+        /// <summary>
+        /// Registers an Orpheus schema.
+        /// </summary>
+        /// <param name="transaction"></param>
         protected virtual void registerSchema(IDbTransaction transaction)
         {
             if(this.Schema.SchemaObjectExists(this) == Guid.Empty && this.SQLName != this.Schema.SchemaInfoTable)
@@ -88,6 +102,10 @@ namespace OrpheusCore.SchemaBuilder
 
         }
 
+        /// <summary>
+        /// Unregisters an Orpheus schema.
+        /// </summary>
+        /// <param name="transaction"></param>
         protected virtual void unRegisterSchema(IDbTransaction transaction)
         {
             if(this.Schema.SchemaObjectExists(this) != Guid.Empty)
@@ -108,6 +126,10 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns>Returns <see cref="SchemaObjectType"/></returns>
         protected virtual SchemaObjectType getType() { return SchemaObjectType.sotUnknown; }
 
+        /// <summary>
+        /// Returns true if the schema can be executed.
+        /// </summary>
+        /// <returns></returns>
         protected virtual bool canExecuteSchema()
         {
             //if the schema object has no SQL name or it's already created and the DDLAction is not drop,
@@ -318,7 +340,6 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         /// <param name="name"></param>
         /// <param name="fields"></param>
-        /// <param name="sort"></param>
         /// <returns></returns>
         public IUniqueKeySchemaConstraint AddUniqueKeyConstraint(string name, List<string> fields)
         {

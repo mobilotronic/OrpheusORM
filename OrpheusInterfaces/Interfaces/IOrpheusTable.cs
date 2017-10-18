@@ -118,7 +118,7 @@ namespace OrpheusInterfaces
     /// Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
     /// Holds all the data of the connected table.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">Model type</typeparam>
     public interface IOrpheusTable<T> : IOrpheusTable
     {
 

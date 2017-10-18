@@ -10,6 +10,9 @@ using OrpheusCore.Configuration;
 
 namespace OrpheusLogger
 {
+    /// <summary>
+    /// Orpheus default logger implementation.
+    /// </summary>
     public class OrpheusFileLogger : ILogger
     {
         #region private properties
@@ -86,11 +89,22 @@ namespace OrpheusLogger
         }
         #endregion
 
+        /// <summary>
+        /// Not supported.
+        /// </summary>
+        /// <typeparam name="TState"></typeparam>
+        /// <param name="state"></param>
+        /// <returns></returns>
         public IDisposable BeginScope<TState>(TState state)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Returns true if the log level is enabled.
+        /// </summary>
+        /// <param name="logLevel"></param>
+        /// <returns></returns>
         public bool IsEnabled(LogLevel logLevel)
         {
             //if passed in log level do nothing.
@@ -105,6 +119,15 @@ namespace OrpheusLogger
             return logLevel >= configurationLevel;
         }
 
+        /// <summary>
+        /// Enters a log entry.
+        /// </summary>
+        /// <typeparam name="TState"></typeparam>
+        /// <param name="logLevel">Log level</param>
+        /// <param name="eventId">Event id</param>
+        /// <param name="state">State</param>
+        /// <param name="exception">Exception object</param>
+        /// <param name="formatter">Formatter function</param>
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
             lock (this.objectLock)
@@ -164,13 +187,22 @@ namespace OrpheusLogger
             }
         }
 
+        /// <summary>
+        /// Log file name.
+        /// </summary>
         public string LogFileName { get { return this.logFileName; } }
 
+        /// <summary>
+        /// Creates the default Orpheus logger.
+        /// </summary>
         public OrpheusFileLogger()
         {
             this.initialize();
         }
 
+        /// <summary>
+        /// Destructor.
+        /// </summary>
         ~OrpheusFileLogger()
         {
         }

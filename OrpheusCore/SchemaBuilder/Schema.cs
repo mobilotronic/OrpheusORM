@@ -53,6 +53,9 @@ namespace OrpheusCore.SchemaBuilder
         public Guid SchemaId { get; set; }
     }
 
+    /// <summary>
+    /// Represents an Orpheus Schema.
+    /// </summary>
     public class Schema : ISchema
     {
         private IOrpheusDatabase db;
@@ -103,15 +106,34 @@ namespace OrpheusCore.SchemaBuilder
             this.internalSchemaModules.Drop();
             this.internalSchemaInfo.Drop();
         }
-        
+
+        /// <summary>
+        /// Orpheus database.
+        /// </summary>
+        /// <returns>Instance of the Orpheus Database</returns>
         public IOrpheusDatabase DB { get { return this.db; } }
 
+        /// <summary>
+        /// List of schema objects. <see cref="ISchemaObject"/>
+        /// </summary>
         public List<ISchemaObject> SchemaObjects { get; set; }
 
+        /// <summary>
+        /// Schema description.
+        /// </summary>
+        /// <returns>Schema description</returns>
         public string Description { get; private set; }
 
+        /// <summary>
+        /// Schema version.
+        /// </summary>
+        /// <returns>Schema version</returns>
         public double Version { get; private set; }
 
+        /// <summary>
+        /// Schema Id.
+        /// </summary>
+        /// <returns>Schema unique id</returns>
         public Guid Id { get { return this.id; } }
         
         /// <summary>
@@ -206,7 +228,6 @@ namespace OrpheusCore.SchemaBuilder
         /// Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.
         /// </summary>
         /// <param name="dependencies"></param>
-        /// <param name="modelType"></param>
         /// <returns></returns>
         public ISchemaTable AddSchemaTable<T>(List<ISchemaObject> dependencies = null) where T:class
         {
@@ -315,6 +336,10 @@ namespace OrpheusCore.SchemaBuilder
             get { return this.schemaObjectPrefix + this.schemaInfoTable; }
         }
 
+        /// <summary>
+        /// Orpheus module definition table.
+        /// </summary>
+        /// <returns>Table name for the Orpheus schema modules table</returns>
         public string SchemaModulesTable
         {
             get { return this.schemaObjectPrefix + this.schemaModulesTable; }

@@ -21,7 +21,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusTestModels", "Orpheu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusDocumentation", "OrpheusDocumentation\OrpheusDocumentation.csproj", "{0AC15BBA-0A34-4636-93D6-45924BAE1A3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrpheusTestsBenchMark", "OrpheusTestsBenchMark\OrpheusTestsBenchMark.csproj", "{472EA0A3-9A2C-4164-BF6F-905E5FEE8747}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusTestsBenchMark", "OrpheusTestsBenchMark\OrpheusTestsBenchMark.csproj", "{472EA0A3-9A2C-4164-BF6F-905E5FEE8747}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{B2F48277-3D65-4431-BAD0-B4A5C8B7ED00}"
+	ProjectSection(SolutionItems) = preProject
+		Nuget\CreatePackage.cmd = Nuget\CreatePackage.cmd
+		Nuget\nuget.exe = Nuget\nuget.exe
+		Nuget\OrpheusIcon.png = Nuget\OrpheusIcon.png
+		Nuget\OrpheusORM.nuspec = Nuget\OrpheusORM.nuspec
+		Nuget\OrpheusORMMySQLServerHelper.nuspec = Nuget\OrpheusORMMySQLServerHelper.nuspec
+		Nuget\OrpheusORMSQLServerHelper.nuspec = Nuget\OrpheusORMSQLServerHelper.nuspec
+		Nuget\PublishPackage.cmd = Nuget\PublishPackage.cmd
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +90,7 @@ Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 11
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://thelanguageexchange.visualstudio.com/
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = OrpheusAttributes\\OrpheusAttributes.csproj
 		SccProjectName1 = OrpheusAttributes

@@ -6,6 +6,10 @@ using System.Data;
 
 namespace OrpheusMySQLDDLHelper
 {
+    /// <summary>
+    /// MySQL Server definition of DDL helper.
+    /// DDL helper is used to execute DB engine specific DDL commands.
+    /// </summary>
     public class OrpheusMySQLServerDDLHelper : IOrpheusDDLHelper
     {
         private Dictionary<Type, string> typeMap = new Dictionary<Type, string>();
@@ -75,8 +79,16 @@ namespace OrpheusMySQLDDLHelper
             dbTypeMap[(int)ExtendedDbTypes.StringBlob] = "LONGTEXT";
         }
 
+        /// <summary>
+        /// Returns true if the DBEngine supports natively the Guid type.
+        /// </summary>
+        /// <returns>True if the DBEngine supports natively the Guid type</returns>
         public bool SupportsGuidType { get; private set; }
 
+        /// <summary>
+        /// Returns true if a database is successfully created using the underlying db engine settings.
+        /// </summary>
+        /// <returns>True if database was created successfully</returns>
         public bool CreateDatabase()
         {
             var result = false;
@@ -110,6 +122,11 @@ namespace OrpheusMySQLDDLHelper
             return result;
         }
 
+        /// <summary>
+        /// Returns true if a database is successfully created using the underlying db engine settings.
+        /// </summary>
+        /// <param name="dbName">Database name</param>
+        /// <returns>True if the database was created successfully</returns>
         public bool CreateDatabase(string dbName)
         {
             var result = false;
@@ -139,6 +156,11 @@ namespace OrpheusMySQLDDLHelper
             return result;
         }
 
+        /// <summary>
+        /// Returns true if a database is successfully created using the passed DDL script.
+        /// </summary>
+        /// <param name="ddlString">DDL command</param>
+        /// <returns>True if the database was created successfully</returns>
         public bool CreateDatabaseWithDDL(string ddlString)
         {
             var result = false;
@@ -168,6 +190,11 @@ namespace OrpheusMySQLDDLHelper
             return result;
         }
 
+        /// <summary>
+        /// Returns true the database exists.
+        /// </summary>
+        /// <param name="dbName">Database name</param>
+        /// <returns>True if the database exists</returns>
         public bool DatabaseExists(string dbName)
         {
             var result = false;
@@ -201,6 +228,11 @@ namespace OrpheusMySQLDDLHelper
             return result;
         }
 
+        /// <summary>
+        /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
+        /// </summary>
+        /// <param name="schemaObjectName">Schema object name</param>
+        /// <returns>True if the object exists</returns>
         public bool SchemaObjectExists(string schemaObjectName)
         {
             if (this.secondConnection != null)
@@ -216,7 +248,7 @@ namespace OrpheusMySQLDDLHelper
                 if (this.selectSchemaObjectConstraint == null)
                 {
                     this.selectSchemaObjectConstraint = this.secondConnection.CreateCommand();
-                    this.selectSchemaObjectConstraint.CommandText = "SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE TABLE_NAME = @NAME";
+                    this.selectSchemaObjectConstraint.CommandText = "SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE CONSTRAINT_NAME = @NAME";
                     var param = this.selectSchemaObjectConstraint.CreateParameter();
                     param.ParameterName = "@NAME";
                     this.selectSchemaObjectConstraint.Parameters.Add(param);
@@ -253,6 +285,10 @@ namespace OrpheusMySQLDDLHelper
             return false;
         }
 
+        /// <summary>
+        /// Database for the DDL helper.
+        /// </summary>
+        /// <returns>Database the helper is associated with</returns>
         public IOrpheusDatabase DB
         {
             get { return this.db; }
@@ -278,6 +314,11 @@ namespace OrpheusMySQLDDLHelper
             }
         }
 
+        /// <summary>
+        /// Returns the db engine specific string equivalent, for a .net type
+        /// </summary>
+        /// <param name="type">Type</param>
+        /// <returns>String value for the mapped DbType</returns>
         public string TypeToString(Type type)
         {
             if (this.typeMap.ContainsKey(type))
@@ -288,6 +329,11 @@ namespace OrpheusMySQLDDLHelper
             return null;
         }
 
+        /// <summary>
+        /// Returns the db engine specific string equivalent, for a DbType enumeration.
+        /// </summary>
+        /// <param name="dataType">DbType</param>
+        /// <returns>String value for the DbType</returns>
         public string DbTypeToString(DbType dataType)
         {
             if (this.dbTypeMap.ContainsKey((int)dataType))
@@ -298,8 +344,16 @@ namespace OrpheusMySQLDDLHelper
             return null;
         }
 
+        /// <summary>
+        /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
+        /// </summary>
+        /// <returns>Char</returns>
         public char DelimitedIndetifierStart { get { return '`'; } }
 
+        /// <summary>
+        /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
+        /// </summary>
+        /// <returns>Char</returns>
         public char DelimitedIndetifierEnd { get { return '`'; } }
 
         /// <summary>
@@ -352,6 +406,9 @@ namespace OrpheusMySQLDDLHelper
             }
         }
 
+        /// <summary>
+        /// MySQL Server DDL helper constructor.
+        /// </summary>
         public OrpheusMySQLServerDDLHelper()
         {
             this.initializeTypeMap();

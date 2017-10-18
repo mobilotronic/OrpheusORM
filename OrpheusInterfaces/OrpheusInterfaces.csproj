@@ -11,4 +11,8 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.0\OrpheusInterfaces.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

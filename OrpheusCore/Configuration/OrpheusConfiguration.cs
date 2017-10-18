@@ -6,6 +6,9 @@ using System.Xml.Serialization;
 
 namespace OrpheusCore.Configuration
 {
+    /// <summary>
+    /// Orpheus configuration manager.
+    /// </summary>
     public static class ConfigurationManager
     {
         private static OrpheusConfiguration configuration;
@@ -58,6 +61,10 @@ namespace OrpheusCore.Configuration
             }
         }
 
+        /// <summary>
+        /// Saves configuration to a file.
+        /// </summary>
+        /// <param name="configurationFile"></param>
         public static void SaveConfiguration(string configurationFile)
         {
             var xmlWriter = new XmlSerializer(typeof(OrpheusConfiguration));

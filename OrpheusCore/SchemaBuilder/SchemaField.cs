@@ -3,24 +3,59 @@ using System;
 
 namespace OrpheusCore.SchemaBuilder
 {
+    /// <summary>
+    /// Represents a schema field.
+    /// </summary>
     public class SchemaField : ISchemaField
     {
         private ISchemaObject schemaObject;
 
+        /// <summary>
+        /// Field alias.
+        /// </summary>
+        /// <returns>Field alias</returns>
         public string Alias { get; set; }
 
+        /// <summary>
+        /// Field data type.
+        /// </summary>
+        /// <returns>Field data type</returns>
         public string DataType { get; set; }
 
+        /// <summary>
+        /// Field name.
+        /// </summary>
+        /// <returns>Field name</returns>
         public string Name { get; set; }
 
+        /// <summary>
+        /// Field size (if applicable).
+        /// </summary>
+        /// <returns>Field size</returns>
         public string Size { get; set; }
 
+        /// <summary>
+        /// Field's default value.
+        /// </summary>
+        /// <returns>Field's default value</returns>
         public string DefaultValue { get; set; }
 
+        /// <summary>
+        /// True if field accepts null values.
+        /// </summary>
+        /// <returns>True if field accepts null values</returns>
         public bool Nullable { get; set; }
 
+        /// <summary>
+        /// Schema object where this schema field exists
+        /// </summary>
+        /// <returns>Schema object where the field exists</returns>
         public ISchemaObject SchemaObject { get { return this.schemaObject; } }
 
+        /// <summary>
+        /// Returns SQL definition for the field.
+        /// </summary>
+        /// <returns>SQL definition for the field</returns>
         public string SQL()
         {
             var result = "";
@@ -48,6 +83,11 @@ namespace OrpheusCore.SchemaBuilder
             }
             return result;
         }
+        
+        /// <summary>
+        /// Creates a schema field.
+        /// </summary>
+        /// <param name="schemaObject">Schema where the field belongs</param>
         public SchemaField(ISchemaObject schemaObject)
         {
             this.Nullable = true;

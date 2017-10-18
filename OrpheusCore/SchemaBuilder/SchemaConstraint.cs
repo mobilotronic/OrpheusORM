@@ -6,15 +6,48 @@ using System.Text;
 
 namespace OrpheusCore.SchemaBuilder
 {
+    /// <summary>
+    /// A primary key constraint.
+    /// </summary>
     public class PrimaryKeySchemaConstraint : IPrimaryKeySchemaConstraint
     {
         private ISchemaObject schemaObject;
 
+
+        ///<summary>
+        /// Fields which the constraint will be applied.
+        ///</summary>
+        ///<returns>Fields affected from the constraint</returns>
         public List<string> Fields { get; set; }
+
+        /// <summary>
+        /// Constraint name.
+        /// </summary>
+        /// <returns>Constraint name</returns>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Key's sort direction.
+        /// </summary>
+        /// <returns>Schema sort type</returns>
         public SchemaSort Sort { get; set; }
+
+        /// <summary>
+        /// Schema object were this schema constraint exists
+        /// </summary>
+        /// <returns>The schema object where the constraint exists</returns>
         public ISchemaObject SchemaObject { get { return this.schemaObject; } }
+
+        /// <summary>
+        /// Returns true if the constraint needs to drop.
+        /// </summary>
+        /// <returns>Constraint's DDLAction</returns>
         public DDLAction Action { get; set; }
+
+        /// <summary>
+        /// Returns the SQL definition of the key.
+        /// </summary>
+        /// <returns>Constraint's SQL</returns>
         public virtual string SQL()
         {
             if (this.Name == null)
@@ -53,6 +86,10 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public string ConstraintSQLCommand { get; protected set; }
 
+        /// <summary>
+        /// Creates a primary key constraint.
+        /// </summary>
+        /// <param name="schemaObject">Schema object where the constraint belong</param>
         public PrimaryKeySchemaConstraint(ISchemaObject schemaObject)
         {
             this.Fields = new List<string>();
@@ -64,16 +101,40 @@ namespace OrpheusCore.SchemaBuilder
 
     }
 
+    /// <summary>
+    /// A foreign key constraint.
+    /// </summary>
     public class ForeignKeySchemaConstraint : PrimaryKeySchemaConstraint, IForeignKeySchemaConstraint
     {
+
+        /// <summary>
+        /// Foreign key fields. Applicable only when key is of type ktForeign.
+        /// </summary>
+        /// <returns>List of key fields</returns>
         public List<string> ForeignKeyFields { get; set; }
 
+        /// <summary>
+        /// Referenced table name. Applicable only when key is of type ktForeign.
+        /// </summary>
+        /// <returns>Constraint's key</returns>
         public string ForeignKeySchemaObject { get; set; }
 
+        /// <summary>
+        /// Cascade on delete.
+        /// </summary>
+        /// <returns>True if cascade on delete is on</returns>
         public bool OnDeleteCascade { get; set; }
 
+        /// <summary>
+        /// Cascade on update.
+        /// </summary>
+        /// <returns>True if cascade on update is on</returns>
         public bool OnUpdateCascade { get; set; }
 
+        /// <summary>
+        /// Returns the SQL definition of the key.
+        /// </summary>
+        /// <returns>Constraint's SQL</returns>
         public override string SQL()
         {
             //raises an exception if name is not set.
@@ -115,6 +176,10 @@ namespace OrpheusCore.SchemaBuilder
             return result;
         }
 
+        /// <summary>
+        /// Creates a foreign key constraint.
+        /// </summary>
+        /// <param name="schemaObject">Schema object where the constraint belong</param>
         public ForeignKeySchemaConstraint(ISchemaObject schemaObject) :base(schemaObject)
         {
             this.ForeignKeyFields = new List<string>();
@@ -122,8 +187,15 @@ namespace OrpheusCore.SchemaBuilder
         }
     }
 
+    /// <summary>
+    /// A unique key constraint.
+    /// </summary>
     public class UniqueKeySchemaConstraint : PrimaryKeySchemaConstraint,IUniqueKeySchemaConstraint
     {
+        /// <summary>
+        /// Returns the SQL definition of the key.
+        /// </summary>
+        /// <returns>Constraint's SQL</returns>
         public override string SQL()
         {
             base.SQL();
@@ -160,6 +232,11 @@ namespace OrpheusCore.SchemaBuilder
 
             return result;
         }
+
+        /// <summary>
+        /// Creates a unique key constraint.
+        /// </summary>
+        /// <param name="schemaObject">Schema object where the constraint belong</param>
         public UniqueKeySchemaConstraint(ISchemaObject schemaObject) : base(schemaObject)
         {
             this.ConstraintSQLCommand = "UNIQUE";

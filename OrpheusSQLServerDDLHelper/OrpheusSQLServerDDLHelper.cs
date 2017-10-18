@@ -6,6 +6,10 @@ using System.Data.SqlClient;
 
 namespace OrpheusSQLDDLHelper
 {
+    /// <summary>
+    /// SQL Server definition of DDL helper.
+    /// DDL helper is used to execute DB engine specific DDL commands.
+    /// </summary>
     public class OrpheusSQLServerDDLHelper : IOrpheusDDLHelper
     {
         private Dictionary<Type,string> typeMap = new Dictionary<Type,string>();
@@ -75,8 +79,16 @@ namespace OrpheusSQLDDLHelper
             dbTypeMap[(int)ExtendedDbTypes.StringBlob] = "NTEXT";
         }
 
+        /// <summary>
+        /// Returns true if the DBEngine supports natively the Guid type.
+        /// </summary>
+        /// <returns>True if the DBEngine supports natively the Guid type</returns>
         public bool SupportsGuidType { get; private set; }
 
+        /// <summary>
+        /// Returns true if a database is successfully created using the underlying db engine settings.
+        /// </summary>
+        /// <returns>True if database was created successfully</returns>
         public bool CreateDatabase()
         {
             var result = false;
@@ -110,6 +122,11 @@ namespace OrpheusSQLDDLHelper
             return result;
         }
 
+        /// <summary>
+        /// Returns true if a database is successfully created using the underlying db engine settings.
+        /// </summary>
+        /// <param name="dbName">Database name</param>
+        /// <returns>True if the database was created successfully</returns>
         public bool CreateDatabase(string dbName)
         {
             var result = false;
@@ -138,6 +155,11 @@ namespace OrpheusSQLDDLHelper
             return result;
         }
 
+        /// <summary>
+        /// Returns true if a database is successfully created using the passed DDL script.
+        /// </summary>
+        /// <param name="ddlString">DDL command</param>
+        /// <returns>True if the database was created successfully</returns>
         public bool CreateDatabaseWithDDL(string ddlString)
         {
             var result = false;
@@ -167,6 +189,11 @@ namespace OrpheusSQLDDLHelper
             return result;
         }
 
+        /// <summary>
+        /// Returns true the database exists.
+        /// </summary>
+        /// <param name="dbName">Database name</param>
+        /// <returns>True if the database exists</returns>
         public bool DatabaseExists(string dbName)
         {
             var result = false;
@@ -199,6 +226,11 @@ namespace OrpheusSQLDDLHelper
             return result;
         }
 
+        /// <summary>
+        /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
+        /// </summary>
+        /// <param name="schemaObjectName">Schema object name</param>
+        /// <returns>True if the object exists</returns>
         public bool SchemaObjectExists(string schemaObjectName)
         {
             var result = false;
@@ -237,6 +269,10 @@ namespace OrpheusSQLDDLHelper
             return result;
         }
 
+        /// <summary>
+        /// Database for the DDL helper.
+        /// </summary>
+        /// <returns>Database the helper is associated with</returns>
         public IOrpheusDatabase DB
         {
             get { return this.db; }
@@ -262,6 +298,11 @@ namespace OrpheusSQLDDLHelper
             }
         }
 
+        /// <summary>
+        /// Returns the db engine specific string equivalent, for a .net type
+        /// </summary>
+        /// <param name="type">Type</param>
+        /// <returns>String value for the mapped DbType</returns>
         public string TypeToString(Type type)
         {
             if (this.typeMap.ContainsKey(type))
@@ -272,6 +313,11 @@ namespace OrpheusSQLDDLHelper
             return null;
         }
 
+        /// <summary>
+        /// Returns the db engine specific string equivalent, for a DbType enumeration.
+        /// </summary>
+        /// <param name="dataType">DbType</param>
+        /// <returns>String value for the DbType</returns>
         public string DbTypeToString(DbType dataType)
         {
             if (this.dbTypeMap.ContainsKey((int)dataType))
@@ -282,8 +328,16 @@ namespace OrpheusSQLDDLHelper
             return null;
         }
 
+        /// <summary>
+        /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
+        /// </summary>
+        /// <returns>Char</returns>
         public char DelimitedIndetifierStart { get { return '['; } }
 
+        /// <summary>
+        /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
+        /// </summary>
+        /// <returns>Char</returns>
         public char DelimitedIndetifierEnd { get { return ']'; } }
 
         /// <summary>
@@ -336,6 +390,9 @@ namespace OrpheusSQLDDLHelper
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public OrpheusSQLServerDDLHelper()
         {
             this.initializeTypeMap();

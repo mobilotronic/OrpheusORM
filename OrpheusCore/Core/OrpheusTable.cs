@@ -124,16 +124,33 @@ namespace OrpheusCore
         public int? Size { get; set; }
     }
 
+    /// <summary>
+    /// Modified record action.
+    /// </summary>
     public enum ModifiedRecordAction
     {
+        /// <summary>
+        /// Insert a new record.
+        /// </summary>
         mraInsert,
+        /// <summary>
+        /// Update an existing record.
+        /// </summary>
         mraUpdate,
+        /// <summary>
+        /// Delete an existing record.
+        /// </summary>
         mraDelete
     }
 
 
     #endregion
 
+    /// <summary>
+    /// Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
+    /// Holds all the data of the connected table.
+    /// </summary>
+    /// <typeparam name="T">Model type</typeparam>
     public class OrpheusTable<T> : IOrpheusTable<T>
     {
         #region private fields
@@ -162,7 +179,7 @@ namespace OrpheusCore
         /// <summary>
         /// Properly formats a parameter name.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">Name</param>
         /// <returns></returns>
         private string getParameterName(string name)
         {
@@ -172,7 +189,7 @@ namespace OrpheusCore
         /// <summary>
         /// Properly formats a parameter name.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="property">Property</param>
         /// <returns></returns>
         private string getParameterName(PropertyInfo property)
         {
@@ -182,7 +199,7 @@ namespace OrpheusCore
         /// <summary>
         /// Properly formats a primary key parameter.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">Name</param>
         /// <returns></returns>
         private string getKeyFieldParameterName(string name)
         {
@@ -192,7 +209,7 @@ namespace OrpheusCore
         /// <summary>
         /// Properly formats a primary key parameter.
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="property">Property</param>
         /// <returns></returns>
         private string getKeyFieldParameterName(PropertyInfo property)
         {
@@ -283,7 +300,8 @@ namespace OrpheusCore
         /// <summary>
         /// Process a record and adds master key field values if missing.
         /// </summary>
-        /// <param name="record"></param>
+        /// <param name="record">Record</param>
+        /// <param name="masterKeyValues">Key values</param>
         private void processRecordForMasterDetail(T record, List<object> masterKeyValues)
         {
             if (this.masterTable != null && this.masterTableKeyFields != null)
@@ -695,7 +713,7 @@ namespace OrpheusCore
         #endregion
 
         #region processing modified records
-        private void processModifiedRecord(T modifiedRecord, ModifiedRecordAction action)
+        private void processModifiedRecord(T modifiedRecord, ModifiedRecordAction action,int recordIndex = -1)
         {
             this.OnBeforeModify?.Invoke(this, new ModifyRecordEventArguments<T>((int)action));
             var hasKeyFields = this.KeyFields.Count() > 0;
@@ -733,25 +751,40 @@ namespace OrpheusCore
                                     }
                                 case ModifiedRecordAction.mraUpdate:
                                     {
-                                        var existingRecord = this.data[this.data.IndexOf(modifiedRecord)];
-                                        var existingKeyValue = property.GetValue(existingRecord, null);
-                                        newKeyListValuePair.Add(new KeyValuePair<string, object>(this.getParameterName(property), paramValue));
-                                        //if there is an update action and the key value has changed
-                                        //we need to execute the update using the previous key value.
-                                        if (!existingKeyValue.Equals(paramValue))
+                                        //if record was already loaded in memory, we need to make sure that the update
+                                        //will be executed against the correct key.
+                                        if(recordIndex >= 0)
                                         {
-                                            newKeyListValuePair.Add(new KeyValuePair<string, object>(this.getKeyFieldParameterName(property), existingKeyValue));
+                                            var existingRecord = this.data[recordIndex];
+                                            var existingKeyValue = property.GetValue(existingRecord, null);
+                                            newKeyListValuePair.Add(new KeyValuePair<string, object>(this.getParameterName(property), paramValue));
+                                            //if there is an update action and the key value has changed
+                                            //we need to execute the update using the previous key value.
+                                            if (!existingKeyValue.Equals(paramValue))
+                                            {
+                                                newKeyListValuePair.Add(new KeyValuePair<string, object>(this.getKeyFieldParameterName(property), existingKeyValue));
+                                            }
+                                            else
+                                            {
+                                                newKeyListValuePair.Add(new KeyValuePair<string, object>(this.getKeyFieldParameterName(property), paramValue));
+                                            }
                                         }
                                         else
                                         {
+                                            //this is one about updating the key field value.
+                                            newKeyListValuePair.Add(new KeyValuePair<string, object>(this.getParameterName(property), paramValue));
+                                            //this is will be used in the WHERE clause of the update command.
+                                            //this scenario does NOT support updating the actual record's key with a new value.
                                             newKeyListValuePair.Add(new KeyValuePair<string, object>(this.getKeyFieldParameterName(property), paramValue));
                                         }
+    
                                         break;
                                     }
                             }
                         }
                         else
                         {
+                            //setting values for non key properties.
                             newKeyListValuePair.Add(new KeyValuePair<string, object>(this.getParameterName(property.Name), paramValue));
                         }
                     }
@@ -868,7 +901,8 @@ namespace OrpheusCore
         /// <summary>
         /// Loads data from the DB to the table. Implicitly on the table key field.
         /// </summary>
-        /// <param name="keyValues"></param>
+        /// <param name="keyValues">Key values</param>
+        /// <param name="clearExistingData">If true, clears existing loaded data.</param>
         public void Load(List<object> keyValues = null,bool clearExistingData = true)
         {
             if (this.KeyFields.Count == 1)
@@ -890,7 +924,6 @@ namespace OrpheusCore
         /// Multiple field values are bound with a logical OR.
         /// Multiple fields are bound with a logical AND
         /// </summary>
-        /// <typeparam name="T">It's the type of the table key field value</typeparam>
         /// <param name="keyValues"></param>
         /// <param name="clearExistingData"></param>
         public void Load(Dictionary<string, List<object>> keyValues = null, bool clearExistingData = true)
@@ -1117,16 +1150,14 @@ namespace OrpheusCore
         public void Update(T record)
         {
             var idx = this.data.IndexOf(record);
+            //if the record was already loaded in memory, update it as well.
             if (idx >= 0)
-            {
-                
-                this.processModifiedRecord(record, ModifiedRecordAction.mraUpdate);
                 this.data[idx] = record;
-            }
-            else
-            {
-                throw new Exception("Could find a record to update.");
-            }
+            this.processModifiedRecord(record, ModifiedRecordAction.mraUpdate,idx);
+            //else
+            //{
+            //    throw new Exception("Could find a record to update.");
+            //}
         }
 
         /// <summary>

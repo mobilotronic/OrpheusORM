@@ -7,10 +7,17 @@ using System.Linq;
 
 namespace OrpheusCore.ServiceProvider
 {
+    /// <summary>
+    /// Orpheus DI service provider.
+    /// </summary>
     public class OrpheusServiceProvider
     {
         private static IServiceProvider serviceProvider;
 
+        /// <summary>
+        ///  Defines a mechanism for retrieving a service object; that is, an object that
+        ///  provides custom support to other objects.
+        /// </summary>
         public static IServiceProvider Provider
         {
             get
@@ -25,6 +32,10 @@ namespace OrpheusCore.ServiceProvider
             }
         }
 
+        /// <summary>
+        /// Initialize the service collection.
+        /// </summary>
+        /// <param name="serviceCollection"></param>
         public static void InitializeServiceCollection(IServiceCollection serviceCollection)
         {
             foreach (var scItem in ConfigurationManager.Configuration.Services)
@@ -53,6 +64,11 @@ namespace OrpheusCore.ServiceProvider
             }
         }
 
+        /// <summary>
+        /// Resolve an interface to a concrete implementation.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T Resolve<T>()
         {
             T result;

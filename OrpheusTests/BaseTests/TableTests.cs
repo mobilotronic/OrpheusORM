@@ -80,8 +80,10 @@ namespace OrpheusTests
             }
 
             usersTable.Load();
+            var tempData = usersTable.Data;
+            usersTable.ClearData();
 
-            foreach(var usr in usersTable.Data)
+            foreach (var usr in tempData)
             {
                 usr.PasswordHash = "test";
                 usersTable.Update(usr);

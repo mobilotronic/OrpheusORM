@@ -10,14 +10,28 @@ using System.Text;
 
 namespace OrpheusCore
 {
+    /// <summary>
+    /// Helper delegate, to be called when iterating through model's properties.
+    /// </summary>
+    /// <param name="property"></param>
     public delegate void ModelProperty(PropertyInfo property);
+    
+    /// <summary>
+    /// Helper delegate, to be called when iterating through property's attributes.
+    /// </summary>
+    /// <param name="attribute"></param>
     public delegate void PropertyAttribute(Attribute attribute);
 
+    /// <summary>
+    /// OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.
+    /// </summary>
     public class OrpheusModelHelper
     {
         #region private fields
         private Type modelType;
+        //caching in memory of properties and attributes, to improve performance.
         private PropertyInfo[] modelProperties;
+        private Dictionary<PropertyInfo, object[]> propertyAttributes;
         #endregion
 
         #region private methods
@@ -27,8 +41,18 @@ namespace OrpheusCore
             {
                 modelProperties = this.modelType.GetProperties();
                 Array.Sort<PropertyInfo>(modelProperties, delegate (PropertyInfo p1, PropertyInfo p2) { return p1.Name.CompareTo(p2.Name); });
+                this.propertyAttributes = new Dictionary<PropertyInfo, object[]>();
+                foreach(var prop in this.modelProperties)
+                {
+                    this.propertyAttributes.Add(prop, prop.GetCustomAttributes(true));
+                }
             }
             return modelProperties;
+        }
+
+        private object[] getPropertyAttributes(PropertyInfo prop)
+        {
+            return this.propertyAttributes[prop];
         }
 
         /// <summary>
@@ -202,14 +226,50 @@ namespace OrpheusCore
         #endregion
 
         #region public properties
+        
+        /// <summary>
+        /// Model's primary keys.
+        /// </summary>
         public Dictionary<string,PrimaryKey> PrimaryKeys { get; private set; }
+        
+        /// <summary>
+        /// Model's foreign keys.
+        /// </summary>
         public Dictionary<string,ForeignKey> ForeignKeys { get; private set; }
+        
+        /// <summary>
+        /// Model's unique keys.
+        /// </summary>
         public Dictionary<string,UniqueKey> UniqueKeys { get; private set; }
+       
+        /// <summary>
+        /// Model's composite primary keys.
+        /// </summary>
         public List<PrimaryCompositeKey> PrimaryCompositeKeys { get; private set; }
+        
+        /// <summary>
+        /// Model's composite unique keys.
+        /// </summary>
         public List<UniqueCompositeKey> UniqueCompositeKeys { get; private set; }
+       
+        /// <summary>
+        /// Model properties that are not part of the schema.
+        /// </summary>
         public List<string> SchemaIgnoreProperties { get; private set; }
+        
+        /// <summary>
+        /// Model properties that have an explicitly set field name.
+        /// </summary>
         public Dictionary<string,string> CustomFieldNameProperties { get; private set; }
+        
+        /// <summary>
+        /// Model's properties.
+        /// </summary>
         public PropertyInfo[] ModelProperties { get { return this.getModelProperties(); } }
+        
+        /// <summary>
+        /// Model's SQLName. Defaults to the model's type name.
+        /// </summary>
         public string SQLName { get; private set; }
         #endregion
 
@@ -231,13 +291,14 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// 
+        /// Helper function to iterate through the property's attributes and calls the given callback,
+        /// for each attribute.
         /// </summary>
         /// <param name="property"></param>
         /// <param name="callback"></param>
         public void IteratePropertyAttributes(PropertyInfo property, PropertyAttribute callback)
         {
-            foreach (var attr in property.GetCustomAttributes(true))
+            foreach (var attr in this.getPropertyAttributes(property))
             {
                 if (callback != null)
                 {
@@ -266,6 +327,11 @@ namespace OrpheusCore
             return this.CustomFieldNameProperties.ContainsKey(prop.Name) ? this.CustomFieldNameProperties[prop.Name] : prop.Name;
         }
 
+        /// <summary>
+        /// Creates an instance of the model and typecasts it to the given type.
+        /// </summary>
+        /// <typeparam name="T">Type to cast the model</typeparam>
+        /// <returns></returns>
         public T CreateInstance<T>()
         {
             return (T)Activator.CreateInstance(modelType);
@@ -292,6 +358,12 @@ namespace OrpheusCore
             });
         }
 
+        /// <summary>
+        /// Creates a list of SQL ALTER commands, based on the differences between the current version of the model
+        /// and the current version of the corresponding db table.
+        /// </summary>
+        /// <param name="schemaObj"></param>
+        /// <returns></returns>
         public List<string> GetAlterDDLCommands(ISchemaObject schemaObj)
         {
             var result = new List<string>();
@@ -364,7 +436,7 @@ namespace OrpheusCore
             }
             catch (Exception e)
             {
-                ///schemaObj.logger.LogError(e.Message);
+                //schemaObj.logger.LogError(e.Message);
                 throw e;
             }
             finally
@@ -379,6 +451,10 @@ namespace OrpheusCore
         }
         #endregion
 
+        /// <summary>
+        /// OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.
+        /// </summary>
+        /// <param name="modelType"></param>
         public OrpheusModelHelper(Type modelType)
         {
             this.modelType = modelType;

@@ -164,6 +164,12 @@ namespace OrpheusCore
         }
         #endregion
 
+        /// <summary>
+        /// Creates an Orpheus database.
+        /// </summary>
+        /// <param name="connection">Database connection</param>
+        /// <param name="ddlHelper">DDL helper</param>
+        /// <param name="logger">Logger</param>
         public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILogger logger)
         {
             this.dbConnection = connection;
@@ -234,7 +240,8 @@ namespace OrpheusCore
         /// Creates an OrpheusTable.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="options"></param>
+        /// <param name="tableName">Table name</param>
+        /// <param name="keyFields">Table key fields</param>
         /// <returns></returns>
         public IOrpheusTable<T> CreateTable<T>(string tableName,List<IOrpheusTableKeyField> keyFields = null)
         {
