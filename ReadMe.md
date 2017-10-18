@@ -18,3 +18,16 @@ All master-detail relationships and keys will be updated automatically.
 
 ## Documentation
 To get started go to Orpheus's [documentation](https://redacted-user.github.io/OrpheusORM/), where besides a fully documented API, you can also find examples on how to use Orpheus.
+
+## Nuget packages
+There are three available nuget packages.
+* [OrpheusORM](https://www.nuget.org/packages/OrpheusORM/)
+* [Orpheus SQL Server DDL Helper](https://www.nuget.org/packages/OrpheusORMSQLServerDDLHelper/)
+* [Orpheus MySQL Server DDL Helper](https://www.nuget.org/packages/OrpheusORMMySQLServerDDLHelper/)
+
+As mentioned in the documentation, Orpheus is database engine agnostic, but between different database engines there are differences.
+
+That's the role of the DDL helpers, to reconcile the differences between the underlying database engines.
+
+There are already two DDL helpers available for SQL and MySQL, but you can implement your own and use it.
+**Note:** MySQL DDL helper has a dependency on [MySQLConnector](https://mysql-net.github.io/MySqlConnector/) 
