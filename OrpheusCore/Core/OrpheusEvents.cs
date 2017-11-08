@@ -16,9 +16,10 @@ namespace OrpheusCore
         public T Record { get; private set; }
         public int ModifyAction { get; private set; }
 
-        public ModifyRecordEventArguments(int modifyAction)
+        public ModifyRecordEventArguments(int modifyAction, T record)
         {
             this.ModifyAction = modifyAction;
+            this.Record = record;
         }
     }
 }

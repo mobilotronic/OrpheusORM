@@ -369,6 +369,20 @@ namespace OrpheusCore
         {
             return this.dbConnection.BeginTransaction();
         }
+
+        /// <summary>
+        /// Executes a SQL statement and returns it as specific model.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="SQL"></param>
+        /// <returns></returns>
+        public List<T> SQL<T>(string SQL,string tableName = null)
+        {
+            tableName = tableName == null ? typeof(T).Name : tableName;
+            var table = this.CreateTable<T>(tableName);
+            table.Load();
+            return table.Data;
+        }
         #endregion
     }
 }

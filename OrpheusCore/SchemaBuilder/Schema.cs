@@ -236,6 +236,33 @@ namespace OrpheusCore.SchemaBuilder
         }
 
         /// <summary>
+        /// Creates a view schema object.
+        /// </summary>
+        /// <returns></returns>
+        public ISchemaView CreateSchemaView()
+        {
+            return new SchemaObjectView();
+        }
+
+        /// <summary>
+        /// Creates a table schema object.
+        /// </summary>
+        /// <returns></returns>
+        public ISchemaTable CreateSchemaTable()
+        {
+            return new SchemaObjectTable();
+        }
+
+        /// <summary>
+        /// Creates a join schema definition.
+        /// </summary>
+        /// <returns></returns>
+        public ISchemaJoinDefinition CreateSchemaJoinDefinition()
+        {
+            return new SchemaJoinDefinition();
+        }
+
+        /// <summary>
         /// Removes a schema object from the schema list.
         /// </summary>
         /// <param name="schemaObject"></param>
@@ -405,6 +432,24 @@ namespace OrpheusCore.SchemaBuilder
                 }
             }
             return result;
+        }
+
+        /// <summary>
+        /// Registers schema information, in the schema information table.
+        /// </summary>
+        public void RegisterSchema()
+        {
+            var schemaInfoTable = this.DB.CreateTable<OrpheusSchemaInfo>();
+            schemaInfoTable.Load(new List<object>() { this.Id });
+            if(schemaInfoTable.Data.Count == 0)
+            {
+                schemaInfoTable.Add(new OrpheusSchemaInfo() {
+                    Id = this.id,
+                    SchemaDescription = this.Description,
+                    Version = this.Version
+                });
+                schemaInfoTable.Save();
+            }
         }
     }
 }

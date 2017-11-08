@@ -35,3 +35,15 @@ OrpheusTestsBenchMark/BenchmarkDotnet.Artifacts
 OrpheusTests/OrpheusMySQL.config
 OrpheusTests/OrpheusMySQL.config
 OrpheusTests/OrpheusSQLServer.config
+Nuget/2.0.0/*.*
+.vs/config/applicationhost.config
+*.dll
+Nuget/2.0.0/lib/netstandard2.0/OrpheusAttributes.xml
+Nuget/2.0.0/lib/netstandard2.0/OrpheusCore.xml
+Nuget/2.0.0/lib/netstandard2.0/OrpheusInterfaces.xml
+Nuget/2.0.0/lib/netstandard2.0/OrpheusLogger.xml
+Nuget/2.0.0/lib/netstandard2.0/OrpheusMySQLDDLHelper.xml
+Nuget/2.0.0/lib/netstandard2.0/OrpheusSQLServerDDLHelper.xml
+OrpheusWebClientTest/ScaffoldingReadMe.txt
+*.vssscc
+Nuget/PublishPackage.cmd

@@ -58,5 +58,15 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <returns>Schema object where the field exists</returns>
         ISchemaObject SchemaObject { get; }
+
+        /// <summary>
+        /// Table where the field belongs.
+        /// </summary>
+        string TableName { get; set; }
+
+        /// <summary>
+        /// Gets the full field name.
+        /// </summary>
+        string FullFieldName { get; }
     }
 }

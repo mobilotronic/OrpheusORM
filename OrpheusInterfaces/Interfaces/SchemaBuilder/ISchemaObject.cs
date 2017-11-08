@@ -18,34 +18,14 @@ namespace OrpheusInterfaces
         sotUnknown,
 
         /// <summary>
-        /// Create table.
+        /// Table.
         /// </summary>
-        sotCreateTable,
-        
+        sotTable,
+      
         /// <summary>
-        /// Alter table.
+        /// View.
         /// </summary>
-        sotAlterTable,
-
-        /// <summary>
-        /// Drop table.
-        /// </summary>
-        sotDropTable,
-        
-        /// <summary>
-        /// Create view.
-        /// </summary>
-        sotCreateView,
-
-        /// <summary>
-        /// Drop view.
-        /// </summary>
-        sotDropView,
-
-        /// <summary>
-        /// Alter column.
-        /// </summary>
-        sotAlterColumn
+        sotView,
     }
 
     /// <summary>

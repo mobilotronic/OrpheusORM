@@ -148,5 +148,13 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <returns></returns>
         IOrpheusTableKeyField CreateTableKeyField();
+
+        /// <summary>
+        /// Executes a SQL statement and returns it as specific model.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="SQL"></param>
+        /// <returns></returns>
+        List<T> SQL<T>(string SQL, string tableName = null);
     }
 }

@@ -53,6 +53,21 @@ namespace OrpheusCore.SchemaBuilder
         public ISchemaObject SchemaObject { get { return this.schemaObject; } }
 
         /// <summary>
+        /// Table where the field belongs.
+        /// </summary>
+        public string TableName { get; set; }
+
+        /// <summary>
+        /// Gets the full field name.
+        /// </summary>
+        public string FullFieldName {
+            get
+            {
+                return this.TableName != null ? String.Format("{0}.{1}", this.TableName, this.Name) : this.Name;
+            }
+        }
+
+        /// <summary>
         /// Returns SQL definition for the field.
         /// </summary>
         /// <returns>SQL definition for the field</returns>
@@ -61,7 +76,7 @@ namespace OrpheusCore.SchemaBuilder
             var result = "";
             if (this.Name == null || this.DataType == null)
                 throw new Exception("Field has no name or data type defined.");
-            var fieldName = this.Alias != null ? this.Name + " AS " + this.Alias : this.Name;
+            var fieldName = this.Alias != null ? this.FullFieldName + " AS " + this.Alias : this.FullFieldName;
             if (this.Size != null)
                 result = String.Format("{0}{1}{2} {3} ({4}) {5}", 
                     this.schemaObject.DB.DDLHelper.DelimitedIndetifierStart,

@@ -58,6 +58,24 @@ namespace OrpheusInterfaces
         ISchemaTable AddSchemaTable<T>(List<ISchemaObject> dependencies = null) where T : class;
 
         /// <summary>
+        /// Creates a view schema object.
+        /// </summary>
+        /// <returns></returns>
+        ISchemaView CreateSchemaView();
+
+        /// <summary>
+        /// Creates a table schema object.
+        /// </summary>
+        /// <returns></returns>
+        ISchemaTable CreateSchemaTable();
+
+        /// <summary>
+        /// Creates a join schema definition.
+        /// </summary>
+        /// <returns></returns>
+        ISchemaJoinDefinition CreateSchemaJoinDefinition();
+
+        /// <summary>
         /// Schema description.
         /// </summary>
         /// <returns>Schema description</returns>
@@ -133,6 +151,11 @@ namespace OrpheusInterfaces
         /// <param name="schemaObject">Schema object to be checked if it exists</param>
         /// <returns>The schema object unique id</returns>
         Guid SchemaObjectExists(ISchemaObject schemaObject);
+
+        /// <summary>
+        /// Registers schema information, in the schema information table.
+        /// </summary>
+        void RegisterSchema();
 
     }
 }

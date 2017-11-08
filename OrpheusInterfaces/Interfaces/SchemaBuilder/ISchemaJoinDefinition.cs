@@ -81,5 +81,10 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <returns>Join operator</returns>
         SchemaJoinOperator JoinOperator { get; set; }
+
+        /// <summary>
+        /// Table name to perform the join.
+        /// </summary>
+        string JoinTableName { get; set; }
     }
 }

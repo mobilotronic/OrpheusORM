@@ -529,6 +529,7 @@ namespace OrpheusCore.SchemaBuilder
                                                 //apply constraints primary,foreign keys
                                                 this.applyConstraints(cmd);
                                                 this.IsCreated = true;
+                                                this.seedData(cmd);
                                                 this.logger.LogDebug("Altered schema {0}", this.SQLName);
                                                 break;
                                             }
@@ -608,7 +609,7 @@ namespace OrpheusCore.SchemaBuilder
         /// Gets the <see cref="SchemaObjectType"/>.
         /// </summary>
         /// <returns></returns>
-        protected override SchemaObjectType getType() { return SchemaObjectType.sotCreateTable; }
+        protected override SchemaObjectType getType() { return SchemaObjectType.sotTable; }
 
         /// <summary>
         /// Creates the DDL string for the schema object.
@@ -738,7 +739,7 @@ namespace OrpheusCore.SchemaBuilder
         /// Gets the <see cref="SchemaObjectType"/>.
         /// </summary>
         /// <returns></returns>
-        protected override SchemaObjectType getType() { return SchemaObjectType.sotCreateView; }
+        protected override SchemaObjectType getType() { return SchemaObjectType.sotView; }
 
         /// <summary>
         /// Creates the DDL string for the schema object.
@@ -755,7 +756,7 @@ namespace OrpheusCore.SchemaBuilder
                     {
                         var fields = new List<string>();
                         List<string> joins = new List<string>();
-                        this.Fields.ForEach(fld => fields.Add(String.Format("{0}.{1}", this.SQLName, fld.SQL())));
+                        this.Fields.ForEach(fld => fields.Add(fld.FullFieldName));
                         this.JoinSchemaObjects.ForEach(joinObject => {
                             var joinType = "";
                             switch (joinObject.JoinDefinition.JoinType)
@@ -768,15 +769,20 @@ namespace OrpheusCore.SchemaBuilder
                                 default: { joinType = "LEFT INNER JOIN"; break; }
                             }
                             var joinOperator = joinObject.JoinDefinition.JoinOperator == SchemaJoinOperator.joEquals ? "=" : "!=";
-                            var joinString = String.Format(" {0} ON {1}.{2} {3} {4}.{5} ",
+                            var joinString = String.Format(" {0} {1} ON {2} {3} {4} ",
                                 joinType,
-                                this.SQLName,
+                                joinObject.SQLName,
                                 joinObject.JoinDefinition.KeyField,
-                                joinOperator, joinObject.SQLName,
+                                joinOperator,  
                                 joinObject.JoinDefinition.JoinKeyField);
                             joins.Add(joinString);
                         });
-                        result.Add(String.Format("CREATE VIEW {0} AS SELECT {1} FROM {2}", this.SQLName, string.Join(",", fields.ToArray()), this.TableName, string.Join(",", joins.ToArray())));
+                        result.Add(String.Format("CREATE VIEW {0} AS SELECT {1} FROM {2} {3}", 
+                            this.SQLName, 
+                            string.Join(",", fields.ToArray()), 
+                            this.TableName, 
+                            string.Join(Environment.NewLine, joins.ToArray()))
+                            );
                         break;
                     }
                 case DDLAction.ddlDrop:
