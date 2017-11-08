@@ -29,9 +29,6 @@ namespace OrpheusTests
 
     public class TestDatabase
     {
-        //public static string ConnectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\orpheusTestDB.mdf;Initial Catalog=orpheusTestDB;Integrated Security=True";
-        private static string sqlServerConnectionString = @"Data Source=[your-server];Initial Catalog=orpheusTestDB;Integrated Security=True";
-        public static string mySQLConnectionString = @"Server=[your-server];Database=orpheusTestDB;Uid=[user-name];Pwd=[password]";
         private static IOrpheusDatabase db;
 
         private static string assemblyDirectory
@@ -53,11 +50,11 @@ namespace OrpheusTests
                 {
                     case DbEngine.dbSQLServer:
                         {
-                            return sqlServerConnectionString;
+                            return TestDatabaseConnectionStrings.SQLServer;
                         }
                     case DbEngine.dbMySQL:
                         {
-                            return mySQLConnectionString;
+                            return TestDatabaseConnectionStrings.MySQL;
                         }
                     default: return null;
                 }
