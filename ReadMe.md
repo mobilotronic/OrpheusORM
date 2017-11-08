@@ -28,6 +28,7 @@ There are three available nuget packages.
 As mentioned in the documentation, Orpheus is database engine agnostic, but between different database engines there are differences.
 
 That's the role of the DDL helpers, to reconcile the differences between the underlying database engines.
+Read more about DDL helpers [here](https://redacted-user.github.io/OrpheusORM/documentation/orpheus_ddl_helper.html)
 
 There are already two DDL helpers available for SQL and MySQL, but you can implement your own and use it.
 **Note:** MySQL DDL helper has a dependency on [MySQLConnector](https://mysql-net.github.io/MySqlConnector/) 
