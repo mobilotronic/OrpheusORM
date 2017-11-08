@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>OrpheusORMMySQLServerDDLHelper</id>
+        <version>1.0.7</version>
+        <title>OrpheusORM MySQL Server DDL Helper</title>
+        <authors>Original Author</authors>
+        <owners>Original Author</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>OrpheusORM MySQL server DDL helper is a helper class, specifically for MySQL database engines.</description>
+        <copyright>https://github.com/redacted-user/OrpheusORM</copyright>
+        <language>en-US</language>
+		<iconUrl>https://github.com/redacted-user/OrpheusORM/raw/master/OrpheusIcon.png</iconUrl>
+		<projectUrl>https://github.com/redacted-user/OrpheusORM</projectUrl>
+        <dependencies>
+			<dependency id="MySqlConnector" version="0.26.5" />
+			<dependency id="OrpheusORM" version="1.0" />
+        </dependencies>
+    </metadata>
+    <files>
+    <file src="2.0.0\lib\netstandard2.0\OrpheusMySQLDDLHelper.dll" target="lib\netstandard2.0\OrpheusMySQLDDLHelper.dll" />
+    <file src="2.0.0\lib\netstandard2.0\OrpheusMySQLDDLHelper.xml" target="lib\netstandard2.0\OrpheusMySQLDDLHelper.xml" />
+    </files>
+</package>
