@@ -48,6 +48,12 @@ namespace OrpheusTests.SQLServerTests
             this.TestLoadBenchMark();
         }
 
+        [TestMethod]
+        public void SQLServerTestUserDefinedSQL()
+        {
+            this.TestUserDefinedSQL();
+        }
+
         public SQLServerTableTests()
         {
             TestDatabase.DatabaseEngine = DbEngine.dbSQLServer;

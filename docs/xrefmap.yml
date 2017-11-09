@@ -765,6 +765,21 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.RegisterModule
   fullName: OrpheusInterfaces.IOrpheusDatabase.RegisterModule
   nameWithType: IOrpheusDatabase.RegisterModule
+- uid: OrpheusInterfaces.IOrpheusDatabase.SQL*
+  name: SQL
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_SQL_
+  commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.SQL
+  fullName: OrpheusInterfaces.IOrpheusDatabase.SQL
+  nameWithType: IOrpheusDatabase.SQL
+- uid: OrpheusInterfaces.IOrpheusDatabase.SQL``1(System.String,System.String)
+  name: SQL<T>(String, String)
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_SQL__1_System_String_System_String_
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.SQL``1(System.String,System.String)
+  name.vb: SQL(Of T)(String, String)
+  fullName: OrpheusInterfaces.IOrpheusDatabase.SQL<T>(System.String, System.String)
+  fullName.vb: OrpheusInterfaces.IOrpheusDatabase.SQL(Of T)(System.String, System.String)
+  nameWithType: IOrpheusDatabase.SQL<T>(String, String)
+  nameWithType.vb: IOrpheusDatabase.SQL(Of T)(String, String)
 - uid: OrpheusInterfaces.IOrpheusDatabase.TypeMap
   name: TypeMap
   href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_TypeMap
@@ -1440,6 +1455,12 @@ references:
   fullName.vb: OrpheusInterfaces.IOrpheusTable.Load(System.Collections.Generic.List(Of System.Object), System.Boolean)
   nameWithType: IOrpheusTable.Load(List<Object>, Boolean)
   nameWithType.vb: IOrpheusTable.Load(List(Of Object), Boolean)
+- uid: OrpheusInterfaces.IOrpheusTable.Load(System.String,System.Boolean)
+  name: Load(String, Boolean)
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Load_System_String_System_Boolean_
+  commentId: M:OrpheusInterfaces.IOrpheusTable.Load(System.String,System.Boolean)
+  fullName: OrpheusInterfaces.IOrpheusTable.Load(System.String, System.Boolean)
+  nameWithType: IOrpheusTable.Load(String, Boolean)
 - uid: OrpheusInterfaces.IOrpheusTable.Load*
   name: Load
   href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Load_
@@ -1892,6 +1913,42 @@ references:
   fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(Of T)(System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject))
   nameWithType: ISchema.AddSchemaTable<T>(List<ISchemaObject>)
   nameWithType.vb: ISchema.AddSchemaTable(Of T)(List(Of ISchemaObject))
+- uid: OrpheusInterfaces.ISchema.CreateSchemaJoinDefinition
+  name: CreateSchemaJoinDefinition()
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_CreateSchemaJoinDefinition
+  commentId: M:OrpheusInterfaces.ISchema.CreateSchemaJoinDefinition
+  fullName: OrpheusInterfaces.ISchema.CreateSchemaJoinDefinition()
+  nameWithType: ISchema.CreateSchemaJoinDefinition()
+- uid: OrpheusInterfaces.ISchema.CreateSchemaJoinDefinition*
+  name: CreateSchemaJoinDefinition
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_CreateSchemaJoinDefinition_
+  commentId: Overload:OrpheusInterfaces.ISchema.CreateSchemaJoinDefinition
+  fullName: OrpheusInterfaces.ISchema.CreateSchemaJoinDefinition
+  nameWithType: ISchema.CreateSchemaJoinDefinition
+- uid: OrpheusInterfaces.ISchema.CreateSchemaTable
+  name: CreateSchemaTable()
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_CreateSchemaTable
+  commentId: M:OrpheusInterfaces.ISchema.CreateSchemaTable
+  fullName: OrpheusInterfaces.ISchema.CreateSchemaTable()
+  nameWithType: ISchema.CreateSchemaTable()
+- uid: OrpheusInterfaces.ISchema.CreateSchemaTable*
+  name: CreateSchemaTable
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_CreateSchemaTable_
+  commentId: Overload:OrpheusInterfaces.ISchema.CreateSchemaTable
+  fullName: OrpheusInterfaces.ISchema.CreateSchemaTable
+  nameWithType: ISchema.CreateSchemaTable
+- uid: OrpheusInterfaces.ISchema.CreateSchemaView
+  name: CreateSchemaView()
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_CreateSchemaView
+  commentId: M:OrpheusInterfaces.ISchema.CreateSchemaView
+  fullName: OrpheusInterfaces.ISchema.CreateSchemaView()
+  nameWithType: ISchema.CreateSchemaView()
+- uid: OrpheusInterfaces.ISchema.CreateSchemaView*
+  name: CreateSchemaView
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_CreateSchemaView_
+  commentId: Overload:OrpheusInterfaces.ISchema.CreateSchemaView
+  fullName: OrpheusInterfaces.ISchema.CreateSchemaView
+  nameWithType: ISchema.CreateSchemaView
 - uid: OrpheusInterfaces.ISchema.DB
   name: DB
   href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_DB
@@ -1964,6 +2021,18 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchema.LoadFromFile
   fullName: OrpheusInterfaces.ISchema.LoadFromFile
   nameWithType: ISchema.LoadFromFile
+- uid: OrpheusInterfaces.ISchema.RegisterSchema
+  name: RegisterSchema()
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_RegisterSchema
+  commentId: M:OrpheusInterfaces.ISchema.RegisterSchema
+  fullName: OrpheusInterfaces.ISchema.RegisterSchema()
+  nameWithType: ISchema.RegisterSchema()
+- uid: OrpheusInterfaces.ISchema.RegisterSchema*
+  name: RegisterSchema
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_RegisterSchema_
+  commentId: Overload:OrpheusInterfaces.ISchema.RegisterSchema
+  fullName: OrpheusInterfaces.ISchema.RegisterSchema
+  nameWithType: ISchema.RegisterSchema
 - uid: OrpheusInterfaces.ISchema.RemoveSchemaObject(OrpheusInterfaces.ISchemaObject)
   name: RemoveSchemaObject(ISchemaObject)
   href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_RemoveSchemaObject_OrpheusInterfaces_ISchemaObject_
@@ -2192,6 +2261,18 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaField.DefaultValue
   fullName: OrpheusInterfaces.ISchemaField.DefaultValue
   nameWithType: ISchemaField.DefaultValue
+- uid: OrpheusInterfaces.ISchemaField.FullFieldName
+  name: FullFieldName
+  href: api/OrpheusInterfaces.ISchemaField.html#OrpheusInterfaces_ISchemaField_FullFieldName
+  commentId: P:OrpheusInterfaces.ISchemaField.FullFieldName
+  fullName: OrpheusInterfaces.ISchemaField.FullFieldName
+  nameWithType: ISchemaField.FullFieldName
+- uid: OrpheusInterfaces.ISchemaField.FullFieldName*
+  name: FullFieldName
+  href: api/OrpheusInterfaces.ISchemaField.html#OrpheusInterfaces_ISchemaField_FullFieldName_
+  commentId: Overload:OrpheusInterfaces.ISchemaField.FullFieldName
+  fullName: OrpheusInterfaces.ISchemaField.FullFieldName
+  nameWithType: ISchemaField.FullFieldName
 - uid: OrpheusInterfaces.ISchemaField.Name
   name: Name
   href: api/OrpheusInterfaces.ISchemaField.html#OrpheusInterfaces_ISchemaField_Name
@@ -2252,6 +2333,18 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaField.SQL
   fullName: OrpheusInterfaces.ISchemaField.SQL
   nameWithType: ISchemaField.SQL
+- uid: OrpheusInterfaces.ISchemaField.TableName
+  name: TableName
+  href: api/OrpheusInterfaces.ISchemaField.html#OrpheusInterfaces_ISchemaField_TableName
+  commentId: P:OrpheusInterfaces.ISchemaField.TableName
+  fullName: OrpheusInterfaces.ISchemaField.TableName
+  nameWithType: ISchemaField.TableName
+- uid: OrpheusInterfaces.ISchemaField.TableName*
+  name: TableName
+  href: api/OrpheusInterfaces.ISchemaField.html#OrpheusInterfaces_ISchemaField_TableName_
+  commentId: Overload:OrpheusInterfaces.ISchemaField.TableName
+  fullName: OrpheusInterfaces.ISchemaField.TableName
+  nameWithType: ISchemaField.TableName
 - uid: OrpheusInterfaces.ISchemaJoinDefinition
   name: ISchemaJoinDefinition
   href: api/OrpheusInterfaces.ISchemaJoinDefinition.html
@@ -2282,6 +2375,18 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaJoinDefinition.JoinOperator
   fullName: OrpheusInterfaces.ISchemaJoinDefinition.JoinOperator
   nameWithType: ISchemaJoinDefinition.JoinOperator
+- uid: OrpheusInterfaces.ISchemaJoinDefinition.JoinTableName
+  name: JoinTableName
+  href: api/OrpheusInterfaces.ISchemaJoinDefinition.html#OrpheusInterfaces_ISchemaJoinDefinition_JoinTableName
+  commentId: P:OrpheusInterfaces.ISchemaJoinDefinition.JoinTableName
+  fullName: OrpheusInterfaces.ISchemaJoinDefinition.JoinTableName
+  nameWithType: ISchemaJoinDefinition.JoinTableName
+- uid: OrpheusInterfaces.ISchemaJoinDefinition.JoinTableName*
+  name: JoinTableName
+  href: api/OrpheusInterfaces.ISchemaJoinDefinition.html#OrpheusInterfaces_ISchemaJoinDefinition_JoinTableName_
+  commentId: Overload:OrpheusInterfaces.ISchemaJoinDefinition.JoinTableName
+  fullName: OrpheusInterfaces.ISchemaJoinDefinition.JoinTableName
+  nameWithType: ISchemaJoinDefinition.JoinTableName
 - uid: OrpheusInterfaces.ISchemaJoinDefinition.JoinType
   name: JoinType
   href: api/OrpheusInterfaces.ISchemaJoinDefinition.html#OrpheusInterfaces_ISchemaJoinDefinition_JoinType
@@ -2771,48 +2876,24 @@ references:
   commentId: T:OrpheusInterfaces.SchemaObjectType
   fullName: OrpheusInterfaces.SchemaObjectType
   nameWithType: SchemaObjectType
-- uid: OrpheusInterfaces.SchemaObjectType.sotAlterColumn
-  name: sotAlterColumn
-  href: api/OrpheusInterfaces.SchemaObjectType.html#OrpheusInterfaces_SchemaObjectType_sotAlterColumn
-  commentId: F:OrpheusInterfaces.SchemaObjectType.sotAlterColumn
-  fullName: OrpheusInterfaces.SchemaObjectType.sotAlterColumn
-  nameWithType: SchemaObjectType.sotAlterColumn
-- uid: OrpheusInterfaces.SchemaObjectType.sotAlterTable
-  name: sotAlterTable
-  href: api/OrpheusInterfaces.SchemaObjectType.html#OrpheusInterfaces_SchemaObjectType_sotAlterTable
-  commentId: F:OrpheusInterfaces.SchemaObjectType.sotAlterTable
-  fullName: OrpheusInterfaces.SchemaObjectType.sotAlterTable
-  nameWithType: SchemaObjectType.sotAlterTable
-- uid: OrpheusInterfaces.SchemaObjectType.sotCreateTable
-  name: sotCreateTable
-  href: api/OrpheusInterfaces.SchemaObjectType.html#OrpheusInterfaces_SchemaObjectType_sotCreateTable
-  commentId: F:OrpheusInterfaces.SchemaObjectType.sotCreateTable
-  fullName: OrpheusInterfaces.SchemaObjectType.sotCreateTable
-  nameWithType: SchemaObjectType.sotCreateTable
-- uid: OrpheusInterfaces.SchemaObjectType.sotCreateView
-  name: sotCreateView
-  href: api/OrpheusInterfaces.SchemaObjectType.html#OrpheusInterfaces_SchemaObjectType_sotCreateView
-  commentId: F:OrpheusInterfaces.SchemaObjectType.sotCreateView
-  fullName: OrpheusInterfaces.SchemaObjectType.sotCreateView
-  nameWithType: SchemaObjectType.sotCreateView
-- uid: OrpheusInterfaces.SchemaObjectType.sotDropTable
-  name: sotDropTable
-  href: api/OrpheusInterfaces.SchemaObjectType.html#OrpheusInterfaces_SchemaObjectType_sotDropTable
-  commentId: F:OrpheusInterfaces.SchemaObjectType.sotDropTable
-  fullName: OrpheusInterfaces.SchemaObjectType.sotDropTable
-  nameWithType: SchemaObjectType.sotDropTable
-- uid: OrpheusInterfaces.SchemaObjectType.sotDropView
-  name: sotDropView
-  href: api/OrpheusInterfaces.SchemaObjectType.html#OrpheusInterfaces_SchemaObjectType_sotDropView
-  commentId: F:OrpheusInterfaces.SchemaObjectType.sotDropView
-  fullName: OrpheusInterfaces.SchemaObjectType.sotDropView
-  nameWithType: SchemaObjectType.sotDropView
+- uid: OrpheusInterfaces.SchemaObjectType.sotTable
+  name: sotTable
+  href: api/OrpheusInterfaces.SchemaObjectType.html#OrpheusInterfaces_SchemaObjectType_sotTable
+  commentId: F:OrpheusInterfaces.SchemaObjectType.sotTable
+  fullName: OrpheusInterfaces.SchemaObjectType.sotTable
+  nameWithType: SchemaObjectType.sotTable
 - uid: OrpheusInterfaces.SchemaObjectType.sotUnknown
   name: sotUnknown
   href: api/OrpheusInterfaces.SchemaObjectType.html#OrpheusInterfaces_SchemaObjectType_sotUnknown
   commentId: F:OrpheusInterfaces.SchemaObjectType.sotUnknown
   fullName: OrpheusInterfaces.SchemaObjectType.sotUnknown
   nameWithType: SchemaObjectType.sotUnknown
+- uid: OrpheusInterfaces.SchemaObjectType.sotView
+  name: sotView
+  href: api/OrpheusInterfaces.SchemaObjectType.html#OrpheusInterfaces_SchemaObjectType_sotView
+  commentId: F:OrpheusInterfaces.SchemaObjectType.sotView
+  fullName: OrpheusInterfaces.SchemaObjectType.sotView
+  nameWithType: SchemaObjectType.sotView
 - uid: OrpheusInterfaces.SchemaSort
   name: SchemaSort
   href: api/OrpheusInterfaces.SchemaSort.html

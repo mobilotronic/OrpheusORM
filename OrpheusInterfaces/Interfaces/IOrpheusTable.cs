@@ -87,6 +87,13 @@ namespace OrpheusInterfaces
         void Load(Dictionary<string,List<object>> keyValues, bool clearExistingData = true);
 
         /// <summary>
+        /// Loads table data by executing a SQL command.
+        /// </summary>
+        /// <param name="SQL">SQL command to be executed</param>
+        /// <param name="clearExistingData"></param>
+        void Load(string SQL, bool clearExistingData = true);
+
+        /// <summary>
         /// Clears existing loaded data.
         /// </summary>
         void ClearData();

@@ -375,12 +375,13 @@ namespace OrpheusCore
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="SQL"></param>
+        /// <param name="tableName"></param>
         /// <returns></returns>
         public List<T> SQL<T>(string SQL,string tableName = null)
         {
             tableName = tableName == null ? typeof(T).Name : tableName;
             var table = this.CreateTable<T>(tableName);
-            table.Load();
+            table.Load(SQL);
             return table.Data;
         }
         #endregion

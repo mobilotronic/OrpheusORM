@@ -404,6 +404,66 @@ namespace OrpheusCore
             }
         }
 
+        /// <summary>
+        /// Loads table data.
+        /// </summary>
+        private void loadData()
+        {
+            IDataReader dataReader = null;
+            try
+            {
+                dataReader = loadCommand.ExecuteReader();
+                var fieldCount = dataReader.FieldCount;
+                var fields = new List<int>();
+                var properties = new List<PropertyInfo>();
+                for (int i = 0; i <= fieldCount - 1; i++)
+                {
+                    var fldName = dataReader.GetName(i);
+                    PropertyInfo propInfo = this.modelHelper.ModelProperties.FirstOrDefault(p => this.modelHelper.GetFieldNameForProperty(p) == fldName);
+                    if (propInfo != null)
+                    {
+                        fields.Add(i);
+                        properties.Add(propInfo);
+                    }
+                }
+                while (dataReader.Read())
+                {
+                    T newInstance = Activator.CreateInstance<T>();
+                    for (var i = 0; i <= fields.Count - 1; i++)
+                    {
+                        var value = dataReader.GetValue(fields[i]);
+                        var property = properties[i];
+                        value = value.GetType() == typeof(System.DBNull) ? null : value;
+                        //special handling when the DBEngine does not support natively the Guid type and saves it
+                        //as a string.
+                        if (!this.database.DDLHelper.SupportsGuidType)
+                        {
+                            if (property.PropertyType == typeof(System.Guid) && value.GetType() == typeof(System.String))
+                            {
+                                value = Guid.Parse((string)value);
+                            }
+
+                        }
+                        property.SetValue(newInstance, value);
+                    }
+                    data.Add(newInstance);
+                }
+            }
+            catch (Exception e)
+            {
+                this.logger.LogError(null, e, "Error executing table load : {0}", this.loadCommand.CommandText);
+                throw e;
+            }
+            finally
+            {
+                if (dataReader != null)
+                {
+                    dataReader.Close();
+                    dataReader.Dispose();
+                }
+            }
+        }
+
         #endregion
 
         #region create DbCommands
@@ -953,59 +1013,20 @@ namespace OrpheusCore
             if (clearExistingData)
                 this.ClearData();
             this.appendSelectWhereClause(keyValues);
-            IDataReader dataReader = null;
-            try
-            {
-                dataReader = loadCommand.ExecuteReader();
-                var fieldCount = dataReader.FieldCount;
-                var fields = new List<int>();
-                var properties = new List<PropertyInfo>();
-                for (int i = 0; i <= fieldCount - 1; i++)
-                {
-                    var fldName = dataReader.GetName(i);
-                    PropertyInfo propInfo = this.modelHelper.ModelProperties.FirstOrDefault(p => this.modelHelper.GetFieldNameForProperty(p) == fldName);
-                    if (propInfo != null)
-                    {
-                        fields.Add(i);
-                        properties.Add(propInfo);
-                    }
-                }
-                while (dataReader.Read())
-                {
-                    T newInstance = Activator.CreateInstance<T>();
-                    for(var i = 0; i <= fields.Count - 1; i++)
-                    {
-                        var value = dataReader.GetValue(fields[i]);
-                        var property = properties[i];
-                        value = value.GetType() == typeof(System.DBNull) ? null : value;
-                        //special handling when the DBEngine does not support natively the Guid type and saves it
-                        //as a string.
-                        if (!this.database.DDLHelper.SupportsGuidType)
-                        {
-                            if (property.PropertyType == typeof(System.Guid) && value.GetType() == typeof(System.String))
-                            {
-                                value = Guid.Parse((string)value);
-                            }
+            this.loadData();
+        }
 
-                        }
-                        property.SetValue(newInstance, value);
-                    }
-                    data.Add(newInstance);
-                }
-            }
-            catch (Exception e)
-            {
-                this.logger.LogError(null, e, "Error executing table load : {0}", this.loadCommand.CommandText);
-                throw e;
-            }
-            finally
-            {
-                if (dataReader != null)
-                {
-                    dataReader.Close();
-                    dataReader.Dispose();
-                }
-            }
+        /// <summary>
+        /// Loads table data by executing a SQL command.
+        /// </summary>
+        /// <param name="SQL"></param>
+        /// <param name="clearExistingData"></param>
+        public void Load(string SQL, bool clearExistingData = true)
+        {
+            if (clearExistingData)
+                this.ClearData();
+            this.loadCommand.CommandText = SQL;
+            this.loadData();
         }
 
         /// <summary>

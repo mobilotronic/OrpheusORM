@@ -94,7 +94,9 @@
 Decorate a property with attribute to set it&apos;s default value.</p>
 </section>
       <h4><a class="xref" href="OrpheusAttributes.FieldName.html">FieldName</a></h4>
-      <section></section>
+      <section><p>FieldName attribute. Decorate a model property with this attribute,
+to explicitly define the corresponding field name in the db table.</p>
+</section>
       <h4><a class="xref" href="OrpheusAttributes.ForeignKey.html">ForeignKey</a></h4>
       <section><p>Primary key constraint attribute.
 Decorate a property with attribute to create a foreign key constraint on a schema object.</p>
@@ -121,9 +123,14 @@ Decorate a property with attribute to create a primary key constraint on a schem
       <section><p>Required field attribute.</p>
 </section>
       <h4><a class="xref" href="OrpheusAttributes.SchemaIgnore.html">SchemaIgnore</a></h4>
-      <section></section>
+      <section><p>SchemaIgnore attribute. Decorate a model property to indicate
+that it&apos;s not part of the actual db table schema.
+Useful for dynamically calculated/defined model properties.</p>
+</section>
       <h4><a class="xref" href="OrpheusAttributes.TableName.html">TableName</a></h4>
-      <section></section>
+      <section><p>TableName attribute. Decorate a model with this attribute to
+to explicitly define the corresponding db table name.</p>
+</section>
       <h4><a class="xref" href="OrpheusAttributes.UniqueCompositeKey.html">UniqueCompositeKey</a></h4>
       <section><p>Unique composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.</p>
 </section>

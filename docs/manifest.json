@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "E:/TFS/Orpheus/Orpheus.NetCore/OrpheusDocumentation",
+  "source_base_path": "E:/GitHub/OrpheusORM/OrpheusDocumentation",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -14,10 +14,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "about/about.md",
+      "source_relative_path": "About/about.md",
       "output": {
         ".html": {
-          "relative_path": "about/about.html",
+          "relative_path": "About/about.html",
           "hash": "zBwJ6uITPbHEXCPKHOm3aw=="
         }
       },
@@ -26,10 +26,10 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "about/toc.yml",
+      "source_relative_path": "About/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "about/toc.html",
+          "relative_path": "About/toc.html",
           "hash": "b84zk5/psIQCA6fB0jhsYA=="
         }
       },
@@ -38,11 +38,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/index.md",
+      "source_relative_path": "Documentation/index.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/index.html",
-          "hash": "mjUA43GMRj6bHCDpHkSPZA=="
+          "relative_path": "Documentation/index.html",
+          "hash": "eSfxBRfPXoPrqPzjEIWEQw=="
         }
       },
       "is_incremental": false,
@@ -50,11 +50,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/orpheus_and_di.md",
+      "source_relative_path": "Documentation/orpheus_and_di.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_and_di.html",
-          "hash": "uArsaaiphJwEfpQry5Dxtg=="
+          "relative_path": "Documentation/orpheus_and_di.html",
+          "hash": "pCzMZE8R21co0KUS21XGHw=="
         }
       },
       "is_incremental": false,
@@ -62,11 +62,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/orpheus_benchmarking_results.md",
+      "source_relative_path": "Documentation/orpheus_benchmarking_results.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_benchmarking_results.html",
-          "hash": "9FK7G+6KNlSxJYIoaztF2A=="
+          "relative_path": "Documentation/orpheus_benchmarking_results.html",
+          "hash": "OMV60eufIAIjjM7BaIbf8A=="
         }
       },
       "is_incremental": false,
@@ -77,11 +77,11 @@
         "InvalidFileLink"
       ],
       "type": "Conceptual",
-      "source_relative_path": "documentation/orpheus_creating_schema.md",
+      "source_relative_path": "Documentation/orpheus_creating_schema.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_creating_schema.html",
-          "hash": "iwHjv3zRQulrIf7anP71ZA=="
+          "relative_path": "Documentation/orpheus_creating_schema.html",
+          "hash": "fFctcKDcir50VkK0vAwT1g=="
         }
       },
       "is_incremental": false,
@@ -89,11 +89,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/orpheus_ddl_helper.md",
+      "source_relative_path": "Documentation/orpheus_ddl_helper.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_ddl_helper.html",
-          "hash": "eUoeKOIryLvbW0v34pNFHA=="
+          "relative_path": "Documentation/orpheus_ddl_helper.html",
+          "hash": "dANBjJtBxR8eXcEKQ0HUbA=="
         }
       },
       "is_incremental": false,
@@ -101,11 +101,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/orpheus_module.md",
+      "source_relative_path": "Documentation/orpheus_module.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_module.html",
-          "hash": "L31ot9Ra6WQdFNi3q78a/A=="
+          "relative_path": "Documentation/orpheus_module.html",
+          "hash": "JndWGG5pYGr9TMuSiF5V7A=="
         }
       },
       "is_incremental": false,
@@ -113,11 +113,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "documentation/orpheus_table.md",
+      "source_relative_path": "Documentation/orpheus_table.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_table.html",
-          "hash": "lcNtXSeMC6yMNA+sCB+cnQ=="
+          "relative_path": "Documentation/orpheus_table.html",
+          "hash": "AErYs5ZP/u3m+mE2GzKQ0Q=="
         }
       },
       "is_incremental": false,
@@ -125,10 +125,10 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "documentation/toc.md",
+      "source_relative_path": "Documentation/toc.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/toc.html",
+          "relative_path": "Documentation/toc.html",
           "hash": "0hlOBER2TqvLrIZOWf80DA=="
         }
       },
@@ -137,11 +137,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "examples/define_dbengine.md",
+      "source_relative_path": "Examples/define_dbengine.md",
       "output": {
         ".html": {
-          "relative_path": "examples/define_dbengine.html",
-          "hash": "o+5+g6mRlImgJfVjyFrK2g=="
+          "relative_path": "Examples/define_dbengine.html",
+          "hash": "cJD0lh3OGFhu0YVayy8TzA=="
         }
       },
       "is_incremental": false,
@@ -149,10 +149,10 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "examples/toc.md",
+      "source_relative_path": "Examples/toc.md",
       "output": {
         ".html": {
-          "relative_path": "examples/toc.html",
+          "relative_path": "Examples/toc.html",
           "hash": "vMM9kty0jJ0kLYuKfeicWA=="
         }
       },
@@ -161,11 +161,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "examples/update_module.md",
+      "source_relative_path": "Examples/update_module.md",
       "output": {
         ".html": {
-          "relative_path": "examples/update_module.html",
-          "hash": "PVWENYkntUJbiuHTcHQQbw=="
+          "relative_path": "Examples/update_module.html",
+          "hash": "c3x+gNfkp3iQb/e7Kxbsxg=="
         }
       },
       "is_incremental": false,
@@ -173,11 +173,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "examples/update_single_table.md",
+      "source_relative_path": "Examples/update_single_table.md",
       "output": {
         ".html": {
-          "relative_path": "examples/update_single_table.html",
-          "hash": "SwCMGzBBrzMxz/8fNSnGHw=="
+          "relative_path": "Examples/update_single_table.html",
+          "hash": "0KnGhmMQ7e3xftyMfMOkFw=="
         }
       },
       "is_incremental": false,
@@ -185,10 +185,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/OrpheusLogo.png",
+      "source_relative_path": "Images/OrpheusLogo.png",
       "output": {
         "resource": {
-          "relative_path": "images/OrpheusLogo.png"
+          "relative_path": "Images/OrpheusLogo.png"
         }
       },
       "is_incremental": false,
@@ -196,10 +196,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/OrpheusLogo.svg",
+      "source_relative_path": "Images/OrpheusLogo.svg",
       "output": {
         "resource": {
-          "relative_path": "images/OrpheusLogo.svg"
+          "relative_path": "Images/OrpheusLogo.svg"
         }
       },
       "is_incremental": false,
@@ -207,10 +207,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/favicon.ico",
+      "source_relative_path": "Images/favicon.ico",
       "output": {
         "resource": {
-          "relative_path": "images/favicon.ico"
+          "relative_path": "Images/favicon.ico"
         }
       },
       "is_incremental": false,
@@ -234,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.DataTypeAttribute.html",
-          "hash": "1RIjkbTj+jCdC8WVQfEPGQ=="
+          "hash": "a7xlS9HufFGoWK6ZxzPKnw=="
         }
       },
       "is_incremental": false,
@@ -246,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.DefaultValue.html",
-          "hash": "hlBBUCmrpya0KV1+Zu5TFg=="
+          "hash": "joBICS7grvUSYt2G4j4I7A=="
         }
       },
       "is_incremental": false,
@@ -258,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.FieldName.html",
-          "hash": "c7Dd7UP2b1QQ0O6EspmABA=="
+          "hash": "IuCDppWWboS2ejZcg2R2LA=="
         }
       },
       "is_incremental": false,
@@ -270,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.ForeignKey.html",
-          "hash": "6sDBSERfcuSYUU1ipBLRBg=="
+          "hash": "u2l0APb/MuYDBbCIELRsEA=="
         }
       },
       "is_incremental": false,
@@ -282,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.Length.html",
-          "hash": "mpMYVdZAz4ldi1LZ5uqf9Q=="
+          "hash": "1yQBoknkvFJnteMMRSoa2g=="
         }
       },
       "is_incremental": false,
@@ -306,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.OrpheusCompositeKeyBaseAttribute.html",
-          "hash": "Qde3XEG8rQ7CbPBPQdbK2A=="
+          "hash": "/gyCxYUGmjJKhNzG6E+M+A=="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.PrimaryCompositeKey.html",
-          "hash": "Sf6arCp97jJrex0m16WsaA=="
+          "hash": "MAo7Zxds7QAZgHHm9GZJHg=="
         }
       },
       "is_incremental": false,
@@ -330,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.PrimaryKey.html",
-          "hash": "NZ/p2S0FyRcgnjGVqZue4g=="
+          "hash": "xJ50ROSdOM5OBk6hViUVXA=="
         }
       },
       "is_incremental": false,
@@ -354,7 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.SchemaIgnore.html",
-          "hash": "kqFvrZxkyotlUecwkLaZFQ=="
+          "hash": "3cjpTk+Aq/LUBVDcuQItWg=="
         }
       },
       "is_incremental": false,
@@ -366,7 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.TableName.html",
-          "hash": "1WNgehYFyTzSXlrKdMtDIA=="
+          "hash": "oouHCcD18nwJ11veO+F2fQ=="
         }
       },
       "is_incremental": false,
@@ -378,7 +378,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.UniqueCompositeKey.html",
-          "hash": "CVP7AP11+qw+DxiqWHlIPQ=="
+          "hash": "5Ywc7As/m9s5ALDjc2eXBg=="
         }
       },
       "is_incremental": false,
@@ -402,7 +402,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusAttributes.html",
-          "hash": "WXK8DWAM1LfZrObn/n/6tQ=="
+          "hash": "VN2TsY7Ob5qwTdjGVBp/Gg=="
         }
       },
       "is_incremental": false,
@@ -438,7 +438,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IForeignKeySchemaConstraint.html",
-          "hash": "rmvWrbkXej+JkEWmy3PV+Q=="
+          "hash": "8oHLTiHupFZeZEMCFYF2FA=="
         }
       },
       "is_incremental": false,
@@ -450,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IModifyRecordEventArguments-1.html",
-          "hash": "nHravARiOvmE7mTZmJzdng=="
+          "hash": "G9xqgtUUnHrp3TvtWlGCiw=="
         }
       },
       "is_incremental": false,
@@ -462,7 +462,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IOrpheusDDLHelper.html",
-          "hash": "v5qrD8WzJQoMp5Di82YoUg=="
+          "hash": "G0KeZOHSe3KeDeW//ZpN0w=="
         }
       },
       "is_incremental": false,
@@ -474,7 +474,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IOrpheusDatabase.html",
-          "hash": "3fng+nAlO5C3GDWbRJGkrg=="
+          "hash": "x1cnoF+qklmKgff3E46rqw=="
         }
       },
       "is_incremental": false,
@@ -486,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IOrpheusModule.html",
-          "hash": "EcL3+ESo8dZF3AKBU9Fdaw=="
+          "hash": "8hvnVJaDSPq7xwk2oUqQ/Q=="
         }
       },
       "is_incremental": false,
@@ -498,7 +498,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IOrpheusModuleDefinition.html",
-          "hash": "7GcoFmKJDoo9Mh8whTFD2A=="
+          "hash": "nlWcuuqE92RGWi2YzU6oFQ=="
         }
       },
       "is_incremental": false,
@@ -534,7 +534,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IOrpheusTable-1.html",
-          "hash": "bGaA1IgneZD2P5Xdqg5W5g=="
+          "hash": "11ZdHCjClmEPI9bAmqxOsw=="
         }
       },
       "is_incremental": false,
@@ -546,7 +546,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IOrpheusTable.html",
-          "hash": "OzTWG2Ujy0SG+su9vRay3Q=="
+          "hash": "+DQ6vqkQ0TwCQH3ZkFGneA=="
         }
       },
       "is_incremental": false,
@@ -558,7 +558,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IOrpheusTableKeyField.html",
-          "hash": "sh0IgQMin6EWKAsTKWURsQ=="
+          "hash": "Mxp8Ob1MrVcaywm9pa5hTQ=="
         }
       },
       "is_incremental": false,
@@ -570,7 +570,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.IOrpheusTableOptions.html",
-          "hash": "q2ur+1Jnt9IOnY/DlYOjZA=="
+          "hash": "yAUEJz+EWjSPO00gjs3FtA=="
         }
       },
       "is_incremental": false,
@@ -594,7 +594,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.ISaveEventArguments.html",
-          "hash": "x/mKVMipkAWIhmfFQTsnMQ=="
+          "hash": "uIXpXUCVMF0Ukp0W/Xjrxw=="
         }
       },
       "is_incremental": false,
@@ -606,7 +606,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.ISchema.html",
-          "hash": "HWulgqXLjLhhzz8C41C+Hg=="
+          "hash": "ILX+5Zi48/nRtlFBlu9ygA=="
         }
       },
       "is_incremental": false,
@@ -618,7 +618,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.ISchemaConstraint.html",
-          "hash": "u7tHoSJxNb4rF+nnQNCGyg=="
+          "hash": "zxkJhJaOJflyqUtVSlUgZA=="
         }
       },
       "is_incremental": false,
@@ -630,7 +630,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.ISchemaField.html",
-          "hash": "QmkCO0YAPIa4ektTIZyZEg=="
+          "hash": "87epQtUOqYU6cWY7m4cMnw=="
         }
       },
       "is_incremental": false,
@@ -642,7 +642,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.ISchemaJoinDefinition.html",
-          "hash": "w+NZY4qKX8Vgp9AVQUd11Q=="
+          "hash": "+KWD5wmZyT0gGYxjAqkd2A=="
         }
       },
       "is_incremental": false,
@@ -654,7 +654,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.ISchemaObject.html",
-          "hash": "oieRx7UJnjoq9gb2AVg3RQ=="
+          "hash": "OSrCf6Llb7JXAvWkJh0tlA=="
         }
       },
       "is_incremental": false,
@@ -666,7 +666,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.ISchemaTable.html",
-          "hash": "poNDyZHJZr016JQ9UbfWHA=="
+          "hash": "UYfY+TOLYX/QsG/x4U051g=="
         }
       },
       "is_incremental": false,
@@ -678,7 +678,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.ISchemaView.html",
-          "hash": "egrZfxZMUZ5nG69BMTY4hg=="
+          "hash": "QLZ5odT2mS5mmXUAaoBTMQ=="
         }
       },
       "is_incremental": false,
@@ -726,7 +726,7 @@
       "output": {
         ".html": {
           "relative_path": "api/OrpheusInterfaces.SchemaObjectType.html",
-          "hash": "ZjQDQTcqdJjyJeRzFxOFPQ=="
+          "hash": "eFDb6G1k0V/rZJPctqYCMQ=="
         }
       },
       "is_incremental": false,
@@ -774,7 +774,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "WFc/LAxXv3Qk2xR/XmXFRg=="
+          "hash": "XIrqW7e1Aa+DwtErZGqreg=="
         }
       },
       "is_incremental": false,
@@ -784,31 +784,32 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build"
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build"
-        },
         "RestApiDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
           "incrementalPhase": "build"
         }
       }

@@ -314,5 +314,22 @@ namespace OrpheusTests
             this.StopAndLogWatch(loadAllStopWatch);
             Trace.Close();
         }
+
+        protected void TestUserDefinedSQL()
+        {
+            this.Initialize();
+            this.ReCreateSchema();
+
+            var usersTable = this.Database.CreateTable<TestModelUser>();
+            var usersData = TestDatabase.GetRandomUsersForTesting(500);
+            usersTable.Add(usersData);
+            usersTable.Save();
+
+            var users = this.Database.SQL<TestModelUser>("select * from TestModelUser where email ='admin@test.com'");
+            foreach(var usr in users)
+            {
+                Assert.AreEqual("admin@test.com", usr.Email);
+            }
+        }
     }
 }

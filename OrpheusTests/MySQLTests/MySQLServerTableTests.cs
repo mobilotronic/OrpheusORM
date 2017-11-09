@@ -41,6 +41,13 @@ namespace OrpheusTests.MySQLTests
         {
             this.TestLoadSpecificKeyValues();
         }
+
+        [TestMethod]
+        public void MySQLServerTestUserDefinedSQL()
+        {
+            this.TestUserDefinedSQL();
+        }
+
         public MySQLServerTableTests()
         {
             TestDatabase.DatabaseEngine = DbEngine.dbMySQL;
