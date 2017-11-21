@@ -236,6 +236,19 @@ namespace OrpheusCore.SchemaBuilder
         }
 
         /// <summary>
+        /// Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.
+        /// </summary>
+        /// <typeparam name="T">Model type</typeparam>
+        /// <typeparam name="D">Dependency model type</typeparam>
+        /// <returns></returns>
+        public ISchemaTable AddSchemaTable<T, D>()
+        {
+            var modelInstance = Activator.CreateInstance(typeof(T));
+            var dependencies = this.SchemaObjects.Where(obj => obj.SQLName.ToLower() == typeof(D).Name.ToLower()).ToList();
+            return this.AddSchemaTable(modelInstance, dependencies);
+        }
+
+        /// <summary>
         /// Creates a view schema object.
         /// </summary>
         /// <returns></returns>

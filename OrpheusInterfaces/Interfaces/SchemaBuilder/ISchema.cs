@@ -58,6 +58,14 @@ namespace OrpheusInterfaces
         ISchemaTable AddSchemaTable<T>(List<ISchemaObject> dependencies = null) where T : class;
 
         /// <summary>
+        /// Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.
+        /// </summary>
+        /// <typeparam name="T">Model type</typeparam>
+        /// <typeparam name="D">Dependency model type</typeparam>
+        /// <returns></returns>
+        ISchemaTable AddSchemaTable<T, D>();
+
+        /// <summary>
         /// Creates a view schema object.
         /// </summary>
         /// <returns></returns>

@@ -463,6 +463,8 @@ namespace OrpheusTests
 
         public void SaveToFile(string fileName) { this.schema.SaveToFile(fileName); }
         public void LoadFromFile(string fileName) { this.schema.LoadFromFile(fileName); }
+
+        public ISchema Schema { get { return this.schema; } }
         public TestSchema(IOrpheusDatabase db, string description, double version, Guid id)
         {
             this.schema = new OrpheusCore.SchemaBuilder.Schema(db, description, version, id);

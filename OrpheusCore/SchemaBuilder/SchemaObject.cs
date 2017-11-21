@@ -371,7 +371,18 @@ namespace OrpheusCore.SchemaBuilder
         {
             if (modelType != null)
             {
-                this.AddDependency(this.Schema.SchemaObjects.Where(obj => obj.SQLName.ToLower() == modelType.Name.ToLower()).First());
+                try
+                {
+                    this.AddDependency(this.Schema.SchemaObjects.Where(obj => obj.SQLName.ToLower() == modelType.Name.ToLower()).First());
+                }
+                catch(Exception e)
+                {
+                    this.logger.LogError(e.Message);
+                    if(e is NullReferenceException)
+                    {
+                        this.logger.LogError("Table with name {0} not found", modelType.Name);
+                    }
+                }
             }
         }
 
