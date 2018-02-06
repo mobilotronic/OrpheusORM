@@ -31,7 +31,7 @@ namespace OrpheusTests
             
             foreach(ISchemaObject shemaObj in schema.SchemaObjects)
             {
-                Assert.AreEqual(true, this.Database.DDLHelper.SchemaObjectExists(shemaObj.SQLName));
+                Assert.AreEqual(true, this.Database.DDLHelper.SchemaObjectExists(shemaObj));
             }
         }
 
@@ -42,7 +42,7 @@ namespace OrpheusTests
             schema.Drop();
             foreach (ISchemaObject shemaObj in schema.SchemaObjects)
             {
-                Assert.AreEqual(false, this.Database.DDLHelper.SchemaObjectExists(shemaObj.SQLName));
+                Assert.AreEqual(false, this.Database.DDLHelper.SchemaObjectExists(shemaObj));
             }
         }
 
@@ -53,21 +53,21 @@ namespace OrpheusTests
             schema.Drop();
             foreach (ISchemaObject shemaObj in schema.SchemaObjects)
             {
-                Assert.AreEqual(false, this.Database.DDLHelper.SchemaObjectExists(shemaObj.SQLName));
+                Assert.AreEqual(false, this.Database.DDLHelper.SchemaObjectExists(shemaObj));
             }
 
             schema.Execute();
 
             foreach (ISchemaObject shemaObj in schema.SchemaObjects)
             {
-                Assert.AreEqual(true, this.Database.DDLHelper.SchemaObjectExists(shemaObj.SQLName));
+                Assert.AreEqual(true, this.Database.DDLHelper.SchemaObjectExists(shemaObj));
             }
         }
 
         public void CreateDynamicSchema()
         {
             this.Initialize();
-            var schema = this.Database.CreateSchema(Guid.NewGuid(), "Dynamic schema", 1);
+            var schema = this.Database.CreateSchema(Guid.NewGuid(),"Dynamic schema", 1);
             schema.AddSchemaTable("TestModelDynamic", null, new TestDynamicModel1());
             schema.Drop();
             schema.Execute();

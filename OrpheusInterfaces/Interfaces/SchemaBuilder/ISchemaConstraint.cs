@@ -62,7 +62,7 @@ namespace OrpheusInterfaces
         /// Schema object were this schema constraint exists
         /// </summary>
         /// <returns>The schema object where the constraint exists</returns>
-        ISchemaObject SchemaObject { get; }
+        ISchemaDataObject SchemaObject { get; }
 
         /// <summary>
         /// The constraint SQL command. UNIQUE, PRIMARY KEY etc.

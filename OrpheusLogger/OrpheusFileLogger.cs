@@ -21,9 +21,11 @@ namespace OrpheusLogger
         private const string information = "Information";
         private const string warning = "Warning";
         private const string error = "Error";
-        private const string logEntryFormat = "{0} DateTime:{1} Message:{2}";
+        private const string logEntryFormat = "{0} {1} {2}";
+        private const string callStacklogEntryFormat = "{0},Line:{1} {2} {3} {4}";
         private const string logPrefix = "ORPHEUS_";
         private const string fileExtension = ".log";
+        private const string debug = "Debug";
         #endregion
 
         #region private methods
@@ -75,12 +77,24 @@ namespace OrpheusLogger
             }
         }
 
-        private string formatLogEntry(string entryType, string logEntry)
+        private string formatLogEntry(string entryType, string logEntry, System.Diagnostics.StackFrame stackFrame = null)
         {
-            return string.Format(logEntryFormat, 
-                entryType.PadRight(12), 
-                DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").PadRight(20), 
-                logEntry.PadRight(50));
+            if (stackFrame != null)
+            {
+                return string.Format(callStacklogEntryFormat,
+                    Path.GetFileName(stackFrame.GetFileName()).PadRight(20),
+                    stackFrame.GetFileLineNumber().ToString().PadRight(15),
+                    entryType.PadRight(8),
+                    DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").PadRight(20),
+                    logEntry.PadRight(50));
+            }
+            else
+            {
+                return string.Format(logEntryFormat,
+                    entryType.PadRight(25),
+                    DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss").PadRight(20),
+                    logEntry.PadRight(50));
+            }
         }
 
         private void initialize()
@@ -167,7 +181,21 @@ namespace OrpheusLogger
                             case LogLevel.Error:
                                 {
                                     if (this.IsEnabled(logLevel))
-                                        logWriter.WriteLine(this.formatLogEntry(error, message));
+                                    {
+                                        var stackTrace = new System.Diagnostics.StackTrace(true);
+                                        var frame = stackTrace.GetFrame(2);
+                                        logWriter.WriteLine(this.formatLogEntry(error, message,frame));
+                                    }
+                                    break;
+                                }
+                            case LogLevel.Debug:
+                                {
+                                    if (this.IsEnabled(logLevel))
+                                    {
+                                        var stackTrace = new System.Diagnostics.StackTrace(true);
+                                        var frame = stackTrace.GetFrame(2);
+                                        logWriter.WriteLine(this.formatLogEntry(debug, message, frame));
+                                    }
                                     break;
                                 }
                             default:

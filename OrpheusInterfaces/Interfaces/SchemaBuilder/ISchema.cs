@@ -13,6 +13,11 @@ namespace OrpheusInterfaces
     public interface ISchema
     {
         /// <summary>
+        /// List of other schemas.
+        /// </summary>
+        List<ISchema> ReferencedSchemas { get; }
+
+        /// <summary>
         /// List of schema objects. <see cref="ISchemaObject"/>
         /// </summary>
         List<ISchemaObject> SchemaObjects { get; }
@@ -78,10 +83,21 @@ namespace OrpheusInterfaces
         ISchemaTable CreateSchemaTable();
 
         /// <summary>
+        /// Creates a schema object.
+        /// </summary>
+        /// <returns></returns>
+        ISchemaObject CreateSchemaObject();
+
+        /// <summary>
         /// Creates a join schema definition.
         /// </summary>
         /// <returns></returns>
         ISchemaJoinDefinition CreateSchemaJoinDefinition();
+
+        /// <summary>
+        /// DB SQL schema name.
+        /// </summary>
+        string Name { get; }
 
         /// <summary>
         /// Schema description.

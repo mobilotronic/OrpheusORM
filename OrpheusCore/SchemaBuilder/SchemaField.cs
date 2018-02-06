@@ -8,7 +8,7 @@ namespace OrpheusCore.SchemaBuilder
     /// </summary>
     public class SchemaField : ISchemaField
     {
-        private ISchemaObject schemaObject;
+        private ISchemaDataObject schemaObject;
 
         /// <summary>
         /// Field alias.
@@ -103,7 +103,7 @@ namespace OrpheusCore.SchemaBuilder
         /// Creates a schema field.
         /// </summary>
         /// <param name="schemaObject">Schema where the field belongs</param>
-        public SchemaField(ISchemaObject schemaObject)
+        public SchemaField(ISchemaDataObject schemaObject)
         {
             this.Nullable = true;
             this.schemaObject = schemaObject;

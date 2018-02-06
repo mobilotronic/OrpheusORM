@@ -94,6 +94,13 @@ namespace OrpheusInterfaces
         void Load(string SQL, bool clearExistingData = true);
 
         /// <summary>
+        /// Loads table data by executing a db command.
+        /// </summary>
+        /// <param name="dbCommand"></param>
+        /// <param name="clearExistingData"></param>
+        void Load(IDbCommand dbCommand, bool clearExistingData = true);
+
+        /// <summary>
         /// Clears existing loaded data.
         /// </summary>
         void ClearData();
@@ -108,7 +115,7 @@ namespace OrpheusInterfaces
         /// Save changes to the database.
         /// </summary>
         /// <param name="dbTransaction">Transaction in which the commands will be executed</param>
-        void Save(IDbTransaction dbTransaction = null);
+        void Save(IDbTransaction dbTransaction = null, bool commitTransaction = true);
 
         /// <summary>
         /// Occurs before records are save in the database.

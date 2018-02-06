@@ -223,12 +223,12 @@ namespace OrpheusCore
                 this.saveDeletes(transaction);
                 this.saveUpdates(transaction);
                 this.saveInserts(transaction);
-                transaction.Commit();
+                this.Database.CommitTransaction(transaction);
                 this.OnAfterSave?.Invoke(this, new SaveEventArguments() { Transaction = transaction });
             }
             catch(Exception exception)
             {
-                transaction.Rollback();
+                this.Database.RollbackTransaction(transaction);
                 throw exception;
             }
         }
@@ -283,11 +283,16 @@ namespace OrpheusCore
         /// </summary>
         /// <param name="database">Module's database</param>
         /// <param name="definition">Module's definition</param>
-        public OrpheusModule(IOrpheusDatabase database,IOrpheusModuleDefinition definition = null)
+        public OrpheusModule(IOrpheusDatabase database)
         {
             this.Database = database;
             this.Tables = new List<IOrpheusTable>();
             this.ReferenceTables = new List<IOrpheusTable>();
+            this.initializeModuleDefinition();
+        }
+
+        public OrpheusModule(IOrpheusDatabase database, IOrpheusModuleDefinition definition):this(database)
+        {
             this.Definition = definition;
             this.initializeModuleDefinition();
         }

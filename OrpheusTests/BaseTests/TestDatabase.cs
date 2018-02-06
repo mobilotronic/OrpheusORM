@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define MYSQL_DEBUG 
+
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -54,7 +56,11 @@ namespace OrpheusTests
                         }
                     case DbEngine.dbMySQL:
                         {
+                            #if MYSQL_DEBUG
+                            return TestDatabaseConnectionStrings.MySQLProfiling;
+                            #else
                             return TestDatabaseConnectionStrings.MySQL;
+                            #endif
                         }
                     default: return null;
                 }

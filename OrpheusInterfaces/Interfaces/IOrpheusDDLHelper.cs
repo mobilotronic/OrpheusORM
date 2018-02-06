@@ -19,6 +19,16 @@ namespace OrpheusInterfaces
     }
 
     /// <summary>
+    /// Database engine type.
+    /// </summary>
+    public enum DatabaseEngineType
+    {
+        dbUnknown,
+        dbSQLServer,
+        dbMySQL
+    }
+
+    /// <summary>
     /// Abstract definition of DDL helper.
     /// DDL helper is used to execute DB engine specific DDL commands.
     /// </summary>
@@ -34,9 +44,23 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
         /// </summary>
-        /// <param name="schemaObjectName">Schema object name</param>
+        /// <param name="schemaObject">Schema</param>
+        /// <returns>True if the object exists</returns>
+        bool SchemaObjectExists(ISchemaObject schemaObject);
+
+        /// <summary>
+        /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
+        /// </summary>
+        /// <param name="schemaObjectName">Schema</param>
         /// <returns>True if the object exists</returns>
         bool SchemaObjectExists(string schemaObjectName);
+
+        /// <summary>
+        /// Returns true if the schema object exists in the database.
+        /// </summary>
+        /// <param name="schemaConstraint"></param>
+        /// <returns></returns>
+        bool SchemaObjectExists(ISchemaConstraint schemaConstraint);
 
         /// <summary>
         /// Returns true if a database is successfully created using the underlying db engine settings.
@@ -97,6 +121,11 @@ namespace OrpheusInterfaces
         bool SupportsGuidType { get; }
 
         /// <summary>
+        /// Returns true if the DBEngine supports having schema name spaces. From the currently supported databases, only SQL has this feature.
+        /// </summary>
+        bool SupportsSchemaNameSpace { get; }
+
+        /// <summary>
         /// Properly formats a field name, to be used in a SQL statement, in case the field name is a reserved word.
         /// </summary>
         /// <param name="fieldName">Field name</param>
@@ -128,5 +157,122 @@ namespace OrpheusInterfaces
         /// Gets the database name.
         /// </summary>
         string DatabaseName { get; }
+
+        /// <summary>
+        /// Returns the underlying connection type.
+        /// </summary>
+        DatabaseEngineType DbEngineType { get; }
+    }
+
+    public interface ISQLServerDDLHelper : IOrpheusDDLHelper
+    {
+        #region schema 
+        /// <summary>
+        /// Returns true if the schema exists.
+        /// </summary>
+        /// <param name="schemaName"></param>
+        /// <returns></returns>
+        bool SchemaExists(string schemaName);
+
+        /// <summary>
+        /// Creates a schema.
+        /// </summary>
+        /// <param name="schemaName"></param>
+        void CreateSchema(string schemaName);
+
+        /// <summary>
+        /// Drops a schema.
+        /// </summary>
+        /// <param name="schemaName"></param>
+        void DropSchema(string schemaName);
+        #endregion
+
+        #region database role
+        /// <summary>
+        /// Returns true if the database role exists.
+        /// </summary>
+        /// <param name="roleName"></param>
+        /// <returns></returns>
+        bool DatabaseRoleExists(string roleName);
+
+        /// <summary>
+        /// Creates a database role.
+        /// </summary>
+        /// <param name="roleName"></param>
+        /// <param name="owner"></param>
+        void CreateDatabaseRole(string roleName, string owner = null);
+
+        /// <summary>
+        /// Drops a database role.
+        /// </summary>
+        /// <param name="roleName"></param>
+        void DropDatabaseRole(string roleName);
+
+        /// <summary>
+        /// Adds a database user to the specified role.
+        /// </summary>
+        /// <param name="roleName"></param>
+        /// <param name="userName"></param>
+        void AddDatabaseRoleMember(string roleName, string userName);
+
+        /// <summary>
+        /// Drops a database user to the specified role.
+        /// </summary>
+        /// <param name="roleName"></param>
+        /// <param name="userName"></param>
+        void DropDatabaseRoleMember(string roleName, string userName);
+
+        #endregion
+
+        #region user
+        /// <summary>
+        /// Creates a contained database user.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        void CreateDatabaseUser(string userName, string password);
+
+        /// <summary>
+        /// Changes the password for an existing user.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="oldPassword"></param>
+        /// <param name="newPassword"></param>
+        void ChangeDatabaseUserPassword(string userName, string oldPassword, string newPassword);
+
+
+        /// <summary>
+        /// Drops a user.
+        /// </summary>
+        /// <param name="userName"></param>
+        void DropDatabaseUser(string userName);
+
+        /// <summary>
+        /// Returns true if a database user exists.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        bool DatabaseUserExists(string userName);
+        #endregion
+
+        #region databases
+        /// <summary>
+        /// Enables/disables the contained database feature on the SQL server instance. A feature supported from SQL server 2012 and later.
+        /// </summary>
+        /// <param name="enable"></param>
+        void EnableContainedDatabases(bool enable);
+        #endregion
+
+        /// <summary>
+        /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
+        /// </summary>
+        /// <param name="schemaObjectName"></param>
+        /// <param name="schemaName"></param>
+        /// <returns></returns>
+        bool SchemaObjectExists(string schemaObjectName, string schemaName = null);
+    }
+
+    public interface IMySQLServerDDLHelper : IOrpheusDDLHelper
+    {
     }
 }

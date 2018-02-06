@@ -465,10 +465,9 @@ namespace OrpheusTests
         public void LoadFromFile(string fileName) { this.schema.LoadFromFile(fileName); }
 
         public ISchema Schema { get { return this.schema; } }
-        public TestSchema(IOrpheusDatabase db, string description, double version, Guid id)
+        public TestSchema(IOrpheusDatabase db, string description, double version, Guid id, string name = null)
         {
-            this.schema = new OrpheusCore.SchemaBuilder.Schema(db, description, version, id);
-            //this.schema = OrpheusCore.OrpheusIocContainer.Resolve<ISchema>();
+            this.schema = OrpheusServiceProvider.Resolve<ISchema>(new object[] { db,description,version,id, name });
             this.createSchema();
         }
     }

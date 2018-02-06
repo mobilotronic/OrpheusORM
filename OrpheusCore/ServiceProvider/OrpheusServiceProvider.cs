@@ -4,6 +4,9 @@ using OrpheusCore.Configuration;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
+using OrpheusInterfaces;
+using OrpheusCore.SchemaBuilder;
+using System.Reflection;
 
 namespace OrpheusCore.ServiceProvider
 {
@@ -13,6 +16,23 @@ namespace OrpheusCore.ServiceProvider
     public class OrpheusServiceProvider
     {
         private static IServiceProvider serviceProvider;
+        private static void initializeInternalOrpheusServices(IServiceCollection serviceCollection)
+        {
+            //data services.
+            serviceCollection.AddTransient<IOrpheusTableOptions, OrpheusTableOptions>();
+            serviceCollection.AddTransient<IOrpheusModuleDefinition, OrpheusModuleDefinition>();
+            serviceCollection.AddTransient<IOrpheusTableKeyField, OrpheusTableKeyField>();
+            serviceCollection.AddTransient<IOrpheusModule, OrpheusModule>();
+
+            //Schema services.
+            serviceCollection.AddTransient<ISchema, SchemaBuilder.Schema>();
+            serviceCollection.AddTransient<ISchemaView, SchemaObjectView>();
+            serviceCollection.AddTransient<ISchemaTable, SchemaObjectTable>();
+            serviceCollection.AddTransient<ISchemaObject, SchemaObject>();
+            serviceCollection.AddTransient<ISchemaJoinDefinition, SchemaJoinDefinition>();
+            //serviceCollection.AddTransient<ISchemaNameSpaceObject, SchemaNameSpaceObject>();
+            serviceCollection.AddTransient<ISchemaDataObject, SchemaDataObject>();
+        }
 
         /// <summary>
         ///  Defines a mechanism for retrieving a service object; that is, an object that
@@ -62,6 +82,7 @@ namespace OrpheusCore.ServiceProvider
                         }
                 }
             }
+            initializeInternalOrpheusServices(serviceCollection);
         }
 
         /// <summary>
@@ -81,6 +102,44 @@ namespace OrpheusCore.ServiceProvider
                 throw e;
             }
             return result;
+        }
+
+        /// <summary>
+        /// Resolve an interface to a concrete implementation, with constructor parameter support.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T Resolve<T>(object[] constructorParameters)
+        {
+            try
+            {
+                List<Type> parametersType = new List<Type>();
+                List<object> parameterValues = new List<object>();
+                foreach(var obj in constructorParameters)
+                {
+                    if (obj != null)
+                    {
+                        parametersType.Add(obj.GetType());
+                        parameterValues.Add(obj);
+                    }
+                }
+
+                T service = Resolve<T>();
+
+                //try to find a matching constructor based on the constructor parameters.
+                //if a constructor is found, then instantiate the class.
+                ConstructorInfo[] constructors = service.GetType().GetConstructors();
+                ConstructorInfo constructorInfo = service.GetType().GetConstructor(parametersType.ToArray());
+                if(constructorInfo != null)
+                {
+                    return (T)constructorInfo.Invoke(parameterValues.ToArray());
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return default(T);
         }
     }
 }

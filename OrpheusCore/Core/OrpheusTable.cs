@@ -410,12 +410,14 @@ namespace OrpheusCore
         /// <summary>
         /// Loads table data.
         /// </summary>
-        private void loadData()
+        private void loadData(IDbCommand dbCommand = null)
         {
+            if (dbCommand == null)
+                dbCommand = this.loadCommand;
             IDataReader dataReader = null;
             try
             {
-                dataReader = loadCommand.ExecuteReader();
+                dataReader = dbCommand.ExecuteReader();
                 var fieldCount = dataReader.FieldCount;
                 var fields = new List<int>();
                 var properties = new List<PropertyInfo>();
@@ -454,7 +456,7 @@ namespace OrpheusCore
             }
             catch (Exception e)
             {
-                this.logger.LogError(null, e, "Error executing table load : {0}", this.loadCommand.CommandText);
+                this.logger.LogError(null, e, "Error executing table load : {0}", dbCommand.CommandText);
                 throw e;
             }
             finally
@@ -948,6 +950,9 @@ namespace OrpheusCore
                 this.masterTable.DetailTables.Add(this);
             }
             this.modelHelper = new OrpheusModelHelper(typeof(T));
+            //if there a table-name attribute on the model, then use that as the table name
+            if (this.modelHelper.SQLName != null)
+                this.Name = this.modelHelper.SQLName;
             this.intializeModelProperties();
             this.createDeleteCommand();
             this.createUpdateCommand();
@@ -1039,6 +1044,18 @@ namespace OrpheusCore
                 this.ClearData();
             this.loadCommand.CommandText = SQL;
             this.loadData();
+        }
+
+        /// <summary>
+        /// Loads table data by executing a db command.
+        /// </summary>
+        /// <param name="dbCommand"></param>
+        /// <param name="clearExistingData"></param>
+        public void Load(IDbCommand dbCommand, bool clearExistingData = true)
+        {
+            if (clearExistingData)
+                this.ClearData();
+            this.loadData(dbCommand);
         }
 
         /// <summary>
@@ -1229,7 +1246,7 @@ namespace OrpheusCore
         /// Save changes to the database.
         /// </summary>
         /// <param name="dbTransaction">Transaction in which the commands will be executed</param>
-        public void Save(IDbTransaction dbTransaction = null)
+        public void Save(IDbTransaction dbTransaction = null, bool commitTransaction = true)
         {
             var transaction = dbTransaction == null ? this.database.BeginTransaction() : dbTransaction;
             this.OnBeforeSave?.Invoke(this, new SaveEventArguments() { Transaction = transaction });
@@ -1238,12 +1255,15 @@ namespace OrpheusCore
                 this.executeDelete(transaction);
                 this.executeUpdate(transaction);
                 this.executeInsert(transaction);
-                transaction.Commit();
+                if(commitTransaction)
+                    this.database.CommitTransaction(transaction);
                 this.OnAfterSave?.Invoke(this, new SaveEventArguments() { Transaction = transaction });
             }
             catch (Exception exception)
             {
-                transaction.Rollback();
+                //if transaction was committed then roll it back.
+                if(commitTransaction)
+                    this.database.RollbackTransaction(transaction);
                 this.logger.LogError(exception.Message);
                 throw exception;
             }
@@ -1268,6 +1288,7 @@ namespace OrpheusCore
         /// Occurs after a table modifies a record. It is fired on any Add,Update,Delete
         /// </summary>
         public event EventHandler<IModifyRecordEventArguments<T>> OnAfterModify;
+
         #endregion
     }
 }

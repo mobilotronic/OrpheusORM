@@ -11,7 +11,7 @@ namespace OrpheusCore.SchemaBuilder
     /// </summary>
     public class PrimaryKeySchemaConstraint : IPrimaryKeySchemaConstraint
     {
-        private ISchemaObject schemaObject;
+        private ISchemaDataObject schemaObject;
 
 
         ///<summary>
@@ -36,7 +36,7 @@ namespace OrpheusCore.SchemaBuilder
         /// Schema object were this schema constraint exists
         /// </summary>
         /// <returns>The schema object where the constraint exists</returns>
-        public ISchemaObject SchemaObject { get { return this.schemaObject; } }
+        public ISchemaDataObject SchemaObject { get { return this.schemaObject; } }
 
         /// <summary>
         /// Returns true if the constraint needs to drop.
@@ -90,7 +90,7 @@ namespace OrpheusCore.SchemaBuilder
         /// Creates a primary key constraint.
         /// </summary>
         /// <param name="schemaObject">Schema object where the constraint belong</param>
-        public PrimaryKeySchemaConstraint(ISchemaObject schemaObject)
+        public PrimaryKeySchemaConstraint(ISchemaDataObject schemaObject)
         {
             this.Fields = new List<string>();
             this.Sort = SchemaSort.ssAsc;
@@ -180,7 +180,7 @@ namespace OrpheusCore.SchemaBuilder
         /// Creates a foreign key constraint.
         /// </summary>
         /// <param name="schemaObject">Schema object where the constraint belong</param>
-        public ForeignKeySchemaConstraint(ISchemaObject schemaObject) :base(schemaObject)
+        public ForeignKeySchemaConstraint(ISchemaDataObject schemaObject) :base(schemaObject)
         {
             this.ForeignKeyFields = new List<string>();
             this.ConstraintSQLCommand = "PRIMARY KEY";
@@ -237,7 +237,7 @@ namespace OrpheusCore.SchemaBuilder
         /// Creates a unique key constraint.
         /// </summary>
         /// <param name="schemaObject">Schema object where the constraint belong</param>
-        public UniqueKeySchemaConstraint(ISchemaObject schemaObject) : base(schemaObject)
+        public UniqueKeySchemaConstraint(ISchemaDataObject schemaObject) : base(schemaObject)
         {
             this.ConstraintSQLCommand = "UNIQUE";
         }

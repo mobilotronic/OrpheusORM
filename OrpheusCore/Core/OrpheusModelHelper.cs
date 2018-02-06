@@ -60,7 +60,7 @@ namespace OrpheusCore
         /// </summary>
         /// <param name="prop"></param>
         /// <param name="schemaObj"></param>
-        private void createSchemaField(PropertyInfo prop, ISchemaObject schemaObj)
+        private void createSchemaField(PropertyInfo prop, ISchemaDataObject schemaObj)
         {
             var isNullable = schemaObj.DB.IsNullableType(prop.PropertyType);
             var isRequired = false;
@@ -341,7 +341,7 @@ namespace OrpheusCore
         /// Creates schema fields and constraints for a model.
         /// </summary>
         /// <param name="schemaObj"></param>
-        public void CreateSchemaFields(ISchemaObject schemaObj)
+        public void CreateSchemaFields(ISchemaDataObject schemaObj)
         {
             this.PrimaryCompositeKeys.ForEach(pk => {
                 var primaryKeyName = String.Format("PK_COMPOSITE_{0}_{1}", schemaObj.SQLName, String.Join("_", pk.Fields));
@@ -364,7 +364,7 @@ namespace OrpheusCore
         /// </summary>
         /// <param name="schemaObj"></param>
         /// <returns></returns>
-        public List<string> GetAlterDDLCommands(ISchemaObject schemaObj)
+        public List<string> GetAlterDDLCommands(ISchemaDataObject schemaObj)
         {
             var result = new List<string>();
             var selectCommand = schemaObj.DB.CreateCommand();

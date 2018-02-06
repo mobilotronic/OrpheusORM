@@ -39,14 +39,14 @@ namespace OrpheusTests
                 Trace.TraceInformation(DateTime.Now.ToString() + " Running TestCreateCommand - Creating " + recordCount.ToString() + " records");
                 sw.Start();
                 usersTable.ExecuteInserts(trans);
-                trans.Commit();
+                this.Database.CommitTransaction(trans);
                 sw.Stop();
                 Trace.TraceInformation("{0:c}", sw.Elapsed);
                 Trace.Close();
             }
             catch(Exception e)
             {
-                trans.Rollback();
+                this.Database.RollbackTransaction(trans);
                 throw e;
             }
         }
@@ -70,11 +70,11 @@ namespace OrpheusTests
                 usersTable.ExecuteInserts(tr);
                 try
                 {
-                    tr.Commit();
+                    this.Database.CommitTransaction(tr);
                 }
                 catch
                 {
-                    tr.Rollback();
+                    this.Database.RollbackTransaction(tr);
                     throw;
                 }
             }
@@ -95,14 +95,14 @@ namespace OrpheusTests
                 Trace.TraceInformation(DateTime.Now.ToString() + " Running TestUpdateCommand - Updating " + usersTable.Data.Count.ToString() + " records");
                 sw.Start();
                 usersTable.ExecuteUpdates(trans);
-                trans.Commit();
+                this.Database.CommitTransaction(trans);
                 sw.Stop();
                 Trace.TraceInformation("{0:c}", sw.Elapsed);
                 Trace.Close();
             }
             catch (Exception e)
             {
-                trans.Rollback();
+                this.Database.RollbackTransaction(trans);
                 throw e;
             }
 
@@ -127,11 +127,11 @@ namespace OrpheusTests
                 usersTable.ExecuteInserts(tr);
                 try
                 {
-                    tr.Commit();
+                    this.Database.CommitTransaction(tr);
                 }
                 catch
                 {
-                    tr.Rollback();
+                    this.Database.RollbackTransaction(tr);
                     throw;
                 }
             }
@@ -147,14 +147,14 @@ namespace OrpheusTests
                 Trace.TraceInformation(DateTime.Now.ToString() + " Running TestDeleteCommand - Updating " + usersTable.Data.Count.ToString() + " records");
                 sw.Start();
                 usersTable.ExecuteDeletes(trans);
-                trans.Commit();
+                this.Database.CommitTransaction(trans);
                 sw.Stop();
                 Trace.TraceInformation("{0:c}", sw.Elapsed);
                 Trace.Close();
             }
             catch (Exception e)
             {
-                trans.Rollback();
+                this.Database.RollbackTransaction(trans);
                 throw e;
             }
 
@@ -231,11 +231,11 @@ namespace OrpheusTests
             try
             {
                 usersTable.ExecuteInserts(trans);
-                trans.Commit();
+                this.Database.CommitTransaction(trans);
             }
             catch (Exception e)
             {
-                trans.Rollback();
+                this.Database.RollbackTransaction(trans);
                 throw e;
             }
             usersTable.ClearData();
@@ -293,11 +293,11 @@ namespace OrpheusTests
                 var insertStopWatch = this.CreateAndStartStopWatch(DateTime.Now.ToString() + " Running TestLoadBenchMark - Inserting " + usersData.Count.ToString() + " records");
                 usersTable.ExecuteInserts(trans);
                 this.StopAndLogWatch(insertStopWatch);
-                trans.Commit();
+                this.Database.CommitTransaction(trans);
             }
             catch (Exception e)
             {
-                trans.Rollback();
+                this.Database.RollbackTransaction(trans);
                 throw e;
             }
             usersTable.ClearData();

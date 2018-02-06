@@ -3,6 +3,7 @@ using OrpheusInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace OrpheusMySQLDDLHelper
 {
@@ -10,13 +11,14 @@ namespace OrpheusMySQLDDLHelper
     /// MySQL Server definition of DDL helper.
     /// DDL helper is used to execute DB engine specific DDL commands.
     /// </summary>
-    public class OrpheusMySQLServerDDLHelper : IOrpheusDDLHelper
+    public class OrpheusMySQLServerDDLHelper : IMySQLServerDDLHelper
     {
         private Dictionary<Type, string> typeMap = new Dictionary<Type, string>();
         private Dictionary<int, string> dbTypeMap = new Dictionary<int, string>();
         private string databaseName;
         private IDbCommand selectSchemaObjectTable;
         private IDbCommand selectSchemaObjectConstraint;
+        private IDbCommand selectSchemaObjectPrimaryConstraint;
         private MySqlConnection secondConnection;
         private IOrpheusDatabase db;
 
@@ -84,6 +86,11 @@ namespace OrpheusMySQLDDLHelper
         /// </summary>
         /// <returns>True if the DBEngine supports natively the Guid type</returns>
         public bool SupportsGuidType { get; private set; }
+
+        /// <summary>
+        /// Returns true if the DBEngine supports having schema name spaces. From the currently supported databases, only SQL has this feature.
+        /// </summary>
+        public bool SupportsSchemaNameSpace { get; private set; }
 
         /// <summary>
         /// Returns true if a database is successfully created using the underlying db engine settings.
@@ -229,6 +236,71 @@ namespace OrpheusMySQLDDLHelper
         }
 
         /// <summary>
+        ///  Returns true if the schema object exists in the database.
+        /// </summary>
+        /// <param name="schemaConstraint"></param>
+        /// <returns></returns>
+        public bool SchemaObjectExists(ISchemaConstraint schemaConstraint)
+        {
+            if(this.secondConnection != null)
+            {
+                if (this.selectSchemaObjectPrimaryConstraint == null)
+                {
+                    this.selectSchemaObjectPrimaryConstraint = this.secondConnection.CreateCommand();
+                    this.selectSchemaObjectPrimaryConstraint.CommandText = "SELECT DISTINCT TABLE_NAME,COLUMN_NAME FROM INFORMATION_SCHEMA.STATISTICS WHERE INDEX_SCHEMA = @DBNAME AND TABLE_NAME = @TABLE_NAME AND COLUMN_NAME IN (@COLUMN_NAME)";
+                    var param = this.selectSchemaObjectPrimaryConstraint.CreateParameter();
+                    param.ParameterName = "@DBNAME";
+                    this.selectSchemaObjectPrimaryConstraint.Parameters.Add(param);
+
+                    param = this.selectSchemaObjectPrimaryConstraint.CreateParameter();
+                    param.ParameterName = "@TABLE_NAME";
+                    this.selectSchemaObjectPrimaryConstraint.Parameters.Add(param);
+
+                    param = this.selectSchemaObjectPrimaryConstraint.CreateParameter();
+                    param.ParameterName = "@COLUMN_NAME";
+                    this.selectSchemaObjectPrimaryConstraint.Parameters.Add(param);
+                }
+
+                ((IDataParameter)this.selectSchemaObjectPrimaryConstraint.Parameters["@DBNAME"]).Value = this.DatabaseName;
+                ((IDataParameter)this.selectSchemaObjectPrimaryConstraint.Parameters["@TABLE_NAME"]).Value = schemaConstraint.SchemaObject.SQLName;
+                ((IDataParameter)this.selectSchemaObjectPrimaryConstraint.Parameters["@COLUMN_NAME"]).Value = string.Join(",", schemaConstraint.Fields.ToArray());
+                this.secondConnection.Open();
+                IDataReader reader = null;
+                try
+                {
+
+                    reader = this.selectSchemaObjectPrimaryConstraint.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        return reader.GetValue(0) != null;
+                    }
+                }
+                catch
+                {
+                    throw;
+                }
+                finally
+                {
+                    if (reader != null)
+                        reader.Close();
+                    this.secondConnection.Close();
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        ///  Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
+        /// </summary>
+        /// <param name="schemaObject"></param>
+        /// <returns></returns>
+        public bool SchemaObjectExists(ISchemaObject schemaObject)
+        {
+            return this.SchemaObjectExists(schemaObject.SQLName);
+        }
+
+        /// <summary>
         /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
         /// </summary>
         /// <param name="schemaObjectName">Schema object name</param>
@@ -265,7 +337,7 @@ namespace OrpheusMySQLDDLHelper
                     }
                     reader.Close();
                     ((IDataParameter)this.selectSchemaObjectConstraint.Parameters["@NAME"]).Value = schemaObjectName;
-                    reader = this.selectSchemaObjectTable.ExecuteReader();
+                    reader = this.selectSchemaObjectConstraint.ExecuteReader();
                     if (reader.Read())
                     {
                         return reader.GetValue(0) != null;
@@ -369,6 +441,11 @@ namespace OrpheusMySQLDDLHelper
         public string ModifyColumnCommand { get{ return " MODIFY COLUMN "; } }
 
         /// <summary>
+        /// Returns the underlying database engine type.
+        /// </summary>
+        public DatabaseEngineType DbEngineType { get; private set; }
+
+        /// <summary>
         /// Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.
         /// </summary>
         /// <param name="tableName">Table's name that schema is going to change</param>
@@ -413,6 +490,8 @@ namespace OrpheusMySQLDDLHelper
         {
             this.initializeTypeMap();
             this.SupportsGuidType = false;
+            this.SupportsSchemaNameSpace = false;
+            this.DbEngineType = DatabaseEngineType.dbMySQL;
         }
     }
 }

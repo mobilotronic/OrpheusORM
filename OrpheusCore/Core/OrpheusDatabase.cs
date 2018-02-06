@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using OrpheusCore.ServiceProvider;
 using OrpheusInterfaces;
 using System;
 using System.Collections.Generic;
@@ -162,6 +163,12 @@ namespace OrpheusCore
                 return this.dbConnection.ConnectionString;
             }
         }
+
+        /// <summary>
+        /// Last active transaction.
+        /// </summary>
+        public IDbTransaction LastActiveTransaction { get; private set; }
+        
         #endregion
 
         /// <summary>
@@ -188,7 +195,7 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusModule CreateModule(IOrpheusModuleDefinition definition = null)
         {
-            return new OrpheusModule(this, definition);
+            return ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusModule>(new object[] { this, definition }); // new OrpheusModule(this, definition);
         }
 
         /// <summary>
@@ -197,7 +204,7 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusTableOptions CreateTableOptions()
         {
-            return new OrpheusTableOptions();
+            return ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusTableOptions>();
         }
 
         /// <summary>
@@ -206,7 +213,7 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusTableKeyField CreateTableKeyField()
         {
-            return new OrpheusTableKeyField();
+            return ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusTableKeyField>();
         }
 
         /// <summary>
@@ -215,7 +222,7 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusModuleDefinition CreateModuleDefinition()
         {
-            var result = new OrpheusModuleDefinition();
+            var result = ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusModuleDefinition>();
             result.Database = this;
             return result;
         }
@@ -269,11 +276,12 @@ namespace OrpheusCore
         /// <param name="description"></param>
         /// <param name="version"></param>
         /// <returns></returns>
-        public ISchema CreateSchema(Guid id, string description, double version)
+        public ISchema CreateSchema(Guid id, string description, double version, string name = null)
         {
             if (id == Guid.Empty)
                 id = Guid.NewGuid();
-            return new SchemaBuilder.Schema(this, description, version, id);
+            //return new SchemaBuilder.Schema(this,description, version, id, name);
+            return OrpheusServiceProvider.Resolve<ISchema>(new object[] { this, description, version, id, name });
         }
 
         /// <summary>
@@ -291,15 +299,22 @@ namespace OrpheusCore
         /// <param name="SQL"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public IDbCommand CreatePreparedQuery(string SQL, List<string> parameters)
+        public IDbCommand CreatePreparedQuery(string SQL, List<string> parameters, List<object> parameterValues = null)
         {
             var result = this.CreateCommand();
             result.CommandText = SQL;
-            parameters.ForEach(parameter => {
+            for(var i=0;i<=parameters.Count - 1; i++)
+            {
+                var parameter = parameters[i];
+
                 var param = result.CreateParameter();
                 param.ParameterName = parameter.IndexOf("@") >= 0 ? parameter : "@" + parameter;
+                if(parameterValues != null)
+                {
+                    param.Value = parameterValues[i];
+                }
                 result.Parameters.Add(param);
-            });
+            }
             return result;
         }
 
@@ -367,7 +382,36 @@ namespace OrpheusCore
         /// <returns></returns>
         public IDbTransaction BeginTransaction()
         {
-            return this.dbConnection.BeginTransaction();
+            this.LastActiveTransaction = this.dbConnection.BeginTransaction();
+            return this.LastActiveTransaction;
+        }
+
+        /// <summary>
+        /// Commits a transaction.
+        /// </summary>
+        /// <param name="transaction"></param>
+        public void CommitTransaction(IDbTransaction transaction)
+        {
+            transaction.Commit();
+            if(transaction == this.LastActiveTransaction)
+            {
+                this.LastActiveTransaction = null;
+                transaction.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Rolls back a transaction.
+        /// </summary>
+        /// <param name="transaction"></param>
+        public void RollbackTransaction(IDbTransaction transaction)
+        {
+            transaction.Rollback();
+            if (transaction == this.LastActiveTransaction)
+            {
+                this.LastActiveTransaction = null;
+                transaction.Dispose();
+            }
         }
 
         /// <summary>
@@ -383,6 +427,55 @@ namespace OrpheusCore
             var table = this.CreateTable<T>(tableName);
             table.Load(SQL);
             return table.Data;
+        }
+
+        /// <summary>
+        /// Executes a db command and returns it as specific model.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dbCommand"></param>
+        /// <returns></returns>
+        public List<T> SQL<T>(IDbCommand dbCommand, string tableName = null)
+        {
+            tableName = tableName == null ? typeof(T).Name : tableName;
+            var table = this.CreateTable<T>(tableName);
+            table.Load(dbCommand);
+            return table.Data;
+        }
+
+        /// <summary>
+        /// Casts the DDL helper to the specified type.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public T DDLHelperAs<T>()
+        {
+            return (T)this.ddlHelper;
+        }
+
+        /// <summary>
+        /// Executes a DDL command.
+        /// </summary>
+        /// <param name="DDLCommand"></param>
+        public bool ExecuteDDL(string DDLCommand)
+        {
+            var result = false;
+            var cmd = this.CreateCommand();
+            cmd.CommandText = DDLCommand;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                result = true;
+            }
+            catch(Exception e)
+            {
+                this.logger.LogError("DDL Command [{0}] failed",DDLCommand);
+            }
+            finally
+            {
+                cmd.Dispose();
+            }
+            return result;
         }
         #endregion
     }

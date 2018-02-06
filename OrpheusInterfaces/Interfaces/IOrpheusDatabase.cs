@@ -29,6 +29,11 @@ namespace OrpheusInterfaces
         bool Connected { get; }
 
         /// <summary>
+        /// Last active transaction.
+        /// </summary>
+        IDbTransaction LastActiveTransaction { get; }
+           
+        /// <summary>
         /// List of registered Orpheus modules.
         /// </summary>
         /// <returns>Modules that are part in the database</returns>
@@ -39,12 +44,24 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <param name="module">Module to be registered</param>
         void RegisterModule(IOrpheusModule module);
-        
+
         /// <summary>
         /// Creates a transaction object.
         /// </summary>
         /// <returns>Returns a transaction instance</returns>
         IDbTransaction BeginTransaction();
+
+        /// <summary>
+        /// Commits a transaction.
+        /// </summary>
+        /// <param name="transaction"></param>
+        void CommitTransaction(IDbTransaction transaction);
+
+        /// <summary>
+        /// Rolls back a transaction.
+        /// </summary>
+        /// <param name="transaction"></param>
+        void RollbackTransaction(IDbTransaction transaction);
         
         /// <summary>
         /// Create a DbCommand
@@ -58,7 +75,7 @@ namespace OrpheusInterfaces
         /// <param name="SQL">SQL for the prepared query</param>
         /// <param name="parameters">SQL parameters</param>
         /// <returns></returns>
-        IDbCommand CreatePreparedQuery(string SQL,List<string> parameters);
+        IDbCommand CreatePreparedQuery(string SQL,List<string> parameters, List<object> parameterValues = null);
 
         /// <summary>
         /// Returns a prepared query with parameters created.
@@ -85,6 +102,13 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <returns>A OrpheusDDLHelper instance</returns>
         IOrpheusDDLHelper DDLHelper { get; set; }
+
+        /// <summary>
+        /// Casts the DDL helper to the specified type.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        T DDLHelperAs<T>();
 
         /// <summary>
         /// Gets the underlying IDbConnection connection string.
@@ -122,7 +146,7 @@ namespace OrpheusInterfaces
         /// <param name="description">Schema description</param>
         /// <param name="version">Schema version</param>
         /// <returns>An ISchema instance</returns>
-        ISchema CreateSchema(Guid id, string description, double version);
+        ISchema CreateSchema(Guid id,string description, double version, string name = null);
 
         /// <summary>
         /// Creates an OrpheusModule.
@@ -156,5 +180,20 @@ namespace OrpheusInterfaces
         /// <param name="SQL"></param>
         /// <returns></returns>
         List<T> SQL<T>(string SQL, string tableName = null);
+
+        /// <summary>
+        /// Executes a db command and returns it as specific model.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dbCommand"></param>
+        /// <returns></returns>
+        List<T> SQL<T>(IDbCommand dbCommand, string tableName = null);
+
+        /// <summary>
+        /// Executes a DDL command.
+        /// </summary>
+        /// <param name="DDLCommand"></param>
+        /// <returns>True if command was successfully executed.</returns>
+        bool ExecuteDDL(string DDLCommand);
     }
 }

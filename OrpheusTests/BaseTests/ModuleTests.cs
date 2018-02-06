@@ -87,7 +87,7 @@ namespace OrpheusTests
                 items.ExecuteInserts(tr);
                 try
                 {
-                    tr.Commit();
+                    this.Database.CommitTransaction(tr);
                 }
                 catch
                 {
@@ -384,7 +384,7 @@ namespace OrpheusTests
                 items.ExecuteInserts(tr);
                 try
                 {
-                    tr.Commit();
+                    this.Database.CommitTransaction(tr);
                 }
                 catch
                 {

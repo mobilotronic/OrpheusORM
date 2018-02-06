@@ -216,11 +216,11 @@ namespace OrpheusCore
                                 table.ExecuteInserts(tr);
                             else
                                 table.ExecuteUpdates(tr);
-                            tr.Commit();
+                            this.Database.CommitTransaction(tr);
                         }
                         catch
                         {
-                            tr.Rollback();
+                            this.Database.RollbackTransaction(tr);
                             throw;
                         }
                     }

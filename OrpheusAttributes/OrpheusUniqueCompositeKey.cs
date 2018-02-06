@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrpheusAttributes
 {
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     /// <summary>
     /// Unique composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.
     /// </summary>

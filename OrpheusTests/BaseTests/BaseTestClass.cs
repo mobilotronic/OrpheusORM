@@ -31,9 +31,9 @@ namespace OrpheusTests
             this.Database.Connect(TestDatabase.ConnectionString);
         }
 
-        public TestSchema CreateSchema()
+        public TestSchema CreateSchema(string name = null)
         {
-            return new TestSchema(this.Database, "Test Schema", 1.1, Guid.Parse(this.schemaId));
+            return new TestSchema(this.Database,"Test Schema", 1.1, Guid.Parse(this.schemaId), name);
         }
 
         public ILogger Logger

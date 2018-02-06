@@ -26,6 +26,11 @@ namespace OrpheusInterfaces
         /// View.
         /// </summary>
         sotView,
+
+        /// <summary>
+        /// Unique index
+        /// </summary>
+        sotUniqueIndex
     }
 
     /// <summary>
@@ -55,22 +60,10 @@ namespace OrpheusInterfaces
     public interface ISchemaObject
     {
         /// <summary>
-        /// DB Schema name. Any DDL/SQL statement executed will have pre-pent the SchemaName if set.
-        /// </summary>
-        /// <returns>Schema name</returns>
-        string SchemaName { get; set; }
-
-        /// <summary>
         /// The name of the schema object. Could be the name of a table or a view or a stored procedure.
         /// </summary>
         /// <returns>SQL name of the schema object</returns>
         string SQLName { get; set; }
-
-        /// <summary>
-        /// Unique generated when the object is created and saved in the DB.
-        /// </summary>
-        /// <returns>Schema object unique key</returns>
-        Guid UniqueKey { get; set; }
 
         /// <summary>
         /// If DDL is set all other fields and join schema objects are ignored. Dependencies still apply.
@@ -83,6 +76,83 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <returns>Get the generated DDL string for the schema object</returns>
         List<string> GetDDLString();
+
+        /// <summary>
+        /// Schema where the schema object belongs to.
+        /// </summary>
+        /// <returns>Schema where the schema object exists</returns>
+        ISchema Schema { get; set; }
+
+        /// <summary>
+        /// Adds a dependency to a schema object.
+        /// </summary>
+        /// <param name="schemaObject"></param>
+        void AddDependency(ISchemaObject schemaObject);
+
+        /// <summary>
+        /// Adds a dependency to a schema object based on the model type.
+        /// </summary>
+        /// <param name="modelType"></param>
+        void AddDependency(Type modelType);
+
+        /// <summary>
+        /// Adds a dependency to a schema object based on the model type.
+        /// </summary>
+        void AddDependency<T>() where T : class;
+
+        /// <summary>
+        /// Executes schema object.
+        /// </summary>
+        void Execute();
+
+        /// <summary>
+        /// Drops the schema object.
+        /// </summary>
+        void Drop();
+
+        /// <summary>
+        /// Defines the DDL action to be taken when schema objects are executed.
+        /// </summary>
+        /// <returns>Defines the DDL action to be taken when schema objects are executed</returns>
+        DDLAction Action { get; set; }
+
+        /// <summary>
+        /// Unique generated when the object is created and saved in the DB.
+        /// </summary>
+        /// <returns>Schema object unique key</returns>
+        Guid UniqueKey { get; set; }
+
+        /// <summary>
+        /// Other schema objects that this object depends upon. First it will iterate through the dependency list and run any schema object that is not yet created.
+        /// </summary>
+        /// <returns>Schema object that this object depends upon</returns>
+        List<ISchemaObject> SchemaObjectsThatIDepend { get; set; }
+
+        /// <summary>
+        /// Other schema objects that depend on this object. First it will iterate through the dependency list and run any schema object that is not yet destroyed.
+        /// </summary>
+        /// <returns>Schema objects that depend on this object</returns>
+        List<ISchemaObject> SchemaObjectsThatDependOnMe { get; set; }
+
+        /// <summary>
+        /// Gets the schema type.
+        /// </summary>
+        /// <returns>Schema type</returns>
+        SchemaObjectType GetSchemaType();
+
+        /// <summary>
+        /// True if the schema object is created in the DB.
+        /// </summary>
+        /// <returns>True if the schema object is created in the DB</returns>
+        bool IsCreated { get; }
+    }
+
+
+    /// <summary>
+    /// Base schema data object interface.
+    /// </summary>
+    public interface ISchemaDataObject : ISchemaObject
+    {
 
         /// <summary>
         /// Returns the DDL constraints string to be executed. 
@@ -103,18 +173,6 @@ namespace OrpheusInterfaces
         List<ISchemaConstraint> Constraints { get; set; }
 
         /// <summary>
-        /// Other schema objects that this object depends upon. First it will iterate through the dependency list and run any schema object that is not yet created.
-        /// </summary>
-        /// <returns>Schema object that this object depends upon</returns>
-        List<ISchemaObject> SchemaObjectsThatIDepend { get; set; }
-
-        /// <summary>
-        /// Other schema objects that depend on this object. First it will iterate through the dependency list and run any schema object that is not yet destroyed.
-        /// </summary>
-        /// <returns>Schema objects that depend on this object</returns>
-        List<ISchemaObject> SchemaObjectsThatDependOnMe { get; set; }
-
-        /// <summary>
         /// Optional data to initialize a schema object. Practically applicable only to a table.
         /// </summary>
         void SetData<T>(List<T> data);
@@ -127,38 +185,10 @@ namespace OrpheusInterfaces
         List<T> GetData<T>();
 
         /// <summary>
-        /// True if the schema object is created in the DB.
-        /// </summary>
-        /// <returns>True if the schema object is created in the DB</returns>
-        bool IsCreated { get; }
-
-        /// <summary>
-        /// Executes schema object.
-        /// </summary>
-        void Execute();
-
-        /// <summary>
-        /// Drops the schema object.
-        /// </summary>
-        void Drop();
-
-        /// <summary>
         /// Orpheus database.
         /// </summary>
         /// <returns>Database where the schema object exists</returns>>
         IOrpheusDatabase DB { get; }
-
-        /// <summary>
-        /// Gets the schema type.
-        /// </summary>
-        /// <returns>Schema type</returns>
-        SchemaObjectType GetSchemaType();
-
-        /// <summary>
-        /// Schema where the schema object belongs to.
-        /// </summary>
-        /// <returns>Schema where the schema object exists</returns>
-        ISchema Schema { get; set; }
 
         /// <summary>
         /// Creates fields from a given model.
@@ -221,34 +251,12 @@ namespace OrpheusInterfaces
         /// <returns>An IUniqueKeySchemaConstraint</returns>
         IUniqueKeySchemaConstraint AddUniqueKeyConstraint(string name, List<string> fields);
 
-        /// <summary>
-        /// Defines the DDL action to be taken when schema objects are executed.
-        /// </summary>
-        /// <returns>Defines the DDL action to be taken when schema objects are executed</returns>
-        DDLAction Action { get; set; }
-
-        /// <summary>
-        /// Adds a dependency to a schema object.
-        /// </summary>
-        /// <param name="schemaObject"></param>
-        void AddDependency(ISchemaObject schemaObject);
-
-        /// <summary>
-        /// Adds a dependency to a schema object based on the model type.
-        /// </summary>
-        /// <param name="modelType"></param>
-        void AddDependency(Type modelType);
-
-        /// <summary>
-        /// Adds a dependency to a schema object based on the model type.
-        /// </summary>
-        void AddDependency<T>() where T:class;
     }
 
     /// <summary>
     /// Create table schema interface.
     /// </summary>
-    public interface ISchemaTable : ISchemaObject
+    public interface ISchemaTable : ISchemaDataObject
     {
         /// <summary>
         /// Join definition. Defines how schema objects can be joined.
@@ -260,7 +268,7 @@ namespace OrpheusInterfaces
     /// <summary>
     /// Create view schema object.
     /// </summary>
-    public interface ISchemaView : ISchemaObject
+    public interface ISchemaView : ISchemaDataObject
     {
         /// <summary>
         /// Join schema objects. Applicable mostly when schema object is a table or a view.
