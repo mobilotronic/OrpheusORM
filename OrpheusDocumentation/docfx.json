@@ -4,14 +4,34 @@
       "src": [
         {
           "files": [ "**.csproj" ],
-          "exclude": [ "**/bin/**", "**/obj/**"],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
           "src": "../OrpheusInterfaces"
         },
         {
           "files": [ "**.csproj" ],
-          "exclude": [ "**/bin/**", "**/obj/**"],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
           "src": "../OrpheusAttributes"
-        }		
+        },
+        {
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
+          "src": "../OrpheusCore"
+        },
+        {
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
+          "src": "../OrpheusLogger"
+        },
+        {
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
+          "src": "../OrpheusMySQLDDLHelper"
+        },
+        {
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
+          "src": "../OrpheusSQLServerDDLHelper"
+        }
       ],
       "dest": "obj/temp/docfxapi"
     }

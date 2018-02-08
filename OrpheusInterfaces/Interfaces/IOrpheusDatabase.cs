@@ -54,40 +54,41 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Commits a transaction.
         /// </summary>
-        /// <param name="transaction"></param>
+        /// <param name="transaction">Transaction to be committed.</param>
         void CommitTransaction(IDbTransaction transaction);
 
         /// <summary>
         /// Rolls back a transaction.
         /// </summary>
-        /// <param name="transaction"></param>
+        /// <param name="transaction">Transaction to be rolled-back.</param>
         void RollbackTransaction(IDbTransaction transaction);
         
         /// <summary>
-        /// Create a DbCommand
+        /// Create a DbCommand.
         /// </summary>
-        /// <returns>A DbCommand instance</returns>
+        /// <returns>A DbCommand instance.</returns>
         IDbCommand CreateCommand();
-        
+
         /// <summary>
         /// Returns a prepared query with parameters created.
         /// </summary>
         /// <param name="SQL">SQL for the prepared query</param>
         /// <param name="parameters">SQL parameters</param>
-        /// <returns></returns>
+        /// <param name="parameterValues">SQL parameter values</param>
+        /// <returns>A DbCommand instance.</returns>
         IDbCommand CreatePreparedQuery(string SQL,List<string> parameters, List<object> parameterValues = null);
 
         /// <summary>
         /// Returns a prepared query with parameters created.
         /// </summary>
         /// <param name="SQL">SQL for the prepared query</param>
-        /// <returns></returns>
+        /// <returns>A DbCommand instance.</returns>
         IDbCommand CreatePreparedQuery(string SQL);
 
         /// <summary>
         /// Mapping dictionary of types to data types.
         /// </summary>
-        /// <returns>Type map dictionary between types and DbType</returns>
+        /// <returns>Type map dictionary between types and DbType.</returns>
         Dictionary<Type,System.Data.DbType> TypeMap { get; }
 
         /// <summary>
@@ -100,20 +101,20 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Helps execute DDL specific commands for the underlying db engine.
         /// </summary>
-        /// <returns>A OrpheusDDLHelper instance</returns>
+        /// <returns>An OrpheusDDLHelper instance.</returns>
         IOrpheusDDLHelper DDLHelper { get; set; }
 
         /// <summary>
         /// Casts the DDL helper to the specified type.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <typeparam name="T">Type in which to cast the DDLHelper. Must be a descendant of IOrpheusDDLHelper.</typeparam>
+        /// <returns>An instance of T.</returns>
         T DDLHelperAs<T>();
 
         /// <summary>
         /// Gets the underlying IDbConnection connection string.
         /// </summary>
-        /// <returns>The database connection string</returns>
+        /// <returns>The database connection string.</returns>
         string ConnectionString { get;}
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <typeparam name="T">Model type for table</typeparam>
         /// <param name="options">Table options</param>
-        /// <returns>An Orpheus table instance</returns>
+        /// <returns>An Orpheus table instance.</returns>
         IOrpheusTable<T> CreateTable<T>(IOrpheusTableOptions options);
 
         /// <summary>
@@ -130,13 +131,13 @@ namespace OrpheusInterfaces
         /// <typeparam name="T">Model type for the table</typeparam>
         /// <param name="tableName">Table name</param>
         /// <param name="keyFields">Table key fields</param>
-        /// <returns>An Orpheus table instance</returns>
+        /// <returns>An Orpheus table instance.</returns>
         IOrpheusTable<T> CreateTable<T>(string tableName,List<IOrpheusTableKeyField> keyFields = null);
 
         /// <summary>
         /// Creates a table and sets its database,using the type name as the table name.
         /// </summary>
-        /// <returns>An Orpheus table instance</returns>
+        /// <returns>An Orpheus table instance.</returns>
         IOrpheusTable<T> CreateTable<T>();
 
         /// <summary>
@@ -145,7 +146,8 @@ namespace OrpheusInterfaces
         /// <param name="id">Schema id</param>
         /// <param name="description">Schema description</param>
         /// <param name="version">Schema version</param>
-        /// <returns>An ISchema instance</returns>
+        /// <param name="name">Schema name.From the supported db engines, only SQL server has support for named schemas.</param>
+        /// <returns>An ISchema instance.</returns>
         ISchema CreateSchema(Guid id,string description, double version, string name = null);
 
         /// <summary>
@@ -158,19 +160,19 @@ namespace OrpheusInterfaces
         /// <summary>
         /// Creates an OrpheusModuleDefinition.
         /// </summary>
-        /// <returns>An IOrpheusModuleDefinition instance</returns>
+        /// <returns>An IOrpheusModuleDefinition instance.</returns>
         IOrpheusModuleDefinition CreateModuleDefinition();
 
         /// <summary>
         /// Creates an OrpheusTableOptions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An IOrpheusTableOptions instance.</returns>
         IOrpheusTableOptions CreateTableOptions();
 
         /// <summary>
         /// Creates an OrpheusTableKeyField.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An IOrpheusTableKeyField instance.</returns>
         IOrpheusTableKeyField CreateTableKeyField();
 
         /// <summary>
@@ -178,21 +180,22 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="SQL"></param>
-        /// <returns></returns>
+        /// <returns>A list of 'T'</returns>
         List<T> SQL<T>(string SQL, string tableName = null);
 
         /// <summary>
         /// Executes a db command and returns it as specific model.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="dbCommand"></param>
-        /// <returns></returns>
+        /// <param name="dbCommand">DbCommand to run.</param>
+        /// <param name="tableName">Optionally set the table name, for which the query will run.</param>
+        /// <returns>A list of 'T'</returns>
         List<T> SQL<T>(IDbCommand dbCommand, string tableName = null);
 
         /// <summary>
         /// Executes a DDL command.
         /// </summary>
-        /// <param name="DDLCommand"></param>
+        /// <param name="DDLCommand">DbCommand to run.</param>
         /// <returns>True if command was successfully executed.</returns>
         bool ExecuteDDL(string DDLCommand);
     }

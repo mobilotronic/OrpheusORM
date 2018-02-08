@@ -285,7 +285,7 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// 
+        /// Creates a DbCommand.
         /// </summary>
         /// <returns></returns>
         public IDbCommand CreateCommand()
@@ -296,8 +296,9 @@ namespace OrpheusCore
         /// <summary>
         /// Returns a prepared query command.
         /// </summary>
-        /// <param name="SQL"></param>
-        /// <param name="parameters"></param>
+        /// <param name="SQL">SQL query to prepare</param>
+        /// <param name="parameters">List of query parameters</param>
+        /// <param name="parameterValues">List of query parameter values</param>
         /// <returns></returns>
         public IDbCommand CreatePreparedQuery(string SQL, List<string> parameters, List<object> parameterValues = null)
         {
@@ -321,7 +322,7 @@ namespace OrpheusCore
         /// <summary>
         /// Returns a prepared query command.
         /// </summary>
-        /// <param name="SQL"></param>
+        /// <param name="SQL">SQL query to prepare</param>
         /// <returns></returns>
         public IDbCommand CreatePreparedQuery(string SQL)
         {

@@ -23,8 +23,17 @@ namespace OrpheusInterfaces
     /// </summary>
     public enum DatabaseEngineType
     {
+        /// <summary>
+        /// Unknown - unsupported.
+        /// </summary>
         dbUnknown,
+        /// <summary>
+        /// SQL Server.
+        /// </summary>
         dbSQLServer,
+        /// <summary>
+        /// MySQL.
+        /// </summary>
         dbMySQL
     }
 
@@ -38,7 +47,6 @@ namespace OrpheusInterfaces
         /// Returns true the database exists.
         /// </summary>
         /// <param name="dbName">Database name</param>
-        /// <returns>True if the database exists</returns>
         bool DatabaseExists(string dbName);
 
         /// <summary>

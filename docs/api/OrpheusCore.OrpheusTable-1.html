@@ -1,0 +1,1265 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class OrpheusTable&lt;T&gt;
+   | Orpheus ORM </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class OrpheusTable&lt;T&gt;
+   | Orpheus ORM ">
+    <meta name="generator" content="docfx 2.25.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../Images/OrpheusLogo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-12">
+            <article class="content wrap" id="_content" data-uid="OrpheusCore.OrpheusTable`1">
+  
+  
+  <h1 id="OrpheusCore_OrpheusTable_1" data-uid="OrpheusCore.OrpheusTable`1" class="text-break">Class OrpheusTable&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
+Holds all the data of the connected table.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">OrpheusTable&lt;T&gt;</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="OrpheusCore.html">OrpheusCore</a></h6>
+  <h6><strong>Assembly</strong>: OrpheusCore.dll</h6>
+  <h5 id="OrpheusCore_OrpheusTable_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class OrpheusTable&lt;T&gt; : IOrpheusTable&lt;T&gt;, IOrpheusTable</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Model type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_IOrpheusDatabase_System_String_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__OrpheusInterfaces_IOrpheusTable_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.%23ctor(OrpheusInterfaces.IOrpheusDatabase%2CSystem.String%2CSystem.Collections.Generic.List%7BOrpheusInterfaces.IOrpheusTableKeyField%7D%2COrpheusInterfaces.IOrpheusTable%2CSystem.Collections.Generic.List%7BOrpheusInterfaces.IOrpheusTableKeyField%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L934">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1__ctor_" data-uid="OrpheusCore.OrpheusTable`1.#ctor*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_IOrpheusDatabase_System_String_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__OrpheusInterfaces_IOrpheusTable_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__" data-uid="OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField},OrpheusInterfaces.IOrpheusTable,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField})">OrpheusTable(IOrpheusDatabase, String, List&lt;IOrpheusTableKeyField&gt;, IOrpheusTable, List&lt;IOrpheusTableKeyField&gt;)</h4>
+  <div class="markdown level1 summary"><p>Orpheus table constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OrpheusTable(IOrpheusDatabase database, string tableName, List&lt;IOrpheusTableKeyField&gt; keyFields, IOrpheusTable masterTable = null, List&lt;IOrpheusTableKeyField&gt; masterTableKeyFields = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
+        <td><span class="parametername">database</span></td>
+        <td><p>Orpheus database</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">tableName</span></td>
+        <td><p>Table name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
+        <td><span class="parametername">keyFields</span></td>
+        <td><p>Table key fields.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.IOrpheusTable.html">IOrpheusTable</a></td>
+        <td><span class="parametername">masterTable</span></td>
+        <td><p>Master table (optional)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
+        <td><span class="parametername">masterTableKeyFields</span></td>
+        <td><p>Master table key fields (optional)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_IOrpheusTableOptions_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.%23ctor(OrpheusInterfaces.IOrpheusTableOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L967">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1__ctor_" data-uid="OrpheusCore.OrpheusTable`1.#ctor*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_IOrpheusTableOptions_" data-uid="OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.IOrpheusTableOptions)">OrpheusTable(IOrpheusTableOptions)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OrpheusTable(IOrpheusTableOptions options)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.IOrpheusTableOptions.html">IOrpheusTableOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Data.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Data%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1072">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Data_" data-uid="OrpheusCore.OrpheusTable`1.Data*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Data" data-uid="OrpheusCore.OrpheusTable`1.Data">Data</h4>
+  <div class="markdown level1 summary"><p>Table&apos;s currently loaded data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;T&gt; Data { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_DetailTables.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.DetailTables%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1122">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_DetailTables_" data-uid="OrpheusCore.OrpheusTable`1.DetailTables*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_DetailTables" data-uid="OrpheusCore.OrpheusTable`1.DetailTables">DetailTables</h4>
+  <div class="markdown level1 summary"><p>Associated detail tables.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;IOrpheusTable&gt; DetailTables { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTable.html">IOrpheusTable</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_KeyFields.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.KeyFields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1090">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_KeyFields_" data-uid="OrpheusCore.OrpheusTable`1.KeyFields*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_KeyFields" data-uid="OrpheusCore.OrpheusTable`1.KeyFields">KeyFields</h4>
+  <div class="markdown level1 summary"><p>Table key fields.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;IOrpheusTableKeyField&gt; KeyFields { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Level.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Level%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1133">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Level_" data-uid="OrpheusCore.OrpheusTable`1.Level*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Level" data-uid="OrpheusCore.OrpheusTable`1.Level">Level</h4>
+  <div class="markdown level1 summary"><p>Table level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Level { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_MasterTable.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.MasterTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1106">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_MasterTable_" data-uid="OrpheusCore.OrpheusTable`1.MasterTable*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_MasterTable" data-uid="OrpheusCore.OrpheusTable`1.MasterTable">MasterTable</h4>
+  <div class="markdown level1 summary"><p>Associated master table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IOrpheusTable MasterTable { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.IOrpheusTable.html">IOrpheusTable</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_MasterTableKeyFields.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.MasterTableKeyFields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1095">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_MasterTableKeyFields_" data-uid="OrpheusCore.OrpheusTable`1.MasterTableKeyFields*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_MasterTableKeyFields" data-uid="OrpheusCore.OrpheusTable`1.MasterTableKeyFields">MasterTableKeyFields</h4>
+  <div class="markdown level1 summary"><p>Table master table&apos;s key fields.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;IOrpheusTableKeyField&gt; MasterTableKeyFields { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Modified.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Modified%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1168">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Modified_" data-uid="OrpheusCore.OrpheusTable`1.Modified*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Modified" data-uid="OrpheusCore.OrpheusTable`1.Modified">Modified</h4>
+  <div class="markdown level1 summary"><p>Modified flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Modified { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Name.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1085">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Name_" data-uid="OrpheusCore.OrpheusTable`1.Name*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Name" data-uid="OrpheusCore.OrpheusTable`1.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Table name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Add__0_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1180">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Add_" data-uid="OrpheusCore.OrpheusTable`1.Add*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Add__0_" data-uid="OrpheusCore.OrpheusTable`1.Add(`0)">Add(T)</h4>
+  <div class="markdown level1 summary"><p>Adds a new record.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(T newRecord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">newRecord</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Add_System_Collections_Generic_List__0__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Add(System.Collections.Generic.List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1191">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Add_" data-uid="OrpheusCore.OrpheusTable`1.Add*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Add_System_Collections_Generic_List__0__" data-uid="OrpheusCore.OrpheusTable`1.Add(System.Collections.Generic.List{`0})">Add(List&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds new records.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(List&lt;T&gt; newRecords)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="parametername">newRecords</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_ClearData.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.ClearData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1064">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_ClearData_" data-uid="OrpheusCore.OrpheusTable`1.ClearData*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_ClearData" data-uid="OrpheusCore.OrpheusTable`1.ClearData">ClearData()</h4>
+  <div class="markdown level1 summary"><p>Clears existing loaded data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearData()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Delete__0_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Delete(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1201">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Delete_" data-uid="OrpheusCore.OrpheusTable`1.Delete*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Delete__0_" data-uid="OrpheusCore.OrpheusTable`1.Delete(`0)">Delete(T)</h4>
+  <div class="markdown level1 summary"><p>Deletes an existing record.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Delete(T record)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">record</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Delete_System_Collections_Generic_List__0__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Delete(System.Collections.Generic.List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1212">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Delete_" data-uid="OrpheusCore.OrpheusTable`1.Delete*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Delete_System_Collections_Generic_List__0__" data-uid="OrpheusCore.OrpheusTable`1.Delete(System.Collections.Generic.List{`0})">Delete(List&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Deletes existing records.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Delete(List&lt;T&gt; records)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="parametername">records</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_executeDelete_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.executeDelete(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L694">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_executeDelete_" data-uid="OrpheusCore.OrpheusTable`1.executeDelete*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_executeDelete_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.executeDelete(System.Data.IDbTransaction)">executeDelete(IDbTransaction)</h4>
+  <div class="markdown level1 summary"><p>Executes deletes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void executeDelete(IDbTransaction transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="parametername">transaction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_ExecuteDeletes_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.ExecuteDeletes(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L977">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_ExecuteDeletes_" data-uid="OrpheusCore.OrpheusTable`1.ExecuteDeletes*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_ExecuteDeletes_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.ExecuteDeletes(System.Data.IDbTransaction)">ExecuteDeletes(IDbTransaction)</h4>
+  <div class="markdown level1 summary"><p>Executes deletes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ExecuteDeletes(IDbTransaction transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="parametername">transaction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_executeInsert_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.executeInsert(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L753">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_executeInsert_" data-uid="OrpheusCore.OrpheusTable`1.executeInsert*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_executeInsert_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.executeInsert(System.Data.IDbTransaction)">executeInsert(IDbTransaction)</h4>
+  <div class="markdown level1 summary"><p>Executes inserts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void executeInsert(IDbTransaction transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="parametername">transaction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_ExecuteInserts_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.ExecuteInserts(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L995">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_ExecuteInserts_" data-uid="OrpheusCore.OrpheusTable`1.ExecuteInserts*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_ExecuteInserts_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.ExecuteInserts(System.Data.IDbTransaction)">ExecuteInserts(IDbTransaction)</h4>
+  <div class="markdown level1 summary"><p>Executes inserts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ExecuteInserts(IDbTransaction transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="parametername">transaction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_executeUpdate_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.executeUpdate(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L722">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_executeUpdate_" data-uid="OrpheusCore.OrpheusTable`1.executeUpdate*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_executeUpdate_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.executeUpdate(System.Data.IDbTransaction)">executeUpdate(IDbTransaction)</h4>
+  <div class="markdown level1 summary"><p>Executes updates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void executeUpdate(IDbTransaction transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="parametername">transaction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_ExecuteUpdates_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.ExecuteUpdates(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L986">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_ExecuteUpdates_" data-uid="OrpheusCore.OrpheusTable`1.ExecuteUpdates*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_ExecuteUpdates_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.ExecuteUpdates(System.Data.IDbTransaction)">ExecuteUpdates(IDbTransaction)</h4>
+  <div class="markdown level1 summary"><p>Executes updates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ExecuteUpdates(IDbTransaction transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="parametername">transaction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_GetKeyValues.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.GetKeyValues%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1147">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_GetKeyValues_" data-uid="OrpheusCore.OrpheusTable`1.GetKeyValues*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_GetKeyValues" data-uid="OrpheusCore.OrpheusTable`1.GetKeyValues">GetKeyValues()</h4>
+  <div class="markdown level1 summary"><p>Returns list of currently loaded key values. It&apos;s purpose is to be used on a master-detail schema
+where this will be used from the detail tables in order to load their data based on the current master record.
+It&apos;s highly inadvisable to be used outside this scope.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;object&gt; GetKeyValues()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___System_Boolean_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Load(System.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Collections.Generic.List%7BSystem.Object%7D%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1028">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Load_" data-uid="OrpheusCore.OrpheusTable`1.Load*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},System.Boolean)">Load(Dictionary&lt;String, List&lt;Object&gt;&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Loads records from the DB to the table.
+You can configure having multiple fields and multiple values per field.
+Multiple field values are bound with a logical OR.
+Multiple fields are bound with a logical AND</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(Dictionary&lt;string, List&lt;object&gt;&gt; keyValues = null, bool clearExistingData = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
+        <td><span class="parametername">keyValues</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clearExistingData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Load_System_Collections_Generic_List_System_Object__System_Boolean_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Load(System.Collections.Generic.List%7BSystem.Object%7D%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1005">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Load_" data-uid="OrpheusCore.OrpheusTable`1.Load*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Load_System_Collections_Generic_List_System_Object__System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Load(System.Collections.Generic.List{System.Object},System.Boolean)">Load(List&lt;Object&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Loads data from the DB to the table. Implicitly on the table key field.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(List&lt;object&gt; keyValues = null, bool clearExistingData = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="parametername">keyValues</span></td>
+        <td><p>Key values</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clearExistingData</span></td>
+        <td><p>If true, clears existing loaded data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Load_System_Data_IDbCommand_System_Boolean_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Load(System.Data.IDbCommand%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1054">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Load_" data-uid="OrpheusCore.OrpheusTable`1.Load*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Load_System_Data_IDbCommand_System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Load(System.Data.IDbCommand,System.Boolean)">Load(IDbCommand, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Loads table data by executing a db command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(IDbCommand dbCommand, bool clearExistingData = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbCommand</span></td>
+        <td><span class="parametername">dbCommand</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clearExistingData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Load_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Load(System.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1041">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Load_" data-uid="OrpheusCore.OrpheusTable`1.Load*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Load_System_String_System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Load(System.String,System.Boolean)">Load(String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Loads table data by executing a SQL command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(string SQL, bool clearExistingData = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">SQL</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clearExistingData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Save_System_Data_IDbTransaction_System_Boolean_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Save(System.Data.IDbTransaction%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1249">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Save_" data-uid="OrpheusCore.OrpheusTable`1.Save*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Save_System_Data_IDbTransaction_System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Save(System.Data.IDbTransaction,System.Boolean)">Save(IDbTransaction, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Save changes to the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Save(IDbTransaction dbTransaction = null, bool commitTransaction = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="parametername">dbTransaction</span></td>
+        <td><p>Transaction in which the commands will be executed</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">commitTransaction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Update__0_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Update(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1222">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Update_" data-uid="OrpheusCore.OrpheusTable`1.Update*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Update__0_" data-uid="OrpheusCore.OrpheusTable`1.Update(`0)">Update(T)</h4>
+  <div class="markdown level1 summary"><p>Updates an existing record.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update(T record)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">record</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_Update_System_Collections_Generic_List__0__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.Update(System.Collections.Generic.List%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1239">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusTable_1_Update_" data-uid="OrpheusCore.OrpheusTable`1.Update*"></a>
+  <h4 id="OrpheusCore_OrpheusTable_1_Update_System_Collections_Generic_List__0__" data-uid="OrpheusCore.OrpheusTable`1.Update(System.Collections.Generic.List{`0})">Update(List&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Updates existing records.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update(List&lt;T&gt; records)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="parametername">records</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_OnAfterModify.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.OnAfterModify%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1290">View Source</a>
+  </span>
+  <h4 id="OrpheusCore_OrpheusTable_1_OnAfterModify" data-uid="OrpheusCore.OrpheusTable`1.OnAfterModify">OnAfterModify</h4>
+  <div class="markdown level1 summary"><p>Occurs after a table modifies a record. It is fired on any Add,Update,Delete</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;IModifyRecordEventArguments&lt;T&gt;&gt; OnAfterModify</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments</a>&lt;T&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_OnAfterSave.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.OnAfterSave%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1280">View Source</a>
+  </span>
+  <h4 id="OrpheusCore_OrpheusTable_1_OnAfterSave" data-uid="OrpheusCore.OrpheusTable`1.OnAfterSave">OnAfterSave</h4>
+  <div class="markdown level1 summary"><p>Occurs after the transaction has been committed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ISaveEventArguments&gt; OnAfterSave</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_OnBeforeModify.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.OnBeforeModify%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1285">View Source</a>
+  </span>
+  <h4 id="OrpheusCore_OrpheusTable_1_OnBeforeModify" data-uid="OrpheusCore.OrpheusTable`1.OnBeforeModify">OnBeforeModify</h4>
+  <div class="markdown level1 summary"><p>Occurs before a table modifies a record. It is fired on any Add,Update,Delete</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;IModifyRecordEventArguments&lt;T&gt;&gt; OnBeforeModify</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments</a>&lt;T&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1_OnBeforeSave.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601.OnBeforeSave%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1275">View Source</a>
+  </span>
+  <h4 id="OrpheusCore_OrpheusTable_1_OnBeforeSave" data-uid="OrpheusCore.OrpheusTable`1.OnBeforeSave">OnBeforeSave</h4>
+  <div class="markdown level1 summary"><p>Occurs before records are save in the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ISaveEventArguments&gt; OnBeforeSave</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="OrpheusInterfaces.IOrpheusTable-1.html">IOrpheusTable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="OrpheusInterfaces.IOrpheusTable.html">IOrpheusTable</a>
+  </div>
+</article>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Orpheus ORM - Original Author © 2017
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-99241001-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+  </body>
+</html>

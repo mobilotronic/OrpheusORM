@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum SchemaObjectType
+    <title>Namespace OrpheusCore
    | Orpheus ORM </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum SchemaObjectType
+    <meta name="title" content="Namespace OrpheusCore
    | Orpheus ORM ">
     <meta name="generator" content="docfx 2.25.2.0">
     
@@ -77,52 +77,53 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.SchemaObjectType">
+            <article class="content wrap" id="_content" data-uid="OrpheusCore">
   
-  
-  <h1 id="OrpheusInterfaces_SchemaObjectType" data-uid="OrpheusInterfaces.SchemaObjectType" class="text-break">Enum SchemaObjectType
+  <h1 id="OrpheusCore" data-uid="OrpheusCore" class="text-break">Namespace OrpheusCore
   </h1>
-  <div class="markdown level0 summary"><p>Type of a schema object.</p>
-</div>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a></h6>
-  <h6><strong>Assembly</strong>: OrpheusInterfaces.dll</h6>
-  <h5 id="OrpheusInterfaces_SchemaObjectType_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum SchemaObjectType</code></pre>
-  </div>
-  <h3 id="fields">Fields
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
   </h3>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    <thead>
-    <tbody>
-      <tr>
-        <td id="OrpheusInterfaces_SchemaObjectType_sotTable">sotTable</td>
-        <td><p>Table.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="OrpheusInterfaces_SchemaObjectType_sotUniqueIndex">sotUniqueIndex</td>
-        <td><p>Unique index</p>
-</td>
-      </tr>
-      <tr>
-        <td id="OrpheusInterfaces_SchemaObjectType_sotUnknown">sotUnknown</td>
-        <td><p>Unknown type. This is the default.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="OrpheusInterfaces_SchemaObjectType_sotView">sotView</td>
-        <td><p>View.</p>
-</td>
-      </tr>
-    </tbody>
-  </thead></thead></table>
+      <h4><a class="xref" href="OrpheusCore.OrpheusDatabase.html">OrpheusDatabase</a></h4>
+      <section><p>Orpheus database.</p>
+</section>
+      <h4><a class="xref" href="OrpheusCore.OrpheusModelHelper.html">OrpheusModelHelper</a></h4>
+      <section><p>OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.</p>
+</section>
+      <h4><a class="xref" href="OrpheusCore.OrpheusModule.html">OrpheusModule</a></h4>
+      <section><p>OrpheusModule class represents a logical division and grouping of a set of tables.
+For example you can an OrdersModule, which will be comprised from many different tables.
+Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,
+will be saved as well. All master-detail relationships and keys will be updated automatically.</p>
+</section>
+      <h4><a class="xref" href="OrpheusCore.OrpheusModuleDefinition.html">OrpheusModuleDefinition</a></h4>
+      <section><p>The OrpheusModuleDefinition can save and load a module definition. A module definition, includes relationship between the module tables
+and that is required for a module to be functional. <a class="xref" href="OrpheusInterfaces.IOrpheusModule.html">IOrpheusModule</a></p>
+</section>
+      <h4><a class="xref" href="OrpheusCore.OrpheusTable-1.html">OrpheusTable&lt;T&gt;</a></h4>
+      <section><p>Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
+Holds all the data of the connected table.</p>
+</section>
+      <h4><a class="xref" href="OrpheusCore.OrpheusTableKeyField.html">OrpheusTableKeyField</a></h4>
+      <section></section>
+      <h4><a class="xref" href="OrpheusCore.OrpheusTableOptions.html">OrpheusTableOptions</a></h4>
+      <section><p>Represents <a class="xref" href="OrpheusInterfaces.IOrpheusTable.html">IOrpheusTable</a> options, which can be used to instantiate a table.</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="OrpheusCore.ModifiedRecordAction.html">ModifiedRecordAction</a></h4>
+      <section><p>Modified record action.</p>
+</section>
+    <h3 id="delegates">Delegates
+  </h3>
+      <h4><a class="xref" href="OrpheusCore.ModelProperty.html">ModelProperty</a></h4>
+      <section><p>Helper delegate, to be called when iterating through model&apos;s properties.</p>
+</section>
+      <h4><a class="xref" href="OrpheusCore.PropertyAttribute.html">PropertyAttribute</a></h4>
+      <section><p>Helper delegate, to be called when iterating through property&apos;s attributes.</p>
+</section>
 </article>
           </div>
         </div>

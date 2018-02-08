@@ -1,0 +1,735 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ISchemaDataObject
+   | Orpheus ORM </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ISchemaDataObject
+   | Orpheus ORM ">
+    <meta name="generator" content="docfx 2.25.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../Images/OrpheusLogo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-12">
+            <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.ISchemaDataObject">
+  
+  
+  <h1 id="OrpheusInterfaces_ISchemaDataObject" data-uid="OrpheusInterfaces.ISchemaDataObject" class="text-break">Interface ISchemaDataObject
+  </h1>
+  <div class="markdown level0 summary"><p>Base schema data object interface.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a></h6>
+  <h6><strong>Assembly</strong>: OrpheusInterfaces.dll</h6>
+  <h5 id="OrpheusInterfaces_ISchemaDataObject_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISchemaDataObject : ISchemaObject</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_Constraints.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.Constraints%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L173">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_Constraints_" data-uid="OrpheusInterfaces.ISchemaDataObject.Constraints*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_Constraints" data-uid="OrpheusInterfaces.ISchemaDataObject.Constraints">Constraints</h4>
+  <div class="markdown level1 summary"><p>List of schema object constraints. Primary,foreign or any type of constraint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;ISchemaConstraint&gt; Constraints { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaConstraint.html">ISchemaConstraint</a>&gt;</td>
+        <td><p>Constraints in the schema object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_DB.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.DB%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L191">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_DB_" data-uid="OrpheusInterfaces.ISchemaDataObject.DB*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_DB" data-uid="OrpheusInterfaces.ISchemaDataObject.DB">DB</h4>
+  <div class="markdown level1 summary"><p>Orpheus database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IOrpheusDatabase DB { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
+        <td><p>Database where the schema object exists</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_Fields.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.Fields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L167">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_Fields_" data-uid="OrpheusInterfaces.ISchemaDataObject.Fields*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_Fields" data-uid="OrpheusInterfaces.ISchemaDataObject.Fields">Fields</h4>
+  <div class="markdown level1 summary"><p>Fields for the schema object. Applicable mostly when schema object is a table or a view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;ISchemaField&gt; Fields { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaField.html">ISchemaField</a>&gt;</td>
+        <td><p>Fields in the schema object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_AddField_System_String_System_String_System_Boolean_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.AddField(System.String%2CSystem.String%2CSystem.Boolean%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L223">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_AddField_" data-uid="OrpheusInterfaces.ISchemaDataObject.AddField*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_AddField_System_String_System_String_System_Boolean_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.ISchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)">AddField(String, String, Boolean, String, String, String)</h4>
+  <div class="markdown level1 summary"><p>Creates and adds a field to the field list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISchemaField AddField(string name, string dataType, bool nullable = true, string defaultValue = null, string size = null, string alias = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Field name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">dataType</span></td>
+        <td><p>Field data type</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">nullable</span></td>
+        <td><p>Nullable</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">defaultValue</span></td>
+        <td><p>Field default value</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>Field size</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">alias</span></td>
+        <td><p>Field alias</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.ISchemaField.html">ISchemaField</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_AddForeignKeyConstraint_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String%2CSystem.Collections.Generic.List%7BSystem.String%7D%2CSystem.String%2CSystem.Collections.Generic.List%7BSystem.String%7D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L244">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_AddForeignKeyConstraint_" data-uid="OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_AddForeignKeyConstraint_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_" data-uid="OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)">AddForeignKeyConstraint(String, List&lt;String&gt;, String, List&lt;String&gt;, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Adds a foreign key constraint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IForeignKeySchemaConstraint AddForeignKeyConstraint(string name, List&lt;string&gt; fields, string foreignKeySchemaObject, List&lt;string&gt; foreignKeySchemaFields, bool onCascadeDelete = true, bool onUpdateDelete = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Constraint name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">fields</span></td>
+        <td><p>Constraint fields</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">foreignKeySchemaObject</span></td>
+        <td><p>Reference table name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">foreignKeySchemaFields</span></td>
+        <td><p>Reference table fields</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">onCascadeDelete</span></td>
+        <td><p>Cascade on delete</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">onUpdateDelete</span></td>
+        <td><p>Cascade on update</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.IForeignKeySchemaConstraint.html">IForeignKeySchemaConstraint</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_AddPrimaryKeyConstraint_System_String_System_Collections_Generic_List_System_String__OrpheusInterfaces_SchemaSort_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String%2CSystem.Collections.Generic.List%7BSystem.String%7D%2COrpheusInterfaces.SchemaSort)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L232">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_AddPrimaryKeyConstraint_" data-uid="OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_AddPrimaryKeyConstraint_System_String_System_Collections_Generic_List_System_String__OrpheusInterfaces_SchemaSort_" data-uid="OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.SchemaSort)">AddPrimaryKeyConstraint(String, List&lt;String&gt;, SchemaSort)</h4>
+  <div class="markdown level1 summary"><p>Adds a primary key constraint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IPrimaryKeySchemaConstraint AddPrimaryKeyConstraint(string name, List&lt;string&gt; fields, SchemaSort sort = SchemaSort.ssAsc)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Constraint name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">fields</span></td>
+        <td><p>Constraint fields</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.SchemaSort.html">SchemaSort</a></td>
+        <td><span class="parametername">sort</span></td>
+        <td><p>Constraint sort</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.IPrimaryKeySchemaConstraint.html">IPrimaryKeySchemaConstraint</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_AddUniqueKeyConstraint_System_String_System_Collections_Generic_List_System_String__.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String%2CSystem.Collections.Generic.List%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L252">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_AddUniqueKeyConstraint_" data-uid="OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_AddUniqueKeyConstraint_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})">AddUniqueKeyConstraint(String, List&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a unique key constraint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IUniqueKeySchemaConstraint AddUniqueKeyConstraint(string name, List&lt;string&gt; fields)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Constraint name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">fields</span></td>
+        <td><p>Constraint fields</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.IUniqueKeySchemaConstraint.html">IUniqueKeySchemaConstraint</a></td>
+        <td><p>An IUniqueKeySchemaConstraint</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel_System_Object_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L198">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel_" data-uid="OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel_System_Object_" data-uid="OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(System.Object)">CreateFieldsFromModel(Object)</h4>
+  <div class="markdown level1 summary"><p>Creates fields from a given model.
+Supports OrpheusAttributes attributes
+<param name="model">Instance of model</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CreateFieldsFromModel(object model)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">model</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel_System_Type_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L205">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel_" data-uid="OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel_System_Type_" data-uid="OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(System.Type)">CreateFieldsFromModel(Type)</h4>
+  <div class="markdown level1 summary"><p>Creates fields from a given model.
+Supports OrpheusAttributes attributes
+<param name="modelType">Model type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CreateFieldsFromModel(Type modelType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">modelType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel__1.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L212">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel_" data-uid="OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel__1" data-uid="OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel``1">CreateFieldsFromModel&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Creates fields from a given model.
+Supports OrpheusAttributes attributes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CreateFieldsFromModel&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Model type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_GetConstraintsDDL.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.GetConstraintsDDL%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L161">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_GetConstraintsDDL_" data-uid="OrpheusInterfaces.ISchemaDataObject.GetConstraintsDDL*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_GetConstraintsDDL" data-uid="OrpheusInterfaces.ISchemaDataObject.GetConstraintsDDL">GetConstraintsDDL()</h4>
+  <div class="markdown level1 summary"><p>Returns the DDL constraints string to be executed. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;string&gt; GetConstraintsDDL()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>Get the generated DDL string for the schema constraints</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_GetData__1.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.GetData%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L185">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_GetData_" data-uid="OrpheusInterfaces.ISchemaDataObject.GetData*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_GetData__1" data-uid="OrpheusInterfaces.ISchemaDataObject.GetData``1">GetData&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Returns the seed data for the table if defined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;T&gt; GetData&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><p>Schema object&apos;s data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Schema object model type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaDataObject_SetData__1_System_Collections_Generic_List___0__.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaDataObject.SetData%60%601(System.Collections.Generic.List%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L178">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaDataObject_SetData_" data-uid="OrpheusInterfaces.ISchemaDataObject.SetData*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaDataObject_SetData__1_System_Collections_Generic_List___0__" data-uid="OrpheusInterfaces.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})">SetData&lt;T&gt;(List&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Optional data to initialize a schema object. Practically applicable only to a table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetData&lt;T&gt;(List&lt;T&gt; data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Orpheus ORM - Original Author © 2017
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-99241001-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+  </body>
+</html>
