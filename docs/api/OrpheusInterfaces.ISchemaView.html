@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface ISchemaView
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.25.2.0">
+    <meta name="generator" content="docfx 2.32.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -98,7 +98,7 @@
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaView_JoinSchemaObjects.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaView.JoinSchemaObjects%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L277">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L293">View Source</a>
   </span>
   <a id="OrpheusInterfaces_ISchemaView_JoinSchemaObjects_" data-uid="OrpheusInterfaces.ISchemaView.JoinSchemaObjects*"></a>
   <h4 id="OrpheusInterfaces_ISchemaView_JoinSchemaObjects" data-uid="OrpheusInterfaces.ISchemaView.JoinSchemaObjects">JoinSchemaObjects</h4>
@@ -119,7 +119,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaTable.html">ISchemaTable</a>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaTable.html">ISchemaTable</a>&gt;</td>
         <td><p>Schema objects in the schema view</p>
 </td>
       </tr>
@@ -130,7 +130,7 @@
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaView_TableName.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaView.TableName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L282">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L298">View Source</a>
   </span>
   <a id="OrpheusInterfaces_ISchemaView_TableName_" data-uid="OrpheusInterfaces.ISchemaView.TableName*"></a>
   <h4 id="OrpheusInterfaces_ISchemaView_TableName" data-uid="OrpheusInterfaces.ISchemaView.TableName">TableName</h4>
@@ -154,6 +154,39 @@
         <td><span class="xref">System.String</span></td>
         <td><p>Table name</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaView_FormattedTableName.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaView.FormattedTableName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L304">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaView_FormattedTableName_" data-uid="OrpheusInterfaces.ISchemaView.FormattedTableName*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaView_FormattedTableName" data-uid="OrpheusInterfaces.ISchemaView.FormattedTableName">FormattedTableName()</h4>
+  <div class="markdown level1 summary"><p>Returns the main table name, SQL formatted, with a schema name, if the underlying db engine supports it, and with the table alias, if defined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string FormattedTableName()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class OrpheusDatabase
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.25.2.0">
+    <meta name="generator" content="docfx 2.32.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -94,19 +94,19 @@
   <h6><strong>Assembly</strong>: OrpheusCore.dll</h6>
   <h5 id="OrpheusCore_OrpheusDatabase_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OrpheusDatabase : IOrpheusDatabase</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrpheusDatabase : object, IOrpheusDatabase</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase__ctor_System_Data_IDbConnection_OrpheusInterfaces_IOrpheusDDLHelper_Microsoft_Extensions_Logging_ILogger_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.%23ctor(System.Data.IDbConnection%2COrpheusInterfaces.IOrpheusDDLHelper%2CMicrosoft.Extensions.Logging.ILogger)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase__ctor_IDbConnection_OrpheusInterfaces_IOrpheusDDLHelper_ILogger_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.%23ctor(IDbConnection%2COrpheusInterfaces.IOrpheusDDLHelper%2CILogger)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusDatabase.cs/#L180">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusDatabase__ctor_" data-uid="OrpheusCore.OrpheusDatabase.#ctor*"></a>
-  <h4 id="OrpheusCore_OrpheusDatabase__ctor_System_Data_IDbConnection_OrpheusInterfaces_IOrpheusDDLHelper_Microsoft_Extensions_Logging_ILogger_" data-uid="OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILogger)">OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger)</h4>
+  <h4 id="OrpheusCore_OrpheusDatabase__ctor_IDbConnection_OrpheusInterfaces_IOrpheusDDLHelper_ILogger_" data-uid="OrpheusCore.OrpheusDatabase.#ctor(IDbConnection,OrpheusInterfaces.IOrpheusDDLHelper,ILogger)">OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger)</h4>
   <div class="markdown level1 summary"><p>Creates an Orpheus database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -125,7 +125,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbConnection</span></td>
+        <td><span class="xref">IDbConnection</span></td>
         <td><span class="parametername">connection</span></td>
         <td><p>Database connection</p>
 </td>
@@ -137,7 +137,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Microsoft.Extensions.Logging.ILogger</span></td>
+        <td><span class="xref">ILogger</span></td>
         <td><span class="parametername">logger</span></td>
         <td><p>Logger</p>
 </td>
@@ -264,7 +264,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="xref">IDbTransaction</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -295,7 +295,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusModule.html">IOrpheusModule</a>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusModule.html">IOrpheusModule</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -314,7 +314,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Dictionary&lt;Type, DbType&gt; TypeMap { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;Type, System.Data.DbType&gt; TypeMap { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -326,7 +326,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Type</span>, <span class="xref">System.Data.DbType</span>&gt;</td>
+        <td><span class="xref">Dictionary</span>&lt;<span class="xref">Type</span>, <span class="xref">System.Data.DbType</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -359,20 +359,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="xref">IDbTransaction</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_CommitTransaction_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_CommitTransaction_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.CommitTransaction(IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusDatabase.cs/#L394">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusDatabase_CommitTransaction_" data-uid="OrpheusCore.OrpheusDatabase.CommitTransaction*"></a>
-  <h4 id="OrpheusCore_OrpheusDatabase_CommitTransaction_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)">CommitTransaction(IDbTransaction)</h4>
+  <h4 id="OrpheusCore_OrpheusDatabase_CommitTransaction_IDbTransaction_" data-uid="OrpheusCore.OrpheusDatabase.CommitTransaction(IDbTransaction)">CommitTransaction(IDbTransaction)</h4>
   <div class="markdown level1 summary"><p>Commits a transaction.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -391,7 +391,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="xref">IDbTransaction</span></td>
         <td><span class="parametername">transaction</span></td>
         <td></td>
       </tr>
@@ -456,7 +456,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbCommand</span></td>
+        <td><span class="xref">IDbCommand</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -584,20 +584,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbCommand</span></td>
+        <td><span class="xref">IDbCommand</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_CreatePreparedQuery_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_Object__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String%2CSystem.Collections.Generic.List%7BSystem.String%7D%2CSystem.Collections.Generic.List%7BSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_CreatePreparedQuery_System_String_List_System_String__List_System_Object__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String%2CList%7BSystem.String%7D%2CList%7BSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusDatabase.cs/#L303">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusDatabase_CreatePreparedQuery_" data-uid="OrpheusCore.OrpheusDatabase.CreatePreparedQuery*"></a>
-  <h4 id="OrpheusCore_OrpheusDatabase_CreatePreparedQuery_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_Object__" data-uid="OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">CreatePreparedQuery(String, List&lt;String&gt;, List&lt;Object&gt;)</h4>
+  <h4 id="OrpheusCore_OrpheusDatabase_CreatePreparedQuery_System_String_List_System_String__List_System_Object__" data-uid="OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String,List{System.String},List{System.Object})">CreatePreparedQuery(String, List&lt;String&gt;, List&lt;Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Returns a prepared query command.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -622,13 +622,13 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">parameters</span></td>
         <td><p>List of query parameters</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">parameterValues</span></td>
         <td><p>List of query parameter values</p>
 </td>
@@ -645,20 +645,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbCommand</span></td>
+        <td><span class="xref">IDbCommand</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_CreateSchema_System_Guid_System_String_System_Double_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.CreateSchema(System.Guid%2CSystem.String%2CSystem.Double%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_CreateSchema_Guid_System_String_System_Double_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.CreateSchema(Guid%2CSystem.String%2CSystem.Double%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusDatabase.cs/#L279">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusDatabase_CreateSchema_" data-uid="OrpheusCore.OrpheusDatabase.CreateSchema*"></a>
-  <h4 id="OrpheusCore_OrpheusDatabase_CreateSchema_System_Guid_System_String_System_Double_System_String_" data-uid="OrpheusCore.OrpheusDatabase.CreateSchema(System.Guid,System.String,System.Double,System.String)">CreateSchema(Guid, String, Double, String)</h4>
+  <h4 id="OrpheusCore_OrpheusDatabase_CreateSchema_Guid_System_String_System_Double_System_String_" data-uid="OrpheusCore.OrpheusDatabase.CreateSchema(Guid,System.String,System.Double,System.String)">CreateSchema(Guid, String, Double, String)</h4>
   <div class="markdown level1 summary"><p>Creates a schema object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -677,7 +677,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Guid</span></td>
+        <td><span class="xref">Guid</span></td>
         <td><span class="parametername">id</span></td>
         <td></td>
       </tr>
@@ -824,13 +824,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_CreateTable__1_System_String_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.CreateTable%60%601(System.String%2CSystem.Collections.Generic.List%7BOrpheusInterfaces.IOrpheusTableKeyField%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_CreateTable__1_System_String_List_OrpheusInterfaces_IOrpheusTableKeyField__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.CreateTable%60%601(System.String%2CList%7BOrpheusInterfaces.IOrpheusTableKeyField%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusDatabase.cs/#L253">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusDatabase_CreateTable_" data-uid="OrpheusCore.OrpheusDatabase.CreateTable*"></a>
-  <h4 id="OrpheusCore_OrpheusDatabase_CreateTable__1_System_String_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__" data-uid="OrpheusCore.OrpheusDatabase.CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField})">CreateTable&lt;T&gt;(String, List&lt;IOrpheusTableKeyField&gt;)</h4>
+  <h4 id="OrpheusCore_OrpheusDatabase_CreateTable__1_System_String_List_OrpheusInterfaces_IOrpheusTableKeyField__" data-uid="OrpheusCore.OrpheusDatabase.CreateTable``1(System.String,List{OrpheusInterfaces.IOrpheusTableKeyField})">CreateTable&lt;T&gt;(String, List&lt;IOrpheusTableKeyField&gt;)</h4>
   <div class="markdown level1 summary"><p>Creates an OrpheusTable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -855,7 +855,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
         <td><span class="parametername">keyFields</span></td>
         <td><p>Table key fields</p>
 </td>
@@ -1066,13 +1066,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_IsNullableType_System_Type_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.IsNullableType(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_IsNullableType_Type_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.IsNullableType(Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusDatabase.cs/#L136">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusDatabase_IsNullableType_" data-uid="OrpheusCore.OrpheusDatabase.IsNullableType*"></a>
-  <h4 id="OrpheusCore_OrpheusDatabase_IsNullableType_System_Type_" data-uid="OrpheusCore.OrpheusDatabase.IsNullableType(System.Type)">IsNullableType(Type)</h4>
+  <h4 id="OrpheusCore_OrpheusDatabase_IsNullableType_Type_" data-uid="OrpheusCore.OrpheusDatabase.IsNullableType(Type)">IsNullableType(Type)</h4>
   <div class="markdown level1 summary"><p>Returns true if the type is in the list of nullable types.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1091,7 +1091,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Type</span></td>
+        <td><span class="xref">Type</span></td>
         <td><span class="parametername">type</span></td>
         <td></td>
       </tr>
@@ -1147,13 +1147,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_RollbackTransaction_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_RollbackTransaction_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.RollbackTransaction(IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusDatabase.cs/#L408">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusDatabase_RollbackTransaction_" data-uid="OrpheusCore.OrpheusDatabase.RollbackTransaction*"></a>
-  <h4 id="OrpheusCore_OrpheusDatabase_RollbackTransaction_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)">RollbackTransaction(IDbTransaction)</h4>
+  <h4 id="OrpheusCore_OrpheusDatabase_RollbackTransaction_IDbTransaction_" data-uid="OrpheusCore.OrpheusDatabase.RollbackTransaction(IDbTransaction)">RollbackTransaction(IDbTransaction)</h4>
   <div class="markdown level1 summary"><p>Rolls back a transaction.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1172,7 +1172,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="xref">IDbTransaction</span></td>
         <td><span class="parametername">transaction</span></td>
         <td></td>
       </tr>
@@ -1180,13 +1180,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_SQL__1_System_Data_IDbCommand_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.SQL%60%601(System.Data.IDbCommand%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusDatabase_SQL__1_IDbCommand_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusDatabase.SQL%60%601(IDbCommand%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusDatabase.cs/#L439">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusDatabase_SQL_" data-uid="OrpheusCore.OrpheusDatabase.SQL*"></a>
-  <h4 id="OrpheusCore_OrpheusDatabase_SQL__1_System_Data_IDbCommand_System_String_" data-uid="OrpheusCore.OrpheusDatabase.SQL``1(System.Data.IDbCommand,System.String)">SQL&lt;T&gt;(IDbCommand, String)</h4>
+  <h4 id="OrpheusCore_OrpheusDatabase_SQL__1_IDbCommand_System_String_" data-uid="OrpheusCore.OrpheusDatabase.SQL``1(IDbCommand,System.String)">SQL&lt;T&gt;(IDbCommand, String)</h4>
   <div class="markdown level1 summary"><p>Executes a db command and returns it as specific model.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1205,7 +1205,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbCommand</span></td>
+        <td><span class="xref">IDbCommand</span></td>
         <td><span class="parametername">dbCommand</span></td>
         <td></td>
       </tr>
@@ -1226,7 +1226,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1294,7 +1294,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;T&gt;</td>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>

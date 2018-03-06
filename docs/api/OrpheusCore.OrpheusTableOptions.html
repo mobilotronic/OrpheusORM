@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class OrpheusTableOptions
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.25.2.0">
+    <meta name="generator" content="docfx 2.32.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -94,7 +94,7 @@
   <h6><strong>Assembly</strong>: OrpheusCore.dll</h6>
   <h5 id="OrpheusCore_OrpheusTableOptions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OrpheusTableOptions : IOrpheusTableOptions</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrpheusTableOptions : object, IOrpheusTableOptions</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -173,7 +173,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -236,7 +236,7 @@ These are being used to support a master-detail relationship.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -286,8 +286,7 @@ These are being used to support a master-detail relationship.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[IgnoreDataMember]
-public Type ModelType { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Type ModelType { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -299,7 +298,7 @@ public Type ModelType { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Type</span></td>
+        <td><span class="xref">Type</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -339,13 +338,13 @@ public Type ModelType { get; set; }</code></pre>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTableOptions.AddKeyField(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Func%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_Func_System_String__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTableOptions.AddKeyField(System.String%2CSystem.Boolean%2CSystem.Boolean%2CFunc%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L82">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusTableOptions_AddKeyField_" data-uid="OrpheusCore.OrpheusTableOptions.AddKeyField*"></a>
-  <h4 id="OrpheusCore_OrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__" data-uid="OrpheusCore.OrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})">AddKeyField(String, Boolean, Boolean, Func&lt;String&gt;)</h4>
+  <h4 id="OrpheusCore_OrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_Func_System_String__" data-uid="OrpheusCore.OrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})">AddKeyField(String, Boolean, Boolean, Func&lt;String&gt;)</h4>
   <div class="markdown level1 summary"><p>Creates a new key field.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -379,7 +378,7 @@ public Type ModelType { get; set; }</code></pre>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">keySQLUpdate</span></td>
         <td></td>
       </tr>
@@ -387,13 +386,13 @@ public Type ModelType { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String%2CSystem.Boolean%2CSystem.Boolean%2CSystem.Func%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_Func_System_String__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String%2CSystem.Boolean%2CSystem.Boolean%2CFunc%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L99">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusTableOptions_AddMasterKeyField_" data-uid="OrpheusCore.OrpheusTableOptions.AddMasterKeyField*"></a>
-  <h4 id="OrpheusCore_OrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__" data-uid="OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})">AddMasterKeyField(String, Boolean, Boolean, Func&lt;String&gt;)</h4>
+  <h4 id="OrpheusCore_OrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_Func_System_String__" data-uid="OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})">AddMasterKeyField(String, Boolean, Boolean, Func&lt;String&gt;)</h4>
   <div class="markdown level1 summary"><p>Creates a new master key field</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -427,7 +426,7 @@ public Type ModelType { get; set; }</code></pre>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">keySQLUpdate</span></td>
         <td></td>
       </tr>

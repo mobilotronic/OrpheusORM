@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class OrpheusModuleDefinition
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.25.2.0">
+    <meta name="generator" content="docfx 2.32.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -95,7 +95,7 @@ and that is required for a module to be functional. <a class="xref" href="Orpheu
   <h6><strong>Assembly</strong>: OrpheusCore.dll</h6>
   <h5 id="OrpheusCore_OrpheusModuleDefinition_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OrpheusModuleDefinition : IOrpheusModuleDefinition</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrpheusModuleDefinition : object, IOrpheusModuleDefinition</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -131,8 +131,7 @@ and that is required for a module to be functional. <a class="xref" href="Orpheu
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[IgnoreDataMember]
-public IOrpheusDatabase Database { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IOrpheusDatabase Database { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -175,7 +174,7 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableOptions.html">IOrpheusTableOptions</a>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableOptions.html">IOrpheusTableOptions</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -268,7 +267,7 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableOptions.html">IOrpheusTableOptions</a>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.IOrpheusTableOptions.html">IOrpheusTableOptions</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -308,13 +307,13 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_System_String_System_Type_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_System_String_Type_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String%2CType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModuleDefinition.cs/#L80">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_" data-uid="OrpheusCore.OrpheusModuleDefinition.CreateTableOptions*"></a>
-  <h4 id="OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_System_String_System_Type_" data-uid="OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String,System.Type)">CreateTableOptions(String, Type)</h4>
+  <h4 id="OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_System_String_Type_" data-uid="OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String,Type)">CreateTableOptions(String, Type)</h4>
   <div class="markdown level1 summary"><p>Creates an instance of OrpheusTableOptions.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -338,7 +337,7 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Type</span></td>
+        <td><span class="xref">Type</span></td>
         <td><span class="parametername">modelType</span></td>
         <td></td>
       </tr>
@@ -361,13 +360,13 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_System_Type_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_Type_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModuleDefinition.cs/#L92">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_" data-uid="OrpheusCore.OrpheusModuleDefinition.CreateTableOptions*"></a>
-  <h4 id="OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_System_Type_" data-uid="OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.Type)">CreateTableOptions(Type)</h4>
+  <h4 id="OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_Type_" data-uid="OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(Type)">CreateTableOptions(Type)</h4>
   <div class="markdown level1 summary"><p>Creates an instance of OrpheusTableOptions.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -386,7 +385,7 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Type</span></td>
+        <td><span class="xref">Type</span></td>
         <td><span class="parametername">modelType</span></td>
         <td></td>
       </tr>
@@ -409,13 +408,13 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModuleDefinition_LoadFrom_System_IO_Stream_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModuleDefinition.LoadFrom(System.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModuleDefinition_LoadFrom_Stream_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModuleDefinition.LoadFrom(Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModuleDefinition.cs/#L101">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModuleDefinition_LoadFrom_" data-uid="OrpheusCore.OrpheusModuleDefinition.LoadFrom*"></a>
-  <h4 id="OrpheusCore_OrpheusModuleDefinition_LoadFrom_System_IO_Stream_" data-uid="OrpheusCore.OrpheusModuleDefinition.LoadFrom(System.IO.Stream)">LoadFrom(Stream)</h4>
+  <h4 id="OrpheusCore_OrpheusModuleDefinition_LoadFrom_Stream_" data-uid="OrpheusCore.OrpheusModuleDefinition.LoadFrom(Stream)">LoadFrom(Stream)</h4>
   <div class="markdown level1 summary"><p>Load definition from memory.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -434,7 +433,7 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="xref">Stream</span></td>
         <td><span class="parametername">stream</span></td>
         <td></td>
       </tr>
@@ -508,13 +507,13 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModuleDefinition_SaveTo_System_IO_Stream_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModuleDefinition.SaveTo(System.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModuleDefinition_SaveTo_Stream_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModuleDefinition.SaveTo(Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModuleDefinition.cs/#L176">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModuleDefinition_SaveTo_" data-uid="OrpheusCore.OrpheusModuleDefinition.SaveTo*"></a>
-  <h4 id="OrpheusCore_OrpheusModuleDefinition_SaveTo_System_IO_Stream_" data-uid="OrpheusCore.OrpheusModuleDefinition.SaveTo(System.IO.Stream)">SaveTo(Stream)</h4>
+  <h4 id="OrpheusCore_OrpheusModuleDefinition_SaveTo_Stream_" data-uid="OrpheusCore.OrpheusModuleDefinition.SaveTo(Stream)">SaveTo(Stream)</h4>
   <div class="markdown level1 summary"><p>Save definition to memory.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -533,7 +532,7 @@ public IOrpheusDatabase Database { get; set; }</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="xref">Stream</span></td>
         <td><span class="parametername">stream</span></td>
         <td></td>
       </tr>

@@ -20,6 +20,7 @@ OrpheusCore/OrpheusCore.config
 *.ide
 OrpheusDocumentation/_site/
 OrpheusDocumentation/DocFx
+OrpheusDocumentation/DocFx.original
 OrpheusDocumentation/obj
 OrpheusDocumentation/examples
 OrpheusAttributes/obj
@@ -48,3 +49,4 @@ OrpheusWebClientTest/ScaffoldingReadMe.txt
 *.vssscc
 Nuget/PublishPackage.cmd
 OrpheusTests/BaseTests/TestDatabaseConnectionStrings.cs
+Nuget/nuget.exe

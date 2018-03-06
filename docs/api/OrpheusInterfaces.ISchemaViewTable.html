@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace OrpheusAttributes
+    <title>Interface ISchemaViewTable
    | Orpheus ORM </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace OrpheusAttributes
+    <meta name="title" content="Interface ISchemaViewTable
    | Orpheus ORM ">
     <meta name="generator" content="docfx 2.32.1.0">
     
@@ -77,68 +77,53 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="OrpheusAttributes">
+            <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.ISchemaViewTable">
   
-  <h1 id="OrpheusAttributes" data-uid="OrpheusAttributes" class="text-break">Namespace OrpheusAttributes
+  
+  <h1 id="OrpheusInterfaces_ISchemaViewTable" data-uid="OrpheusInterfaces.ISchemaViewTable" class="text-break">Interface ISchemaViewTable
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A data table that is used in a View.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+  <h6><strong>Namespace</strong>: <a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a></h6>
+  <h6><strong>Assembly</strong>: OrpheusInterfaces.dll</h6>
+  <h5 id="OrpheusInterfaces_ISchemaViewTable_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISchemaViewTable : ISchemaTable, ISchemaDataObject, ISchemaObject</code></pre>
+  </div>
+  <h3 id="properties">Properties
   </h3>
-      <h4><a class="xref" href="OrpheusAttributes.DataTypeAttribute.html">DataTypeAttribute</a></h4>
-      <section><p>Annotate a property with attribute to set it&apos;s DbType</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.DefaultValue.html">DefaultValue</a></h4>
-      <section><p>Default value attribute.
-Decorate a property with attribute to set it&apos;s default value.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.FieldName.html">FieldName</a></h4>
-      <section><p>FieldName attribute. Decorate a model property with this attribute,
-to explicitly define the corresponding field name in the db table.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.ForeignKey.html">ForeignKey</a></h4>
-      <section><p>Primary key constraint attribute.
-Decorate a property with attribute to create a foreign key constraint on a schema object.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.Length.html">Length</a></h4>
-      <section><p>Length attribute.
-Decorate a property with attribute to set a maximum length value.
-Applies only to string types.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.OrpheusBaseAttribute.html">OrpheusBaseAttribute</a></h4>
-      <section><p>The Orpheus base attribute class.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.OrpheusCompositeKeyBaseAttribute.html">OrpheusCompositeKeyBaseAttribute</a></h4>
-      <section><p>Composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.PrimaryCompositeKey.html">PrimaryCompositeKey</a></h4>
-      <section><p>Primary composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.PrimaryKey.html">PrimaryKey</a></h4>
-      <section><p>Primary key constraint attribute.
-Decorate a property with attribute to create a primary key constraint on a schema object.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.RequiredField.html">RequiredField</a></h4>
-      <section><p>Required field attribute.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.SchemaIgnore.html">SchemaIgnore</a></h4>
-      <section><p>SchemaIgnore attribute. Decorate a model property to indicate
-that it&apos;s not part of the actual db table schema.
-Useful for dynamically calculated/defined model properties.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.SQLServerSchemaName.html">SQLServerSchemaName</a></h4>
-      <section></section>
-      <h4><a class="xref" href="OrpheusAttributes.TableName.html">TableName</a></h4>
-      <section><p>TableName attribute. Decorate a model with this attribute to
-to explicitly define the corresponding db table name.</p>
-</section>
-      <h4><a class="xref" href="OrpheusAttributes.UniqueCompositeKey.html">UniqueCompositeKey</a></h4>
-      <section></section>
-      <h4><a class="xref" href="OrpheusAttributes.UniqueKey.html">UniqueKey</a></h4>
-      <section><p>Unique key constraint attribute.
-Decorate a property with attribute to create a unique key constraint on a schema object.</p>
-</section>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_ISchemaViewTable_SchemaName.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.ISchemaViewTable.SchemaName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusInterfaces/Interfaces/SchemaBuilder/ISchemaObject.cs/#L281">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_ISchemaViewTable_SchemaName_" data-uid="OrpheusInterfaces.ISchemaViewTable.SchemaName*"></a>
+  <h4 id="OrpheusInterfaces_ISchemaViewTable_SchemaName" data-uid="OrpheusInterfaces.ISchemaViewTable.SchemaName">SchemaName</h4>
+  <div class="markdown level1 summary"><p>Override for a table&apos;s schema name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string SchemaName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
         </div>

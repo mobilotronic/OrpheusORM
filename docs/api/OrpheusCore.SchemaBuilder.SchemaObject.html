@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SchemaObject
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.25.2.0">
+    <meta name="generator" content="docfx 2.32.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -95,7 +95,7 @@
   <h6><strong>Assembly</strong>: OrpheusCore.dll</h6>
   <h5 id="OrpheusCore_SchemaBuilder_SchemaObject_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SchemaObject : ISchemaObject</code></pre>
+    <pre><code class="lang-csharp hljs">public class SchemaObject : object, ISchemaObject</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -104,7 +104,7 @@
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject__ctor.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L226">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L242">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject__ctor_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.#ctor*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject__ctor" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.#ctor">SchemaObject()</h4>
@@ -118,10 +118,39 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_logger.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.logger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject__sqlName.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject._sqlName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L26">View Source</a>
+  </span>
+  <h4 id="OrpheusCore_SchemaBuilder_SchemaObject__sqlName" data-uid="OrpheusCore.SchemaBuilder.SchemaObject._sqlName">_sqlName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string _sqlName</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_logger.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.logger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L25">View Source</a>
   </span>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_logger" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.logger">logger</h4>
   <div class="markdown level1 summary"></div>
@@ -140,7 +169,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.Extensions.Logging.ILogger</span></td>
+        <td><span class="xref">ILogger</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -152,7 +181,7 @@
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_Action.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.Action%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L110">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L119">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_Action_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.Action*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_Action" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.Action">Action</h4>
@@ -180,10 +209,41 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_AliasName.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.AliasName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L151">View Source</a>
+  </span>
+  <a id="OrpheusCore_SchemaBuilder_SchemaObject_AliasName_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.AliasName*"></a>
+  <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_AliasName" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.AliasName">AliasName</h4>
+  <div class="markdown level1 summary"><p>The schema object alias name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AliasName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_IsCreated.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.IsCreated%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L137">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L146">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_IsCreated_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.IsCreated*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_IsCreated" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.IsCreated">IsCreated</h4>
@@ -214,7 +274,7 @@
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_RawDDL.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.RawDDL%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L100">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L109">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_RawDDL_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.RawDDL*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_RawDDL" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.RawDDL">RawDDL</h4>
@@ -245,7 +305,7 @@
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_Schema.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.Schema%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L105">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L114">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_Schema_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.Schema*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_Schema" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.Schema">Schema</h4>
@@ -276,7 +336,7 @@
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_SchemaObjectsThatDependOnMe.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatDependOnMe%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L126">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L135">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_SchemaObjectsThatDependOnMe_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatDependOnMe*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_SchemaObjectsThatDependOnMe" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatDependOnMe">SchemaObjectsThatDependOnMe</h4>
@@ -297,7 +357,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -307,7 +367,7 @@
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_SchemaObjectsThatIDepend.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatIDepend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L121">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L130">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_SchemaObjectsThatIDepend_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatIDepend*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_SchemaObjectsThatIDepend" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatIDepend">SchemaObjectsThatIDepend</h4>
@@ -329,7 +389,7 @@ will be executed before, to make sure that on the time of creation they will be 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -339,7 +399,7 @@ will be executed before, to make sure that on the time of creation they will be 
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_SQLName.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.SQLName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L82">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L94">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_SQLName_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.SQLName*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_SQLName" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.SQLName">SQLName</h4>
@@ -370,7 +430,7 @@ will be executed before, to make sure that on the time of creation they will be 
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_UniqueKey.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.UniqueKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L115">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L124">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_UniqueKey_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.UniqueKey*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_UniqueKey" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.UniqueKey">UniqueKey</h4>
@@ -391,7 +451,7 @@ will be executed before, to make sure that on the time of creation they will be 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Guid</span></td>
+        <td><span class="xref">Guid</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -403,7 +463,7 @@ will be executed before, to make sure that on the time of creation they will be 
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_OrpheusInterfaces_ISchemaObject_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.ISchemaObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L152">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L166">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.AddDependency*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_OrpheusInterfaces_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.ISchemaObject)">AddDependency(ISchemaObject)</h4>
@@ -433,13 +493,13 @@ will be executed before, to make sure that on the time of creation they will be 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_System_Type_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_Type_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L165">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L179">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.AddDependency*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_System_Type_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)">AddDependency(Type)</h4>
+  <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_Type_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(Type)">AddDependency(Type)</h4>
   <div class="markdown level1 summary"><p>Adds a dependency to a schema object based on the model.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -458,7 +518,7 @@ will be executed before, to make sure that on the time of creation they will be 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Type</span></td>
+        <td><span class="xref">Type</span></td>
         <td><span class="parametername">modelType</span></td>
         <td></td>
       </tr>
@@ -469,7 +529,7 @@ will be executed before, to make sure that on the time of creation they will be 
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_AddDependency__1.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.AddDependency%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L209">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L225">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.AddDependency*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_AddDependency__1" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.AddDependency``1">AddDependency&lt;T&gt;()</h4>
@@ -552,7 +612,7 @@ will be executed before, to make sure that on the time of creation they will be 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -562,7 +622,7 @@ will be executed before, to make sure that on the time of creation they will be 
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_Drop.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.Drop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L222">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L238">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_Drop_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.Drop*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_Drop" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.Drop">Drop()</h4>
@@ -578,7 +638,7 @@ will be executed before, to make sure that on the time of creation they will be 
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_Execute.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.Execute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L217">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L233">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_Execute_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.Execute*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_Execute" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.Execute">Execute()</h4>
@@ -638,10 +698,41 @@ will be executed before, to make sure that on the time of creation they will be 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_formatSQLName.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.formatSQLName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L80">View Source</a>
+  </span>
+  <a id="OrpheusCore_SchemaBuilder_SchemaObject_formatSQLName_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.formatSQLName*"></a>
+  <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_formatSQLName" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.formatSQLName">formatSQLName()</h4>
+  <div class="markdown level1 summary"><p>Returns formatted the SQL name for the object, including schema name and/or alias name, if defined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string formatSQLName()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_GetDDLString.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.GetDDLString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L146">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L160">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_GetDDLString_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.GetDDLString*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_GetDDLString" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.GetDDLString">GetDDLString()</h4>
@@ -662,7 +753,7 @@ will be executed before, to make sure that on the time of creation they will be 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><p>Returns the DDL string ready to be executed.</p>
 </td>
       </tr>
@@ -673,7 +764,7 @@ will be executed before, to make sure that on the time of creation they will be 
     <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_GetSchemaType.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.GetSchemaType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L132">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L141">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_GetSchemaType_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.GetSchemaType*"></a>
   <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_GetSchemaType" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.GetSchemaType">GetSchemaType()</h4>
@@ -734,13 +825,13 @@ will be executed before, to make sure that on the time of creation they will be 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L68">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.registerSchema*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_System_Data_IDbTransaction_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)">registerSchema(IDbTransaction)</h4>
+  <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_IDbTransaction_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(IDbTransaction)">registerSchema(IDbTransaction)</h4>
   <div class="markdown level1 summary"><p>Registers an Orpheus schema.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -759,7 +850,7 @@ will be executed before, to make sure that on the time of creation they will be 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="xref">IDbTransaction</span></td>
         <td><span class="parametername">transaction</span></td>
         <td></td>
       </tr>
@@ -767,13 +858,13 @@ will be executed before, to make sure that on the time of creation they will be 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_System_Data_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_IDbTransaction_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(IDbTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L74">View Source</a>
   </span>
   <a id="OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_System_Data_IDbTransaction_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)">unRegisterSchema(IDbTransaction)</h4>
+  <h4 id="OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_IDbTransaction_" data-uid="OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(IDbTransaction)">unRegisterSchema(IDbTransaction)</h4>
   <div class="markdown level1 summary"><p>Unregisters an Orpheus schema.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -792,7 +883,7 @@ will be executed before, to make sure that on the time of creation they will be 
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Data.IDbTransaction</span></td>
+        <td><span class="xref">IDbTransaction</span></td>
         <td><span class="parametername">transaction</span></td>
         <td></td>
       </tr>

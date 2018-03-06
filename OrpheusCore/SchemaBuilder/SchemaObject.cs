@@ -411,7 +411,6 @@ namespace OrpheusCore.SchemaBuilder
         #region schema fields and constraints
         /// <summary>
         /// Creates fields from a given model.
-        /// Supports <see cref="System.ComponentModel.DataAnnotations"/> attributes
         /// </summary>
         /// <param name="model"></param>
         public void CreateFieldsFromModel(object model)
@@ -791,7 +790,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <summary>
         /// Applies schema's constraints.
         /// </summary>
-        /// <param name="cmd"><see cref="IDbCommand"/></param>
+        /// <param name="cmd"></param>
         protected override void applyConstraints(IDbCommand cmd)
         {
             //first run the primary key constraints.
