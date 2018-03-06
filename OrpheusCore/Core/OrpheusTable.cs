@@ -45,7 +45,7 @@ namespace OrpheusCore
                 this.masterTable = value;
                 if (this.masterTable != null)
                 {
-                    this.MasterTableName = this.masterTable.Name;
+                    this.MasterTableName = this.masterTable.SchemaName == null ? this.masterTable.Name : this.masterTable.Name.Split(".")[1];
                 }
             }
         }
@@ -953,6 +953,11 @@ namespace OrpheusCore
             //if there a table-name attribute on the model, then use that as the table name
             if (this.modelHelper.SQLName != null)
                 this.Name = this.modelHelper.SQLName;
+            this.SchemaName = this.modelHelper.SQLServerSchemaName;
+            if (this.modelHelper.SQLName == null && this.modelHelper.SQLServerSchemaName != null && !this.Name.Contains(this.modelHelper.SQLServerSchemaName))
+            {
+                this.Name = String.Format("{0}.{1}", this.modelHelper.SQLServerSchemaName, tableName);
+            }
             this.intializeModelProperties();
             this.createDeleteCommand();
             this.createUpdateCommand();
@@ -1083,6 +1088,11 @@ namespace OrpheusCore
         /// Table name.
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// The table's schema name. Applicable only if the db engine is SQL Server.
+        /// </summary>
+        public string SchemaName { get; private set; }
         
         /// <summary>
         /// Table key fields.

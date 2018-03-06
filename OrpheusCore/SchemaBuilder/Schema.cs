@@ -294,7 +294,11 @@ namespace OrpheusCore.SchemaBuilder
         public ISchemaTable AddSchemaTable<T, D>()
         {
             var modelInstance = Activator.CreateInstance(typeof(T));
-            var dependencies = this.SchemaObjects.Where(obj => obj.SQLName.ToLower() == typeof(D).Name.ToLower()).ToList();
+            //var dependencies = this.SchemaObjects.Where(obj => obj.SQLName.ToLower() == typeof(D).Name.ToLower()).ToList();
+            var dependencyTypeName = typeof(D).Name;
+            var dependencies = this.SchemaObjects.Where(obj =>
+                      obj.Schema.Name == null ? obj.SQLName.ToLower() == dependencyTypeName.ToLower() : obj.SQLName.Split(".")[1].Trim().ToLower() == dependencyTypeName.ToLower()
+                   ).ToList();
             return this.AddSchemaTable(modelInstance, dependencies);
         }
 
@@ -304,7 +308,20 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaView CreateSchemaView()
         {
-            return ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaView>();
+            var result = ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaView>();
+            result.Schema = this;
+            return result;
+        }
+
+        /// <summary>
+        /// Creates a view table schema object.
+        /// </summary>
+        /// <returns></returns>
+        public ISchemaViewTable CreateSchemaViewTable()
+        {
+            var result = ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaViewTable>();
+            result.Schema = this;
+            return result;
         }
 
         /// <summary>
@@ -313,7 +330,9 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaTable CreateSchemaTable()
         {
-            return ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaTable>();
+            var result = ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaTable>();
+            result.Schema = this;
+            return result;
         }
 
         /// <summary>
@@ -322,7 +341,9 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaObject CreateSchemaObject()
         {
-            return ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaObject>();
+            var result = ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaObject>();
+            result.Schema = this;
+            return result;
         }
 
         /// <summary>

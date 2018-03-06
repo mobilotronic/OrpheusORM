@@ -342,8 +342,17 @@ namespace OrpheusSQLDDLHelper
         /// <returns>True if the object exists</returns>
         public bool SchemaObjectExists(ISchemaObject schemaObject)
         {
+            
+            string objectName = null;
+            if (schemaObject.Schema.Name == null)
+                objectName = schemaObject.SQLName;
+            else
+            {
+                var hasDot = schemaObject.SQLName.IndexOf(".") >= 0;
+                objectName = hasDot ? schemaObject.SQLName.Split('.')[1] : schemaObject.SQLName;
+            }
 
-            return this.schemaObjectExists(schemaObject.Schema.Name == null ? schemaObject.SQLName : schemaObject.SQLName.Split('.')[1], schemaObject.Schema.Name);
+            return this.schemaObjectExists(objectName);
         }
 
         /// <summary>

@@ -27,6 +27,7 @@ namespace OrpheusCore.ServiceProvider
             //Schema services.
             serviceCollection.AddTransient<ISchema, SchemaBuilder.Schema>();
             serviceCollection.AddTransient<ISchemaView, SchemaObjectView>();
+            serviceCollection.AddTransient<ISchemaViewTable, SchemaObjectViewTable>();
             serviceCollection.AddTransient<ISchemaTable, SchemaObjectTable>();
             serviceCollection.AddTransient<ISchemaObject, SchemaObject>();
             serviceCollection.AddTransient<ISchemaJoinDefinition, SchemaJoinDefinition>();

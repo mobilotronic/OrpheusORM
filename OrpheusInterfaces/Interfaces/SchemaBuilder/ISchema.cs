@@ -77,6 +77,12 @@ namespace OrpheusInterfaces
         ISchemaView CreateSchemaView();
 
         /// <summary>
+        /// Creates a view table schema object.
+        /// </summary>
+        /// <returns></returns>
+        ISchemaViewTable CreateSchemaViewTable();
+
+        /// <summary>
         /// Creates a table schema object.
         /// </summary>
         /// <returns></returns>

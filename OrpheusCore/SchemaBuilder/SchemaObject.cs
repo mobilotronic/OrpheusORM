@@ -14,7 +14,6 @@ namespace OrpheusCore.SchemaBuilder
     public class SchemaObject : ISchemaObject
     {
         #region private properties
-        private string _sqlName;
         #endregion
 
         #region private methods
@@ -24,6 +23,7 @@ namespace OrpheusCore.SchemaBuilder
 
         #region protected properties
         protected ILogger logger;
+        protected string _sqlName;
         #endregion
 
         #region protected methods
@@ -73,6 +73,18 @@ namespace OrpheusCore.SchemaBuilder
         /// <param name="transaction"></param>
         protected virtual void unRegisterSchema(IDbTransaction transaction) { }
 
+        /// <summary>
+        /// Returns formatted the SQL name for the object, including schema name and/or alias name, if defined.
+        /// </summary>
+        /// <returns></returns>
+        protected virtual string formatSQLName()
+        {
+            if (this.Schema.DB.DDLHelper.SupportsSchemaNameSpace && this.Schema.Name != null)
+                return String.Format("{0}.{1} {2}", this.Schema.Name, this._sqlName, this.AliasName);
+            else
+                return this.AliasName == null ? this._sqlName : String.Format("{0} {1}", this._sqlName, this.AliasName);
+        }
+
         #endregion
 
         #region public properties
@@ -83,10 +95,7 @@ namespace OrpheusCore.SchemaBuilder
         {
             get
             {
-                if (this.Schema.DB.DDLHelper.SupportsSchemaNameSpace && this.Schema.Name != null)
-                    return String.Format("{0}.{1}", this.Schema.Name, this._sqlName);
-                else
-                    return this._sqlName;
+                return this.formatSQLName();
             }
             set
             {
@@ -136,6 +145,11 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public bool IsCreated { get; protected set; }
 
+        /// <summary>
+        /// The schema object alias name.
+        /// </summary>
+        public string AliasName { get; set; }
+
         #endregion
 
         #region public methods
@@ -169,7 +183,9 @@ namespace OrpheusCore.SchemaBuilder
                 try
                 {
                     var dependenedObjects = new List<ISchemaObject>();
-                    var schemaObject = this.Schema.SchemaObjects.Where(obj => obj.SQLName.ToLower() == modelType.Name.ToLower()).FirstOrDefault();
+                    var schemaObject = this.Schema.SchemaObjects.Where(obj =>
+                       obj.Schema.Name == null ? obj.SQLName.ToLower() == modelType.Name.ToLower() : obj.SQLName.Split(".")[1].Trim().ToLower() == modelType.Name.ToLower()
+                    ).FirstOrDefault();
                     //if the schema object that this object is depended upon, is not part of the same schema, then search for that object in other schema's 
                     if (schemaObject == null)
                     {
@@ -860,6 +876,31 @@ namespace OrpheusCore.SchemaBuilder
         public SchemaObjectTable() { }
     }
 
+    /// <summary>
+    /// Derived class to specifically handle data tables that are part of a view.
+    /// </summary>
+    public class SchemaObjectViewTable: SchemaObjectTable, ISchemaViewTable
+    {
+        /// <summary>
+        /// Override for the schema name.
+        /// </summary>
+        public string SchemaName { get; set; }
+
+        /// <summary>
+        /// Overriding the default behavior, for view objects.
+        /// </summary>
+        /// <returns></returns>
+        protected override string formatSQLName()
+        {
+            if (this.SchemaName == null)
+                return base.formatSQLName();
+            else
+            {
+                return String.Format("{0}.{1} {2}", this.SchemaName, this._sqlName, this.AliasName);
+            }
+        }
+
+    }
 
     /// <summary>
     /// Derived class to specifically handle VIEW type schema objects.
@@ -886,6 +927,15 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         /// <returns></returns>
         protected override SchemaObjectType getType() { return SchemaObjectType.sotView; }
+
+        /// <summary>
+        /// Overriding the default behavior, for view objects.
+        /// </summary>
+        /// <returns></returns>
+        protected override string formatSQLName()
+        {
+            return this._sqlName;
+        }
 
         /// <summary>
         /// Creates the DDL string for the schema object.
@@ -926,7 +976,7 @@ namespace OrpheusCore.SchemaBuilder
                             result.Add(String.Format("CREATE VIEW {0} AS SELECT {1} FROM {2} {3}",
                                 this.SQLName,
                                 string.Join(",", fields.ToArray()),
-                                this.TableName,
+                                this.FormattedTableName(),
                                 string.Join(Environment.NewLine, joins.ToArray()))
                                 );
                         break;
@@ -942,6 +992,16 @@ namespace OrpheusCore.SchemaBuilder
                     }
             }
             return result;
+        }
+
+
+        /// <summary>
+        /// Returns the main table name, SQL formatted, with a schema name, if the underlying db engine supports it, and with the table alias, if defined.
+        /// </summary>
+        /// <returns></returns>
+        public string FormattedTableName()
+        {
+            return this.Schema.Name == null ? String.Format("{0} {1}", this.TableName, this.AliasName) : String.Format("{0}.{1} {2}", this.Schema.Name, this.TableName, this.AliasName);
         }
 
         /// <summary>

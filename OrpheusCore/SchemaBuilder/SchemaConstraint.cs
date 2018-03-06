@@ -183,7 +183,7 @@ namespace OrpheusCore.SchemaBuilder
         public ForeignKeySchemaConstraint(ISchemaDataObject schemaObject) :base(schemaObject)
         {
             this.ForeignKeyFields = new List<string>();
-            this.ConstraintSQLCommand = "PRIMARY KEY";
+            this.ConstraintSQLCommand = "FOREIGN KEY";
         }
     }
 

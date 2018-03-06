@@ -37,18 +37,24 @@ namespace OrpheusAttributes
         public bool OnUpdateCascade { get; private set; }
 
         /// <summary>
+        /// Optional. Set the schema name of the reference table, if there is one.
+        /// </summary>
+        public string SchemaName { get; private set; }
+
+        /// <summary>
         /// Foreign key attribute constructor.
         /// </summary>
         /// <param name="referenceTable">The referenced table name</param>
         /// <param name="referenceField">The referenced field name</param>
         /// <param name="onDeleteCascade">Delete cascade flag</param>
         /// <param name="onUpdateCascade">Update cascade flag</param>
-        public ForeignKey(string referenceTable, string referenceField,bool onDeleteCascade = false, bool onUpdateCascade = false)
+        public ForeignKey(string referenceTable, string referenceField,string schemaName = null,bool onDeleteCascade = false, bool onUpdateCascade = false)
         {
             this.ReferenceField = referenceField;
             this.ReferenceTable = referenceTable;
             this.OnDeleteCascade = onDeleteCascade;
             this.OnUpdateCascade = onUpdateCascade;
+            this.SchemaName = schemaName;
         }
 
         /// <summary>
@@ -58,7 +64,7 @@ namespace OrpheusAttributes
         /// <param name="referenceField">The referenced field name</param>
         /// <param name="onDeleteCascade">Delete cascade flag</param>
         /// <param name="onUpdateCascade">Update cascade flag</param>
-        public ForeignKey(Type referenceTableType, string referenceField, bool onDeleteCascade = false, bool onUpdateCascade = false):this(referenceTableType.Name,referenceField,onDeleteCascade,onUpdateCascade)
+        public ForeignKey(Type referenceTableType, string referenceField,string schemaName = null, bool onDeleteCascade = false, bool onUpdateCascade = false):this(referenceTableType.Name,referenceField,schemaName,onDeleteCascade,onUpdateCascade)
         {
         }
     }

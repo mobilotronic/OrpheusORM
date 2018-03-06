@@ -99,7 +99,7 @@ namespace OrpheusCore
                         schemaObj.AddForeignKeyConstraint(
                             String.Format("FK_{0}_{1}_{2}", schemaObj.SQLName, fk.ReferenceTable, fieldName),
                             new List<string>() { fieldName },
-                            fk.ReferenceTable,
+                            fk.SchemaName == null ? fk.ReferenceTable : String.Format("{0}.{1}",fk.SchemaName,fk.ReferenceTable),
                             new List<string>() { fk.ReferenceField },
                             fk.OnDeleteCascade,
                             fk.OnUpdateCascade
@@ -183,6 +183,15 @@ namespace OrpheusCore
                 {
                     this.SQLName = (modelAttribute as TableName).Name;
                 }
+
+                if (attributeType == typeof(SQLServerSchemaName))
+                {
+                    var schemaName = (modelAttribute as SQLServerSchemaName).SchemaName;
+                    if (this.SQLName != null)
+                        this.SQLName = String.Format("{0}.{1}", schemaName, this.SQLName);
+                    this.SQLServerSchemaName = schemaName;
+                }
+
             }
 
             this.IterateModelProperties((PropertyInfo prop) => {
@@ -271,6 +280,11 @@ namespace OrpheusCore
         /// Model's SQLName. Defaults to the model's type name.
         /// </summary>
         public string SQLName { get; private set; }
+
+        /// <summary>
+        /// SQL server's schema name.
+        /// </summary>
+        public string SQLServerSchemaName { get; private set; }
         #endregion
 
         #region public methods

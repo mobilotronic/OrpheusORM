@@ -145,6 +145,11 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <returns>True if the schema object is created in the DB</returns>
         bool IsCreated { get; }
+
+        /// <summary>
+        /// The schema object alias name.
+        /// </summary>
+        string AliasName { get; set; }
     }
 
 
@@ -266,6 +271,17 @@ namespace OrpheusInterfaces
     }
 
     /// <summary>
+    /// A data table that is used in a View.
+    /// </summary>
+    public interface ISchemaViewTable: ISchemaTable
+    {
+        /// <summary>
+        /// Override for a table's schema name.
+        /// </summary>
+        string SchemaName { get; set; }
+    }
+
+    /// <summary>
     /// Create view schema object.
     /// </summary>
     public interface ISchemaView : ISchemaDataObject
@@ -280,5 +296,11 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <returns>Table name</returns>
         string TableName { get; set; }
+
+        /// <summary>
+        /// Returns the main table name, SQL formatted, with a schema name, if the underlying db engine supports it, and with the table alias, if defined.
+        /// </summary>
+        /// <returns></returns>
+        string FormattedTableName();
     }
 }

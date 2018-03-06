@@ -21,6 +21,11 @@ namespace OrpheusInterfaces
         string Name { get; }
 
         /// <summary>
+        /// The table's schema name. Applicable only if the db engine is SQL Server.
+        /// </summary>
+        string SchemaName { get; }
+
+        /// <summary>
         /// True when table data have been modified.
         /// </summary>
         /// <returns>True if table data have been modified</returns>

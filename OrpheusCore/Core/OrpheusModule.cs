@@ -85,7 +85,7 @@ namespace OrpheusCore
                     //if the table instance is not yet set, try to set it by using the master table name.
                     if(detailTableOption.MasterTable == null)
                     {
-                        detailTableOption.MasterTable = this.Tables.Where(t => t.Name.ToLower() == detailTableOption.MasterTableName.ToLower()).FirstOrDefault();
+                        detailTableOption.MasterTable = this.getTableByName(detailTableOption.MasterTableName,this.Tables);// this.Tables.Where(t => t.Name.ToLower() == detailTableOption.MasterTableName.ToLower()).FirstOrDefault();
                     }
                     this.Tables.Add(this.createGenericTableFromOptions(detailTableOption));
                 }
@@ -94,10 +94,10 @@ namespace OrpheusCore
                 //so after the first iteration, we iterate through them again to set the master table, for each detail table.
                 foreach (var detailTableOption in this.Definition.DetailTableOptions)
                 {
-                    var detailTable = this.Tables.Where(t => t.Name.ToLower() == detailTableOption.TableName.ToLower()).FirstOrDefault();
-                    if (detailTable != null)
+                    var detailTable = this.getTableByName(detailTableOption.TableName, this.Tables);// this.Tables.Where(t => t.Name.ToLower() == detailTableOption.TableName.ToLower()).FirstOrDefault();
+                    if (detailTable != null && detailTable.MasterTable == null)
                     {
-                        detailTable.MasterTable = this.Tables.Where(t => t.Name.ToLower() == detailTableOption.MasterTableName.ToLower()).FirstOrDefault();
+                        detailTable.MasterTable = this.getTableByName(detailTableOption.MasterTableName, this.Tables);// this.Tables.Where(t => t.Name.ToLower() == detailTableOption.MasterTableName.ToLower()).FirstOrDefault();
                     }
                     
                 }
@@ -107,6 +107,26 @@ namespace OrpheusCore
                     this.ReferenceTables.Add(this.createGenericTableFromOptions(referenceTableOption));
                 }
             }
+        }
+
+        private IOrpheusTable getTableByName(string tableName, List<IOrpheusTable> tableCollection)
+        {
+            var moduleTable = tableCollection.Where(obj =>
+                  obj.SchemaName == null ? obj.Name.ToLower() == tableName.ToLower() : obj.Name.Split(".")[1].Trim().ToLower() == tableName.ToLower()
+               ).FirstOrDefault();
+            //if (moduleTable == null)
+            //    throw new Exception(String.Format("Table {0} not found.", tableName));
+            return moduleTable;
+        }
+
+        private IOrpheusTable<T> getTableByName<T>(string tableName, List<IOrpheusTable> tableCollection)
+        {
+            var moduleTable = tableCollection.Where(obj =>
+                  obj.SchemaName == null ? obj.Name.ToLower() == tableName.ToLower() : obj.Name.Split(".")[1].Trim().ToLower() == tableName.ToLower()
+               ).FirstOrDefault();
+            //if (moduleTable == null)
+            //    throw new Exception(String.Format("Table {0} not found.", tableName));
+            return (IOrpheusTable<T>)moduleTable;
         }
 
         /// <summary>
@@ -138,7 +158,7 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusTable<T> GetTable<T>(string tableName)
         {
-            return (IOrpheusTable<T>)this.Tables.Where(t => t.Name.ToLower() == tableName.ToLower()).First();
+            return this.getTableByName<T>(tableName,this.Tables);
         }
 
         /// <summary>
@@ -149,7 +169,7 @@ namespace OrpheusCore
         public IOrpheusTable<T> GetTable<T>()
         {
             var tableName = typeof(T).Name;
-            return (IOrpheusTable<T>)this.Tables.Where(t => t.Name.ToLower() == tableName.ToLower()).First();
+            return this.getTableByName<T>(tableName, this.Tables);
         }
 
         /// <summary>
@@ -171,7 +191,7 @@ namespace OrpheusCore
         /// <returns></returns>
         public IOrpheusTable<T> GetReferenceTable<T>(string tableName)
         {
-            return (IOrpheusTable<T>)this.ReferenceTables.Where(t => t.Name.ToLower() == tableName.ToLower()).First();
+            return this.getTableByName<T>(tableName, this.ReferenceTables);
         }
 
         /// <summary>
@@ -182,7 +202,7 @@ namespace OrpheusCore
         public IOrpheusTable<T> GetReferenceTable<T>()
         {
             var tableName = typeof(T).Name;
-            return (IOrpheusTable<T>)this.ReferenceTables.Where(t => t.Name.ToLower() == tableName.ToLower()).First();
+            return this.getTableByName<T>(tableName, this.ReferenceTables);
         }
 
         /// <summary>
