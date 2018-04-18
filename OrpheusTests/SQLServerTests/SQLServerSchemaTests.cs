@@ -32,7 +32,7 @@ namespace OrpheusTests.SQLServerTests
 
         public SQLServerSchemaTests()
         {
-            TestDatabase.DatabaseEngine = DbEngine.dbSQLServer;
+            this.DatabaseEngine = DbEngine.dbSQLServer;
         }
     }
 }

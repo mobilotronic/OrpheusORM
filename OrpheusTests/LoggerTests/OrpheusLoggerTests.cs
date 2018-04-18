@@ -1,17 +1,15 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Configuration;
+using OrpheusCore.Configuration;
 using OrpheusLogger;
-using Microsoft.Extensions.Logging;
+using System;
 using System.IO;
 using System.Reflection;
-using OrpheusCore.Configuration;
-using System.Threading;
 
 namespace OrpheusTests.LoggerTests
 {
     [TestClass]
-    public class OrpheusLoggerTests
+    public class OrpheusLoggerTests : BaseTestClass
     {
         private static string assemblyDirectory
         {
@@ -27,18 +25,18 @@ namespace OrpheusTests.LoggerTests
         [TestMethod]
         public void TestSeverityLevel()
         {
-            ConfigurationManager.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
-            var logger = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
-            ConfigurationManager.Configuration.Logging.Level = "Information";
+            ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json"));
+            var logger = (IOrpheusFileLogger)OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            logger.LoggingConfiguration.Level = "Information";
             var errorId = Guid.NewGuid().ToString();
             var informationId = Guid.NewGuid().ToString();
             var debugId = Guid.NewGuid().ToString();
             logger.LogError("Error message {0}", errorId);
             logger.LogInformation("Information message {0}", informationId);
-            ConfigurationManager.Configuration.Logging.Level = "Error";
+            logger.LoggingConfiguration.Level = "Error";
             logger.LogDebug("Debug message {0}", debugId);
 
-            var logFileContents = File.ReadAllText((logger as OrpheusFileLogger).LogFileName);
+            var logFileContents = File.ReadAllText(logger.LogFileName);
 
             Assert.AreEqual(true, logFileContents.Contains(informationId));
             Assert.AreEqual(true, logFileContents.Contains(errorId));
@@ -51,7 +49,7 @@ namespace OrpheusTests.LoggerTests
         public void TestLogFilePath()
         {
             var newFolder = @"C:\Temp";
-            OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
+            OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json"));
             Directory.CreateDirectory(newFolder);
             var logger = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
             ConfigurationManager.Configuration.Logging.FilePath = newFolder;
@@ -74,7 +72,7 @@ namespace OrpheusTests.LoggerTests
         //[TestMethod]
         public void TestLogFileSize()
         {
-            ConfigurationManager.InitializeConfiguration(assemblyDirectory + @"\" + "OrpheusSQLServer.config");
+            ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServer.config"));
             var logger = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
             ConfigurationManager.Configuration.Logging.Level = "Debug";
             ConfigurationManager.Configuration.Logging.MaxFileSize = 1;

@@ -79,8 +79,8 @@ namespace OrpheusTests
             orderLines.MasterTable = order;
 
             //populating auxiliary data.
-            transactors.Add(TestDatabase.GetTransactors());
-            items.Add(TestDatabase.GetItems());
+            transactors.Add(this.GetTransactors());
+            items.Add(this.GetItems());
             using(var tr = this.Database.BeginTransaction())
             {
                 transactors.ExecuteInserts(tr);
@@ -137,8 +137,8 @@ namespace OrpheusTests
             var order = module.GetTable<TestModelOrder>("TestModelOrder");
 
             //populating auxiliary data.
-            transactors.Add(TestDatabase.GetTransactors());
-            items.Add(TestDatabase.GetItems());
+            transactors.Add(this.GetTransactors());
+            items.Add(this.GetItems());
             using (var tr = this.Database.BeginTransaction())
             {
                 transactors.ExecuteInserts(tr);
@@ -376,8 +376,8 @@ namespace OrpheusTests
             orderLines.MasterTable = order;
 
             //populating auxiliary data.
-            transactors.Add(TestDatabase.GetTransactors(100));
-            items.Add(TestDatabase.GetItems(100));
+            transactors.Add(this.GetTransactors(100));
+            items.Add(this.GetItems(100));
             using (var tr = this.Database.BeginTransaction())
             {
                 transactors.ExecuteInserts(tr);

@@ -22,11 +22,22 @@ namespace OrpheusCore.SchemaBuilder
         #endregion
 
         #region protected properties
+        /// <summary>
+        /// 
+        /// </summary>
         protected ILogger logger;
+        /// <summary>
+        /// 
+        /// </summary>
         protected string _sqlName;
         #endregion
 
         #region protected methods
+        /// <summary>
+        /// Formats the logger's message.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
         protected string formatLoggerMessage(string message)
         {
             var result = "{0} [{1}]";
@@ -239,6 +250,9 @@ namespace OrpheusCore.SchemaBuilder
         #endregion
 
         #region constructors
+        /// <summary>
+        /// Schema object parameterless constructor.
+        /// </summary>
         public SchemaObject()
         {
             this.logger = ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
@@ -620,6 +634,16 @@ namespace OrpheusCore.SchemaBuilder
                             }
                             break;
                         }
+                    //case DDLAction.ddlAlter:
+                    //    {
+                    //        if (this.SchemaObjectsThatDependOnMe.Count > 0)
+                    //        {
+                    //            this.logger.LogDebug(this.formatLoggerMessage("Begin altering dependencies"));
+                    //            this.SchemaObjectsThatDependOnMe.ForEach(dep => dep.Execute());
+                    //            this.logger.LogDebug(this.formatLoggerMessage("End altering dependencies"));
+                    //        }
+                    //        break;
+                    //    }
                 }
                 //if there was a direct DDL SQL then ignore any other configuration and run it.
                 var DDLString = this.RawDDL == null ? this.createDDLString() : new List<string>() { this.RawDDL };
@@ -678,14 +702,14 @@ namespace OrpheusCore.SchemaBuilder
                                 catch (Exception e)
                                 {
                                     this.DB.RollbackTransaction(transaction);
+                                    this.logger.LogError(ddlCommand);
+                                    this.logger.LogError(this.getConstraintsDDL());
                                     var ex = e;
                                     while (ex != null)
                                     {
                                         this.logger.LogError(ex.Message);
                                         ex = ex.InnerException;
                                     }
-                                    this.logger.LogError(ddlCommand);
-                                    this.logger.LogError(this.getConstraintsDDL());
                                     throw e;
                                 }
                             }
@@ -779,7 +803,7 @@ namespace OrpheusCore.SchemaBuilder
                     }
                 case DDLAction.ddlAlter:
                     {
-                        result.AddRange(this.modelHelper.GetAlterDDLCommands(this));
+                        result.AddRange(this.modelHelper.GetAlterDDLCommands(this,this.DB.DDLHelper));
                         break;
                     }
             }
@@ -806,11 +830,13 @@ namespace OrpheusCore.SchemaBuilder
                         }
                         else 
                             cmd.CommandText = String.Format("ALTER TABLE {0} DROP CONSTRAINT {1}",this.SQLName, constraint.Name);
+                        this.logger.LogDebug(cmd.CommandText);
                         cmd.ExecuteNonQuery();
                     }
                 }
 
                 cmd.CommandText = String.Format("ALTER TABLE {0} {1}", this.SQLName, constraint.SQL());
+                this.logger.LogDebug(cmd.CommandText);
                 cmd.ExecuteNonQuery();
             });
 
@@ -825,11 +851,13 @@ namespace OrpheusCore.SchemaBuilder
                             cmd.CommandText = String.Format("ALTER TABLE {0} DROP INDEX {1}", this.DB.DDLHelper.SafeFormatField(this.SQLName), constraint.Name);
                         else
                             cmd.CommandText = String.Format("ALTER TABLE {0} DROP CONSTRAINT {1}", this.SQLName, constraint.Name);
+                        this.logger.LogDebug(cmd.CommandText);
                         cmd.ExecuteNonQuery();
                     }
                 }
 
                 cmd.CommandText = String.Format("ALTER TABLE {0} {1}", this.SQLName, constraint.SQL());
+                this.logger.LogDebug(cmd.CommandText);
                 cmd.ExecuteNonQuery();
             });
 
@@ -844,11 +872,13 @@ namespace OrpheusCore.SchemaBuilder
                             cmd.CommandText = String.Format("ALTER TABLE {0} DROP FOREIGN KEY {1}", this.DB.DDLHelper.SafeFormatField(this.SQLName), constraint.Name);
                         else
                             cmd.CommandText = String.Format("ALTER TABLE {0} DROP CONSTRAINT {1}", this.SQLName, constraint.Name);
+                        this.logger.LogDebug(cmd.CommandText);
                         cmd.ExecuteNonQuery();
                     }
                 }
 
                 cmd.CommandText = String.Format("ALTER TABLE {0} {1}", this.SQLName, constraint.SQL());
+                this.logger.LogDebug(cmd.CommandText);
                 cmd.ExecuteNonQuery();
             });
         }

@@ -3,7 +3,6 @@ using OrpheusInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace OrpheusMySQLDDLHelper
 {
@@ -99,7 +98,7 @@ namespace OrpheusMySQLDDLHelper
         public bool CreateDatabase()
         {
             var result = false;
-            MySqlConnectionStringBuilder connStringBuilder = new MySqlConnectionStringBuilder(this.db.ConnectionString);
+            MySql.Data.MySqlClient.MySqlConnectionStringBuilder connStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder(this.db.ConnectionString);
             var dbName = connStringBuilder.Database;
             if (this.secondConnection != null && !this.DatabaseExists(dbName))
             {

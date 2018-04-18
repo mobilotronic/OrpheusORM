@@ -94,34 +94,51 @@
   <h6><strong>Assembly</strong>: OrpheusLogger.dll</h6>
   <h5 id="OrpheusLogger_OrpheusFileLogger_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OrpheusFileLogger : ILogger</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrpheusFileLogger : IOrpheusFileLogger, ILogger, IOrpheusLogger</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger__ctor.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger__ctor_Microsoft_Extensions_Options_IOptionsMonitor_OrpheusCore_Configuration_LoggingConfiguration__.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.%23ctor(Microsoft.Extensions.Options.IOptionsMonitor%7BOrpheusCore.Configuration.LoggingConfiguration%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusLogger/OrpheusFileLogger.cs/#L226">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusLogger/OrpheusFileLogger.cs/#L277">View Source</a>
   </span>
   <a id="OrpheusLogger_OrpheusFileLogger__ctor_" data-uid="OrpheusLogger.OrpheusFileLogger.#ctor*"></a>
-  <h4 id="OrpheusLogger_OrpheusFileLogger__ctor" data-uid="OrpheusLogger.OrpheusFileLogger.#ctor">OrpheusFileLogger()</h4>
+  <h4 id="OrpheusLogger_OrpheusFileLogger__ctor_Microsoft_Extensions_Options_IOptionsMonitor_OrpheusCore_Configuration_LoggingConfiguration__" data-uid="OrpheusLogger.OrpheusFileLogger.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration})">OrpheusFileLogger(IOptionsMonitor&lt;LoggingConfiguration&gt;)</h4>
   <div class="markdown level1 summary"><p>Creates the default Orpheus logger.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OrpheusFileLogger()</code></pre>
+    <pre><code class="lang-csharp hljs">public OrpheusFileLogger(IOptionsMonitor&lt;LoggingConfiguration&gt; options)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.Extensions.Options.IOptionsMonitor</span>&lt;<a class="xref" href="OrpheusCore.Configuration.LoggingConfiguration.html">LoggingConfiguration</a>&gt;</td>
+        <td><span class="parametername">options</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_LogFileName.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.LogFileName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_LogFileName.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.LogFileName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusLogger/OrpheusFileLogger.cs/#L221">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusLogger/OrpheusFileLogger.cs/#L258">View Source</a>
   </span>
   <a id="OrpheusLogger_OrpheusFileLogger_LogFileName_" data-uid="OrpheusLogger.OrpheusFileLogger.LogFileName*"></a>
   <h4 id="OrpheusLogger_OrpheusFileLogger_LogFileName" data-uid="OrpheusLogger.OrpheusFileLogger.LogFileName">LogFileName</h4>
@@ -147,14 +164,45 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_LoggingConfiguration.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.LoggingConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusLogger/OrpheusFileLogger.cs/#L263">View Source</a>
+  </span>
+  <a id="OrpheusLogger_OrpheusFileLogger_LoggingConfiguration_" data-uid="OrpheusLogger.OrpheusFileLogger.LoggingConfiguration*"></a>
+  <h4 id="OrpheusLogger_OrpheusFileLogger_LoggingConfiguration" data-uid="OrpheusLogger.OrpheusFileLogger.LoggingConfiguration">LoggingConfiguration</h4>
+  <div class="markdown level1 summary"><p>Logger configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ILoggingConfiguration LoggingConfiguration { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.Interfaces.ILoggingConfiguration.html">ILoggingConfiguration</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_BeginScope__1___0_.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.BeginScope%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_BeginScope__1___0_.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.BeginScope%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusLogger/OrpheusFileLogger.cs/#L112">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusLogger/OrpheusFileLogger.cs/#L140">View Source</a>
   </span>
   <a id="OrpheusLogger_OrpheusFileLogger_BeginScope_" data-uid="OrpheusLogger.OrpheusFileLogger.BeginScope*"></a>
   <h4 id="OrpheusLogger_OrpheusFileLogger_BeginScope__1___0_" data-uid="OrpheusLogger.OrpheusFileLogger.BeginScope``1(``0)">BeginScope&lt;TState&gt;(TState)</h4>
@@ -192,7 +240,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IDisposable</span></td>
+        <td><span class="xref">System.IDisposable</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -214,10 +262,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_Finalize.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.Finalize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_Finalize.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.Finalize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusLogger/OrpheusFileLogger.cs/#L234">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusLogger/OrpheusFileLogger.cs/#L291">View Source</a>
   </span>
   <a id="OrpheusLogger_OrpheusFileLogger_Finalize_" data-uid="OrpheusLogger.OrpheusFileLogger.Finalize*"></a>
   <h4 id="OrpheusLogger_OrpheusFileLogger_Finalize" data-uid="OrpheusLogger.OrpheusFileLogger.Finalize">Finalize()</h4>
@@ -230,13 +278,13 @@
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_IsEnabled_LogLevel_.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.IsEnabled(LogLevel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_IsEnabled_Microsoft_Extensions_Logging_LogLevel_.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusLogger/OrpheusFileLogger.cs/#L122">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusLogger/OrpheusFileLogger.cs/#L150">View Source</a>
   </span>
   <a id="OrpheusLogger_OrpheusFileLogger_IsEnabled_" data-uid="OrpheusLogger.OrpheusFileLogger.IsEnabled*"></a>
-  <h4 id="OrpheusLogger_OrpheusFileLogger_IsEnabled_LogLevel_" data-uid="OrpheusLogger.OrpheusFileLogger.IsEnabled(LogLevel)">IsEnabled(LogLevel)</h4>
+  <h4 id="OrpheusLogger_OrpheusFileLogger_IsEnabled_Microsoft_Extensions_Logging_LogLevel_" data-uid="OrpheusLogger.OrpheusFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">IsEnabled(LogLevel)</h4>
   <div class="markdown level1 summary"><p>Returns true if the log level is enabled.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -255,7 +303,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">LogLevel</span></td>
+        <td><span class="xref">Microsoft.Extensions.Logging.LogLevel</span></td>
         <td><span class="parametername">logLevel</span></td>
         <td></td>
       </tr>
@@ -278,13 +326,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_Log__1_LogLevel_EventId___0_Exception_Func___0_Exception_System_String__.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.Log%60%601(LogLevel%2CEventId%2C%60%600%2CException%2CFunc%7B%60%600%2CException%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusLogger_OrpheusFileLogger_Log__1_Microsoft_Extensions_Logging_LogLevel_Microsoft_Extensions_Logging_EventId___0_System_Exception_System_Func___0_System_Exception_System_String__.md&amp;value=---%0Auid%3A%20OrpheusLogger.OrpheusFileLogger.Log%60%601(Microsoft.Extensions.Logging.LogLevel%2CMicrosoft.Extensions.Logging.EventId%2C%60%600%2CSystem.Exception%2CSystem.Func%7B%60%600%2CSystem.Exception%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusLogger/OrpheusFileLogger.cs/#L145">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusLogger/OrpheusFileLogger.cs/#L173">View Source</a>
   </span>
   <a id="OrpheusLogger_OrpheusFileLogger_Log_" data-uid="OrpheusLogger.OrpheusFileLogger.Log*"></a>
-  <h4 id="OrpheusLogger_OrpheusFileLogger_Log__1_LogLevel_EventId___0_Exception_Func___0_Exception_System_String__" data-uid="OrpheusLogger.OrpheusFileLogger.Log``1(LogLevel,EventId,``0,Exception,Func{``0,Exception,System.String})">Log&lt;TState&gt;(LogLevel, EventId, TState, Exception, Func&lt;TState, Exception, String&gt;)</h4>
+  <h4 id="OrpheusLogger_OrpheusFileLogger_Log__1_Microsoft_Extensions_Logging_LogLevel_Microsoft_Extensions_Logging_EventId___0_System_Exception_System_Func___0_System_Exception_System_String__" data-uid="OrpheusLogger.OrpheusFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">Log&lt;TState&gt;(LogLevel, EventId, TState, Exception, Func&lt;TState, Exception, String&gt;)</h4>
   <div class="markdown level1 summary"><p>Enters a log entry.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -303,13 +351,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">LogLevel</span></td>
+        <td><span class="xref">Microsoft.Extensions.Logging.LogLevel</span></td>
         <td><span class="parametername">logLevel</span></td>
         <td><p>Log level</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">EventId</span></td>
+        <td><span class="xref">Microsoft.Extensions.Logging.EventId</span></td>
         <td><span class="parametername">eventId</span></td>
         <td><p>Event id</p>
 </td>
@@ -321,13 +369,13 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Exception</span></td>
+        <td><span class="xref">System.Exception</span></td>
         <td><span class="parametername">exception</span></td>
         <td><p>Exception object</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;TState, <span class="xref">Exception</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;TState, <span class="xref">System.Exception</span>, <span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">formatter</span></td>
         <td><p>Formatter function</p>
 </td>
@@ -349,6 +397,16 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="OrpheusLogger.IOrpheusFileLogger.html">IOrpheusFileLogger</a>
+  </div>
+  <div>
+      <span class="xref">Microsoft.Extensions.Logging.ILogger</span>
+  </div>
+  <div>
+      <a class="xref" href="OrpheusInterfaces.Interfaces.IOrpheusLogger.html">IOrpheusLogger</a>
+  </div>
 </article>
           </div>
         </div>

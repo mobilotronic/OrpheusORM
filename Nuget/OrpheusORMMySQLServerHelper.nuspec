@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>OrpheusORMMySQLServerDDLHelper</id>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
         <title>OrpheusORM MySQL Server DDL Helper</title>
         <authors>Original Author</authors>
         <owners>Original Author</owners>
@@ -13,7 +13,7 @@
 		<iconUrl>https://github.com/redacted-user/OrpheusORM/raw/master/OrpheusIcon.png</iconUrl>
 		<projectUrl>https://github.com/redacted-user/OrpheusORM</projectUrl>
         <dependencies>
-			<dependency id="MySqlConnector" version="0.26.5" />
+			<dependency id="MySql.Data" version="6.10.6" />
 			<dependency id="OrpheusORM" version="1.0" />
         </dependencies>
     </metadata>

@@ -20,6 +20,10 @@
     <DocumentationFile>bin\Release\netcoreapp2.0\OrpheusSQLServerDDLHelper.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\OrpheusSQLServerDDLHelper.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
   </ItemGroup>

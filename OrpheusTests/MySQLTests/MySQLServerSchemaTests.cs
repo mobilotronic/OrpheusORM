@@ -32,7 +32,7 @@ namespace OrpheusTests.MySQLTests
 
         public MySQLServerSchemaTests()
         {
-            TestDatabase.DatabaseEngine = DbEngine.dbMySQL;
+            this.DatabaseEngine = DbEngine.dbMySQL;
         }
     }
 }

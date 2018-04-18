@@ -172,6 +172,9 @@ namespace OrpheusInterfaces
         DatabaseEngineType DbEngineType { get; }
     }
 
+    /// <summary>
+    /// SQL Server specific DDL helper definition.
+    /// </summary>
     public interface ISQLServerDDLHelper : IOrpheusDDLHelper
     {
         #region schema 
@@ -280,6 +283,9 @@ namespace OrpheusInterfaces
         bool SchemaObjectExists(string schemaObjectName, string schemaName = null);
     }
 
+    /// <summary>
+    /// MySQL Server specific DDL helper definition.
+    /// </summary>
     public interface IMySQLServerDDLHelper : IOrpheusDDLHelper
     {
     }

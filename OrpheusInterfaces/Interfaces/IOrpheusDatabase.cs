@@ -179,7 +179,8 @@ namespace OrpheusInterfaces
         /// Executes a SQL statement and returns it as specific model.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="SQL"></param>
+        /// <param name="SQL">SQL command to execute.</param>
+        /// <param name="tableName">Tablename.</param>
         /// <returns>A list of 'T'</returns>
         List<T> SQL<T>(string SQL, string tableName = null);
 

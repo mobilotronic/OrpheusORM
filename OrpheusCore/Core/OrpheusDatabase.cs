@@ -4,13 +4,12 @@ using OrpheusInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Text.RegularExpressions;
 
 
 namespace OrpheusCore
 {
-    /// <summary>
+    /// <summary> 
     /// Orpheus database.
     /// </summary>
     public class OrpheusDatabase : IOrpheusDatabase
@@ -275,6 +274,7 @@ namespace OrpheusCore
         /// <param name="id"></param>
         /// <param name="description"></param>
         /// <param name="version"></param>
+        /// <param name="name"></param>
         /// <returns></returns>
         public ISchema CreateSchema(Guid id, string description, double version, string name = null)
         {
@@ -435,6 +435,7 @@ namespace OrpheusCore
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="dbCommand"></param>
+        /// <param name="tableName"></param>
         /// <returns></returns>
         public List<T> SQL<T>(IDbCommand dbCommand, string tableName = null)
         {
@@ -470,6 +471,7 @@ namespace OrpheusCore
             }
             catch(Exception e)
             {
+                this.logger.LogError(e.Message);
                 this.logger.LogError("DDL Command [{0}] failed",DDLCommand);
             }
             finally

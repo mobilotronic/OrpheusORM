@@ -1256,6 +1256,7 @@ namespace OrpheusCore
         /// Save changes to the database.
         /// </summary>
         /// <param name="dbTransaction">Transaction in which the commands will be executed</param>
+        /// <param name="commitTransaction">Commit transaction after save.</param>
         public void Save(IDbTransaction dbTransaction = null, bool commitTransaction = true)
         {
             var transaction = dbTransaction == null ? this.database.BeginTransaction() : dbTransaction;

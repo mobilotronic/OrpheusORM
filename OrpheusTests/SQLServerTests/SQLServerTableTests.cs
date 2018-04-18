@@ -56,7 +56,7 @@ namespace OrpheusTests.SQLServerTests
 
         public SQLServerTableTests()
         {
-            TestDatabase.DatabaseEngine = DbEngine.dbSQLServer;
+            this.DatabaseEngine = DbEngine.dbSQLServer;
         }
     }
 }

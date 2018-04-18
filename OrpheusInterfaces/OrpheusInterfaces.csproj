@@ -20,4 +20,8 @@
     <DocumentationFile>bin\Release\netcoreapp2.0\OrpheusInterfaces.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\OrpheusInterfaces.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>

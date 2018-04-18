@@ -128,13 +128,16 @@ that it&apos;s not part of the actual db table schema.
 Useful for dynamically calculated/defined model properties.</p>
 </section>
       <h4><a class="xref" href="OrpheusAttributes.SQLServerSchemaName.html">SQLServerSchemaName</a></h4>
-      <section></section>
+      <section><p>Schema name attribute. Decorate a class with this attribute, to define to which schema the model exists.
+It&apos;s only applicable when the underlying database engine is SQL server, as it&apos;s the only one, from the supported database engines, that has this functionality.</p>
+</section>
       <h4><a class="xref" href="OrpheusAttributes.TableName.html">TableName</a></h4>
       <section><p>TableName attribute. Decorate a model with this attribute to
 to explicitly define the corresponding db table name.</p>
 </section>
       <h4><a class="xref" href="OrpheusAttributes.UniqueCompositeKey.html">UniqueCompositeKey</a></h4>
-      <section></section>
+      <section><p>Unique composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.</p>
+</section>
       <h4><a class="xref" href="OrpheusAttributes.UniqueKey.html">UniqueKey</a></h4>
       <section><p>Unique key constraint attribute.
 Decorate a property with attribute to create a unique key constraint on a schema object.</p>

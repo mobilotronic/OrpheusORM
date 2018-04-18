@@ -50,7 +50,7 @@ namespace OrpheusTests.SQLServerTests
 
         public SQLServerModuleTests()
         {
-            TestDatabase.DatabaseEngine = DbEngine.dbSQLServer;
+            this.DatabaseEngine = DbEngine.dbSQLServer;
         }
     }
 }

@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using OrpheusCore.ServiceProvider;
 using System.IO;
-using System.Reflection;
-using Microsoft.Extensions.Configuration;
-using System.Xml.Serialization;
 
 namespace OrpheusCore.Configuration
 {
@@ -11,34 +10,16 @@ namespace OrpheusCore.Configuration
     /// </summary>
     public static class ConfigurationManager
     {
-        private static OrpheusConfiguration configuration;
-        private static string configurationFileName = "OrpheusCore.config";
-        private static string assemblyDirectory
-        {
-            get
-            {
-                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                UriBuilder uri = new UriBuilder(codeBase);
-                string path = Uri.UnescapeDataString(uri.Path);
-                return Path.GetDirectoryName(path);
-            }
-        }
+        private static IConfiguration configurationInstance;
 
         /// <summary>
-        /// Initializes default Orpheus configuration. Default configuration file lives in the executing folder of the assembly and its name is 'Orpheus.config'
-        /// </summary>
-        public static void InitializeConfiguration()
-        {
-            ConfigurationManager.InitializeConfiguration(ConfigurationManager.assemblyDirectory + @"\" + ConfigurationManager.configurationFileName);
-        }
-
-        /// <summary>
-        /// Initialize configuration with an existing configuration object.
+        /// Initialize configuration.
         /// </summary>
         /// <param name="configuration"></param>
-        public static void InitializeConfiguration(OrpheusConfiguration configuration)
+        public static void InitializeConfiguration(IConfiguration configuration)
         {
-            ConfigurationManager.configuration = configuration;
+            configurationInstance = configuration;
+            OrpheusServiceProvider.InitializeServiceProvider();
         }
 
         /// <summary>
@@ -47,17 +28,16 @@ namespace OrpheusCore.Configuration
         /// <param name="configurationFile"></param>
         public static void InitializeConfiguration(string configurationFile)
         {
-            var xmlReader = new XmlSerializer(typeof(OrpheusConfiguration));
-            using (var fs = new FileStream(configurationFile,FileMode.Open))
+            try
             {
-                try
-                {
-                    ConfigurationManager.configuration =  (OrpheusConfiguration)xmlReader.Deserialize(fs);
-                }
-                finally
-                {
-                    fs.Close();
-                }
+                var configurationBuilder = new ConfigurationBuilder();
+                configurationBuilder.SetBasePath(Path.GetDirectoryName(configurationFile));
+                configurationBuilder.AddJsonFile(configurationFile, optional: false, reloadOnChange: true);
+                InitializeConfiguration(configurationBuilder.Build());
+            }
+            catch
+            {
+                throw;
             }
         }
 
@@ -67,25 +47,8 @@ namespace OrpheusCore.Configuration
         /// <param name="configurationFile"></param>
         public static void SaveConfiguration(string configurationFile)
         {
-            var xmlWriter = new XmlSerializer(typeof(OrpheusConfiguration));
-            using (var fs = new FileStream(configurationFile, FileMode.Open))
-            {
-                try
-                {
-                    xmlWriter.Serialize(fs, ConfigurationManager.configuration);
-                }
-                finally
-                {
-                    fs.Close();
-                }
-            }
+            File.WriteAllText(configurationFile,JsonConvert.SerializeObject(configurationInstance.Get<OrpheusConfiguration>()));
         }
-
-       /// <summary>
-        /// Returns the current directory, where Orpheus is being executed.
-        /// </summary>
-        /// <returns></returns>
-        public static string CurrentDirectory { get { return assemblyDirectory; } }
 
         /// <summary>
         /// Current Orpheus Configuration
@@ -94,8 +57,13 @@ namespace OrpheusCore.Configuration
         {
             get
             {
-                return ConfigurationManager.configuration;
+                return ConfigurationInstance.Get<OrpheusConfiguration>();
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static IConfiguration ConfigurationInstance { get { return configurationInstance; } }
     }
 }
