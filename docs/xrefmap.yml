@@ -13,11 +13,11 @@ references:
   commentId: T:OrpheusAttributes.DataTypeAttribute
   fullName: OrpheusAttributes.DataTypeAttribute
   nameWithType: DataTypeAttribute
-- uid: OrpheusAttributes.DataTypeAttribute.#ctor(DbType)
+- uid: OrpheusAttributes.DataTypeAttribute.#ctor(System.Data.DbType)
   name: DataTypeAttribute(DbType)
-  href: api/OrpheusAttributes.DataTypeAttribute.html#OrpheusAttributes_DataTypeAttribute__ctor_DbType_
-  commentId: M:OrpheusAttributes.DataTypeAttribute.#ctor(DbType)
-  fullName: OrpheusAttributes.DataTypeAttribute.DataTypeAttribute(DbType)
+  href: api/OrpheusAttributes.DataTypeAttribute.html#OrpheusAttributes_DataTypeAttribute__ctor_System_Data_DbType_
+  commentId: M:OrpheusAttributes.DataTypeAttribute.#ctor(System.Data.DbType)
+  fullName: OrpheusAttributes.DataTypeAttribute.DataTypeAttribute(System.Data.DbType)
   nameWithType: DataTypeAttribute.DataTypeAttribute(DbType)
 - uid: OrpheusAttributes.DataTypeAttribute.#ctor(System.Int32)
   name: DataTypeAttribute(Int32)
@@ -115,11 +115,11 @@ references:
   commentId: M:OrpheusAttributes.ForeignKey.#ctor(System.String,System.String,System.String,System.Boolean,System.Boolean)
   fullName: OrpheusAttributes.ForeignKey.ForeignKey(System.String, System.String, System.String, System.Boolean, System.Boolean)
   nameWithType: ForeignKey.ForeignKey(String, String, String, Boolean, Boolean)
-- uid: OrpheusAttributes.ForeignKey.#ctor(Type,System.String,System.String,System.Boolean,System.Boolean)
+- uid: OrpheusAttributes.ForeignKey.#ctor(System.Type,System.String,System.String,System.Boolean,System.Boolean)
   name: ForeignKey(Type, String, String, Boolean, Boolean)
-  href: api/OrpheusAttributes.ForeignKey.html#OrpheusAttributes_ForeignKey__ctor_Type_System_String_System_String_System_Boolean_System_Boolean_
-  commentId: M:OrpheusAttributes.ForeignKey.#ctor(Type,System.String,System.String,System.Boolean,System.Boolean)
-  fullName: OrpheusAttributes.ForeignKey.ForeignKey(Type, System.String, System.String, System.Boolean, System.Boolean)
+  href: api/OrpheusAttributes.ForeignKey.html#OrpheusAttributes_ForeignKey__ctor_System_Type_System_String_System_String_System_Boolean_System_Boolean_
+  commentId: M:OrpheusAttributes.ForeignKey.#ctor(System.Type,System.String,System.String,System.Boolean,System.Boolean)
+  fullName: OrpheusAttributes.ForeignKey.ForeignKey(System.Type, System.String, System.String, System.Boolean, System.Boolean)
   nameWithType: ForeignKey.ForeignKey(Type, String, String, Boolean, Boolean)
 - uid: OrpheusAttributes.ForeignKey.#ctor*
   name: ForeignKey
@@ -460,30 +460,24 @@ references:
   commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.Configuration
   fullName: OrpheusCore.Configuration.ConfigurationManager.Configuration
   nameWithType: ConfigurationManager.Configuration
-- uid: OrpheusCore.Configuration.ConfigurationManager.CurrentDirectory
-  name: CurrentDirectory
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_CurrentDirectory
-  commentId: P:OrpheusCore.Configuration.ConfigurationManager.CurrentDirectory
-  fullName: OrpheusCore.Configuration.ConfigurationManager.CurrentDirectory
-  nameWithType: ConfigurationManager.CurrentDirectory
-- uid: OrpheusCore.Configuration.ConfigurationManager.CurrentDirectory*
-  name: CurrentDirectory
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_CurrentDirectory_
-  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.CurrentDirectory
-  fullName: OrpheusCore.Configuration.ConfigurationManager.CurrentDirectory
-  nameWithType: ConfigurationManager.CurrentDirectory
-- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration
-  name: InitializeConfiguration()
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration
-  commentId: M:OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration
-  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration()
-  nameWithType: ConfigurationManager.InitializeConfiguration()
-- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(OrpheusCore.Configuration.OrpheusConfiguration)
-  name: InitializeConfiguration(OrpheusConfiguration)
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_OrpheusCore_Configuration_OrpheusConfiguration_
-  commentId: M:OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(OrpheusCore.Configuration.OrpheusConfiguration)
-  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(OrpheusCore.Configuration.OrpheusConfiguration)
-  nameWithType: ConfigurationManager.InitializeConfiguration(OrpheusConfiguration)
+- uid: OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
+  name: ConfigurationInstance
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_ConfigurationInstance
+  commentId: P:OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
+  fullName: OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
+  nameWithType: ConfigurationManager.ConfigurationInstance
+- uid: OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance*
+  name: ConfigurationInstance
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_ConfigurationInstance_
+  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
+  fullName: OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
+  nameWithType: ConfigurationManager.ConfigurationInstance
+- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration)
+  name: InitializeConfiguration(IConfiguration)
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_Microsoft_Extensions_Configuration_IConfiguration_
+  commentId: M:OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration)
+  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration)
+  nameWithType: ConfigurationManager.InitializeConfiguration(IConfiguration)
 - uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(System.String)
   name: InitializeConfiguration(String)
   href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_System_String_
@@ -706,11 +700,11 @@ references:
   commentId: T:OrpheusCore.OrpheusDatabase
   fullName: OrpheusCore.OrpheusDatabase
   nameWithType: OrpheusDatabase
-- uid: OrpheusCore.OrpheusDatabase.#ctor(IDbConnection,OrpheusInterfaces.IOrpheusDDLHelper,ILogger)
+- uid: OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILogger)
   name: OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase__ctor_IDbConnection_OrpheusInterfaces_IOrpheusDDLHelper_ILogger_
-  commentId: M:OrpheusCore.OrpheusDatabase.#ctor(IDbConnection,OrpheusInterfaces.IOrpheusDDLHelper,ILogger)
-  fullName: OrpheusCore.OrpheusDatabase.OrpheusDatabase(IDbConnection, OrpheusInterfaces.IOrpheusDDLHelper, ILogger)
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase__ctor_System_Data_IDbConnection_OrpheusInterfaces_IOrpheusDDLHelper_Microsoft_Extensions_Logging_ILogger_
+  commentId: M:OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILogger)
+  fullName: OrpheusCore.OrpheusDatabase.OrpheusDatabase(System.Data.IDbConnection, OrpheusInterfaces.IOrpheusDDLHelper, Microsoft.Extensions.Logging.ILogger)
   nameWithType: OrpheusDatabase.OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger)
 - uid: OrpheusCore.OrpheusDatabase.#ctor*
   name: OrpheusDatabase
@@ -730,11 +724,11 @@ references:
   commentId: Overload:OrpheusCore.OrpheusDatabase.BeginTransaction
   fullName: OrpheusCore.OrpheusDatabase.BeginTransaction
   nameWithType: OrpheusDatabase.BeginTransaction
-- uid: OrpheusCore.OrpheusDatabase.CommitTransaction(IDbTransaction)
+- uid: OrpheusCore.OrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
   name: CommitTransaction(IDbTransaction)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_CommitTransaction_IDbTransaction_
-  commentId: M:OrpheusCore.OrpheusDatabase.CommitTransaction(IDbTransaction)
-  fullName: OrpheusCore.OrpheusDatabase.CommitTransaction(IDbTransaction)
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_CommitTransaction_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.OrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
+  fullName: OrpheusCore.OrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
   nameWithType: OrpheusDatabase.CommitTransaction(IDbTransaction)
 - uid: OrpheusCore.OrpheusDatabase.CommitTransaction*
   name: CommitTransaction
@@ -820,13 +814,13 @@ references:
   commentId: M:OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String)
   fullName: OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String)
   nameWithType: OrpheusDatabase.CreatePreparedQuery(String)
-- uid: OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String,List{System.String},List{System.Object})
+- uid: OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})
   name: CreatePreparedQuery(String, List<String>, List<Object>)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_CreatePreparedQuery_System_String_List_System_String__List_System_Object__
-  commentId: M:OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String,List{System.String},List{System.Object})
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_CreatePreparedQuery_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_Object__
+  commentId: M:OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})
   name.vb: CreatePreparedQuery(String, List(Of String), List(Of Object))
-  fullName: OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String, List<System.String>, List<System.Object>)
-  fullName.vb: OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String, List(Of System.String), List(Of System.Object))
+  fullName: OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.Object>)
+  fullName.vb: OrpheusCore.OrpheusDatabase.CreatePreparedQuery(System.String, System.Collections.Generic.List(Of System.String), System.Collections.Generic.List(Of System.Object))
   nameWithType: OrpheusDatabase.CreatePreparedQuery(String, List<String>, List<Object>)
   nameWithType.vb: OrpheusDatabase.CreatePreparedQuery(String, List(Of String), List(Of Object))
 - uid: OrpheusCore.OrpheusDatabase.CreatePreparedQuery*
@@ -835,11 +829,11 @@ references:
   commentId: Overload:OrpheusCore.OrpheusDatabase.CreatePreparedQuery
   fullName: OrpheusCore.OrpheusDatabase.CreatePreparedQuery
   nameWithType: OrpheusDatabase.CreatePreparedQuery
-- uid: OrpheusCore.OrpheusDatabase.CreateSchema(Guid,System.String,System.Double,System.String)
+- uid: OrpheusCore.OrpheusDatabase.CreateSchema(System.Guid,System.String,System.Double,System.String)
   name: CreateSchema(Guid, String, Double, String)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_CreateSchema_Guid_System_String_System_Double_System_String_
-  commentId: M:OrpheusCore.OrpheusDatabase.CreateSchema(Guid,System.String,System.Double,System.String)
-  fullName: OrpheusCore.OrpheusDatabase.CreateSchema(Guid, System.String, System.Double, System.String)
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_CreateSchema_System_Guid_System_String_System_Double_System_String_
+  commentId: M:OrpheusCore.OrpheusDatabase.CreateSchema(System.Guid,System.String,System.Double,System.String)
+  fullName: OrpheusCore.OrpheusDatabase.CreateSchema(System.Guid, System.String, System.Double, System.String)
   nameWithType: OrpheusDatabase.CreateSchema(Guid, String, Double, String)
 - uid: OrpheusCore.OrpheusDatabase.CreateSchema*
   name: CreateSchema
@@ -871,13 +865,13 @@ references:
   fullName.vb: OrpheusCore.OrpheusDatabase.CreateTable(Of T)(OrpheusInterfaces.IOrpheusTableOptions)
   nameWithType: OrpheusDatabase.CreateTable<T>(IOrpheusTableOptions)
   nameWithType.vb: OrpheusDatabase.CreateTable(Of T)(IOrpheusTableOptions)
-- uid: OrpheusCore.OrpheusDatabase.CreateTable``1(System.String,List{OrpheusInterfaces.IOrpheusTableKeyField})
+- uid: OrpheusCore.OrpheusDatabase.CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField})
   name: CreateTable<T>(String, List<IOrpheusTableKeyField>)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_CreateTable__1_System_String_List_OrpheusInterfaces_IOrpheusTableKeyField__
-  commentId: M:OrpheusCore.OrpheusDatabase.CreateTable``1(System.String,List{OrpheusInterfaces.IOrpheusTableKeyField})
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_CreateTable__1_System_String_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__
+  commentId: M:OrpheusCore.OrpheusDatabase.CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField})
   name.vb: CreateTable(Of T)(String, List(Of IOrpheusTableKeyField))
-  fullName: OrpheusCore.OrpheusDatabase.CreateTable<T>(System.String, List<OrpheusInterfaces.IOrpheusTableKeyField>)
-  fullName.vb: OrpheusCore.OrpheusDatabase.CreateTable(Of T)(System.String, List(Of OrpheusInterfaces.IOrpheusTableKeyField))
+  fullName: OrpheusCore.OrpheusDatabase.CreateTable<T>(System.String, System.Collections.Generic.List<OrpheusInterfaces.IOrpheusTableKeyField>)
+  fullName.vb: OrpheusCore.OrpheusDatabase.CreateTable(Of T)(System.String, System.Collections.Generic.List(Of OrpheusInterfaces.IOrpheusTableKeyField))
   nameWithType: OrpheusDatabase.CreateTable<T>(String, List<IOrpheusTableKeyField>)
   nameWithType.vb: OrpheusDatabase.CreateTable(Of T)(String, List(Of IOrpheusTableKeyField))
 - uid: OrpheusCore.OrpheusDatabase.CreateTableKeyField
@@ -955,11 +949,11 @@ references:
   commentId: Overload:OrpheusCore.OrpheusDatabase.ExecuteDDL
   fullName: OrpheusCore.OrpheusDatabase.ExecuteDDL
   nameWithType: OrpheusDatabase.ExecuteDDL
-- uid: OrpheusCore.OrpheusDatabase.IsNullableType(Type)
+- uid: OrpheusCore.OrpheusDatabase.IsNullableType(System.Type)
   name: IsNullableType(Type)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_IsNullableType_Type_
-  commentId: M:OrpheusCore.OrpheusDatabase.IsNullableType(Type)
-  fullName: OrpheusCore.OrpheusDatabase.IsNullableType(Type)
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_IsNullableType_System_Type_
+  commentId: M:OrpheusCore.OrpheusDatabase.IsNullableType(System.Type)
+  fullName: OrpheusCore.OrpheusDatabase.IsNullableType(System.Type)
   nameWithType: OrpheusDatabase.IsNullableType(Type)
 - uid: OrpheusCore.OrpheusDatabase.IsNullableType*
   name: IsNullableType
@@ -1003,11 +997,11 @@ references:
   commentId: Overload:OrpheusCore.OrpheusDatabase.RegisterModule
   fullName: OrpheusCore.OrpheusDatabase.RegisterModule
   nameWithType: OrpheusDatabase.RegisterModule
-- uid: OrpheusCore.OrpheusDatabase.RollbackTransaction(IDbTransaction)
+- uid: OrpheusCore.OrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
   name: RollbackTransaction(IDbTransaction)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_RollbackTransaction_IDbTransaction_
-  commentId: M:OrpheusCore.OrpheusDatabase.RollbackTransaction(IDbTransaction)
-  fullName: OrpheusCore.OrpheusDatabase.RollbackTransaction(IDbTransaction)
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_RollbackTransaction_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.OrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
+  fullName: OrpheusCore.OrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
   nameWithType: OrpheusDatabase.RollbackTransaction(IDbTransaction)
 - uid: OrpheusCore.OrpheusDatabase.RollbackTransaction*
   name: RollbackTransaction
@@ -1021,13 +1015,13 @@ references:
   commentId: Overload:OrpheusCore.OrpheusDatabase.SQL
   fullName: OrpheusCore.OrpheusDatabase.SQL
   nameWithType: OrpheusDatabase.SQL
-- uid: OrpheusCore.OrpheusDatabase.SQL``1(IDbCommand,System.String)
+- uid: OrpheusCore.OrpheusDatabase.SQL``1(System.Data.IDbCommand,System.String)
   name: SQL<T>(IDbCommand, String)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_SQL__1_IDbCommand_System_String_
-  commentId: M:OrpheusCore.OrpheusDatabase.SQL``1(IDbCommand,System.String)
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_SQL__1_System_Data_IDbCommand_System_String_
+  commentId: M:OrpheusCore.OrpheusDatabase.SQL``1(System.Data.IDbCommand,System.String)
   name.vb: SQL(Of T)(IDbCommand, String)
-  fullName: OrpheusCore.OrpheusDatabase.SQL<T>(IDbCommand, System.String)
-  fullName.vb: OrpheusCore.OrpheusDatabase.SQL(Of T)(IDbCommand, System.String)
+  fullName: OrpheusCore.OrpheusDatabase.SQL<T>(System.Data.IDbCommand, System.String)
+  fullName.vb: OrpheusCore.OrpheusDatabase.SQL(Of T)(System.Data.IDbCommand, System.String)
   nameWithType: OrpheusDatabase.SQL<T>(IDbCommand, String)
   nameWithType.vb: OrpheusDatabase.SQL(Of T)(IDbCommand, String)
 - uid: OrpheusCore.OrpheusDatabase.SQL``1(System.String,System.String)
@@ -1057,11 +1051,11 @@ references:
   commentId: T:OrpheusCore.OrpheusModelHelper
   fullName: OrpheusCore.OrpheusModelHelper
   nameWithType: OrpheusModelHelper
-- uid: OrpheusCore.OrpheusModelHelper.#ctor(Type)
+- uid: OrpheusCore.OrpheusModelHelper.#ctor(System.Type)
   name: OrpheusModelHelper(Type)
-  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper__ctor_Type_
-  commentId: M:OrpheusCore.OrpheusModelHelper.#ctor(Type)
-  fullName: OrpheusCore.OrpheusModelHelper.OrpheusModelHelper(Type)
+  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper__ctor_System_Type_
+  commentId: M:OrpheusCore.OrpheusModelHelper.#ctor(System.Type)
+  fullName: OrpheusCore.OrpheusModelHelper.OrpheusModelHelper(System.Type)
   nameWithType: OrpheusModelHelper.OrpheusModelHelper(Type)
 - uid: OrpheusCore.OrpheusModelHelper.#ctor*
   name: OrpheusModelHelper
@@ -1120,23 +1114,23 @@ references:
   commentId: Overload:OrpheusCore.OrpheusModelHelper.ForeignKeys
   fullName: OrpheusCore.OrpheusModelHelper.ForeignKeys
   nameWithType: OrpheusModelHelper.ForeignKeys
-- uid: OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.ISchemaDataObject)
-  name: GetAlterDDLCommands(ISchemaDataObject)
-  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper_GetAlterDDLCommands_OrpheusInterfaces_ISchemaDataObject_
-  commentId: M:OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.ISchemaDataObject)
-  fullName: OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.ISchemaDataObject)
-  nameWithType: OrpheusModelHelper.GetAlterDDLCommands(ISchemaDataObject)
+- uid: OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.ISchemaDataObject,OrpheusInterfaces.IOrpheusDDLHelper)
+  name: GetAlterDDLCommands(ISchemaDataObject, IOrpheusDDLHelper)
+  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper_GetAlterDDLCommands_OrpheusInterfaces_ISchemaDataObject_OrpheusInterfaces_IOrpheusDDLHelper_
+  commentId: M:OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.ISchemaDataObject,OrpheusInterfaces.IOrpheusDDLHelper)
+  fullName: OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.ISchemaDataObject, OrpheusInterfaces.IOrpheusDDLHelper)
+  nameWithType: OrpheusModelHelper.GetAlterDDLCommands(ISchemaDataObject, IOrpheusDDLHelper)
 - uid: OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands*
   name: GetAlterDDLCommands
   href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper_GetAlterDDLCommands_
   commentId: Overload:OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands
   fullName: OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands
   nameWithType: OrpheusModelHelper.GetAlterDDLCommands
-- uid: OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty(PropertyInfo)
+- uid: OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)
   name: GetFieldNameForProperty(PropertyInfo)
-  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper_GetFieldNameForProperty_PropertyInfo_
-  commentId: M:OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty(PropertyInfo)
-  fullName: OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty(PropertyInfo)
+  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper_GetFieldNameForProperty_System_Reflection_PropertyInfo_
+  commentId: M:OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)
+  fullName: OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)
   nameWithType: OrpheusModelHelper.GetFieldNameForProperty(PropertyInfo)
 - uid: OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty*
   name: GetFieldNameForProperty
@@ -1144,11 +1138,11 @@ references:
   commentId: Overload:OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty
   fullName: OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty
   nameWithType: OrpheusModelHelper.GetFieldNameForProperty
-- uid: OrpheusCore.OrpheusModelHelper.IsSchemaProperty(PropertyInfo)
+- uid: OrpheusCore.OrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)
   name: IsSchemaProperty(PropertyInfo)
-  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper_IsSchemaProperty_PropertyInfo_
-  commentId: M:OrpheusCore.OrpheusModelHelper.IsSchemaProperty(PropertyInfo)
-  fullName: OrpheusCore.OrpheusModelHelper.IsSchemaProperty(PropertyInfo)
+  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper_IsSchemaProperty_System_Reflection_PropertyInfo_
+  commentId: M:OrpheusCore.OrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)
+  fullName: OrpheusCore.OrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)
   nameWithType: OrpheusModelHelper.IsSchemaProperty(PropertyInfo)
 - uid: OrpheusCore.OrpheusModelHelper.IsSchemaProperty*
   name: IsSchemaProperty
@@ -1168,11 +1162,11 @@ references:
   commentId: Overload:OrpheusCore.OrpheusModelHelper.IterateModelProperties
   fullName: OrpheusCore.OrpheusModelHelper.IterateModelProperties
   nameWithType: OrpheusModelHelper.IterateModelProperties
-- uid: OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes(PropertyInfo,OrpheusCore.PropertyAttribute)
+- uid: OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes(System.Reflection.PropertyInfo,OrpheusCore.PropertyAttribute)
   name: IteratePropertyAttributes(PropertyInfo, PropertyAttribute)
-  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper_IteratePropertyAttributes_PropertyInfo_OrpheusCore_PropertyAttribute_
-  commentId: M:OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes(PropertyInfo,OrpheusCore.PropertyAttribute)
-  fullName: OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes(PropertyInfo, OrpheusCore.PropertyAttribute)
+  href: api/OrpheusCore.OrpheusModelHelper.html#OrpheusCore_OrpheusModelHelper_IteratePropertyAttributes_System_Reflection_PropertyInfo_OrpheusCore_PropertyAttribute_
+  commentId: M:OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes(System.Reflection.PropertyInfo,OrpheusCore.PropertyAttribute)
+  fullName: OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes(System.Reflection.PropertyInfo, OrpheusCore.PropertyAttribute)
   nameWithType: OrpheusModelHelper.IteratePropertyAttributes(PropertyInfo, PropertyAttribute)
 - uid: OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes*
   name: IteratePropertyAttributes
@@ -1390,22 +1384,22 @@ references:
   fullName.vb: OrpheusCore.OrpheusModule.GetTable(Of T)(System.String)
   nameWithType: OrpheusModule.GetTable<T>(String)
   nameWithType.vb: OrpheusModule.GetTable(Of T)(String)
-- uid: OrpheusCore.OrpheusModule.Load(Dictionary{System.String,List{System.Object}})
+- uid: OrpheusCore.OrpheusModule.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}})
   name: Load(Dictionary<String, List<Object>>)
-  href: api/OrpheusCore.OrpheusModule.html#OrpheusCore_OrpheusModule_Load_Dictionary_System_String_List_System_Object___
-  commentId: M:OrpheusCore.OrpheusModule.Load(Dictionary{System.String,List{System.Object}})
+  href: api/OrpheusCore.OrpheusModule.html#OrpheusCore_OrpheusModule_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___
+  commentId: M:OrpheusCore.OrpheusModule.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}})
   name.vb: Load(Dictionary(Of String, List(Of Object)))
-  fullName: OrpheusCore.OrpheusModule.Load(Dictionary<System.String, List<System.Object>>)
-  fullName.vb: OrpheusCore.OrpheusModule.Load(Dictionary(Of System.String, List(Of System.Object)))
+  fullName: OrpheusCore.OrpheusModule.Load(System.Collections.Generic.Dictionary<System.String, System.Collections.Generic.List<System.Object>>)
+  fullName.vb: OrpheusCore.OrpheusModule.Load(System.Collections.Generic.Dictionary(Of System.String, System.Collections.Generic.List(Of System.Object)))
   nameWithType: OrpheusModule.Load(Dictionary<String, List<Object>>)
   nameWithType.vb: OrpheusModule.Load(Dictionary(Of String, List(Of Object)))
-- uid: OrpheusCore.OrpheusModule.Load(List{System.Object})
+- uid: OrpheusCore.OrpheusModule.Load(System.Collections.Generic.List{System.Object})
   name: Load(List<Object>)
-  href: api/OrpheusCore.OrpheusModule.html#OrpheusCore_OrpheusModule_Load_List_System_Object__
-  commentId: M:OrpheusCore.OrpheusModule.Load(List{System.Object})
+  href: api/OrpheusCore.OrpheusModule.html#OrpheusCore_OrpheusModule_Load_System_Collections_Generic_List_System_Object__
+  commentId: M:OrpheusCore.OrpheusModule.Load(System.Collections.Generic.List{System.Object})
   name.vb: Load(List(Of Object))
-  fullName: OrpheusCore.OrpheusModule.Load(List<System.Object>)
-  fullName.vb: OrpheusCore.OrpheusModule.Load(List(Of System.Object))
+  fullName: OrpheusCore.OrpheusModule.Load(System.Collections.Generic.List<System.Object>)
+  fullName.vb: OrpheusCore.OrpheusModule.Load(System.Collections.Generic.List(Of System.Object))
   nameWithType: OrpheusModule.Load(List<Object>)
   nameWithType.vb: OrpheusModule.Load(List(Of Object))
 - uid: OrpheusCore.OrpheusModule.Load*
@@ -1498,17 +1492,17 @@ references:
   commentId: M:OrpheusCore.OrpheusModuleDefinition.CreateTableOptions
   fullName: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions()
   nameWithType: OrpheusModuleDefinition.CreateTableOptions()
-- uid: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String,Type)
+- uid: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String,System.Type)
   name: CreateTableOptions(String, Type)
-  href: api/OrpheusCore.OrpheusModuleDefinition.html#OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_System_String_Type_
-  commentId: M:OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String,Type)
-  fullName: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String, Type)
+  href: api/OrpheusCore.OrpheusModuleDefinition.html#OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_System_String_System_Type_
+  commentId: M:OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String,System.Type)
+  fullName: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.String, System.Type)
   nameWithType: OrpheusModuleDefinition.CreateTableOptions(String, Type)
-- uid: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(Type)
+- uid: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.Type)
   name: CreateTableOptions(Type)
-  href: api/OrpheusCore.OrpheusModuleDefinition.html#OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_Type_
-  commentId: M:OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(Type)
-  fullName: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(Type)
+  href: api/OrpheusCore.OrpheusModuleDefinition.html#OrpheusCore_OrpheusModuleDefinition_CreateTableOptions_System_Type_
+  commentId: M:OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.Type)
+  fullName: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions(System.Type)
   nameWithType: OrpheusModuleDefinition.CreateTableOptions(Type)
 - uid: OrpheusCore.OrpheusModuleDefinition.CreateTableOptions*
   name: CreateTableOptions
@@ -1540,11 +1534,11 @@ references:
   commentId: Overload:OrpheusCore.OrpheusModuleDefinition.DetailTableOptions
   fullName: OrpheusCore.OrpheusModuleDefinition.DetailTableOptions
   nameWithType: OrpheusModuleDefinition.DetailTableOptions
-- uid: OrpheusCore.OrpheusModuleDefinition.LoadFrom(Stream)
+- uid: OrpheusCore.OrpheusModuleDefinition.LoadFrom(System.IO.Stream)
   name: LoadFrom(Stream)
-  href: api/OrpheusCore.OrpheusModuleDefinition.html#OrpheusCore_OrpheusModuleDefinition_LoadFrom_Stream_
-  commentId: M:OrpheusCore.OrpheusModuleDefinition.LoadFrom(Stream)
-  fullName: OrpheusCore.OrpheusModuleDefinition.LoadFrom(Stream)
+  href: api/OrpheusCore.OrpheusModuleDefinition.html#OrpheusCore_OrpheusModuleDefinition_LoadFrom_System_IO_Stream_
+  commentId: M:OrpheusCore.OrpheusModuleDefinition.LoadFrom(System.IO.Stream)
+  fullName: OrpheusCore.OrpheusModuleDefinition.LoadFrom(System.IO.Stream)
   nameWithType: OrpheusModuleDefinition.LoadFrom(Stream)
 - uid: OrpheusCore.OrpheusModuleDefinition.LoadFrom(System.String)
   name: LoadFrom(String)
@@ -1606,11 +1600,11 @@ references:
   commentId: Overload:OrpheusCore.OrpheusModuleDefinition.ReferenceTableOptions
   fullName: OrpheusCore.OrpheusModuleDefinition.ReferenceTableOptions
   nameWithType: OrpheusModuleDefinition.ReferenceTableOptions
-- uid: OrpheusCore.OrpheusModuleDefinition.SaveTo(Stream)
+- uid: OrpheusCore.OrpheusModuleDefinition.SaveTo(System.IO.Stream)
   name: SaveTo(Stream)
-  href: api/OrpheusCore.OrpheusModuleDefinition.html#OrpheusCore_OrpheusModuleDefinition_SaveTo_Stream_
-  commentId: M:OrpheusCore.OrpheusModuleDefinition.SaveTo(Stream)
-  fullName: OrpheusCore.OrpheusModuleDefinition.SaveTo(Stream)
+  href: api/OrpheusCore.OrpheusModuleDefinition.html#OrpheusCore_OrpheusModuleDefinition_SaveTo_System_IO_Stream_
+  commentId: M:OrpheusCore.OrpheusModuleDefinition.SaveTo(System.IO.Stream)
+  fullName: OrpheusCore.OrpheusModuleDefinition.SaveTo(System.IO.Stream)
   nameWithType: OrpheusModuleDefinition.SaveTo(Stream)
 - uid: OrpheusCore.OrpheusModuleDefinition.SaveTo(System.String)
   name: SaveTo(String)
@@ -1645,13 +1639,13 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T)
   nameWithType: OrpheusTable<T>
   nameWithType.vb: OrpheusTable(Of T)
-- uid: OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,List{OrpheusInterfaces.IOrpheusTableKeyField},OrpheusInterfaces.IOrpheusTable,List{OrpheusInterfaces.IOrpheusTableKeyField})
+- uid: OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField},OrpheusInterfaces.IOrpheusTable,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField})
   name: OrpheusTable(IOrpheusDatabase, String, List<IOrpheusTableKeyField>, IOrpheusTable, List<IOrpheusTableKeyField>)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_IOrpheusDatabase_System_String_List_OrpheusInterfaces_IOrpheusTableKeyField__OrpheusInterfaces_IOrpheusTable_List_OrpheusInterfaces_IOrpheusTableKeyField__
-  commentId: M:OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,List{OrpheusInterfaces.IOrpheusTableKeyField},OrpheusInterfaces.IOrpheusTable,List{OrpheusInterfaces.IOrpheusTableKeyField})
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_IOrpheusDatabase_System_String_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__OrpheusInterfaces_IOrpheusTable_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__
+  commentId: M:OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField},OrpheusInterfaces.IOrpheusTable,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField})
   name.vb: OrpheusTable(IOrpheusDatabase, String, List(Of IOrpheusTableKeyField), IOrpheusTable, List(Of IOrpheusTableKeyField))
-  fullName: OrpheusCore.OrpheusTable<T>.OrpheusTable(OrpheusInterfaces.IOrpheusDatabase, System.String, List<OrpheusInterfaces.IOrpheusTableKeyField>, OrpheusInterfaces.IOrpheusTable, List<OrpheusInterfaces.IOrpheusTableKeyField>)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).OrpheusTable(OrpheusInterfaces.IOrpheusDatabase, System.String, List(Of OrpheusInterfaces.IOrpheusTableKeyField), OrpheusInterfaces.IOrpheusTable, List(Of OrpheusInterfaces.IOrpheusTableKeyField))
+  fullName: OrpheusCore.OrpheusTable<T>.OrpheusTable(OrpheusInterfaces.IOrpheusDatabase, System.String, System.Collections.Generic.List<OrpheusInterfaces.IOrpheusTableKeyField>, OrpheusInterfaces.IOrpheusTable, System.Collections.Generic.List<OrpheusInterfaces.IOrpheusTableKeyField>)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).OrpheusTable(OrpheusInterfaces.IOrpheusDatabase, System.String, System.Collections.Generic.List(Of OrpheusInterfaces.IOrpheusTableKeyField), OrpheusInterfaces.IOrpheusTable, System.Collections.Generic.List(Of OrpheusInterfaces.IOrpheusTableKeyField))
   nameWithType: OrpheusTable<T>.OrpheusTable(IOrpheusDatabase, String, List<IOrpheusTableKeyField>, IOrpheusTable, List<IOrpheusTableKeyField>)
   nameWithType.vb: OrpheusTable(Of T).OrpheusTable(IOrpheusDatabase, String, List(Of IOrpheusTableKeyField), IOrpheusTable, List(Of IOrpheusTableKeyField))
 - uid: OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.IOrpheusTableOptions)
@@ -1678,13 +1672,13 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).Add(T)
   nameWithType: OrpheusTable<T>.Add(T)
   nameWithType.vb: OrpheusTable(Of T).Add(T)
-- uid: OrpheusCore.OrpheusTable`1.Add(List{`0})
+- uid: OrpheusCore.OrpheusTable`1.Add(System.Collections.Generic.List{`0})
   name: Add(List<T>)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Add_List__0__
-  commentId: M:OrpheusCore.OrpheusTable`1.Add(List{`0})
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Add_System_Collections_Generic_List__0__
+  commentId: M:OrpheusCore.OrpheusTable`1.Add(System.Collections.Generic.List{`0})
   name.vb: Add(List(Of T))
-  fullName: OrpheusCore.OrpheusTable<T>.Add(List<T>)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).Add(List(Of T))
+  fullName: OrpheusCore.OrpheusTable<T>.Add(System.Collections.Generic.List<T>)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).Add(System.Collections.Generic.List(Of T))
   nameWithType: OrpheusTable<T>.Add(List<T>)
   nameWithType.vb: OrpheusTable(Of T).Add(List(Of T))
 - uid: OrpheusCore.OrpheusTable`1.Add*
@@ -1735,13 +1729,13 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).Delete(T)
   nameWithType: OrpheusTable<T>.Delete(T)
   nameWithType.vb: OrpheusTable(Of T).Delete(T)
-- uid: OrpheusCore.OrpheusTable`1.Delete(List{`0})
+- uid: OrpheusCore.OrpheusTable`1.Delete(System.Collections.Generic.List{`0})
   name: Delete(List<T>)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Delete_List__0__
-  commentId: M:OrpheusCore.OrpheusTable`1.Delete(List{`0})
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Delete_System_Collections_Generic_List__0__
+  commentId: M:OrpheusCore.OrpheusTable`1.Delete(System.Collections.Generic.List{`0})
   name.vb: Delete(List(Of T))
-  fullName: OrpheusCore.OrpheusTable<T>.Delete(List<T>)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).Delete(List(Of T))
+  fullName: OrpheusCore.OrpheusTable<T>.Delete(System.Collections.Generic.List<T>)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).Delete(System.Collections.Generic.List(Of T))
   nameWithType: OrpheusTable<T>.Delete(List<T>)
   nameWithType.vb: OrpheusTable(Of T).Delete(List(Of T))
 - uid: OrpheusCore.OrpheusTable`1.Delete*
@@ -1768,12 +1762,12 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).DetailTables
   nameWithType: OrpheusTable<T>.DetailTables
   nameWithType.vb: OrpheusTable(Of T).DetailTables
-- uid: OrpheusCore.OrpheusTable`1.executeDelete(IDbTransaction)
+- uid: OrpheusCore.OrpheusTable`1.executeDelete(System.Data.IDbTransaction)
   name: executeDelete(IDbTransaction)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_executeDelete_IDbTransaction_
-  commentId: M:OrpheusCore.OrpheusTable`1.executeDelete(IDbTransaction)
-  fullName: OrpheusCore.OrpheusTable<T>.executeDelete(IDbTransaction)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).executeDelete(IDbTransaction)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_executeDelete_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.OrpheusTable`1.executeDelete(System.Data.IDbTransaction)
+  fullName: OrpheusCore.OrpheusTable<T>.executeDelete(System.Data.IDbTransaction)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).executeDelete(System.Data.IDbTransaction)
   nameWithType: OrpheusTable<T>.executeDelete(IDbTransaction)
   nameWithType.vb: OrpheusTable(Of T).executeDelete(IDbTransaction)
 - uid: OrpheusCore.OrpheusTable`1.executeDelete*
@@ -1784,12 +1778,12 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).executeDelete
   nameWithType: OrpheusTable<T>.executeDelete
   nameWithType.vb: OrpheusTable(Of T).executeDelete
-- uid: OrpheusCore.OrpheusTable`1.ExecuteDeletes(IDbTransaction)
+- uid: OrpheusCore.OrpheusTable`1.ExecuteDeletes(System.Data.IDbTransaction)
   name: ExecuteDeletes(IDbTransaction)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_ExecuteDeletes_IDbTransaction_
-  commentId: M:OrpheusCore.OrpheusTable`1.ExecuteDeletes(IDbTransaction)
-  fullName: OrpheusCore.OrpheusTable<T>.ExecuteDeletes(IDbTransaction)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).ExecuteDeletes(IDbTransaction)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_ExecuteDeletes_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.OrpheusTable`1.ExecuteDeletes(System.Data.IDbTransaction)
+  fullName: OrpheusCore.OrpheusTable<T>.ExecuteDeletes(System.Data.IDbTransaction)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).ExecuteDeletes(System.Data.IDbTransaction)
   nameWithType: OrpheusTable<T>.ExecuteDeletes(IDbTransaction)
   nameWithType.vb: OrpheusTable(Of T).ExecuteDeletes(IDbTransaction)
 - uid: OrpheusCore.OrpheusTable`1.ExecuteDeletes*
@@ -1800,12 +1794,12 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).ExecuteDeletes
   nameWithType: OrpheusTable<T>.ExecuteDeletes
   nameWithType.vb: OrpheusTable(Of T).ExecuteDeletes
-- uid: OrpheusCore.OrpheusTable`1.executeInsert(IDbTransaction)
+- uid: OrpheusCore.OrpheusTable`1.executeInsert(System.Data.IDbTransaction)
   name: executeInsert(IDbTransaction)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_executeInsert_IDbTransaction_
-  commentId: M:OrpheusCore.OrpheusTable`1.executeInsert(IDbTransaction)
-  fullName: OrpheusCore.OrpheusTable<T>.executeInsert(IDbTransaction)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).executeInsert(IDbTransaction)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_executeInsert_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.OrpheusTable`1.executeInsert(System.Data.IDbTransaction)
+  fullName: OrpheusCore.OrpheusTable<T>.executeInsert(System.Data.IDbTransaction)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).executeInsert(System.Data.IDbTransaction)
   nameWithType: OrpheusTable<T>.executeInsert(IDbTransaction)
   nameWithType.vb: OrpheusTable(Of T).executeInsert(IDbTransaction)
 - uid: OrpheusCore.OrpheusTable`1.executeInsert*
@@ -1816,12 +1810,12 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).executeInsert
   nameWithType: OrpheusTable<T>.executeInsert
   nameWithType.vb: OrpheusTable(Of T).executeInsert
-- uid: OrpheusCore.OrpheusTable`1.ExecuteInserts(IDbTransaction)
+- uid: OrpheusCore.OrpheusTable`1.ExecuteInserts(System.Data.IDbTransaction)
   name: ExecuteInserts(IDbTransaction)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_ExecuteInserts_IDbTransaction_
-  commentId: M:OrpheusCore.OrpheusTable`1.ExecuteInserts(IDbTransaction)
-  fullName: OrpheusCore.OrpheusTable<T>.ExecuteInserts(IDbTransaction)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).ExecuteInserts(IDbTransaction)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_ExecuteInserts_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.OrpheusTable`1.ExecuteInserts(System.Data.IDbTransaction)
+  fullName: OrpheusCore.OrpheusTable<T>.ExecuteInserts(System.Data.IDbTransaction)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).ExecuteInserts(System.Data.IDbTransaction)
   nameWithType: OrpheusTable<T>.ExecuteInserts(IDbTransaction)
   nameWithType.vb: OrpheusTable(Of T).ExecuteInserts(IDbTransaction)
 - uid: OrpheusCore.OrpheusTable`1.ExecuteInserts*
@@ -1832,12 +1826,12 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).ExecuteInserts
   nameWithType: OrpheusTable<T>.ExecuteInserts
   nameWithType.vb: OrpheusTable(Of T).ExecuteInserts
-- uid: OrpheusCore.OrpheusTable`1.executeUpdate(IDbTransaction)
+- uid: OrpheusCore.OrpheusTable`1.executeUpdate(System.Data.IDbTransaction)
   name: executeUpdate(IDbTransaction)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_executeUpdate_IDbTransaction_
-  commentId: M:OrpheusCore.OrpheusTable`1.executeUpdate(IDbTransaction)
-  fullName: OrpheusCore.OrpheusTable<T>.executeUpdate(IDbTransaction)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).executeUpdate(IDbTransaction)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_executeUpdate_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.OrpheusTable`1.executeUpdate(System.Data.IDbTransaction)
+  fullName: OrpheusCore.OrpheusTable<T>.executeUpdate(System.Data.IDbTransaction)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).executeUpdate(System.Data.IDbTransaction)
   nameWithType: OrpheusTable<T>.executeUpdate(IDbTransaction)
   nameWithType.vb: OrpheusTable(Of T).executeUpdate(IDbTransaction)
 - uid: OrpheusCore.OrpheusTable`1.executeUpdate*
@@ -1848,12 +1842,12 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).executeUpdate
   nameWithType: OrpheusTable<T>.executeUpdate
   nameWithType.vb: OrpheusTable(Of T).executeUpdate
-- uid: OrpheusCore.OrpheusTable`1.ExecuteUpdates(IDbTransaction)
+- uid: OrpheusCore.OrpheusTable`1.ExecuteUpdates(System.Data.IDbTransaction)
   name: ExecuteUpdates(IDbTransaction)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_ExecuteUpdates_IDbTransaction_
-  commentId: M:OrpheusCore.OrpheusTable`1.ExecuteUpdates(IDbTransaction)
-  fullName: OrpheusCore.OrpheusTable<T>.ExecuteUpdates(IDbTransaction)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).ExecuteUpdates(IDbTransaction)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_ExecuteUpdates_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.OrpheusTable`1.ExecuteUpdates(System.Data.IDbTransaction)
+  fullName: OrpheusCore.OrpheusTable<T>.ExecuteUpdates(System.Data.IDbTransaction)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).ExecuteUpdates(System.Data.IDbTransaction)
   nameWithType: OrpheusTable<T>.ExecuteUpdates(IDbTransaction)
   nameWithType.vb: OrpheusTable(Of T).ExecuteUpdates(IDbTransaction)
 - uid: OrpheusCore.OrpheusTable`1.ExecuteUpdates*
@@ -1912,32 +1906,32 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).Level
   nameWithType: OrpheusTable<T>.Level
   nameWithType.vb: OrpheusTable(Of T).Level
-- uid: OrpheusCore.OrpheusTable`1.Load(Dictionary{System.String,List{System.Object}},System.Boolean)
+- uid: OrpheusCore.OrpheusTable`1.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},System.Boolean)
   name: Load(Dictionary<String, List<Object>>, Boolean)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Load_Dictionary_System_String_List_System_Object___System_Boolean_
-  commentId: M:OrpheusCore.OrpheusTable`1.Load(Dictionary{System.String,List{System.Object}},System.Boolean)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___System_Boolean_
+  commentId: M:OrpheusCore.OrpheusTable`1.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},System.Boolean)
   name.vb: Load(Dictionary(Of String, List(Of Object)), Boolean)
-  fullName: OrpheusCore.OrpheusTable<T>.Load(Dictionary<System.String, List<System.Object>>, System.Boolean)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).Load(Dictionary(Of System.String, List(Of System.Object)), System.Boolean)
+  fullName: OrpheusCore.OrpheusTable<T>.Load(System.Collections.Generic.Dictionary<System.String, System.Collections.Generic.List<System.Object>>, System.Boolean)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).Load(System.Collections.Generic.Dictionary(Of System.String, System.Collections.Generic.List(Of System.Object)), System.Boolean)
   nameWithType: OrpheusTable<T>.Load(Dictionary<String, List<Object>>, Boolean)
   nameWithType.vb: OrpheusTable(Of T).Load(Dictionary(Of String, List(Of Object)), Boolean)
-- uid: OrpheusCore.OrpheusTable`1.Load(IDbCommand,System.Boolean)
-  name: Load(IDbCommand, Boolean)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Load_IDbCommand_System_Boolean_
-  commentId: M:OrpheusCore.OrpheusTable`1.Load(IDbCommand,System.Boolean)
-  fullName: OrpheusCore.OrpheusTable<T>.Load(IDbCommand, System.Boolean)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).Load(IDbCommand, System.Boolean)
-  nameWithType: OrpheusTable<T>.Load(IDbCommand, Boolean)
-  nameWithType.vb: OrpheusTable(Of T).Load(IDbCommand, Boolean)
-- uid: OrpheusCore.OrpheusTable`1.Load(List{System.Object},System.Boolean)
+- uid: OrpheusCore.OrpheusTable`1.Load(System.Collections.Generic.List{System.Object},System.Boolean)
   name: Load(List<Object>, Boolean)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Load_List_System_Object__System_Boolean_
-  commentId: M:OrpheusCore.OrpheusTable`1.Load(List{System.Object},System.Boolean)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Load_System_Collections_Generic_List_System_Object__System_Boolean_
+  commentId: M:OrpheusCore.OrpheusTable`1.Load(System.Collections.Generic.List{System.Object},System.Boolean)
   name.vb: Load(List(Of Object), Boolean)
-  fullName: OrpheusCore.OrpheusTable<T>.Load(List<System.Object>, System.Boolean)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).Load(List(Of System.Object), System.Boolean)
+  fullName: OrpheusCore.OrpheusTable<T>.Load(System.Collections.Generic.List<System.Object>, System.Boolean)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).Load(System.Collections.Generic.List(Of System.Object), System.Boolean)
   nameWithType: OrpheusTable<T>.Load(List<Object>, Boolean)
   nameWithType.vb: OrpheusTable(Of T).Load(List(Of Object), Boolean)
+- uid: OrpheusCore.OrpheusTable`1.Load(System.Data.IDbCommand,System.Boolean)
+  name: Load(IDbCommand, Boolean)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Load_System_Data_IDbCommand_System_Boolean_
+  commentId: M:OrpheusCore.OrpheusTable`1.Load(System.Data.IDbCommand,System.Boolean)
+  fullName: OrpheusCore.OrpheusTable<T>.Load(System.Data.IDbCommand, System.Boolean)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).Load(System.Data.IDbCommand, System.Boolean)
+  nameWithType: OrpheusTable<T>.Load(IDbCommand, Boolean)
+  nameWithType.vb: OrpheusTable(Of T).Load(IDbCommand, Boolean)
 - uid: OrpheusCore.OrpheusTable`1.Load(System.String,System.Boolean)
   name: Load(String, Boolean)
   href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Load_System_String_System_Boolean_
@@ -2050,12 +2044,12 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).OnBeforeSave
   nameWithType: OrpheusTable<T>.OnBeforeSave
   nameWithType.vb: OrpheusTable(Of T).OnBeforeSave
-- uid: OrpheusCore.OrpheusTable`1.Save(IDbTransaction,System.Boolean)
+- uid: OrpheusCore.OrpheusTable`1.Save(System.Data.IDbTransaction,System.Boolean)
   name: Save(IDbTransaction, Boolean)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Save_IDbTransaction_System_Boolean_
-  commentId: M:OrpheusCore.OrpheusTable`1.Save(IDbTransaction,System.Boolean)
-  fullName: OrpheusCore.OrpheusTable<T>.Save(IDbTransaction, System.Boolean)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).Save(IDbTransaction, System.Boolean)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Save_System_Data_IDbTransaction_System_Boolean_
+  commentId: M:OrpheusCore.OrpheusTable`1.Save(System.Data.IDbTransaction,System.Boolean)
+  fullName: OrpheusCore.OrpheusTable<T>.Save(System.Data.IDbTransaction, System.Boolean)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).Save(System.Data.IDbTransaction, System.Boolean)
   nameWithType: OrpheusTable<T>.Save(IDbTransaction, Boolean)
   nameWithType.vb: OrpheusTable(Of T).Save(IDbTransaction, Boolean)
 - uid: OrpheusCore.OrpheusTable`1.Save*
@@ -2090,13 +2084,13 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T).Update(T)
   nameWithType: OrpheusTable<T>.Update(T)
   nameWithType.vb: OrpheusTable(Of T).Update(T)
-- uid: OrpheusCore.OrpheusTable`1.Update(List{`0})
+- uid: OrpheusCore.OrpheusTable`1.Update(System.Collections.Generic.List{`0})
   name: Update(List<T>)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Update_List__0__
-  commentId: M:OrpheusCore.OrpheusTable`1.Update(List{`0})
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_Update_System_Collections_Generic_List__0__
+  commentId: M:OrpheusCore.OrpheusTable`1.Update(System.Collections.Generic.List{`0})
   name.vb: Update(List(Of T))
-  fullName: OrpheusCore.OrpheusTable<T>.Update(List<T>)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).Update(List(Of T))
+  fullName: OrpheusCore.OrpheusTable<T>.Update(System.Collections.Generic.List<T>)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).Update(System.Collections.Generic.List(Of T))
   nameWithType: OrpheusTable<T>.Update(List<T>)
   nameWithType.vb: OrpheusTable(Of T).Update(List(Of T))
 - uid: OrpheusCore.OrpheusTable`1.Update*
@@ -2179,13 +2173,13 @@ references:
   commentId: Overload:OrpheusCore.OrpheusTableOptions.#ctor
   fullName: OrpheusCore.OrpheusTableOptions.OrpheusTableOptions
   nameWithType: OrpheusTableOptions.OrpheusTableOptions
-- uid: OrpheusCore.OrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})
+- uid: OrpheusCore.OrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
   name: AddKeyField(String, Boolean, Boolean, Func<String>)
-  href: api/OrpheusCore.OrpheusTableOptions.html#OrpheusCore_OrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_Func_System_String__
-  commentId: M:OrpheusCore.OrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})
+  href: api/OrpheusCore.OrpheusTableOptions.html#OrpheusCore_OrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__
+  commentId: M:OrpheusCore.OrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
   name.vb: AddKeyField(String, Boolean, Boolean, Func(Of String))
-  fullName: OrpheusCore.OrpheusTableOptions.AddKeyField(System.String, System.Boolean, System.Boolean, Func<System.String>)
-  fullName.vb: OrpheusCore.OrpheusTableOptions.AddKeyField(System.String, System.Boolean, System.Boolean, Func(Of System.String))
+  fullName: OrpheusCore.OrpheusTableOptions.AddKeyField(System.String, System.Boolean, System.Boolean, System.Func<System.String>)
+  fullName.vb: OrpheusCore.OrpheusTableOptions.AddKeyField(System.String, System.Boolean, System.Boolean, System.Func(Of System.String))
   nameWithType: OrpheusTableOptions.AddKeyField(String, Boolean, Boolean, Func<String>)
   nameWithType.vb: OrpheusTableOptions.AddKeyField(String, Boolean, Boolean, Func(Of String))
 - uid: OrpheusCore.OrpheusTableOptions.AddKeyField*
@@ -2194,13 +2188,13 @@ references:
   commentId: Overload:OrpheusCore.OrpheusTableOptions.AddKeyField
   fullName: OrpheusCore.OrpheusTableOptions.AddKeyField
   nameWithType: OrpheusTableOptions.AddKeyField
-- uid: OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})
+- uid: OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
   name: AddMasterKeyField(String, Boolean, Boolean, Func<String>)
-  href: api/OrpheusCore.OrpheusTableOptions.html#OrpheusCore_OrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_Func_System_String__
-  commentId: M:OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})
+  href: api/OrpheusCore.OrpheusTableOptions.html#OrpheusCore_OrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__
+  commentId: M:OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
   name.vb: AddMasterKeyField(String, Boolean, Boolean, Func(Of String))
-  fullName: OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String, System.Boolean, System.Boolean, Func<System.String>)
-  fullName.vb: OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String, System.Boolean, System.Boolean, Func(Of System.String))
+  fullName: OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String, System.Boolean, System.Boolean, System.Func<System.String>)
+  fullName.vb: OrpheusCore.OrpheusTableOptions.AddMasterKeyField(System.String, System.Boolean, System.Boolean, System.Func(Of System.String))
   nameWithType: OrpheusTableOptions.AddMasterKeyField(String, Boolean, Boolean, Func<String>)
   nameWithType.vb: OrpheusTableOptions.AddMasterKeyField(String, Boolean, Boolean, Func(Of String))
 - uid: OrpheusCore.OrpheusTableOptions.AddMasterKeyField*
@@ -2497,17 +2491,17 @@ references:
   commentId: M:OrpheusCore.SchemaBuilder.Schema.#ctor
   fullName: OrpheusCore.SchemaBuilder.Schema.Schema()
   nameWithType: Schema.Schema()
-- uid: OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Double,Guid)
+- uid: OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Double,System.Guid)
   name: Schema(IOrpheusDatabase, String, Double, Guid)
-  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_IOrpheusDatabase_System_String_System_Double_Guid_
-  commentId: M:OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Double,Guid)
-  fullName: OrpheusCore.SchemaBuilder.Schema.Schema(OrpheusInterfaces.IOrpheusDatabase, System.String, System.Double, Guid)
+  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_IOrpheusDatabase_System_String_System_Double_System_Guid_
+  commentId: M:OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Double,System.Guid)
+  fullName: OrpheusCore.SchemaBuilder.Schema.Schema(OrpheusInterfaces.IOrpheusDatabase, System.String, System.Double, System.Guid)
   nameWithType: Schema.Schema(IOrpheusDatabase, String, Double, Guid)
-- uid: OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Double,Guid,System.String)
+- uid: OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Double,System.Guid,System.String)
   name: Schema(IOrpheusDatabase, String, Double, Guid, String)
-  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_IOrpheusDatabase_System_String_System_Double_Guid_System_String_
-  commentId: M:OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Double,Guid,System.String)
-  fullName: OrpheusCore.SchemaBuilder.Schema.Schema(OrpheusInterfaces.IOrpheusDatabase, System.String, System.Double, Guid, System.String)
+  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_IOrpheusDatabase_System_String_System_Double_System_Guid_System_String_
+  commentId: M:OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.IOrpheusDatabase,System.String,System.Double,System.Guid,System.String)
+  fullName: OrpheusCore.SchemaBuilder.Schema.Schema(OrpheusInterfaces.IOrpheusDatabase, System.String, System.Double, System.Guid, System.String)
   nameWithType: Schema.Schema(IOrpheusDatabase, String, Double, Guid, String)
 - uid: OrpheusCore.SchemaBuilder.Schema.#ctor*
   name: Schema
@@ -2527,31 +2521,31 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.Schema.AddSchemaObject
   fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaObject
   nameWithType: Schema.AddSchemaObject
-- uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object,List{OrpheusInterfaces.ISchemaObject})
+- uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name: AddSchemaTable(Object, List<ISchemaObject>)
-  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Object_List_OrpheusInterfaces_ISchemaObject__
-  commentId: M:OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object,List{OrpheusInterfaces.ISchemaObject})
+  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Object_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__
+  commentId: M:OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name.vb: AddSchemaTable(Object, List(Of ISchemaObject))
-  fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object, List<OrpheusInterfaces.ISchemaObject>)
-  fullName.vb: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object, List(Of OrpheusInterfaces.ISchemaObject))
+  fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object, System.Collections.Generic.List<OrpheusInterfaces.ISchemaObject>)
+  fullName.vb: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object, System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject))
   nameWithType: Schema.AddSchemaTable(Object, List<ISchemaObject>)
   nameWithType.vb: Schema.AddSchemaTable(Object, List(Of ISchemaObject))
-- uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String,List{OrpheusInterfaces.ISchemaObject},System.Object)
+- uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject},System.Object)
   name: AddSchemaTable(String, List<ISchemaObject>, Object)
-  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_String_List_OrpheusInterfaces_ISchemaObject__System_Object_
-  commentId: M:OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String,List{OrpheusInterfaces.ISchemaObject},System.Object)
+  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_String_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__System_Object_
+  commentId: M:OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject},System.Object)
   name.vb: AddSchemaTable(String, List(Of ISchemaObject), Object)
-  fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String, List<OrpheusInterfaces.ISchemaObject>, System.Object)
-  fullName.vb: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String, List(Of OrpheusInterfaces.ISchemaObject), System.Object)
+  fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String, System.Collections.Generic.List<OrpheusInterfaces.ISchemaObject>, System.Object)
+  fullName.vb: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String, System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject), System.Object)
   nameWithType: Schema.AddSchemaTable(String, List<ISchemaObject>, Object)
   nameWithType.vb: Schema.AddSchemaTable(String, List(Of ISchemaObject), Object)
-- uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(Type,List{OrpheusInterfaces.ISchemaObject})
+- uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Type,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name: AddSchemaTable(Type, List<ISchemaObject>)
-  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_Type_List_OrpheusInterfaces_ISchemaObject__
-  commentId: M:OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(Type,List{OrpheusInterfaces.ISchemaObject})
+  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Type_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__
+  commentId: M:OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Type,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name.vb: AddSchemaTable(Type, List(Of ISchemaObject))
-  fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(Type, List<OrpheusInterfaces.ISchemaObject>)
-  fullName.vb: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(Type, List(Of OrpheusInterfaces.ISchemaObject))
+  fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Type, System.Collections.Generic.List<OrpheusInterfaces.ISchemaObject>)
+  fullName.vb: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Type, System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject))
   nameWithType: Schema.AddSchemaTable(Type, List<ISchemaObject>)
   nameWithType.vb: Schema.AddSchemaTable(Type, List(Of ISchemaObject))
 - uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable*
@@ -2560,13 +2554,13 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.Schema.AddSchemaTable
   fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable
   nameWithType: Schema.AddSchemaTable
-- uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``1(List{OrpheusInterfaces.ISchemaObject})
+- uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name: AddSchemaTable<T>(List<ISchemaObject>)
-  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__1_List_OrpheusInterfaces_ISchemaObject__
-  commentId: M:OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``1(List{OrpheusInterfaces.ISchemaObject})
+  href: api/OrpheusCore.SchemaBuilder.Schema.html#OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__1_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__
+  commentId: M:OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name.vb: AddSchemaTable(Of T)(List(Of ISchemaObject))
-  fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable<T>(List<OrpheusInterfaces.ISchemaObject>)
-  fullName.vb: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(Of T)(List(Of OrpheusInterfaces.ISchemaObject))
+  fullName: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable<T>(System.Collections.Generic.List<OrpheusInterfaces.ISchemaObject>)
+  fullName.vb: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(Of T)(System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject))
   nameWithType: Schema.AddSchemaTable<T>(List<ISchemaObject>)
   nameWithType.vb: Schema.AddSchemaTable(Of T)(List(Of ISchemaObject))
 - uid: OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``2
@@ -2872,13 +2866,13 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.AddField
   fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddField
   nameWithType: SchemaDataObject.AddField
-- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String,List{System.String},System.String,List{System.String},System.Boolean,System.Boolean)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   name: AddForeignKeyConstraint(String, List<String>, String, List<String>, Boolean, Boolean)
-  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddForeignKeyConstraint_System_String_List_System_String__System_String_List_System_String__System_Boolean_System_Boolean_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String,List{System.String},System.String,List{System.String},System.Boolean,System.Boolean)
+  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddForeignKeyConstraint_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   name.vb: AddForeignKeyConstraint(String, List(Of String), String, List(Of String), Boolean, Boolean)
-  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String, List<System.String>, System.String, List<System.String>, System.Boolean, System.Boolean)
-  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String, List(Of System.String), System.String, List(Of System.String), System.Boolean, System.Boolean)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String, System.Collections.Generic.List<System.String>, System.String, System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String, System.Collections.Generic.List(Of System.String), System.String, System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
   nameWithType: SchemaDataObject.AddForeignKeyConstraint(String, List<String>, String, List<String>, Boolean, Boolean)
   nameWithType.vb: SchemaDataObject.AddForeignKeyConstraint(String, List(Of String), String, List(Of String), Boolean, Boolean)
 - uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint*
@@ -2887,13 +2881,13 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint
   fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint
   nameWithType: SchemaDataObject.AddForeignKeyConstraint
-- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String,List{System.String},OrpheusInterfaces.SchemaSort)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.SchemaSort)
   name: AddPrimaryKeyConstraint(String, List<String>, SchemaSort)
-  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddPrimaryKeyConstraint_System_String_List_System_String__OrpheusInterfaces_SchemaSort_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String,List{System.String},OrpheusInterfaces.SchemaSort)
+  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddPrimaryKeyConstraint_System_String_System_Collections_Generic_List_System_String__OrpheusInterfaces_SchemaSort_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.SchemaSort)
   name.vb: AddPrimaryKeyConstraint(String, List(Of String), SchemaSort)
-  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String, List<System.String>, OrpheusInterfaces.SchemaSort)
-  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String, List(Of System.String), OrpheusInterfaces.SchemaSort)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String, System.Collections.Generic.List<System.String>, OrpheusInterfaces.SchemaSort)
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String, System.Collections.Generic.List(Of System.String), OrpheusInterfaces.SchemaSort)
   nameWithType: SchemaDataObject.AddPrimaryKeyConstraint(String, List<String>, SchemaSort)
   nameWithType.vb: SchemaDataObject.AddPrimaryKeyConstraint(String, List(Of String), SchemaSort)
 - uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint*
@@ -2902,13 +2896,13 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint
   fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint
   nameWithType: SchemaDataObject.AddPrimaryKeyConstraint
-- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String,List{System.String})
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
   name: AddUniqueKeyConstraint(String, List<String>)
-  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddUniqueKeyConstraint_System_String_List_System_String__
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String,List{System.String})
+  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddUniqueKeyConstraint_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
   name.vb: AddUniqueKeyConstraint(String, List(Of String))
-  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String, List<System.String>)
-  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String, List(Of System.String))
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String, System.Collections.Generic.List(Of System.String))
   nameWithType: SchemaDataObject.AddUniqueKeyConstraint(String, List<String>)
   nameWithType.vb: SchemaDataObject.AddUniqueKeyConstraint(String, List(Of String))
 - uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint*
@@ -2917,11 +2911,11 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint
   fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint
   nameWithType: SchemaDataObject.AddUniqueKeyConstraint
-- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(IDbCommand)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(System.Data.IDbCommand)
   name: applyConstraints(IDbCommand)
-  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_applyConstraints_IDbCommand_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(IDbCommand)
-  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(IDbCommand)
+  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_applyConstraints_System_Data_IDbCommand_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(System.Data.IDbCommand)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(System.Data.IDbCommand)
   nameWithType: SchemaDataObject.applyConstraints(IDbCommand)
 - uid: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints*
   name: applyConstraints
@@ -2959,11 +2953,11 @@ references:
   commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Object)
   fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Object)
   nameWithType: SchemaDataObject.CreateFieldsFromModel(Object)
-- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(Type)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Type)
   name: CreateFieldsFromModel(Type)
-  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_CreateFieldsFromModel_Type_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(Type)
-  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(Type)
+  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_CreateFieldsFromModel_System_Type_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Type)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Type)
   nameWithType: SchemaDataObject.CreateFieldsFromModel(Type)
 - uid: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel*
   name: CreateFieldsFromModel
@@ -3073,11 +3067,11 @@ references:
   commentId: F:OrpheusCore.SchemaBuilder.SchemaDataObject.modelHelper
   fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.modelHelper
   nameWithType: SchemaDataObject.modelHelper
-- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(IDbTransaction)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(System.Data.IDbTransaction)
   name: registerSchema(IDbTransaction)
-  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_registerSchema_IDbTransaction_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(IDbTransaction)
-  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(IDbTransaction)
+  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_registerSchema_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(System.Data.IDbTransaction)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(System.Data.IDbTransaction)
   nameWithType: SchemaDataObject.registerSchema(IDbTransaction)
 - uid: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema*
   name: registerSchema
@@ -3085,11 +3079,11 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema
   fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema
   nameWithType: SchemaDataObject.registerSchema
-- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(IDbCommand)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(System.Data.IDbCommand)
   name: seedData(IDbCommand)
-  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_seedData_IDbCommand_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(IDbCommand)
-  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(IDbCommand)
+  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_seedData_System_Data_IDbCommand_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(System.Data.IDbCommand)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(System.Data.IDbCommand)
   nameWithType: SchemaDataObject.seedData(IDbCommand)
 - uid: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData*
   name: seedData
@@ -3109,20 +3103,20 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.SetData
   fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData
   nameWithType: SchemaDataObject.SetData
-- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData``1(List{``0})
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
   name: SetData<T>(List<T>)
-  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_SetData__1_List___0__
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.SetData``1(List{``0})
+  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_SetData__1_System_Collections_Generic_List___0__
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
   name.vb: SetData(Of T)(List(Of T))
-  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData<T>(List<T>)
-  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData(Of T)(List(Of T))
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData<T>(System.Collections.Generic.List<T>)
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData(Of T)(System.Collections.Generic.List(Of T))
   nameWithType: SchemaDataObject.SetData<T>(List<T>)
   nameWithType.vb: SchemaDataObject.SetData(Of T)(List(Of T))
-- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(IDbTransaction)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(System.Data.IDbTransaction)
   name: unRegisterSchema(IDbTransaction)
-  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_unRegisterSchema_IDbTransaction_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(IDbTransaction)
-  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(IDbTransaction)
+  href: api/OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_unRegisterSchema_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(System.Data.IDbTransaction)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(System.Data.IDbTransaction)
   nameWithType: SchemaDataObject.unRegisterSchema(IDbTransaction)
 - uid: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema*
   name: unRegisterSchema
@@ -3376,11 +3370,11 @@ references:
   commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.ISchemaObject)
   fullName: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.ISchemaObject)
   nameWithType: SchemaObject.AddDependency(ISchemaObject)
-- uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(Type)
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)
   name: AddDependency(Type)
-  href: api/OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_Type_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(Type)
-  fullName: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(Type)
+  href: api/OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_System_Type_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)
   nameWithType: SchemaObject.AddDependency(Type)
 - uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency*
   name: AddDependency
@@ -3547,11 +3541,11 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaObject.RawDDL
   fullName: OrpheusCore.SchemaBuilder.SchemaObject.RawDDL
   nameWithType: SchemaObject.RawDDL
-- uid: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(IDbTransaction)
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)
   name: registerSchema(IDbTransaction)
-  href: api/OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_IDbTransaction_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(IDbTransaction)
-  fullName: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(IDbTransaction)
+  href: api/OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)
   nameWithType: SchemaObject.registerSchema(IDbTransaction)
 - uid: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema*
   name: registerSchema
@@ -3619,11 +3613,11 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaObject.UniqueKey
   fullName: OrpheusCore.SchemaBuilder.SchemaObject.UniqueKey
   nameWithType: SchemaObject.UniqueKey
-- uid: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(IDbTransaction)
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)
   name: unRegisterSchema(IDbTransaction)
-  href: api/OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_IDbTransaction_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(IDbTransaction)
-  fullName: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(IDbTransaction)
+  href: api/OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_System_Data_IDbTransaction_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)
   nameWithType: SchemaObject.unRegisterSchema(IDbTransaction)
 - uid: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema*
   name: unRegisterSchema
@@ -3649,11 +3643,11 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaObjectTable.#ctor
   fullName: OrpheusCore.SchemaBuilder.SchemaObjectTable.SchemaObjectTable
   nameWithType: SchemaObjectTable.SchemaObjectTable
-- uid: OrpheusCore.SchemaBuilder.SchemaObjectTable.applyConstraints(IDbCommand)
+- uid: OrpheusCore.SchemaBuilder.SchemaObjectTable.applyConstraints(System.Data.IDbCommand)
   name: applyConstraints(IDbCommand)
-  href: api/OrpheusCore.SchemaBuilder.SchemaObjectTable.html#OrpheusCore_SchemaBuilder_SchemaObjectTable_applyConstraints_IDbCommand_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaObjectTable.applyConstraints(IDbCommand)
-  fullName: OrpheusCore.SchemaBuilder.SchemaObjectTable.applyConstraints(IDbCommand)
+  href: api/OrpheusCore.SchemaBuilder.SchemaObjectTable.html#OrpheusCore_SchemaBuilder_SchemaObjectTable_applyConstraints_System_Data_IDbCommand_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObjectTable.applyConstraints(System.Data.IDbCommand)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObjectTable.applyConstraints(System.Data.IDbCommand)
   nameWithType: SchemaObjectTable.applyConstraints(IDbCommand)
 - uid: OrpheusCore.SchemaBuilder.SchemaObjectTable.applyConstraints*
   name: applyConstraints
@@ -3697,11 +3691,11 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaObjectTable.JoinDefinition
   fullName: OrpheusCore.SchemaBuilder.SchemaObjectTable.JoinDefinition
   nameWithType: SchemaObjectTable.JoinDefinition
-- uid: OrpheusCore.SchemaBuilder.SchemaObjectTable.seedData(IDbCommand)
+- uid: OrpheusCore.SchemaBuilder.SchemaObjectTable.seedData(System.Data.IDbCommand)
   name: seedData(IDbCommand)
-  href: api/OrpheusCore.SchemaBuilder.SchemaObjectTable.html#OrpheusCore_SchemaBuilder_SchemaObjectTable_seedData_IDbCommand_
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaObjectTable.seedData(IDbCommand)
-  fullName: OrpheusCore.SchemaBuilder.SchemaObjectTable.seedData(IDbCommand)
+  href: api/OrpheusCore.SchemaBuilder.SchemaObjectTable.html#OrpheusCore_SchemaBuilder_SchemaObjectTable_seedData_System_Data_IDbCommand_
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObjectTable.seedData(System.Data.IDbCommand)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObjectTable.seedData(System.Data.IDbCommand)
   nameWithType: SchemaObjectTable.seedData(IDbCommand)
 - uid: OrpheusCore.SchemaBuilder.SchemaObjectTable.seedData*
   name: seedData
@@ -3883,11 +3877,11 @@ references:
   commentId: T:OrpheusCore.ServiceProvider.OrpheusServiceProvider
   fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider
   nameWithType: OrpheusServiceProvider
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(IServiceCollection)
+- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   name: InitializeServiceCollection(IServiceCollection)
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceCollection_IServiceCollection_
-  commentId: M:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(IServiceCollection)
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(IServiceCollection)
+  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceCollection_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(Microsoft.Extensions.DependencyInjection.IServiceCollection)
   nameWithType: OrpheusServiceProvider.InitializeServiceCollection(IServiceCollection)
 - uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection*
   name: InitializeServiceCollection
@@ -3895,6 +3889,18 @@ references:
   commentId: Overload:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection
   fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection
   nameWithType: OrpheusServiceProvider.InitializeServiceCollection
+- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider
+  name: InitializeServiceProvider()
+  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceProvider
+  commentId: M:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider
+  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider()
+  nameWithType: OrpheusServiceProvider.InitializeServiceProvider()
+- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider*
+  name: InitializeServiceProvider
+  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceProvider_
+  commentId: Overload:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider
+  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider
+  nameWithType: OrpheusServiceProvider.InitializeServiceProvider
 - uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Provider
   name: Provider
   href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_Provider
@@ -4098,6 +4104,138 @@ references:
   commentId: T:OrpheusInterfaces.IMySQLServerDDLHelper
   fullName: OrpheusInterfaces.IMySQLServerDDLHelper
   nameWithType: IMySQLServerDDLHelper
+- uid: OrpheusInterfaces.Interfaces
+  name: OrpheusInterfaces.Interfaces
+  href: api/OrpheusInterfaces.Interfaces.html
+  commentId: N:OrpheusInterfaces.Interfaces
+  fullName: OrpheusInterfaces.Interfaces
+  nameWithType: OrpheusInterfaces.Interfaces
+- uid: OrpheusInterfaces.Interfaces.ILogEntry
+  name: ILogEntry
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html
+  commentId: T:OrpheusInterfaces.Interfaces.ILogEntry
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry
+  nameWithType: ILogEntry
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.LineNumber
+  name: LineNumber
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_LineNumber
+  commentId: P:OrpheusInterfaces.Interfaces.ILogEntry.LineNumber
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.LineNumber
+  nameWithType: ILogEntry.LineNumber
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.LineNumber*
+  name: LineNumber
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_LineNumber_
+  commentId: Overload:OrpheusInterfaces.Interfaces.ILogEntry.LineNumber
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.LineNumber
+  nameWithType: ILogEntry.LineNumber
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.Message
+  name: Message
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_Message
+  commentId: P:OrpheusInterfaces.Interfaces.ILogEntry.Message
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.Message
+  nameWithType: ILogEntry.Message
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.Message*
+  name: Message
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_Message_
+  commentId: Overload:OrpheusInterfaces.Interfaces.ILogEntry.Message
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.Message
+  nameWithType: ILogEntry.Message
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.SourceFile
+  name: SourceFile
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_SourceFile
+  commentId: P:OrpheusInterfaces.Interfaces.ILogEntry.SourceFile
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.SourceFile
+  nameWithType: ILogEntry.SourceFile
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.SourceFile*
+  name: SourceFile
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_SourceFile_
+  commentId: Overload:OrpheusInterfaces.Interfaces.ILogEntry.SourceFile
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.SourceFile
+  nameWithType: ILogEntry.SourceFile
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.TimeStamp
+  name: TimeStamp
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_TimeStamp
+  commentId: P:OrpheusInterfaces.Interfaces.ILogEntry.TimeStamp
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.TimeStamp
+  nameWithType: ILogEntry.TimeStamp
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.TimeStamp*
+  name: TimeStamp
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_TimeStamp_
+  commentId: Overload:OrpheusInterfaces.Interfaces.ILogEntry.TimeStamp
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.TimeStamp
+  nameWithType: ILogEntry.TimeStamp
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.Type
+  name: Type
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_Type
+  commentId: P:OrpheusInterfaces.Interfaces.ILogEntry.Type
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.Type
+  nameWithType: ILogEntry.Type
+- uid: OrpheusInterfaces.Interfaces.ILogEntry.Type*
+  name: Type
+  href: api/OrpheusInterfaces.Interfaces.ILogEntry.html#OrpheusInterfaces_Interfaces_ILogEntry_Type_
+  commentId: Overload:OrpheusInterfaces.Interfaces.ILogEntry.Type
+  fullName: OrpheusInterfaces.Interfaces.ILogEntry.Type
+  nameWithType: ILogEntry.Type
+- uid: OrpheusInterfaces.Interfaces.ILoggingConfiguration
+  name: ILoggingConfiguration
+  href: api/OrpheusInterfaces.Interfaces.ILoggingConfiguration.html
+  commentId: T:OrpheusInterfaces.Interfaces.ILoggingConfiguration
+  fullName: OrpheusInterfaces.Interfaces.ILoggingConfiguration
+  nameWithType: ILoggingConfiguration
+- uid: OrpheusInterfaces.Interfaces.ILoggingConfiguration.FilePath
+  name: FilePath
+  href: api/OrpheusInterfaces.Interfaces.ILoggingConfiguration.html#OrpheusInterfaces_Interfaces_ILoggingConfiguration_FilePath
+  commentId: P:OrpheusInterfaces.Interfaces.ILoggingConfiguration.FilePath
+  fullName: OrpheusInterfaces.Interfaces.ILoggingConfiguration.FilePath
+  nameWithType: ILoggingConfiguration.FilePath
+- uid: OrpheusInterfaces.Interfaces.ILoggingConfiguration.FilePath*
+  name: FilePath
+  href: api/OrpheusInterfaces.Interfaces.ILoggingConfiguration.html#OrpheusInterfaces_Interfaces_ILoggingConfiguration_FilePath_
+  commentId: Overload:OrpheusInterfaces.Interfaces.ILoggingConfiguration.FilePath
+  fullName: OrpheusInterfaces.Interfaces.ILoggingConfiguration.FilePath
+  nameWithType: ILoggingConfiguration.FilePath
+- uid: OrpheusInterfaces.Interfaces.ILoggingConfiguration.Level
+  name: Level
+  href: api/OrpheusInterfaces.Interfaces.ILoggingConfiguration.html#OrpheusInterfaces_Interfaces_ILoggingConfiguration_Level
+  commentId: P:OrpheusInterfaces.Interfaces.ILoggingConfiguration.Level
+  fullName: OrpheusInterfaces.Interfaces.ILoggingConfiguration.Level
+  nameWithType: ILoggingConfiguration.Level
+- uid: OrpheusInterfaces.Interfaces.ILoggingConfiguration.Level*
+  name: Level
+  href: api/OrpheusInterfaces.Interfaces.ILoggingConfiguration.html#OrpheusInterfaces_Interfaces_ILoggingConfiguration_Level_
+  commentId: Overload:OrpheusInterfaces.Interfaces.ILoggingConfiguration.Level
+  fullName: OrpheusInterfaces.Interfaces.ILoggingConfiguration.Level
+  nameWithType: ILoggingConfiguration.Level
+- uid: OrpheusInterfaces.Interfaces.ILoggingConfiguration.MaxFileSize
+  name: MaxFileSize
+  href: api/OrpheusInterfaces.Interfaces.ILoggingConfiguration.html#OrpheusInterfaces_Interfaces_ILoggingConfiguration_MaxFileSize
+  commentId: P:OrpheusInterfaces.Interfaces.ILoggingConfiguration.MaxFileSize
+  fullName: OrpheusInterfaces.Interfaces.ILoggingConfiguration.MaxFileSize
+  nameWithType: ILoggingConfiguration.MaxFileSize
+- uid: OrpheusInterfaces.Interfaces.ILoggingConfiguration.MaxFileSize*
+  name: MaxFileSize
+  href: api/OrpheusInterfaces.Interfaces.ILoggingConfiguration.html#OrpheusInterfaces_Interfaces_ILoggingConfiguration_MaxFileSize_
+  commentId: Overload:OrpheusInterfaces.Interfaces.ILoggingConfiguration.MaxFileSize
+  fullName: OrpheusInterfaces.Interfaces.ILoggingConfiguration.MaxFileSize
+  nameWithType: ILoggingConfiguration.MaxFileSize
+- uid: OrpheusInterfaces.Interfaces.IOrpheusLogger
+  name: IOrpheusLogger
+  href: api/OrpheusInterfaces.Interfaces.IOrpheusLogger.html
+  commentId: T:OrpheusInterfaces.Interfaces.IOrpheusLogger
+  fullName: OrpheusInterfaces.Interfaces.IOrpheusLogger
+  nameWithType: IOrpheusLogger
+- uid: OrpheusInterfaces.Interfaces.IOrpheusLogger.LoggingConfiguration
+  name: LoggingConfiguration
+  href: api/OrpheusInterfaces.Interfaces.IOrpheusLogger.html#OrpheusInterfaces_Interfaces_IOrpheusLogger_LoggingConfiguration
+  commentId: P:OrpheusInterfaces.Interfaces.IOrpheusLogger.LoggingConfiguration
+  fullName: OrpheusInterfaces.Interfaces.IOrpheusLogger.LoggingConfiguration
+  nameWithType: IOrpheusLogger.LoggingConfiguration
+- uid: OrpheusInterfaces.Interfaces.IOrpheusLogger.LoggingConfiguration*
+  name: LoggingConfiguration
+  href: api/OrpheusInterfaces.Interfaces.IOrpheusLogger.html#OrpheusInterfaces_Interfaces_IOrpheusLogger_LoggingConfiguration_
+  commentId: Overload:OrpheusInterfaces.Interfaces.IOrpheusLogger.LoggingConfiguration
+  fullName: OrpheusInterfaces.Interfaces.IOrpheusLogger.LoggingConfiguration
+  nameWithType: IOrpheusLogger.LoggingConfiguration
 - uid: OrpheusInterfaces.IOrpheusDatabase
   name: IOrpheusDatabase
   href: api/OrpheusInterfaces.IOrpheusDatabase.html
@@ -4116,11 +4254,11 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.BeginTransaction
   fullName: OrpheusInterfaces.IOrpheusDatabase.BeginTransaction
   nameWithType: IOrpheusDatabase.BeginTransaction
-- uid: OrpheusInterfaces.IOrpheusDatabase.CommitTransaction(IDbTransaction)
+- uid: OrpheusInterfaces.IOrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
   name: CommitTransaction(IDbTransaction)
-  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CommitTransaction_IDbTransaction_
-  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CommitTransaction(IDbTransaction)
-  fullName: OrpheusInterfaces.IOrpheusDatabase.CommitTransaction(IDbTransaction)
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CommitTransaction_System_Data_IDbTransaction_
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
+  fullName: OrpheusInterfaces.IOrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
   nameWithType: IOrpheusDatabase.CommitTransaction(IDbTransaction)
 - uid: OrpheusInterfaces.IOrpheusDatabase.CommitTransaction*
   name: CommitTransaction
@@ -4206,13 +4344,13 @@ references:
   commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String)
   fullName: OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String)
   nameWithType: IOrpheusDatabase.CreatePreparedQuery(String)
-- uid: OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String,List{System.String},List{System.Object})
+- uid: OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})
   name: CreatePreparedQuery(String, List<String>, List<Object>)
-  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreatePreparedQuery_System_String_List_System_String__List_System_Object__
-  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String,List{System.String},List{System.Object})
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreatePreparedQuery_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_Object__
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})
   name.vb: CreatePreparedQuery(String, List(Of String), List(Of Object))
-  fullName: OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String, List<System.String>, List<System.Object>)
-  fullName.vb: OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String, List(Of System.String), List(Of System.Object))
+  fullName: OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String, System.Collections.Generic.List<System.String>, System.Collections.Generic.List<System.Object>)
+  fullName.vb: OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery(System.String, System.Collections.Generic.List(Of System.String), System.Collections.Generic.List(Of System.Object))
   nameWithType: IOrpheusDatabase.CreatePreparedQuery(String, List<String>, List<Object>)
   nameWithType.vb: IOrpheusDatabase.CreatePreparedQuery(String, List(Of String), List(Of Object))
 - uid: OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery*
@@ -4221,11 +4359,11 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery
   fullName: OrpheusInterfaces.IOrpheusDatabase.CreatePreparedQuery
   nameWithType: IOrpheusDatabase.CreatePreparedQuery
-- uid: OrpheusInterfaces.IOrpheusDatabase.CreateSchema(Guid,System.String,System.Double,System.String)
+- uid: OrpheusInterfaces.IOrpheusDatabase.CreateSchema(System.Guid,System.String,System.Double,System.String)
   name: CreateSchema(Guid, String, Double, String)
-  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateSchema_Guid_System_String_System_Double_System_String_
-  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreateSchema(Guid,System.String,System.Double,System.String)
-  fullName: OrpheusInterfaces.IOrpheusDatabase.CreateSchema(Guid, System.String, System.Double, System.String)
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateSchema_System_Guid_System_String_System_Double_System_String_
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreateSchema(System.Guid,System.String,System.Double,System.String)
+  fullName: OrpheusInterfaces.IOrpheusDatabase.CreateSchema(System.Guid, System.String, System.Double, System.String)
   nameWithType: IOrpheusDatabase.CreateSchema(Guid, String, Double, String)
 - uid: OrpheusInterfaces.IOrpheusDatabase.CreateSchema*
   name: CreateSchema
@@ -4257,13 +4395,13 @@ references:
   fullName.vb: OrpheusInterfaces.IOrpheusDatabase.CreateTable(Of T)(OrpheusInterfaces.IOrpheusTableOptions)
   nameWithType: IOrpheusDatabase.CreateTable<T>(IOrpheusTableOptions)
   nameWithType.vb: IOrpheusDatabase.CreateTable(Of T)(IOrpheusTableOptions)
-- uid: OrpheusInterfaces.IOrpheusDatabase.CreateTable``1(System.String,List{OrpheusInterfaces.IOrpheusTableKeyField})
+- uid: OrpheusInterfaces.IOrpheusDatabase.CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField})
   name: CreateTable<T>(String, List<IOrpheusTableKeyField>)
-  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateTable__1_System_String_List_OrpheusInterfaces_IOrpheusTableKeyField__
-  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreateTable``1(System.String,List{OrpheusInterfaces.IOrpheusTableKeyField})
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_CreateTable__1_System_String_System_Collections_Generic_List_OrpheusInterfaces_IOrpheusTableKeyField__
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.IOrpheusTableKeyField})
   name.vb: CreateTable(Of T)(String, List(Of IOrpheusTableKeyField))
-  fullName: OrpheusInterfaces.IOrpheusDatabase.CreateTable<T>(System.String, List<OrpheusInterfaces.IOrpheusTableKeyField>)
-  fullName.vb: OrpheusInterfaces.IOrpheusDatabase.CreateTable(Of T)(System.String, List(Of OrpheusInterfaces.IOrpheusTableKeyField))
+  fullName: OrpheusInterfaces.IOrpheusDatabase.CreateTable<T>(System.String, System.Collections.Generic.List<OrpheusInterfaces.IOrpheusTableKeyField>)
+  fullName.vb: OrpheusInterfaces.IOrpheusDatabase.CreateTable(Of T)(System.String, System.Collections.Generic.List(Of OrpheusInterfaces.IOrpheusTableKeyField))
   nameWithType: IOrpheusDatabase.CreateTable<T>(String, List<IOrpheusTableKeyField>)
   nameWithType.vb: IOrpheusDatabase.CreateTable(Of T)(String, List(Of IOrpheusTableKeyField))
 - uid: OrpheusInterfaces.IOrpheusDatabase.CreateTableKeyField
@@ -4341,11 +4479,11 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.ExecuteDDL
   fullName: OrpheusInterfaces.IOrpheusDatabase.ExecuteDDL
   nameWithType: IOrpheusDatabase.ExecuteDDL
-- uid: OrpheusInterfaces.IOrpheusDatabase.IsNullableType(Type)
+- uid: OrpheusInterfaces.IOrpheusDatabase.IsNullableType(System.Type)
   name: IsNullableType(Type)
-  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_IsNullableType_Type_
-  commentId: M:OrpheusInterfaces.IOrpheusDatabase.IsNullableType(Type)
-  fullName: OrpheusInterfaces.IOrpheusDatabase.IsNullableType(Type)
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_IsNullableType_System_Type_
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.IsNullableType(System.Type)
+  fullName: OrpheusInterfaces.IOrpheusDatabase.IsNullableType(System.Type)
   nameWithType: IOrpheusDatabase.IsNullableType(Type)
 - uid: OrpheusInterfaces.IOrpheusDatabase.IsNullableType*
   name: IsNullableType
@@ -4389,11 +4527,11 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.RegisterModule
   fullName: OrpheusInterfaces.IOrpheusDatabase.RegisterModule
   nameWithType: IOrpheusDatabase.RegisterModule
-- uid: OrpheusInterfaces.IOrpheusDatabase.RollbackTransaction(IDbTransaction)
+- uid: OrpheusInterfaces.IOrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
   name: RollbackTransaction(IDbTransaction)
-  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_RollbackTransaction_IDbTransaction_
-  commentId: M:OrpheusInterfaces.IOrpheusDatabase.RollbackTransaction(IDbTransaction)
-  fullName: OrpheusInterfaces.IOrpheusDatabase.RollbackTransaction(IDbTransaction)
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_RollbackTransaction_System_Data_IDbTransaction_
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
+  fullName: OrpheusInterfaces.IOrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
   nameWithType: IOrpheusDatabase.RollbackTransaction(IDbTransaction)
 - uid: OrpheusInterfaces.IOrpheusDatabase.RollbackTransaction*
   name: RollbackTransaction
@@ -4407,13 +4545,13 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.SQL
   fullName: OrpheusInterfaces.IOrpheusDatabase.SQL
   nameWithType: IOrpheusDatabase.SQL
-- uid: OrpheusInterfaces.IOrpheusDatabase.SQL``1(IDbCommand,System.String)
+- uid: OrpheusInterfaces.IOrpheusDatabase.SQL``1(System.Data.IDbCommand,System.String)
   name: SQL<T>(IDbCommand, String)
-  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_SQL__1_IDbCommand_System_String_
-  commentId: M:OrpheusInterfaces.IOrpheusDatabase.SQL``1(IDbCommand,System.String)
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_SQL__1_System_Data_IDbCommand_System_String_
+  commentId: M:OrpheusInterfaces.IOrpheusDatabase.SQL``1(System.Data.IDbCommand,System.String)
   name.vb: SQL(Of T)(IDbCommand, String)
-  fullName: OrpheusInterfaces.IOrpheusDatabase.SQL<T>(IDbCommand, System.String)
-  fullName.vb: OrpheusInterfaces.IOrpheusDatabase.SQL(Of T)(IDbCommand, System.String)
+  fullName: OrpheusInterfaces.IOrpheusDatabase.SQL<T>(System.Data.IDbCommand, System.String)
+  fullName.vb: OrpheusInterfaces.IOrpheusDatabase.SQL(Of T)(System.Data.IDbCommand, System.String)
   nameWithType: IOrpheusDatabase.SQL<T>(IDbCommand, String)
   nameWithType.vb: IOrpheusDatabase.SQL(Of T)(IDbCommand, String)
 - uid: OrpheusInterfaces.IOrpheusDatabase.SQL``1(System.String,System.String)
@@ -4521,11 +4659,11 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.DbEngineType
   fullName: OrpheusInterfaces.IOrpheusDDLHelper.DbEngineType
   nameWithType: IOrpheusDDLHelper.DbEngineType
-- uid: OrpheusInterfaces.IOrpheusDDLHelper.DbTypeToString(DbType)
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)
   name: DbTypeToString(DbType)
-  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_DbTypeToString_DbType_
-  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.DbTypeToString(DbType)
-  fullName: OrpheusInterfaces.IOrpheusDDLHelper.DbTypeToString(DbType)
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_DbTypeToString_System_Data_DbType_
+  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)
   nameWithType: IOrpheusDDLHelper.DbTypeToString(DbType)
 - uid: OrpheusInterfaces.IOrpheusDDLHelper.DbTypeToString*
   name: DbTypeToString
@@ -4569,13 +4707,13 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand
   fullName: OrpheusInterfaces.IOrpheusDDLHelper.ModifyColumnCommand
   nameWithType: IOrpheusDDLHelper.ModifyColumnCommand
-- uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,List{System.String})
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
   name: SafeFormatAlterTableAddColumn(String, List<String>)
-  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_System_String_List_System_String__
-  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,List{System.String})
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
   name.vb: SafeFormatAlterTableAddColumn(String, List(Of String))
-  fullName: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String, List<System.String>)
-  fullName.vb: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String, List(Of System.String))
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String, System.Collections.Generic.List(Of System.String))
   nameWithType: IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(String, List<String>)
   nameWithType.vb: IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(String, List(Of String))
 - uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn*
@@ -4584,13 +4722,13 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn
   fullName: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn
   nameWithType: IOrpheusDDLHelper.SafeFormatAlterTableAddColumn
-- uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,List{System.String})
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
   name: SafeFormatAlterTableDropColumn(String, List<String>)
-  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_System_String_List_System_String__
-  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,List{System.String})
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
   name.vb: SafeFormatAlterTableDropColumn(String, List(Of String))
-  fullName: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String, List<System.String>)
-  fullName.vb: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String, List(Of System.String))
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String, System.Collections.Generic.List(Of System.String))
   nameWithType: IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(String, List<String>)
   nameWithType.vb: IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(String, List(Of String))
 - uid: OrpheusInterfaces.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn*
@@ -4659,11 +4797,11 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.SupportsSchemaNameSpace
   fullName: OrpheusInterfaces.IOrpheusDDLHelper.SupportsSchemaNameSpace
   nameWithType: IOrpheusDDLHelper.SupportsSchemaNameSpace
-- uid: OrpheusInterfaces.IOrpheusDDLHelper.TypeToString(Type)
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.TypeToString(System.Type)
   name: TypeToString(Type)
-  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_TypeToString_Type_
-  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.TypeToString(Type)
-  fullName: OrpheusInterfaces.IOrpheusDDLHelper.TypeToString(Type)
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_TypeToString_System_Type_
+  commentId: M:OrpheusInterfaces.IOrpheusDDLHelper.TypeToString(System.Type)
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.TypeToString(System.Type)
   nameWithType: IOrpheusDDLHelper.TypeToString(Type)
 - uid: OrpheusInterfaces.IOrpheusDDLHelper.TypeToString*
   name: TypeToString
@@ -4767,22 +4905,22 @@ references:
   fullName.vb: OrpheusInterfaces.IOrpheusModule.GetTable(Of T)(System.String)
   nameWithType: IOrpheusModule.GetTable<T>(String)
   nameWithType.vb: IOrpheusModule.GetTable(Of T)(String)
-- uid: OrpheusInterfaces.IOrpheusModule.Load(Dictionary{System.String,List{System.Object}})
+- uid: OrpheusInterfaces.IOrpheusModule.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}})
   name: Load(Dictionary<String, List<Object>>)
-  href: api/OrpheusInterfaces.IOrpheusModule.html#OrpheusInterfaces_IOrpheusModule_Load_Dictionary_System_String_List_System_Object___
-  commentId: M:OrpheusInterfaces.IOrpheusModule.Load(Dictionary{System.String,List{System.Object}})
+  href: api/OrpheusInterfaces.IOrpheusModule.html#OrpheusInterfaces_IOrpheusModule_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___
+  commentId: M:OrpheusInterfaces.IOrpheusModule.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}})
   name.vb: Load(Dictionary(Of String, List(Of Object)))
-  fullName: OrpheusInterfaces.IOrpheusModule.Load(Dictionary<System.String, List<System.Object>>)
-  fullName.vb: OrpheusInterfaces.IOrpheusModule.Load(Dictionary(Of System.String, List(Of System.Object)))
+  fullName: OrpheusInterfaces.IOrpheusModule.Load(System.Collections.Generic.Dictionary<System.String, System.Collections.Generic.List<System.Object>>)
+  fullName.vb: OrpheusInterfaces.IOrpheusModule.Load(System.Collections.Generic.Dictionary(Of System.String, System.Collections.Generic.List(Of System.Object)))
   nameWithType: IOrpheusModule.Load(Dictionary<String, List<Object>>)
   nameWithType.vb: IOrpheusModule.Load(Dictionary(Of String, List(Of Object)))
-- uid: OrpheusInterfaces.IOrpheusModule.Load(List{System.Object})
+- uid: OrpheusInterfaces.IOrpheusModule.Load(System.Collections.Generic.List{System.Object})
   name: Load(List<Object>)
-  href: api/OrpheusInterfaces.IOrpheusModule.html#OrpheusInterfaces_IOrpheusModule_Load_List_System_Object__
-  commentId: M:OrpheusInterfaces.IOrpheusModule.Load(List{System.Object})
+  href: api/OrpheusInterfaces.IOrpheusModule.html#OrpheusInterfaces_IOrpheusModule_Load_System_Collections_Generic_List_System_Object__
+  commentId: M:OrpheusInterfaces.IOrpheusModule.Load(System.Collections.Generic.List{System.Object})
   name.vb: Load(List(Of Object))
-  fullName: OrpheusInterfaces.IOrpheusModule.Load(List<System.Object>)
-  fullName.vb: OrpheusInterfaces.IOrpheusModule.Load(List(Of System.Object))
+  fullName: OrpheusInterfaces.IOrpheusModule.Load(System.Collections.Generic.List<System.Object>)
+  fullName.vb: OrpheusInterfaces.IOrpheusModule.Load(System.Collections.Generic.List(Of System.Object))
   nameWithType: IOrpheusModule.Load(List<Object>)
   nameWithType.vb: IOrpheusModule.Load(List(Of Object))
 - uid: OrpheusInterfaces.IOrpheusModule.Load*
@@ -4863,17 +5001,17 @@ references:
   commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions
   fullName: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions()
   nameWithType: IOrpheusModuleDefinition.CreateTableOptions()
-- uid: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(System.String,Type)
+- uid: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(System.String,System.Type)
   name: CreateTableOptions(String, Type)
-  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_CreateTableOptions_System_String_Type_
-  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(System.String,Type)
-  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(System.String, Type)
+  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_CreateTableOptions_System_String_System_Type_
+  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(System.String,System.Type)
+  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(System.String, System.Type)
   nameWithType: IOrpheusModuleDefinition.CreateTableOptions(String, Type)
-- uid: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(Type)
+- uid: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(System.Type)
   name: CreateTableOptions(Type)
-  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_CreateTableOptions_Type_
-  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(Type)
-  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(Type)
+  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_CreateTableOptions_System_Type_
+  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(System.Type)
+  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions(System.Type)
   nameWithType: IOrpheusModuleDefinition.CreateTableOptions(Type)
 - uid: OrpheusInterfaces.IOrpheusModuleDefinition.CreateTableOptions*
   name: CreateTableOptions
@@ -4905,17 +5043,17 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusModuleDefinition.DetailTableOptions
   fullName: OrpheusInterfaces.IOrpheusModuleDefinition.DetailTableOptions
   nameWithType: IOrpheusModuleDefinition.DetailTableOptions
-- uid: OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(Stream)
+- uid: OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(System.IO.Stream)
   name: LoadFrom(Stream)
-  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_LoadFrom_Stream_
-  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(Stream)
-  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(Stream)
+  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_LoadFrom_System_IO_Stream_
+  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(System.IO.Stream)
+  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(System.IO.Stream)
   nameWithType: IOrpheusModuleDefinition.LoadFrom(Stream)
-- uid: OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(String)
+- uid: OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(System.String)
   name: LoadFrom(String)
-  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_LoadFrom_String_
-  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(String)
-  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(String)
+  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_LoadFrom_System_String_
+  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(System.String)
+  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom(System.String)
   nameWithType: IOrpheusModuleDefinition.LoadFrom(String)
 - uid: OrpheusInterfaces.IOrpheusModuleDefinition.LoadFrom*
   name: LoadFrom
@@ -4971,17 +5109,17 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusModuleDefinition.ReferenceTableOptions
   fullName: OrpheusInterfaces.IOrpheusModuleDefinition.ReferenceTableOptions
   nameWithType: IOrpheusModuleDefinition.ReferenceTableOptions
-- uid: OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(Stream)
+- uid: OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(System.IO.Stream)
   name: SaveTo(Stream)
-  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_SaveTo_Stream_
-  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(Stream)
-  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(Stream)
+  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_SaveTo_System_IO_Stream_
+  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(System.IO.Stream)
+  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(System.IO.Stream)
   nameWithType: IOrpheusModuleDefinition.SaveTo(Stream)
-- uid: OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(String)
+- uid: OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(System.String)
   name: SaveTo(String)
-  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_SaveTo_String_
-  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(String)
-  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(String)
+  href: api/OrpheusInterfaces.IOrpheusModuleDefinition.html#OrpheusInterfaces_IOrpheusModuleDefinition_SaveTo_System_String_
+  commentId: M:OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(System.String)
+  fullName: OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo(System.String)
   nameWithType: IOrpheusModuleDefinition.SaveTo(String)
 - uid: OrpheusInterfaces.IOrpheusModuleDefinition.SaveTo*
   name: SaveTo
@@ -5046,11 +5184,11 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusTable.DetailTables
   fullName: OrpheusInterfaces.IOrpheusTable.DetailTables
   nameWithType: IOrpheusTable.DetailTables
-- uid: OrpheusInterfaces.IOrpheusTable.ExecuteDeletes(IDbTransaction)
+- uid: OrpheusInterfaces.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)
   name: ExecuteDeletes(IDbTransaction)
-  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_ExecuteDeletes_IDbTransaction_
-  commentId: M:OrpheusInterfaces.IOrpheusTable.ExecuteDeletes(IDbTransaction)
-  fullName: OrpheusInterfaces.IOrpheusTable.ExecuteDeletes(IDbTransaction)
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_ExecuteDeletes_System_Data_IDbTransaction_
+  commentId: M:OrpheusInterfaces.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)
+  fullName: OrpheusInterfaces.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)
   nameWithType: IOrpheusTable.ExecuteDeletes(IDbTransaction)
 - uid: OrpheusInterfaces.IOrpheusTable.ExecuteDeletes*
   name: ExecuteDeletes
@@ -5058,11 +5196,11 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusTable.ExecuteDeletes
   fullName: OrpheusInterfaces.IOrpheusTable.ExecuteDeletes
   nameWithType: IOrpheusTable.ExecuteDeletes
-- uid: OrpheusInterfaces.IOrpheusTable.ExecuteInserts(IDbTransaction)
+- uid: OrpheusInterfaces.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)
   name: ExecuteInserts(IDbTransaction)
-  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_ExecuteInserts_IDbTransaction_
-  commentId: M:OrpheusInterfaces.IOrpheusTable.ExecuteInserts(IDbTransaction)
-  fullName: OrpheusInterfaces.IOrpheusTable.ExecuteInserts(IDbTransaction)
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_ExecuteInserts_System_Data_IDbTransaction_
+  commentId: M:OrpheusInterfaces.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)
+  fullName: OrpheusInterfaces.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)
   nameWithType: IOrpheusTable.ExecuteInserts(IDbTransaction)
 - uid: OrpheusInterfaces.IOrpheusTable.ExecuteInserts*
   name: ExecuteInserts
@@ -5070,11 +5208,11 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusTable.ExecuteInserts
   fullName: OrpheusInterfaces.IOrpheusTable.ExecuteInserts
   nameWithType: IOrpheusTable.ExecuteInserts
-- uid: OrpheusInterfaces.IOrpheusTable.ExecuteUpdates(IDbTransaction)
+- uid: OrpheusInterfaces.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)
   name: ExecuteUpdates(IDbTransaction)
-  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_ExecuteUpdates_IDbTransaction_
-  commentId: M:OrpheusInterfaces.IOrpheusTable.ExecuteUpdates(IDbTransaction)
-  fullName: OrpheusInterfaces.IOrpheusTable.ExecuteUpdates(IDbTransaction)
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_ExecuteUpdates_System_Data_IDbTransaction_
+  commentId: M:OrpheusInterfaces.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)
+  fullName: OrpheusInterfaces.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)
   nameWithType: IOrpheusTable.ExecuteUpdates(IDbTransaction)
 - uid: OrpheusInterfaces.IOrpheusTable.ExecuteUpdates*
   name: ExecuteUpdates
@@ -5118,30 +5256,30 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusTable.Level
   fullName: OrpheusInterfaces.IOrpheusTable.Level
   nameWithType: IOrpheusTable.Level
-- uid: OrpheusInterfaces.IOrpheusTable.Load(Dictionary{System.String,List{System.Object}},System.Boolean)
+- uid: OrpheusInterfaces.IOrpheusTable.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},System.Boolean)
   name: Load(Dictionary<String, List<Object>>, Boolean)
-  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Load_Dictionary_System_String_List_System_Object___System_Boolean_
-  commentId: M:OrpheusInterfaces.IOrpheusTable.Load(Dictionary{System.String,List{System.Object}},System.Boolean)
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___System_Boolean_
+  commentId: M:OrpheusInterfaces.IOrpheusTable.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},System.Boolean)
   name.vb: Load(Dictionary(Of String, List(Of Object)), Boolean)
-  fullName: OrpheusInterfaces.IOrpheusTable.Load(Dictionary<System.String, List<System.Object>>, System.Boolean)
-  fullName.vb: OrpheusInterfaces.IOrpheusTable.Load(Dictionary(Of System.String, List(Of System.Object)), System.Boolean)
+  fullName: OrpheusInterfaces.IOrpheusTable.Load(System.Collections.Generic.Dictionary<System.String, System.Collections.Generic.List<System.Object>>, System.Boolean)
+  fullName.vb: OrpheusInterfaces.IOrpheusTable.Load(System.Collections.Generic.Dictionary(Of System.String, System.Collections.Generic.List(Of System.Object)), System.Boolean)
   nameWithType: IOrpheusTable.Load(Dictionary<String, List<Object>>, Boolean)
   nameWithType.vb: IOrpheusTable.Load(Dictionary(Of String, List(Of Object)), Boolean)
-- uid: OrpheusInterfaces.IOrpheusTable.Load(IDbCommand,System.Boolean)
-  name: Load(IDbCommand, Boolean)
-  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Load_IDbCommand_System_Boolean_
-  commentId: M:OrpheusInterfaces.IOrpheusTable.Load(IDbCommand,System.Boolean)
-  fullName: OrpheusInterfaces.IOrpheusTable.Load(IDbCommand, System.Boolean)
-  nameWithType: IOrpheusTable.Load(IDbCommand, Boolean)
-- uid: OrpheusInterfaces.IOrpheusTable.Load(List{System.Object},System.Boolean)
+- uid: OrpheusInterfaces.IOrpheusTable.Load(System.Collections.Generic.List{System.Object},System.Boolean)
   name: Load(List<Object>, Boolean)
-  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Load_List_System_Object__System_Boolean_
-  commentId: M:OrpheusInterfaces.IOrpheusTable.Load(List{System.Object},System.Boolean)
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Load_System_Collections_Generic_List_System_Object__System_Boolean_
+  commentId: M:OrpheusInterfaces.IOrpheusTable.Load(System.Collections.Generic.List{System.Object},System.Boolean)
   name.vb: Load(List(Of Object), Boolean)
-  fullName: OrpheusInterfaces.IOrpheusTable.Load(List<System.Object>, System.Boolean)
-  fullName.vb: OrpheusInterfaces.IOrpheusTable.Load(List(Of System.Object), System.Boolean)
+  fullName: OrpheusInterfaces.IOrpheusTable.Load(System.Collections.Generic.List<System.Object>, System.Boolean)
+  fullName.vb: OrpheusInterfaces.IOrpheusTable.Load(System.Collections.Generic.List(Of System.Object), System.Boolean)
   nameWithType: IOrpheusTable.Load(List<Object>, Boolean)
   nameWithType.vb: IOrpheusTable.Load(List(Of Object), Boolean)
+- uid: OrpheusInterfaces.IOrpheusTable.Load(System.Data.IDbCommand,System.Boolean)
+  name: Load(IDbCommand, Boolean)
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Load_System_Data_IDbCommand_System_Boolean_
+  commentId: M:OrpheusInterfaces.IOrpheusTable.Load(System.Data.IDbCommand,System.Boolean)
+  fullName: OrpheusInterfaces.IOrpheusTable.Load(System.Data.IDbCommand, System.Boolean)
+  nameWithType: IOrpheusTable.Load(IDbCommand, Boolean)
 - uid: OrpheusInterfaces.IOrpheusTable.Load(System.String,System.Boolean)
   name: Load(String, Boolean)
   href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Load_System_String_System_Boolean_
@@ -5214,11 +5352,11 @@ references:
   commentId: E:OrpheusInterfaces.IOrpheusTable.OnBeforeSave
   fullName: OrpheusInterfaces.IOrpheusTable.OnBeforeSave
   nameWithType: IOrpheusTable.OnBeforeSave
-- uid: OrpheusInterfaces.IOrpheusTable.Save(IDbTransaction,System.Boolean)
+- uid: OrpheusInterfaces.IOrpheusTable.Save(System.Data.IDbTransaction,System.Boolean)
   name: Save(IDbTransaction, Boolean)
-  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Save_IDbTransaction_System_Boolean_
-  commentId: M:OrpheusInterfaces.IOrpheusTable.Save(IDbTransaction,System.Boolean)
-  fullName: OrpheusInterfaces.IOrpheusTable.Save(IDbTransaction, System.Boolean)
+  href: api/OrpheusInterfaces.IOrpheusTable.html#OrpheusInterfaces_IOrpheusTable_Save_System_Data_IDbTransaction_System_Boolean_
+  commentId: M:OrpheusInterfaces.IOrpheusTable.Save(System.Data.IDbTransaction,System.Boolean)
+  fullName: OrpheusInterfaces.IOrpheusTable.Save(System.Data.IDbTransaction, System.Boolean)
   nameWithType: IOrpheusTable.Save(IDbTransaction, Boolean)
 - uid: OrpheusInterfaces.IOrpheusTable.Save*
   name: Save
@@ -5255,13 +5393,13 @@ references:
   fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Add(T)
   nameWithType: IOrpheusTable<T>.Add(T)
   nameWithType.vb: IOrpheusTable(Of T).Add(T)
-- uid: OrpheusInterfaces.IOrpheusTable`1.Add(List{`0})
+- uid: OrpheusInterfaces.IOrpheusTable`1.Add(System.Collections.Generic.List{`0})
   name: Add(List<T>)
-  href: api/OrpheusInterfaces.IOrpheusTable-1.html#OrpheusInterfaces_IOrpheusTable_1_Add_List__0__
-  commentId: M:OrpheusInterfaces.IOrpheusTable`1.Add(List{`0})
+  href: api/OrpheusInterfaces.IOrpheusTable-1.html#OrpheusInterfaces_IOrpheusTable_1_Add_System_Collections_Generic_List__0__
+  commentId: M:OrpheusInterfaces.IOrpheusTable`1.Add(System.Collections.Generic.List{`0})
   name.vb: Add(List(Of T))
-  fullName: OrpheusInterfaces.IOrpheusTable<T>.Add(List<T>)
-  fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Add(List(Of T))
+  fullName: OrpheusInterfaces.IOrpheusTable<T>.Add(System.Collections.Generic.List<T>)
+  fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Add(System.Collections.Generic.List(Of T))
   nameWithType: IOrpheusTable<T>.Add(List<T>)
   nameWithType.vb: IOrpheusTable(Of T).Add(List(Of T))
 - uid: OrpheusInterfaces.IOrpheusTable`1.Add*
@@ -5296,13 +5434,13 @@ references:
   fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Delete(T)
   nameWithType: IOrpheusTable<T>.Delete(T)
   nameWithType.vb: IOrpheusTable(Of T).Delete(T)
-- uid: OrpheusInterfaces.IOrpheusTable`1.Delete(List{`0})
+- uid: OrpheusInterfaces.IOrpheusTable`1.Delete(System.Collections.Generic.List{`0})
   name: Delete(List<T>)
-  href: api/OrpheusInterfaces.IOrpheusTable-1.html#OrpheusInterfaces_IOrpheusTable_1_Delete_List__0__
-  commentId: M:OrpheusInterfaces.IOrpheusTable`1.Delete(List{`0})
+  href: api/OrpheusInterfaces.IOrpheusTable-1.html#OrpheusInterfaces_IOrpheusTable_1_Delete_System_Collections_Generic_List__0__
+  commentId: M:OrpheusInterfaces.IOrpheusTable`1.Delete(System.Collections.Generic.List{`0})
   name.vb: Delete(List(Of T))
-  fullName: OrpheusInterfaces.IOrpheusTable<T>.Delete(List<T>)
-  fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Delete(List(Of T))
+  fullName: OrpheusInterfaces.IOrpheusTable<T>.Delete(System.Collections.Generic.List<T>)
+  fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Delete(System.Collections.Generic.List(Of T))
   nameWithType: IOrpheusTable<T>.Delete(List<T>)
   nameWithType.vb: IOrpheusTable(Of T).Delete(List(Of T))
 - uid: OrpheusInterfaces.IOrpheusTable`1.Delete*
@@ -5337,13 +5475,13 @@ references:
   fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Update(T)
   nameWithType: IOrpheusTable<T>.Update(T)
   nameWithType.vb: IOrpheusTable(Of T).Update(T)
-- uid: OrpheusInterfaces.IOrpheusTable`1.Update(List{`0})
+- uid: OrpheusInterfaces.IOrpheusTable`1.Update(System.Collections.Generic.List{`0})
   name: Update(List<T>)
-  href: api/OrpheusInterfaces.IOrpheusTable-1.html#OrpheusInterfaces_IOrpheusTable_1_Update_List__0__
-  commentId: M:OrpheusInterfaces.IOrpheusTable`1.Update(List{`0})
+  href: api/OrpheusInterfaces.IOrpheusTable-1.html#OrpheusInterfaces_IOrpheusTable_1_Update_System_Collections_Generic_List__0__
+  commentId: M:OrpheusInterfaces.IOrpheusTable`1.Update(System.Collections.Generic.List{`0})
   name.vb: Update(List(Of T))
-  fullName: OrpheusInterfaces.IOrpheusTable<T>.Update(List<T>)
-  fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Update(List(Of T))
+  fullName: OrpheusInterfaces.IOrpheusTable<T>.Update(System.Collections.Generic.List<T>)
+  fullName.vb: OrpheusInterfaces.IOrpheusTable(Of T).Update(System.Collections.Generic.List(Of T))
   nameWithType: IOrpheusTable<T>.Update(List<T>)
   nameWithType.vb: IOrpheusTable(Of T).Update(List(Of T))
 - uid: OrpheusInterfaces.IOrpheusTable`1.Update*
@@ -5414,13 +5552,13 @@ references:
   commentId: T:OrpheusInterfaces.IOrpheusTableOptions
   fullName: OrpheusInterfaces.IOrpheusTableOptions
   nameWithType: IOrpheusTableOptions
-- uid: OrpheusInterfaces.IOrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})
+- uid: OrpheusInterfaces.IOrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
   name: AddKeyField(String, Boolean, Boolean, Func<String>)
-  href: api/OrpheusInterfaces.IOrpheusTableOptions.html#OrpheusInterfaces_IOrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_Func_System_String__
-  commentId: M:OrpheusInterfaces.IOrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})
+  href: api/OrpheusInterfaces.IOrpheusTableOptions.html#OrpheusInterfaces_IOrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__
+  commentId: M:OrpheusInterfaces.IOrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
   name.vb: AddKeyField(String, Boolean, Boolean, Func(Of String))
-  fullName: OrpheusInterfaces.IOrpheusTableOptions.AddKeyField(System.String, System.Boolean, System.Boolean, Func<System.String>)
-  fullName.vb: OrpheusInterfaces.IOrpheusTableOptions.AddKeyField(System.String, System.Boolean, System.Boolean, Func(Of System.String))
+  fullName: OrpheusInterfaces.IOrpheusTableOptions.AddKeyField(System.String, System.Boolean, System.Boolean, System.Func<System.String>)
+  fullName.vb: OrpheusInterfaces.IOrpheusTableOptions.AddKeyField(System.String, System.Boolean, System.Boolean, System.Func(Of System.String))
   nameWithType: IOrpheusTableOptions.AddKeyField(String, Boolean, Boolean, Func<String>)
   nameWithType.vb: IOrpheusTableOptions.AddKeyField(String, Boolean, Boolean, Func(Of String))
 - uid: OrpheusInterfaces.IOrpheusTableOptions.AddKeyField*
@@ -5429,13 +5567,13 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusTableOptions.AddKeyField
   fullName: OrpheusInterfaces.IOrpheusTableOptions.AddKeyField
   nameWithType: IOrpheusTableOptions.AddKeyField
-- uid: OrpheusInterfaces.IOrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})
+- uid: OrpheusInterfaces.IOrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
   name: AddMasterKeyField(String, Boolean, Boolean, Func<String>)
-  href: api/OrpheusInterfaces.IOrpheusTableOptions.html#OrpheusInterfaces_IOrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_Func_System_String__
-  commentId: M:OrpheusInterfaces.IOrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,Func{System.String})
+  href: api/OrpheusInterfaces.IOrpheusTableOptions.html#OrpheusInterfaces_IOrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__
+  commentId: M:OrpheusInterfaces.IOrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
   name.vb: AddMasterKeyField(String, Boolean, Boolean, Func(Of String))
-  fullName: OrpheusInterfaces.IOrpheusTableOptions.AddMasterKeyField(System.String, System.Boolean, System.Boolean, Func<System.String>)
-  fullName.vb: OrpheusInterfaces.IOrpheusTableOptions.AddMasterKeyField(System.String, System.Boolean, System.Boolean, Func(Of System.String))
+  fullName: OrpheusInterfaces.IOrpheusTableOptions.AddMasterKeyField(System.String, System.Boolean, System.Boolean, System.Func<System.String>)
+  fullName.vb: OrpheusInterfaces.IOrpheusTableOptions.AddMasterKeyField(System.String, System.Boolean, System.Boolean, System.Func(Of System.String))
   nameWithType: IOrpheusTableOptions.AddMasterKeyField(String, Boolean, Boolean, Func<String>)
   nameWithType.vb: IOrpheusTableOptions.AddMasterKeyField(String, Boolean, Boolean, Func(Of String))
 - uid: OrpheusInterfaces.IOrpheusTableOptions.AddMasterKeyField*
@@ -5570,31 +5708,31 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchema.AddSchemaObject
   fullName: OrpheusInterfaces.ISchema.AddSchemaObject
   nameWithType: ISchema.AddSchemaObject
-- uid: OrpheusInterfaces.ISchema.AddSchemaTable(System.Object,List{OrpheusInterfaces.ISchemaObject})
+- uid: OrpheusInterfaces.ISchema.AddSchemaTable(System.Object,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name: AddSchemaTable(Object, List<ISchemaObject>)
-  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_AddSchemaTable_System_Object_List_OrpheusInterfaces_ISchemaObject__
-  commentId: M:OrpheusInterfaces.ISchema.AddSchemaTable(System.Object,List{OrpheusInterfaces.ISchemaObject})
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_AddSchemaTable_System_Object_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__
+  commentId: M:OrpheusInterfaces.ISchema.AddSchemaTable(System.Object,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name.vb: AddSchemaTable(Object, List(Of ISchemaObject))
-  fullName: OrpheusInterfaces.ISchema.AddSchemaTable(System.Object, List<OrpheusInterfaces.ISchemaObject>)
-  fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(System.Object, List(Of OrpheusInterfaces.ISchemaObject))
+  fullName: OrpheusInterfaces.ISchema.AddSchemaTable(System.Object, System.Collections.Generic.List<OrpheusInterfaces.ISchemaObject>)
+  fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(System.Object, System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject))
   nameWithType: ISchema.AddSchemaTable(Object, List<ISchemaObject>)
   nameWithType.vb: ISchema.AddSchemaTable(Object, List(Of ISchemaObject))
-- uid: OrpheusInterfaces.ISchema.AddSchemaTable(System.String,List{OrpheusInterfaces.ISchemaObject},System.Object)
+- uid: OrpheusInterfaces.ISchema.AddSchemaTable(System.String,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject},System.Object)
   name: AddSchemaTable(String, List<ISchemaObject>, Object)
-  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_AddSchemaTable_System_String_List_OrpheusInterfaces_ISchemaObject__System_Object_
-  commentId: M:OrpheusInterfaces.ISchema.AddSchemaTable(System.String,List{OrpheusInterfaces.ISchemaObject},System.Object)
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_AddSchemaTable_System_String_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__System_Object_
+  commentId: M:OrpheusInterfaces.ISchema.AddSchemaTable(System.String,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject},System.Object)
   name.vb: AddSchemaTable(String, List(Of ISchemaObject), Object)
-  fullName: OrpheusInterfaces.ISchema.AddSchemaTable(System.String, List<OrpheusInterfaces.ISchemaObject>, System.Object)
-  fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(System.String, List(Of OrpheusInterfaces.ISchemaObject), System.Object)
+  fullName: OrpheusInterfaces.ISchema.AddSchemaTable(System.String, System.Collections.Generic.List<OrpheusInterfaces.ISchemaObject>, System.Object)
+  fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(System.String, System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject), System.Object)
   nameWithType: ISchema.AddSchemaTable(String, List<ISchemaObject>, Object)
   nameWithType.vb: ISchema.AddSchemaTable(String, List(Of ISchemaObject), Object)
-- uid: OrpheusInterfaces.ISchema.AddSchemaTable(Type,List{OrpheusInterfaces.ISchemaObject})
+- uid: OrpheusInterfaces.ISchema.AddSchemaTable(System.Type,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name: AddSchemaTable(Type, List<ISchemaObject>)
-  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_AddSchemaTable_Type_List_OrpheusInterfaces_ISchemaObject__
-  commentId: M:OrpheusInterfaces.ISchema.AddSchemaTable(Type,List{OrpheusInterfaces.ISchemaObject})
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_AddSchemaTable_System_Type_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__
+  commentId: M:OrpheusInterfaces.ISchema.AddSchemaTable(System.Type,System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name.vb: AddSchemaTable(Type, List(Of ISchemaObject))
-  fullName: OrpheusInterfaces.ISchema.AddSchemaTable(Type, List<OrpheusInterfaces.ISchemaObject>)
-  fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(Type, List(Of OrpheusInterfaces.ISchemaObject))
+  fullName: OrpheusInterfaces.ISchema.AddSchemaTable(System.Type, System.Collections.Generic.List<OrpheusInterfaces.ISchemaObject>)
+  fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(System.Type, System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject))
   nameWithType: ISchema.AddSchemaTable(Type, List<ISchemaObject>)
   nameWithType.vb: ISchema.AddSchemaTable(Type, List(Of ISchemaObject))
 - uid: OrpheusInterfaces.ISchema.AddSchemaTable*
@@ -5603,13 +5741,13 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchema.AddSchemaTable
   fullName: OrpheusInterfaces.ISchema.AddSchemaTable
   nameWithType: ISchema.AddSchemaTable
-- uid: OrpheusInterfaces.ISchema.AddSchemaTable``1(List{OrpheusInterfaces.ISchemaObject})
+- uid: OrpheusInterfaces.ISchema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name: AddSchemaTable<T>(List<ISchemaObject>)
-  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_AddSchemaTable__1_List_OrpheusInterfaces_ISchemaObject__
-  commentId: M:OrpheusInterfaces.ISchema.AddSchemaTable``1(List{OrpheusInterfaces.ISchemaObject})
+  href: api/OrpheusInterfaces.ISchema.html#OrpheusInterfaces_ISchema_AddSchemaTable__1_System_Collections_Generic_List_OrpheusInterfaces_ISchemaObject__
+  commentId: M:OrpheusInterfaces.ISchema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.ISchemaObject})
   name.vb: AddSchemaTable(Of T)(List(Of ISchemaObject))
-  fullName: OrpheusInterfaces.ISchema.AddSchemaTable<T>(List<OrpheusInterfaces.ISchemaObject>)
-  fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(Of T)(List(Of OrpheusInterfaces.ISchemaObject))
+  fullName: OrpheusInterfaces.ISchema.AddSchemaTable<T>(System.Collections.Generic.List<OrpheusInterfaces.ISchemaObject>)
+  fullName.vb: OrpheusInterfaces.ISchema.AddSchemaTable(Of T)(System.Collections.Generic.List(Of OrpheusInterfaces.ISchemaObject))
   nameWithType: ISchema.AddSchemaTable<T>(List<ISchemaObject>)
   nameWithType.vb: ISchema.AddSchemaTable(Of T)(List(Of ISchemaObject))
 - uid: OrpheusInterfaces.ISchema.AddSchemaTable``2
@@ -5993,13 +6131,13 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaDataObject.AddField
   fullName: OrpheusInterfaces.ISchemaDataObject.AddField
   nameWithType: ISchemaDataObject.AddField
-- uid: OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String,List{System.String},System.String,List{System.String},System.Boolean,System.Boolean)
+- uid: OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   name: AddForeignKeyConstraint(String, List<String>, String, List<String>, Boolean, Boolean)
-  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_AddForeignKeyConstraint_System_String_List_System_String__System_String_List_System_String__System_Boolean_System_Boolean_
-  commentId: M:OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String,List{System.String},System.String,List{System.String},System.Boolean,System.Boolean)
+  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_AddForeignKeyConstraint_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
+  commentId: M:OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
   name.vb: AddForeignKeyConstraint(String, List(Of String), String, List(Of String), Boolean, Boolean)
-  fullName: OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String, List<System.String>, System.String, List<System.String>, System.Boolean, System.Boolean)
-  fullName.vb: OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String, List(Of System.String), System.String, List(Of System.String), System.Boolean, System.Boolean)
+  fullName: OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String, System.Collections.Generic.List<System.String>, System.String, System.Collections.Generic.List<System.String>, System.Boolean, System.Boolean)
+  fullName.vb: OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint(System.String, System.Collections.Generic.List(Of System.String), System.String, System.Collections.Generic.List(Of System.String), System.Boolean, System.Boolean)
   nameWithType: ISchemaDataObject.AddForeignKeyConstraint(String, List<String>, String, List<String>, Boolean, Boolean)
   nameWithType.vb: ISchemaDataObject.AddForeignKeyConstraint(String, List(Of String), String, List(Of String), Boolean, Boolean)
 - uid: OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint*
@@ -6008,13 +6146,13 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint
   fullName: OrpheusInterfaces.ISchemaDataObject.AddForeignKeyConstraint
   nameWithType: ISchemaDataObject.AddForeignKeyConstraint
-- uid: OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,List{System.String},OrpheusInterfaces.SchemaSort)
+- uid: OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.SchemaSort)
   name: AddPrimaryKeyConstraint(String, List<String>, SchemaSort)
-  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_AddPrimaryKeyConstraint_System_String_List_System_String__OrpheusInterfaces_SchemaSort_
-  commentId: M:OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,List{System.String},OrpheusInterfaces.SchemaSort)
+  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_AddPrimaryKeyConstraint_System_String_System_Collections_Generic_List_System_String__OrpheusInterfaces_SchemaSort_
+  commentId: M:OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.SchemaSort)
   name.vb: AddPrimaryKeyConstraint(String, List(Of String), SchemaSort)
-  fullName: OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String, List<System.String>, OrpheusInterfaces.SchemaSort)
-  fullName.vb: OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String, List(Of System.String), OrpheusInterfaces.SchemaSort)
+  fullName: OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String, System.Collections.Generic.List<System.String>, OrpheusInterfaces.SchemaSort)
+  fullName.vb: OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint(System.String, System.Collections.Generic.List(Of System.String), OrpheusInterfaces.SchemaSort)
   nameWithType: ISchemaDataObject.AddPrimaryKeyConstraint(String, List<String>, SchemaSort)
   nameWithType.vb: ISchemaDataObject.AddPrimaryKeyConstraint(String, List(Of String), SchemaSort)
 - uid: OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint*
@@ -6023,13 +6161,13 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint
   fullName: OrpheusInterfaces.ISchemaDataObject.AddPrimaryKeyConstraint
   nameWithType: ISchemaDataObject.AddPrimaryKeyConstraint
-- uid: OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String,List{System.String})
+- uid: OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
   name: AddUniqueKeyConstraint(String, List<String>)
-  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_AddUniqueKeyConstraint_System_String_List_System_String__
-  commentId: M:OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String,List{System.String})
+  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_AddUniqueKeyConstraint_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
   name.vb: AddUniqueKeyConstraint(String, List(Of String))
-  fullName: OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String, List<System.String>)
-  fullName.vb: OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String, List(Of System.String))
+  fullName: OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint(System.String, System.Collections.Generic.List(Of System.String))
   nameWithType: ISchemaDataObject.AddUniqueKeyConstraint(String, List<String>)
   nameWithType.vb: ISchemaDataObject.AddUniqueKeyConstraint(String, List(Of String))
 - uid: OrpheusInterfaces.ISchemaDataObject.AddUniqueKeyConstraint*
@@ -6056,11 +6194,11 @@ references:
   commentId: M:OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(System.Object)
   fullName: OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(System.Object)
   nameWithType: ISchemaDataObject.CreateFieldsFromModel(Object)
-- uid: OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(Type)
+- uid: OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(System.Type)
   name: CreateFieldsFromModel(Type)
-  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel_Type_
-  commentId: M:OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(Type)
-  fullName: OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(Type)
+  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_CreateFieldsFromModel_System_Type_
+  commentId: M:OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(System.Type)
+  fullName: OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel(System.Type)
   nameWithType: ISchemaDataObject.CreateFieldsFromModel(Type)
 - uid: OrpheusInterfaces.ISchemaDataObject.CreateFieldsFromModel*
   name: CreateFieldsFromModel
@@ -6134,13 +6272,13 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaDataObject.SetData
   fullName: OrpheusInterfaces.ISchemaDataObject.SetData
   nameWithType: ISchemaDataObject.SetData
-- uid: OrpheusInterfaces.ISchemaDataObject.SetData``1(List{``0})
+- uid: OrpheusInterfaces.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
   name: SetData<T>(List<T>)
-  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_SetData__1_List___0__
-  commentId: M:OrpheusInterfaces.ISchemaDataObject.SetData``1(List{``0})
+  href: api/OrpheusInterfaces.ISchemaDataObject.html#OrpheusInterfaces_ISchemaDataObject_SetData__1_System_Collections_Generic_List___0__
+  commentId: M:OrpheusInterfaces.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
   name.vb: SetData(Of T)(List(Of T))
-  fullName: OrpheusInterfaces.ISchemaDataObject.SetData<T>(List<T>)
-  fullName.vb: OrpheusInterfaces.ISchemaDataObject.SetData(Of T)(List(Of T))
+  fullName: OrpheusInterfaces.ISchemaDataObject.SetData<T>(System.Collections.Generic.List<T>)
+  fullName.vb: OrpheusInterfaces.ISchemaDataObject.SetData(Of T)(System.Collections.Generic.List(Of T))
   nameWithType: ISchemaDataObject.SetData<T>(List<T>)
   nameWithType.vb: ISchemaDataObject.SetData(Of T)(List(Of T))
 - uid: OrpheusInterfaces.ISchemaField
@@ -6359,11 +6497,11 @@ references:
   commentId: M:OrpheusInterfaces.ISchemaObject.AddDependency(OrpheusInterfaces.ISchemaObject)
   fullName: OrpheusInterfaces.ISchemaObject.AddDependency(OrpheusInterfaces.ISchemaObject)
   nameWithType: ISchemaObject.AddDependency(ISchemaObject)
-- uid: OrpheusInterfaces.ISchemaObject.AddDependency(Type)
+- uid: OrpheusInterfaces.ISchemaObject.AddDependency(System.Type)
   name: AddDependency(Type)
-  href: api/OrpheusInterfaces.ISchemaObject.html#OrpheusInterfaces_ISchemaObject_AddDependency_Type_
-  commentId: M:OrpheusInterfaces.ISchemaObject.AddDependency(Type)
-  fullName: OrpheusInterfaces.ISchemaObject.AddDependency(Type)
+  href: api/OrpheusInterfaces.ISchemaObject.html#OrpheusInterfaces_ISchemaObject_AddDependency_System_Type_
+  commentId: M:OrpheusInterfaces.ISchemaObject.AddDependency(System.Type)
+  fullName: OrpheusInterfaces.ISchemaObject.AddDependency(System.Type)
   nameWithType: ISchemaObject.AddDependency(Type)
 - uid: OrpheusInterfaces.ISchemaObject.AddDependency*
   name: AddDependency
@@ -6890,18 +7028,39 @@ references:
   commentId: N:OrpheusLogger
   fullName: OrpheusLogger
   nameWithType: OrpheusLogger
+- uid: OrpheusLogger.IOrpheusFileLogger
+  name: IOrpheusFileLogger
+  href: api/OrpheusLogger.IOrpheusFileLogger.html
+  commentId: T:OrpheusLogger.IOrpheusFileLogger
+  fullName: OrpheusLogger.IOrpheusFileLogger
+  nameWithType: IOrpheusFileLogger
+- uid: OrpheusLogger.IOrpheusFileLogger.LogFileName
+  name: LogFileName
+  href: api/OrpheusLogger.IOrpheusFileLogger.html#OrpheusLogger_IOrpheusFileLogger_LogFileName
+  commentId: P:OrpheusLogger.IOrpheusFileLogger.LogFileName
+  fullName: OrpheusLogger.IOrpheusFileLogger.LogFileName
+  nameWithType: IOrpheusFileLogger.LogFileName
+- uid: OrpheusLogger.IOrpheusFileLogger.LogFileName*
+  name: LogFileName
+  href: api/OrpheusLogger.IOrpheusFileLogger.html#OrpheusLogger_IOrpheusFileLogger_LogFileName_
+  commentId: Overload:OrpheusLogger.IOrpheusFileLogger.LogFileName
+  fullName: OrpheusLogger.IOrpheusFileLogger.LogFileName
+  nameWithType: IOrpheusFileLogger.LogFileName
 - uid: OrpheusLogger.OrpheusFileLogger
   name: OrpheusFileLogger
   href: api/OrpheusLogger.OrpheusFileLogger.html
   commentId: T:OrpheusLogger.OrpheusFileLogger
   fullName: OrpheusLogger.OrpheusFileLogger
   nameWithType: OrpheusFileLogger
-- uid: OrpheusLogger.OrpheusFileLogger.#ctor
-  name: OrpheusFileLogger()
-  href: api/OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger__ctor
-  commentId: M:OrpheusLogger.OrpheusFileLogger.#ctor
-  fullName: OrpheusLogger.OrpheusFileLogger.OrpheusFileLogger()
-  nameWithType: OrpheusFileLogger.OrpheusFileLogger()
+- uid: OrpheusLogger.OrpheusFileLogger.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration})
+  name: OrpheusFileLogger(IOptionsMonitor<LoggingConfiguration>)
+  href: api/OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger__ctor_Microsoft_Extensions_Options_IOptionsMonitor_OrpheusCore_Configuration_LoggingConfiguration__
+  commentId: M:OrpheusLogger.OrpheusFileLogger.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration})
+  name.vb: OrpheusFileLogger(IOptionsMonitor(Of LoggingConfiguration))
+  fullName: OrpheusLogger.OrpheusFileLogger.OrpheusFileLogger(Microsoft.Extensions.Options.IOptionsMonitor<OrpheusCore.Configuration.LoggingConfiguration>)
+  fullName.vb: OrpheusLogger.OrpheusFileLogger.OrpheusFileLogger(Microsoft.Extensions.Options.IOptionsMonitor(Of OrpheusCore.Configuration.LoggingConfiguration))
+  nameWithType: OrpheusFileLogger.OrpheusFileLogger(IOptionsMonitor<LoggingConfiguration>)
+  nameWithType.vb: OrpheusFileLogger.OrpheusFileLogger(IOptionsMonitor(Of LoggingConfiguration))
 - uid: OrpheusLogger.OrpheusFileLogger.#ctor*
   name: OrpheusFileLogger
   href: api/OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger__ctor_
@@ -6935,11 +7094,11 @@ references:
   commentId: Overload:OrpheusLogger.OrpheusFileLogger.Finalize
   fullName: OrpheusLogger.OrpheusFileLogger.Finalize
   nameWithType: OrpheusFileLogger.Finalize
-- uid: OrpheusLogger.OrpheusFileLogger.IsEnabled(LogLevel)
+- uid: OrpheusLogger.OrpheusFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
   name: IsEnabled(LogLevel)
-  href: api/OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_IsEnabled_LogLevel_
-  commentId: M:OrpheusLogger.OrpheusFileLogger.IsEnabled(LogLevel)
-  fullName: OrpheusLogger.OrpheusFileLogger.IsEnabled(LogLevel)
+  href: api/OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_IsEnabled_Microsoft_Extensions_Logging_LogLevel_
+  commentId: M:OrpheusLogger.OrpheusFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  fullName: OrpheusLogger.OrpheusFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
   nameWithType: OrpheusFileLogger.IsEnabled(LogLevel)
 - uid: OrpheusLogger.OrpheusFileLogger.IsEnabled*
   name: IsEnabled
@@ -6953,13 +7112,13 @@ references:
   commentId: Overload:OrpheusLogger.OrpheusFileLogger.Log
   fullName: OrpheusLogger.OrpheusFileLogger.Log
   nameWithType: OrpheusFileLogger.Log
-- uid: OrpheusLogger.OrpheusFileLogger.Log``1(LogLevel,EventId,``0,Exception,Func{``0,Exception,System.String})
+- uid: OrpheusLogger.OrpheusFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
   name: Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, String>)
-  href: api/OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_Log__1_LogLevel_EventId___0_Exception_Func___0_Exception_System_String__
-  commentId: M:OrpheusLogger.OrpheusFileLogger.Log``1(LogLevel,EventId,``0,Exception,Func{``0,Exception,System.String})
+  href: api/OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_Log__1_Microsoft_Extensions_Logging_LogLevel_Microsoft_Extensions_Logging_EventId___0_System_Exception_System_Func___0_System_Exception_System_String__
+  commentId: M:OrpheusLogger.OrpheusFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
   name.vb: Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
-  fullName: OrpheusLogger.OrpheusFileLogger.Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, System.String>)
-  fullName.vb: OrpheusLogger.OrpheusFileLogger.Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, System.String))
+  fullName: OrpheusLogger.OrpheusFileLogger.Log<TState>(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func<TState, System.Exception, System.String>)
+  fullName.vb: OrpheusLogger.OrpheusFileLogger.Log(Of TState)(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func(Of TState, System.Exception, System.String))
   nameWithType: OrpheusFileLogger.Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, String>)
   nameWithType.vb: OrpheusFileLogger.Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
 - uid: OrpheusLogger.OrpheusFileLogger.LogFileName
@@ -6974,6 +7133,18 @@ references:
   commentId: Overload:OrpheusLogger.OrpheusFileLogger.LogFileName
   fullName: OrpheusLogger.OrpheusFileLogger.LogFileName
   nameWithType: OrpheusFileLogger.LogFileName
+- uid: OrpheusLogger.OrpheusFileLogger.LoggingConfiguration
+  name: LoggingConfiguration
+  href: api/OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_LoggingConfiguration
+  commentId: P:OrpheusLogger.OrpheusFileLogger.LoggingConfiguration
+  fullName: OrpheusLogger.OrpheusFileLogger.LoggingConfiguration
+  nameWithType: OrpheusFileLogger.LoggingConfiguration
+- uid: OrpheusLogger.OrpheusFileLogger.LoggingConfiguration*
+  name: LoggingConfiguration
+  href: api/OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_LoggingConfiguration_
+  commentId: Overload:OrpheusLogger.OrpheusFileLogger.LoggingConfiguration
+  fullName: OrpheusLogger.OrpheusFileLogger.LoggingConfiguration
+  nameWithType: OrpheusFileLogger.LoggingConfiguration
 - uid: OrpheusMySQLDDLHelper
   name: OrpheusMySQLDDLHelper
   href: api/OrpheusMySQLDDLHelper.html
@@ -7076,11 +7247,11 @@ references:
   commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbEngineType
   fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbEngineType
   nameWithType: OrpheusMySQLServerDDLHelper.DbEngineType
-- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(DbType)
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(System.Data.DbType)
   name: DbTypeToString(DbType)
-  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbTypeToString_DbType_
-  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(DbType)
-  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(DbType)
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbTypeToString_System_Data_DbType_
+  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(System.Data.DbType)
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(System.Data.DbType)
   nameWithType: OrpheusMySQLServerDDLHelper.DbTypeToString(DbType)
 - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString*
   name: DbTypeToString
@@ -7124,13 +7295,13 @@ references:
   commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ModifyColumnCommand
   fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ModifyColumnCommand
   nameWithType: OrpheusMySQLServerDDLHelper.ModifyColumnCommand
-- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,List{System.String})
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
   name: SafeFormatAlterTableAddColumn(String, List<String>)
-  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableAddColumn_System_String_List_System_String__
-  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,List{System.String})
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
   name.vb: SafeFormatAlterTableAddColumn(String, List(Of String))
-  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String, List<System.String>)
-  fullName.vb: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String, List(Of System.String))
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String, System.Collections.Generic.List(Of System.String))
   nameWithType: OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(String, List<String>)
   nameWithType.vb: OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(String, List(Of String))
 - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn*
@@ -7139,13 +7310,13 @@ references:
   commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn
   fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn
   nameWithType: OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn
-- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,List{System.String})
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
   name: SafeFormatAlterTableDropColumn(String, List<String>)
-  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableDropColumn_System_String_List_System_String__
-  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,List{System.String})
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
   name.vb: SafeFormatAlterTableDropColumn(String, List(Of String))
-  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String, List<System.String>)
-  fullName.vb: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String, List(Of System.String))
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String, System.Collections.Generic.List(Of System.String))
   nameWithType: OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(String, List<String>)
   nameWithType.vb: OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(String, List(Of String))
 - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn*
@@ -7214,11 +7385,11 @@ references:
   commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsSchemaNameSpace
   fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsSchemaNameSpace
   nameWithType: OrpheusMySQLServerDDLHelper.SupportsSchemaNameSpace
-- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(Type)
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(System.Type)
   name: TypeToString(Type)
-  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_TypeToString_Type_
-  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(Type)
-  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(Type)
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_TypeToString_System_Type_
+  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(System.Type)
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(System.Type)
   nameWithType: OrpheusMySQLServerDDLHelper.TypeToString(Type)
 - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString*
   name: TypeToString
@@ -7412,11 +7583,11 @@ references:
   commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DbEngineType
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DbEngineType
   nameWithType: OrpheusSQLServerDDLHelper.DbEngineType
-- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DbTypeToString(DbType)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DbTypeToString(System.Data.DbType)
   name: DbTypeToString(DbType)
-  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_DbTypeToString_DbType_
-  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DbTypeToString(DbType)
-  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DbTypeToString(DbType)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_DbTypeToString_System_Data_DbType_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DbTypeToString(System.Data.DbType)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DbTypeToString(System.Data.DbType)
   nameWithType: OrpheusSQLServerDDLHelper.DbTypeToString(DbType)
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DbTypeToString*
   name: DbTypeToString
@@ -7520,13 +7691,13 @@ references:
   commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ModifyColumnCommand
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ModifyColumnCommand
   nameWithType: OrpheusSQLServerDDLHelper.ModifyColumnCommand
-- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,List{System.String})
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
   name: SafeFormatAlterTableAddColumn(String, List<String>)
-  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SafeFormatAlterTableAddColumn_System_String_List_System_String__
-  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,List{System.String})
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
   name.vb: SafeFormatAlterTableAddColumn(String, List(Of String))
-  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String, List<System.String>)
-  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String, List(Of System.String))
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String, System.Collections.Generic.List(Of System.String))
   nameWithType: OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(String, List<String>)
   nameWithType.vb: OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(String, List(Of String))
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn*
@@ -7535,13 +7706,13 @@ references:
   commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn
   nameWithType: OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn
-- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,List{System.String})
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
   name: SafeFormatAlterTableDropColumn(String, List<String>)
-  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SafeFormatAlterTableDropColumn_System_String_List_System_String__
-  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,List{System.String})
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
   name.vb: SafeFormatAlterTableDropColumn(String, List(Of String))
-  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String, List<System.String>)
-  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String, List(Of System.String))
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String, System.Collections.Generic.List<System.String>)
+  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String, System.Collections.Generic.List(Of System.String))
   nameWithType: OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(String, List<String>)
   nameWithType.vb: OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn(String, List(Of String))
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableDropColumn*
@@ -7628,11 +7799,11 @@ references:
   commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SupportsSchemaNameSpace
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SupportsSchemaNameSpace
   nameWithType: OrpheusSQLServerDDLHelper.SupportsSchemaNameSpace
-- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.TypeToString(Type)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.TypeToString(System.Type)
   name: TypeToString(Type)
-  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_TypeToString_Type_
-  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.TypeToString(Type)
-  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.TypeToString(Type)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_TypeToString_System_Type_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.TypeToString(System.Type)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.TypeToString(System.Type)
   nameWithType: OrpheusSQLServerDDLHelper.TypeToString(Type)
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.TypeToString*
   name: TypeToString

@@ -18,6 +18,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="OrpheusMySQLServer.config" />
+    <None Remove="OrpheusSQLServer.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Xml" Version="2.0.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
@@ -42,10 +48,10 @@
     <None Update="OrpheusMySQL.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="OrpheusMySQLServer.config">
+    <None Update="OrpheusMySQLServerConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="OrpheusSQLServer.config">
+    <None Update="OrpheusSQLServerConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

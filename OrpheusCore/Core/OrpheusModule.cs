@@ -111,6 +111,7 @@ namespace OrpheusCore
 
         private IOrpheusTable getTableByName(string tableName, List<IOrpheusTable> tableCollection)
         {
+            //taking under consideration a named SQL server schema, of format [SchemaName].[ObjectName]. The splitter char is the dot.
             var moduleTable = tableCollection.Where(obj =>
                   obj.SchemaName == null ? obj.Name.ToLower() == tableName.ToLower() : obj.Name.Split(".")[1].Trim().ToLower() == tableName.ToLower()
                ).FirstOrDefault();
@@ -121,6 +122,7 @@ namespace OrpheusCore
 
         private IOrpheusTable<T> getTableByName<T>(string tableName, List<IOrpheusTable> tableCollection)
         {
+            //taking under consideration a named SQL server schema, of format [SchemaName].[ObjectName]. The splitter char is the dot.
             var moduleTable = tableCollection.Where(obj =>
                   obj.SchemaName == null ? obj.Name.ToLower() == tableName.ToLower() : obj.Name.Split(".")[1].Trim().ToLower() == tableName.ToLower()
                ).FirstOrDefault();
@@ -302,7 +304,6 @@ namespace OrpheusCore
         /// will be saved as well. All master-detail relationships and keys will be updated automatically.
         /// </summary>
         /// <param name="database">Module's database</param>
-        /// <param name="definition">Module's definition</param>
         public OrpheusModule(IOrpheusDatabase database)
         {
             this.Database = database;
@@ -311,6 +312,14 @@ namespace OrpheusCore
             this.initializeModuleDefinition();
         }
 
+        /// <summary>
+        /// OrpheusModule class represents a logical division and grouping of a set of tables.
+        /// For example you can an OrdersModule, which will be comprised from many different tables.
+        /// Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,
+        /// will be saved as well. All master-detail relationships and keys will be updated automatically.
+        /// </summary>
+        /// <param name="database">Module's database.</param>
+        /// <param name="definition">Module definition.</param>
         public OrpheusModule(IOrpheusDatabase database, IOrpheusModuleDefinition definition):this(database)
         {
             this.Definition = definition;

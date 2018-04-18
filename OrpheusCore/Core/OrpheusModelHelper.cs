@@ -1,12 +1,12 @@
-﻿using OrpheusAttributes;
-using OrpheusCore.SchemaBuilder;
+﻿using Microsoft.Extensions.Logging;
+using OrpheusAttributes;
+using OrpheusCore.ServiceProvider;
 using OrpheusInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace OrpheusCore
 {
@@ -32,6 +32,7 @@ namespace OrpheusCore
         //caching in memory of properties and attributes, to improve performance.
         private PropertyInfo[] modelProperties;
         private Dictionary<PropertyInfo, object[]> propertyAttributes;
+        private ILogger logger;
         #endregion
 
         #region private methods
@@ -377,8 +378,9 @@ namespace OrpheusCore
         /// and the current version of the corresponding db table.
         /// </summary>
         /// <param name="schemaObj"></param>
+        /// <param name="ddlHelper"></param>
         /// <returns></returns>
-        public List<string> GetAlterDDLCommands(ISchemaDataObject schemaObj)
+        public List<string> GetAlterDDLCommands(ISchemaDataObject schemaObj, IOrpheusDDLHelper ddlHelper)
         {
             var result = new List<string>();
             var selectCommand = schemaObj.DB.CreateCommand();
@@ -409,12 +411,30 @@ namespace OrpheusCore
                         //nullable types are treated the same from the DB perspective, so we don't want to do any changes to nullable types.
                         //all enum types are treated a integers
                         //if the field exists but the data type has changed.
-                        if (!isNullable && !modelProperty.PropertyType.IsEnum && modelProperty.PropertyType != fieldType)
+
+                        //if the underlying database engine doesn't support GUID type,
+                        //expect that the field type would be string.
+                        if(modelProperty.PropertyType == typeof(Guid) && !ddlHelper.SupportsGuidType)
                         {
-                            var existingField = schemaObj.Fields.First(fld => fld.Name.ToLower() == fieldName.ToLower());
-                            if (existingField != null)
+                            if (!isNullable && !modelProperty.PropertyType.IsEnum && fieldType != typeof(string))
                             {
-                                alteredTypeFields.Add(existingField.SQL());
+                                var existingField = schemaObj.Fields.First(fld => fld.Name.ToLower() == fieldName.ToLower());
+                                if (existingField != null)
+                                {
+                                    alteredTypeFields.Add(existingField.SQL());
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //ddlHelper.SupportsGuidType
+                            if (!isNullable && !modelProperty.PropertyType.IsEnum && modelProperty.PropertyType != fieldType)
+                            {
+                                var existingField = schemaObj.Fields.First(fld => fld.Name.ToLower() == fieldName.ToLower());
+                                if (existingField != null)
+                                {
+                                    alteredTypeFields.Add(existingField.SQL());
+                                }
                             }
                         }
                     }
@@ -450,7 +470,7 @@ namespace OrpheusCore
             }
             catch (Exception e)
             {
-                //schemaObj.logger.LogError(e.Message);
+                this.logger.LogError(e.Message);
                 throw e;
             }
             finally
@@ -471,6 +491,7 @@ namespace OrpheusCore
         /// <param name="modelType"></param>
         public OrpheusModelHelper(Type modelType)
         {
+            this.logger = OrpheusServiceProvider.Resolve<ILogger>();
             this.modelType = modelType;
             this.PrimaryKeys = new Dictionary<string, PrimaryKey>();
             this.ForeignKeys = new Dictionary<string, ForeignKey>();

@@ -1,11 +1,9 @@
-﻿using System;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using OrpheusCore.Configuration;
-using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using OrpheusInterfaces;
 using OrpheusCore.SchemaBuilder;
+using OrpheusInterfaces;
+using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace OrpheusCore.ServiceProvider
@@ -18,6 +16,7 @@ namespace OrpheusCore.ServiceProvider
         private static IServiceProvider serviceProvider;
         private static void initializeInternalOrpheusServices(IServiceCollection serviceCollection)
         {
+
             //data services.
             serviceCollection.AddTransient<IOrpheusTableOptions, OrpheusTableOptions>();
             serviceCollection.AddTransient<IOrpheusModuleDefinition, OrpheusModuleDefinition>();
@@ -31,8 +30,26 @@ namespace OrpheusCore.ServiceProvider
             serviceCollection.AddTransient<ISchemaTable, SchemaObjectTable>();
             serviceCollection.AddTransient<ISchemaObject, SchemaObject>();
             serviceCollection.AddTransient<ISchemaJoinDefinition, SchemaJoinDefinition>();
-            //serviceCollection.AddTransient<ISchemaNameSpaceObject, SchemaNameSpaceObject>();
             serviceCollection.AddTransient<ISchemaDataObject, SchemaDataObject>();
+
+            serviceCollection.AddOptions();
+            serviceCollection.Configure<LoggingConfiguration>(ConfigurationManager.ConfigurationInstance.GetSection("Logging"));
+            serviceCollection.Configure<List<ServiceProviderItem>>(ConfigurationManager.ConfigurationInstance.GetSection("Services"));
+            serviceCollection.Configure<OrpheusConfiguration>(ConfigurationManager.ConfigurationInstance);
+        }
+
+        /// <summary>
+        /// Initializes services DI.
+        /// </summary>
+        public static void InitializeServiceProvider()
+        {
+            if (OrpheusServiceProvider.serviceProvider == null)
+            {
+                var sc = new ServiceCollection();
+                initializeInternalOrpheusServices(sc);
+                ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(sc);
+                OrpheusServiceProvider.serviceProvider = sc.BuildServiceProvider();
+            }
         }
 
         /// <summary>
@@ -43,12 +60,7 @@ namespace OrpheusCore.ServiceProvider
         {
             get
             {
-                if(OrpheusServiceProvider.serviceProvider == null)
-                {
-                    var sc = new ServiceCollection();
-                    ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(sc);
-                    OrpheusServiceProvider.serviceProvider = sc.BuildServiceProvider();
-                }
+                OrpheusServiceProvider.InitializeServiceProvider();
                 return OrpheusServiceProvider.serviceProvider;
             }
         }
@@ -83,7 +95,6 @@ namespace OrpheusCore.ServiceProvider
                         }
                 }
             }
-            initializeInternalOrpheusServices(serviceCollection);
         }
 
         /// <summary>

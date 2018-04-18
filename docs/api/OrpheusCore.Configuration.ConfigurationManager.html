@@ -94,16 +94,16 @@
   <h6><strong>Assembly</strong>: OrpheusCore.dll</h6>
   <h5 id="OrpheusCore_Configuration_ConfigurationManager_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class ConfigurationManager : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class ConfigurationManager</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_Configuration.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.Configuration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_Configuration.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.Configuration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L93">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L56">View Source</a>
   </span>
   <a id="OrpheusCore_Configuration_ConfigurationManager_Configuration_" data-uid="OrpheusCore.Configuration.ConfigurationManager.Configuration*"></a>
   <h4 id="OrpheusCore_Configuration_ConfigurationManager_Configuration" data-uid="OrpheusCore.Configuration.ConfigurationManager.Configuration">Configuration</h4>
@@ -131,19 +131,18 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_CurrentDirectory.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.CurrentDirectory%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_ConfigurationInstance.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L88">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L67">View Source</a>
   </span>
-  <a id="OrpheusCore_Configuration_ConfigurationManager_CurrentDirectory_" data-uid="OrpheusCore.Configuration.ConfigurationManager.CurrentDirectory*"></a>
-  <h4 id="OrpheusCore_Configuration_ConfigurationManager_CurrentDirectory" data-uid="OrpheusCore.Configuration.ConfigurationManager.CurrentDirectory">CurrentDirectory</h4>
-  <div class="markdown level1 summary"><p>Returns the current directory, where Orpheus is being executed.</p>
-</div>
+  <a id="OrpheusCore_Configuration_ConfigurationManager_ConfigurationInstance_" data-uid="OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance*"></a>
+  <h4 id="OrpheusCore_Configuration_ConfigurationManager_ConfigurationInstance" data-uid="OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance">ConfigurationInstance</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string CurrentDirectory { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static IConfiguration ConfigurationInstance { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -155,7 +154,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><span class="xref">Microsoft.Extensions.Configuration.IConfiguration</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -164,35 +163,19 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_Microsoft_Extensions_Configuration_IConfiguration_.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L30">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L19">View Source</a>
   </span>
   <a id="OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_" data-uid="OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration*"></a>
-  <h4 id="OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration" data-uid="OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration">InitializeConfiguration()</h4>
-  <div class="markdown level1 summary"><p>Initializes default Orpheus configuration. Default configuration file lives in the executing folder of the assembly and its name is &apos;Orpheus.config&apos;</p>
+  <h4 id="OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_Microsoft_Extensions_Configuration_IConfiguration_" data-uid="OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration)">InitializeConfiguration(IConfiguration)</h4>
+  <div class="markdown level1 summary"><p>Initialize configuration.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void InitializeConfiguration()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_OrpheusCore_Configuration_OrpheusConfiguration_.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(OrpheusCore.Configuration.OrpheusConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L39">View Source</a>
-  </span>
-  <a id="OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_" data-uid="OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration*"></a>
-  <h4 id="OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_OrpheusCore_Configuration_OrpheusConfiguration_" data-uid="OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(OrpheusCore.Configuration.OrpheusConfiguration)">InitializeConfiguration(OrpheusConfiguration)</h4>
-  <div class="markdown level1 summary"><p>Initialize configuration with an existing configuration object.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void InitializeConfiguration(OrpheusConfiguration configuration)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void InitializeConfiguration(IConfiguration configuration)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -205,7 +188,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="OrpheusCore.Configuration.OrpheusConfiguration.html">OrpheusConfiguration</a></td>
+        <td><span class="xref">Microsoft.Extensions.Configuration.IConfiguration</span></td>
         <td><span class="parametername">configuration</span></td>
         <td></td>
       </tr>
@@ -213,10 +196,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L48">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L29">View Source</a>
   </span>
   <a id="OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_" data-uid="OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration*"></a>
   <h4 id="OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_System_String_" data-uid="OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(System.String)">InitializeConfiguration(String)</h4>
@@ -246,10 +229,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_SaveConfiguration_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusCore_Configuration_ConfigurationManager_SaveConfiguration_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L68">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusCore/Configuration/OrpheusConfiguration.cs/#L48">View Source</a>
   </span>
   <a id="OrpheusCore_Configuration_ConfigurationManager_SaveConfiguration_" data-uid="OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration*"></a>
   <h4 id="OrpheusCore_Configuration_ConfigurationManager_SaveConfiguration_System_String_" data-uid="OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration(System.String)">SaveConfiguration(String)</h4>

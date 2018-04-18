@@ -21,7 +21,7 @@ namespace OrpheusTestsBenchMark
         public void Insert10Rows()
         {
             var transactors = this.Database.CreateTable<TestModelTransactor>();
-            var transactorsData = TestDatabase.GetTransactors(10);
+            var transactorsData = this.GetTransactors(10);
             transactors.Add(transactorsData);
             transactors.Save();
         }
@@ -30,7 +30,7 @@ namespace OrpheusTestsBenchMark
         public void Insert100Rows()
         {
             var transactors = this.Database.CreateTable<TestModelTransactor>();
-            var transactorsData = TestDatabase.GetTransactors(100);
+            var transactorsData = this.GetTransactors(100);
             transactors.Add(transactorsData);
             transactors.Save();
         }
@@ -39,7 +39,7 @@ namespace OrpheusTestsBenchMark
         public void Insert1000Rows()
         {
             var transactors = this.Database.CreateTable<TestModelTransactor>();
-            var transactorsData = TestDatabase.GetTransactors(1000);
+            var transactorsData = this.GetTransactors(1000);
             transactors.Add(transactorsData);
             transactors.Save();
         }

@@ -26,7 +26,7 @@ namespace OrpheusTests
             tableOptions.KeyFields = new List<IOrpheusTableKeyField>();
             var usersTable = this.Database.CreateTable<TestModelUser>(tableOptions);
             var recordCount = 1000;
-            usersTable.Add(TestDatabase.GetRandomUsersForTesting(recordCount));
+            usersTable.Add(this.GetRandomUsersForTesting(recordCount));
 
             IDbTransaction trans = this.Database.BeginTransaction();
             //var deleteCommand = this.Database.CreateCommand();
@@ -64,7 +64,7 @@ namespace OrpheusTests
 
             var usersTable = this.Database.CreateTable<TestModelUser>(tableOptions);
             //adding data.
-            usersTable.Add(TestDatabase.GetRandomUsersForTesting());
+            usersTable.Add(this.GetRandomUsersForTesting());
             using(var tr = this.Database.BeginTransaction())
             {
                 usersTable.ExecuteInserts(tr);
@@ -121,7 +121,7 @@ namespace OrpheusTests
             var usersTable = this.Database.CreateTable<TestModelUser>(tableOptions);
 
             //adding data.
-            usersTable.Add(TestDatabase.GetRandomUsersForTesting());
+            usersTable.Add(this.GetRandomUsersForTesting());
             using (var tr = this.Database.BeginTransaction())
             {
                 usersTable.ExecuteInserts(tr);
@@ -223,7 +223,7 @@ namespace OrpheusTests
             tableOptions.KeyFields.Add(keyField);
 
             var usersTable = this.Database.CreateTable<TestModelUser>(tableOptions);
-            usersTable.Add(TestDatabase.GetRandomUsersForTesting());
+            usersTable.Add(this.GetRandomUsersForTesting());
 
             object[] userKeys = new object[] { usersTable.Data[0].UserId, usersTable.Data[10].UserId, usersTable.Data[99].UserId };
 
@@ -282,7 +282,7 @@ namespace OrpheusTests
             tableOptions.KeyFields.Add(keyField);
 
             var usersTable = this.Database.CreateTable<TestModelUser>(tableOptions);
-            var usersData = TestDatabase.GetRandomUsersForTesting(500);
+            var usersData = this.GetRandomUsersForTesting(500);
             usersTable.Add(usersData);
 
             object[] userKeys = new object[] { usersTable.Data[0].UserId, usersTable.Data[10].UserId, usersTable.Data[99].UserId };
@@ -321,7 +321,7 @@ namespace OrpheusTests
             this.ReCreateSchema();
 
             var usersTable = this.Database.CreateTable<TestModelUser>();
-            var usersData = TestDatabase.GetRandomUsersForTesting(500);
+            var usersData = this.GetRandomUsersForTesting(500);
             usersTable.Add(usersData);
             usersTable.Save();
 

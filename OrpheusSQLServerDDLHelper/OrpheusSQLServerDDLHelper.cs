@@ -16,7 +16,7 @@ namespace OrpheusSQLDDLHelper
         private Dictionary<Type,string> typeMap = new Dictionary<Type,string>();
         private Dictionary<int, string> dbTypeMap = new Dictionary<int, string>();
         private string databaseName;
-        private ISchemaObject dummySchemaObject;
+        //private ISchemaObject dummySchemaObject;
 
         private IDbCommand selectSchemaObjectQuery;
         private IDbCommand selectNamedSchemaObjectQuery;
@@ -117,6 +117,7 @@ namespace OrpheusSQLDDLHelper
         /// <param name="ddlCommand"></param>
         /// <param name="successCallback"></param>
         /// <param name="errorCallback"></param>
+        /// <param name="useMasterConnection"></param>
         private void executeDDLCommand(string ddlCommand,bool useMasterConnection = false, DDLCommandCallback successCallback = null, ErrorCallback errorCallback = null)
         {
             var sqlConnection = useMasterConnection ? this.masterConnection : this.secondConnection;
@@ -338,13 +339,14 @@ namespace OrpheusSQLDDLHelper
         /// <summary>
         /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
         /// </summary>
-        /// <param name="schemaObjectName">Schema object name</param>
+        /// <param name="schemaObject">Schema object</param>
         /// <returns>True if the object exists</returns>
         public bool SchemaObjectExists(ISchemaObject schemaObject)
         {
             
             string objectName = null;
-            if (schemaObject.Schema.Name == null)
+            string schemaName = schemaObject.Schema == null ? null : schemaObject.Schema.Name;
+            if (schemaName == null)
                 objectName = schemaObject.SQLName;
             else
             {
@@ -352,7 +354,7 @@ namespace OrpheusSQLDDLHelper
                 objectName = hasDot ? schemaObject.SQLName.Split('.')[1] : schemaObject.SQLName;
             }
 
-            return this.schemaObjectExists(objectName);
+            return this.schemaObjectExists(objectName, schemaName);
         }
 
         /// <summary>

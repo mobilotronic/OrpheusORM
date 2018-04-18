@@ -82,28 +82,32 @@
   
   <h1 id="OrpheusAttributes_SQLServerSchemaName" data-uid="OrpheusAttributes.SQLServerSchemaName" class="text-break">Class SQLServerSchemaName
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Schema name attribute. Decorate a class with this attribute, to define to which schema the model exists.
+It&apos;s only applicable when the underlying database engine is SQL server, as it&apos;s the only one, from the supported database engines, that has this functionality.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="OrpheusAttributes.OrpheusBaseAttribute.html">OrpheusBaseAttribute</a></div>
-    <div class="level2"><span class="xref">SQLServerSchemaName</span></div>
+    <div class="level1"><span class="xref">System.Attribute</span></div>
+    <div class="level2"><a class="xref" href="OrpheusAttributes.OrpheusBaseAttribute.html">OrpheusBaseAttribute</a></div>
+    <div class="level3"><span class="xref">SQLServerSchemaName</span></div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="OrpheusAttributes.html">OrpheusAttributes</a></h6>
   <h6><strong>Assembly</strong>: OrpheusAttributes.dll</h6>
   <h5 id="OrpheusAttributes_SQLServerSchemaName_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SQLServerSchemaName : OrpheusBaseAttribute</code></pre>
+    <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Class)]
+public class SQLServerSchemaName : OrpheusBaseAttribute</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusAttributes_SQLServerSchemaName__ctor_System_String_.md&amp;value=---%0Auid%3A%20OrpheusAttributes.SQLServerSchemaName.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusAttributes_SQLServerSchemaName__ctor_System_String_.md&amp;value=---%0Auid%3A%20OrpheusAttributes.SQLServerSchemaName.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusAttributes/OrpheusSchemaNameAttribute.cs/#L23">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusAttributes/OrpheusSchemaNameAttribute.cs/#L24">View Source</a>
   </span>
   <a id="OrpheusAttributes_SQLServerSchemaName__ctor_" data-uid="OrpheusAttributes.SQLServerSchemaName.#ctor*"></a>
   <h4 id="OrpheusAttributes_SQLServerSchemaName__ctor_System_String_" data-uid="OrpheusAttributes.SQLServerSchemaName.#ctor(System.String)">SQLServerSchemaName(String)</h4>
@@ -136,10 +140,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/redacted-user/OrpheusORM/new/master/apiSpec/new?filename=OrpheusAttributes_SQLServerSchemaName_SchemaName.md&amp;value=---%0Auid%3A%20OrpheusAttributes.SQLServerSchemaName.SchemaName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/configuration/apiSpec/new?filename=OrpheusAttributes_SQLServerSchemaName_SchemaName.md&amp;value=---%0Auid%3A%20OrpheusAttributes.SQLServerSchemaName.SchemaName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/master/OrpheusAttributes/OrpheusSchemaNameAttribute.cs/#L17">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/configuration/OrpheusAttributes/OrpheusSchemaNameAttribute.cs/#L18">View Source</a>
   </span>
   <a id="OrpheusAttributes_SQLServerSchemaName_SchemaName_" data-uid="OrpheusAttributes.SQLServerSchemaName.SchemaName*"></a>
   <h4 id="OrpheusAttributes_SQLServerSchemaName_SchemaName" data-uid="OrpheusAttributes.SQLServerSchemaName.SchemaName">SchemaName</h4>

@@ -20,8 +20,12 @@
     <DocumentationFile>bin\Release\netcoreapp2.0\OrpheusMySQLDDLHelper.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\OrpheusMySQLDDLHelper.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="MySqlConnector" Version="0.26.5" />
+    <PackageReference Include="MySql.Data" Version="6.10.6" />
   </ItemGroup>
 
   <ItemGroup>
