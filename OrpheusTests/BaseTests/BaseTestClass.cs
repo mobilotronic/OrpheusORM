@@ -103,7 +103,7 @@ namespace OrpheusTests
         /// </summary>
         public void Initialize()
         {
-            this.Database.Connect(this.ConnectionString);
+            this.Database.Connect();
         }
 
         public TestSchema CreateSchema(string name = null)
@@ -179,14 +179,6 @@ namespace OrpheusTests
         }
 
         public string CurrentDirectory { get { return this.assemblyDirectory; } }
-
-        ~BaseTestClass()
-        {
-            if(this.db != null)
-            {
-                this.db.Disconnect();
-            }
-        }
         #endregion
 
         #region schema related

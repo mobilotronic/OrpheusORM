@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using OrpheusCore.ServiceProvider;
 using System.IO;
@@ -16,10 +17,11 @@ namespace OrpheusCore.Configuration
         /// Initialize configuration.
         /// </summary>
         /// <param name="configuration"></param>
-        public static void InitializeConfiguration(IConfiguration configuration)
+        /// <param name="services"></param>
+        public static void InitializeConfiguration(IConfiguration configuration, IServiceCollection services = null)
         {
             configurationInstance = configuration;
-            OrpheusServiceProvider.InitializeServiceProvider();
+            OrpheusServiceProvider.InitializeServiceProvider(services);
         }
 
         /// <summary>

@@ -63,6 +63,42 @@ namespace OrpheusCore.Configuration
     }
 
     /// <summary>
+    /// Orpheus database configuration.
+    /// </summary>
+    public class DatabaseConnectionConfiguration
+    {
+        /// <summary>
+        /// Database configuration name.
+        /// </summary>
+        public string ConfigurationName { get; set; }
+        
+        /// <summary>
+        /// The database name.
+        /// </summary>
+        public string DatabaseName { get; set; }
+
+        /// <summary>
+        /// Server name or IP address.
+        /// </summary>
+        public string Server { get; set; }
+        
+        /// <summary>
+        /// User name.
+        /// </summary>
+        public string UserName { get; set; }
+
+        /// <summary>
+        /// Password.
+        /// </summary>
+        public string Password { get; set; }
+
+        /// <summary>
+        /// SQL Server specific.
+        /// </summary>
+        public bool UseIntegratedSecurity { get; set; }
+    }
+
+    /// <summary>
     /// Orpheus's configuration.
     /// </summary>
     public class OrpheusConfiguration
@@ -71,6 +107,11 @@ namespace OrpheusCore.Configuration
         /// List of services.
         /// </summary>
         public List<ServiceProviderItem> Services { get; set; }
+
+        /// <summary>
+        /// Database connection information.
+        /// </summary>
+        public DatabaseConnectionConfiguration DatabaseConnection { get; set; }
 
         /// <summary>
         /// Logging configuration.

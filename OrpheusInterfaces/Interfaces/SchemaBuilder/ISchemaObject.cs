@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrpheusInterfaces
 {
@@ -302,5 +299,10 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <returns></returns>
         string FormattedTableName();
+
+        /// <summary>
+        /// SQL server specific option, to create views with schema binding, in order to be able to create indexes on the view itself.
+        /// </summary>
+        bool WithSchemaBinding { get; set; }
     }
 }

@@ -91,66 +91,54 @@ choosing as long as it implements <code>System.Data.IDbConnection</code>, or a d
 This means that the consumer will need to somehow configure, which database engine will Orpheus target.</p>
 <p>Here comes into play Orpheus&#39;s configuration. Either by file or by code, you can define the database engine for Orpheus.</p>
 <h4 id="configuration-by-file">Configuration by file</h4>
-<p>One easy way to configure Orpheus is by using a configuration file. The configuration file, is basically a XML file that has the DI configuration for Orpheus.</p>
+<p>One easy way to configure Orpheus is by using a configuration file. The configuration file, is basically a JSON file that has the DI configuration for Orpheus.</p>
 <ul>
-<li>To initialize the configuration you can use the Orpheus configuration object.<pre><code class="lang-csharp">OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration();
-</code></pre>  By default Orpheus will try to find file <code>OrpheusCore.config</code> in the executing folder.
-  Alternatively you can define a file name.<pre><code class="lang-csharp">OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(&quot;MyPath\Orpheus.config&quot;);
-</code></pre><h5 id="configuration-sample">Configuration Sample</h5>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;OrpheusConfiguration xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-  &lt;Services&gt;
-    &lt;ServiceProviderItem&gt;
-      &lt;Implementation&gt;System.Data.SqlClient.SqlConnection, System.Data.SqlClient, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&lt;/Implementation&gt;
-      &lt;Service&gt;System.Data.IDbConnection, System.Data.Common, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&lt;/Service&gt;
-      &lt;ServiceLifeTime&gt;Transient&lt;/ServiceLifeTime&gt;
-    &lt;/ServiceProviderItem&gt;
-    &lt;ServiceProviderItem&gt;
-      &lt;Implementation&gt;OrpheusCore.OrpheusDatabase, OrpheusCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&lt;/Implementation&gt;
-      &lt;Service&gt;OrpheusInterfaces.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&lt;/Service&gt;
-      &lt;ServiceLifeTime&gt;Transient&lt;/ServiceLifeTime&gt;
-    &lt;/ServiceProviderItem&gt;
-    &lt;ServiceProviderItem&gt;
-      &lt;Implementation&gt;OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&lt;/Implementation&gt;
-      &lt;Service&gt;OrpheusInterfaces.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&lt;/Service&gt;
-      &lt;ServiceLifeTime&gt;Transient&lt;/ServiceLifeTime&gt;
-    &lt;/ServiceProviderItem&gt;
-    &lt;ServiceProviderItem&gt;
-      &lt;Implementation&gt;OrpheusLogger.OrpheusFileLogger, OrpheusLogger, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&lt;/Implementation&gt;
-      &lt;Service&gt;Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&lt;/Service&gt;
-      &lt;ServiceLifeTime&gt;Singleton&lt;/ServiceLifeTime&gt;
-    &lt;/ServiceProviderItem&gt;
-  &lt;/Services&gt;
-  &lt;Logging Level=&quot;Error&quot; MaxFileSize=&quot;1&quot; /&gt;
-&lt;/OrpheusConfiguration&gt;
+<li><p>To initialize the configuration you can use the Orpheus configuration object.</p>
+<pre><code class="lang-csharp">OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(IConfiguration configuration, IServiceCollection services = null);
+</code></pre><p>  If no services are defined, then Orpheus will be in self-service mode. This means that it will create its own service collection and register all required services there.</p>
+<p>  Alternatively you can define a file name. This will implicitly set Orpheus to self-service mode.</p>
+<pre><code class="lang-csharp">OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(&quot;MyPath\Orpheus.config&quot;);
+</code></pre><p>  <strong>Note:</strong> You don&#39;t have to have a separate file for Orpheus&#39;s configuration. Its configuration can live inside your existing configuration file.</p>
+<h5 id="configuration-sample">Configuration Sample</h5>
+<pre><code class="lang-javascript">{
+  &quot;Services&quot;: [
+    {
+      &quot;Implementation&quot;: &quot;System.Data.SqlClient.SqlConnection, System.Data.SqlClient, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;,
+      &quot;Service&quot;: &quot;System.Data.IDbConnection, System.Data.Common, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;,
+      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
+    },
+    {
+      &quot;Implementation&quot;: &quot;OrpheusCore.OrpheusDatabase, OrpheusCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
+      &quot;Service&quot;: &quot;OrpheusInterfaces.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
+      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
+    },
+    {
+      &quot;Implementation&quot;: &quot;OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
+      &quot;Service&quot;: &quot;OrpheusInterfaces.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
+      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
+    },
+    {
+      &quot;Implementation&quot;: &quot;OrpheusLogger.OrpheusFileLogger, OrpheusLogger, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
+      &quot;Service&quot;: &quot;Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;,
+      &quot;ServiceLifeTime&quot;: &quot;Singleton&quot;
+    }
+  ],
+  &quot;DatabaseConnection&quot;: 
+    {
+      &quot;ConfigurationName&quot;: &quot;ServiceConnection&quot;,
+      &quot;Server&quot;: &quot;[YourServer]&quot;,
+      &quot;DatabaseName&quot;: &quot;[YourDatabase]&quot;,
+      &quot;UseIntegratedSecurity&quot;: true
+    }
+  ,
+  &quot;Logging&quot;: {
+    &quot;Level&quot;: &quot;Debug&quot;,
+    &quot;MaxFileSize&quot;: 1
+  }
+}
 </code></pre></li>
 </ul>
-<h4 id="configuration-by-code">Configuration by code</h4>
-<p>If you don&#39;t want to have that configuration in a file or if you already have a configuration file, that has a different schema/structure
-than the one that Orpheus supports, you can initialize configuration by code.</p>
-<p>You simply create a <code>OrpheusConfiguration</code> class and populate it&#39;s properties.</p>
-<p>Imagine this scenario, where you have an ASP.net Core application and you want to use Orpheus,
-but you don&#39;t want to have a separate configuration file.</p>
-<pre><code class="lang-csharp">// This method gets called by the runtime. Use this method to add services to the container.
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddMvc();
-    var orpheusConfig = new OrpheusCore.Configuration.OrpheusConfiguration();
-    //here instead of having the services hardcoded, you can read them from your web.config or appsettings.json
-    //and populate the Services list.
-    orpheusConfig.Services = new List&lt;OrpheusCore.Configuration.ServiceProviderItem&gt;()
-    {
-        new OrpheusCore.Configuration.ServiceProviderItem()
-        {
-            Service = &quot;System.Data.IDbConnection, System.Data.Common, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;,
-            Implementation = &quot;System.Data.SqlClient.SqlConnection, System.Data.SqlClient, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;,
-            ServiceLifetime =  ServiceLifetime.Transient
-        }
-    };
-    OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(orpheusConfig);
-    OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(services);
-}
-</code></pre></article>
+</article>
           </div>
         </div>
       </div>
@@ -162,7 +150,7 @@ public void ConfigureServices(IServiceCollection services)
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Orpheus ORM - Original Author © 2017
+            Orpheus ORM - Original Author © 2018
             
           </div>
         </div>

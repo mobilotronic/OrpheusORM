@@ -81,7 +81,7 @@
 <p>Orpheus has a built-in schema generator engine, that you can use to create the database schema for your application.</p>
 <p>It&#39;s not mandatory to use it, in order to use Orpheus, but if you are starting a new project, you might find it useful.</p>
 <h3 id="schema-creation-options">Schema Creation Options</h3>
-<p>In the ORM frameworks world, there a couple of different options. Here are a couple of the main ones.</p>
+<p>In the ORM frameworks world, there are a few different options. Here are a couple of the main ones.</p>
 <ul>
 <li>Database First<ul>
 <li>Where the ORM reads your database and generates the models.</li>
@@ -212,7 +212,7 @@ invoice.AddDependency&lt;MercuryInvoiceType&gt;();
 <pre><code class="lang-csharp">Schema.Execute();
 </code></pre><p>This will iterate through the registered models, resolve the dependencies and create the database schema.</p>
 <h3 id="updating-an-existing-schema">Updating an existing schema</h3>
-<p>Updating a schema, particularly a complex, is always tricky. Orpheus&#39;s schema builder provides
+<p>Updating a schema, particularly a complex one, is always tricky. Orpheus&#39;s schema builder provides
 build-in support, for reconciling differences between your models and the corresponding tables.</p>
 <p>The preferred option would be, when you have a schema change, to instantiate a new <code>ISchema</code> and register
 only the models that have changes. This is definitely the most performant way to update your schema, using Orpheus, since only
@@ -232,7 +232,7 @@ that are already registered and Orpheus will reconcile field and constraint diff
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Orpheus ORM - Original Author © 2017
+            Orpheus ORM - Original Author © 2018
             
           </div>
         </div>

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrpheusInterfaces
 {
@@ -16,7 +13,7 @@ namespace OrpheusInterfaces
         /// Connects to the database engine defined in the connection string.
         /// </summary>
         void Connect(string connectionString = null);
-        
+
         /// <summary>
         /// Disconnects from the database engine.
         /// </summary>
@@ -32,13 +29,13 @@ namespace OrpheusInterfaces
         /// Last active transaction.
         /// </summary>
         IDbTransaction LastActiveTransaction { get; }
-           
+
         /// <summary>
         /// List of registered Orpheus modules.
         /// </summary>
         /// <returns>Modules that are part in the database</returns>
         List<IOrpheusModule> Modules { get; }
-        
+
         /// <summary>
         /// Register an Orpheus module to the database.
         /// </summary>
@@ -62,7 +59,7 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <param name="transaction">Transaction to be rolled-back.</param>
         void RollbackTransaction(IDbTransaction transaction);
-        
+
         /// <summary>
         /// Create a DbCommand.
         /// </summary>
@@ -76,7 +73,7 @@ namespace OrpheusInterfaces
         /// <param name="parameters">SQL parameters</param>
         /// <param name="parameterValues">SQL parameter values</param>
         /// <returns>A DbCommand instance.</returns>
-        IDbCommand CreatePreparedQuery(string SQL,List<string> parameters, List<object> parameterValues = null);
+        IDbCommand CreatePreparedQuery(string SQL, List<string> parameters, List<object> parameterValues = null);
 
         /// <summary>
         /// Returns a prepared query with parameters created.
@@ -89,7 +86,7 @@ namespace OrpheusInterfaces
         /// Mapping dictionary of types to data types.
         /// </summary>
         /// <returns>Type map dictionary between types and DbType.</returns>
-        Dictionary<Type,System.Data.DbType> TypeMap { get; }
+        Dictionary<Type, System.Data.DbType> TypeMap { get; }
 
         /// <summary>
         /// Returns true if the type is a nullable type.
@@ -115,7 +112,7 @@ namespace OrpheusInterfaces
         /// Gets the underlying IDbConnection connection string.
         /// </summary>
         /// <returns>The database connection string.</returns>
-        string ConnectionString { get;}
+        string ConnectionString { get; }
 
         /// <summary>
         /// Creates a table and sets its database.
@@ -132,7 +129,7 @@ namespace OrpheusInterfaces
         /// <param name="tableName">Table name</param>
         /// <param name="keyFields">Table key fields</param>
         /// <returns>An Orpheus table instance.</returns>
-        IOrpheusTable<T> CreateTable<T>(string tableName,List<IOrpheusTableKeyField> keyFields = null);
+        IOrpheusTable<T> CreateTable<T>(string tableName, List<IOrpheusTableKeyField> keyFields = null);
 
         /// <summary>
         /// Creates a table and sets its database,using the type name as the table name.
@@ -148,7 +145,7 @@ namespace OrpheusInterfaces
         /// <param name="version">Schema version</param>
         /// <param name="name">Schema name.From the supported db engines, only SQL server has support for named schemas.</param>
         /// <returns>An ISchema instance.</returns>
-        ISchema CreateSchema(Guid id,string description, double version, string name = null);
+        ISchema CreateSchema(Guid id, string description, double version, string name = null);
 
         /// <summary>
         /// Creates an OrpheusModule.
@@ -180,7 +177,7 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="SQL">SQL command to execute.</param>
-        /// <param name="tableName">Tablename.</param>
+        /// <param name="tableName">Table name.</param>
         /// <returns>A list of 'T'</returns>
         List<T> SQL<T>(string SQL, string tableName = null);
 
@@ -199,5 +196,10 @@ namespace OrpheusInterfaces
         /// <param name="DDLCommand">DbCommand to run.</param>
         /// <returns>True if command was successfully executed.</returns>
         bool ExecuteDDL(string DDLCommand);
+
+        /// <summary>
+        /// Exposing the underlying IDbConnection instance.
+        /// </summary>
+        IDbConnection DbConnection { get; }
     }
 }

@@ -21,6 +21,14 @@
       "ServiceLifeTime": "Singleton"
     }
   ],
+  "DatabaseConnection": 
+    {
+      "ConfigurationName": "ServiceConnection",
+      "Server": "[YourServer]",
+      "DatabaseName": "[YourDatabase]",
+      "UseIntegratedSecurity": true
+    }
+  ,
   "Logging": {
     "Level": "Debug",
     "MaxFileSize": 1

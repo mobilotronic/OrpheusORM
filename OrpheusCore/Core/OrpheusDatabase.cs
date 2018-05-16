@@ -167,9 +167,15 @@ namespace OrpheusCore
         /// Last active transaction.
         /// </summary>
         public IDbTransaction LastActiveTransaction { get; private set; }
-        
+
+        /// <summary>
+        /// Exposing the underlying IDbConnection instance.
+        /// </summary>
+        public IDbConnection DbConnection { get { return this.dbConnection; } }
+
         #endregion
 
+        #region constructors
         /// <summary>
         /// Creates an Orpheus database.
         /// </summary>
@@ -184,6 +190,7 @@ namespace OrpheusCore
             this.logger = logger;
             this.initializeTypeMap();
         }
+        #endregion
 
         #region public methods
 
@@ -344,13 +351,15 @@ namespace OrpheusCore
         {
             if (!this.Connected)
             {
-                if (connectionString != null)
-                    this.dbConnection.ConnectionString = connectionString;
                 try
                 {
                     if (this.ddlHelper.DB == null)
                         this.ddlHelper.DB = this;
                     this.ddlHelper.CreateDatabase();
+                    if (connectionString != null)
+                        this.dbConnection.ConnectionString = connectionString;
+                    else
+                        this.dbConnection.ConnectionString = this.ddlHelper.ConnectionString;
                     this.dbConnection.Open();
                 }
                 catch (Exception e)

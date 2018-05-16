@@ -4,7 +4,7 @@ Orpheus has a built-in schema generator engine, that you can use to create the d
 It's not mandatory to use it, in order to use Orpheus, but if you are starting a new project, you might find it useful.
 
 ### Schema Creation Options
-In the ORM frameworks world, there a couple of different options. Here are a couple of the main ones.
+In the ORM frameworks world, there are a few different options. Here are a couple of the main ones.
 
 * Database First
   * Where the ORM reads your database and generates the models.
@@ -159,7 +159,7 @@ Schema.Execute();
 This will iterate through the registered models, resolve the dependencies and create the database schema.
 
 ### Updating an existing schema
-Updating a schema, particularly a complex, is always tricky. Orpheus's schema builder provides
+Updating a schema, particularly a complex one, is always tricky. Orpheus's schema builder provides
 build-in support, for reconciling differences between your models and the corresponding tables.
 
 The preferred option would be, when you have a schema change, to instantiate a new ```ISchema``` and register

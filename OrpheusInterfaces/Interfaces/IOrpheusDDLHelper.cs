@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrpheusInterfaces
 {
@@ -170,6 +167,12 @@ namespace OrpheusInterfaces
         /// Returns the underlying connection type.
         /// </summary>
         DatabaseEngineType DbEngineType { get; }
+
+        /// <summary>
+        /// Builds the connection string.
+        /// </summary>
+        /// <returns></returns>
+        string ConnectionString { get; }
     }
 
     /// <summary>
@@ -196,6 +199,19 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <param name="schemaName"></param>
         void DropSchema(string schemaName);
+
+        /// <summary>
+        /// Schema separator. Char that separates the schema name and the schema object. By default in SQL server, the separator is the dot char.
+        /// </summary>
+        string SchemaSeparator { get;}
+
+        /// <summary>
+        /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
+        /// </summary>
+        /// <param name="schemaObjectName"></param>
+        /// <param name="schemaName"></param>
+        /// <returns></returns>
+        bool SchemaObjectExists(string schemaObjectName, string schemaName = null);
         #endregion
 
         #region database role
@@ -272,15 +288,77 @@ namespace OrpheusInterfaces
         /// </summary>
         /// <param name="enable"></param>
         void EnableContainedDatabases(bool enable);
-        #endregion
 
         /// <summary>
-        /// Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.
+        /// Sets the containment option for a database.
         /// </summary>
-        /// <param name="schemaObjectName"></param>
-        /// <param name="schemaName"></param>
-        /// <returns></returns>
-        bool SchemaObjectExists(string schemaObjectName, string schemaName = null);
+        /// <param name="containment">Containment value. NONE or PARTIAL</param>
+        /// <param name="databaseName"></param>
+        void SetDatabaseContainment(string containment, string databaseName = null);
+        #endregion
+
+        #region permissions
+        /// <summary>
+        /// Grants permission to a database principal.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="databasePrincipal"></param>
+        void Grant(string permission, string databasePrincipal);
+
+        /// <summary>
+        /// Grants permission to a database principal.
+        /// </summary>
+        /// <param name="permissions"></param>
+        /// <param name="databasePrincipal"></param>
+        void Grant(List<string> permissions, string databasePrincipal);
+
+        /// <summary>
+        /// Grants permission to a database principal for a specific schema object.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="schemaObject"></param>
+        /// <param name="databasePrincipal"></param>
+        void Grant(string permission, string schemaObject, string databasePrincipal);
+
+        /// <summary>
+        /// Deny permission to a database principal.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="databasePrincipal"></param>
+        void Deny(string permission, string databasePrincipal);
+
+        /// <summary>
+        /// Deny permissions to a database principal.
+        /// </summary>
+        /// <param name="permissions"></param>
+        /// <param name="databasePrincipal"></param>
+        void Deny(List<string> permissions, string databasePrincipal);
+
+        /// <summary>
+        /// Denies permission to a database principal for a specific schema object.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="schemaObject"></param>
+        /// <param name="databasePrincipal"></param>
+        void Deny(string permission, string schemaObject, string databasePrincipal);
+
+        /// <summary>
+        /// Revoke permission for a database principal.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="schemaObject"></param>
+        /// <param name="databasePrincipal"></param>
+        void Revoke(string permission,string schemaObject, string databasePrincipal);
+
+        /// <summary>
+        /// Revoke permissions for a database principal.
+        /// </summary>
+        /// <param name="permissions"></param>
+        /// <param name="schemaObject"></param>
+        /// <param name="databasePrincipal"></param>
+        void Revoke(List<string> permissions,string schemaObject, string databasePrincipal);
+        #endregion
+
     }
 
     /// <summary>
