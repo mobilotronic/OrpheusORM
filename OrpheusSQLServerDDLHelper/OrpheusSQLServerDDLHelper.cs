@@ -1,4 +1,5 @@
-﻿using OrpheusInterfaces;
+﻿using OrpheusCore.Configuration;
+using OrpheusInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,21 +16,25 @@ namespace OrpheusSQLDDLHelper
     {
         private Dictionary<Type,string> typeMap = new Dictionary<Type,string>();
         private Dictionary<int, string> dbTypeMap = new Dictionary<int, string>();
-        private string databaseName;
+        private string schemaSeparator = ".";
+        private string dataConnectionString;
         //private ISchemaObject dummySchemaObject;
 
         private IDbCommand selectSchemaObjectQuery;
         private IDbCommand selectNamedSchemaObjectQuery;
         private SqlConnection _secondConnection;
         private SqlConnection _masterConnection;
+        
+        /// <summary>
+        /// A second connection is required to perform database related actions, without affecting the connected state of the main database object.
+        /// </summary>
         private SqlConnection secondConnection
         {
             get
             {
                 if (this._secondConnection == null)
                 {
-                    SqlConnectionStringBuilder secondConnectionString = new SqlConnectionStringBuilder(this.db.ConnectionString);
-                    this._secondConnection = new SqlConnection(secondConnectionString.ConnectionString);
+                    this._secondConnection = new SqlConnection(this.ConnectionString);
                 }
                 return this._secondConnection;
             }
@@ -41,8 +46,17 @@ namespace OrpheusSQLDDLHelper
             {
                 if (this._masterConnection == null)
                 {
-                    SqlConnectionStringBuilder masterConnectionString = new SqlConnectionStringBuilder(this.db.ConnectionString);
+                    SqlConnectionStringBuilder masterConnectionString = new SqlConnectionStringBuilder();
+                    var masterConnectionConfiguration = ConfigurationManager.Configuration.DatabaseConnection;
+                    if (masterConnectionConfiguration == null)
+                        throw new ArgumentNullException("Missing database configuration from the configuration file.\r\nThis is required so Orpheus can perform database schema related actions.");
+                    masterConnectionString.DataSource = masterConnectionConfiguration.Server;
                     masterConnectionString.InitialCatalog = "master";
+                    masterConnectionString.IntegratedSecurity = masterConnectionConfiguration.UseIntegratedSecurity;
+                    if (masterConnectionConfiguration.UserName != null)
+                        masterConnectionString.UserID = masterConnectionConfiguration.UserName;
+                    if (masterConnectionConfiguration.Password != null)
+                        masterConnectionString.Password = masterConnectionConfiguration.Password;
                     this._masterConnection = new SqlConnection(masterConnectionString.ConnectionString);
                 }
                 return this._masterConnection;
@@ -209,7 +223,8 @@ namespace OrpheusSQLDDLHelper
                     this.selectSchemaObjectQuery.Parameters.Add(param);
                 }
 
-                this.secondConnection.Open();
+                if (this.secondConnection.State != ConnectionState.Open)
+                    this.secondConnection.Open();
                 IDataReader reader = null;
                 try
                 {
@@ -262,10 +277,8 @@ namespace OrpheusSQLDDLHelper
         public bool CreateDatabase()
         {
             var result = false;
-            SqlConnectionStringBuilder connStringBuilder = new SqlConnectionStringBuilder(this.db.ConnectionString);
-            var dbName = connStringBuilder.InitialCatalog;
-            if(!this.DatabaseExists(dbName))
-                this.executeDDLCommand(String.Format("CREATE DATABASE {0}", dbName), true, (dbCommand) => {
+            if(!this.DatabaseExists(ConfigurationManager.Configuration.DatabaseConnection.DatabaseName))
+                this.executeDDLCommand(String.Format("CREATE DATABASE {0}", ConfigurationManager.Configuration.DatabaseConnection.DatabaseName), true, (dbCommand) => {
                     result = true;
                 },(error)=> {
                     result = false;
@@ -388,19 +401,19 @@ namespace OrpheusSQLDDLHelper
             set
             {
                 this.db = value;
-                if(this.db != null && this.secondConnection == null)
-                {
-                    try
-                    {
-                        this.secondConnection.Open();
-                        this.secondConnection.Close();
-                    }
-                    catch
-                    {
-                        this.secondConnection.Dispose();
-                        this._secondConnection = null;
-                    }
-                }
+                //if(this.db != null && this.secondConnection == null)
+                //{
+                //    try
+                //    {
+                //        this.secondConnection.Open();
+                //        this.secondConnection.Close();
+                //    }
+                //    catch
+                //    {
+                //        this.secondConnection.Dispose();
+                //        this._secondConnection = null;
+                //    }
+                //}
             }
         }
 
@@ -492,13 +505,37 @@ namespace OrpheusSQLDDLHelper
         {
             get
             {
-                if (databaseName == null)
-                {
-                    var builder = new SqlConnectionStringBuilder(this.DB.ConnectionString);
-                    databaseName =  builder.InitialCatalog;
-                }
-                return databaseName;
+                return ConfigurationManager.Configuration.DatabaseConnection.DatabaseName;
             }
+        }
+
+        /// <summary>
+        /// Builds the connection string.
+        /// </summary>
+        /// <returns></returns>
+        public string ConnectionString
+        {
+            get
+            {
+                if (this.dataConnectionString == null)
+                {
+                    var dataConnectionConfiguration = ConfigurationManager.Configuration.DatabaseConnection;
+                    if (dataConnectionConfiguration == null)
+                        throw new ArgumentNullException("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.");
+                    var connBuilder = new SqlConnectionStringBuilder();
+                    connBuilder.DataSource = dataConnectionConfiguration.Server;
+                    connBuilder.InitialCatalog = dataConnectionConfiguration.DatabaseName;
+                    connBuilder.IntegratedSecurity = dataConnectionConfiguration.UseIntegratedSecurity;
+                    if (dataConnectionConfiguration.UserName != null)
+                        connBuilder.UserID = dataConnectionConfiguration.UserName;
+                    if (dataConnectionConfiguration.Password != null)
+                        connBuilder.Password = dataConnectionConfiguration.Password;
+
+                    this.dataConnectionString =  connBuilder.ConnectionString;
+                }
+                return this.dataConnectionString;
+            }
+
         }
 
         /// <summary>
@@ -571,6 +608,11 @@ namespace OrpheusSQLDDLHelper
                 this.executeDDLCommand(String.Format("DROP SCHEMA {0}", schemaName));
             }
         }
+
+        /// <summary>
+        /// Schema separator. Char that separates the schema name and the schema object. By default in SQL server, the separator is the dot char.
+        /// </summary>
+        public string SchemaSeparator { get { return this.schemaSeparator; } }
         #endregion
 
         #region database role
@@ -618,10 +660,13 @@ namespace OrpheusSQLDDLHelper
         /// <param name="owner"></param>
         public void CreateDatabaseRole(string roleName, string owner = null)
         {
-            var ddlString = String.Format("CREATE ROLE {0}", roleName);
-            if (owner != null)
-                ddlString = String.Format("{0} AUTHORIZATION {1}", owner);
-            this.executeDDLCommand(ddlString);
+            if (!this.DatabaseRoleExists(roleName))
+            {
+                var ddlString = String.Format("CREATE ROLE {0}", roleName);
+                if (owner != null)
+                    ddlString = String.Format("{0} AUTHORIZATION {1}", owner);
+                this.executeDDLCommand(ddlString);
+            }
         }
 
         /// <summary>
@@ -672,7 +717,8 @@ namespace OrpheusSQLDDLHelper
         /// <param name="password"></param>
         public void CreateDatabaseUser(string userName, string password)
         {
-            this.executeDDLCommand(String.Format("CREATE USER {0} WITH PASSWORD = '{1}'", userName, password));
+            if(!this.DatabaseUserExists(userName))
+                this.executeDDLCommand(String.Format("CREATE USER {0} WITH PASSWORD = '{1}'", userName, password));
         }
 
         /// <summary>
@@ -683,7 +729,8 @@ namespace OrpheusSQLDDLHelper
         /// <param name="newPassword"></param>
         public void ChangeDatabaseUserPassword(string userName, string oldPassword, string newPassword)
         {
-            this.executeDDLCommand(String.Format("ALTER USER {0} WITH PASSWORD = '{1} OLD_PASSWORD = '{2}'", userName, newPassword, oldPassword));
+            if (this.DatabaseUserExists(userName))
+                this.executeDDLCommand(String.Format("ALTER USER {0} WITH PASSWORD = '{1} OLD_PASSWORD = '{2}'", userName, newPassword, oldPassword));
         }
 
 
@@ -744,14 +791,14 @@ namespace OrpheusSQLDDLHelper
         /// <param name="enable"></param>
         public void EnableContainedDatabases(bool enable)
         {
-            SqlCommand spConfigure = new SqlCommand("sp_configure", this.secondConnection);
+            SqlCommand spConfigure = new SqlCommand("sp_configure", (SqlConnection)this.secondConnection);
             spConfigure.CommandType = CommandType.StoredProcedure;
             spConfigure.Parameters.Add(new SqlParameter("@configname", SqlDbType.VarChar, 35));
             spConfigure.Parameters.Add(new SqlParameter("@configvalue", SqlDbType.Int));
             spConfigure.Parameters["@configname"].Value = "contained database authentication";
             spConfigure.Parameters["@configvalue"].Value = enable ? 1 : 0;
 
-            SqlCommand reconfigure = this.secondConnection.CreateCommand();
+            SqlCommand reconfigure = (SqlCommand)this.secondConnection.CreateCommand();
             reconfigure.CommandText = "RECONFIGURE";
 
             try
@@ -765,6 +812,111 @@ namespace OrpheusSQLDDLHelper
             {
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Sets the containment option for a database.
+        /// </summary>
+        /// <param name="containment">Containment value. NONE or PARTIAL</param>
+        /// <param name="databaseName"></param>
+        public void SetDatabaseContainment(string containment, string databaseName = null)
+        {
+            databaseName = databaseName ?? this.DatabaseName;
+            //before we can set the containment option, we need to close all open connections.
+            SqlConnection.ClearAllPools();
+            this.secondConnection.Close();
+            this.db.Disconnect();
+            this.executeDDLCommand($"ALTER DATABASE [{databaseName}] SET CONTAINMENT = {containment}", true);
+            this.db.Connect();
+        }
+        #endregion
+
+        #region permissions
+        /// <summary>
+        /// Grants permission to a database principal.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="databasePrincipal"></param>
+        public void Grant(string permission, string databasePrincipal)
+        {
+            this.executeDDLCommand($"GRANT {permission} TO {databasePrincipal}");
+        }
+
+        /// <summary>
+        /// Grants permission to a database principal.
+        /// </summary>
+        /// <param name="permissions"></param>
+        /// <param name="databasePrincipal"></param>
+        public void Grant(List<string> permissions, string databasePrincipal)
+        {
+            foreach (var p in permissions)
+                this.Grant(p, databasePrincipal);
+        }
+
+        /// Grants permission to a database principal for a specific schema object.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="schemaObject"></param>
+        /// <param name="databasePrincipal"></param>
+        public void Grant(string permission, string schemaObject, string databasePrincipal)
+        {
+            this.executeDDLCommand($"GRANT {permission} ON {schemaObject} TO {databasePrincipal}");
+        }
+
+        /// <summary>
+        /// Deny permission to a database principal.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="databasePrincipal"></param>
+        public void Deny(string permission, string databasePrincipal)
+        {
+            this.executeDDLCommand($"DENY {permission} TO {databasePrincipal}");
+        }
+
+        /// <summary>
+        /// Deny permissions to a database principal.
+        /// </summary>
+        /// <param name="permissions"></param>
+        /// <param name="databasePrincipal"></param>
+        public void Deny(List<string> permissions, string databasePrincipal)
+        {
+            foreach (var p in permissions)
+                this.Deny(p, databasePrincipal);
+        }
+
+        /// <summary>
+        /// Denies permission to a database principal for a specific schema object.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="schemaObject"></param>
+        /// <param name="databasePrincipal"></param>
+        public void Deny(string permission, string schemaObject, string databasePrincipal)
+        {
+            this.executeDDLCommand($"DENY {permission} ON {schemaObject} TO {databasePrincipal}");
+        }
+
+
+        /// <summary>
+        /// Revokes permission for a database principal.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="schemaObject"></param>
+        /// <param name="databasePrincipal"></param>
+        public void Revoke(string permission,string schemaObject, string databasePrincipal)
+        {
+            this.executeDDLCommand($"REVOKE {permission} ON OBJECT::{schemaObject} FROM {databasePrincipal}");
+        }
+
+        /// <summary>
+        /// Revokes permissions for a database principal.
+        /// </summary>
+        /// <param name="permissions"></param>
+        /// <param name="schemaObject"></param>
+        /// <param name="databasePrincipal"></param>
+        public void Revoke(List<string> permissions,string schemaObject, string databasePrincipal)
+        {
+            foreach (var p in permissions)
+                this.Revoke(p, schemaObject,databasePrincipal);
         }
         #endregion
     }

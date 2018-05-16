@@ -35,21 +35,27 @@ namespace OrpheusCore.ServiceProvider
             serviceCollection.AddOptions();
             serviceCollection.Configure<LoggingConfiguration>(ConfigurationManager.ConfigurationInstance.GetSection("Logging"));
             serviceCollection.Configure<List<ServiceProviderItem>>(ConfigurationManager.ConfigurationInstance.GetSection("Services"));
+            serviceCollection.Configure<DatabaseConnectionConfiguration>(ConfigurationManager.ConfigurationInstance.GetSection("DatabaseConnection"));
             serviceCollection.Configure<OrpheusConfiguration>(ConfigurationManager.ConfigurationInstance);
         }
 
         /// <summary>
         /// Initializes services DI.
         /// </summary>
-        public static void InitializeServiceProvider()
+        public static void InitializeServiceProvider(IServiceCollection services = null)
         {
-            if (OrpheusServiceProvider.serviceProvider == null)
+            //if no service collection is passed, we are in self service mode.
+            //meaning all services are registered to the Orpheus internal service collection.
+            if (services == null)
             {
-                var sc = new ServiceCollection();
-                initializeInternalOrpheusServices(sc);
-                ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(sc);
-                OrpheusServiceProvider.serviceProvider = sc.BuildServiceProvider();
+                services = new ServiceCollection();
             }
+            //initialize internal Orpheus services.
+            OrpheusServiceProvider.initializeInternalOrpheusServices(services);
+            //initialize services that are defined in the configuration file.
+            OrpheusServiceProvider.InitializeServiceCollection(services);
+            //finally create a service provider, in order to be able to resolve services upon request.
+            OrpheusServiceProvider.serviceProvider = services.BuildServiceProvider();
         }
 
         /// <summary>
@@ -60,7 +66,8 @@ namespace OrpheusCore.ServiceProvider
         {
             get
             {
-                OrpheusServiceProvider.InitializeServiceProvider();
+                if(OrpheusServiceProvider.serviceProvider == null)
+                    OrpheusServiceProvider.InitializeServiceProvider();
                 return OrpheusServiceProvider.serviceProvider;
             }
         }
@@ -75,6 +82,11 @@ namespace OrpheusCore.ServiceProvider
             {
                 var serviceType = Type.GetType(scItem.Service);
                 var implementationType = Type.GetType(scItem.Implementation);
+                //if either of the service or implementation cannot be resolved, throw an error.
+                if(serviceType == null || implementationType == null)
+                {
+                    throw new Exception($"Service {scItem.Service} or {scItem.Implementation} could not be resolved.");
+                }
                 switch (scItem.ServiceLifetime)
                 {
                     case ServiceLifetime.Transient:

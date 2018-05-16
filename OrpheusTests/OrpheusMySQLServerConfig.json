@@ -24,5 +24,13 @@
   "Logging": {
     "Level": "Trace",
     "MaxFileSize": 1
-  }
+  },
+  "DatabaseConnection": 
+    {
+      "ConfigurationName": "ServiceConnection",
+      "Server": "[YourServer]",
+      "DatabaseName": "[YourDatabaseName]",
+      "UserName": "[YourUser]",
+      "Password": "[YourPassword]"
+    }
 }

@@ -472,12 +472,12 @@ references:
   commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
   fullName: OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
   nameWithType: ConfigurationManager.ConfigurationInstance
-- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration)
-  name: InitializeConfiguration(IConfiguration)
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_Microsoft_Extensions_Configuration_IConfiguration_
-  commentId: M:OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration)
-  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration)
-  nameWithType: ConfigurationManager.InitializeConfiguration(IConfiguration)
+- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: InitializeConfiguration(IConfiguration, IServiceCollection)
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration, Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: ConfigurationManager.InitializeConfiguration(IConfiguration, IServiceCollection)
 - uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(System.String)
   name: InitializeConfiguration(String)
   href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_System_String_
@@ -502,6 +502,84 @@ references:
   commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration
   fullName: OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration
   nameWithType: ConfigurationManager.SaveConfiguration
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration
+  name: DatabaseConnectionConfiguration
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html
+  commentId: T:OrpheusCore.Configuration.DatabaseConnectionConfiguration
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration
+  nameWithType: DatabaseConnectionConfiguration
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
+  name: ConfigurationName
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ConfigurationName
+  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
+  nameWithType: DatabaseConnectionConfiguration.ConfigurationName
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName*
+  name: ConfigurationName
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ConfigurationName_
+  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
+  nameWithType: DatabaseConnectionConfiguration.ConfigurationName
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
+  name: DatabaseName
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_DatabaseName
+  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
+  nameWithType: DatabaseConnectionConfiguration.DatabaseName
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName*
+  name: DatabaseName
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_DatabaseName_
+  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
+  nameWithType: DatabaseConnectionConfiguration.DatabaseName
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
+  name: Password
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Password
+  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
+  nameWithType: DatabaseConnectionConfiguration.Password
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password*
+  name: Password
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Password_
+  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
+  nameWithType: DatabaseConnectionConfiguration.Password
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
+  name: Server
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Server
+  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
+  nameWithType: DatabaseConnectionConfiguration.Server
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server*
+  name: Server
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Server_
+  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
+  nameWithType: DatabaseConnectionConfiguration.Server
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  name: UseIntegratedSecurity
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UseIntegratedSecurity
+  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurity
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity*
+  name: UseIntegratedSecurity
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UseIntegratedSecurity_
+  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurity
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
+  name: UserName
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UserName
+  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
+  nameWithType: DatabaseConnectionConfiguration.UserName
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName*
+  name: UserName
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UserName_
+  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
+  nameWithType: DatabaseConnectionConfiguration.UserName
 - uid: OrpheusCore.Configuration.LoggingConfiguration
   name: LoggingConfiguration
   href: api/OrpheusCore.Configuration.LoggingConfiguration.html
@@ -562,6 +640,18 @@ references:
   commentId: Overload:OrpheusCore.Configuration.OrpheusConfiguration.#ctor
   fullName: OrpheusCore.Configuration.OrpheusConfiguration.OrpheusConfiguration
   nameWithType: OrpheusConfiguration.OrpheusConfiguration
+- uid: OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnection
+  name: DatabaseConnection
+  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_DatabaseConnection
+  commentId: P:OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnection
+  fullName: OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnection
+  nameWithType: OrpheusConfiguration.DatabaseConnection
+- uid: OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnection*
+  name: DatabaseConnection
+  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_DatabaseConnection_
+  commentId: Overload:OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnection
+  fullName: OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnection
+  nameWithType: OrpheusConfiguration.DatabaseConnection
 - uid: OrpheusCore.Configuration.OrpheusConfiguration.DefaultStringSize
   name: DefaultStringSize
   href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_DefaultStringSize
@@ -898,6 +988,18 @@ references:
   commentId: Overload:OrpheusCore.OrpheusDatabase.CreateTableOptions
   fullName: OrpheusCore.OrpheusDatabase.CreateTableOptions
   nameWithType: OrpheusDatabase.CreateTableOptions
+- uid: OrpheusCore.OrpheusDatabase.DbConnection
+  name: DbConnection
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_DbConnection
+  commentId: P:OrpheusCore.OrpheusDatabase.DbConnection
+  fullName: OrpheusCore.OrpheusDatabase.DbConnection
+  nameWithType: OrpheusDatabase.DbConnection
+- uid: OrpheusCore.OrpheusDatabase.DbConnection*
+  name: DbConnection
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_DbConnection_
+  commentId: Overload:OrpheusCore.OrpheusDatabase.DbConnection
+  fullName: OrpheusCore.OrpheusDatabase.DbConnection
+  nameWithType: OrpheusDatabase.DbConnection
 - uid: OrpheusCore.OrpheusDatabase.DDLHelper
   name: DDLHelper
   href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_DDLHelper
@@ -3733,18 +3835,6 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaObjectView.createDDLString
   fullName: OrpheusCore.SchemaBuilder.SchemaObjectView.createDDLString
   nameWithType: SchemaObjectView.createDDLString
-- uid: OrpheusCore.SchemaBuilder.SchemaObjectView.formatSQLName
-  name: formatSQLName()
-  href: api/OrpheusCore.SchemaBuilder.SchemaObjectView.html#OrpheusCore_SchemaBuilder_SchemaObjectView_formatSQLName
-  commentId: M:OrpheusCore.SchemaBuilder.SchemaObjectView.formatSQLName
-  fullName: OrpheusCore.SchemaBuilder.SchemaObjectView.formatSQLName()
-  nameWithType: SchemaObjectView.formatSQLName()
-- uid: OrpheusCore.SchemaBuilder.SchemaObjectView.formatSQLName*
-  name: formatSQLName
-  href: api/OrpheusCore.SchemaBuilder.SchemaObjectView.html#OrpheusCore_SchemaBuilder_SchemaObjectView_formatSQLName_
-  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaObjectView.formatSQLName
-  fullName: OrpheusCore.SchemaBuilder.SchemaObjectView.formatSQLName
-  nameWithType: SchemaObjectView.formatSQLName
 - uid: OrpheusCore.SchemaBuilder.SchemaObjectView.FormattedTableName
   name: FormattedTableName()
   href: api/OrpheusCore.SchemaBuilder.SchemaObjectView.html#OrpheusCore_SchemaBuilder_SchemaObjectView_FormattedTableName
@@ -3805,6 +3895,18 @@ references:
   commentId: Overload:OrpheusCore.SchemaBuilder.SchemaObjectView.TableName
   fullName: OrpheusCore.SchemaBuilder.SchemaObjectView.TableName
   nameWithType: SchemaObjectView.TableName
+- uid: OrpheusCore.SchemaBuilder.SchemaObjectView.WithSchemaBinding
+  name: WithSchemaBinding
+  href: api/OrpheusCore.SchemaBuilder.SchemaObjectView.html#OrpheusCore_SchemaBuilder_SchemaObjectView_WithSchemaBinding
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObjectView.WithSchemaBinding
+  fullName: OrpheusCore.SchemaBuilder.SchemaObjectView.WithSchemaBinding
+  nameWithType: SchemaObjectView.WithSchemaBinding
+- uid: OrpheusCore.SchemaBuilder.SchemaObjectView.WithSchemaBinding*
+  name: WithSchemaBinding
+  href: api/OrpheusCore.SchemaBuilder.SchemaObjectView.html#OrpheusCore_SchemaBuilder_SchemaObjectView_WithSchemaBinding_
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaObjectView.WithSchemaBinding
+  fullName: OrpheusCore.SchemaBuilder.SchemaObjectView.WithSchemaBinding
+  nameWithType: SchemaObjectView.WithSchemaBinding
 - uid: OrpheusCore.SchemaBuilder.SchemaObjectViewTable
   name: SchemaObjectViewTable
   href: api/OrpheusCore.SchemaBuilder.SchemaObjectViewTable.html
@@ -3889,12 +3991,12 @@ references:
   commentId: Overload:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection
   fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection
   nameWithType: OrpheusServiceProvider.InitializeServiceCollection
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider
-  name: InitializeServiceProvider()
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceProvider
-  commentId: M:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider()
-  nameWithType: OrpheusServiceProvider.InitializeServiceProvider()
+- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: InitializeServiceProvider(IServiceCollection)
+  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceProvider_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: OrpheusServiceProvider.InitializeServiceProvider(IServiceCollection)
 - uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider*
   name: InitializeServiceProvider
   href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceProvider_
@@ -4428,6 +4530,18 @@ references:
   commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.CreateTableOptions
   fullName: OrpheusInterfaces.IOrpheusDatabase.CreateTableOptions
   nameWithType: IOrpheusDatabase.CreateTableOptions
+- uid: OrpheusInterfaces.IOrpheusDatabase.DbConnection
+  name: DbConnection
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_DbConnection
+  commentId: P:OrpheusInterfaces.IOrpheusDatabase.DbConnection
+  fullName: OrpheusInterfaces.IOrpheusDatabase.DbConnection
+  nameWithType: IOrpheusDatabase.DbConnection
+- uid: OrpheusInterfaces.IOrpheusDatabase.DbConnection*
+  name: DbConnection
+  href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_DbConnection_
+  commentId: Overload:OrpheusInterfaces.IOrpheusDatabase.DbConnection
+  fullName: OrpheusInterfaces.IOrpheusDatabase.DbConnection
+  nameWithType: IOrpheusDatabase.DbConnection
 - uid: OrpheusInterfaces.IOrpheusDatabase.DDLHelper
   name: DDLHelper
   href: api/OrpheusInterfaces.IOrpheusDatabase.html#OrpheusInterfaces_IOrpheusDatabase_DDLHelper
@@ -4581,6 +4695,18 @@ references:
   commentId: T:OrpheusInterfaces.IOrpheusDDLHelper
   fullName: OrpheusInterfaces.IOrpheusDDLHelper
   nameWithType: IOrpheusDDLHelper
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.ConnectionString
+  name: ConnectionString
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_ConnectionString
+  commentId: P:OrpheusInterfaces.IOrpheusDDLHelper.ConnectionString
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.ConnectionString
+  nameWithType: IOrpheusDDLHelper.ConnectionString
+- uid: OrpheusInterfaces.IOrpheusDDLHelper.ConnectionString*
+  name: ConnectionString
+  href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_ConnectionString_
+  commentId: Overload:OrpheusInterfaces.IOrpheusDDLHelper.ConnectionString
+  fullName: OrpheusInterfaces.IOrpheusDDLHelper.ConnectionString
+  nameWithType: IOrpheusDDLHelper.ConnectionString
 - uid: OrpheusInterfaces.IOrpheusDDLHelper.CreateDatabase
   name: CreateDatabase()
   href: api/OrpheusInterfaces.IOrpheusDDLHelper.html#OrpheusInterfaces_IOrpheusDDLHelper_CreateDatabase
@@ -6722,6 +6848,18 @@ references:
   commentId: Overload:OrpheusInterfaces.ISchemaView.TableName
   fullName: OrpheusInterfaces.ISchemaView.TableName
   nameWithType: ISchemaView.TableName
+- uid: OrpheusInterfaces.ISchemaView.WithSchemaBinding
+  name: WithSchemaBinding
+  href: api/OrpheusInterfaces.ISchemaView.html#OrpheusInterfaces_ISchemaView_WithSchemaBinding
+  commentId: P:OrpheusInterfaces.ISchemaView.WithSchemaBinding
+  fullName: OrpheusInterfaces.ISchemaView.WithSchemaBinding
+  nameWithType: ISchemaView.WithSchemaBinding
+- uid: OrpheusInterfaces.ISchemaView.WithSchemaBinding*
+  name: WithSchemaBinding
+  href: api/OrpheusInterfaces.ISchemaView.html#OrpheusInterfaces_ISchemaView_WithSchemaBinding_
+  commentId: Overload:OrpheusInterfaces.ISchemaView.WithSchemaBinding
+  fullName: OrpheusInterfaces.ISchemaView.WithSchemaBinding
+  nameWithType: ISchemaView.WithSchemaBinding
 - uid: OrpheusInterfaces.ISchemaViewTable
   name: ISchemaViewTable
   href: api/OrpheusInterfaces.ISchemaViewTable.html
@@ -6830,6 +6968,33 @@ references:
   commentId: Overload:OrpheusInterfaces.ISQLServerDDLHelper.DatabaseUserExists
   fullName: OrpheusInterfaces.ISQLServerDDLHelper.DatabaseUserExists
   nameWithType: ISQLServerDDLHelper.DatabaseUserExists
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.Collections.Generic.List{System.String},System.String)
+  name: Deny(List<String>, String)
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Deny_System_Collections_Generic_List_System_String__System_String_
+  commentId: M:OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.Collections.Generic.List{System.String},System.String)
+  name.vb: Deny(List(Of String), String)
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.Collections.Generic.List<System.String>, System.String)
+  fullName.vb: OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.Collections.Generic.List(Of System.String), System.String)
+  nameWithType: ISQLServerDDLHelper.Deny(List<String>, String)
+  nameWithType.vb: ISQLServerDDLHelper.Deny(List(Of String), String)
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.String,System.String)
+  name: Deny(String, String)
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Deny_System_String_System_String_
+  commentId: M:OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.String,System.String)
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.String, System.String)
+  nameWithType: ISQLServerDDLHelper.Deny(String, String)
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.String,System.String,System.String)
+  name: Deny(String, String, String)
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Deny_System_String_System_String_System_String_
+  commentId: M:OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.String,System.String,System.String)
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Deny(System.String, System.String, System.String)
+  nameWithType: ISQLServerDDLHelper.Deny(String, String, String)
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Deny*
+  name: Deny
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Deny_
+  commentId: Overload:OrpheusInterfaces.ISQLServerDDLHelper.Deny
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Deny
+  nameWithType: ISQLServerDDLHelper.Deny
 - uid: OrpheusInterfaces.ISQLServerDDLHelper.DropDatabaseRole(System.String)
   name: DropDatabaseRole(String)
   href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_DropDatabaseRole_System_String_
@@ -6890,6 +7055,54 @@ references:
   commentId: Overload:OrpheusInterfaces.ISQLServerDDLHelper.EnableContainedDatabases
   fullName: OrpheusInterfaces.ISQLServerDDLHelper.EnableContainedDatabases
   nameWithType: ISQLServerDDLHelper.EnableContainedDatabases
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.Collections.Generic.List{System.String},System.String)
+  name: Grant(List<String>, String)
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Grant_System_Collections_Generic_List_System_String__System_String_
+  commentId: M:OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.Collections.Generic.List{System.String},System.String)
+  name.vb: Grant(List(Of String), String)
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.Collections.Generic.List<System.String>, System.String)
+  fullName.vb: OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.Collections.Generic.List(Of System.String), System.String)
+  nameWithType: ISQLServerDDLHelper.Grant(List<String>, String)
+  nameWithType.vb: ISQLServerDDLHelper.Grant(List(Of String), String)
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.String,System.String)
+  name: Grant(String, String)
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Grant_System_String_System_String_
+  commentId: M:OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.String,System.String)
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.String, System.String)
+  nameWithType: ISQLServerDDLHelper.Grant(String, String)
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.String,System.String,System.String)
+  name: Grant(String, String, String)
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Grant_System_String_System_String_System_String_
+  commentId: M:OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.String,System.String,System.String)
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Grant(System.String, System.String, System.String)
+  nameWithType: ISQLServerDDLHelper.Grant(String, String, String)
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Grant*
+  name: Grant
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Grant_
+  commentId: Overload:OrpheusInterfaces.ISQLServerDDLHelper.Grant
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Grant
+  nameWithType: ISQLServerDDLHelper.Grant
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Revoke(System.Collections.Generic.List{System.String},System.String,System.String)
+  name: Revoke(List<String>, String, String)
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Revoke_System_Collections_Generic_List_System_String__System_String_System_String_
+  commentId: M:OrpheusInterfaces.ISQLServerDDLHelper.Revoke(System.Collections.Generic.List{System.String},System.String,System.String)
+  name.vb: Revoke(List(Of String), String, String)
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Revoke(System.Collections.Generic.List<System.String>, System.String, System.String)
+  fullName.vb: OrpheusInterfaces.ISQLServerDDLHelper.Revoke(System.Collections.Generic.List(Of System.String), System.String, System.String)
+  nameWithType: ISQLServerDDLHelper.Revoke(List<String>, String, String)
+  nameWithType.vb: ISQLServerDDLHelper.Revoke(List(Of String), String, String)
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Revoke(System.String,System.String,System.String)
+  name: Revoke(String, String, String)
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Revoke_System_String_System_String_System_String_
+  commentId: M:OrpheusInterfaces.ISQLServerDDLHelper.Revoke(System.String,System.String,System.String)
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Revoke(System.String, System.String, System.String)
+  nameWithType: ISQLServerDDLHelper.Revoke(String, String, String)
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.Revoke*
+  name: Revoke
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_Revoke_
+  commentId: Overload:OrpheusInterfaces.ISQLServerDDLHelper.Revoke
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.Revoke
+  nameWithType: ISQLServerDDLHelper.Revoke
 - uid: OrpheusInterfaces.ISQLServerDDLHelper.SchemaExists(System.String)
   name: SchemaExists(String)
   href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_SchemaExists_System_String_
@@ -6914,6 +7127,30 @@ references:
   commentId: Overload:OrpheusInterfaces.ISQLServerDDLHelper.SchemaObjectExists
   fullName: OrpheusInterfaces.ISQLServerDDLHelper.SchemaObjectExists
   nameWithType: ISQLServerDDLHelper.SchemaObjectExists
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.SchemaSeparator
+  name: SchemaSeparator
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_SchemaSeparator
+  commentId: P:OrpheusInterfaces.ISQLServerDDLHelper.SchemaSeparator
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.SchemaSeparator
+  nameWithType: ISQLServerDDLHelper.SchemaSeparator
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.SchemaSeparator*
+  name: SchemaSeparator
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_SchemaSeparator_
+  commentId: Overload:OrpheusInterfaces.ISQLServerDDLHelper.SchemaSeparator
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.SchemaSeparator
+  nameWithType: ISQLServerDDLHelper.SchemaSeparator
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.SetDatabaseContainment(System.String,System.String)
+  name: SetDatabaseContainment(String, String)
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_SetDatabaseContainment_System_String_System_String_
+  commentId: M:OrpheusInterfaces.ISQLServerDDLHelper.SetDatabaseContainment(System.String,System.String)
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.SetDatabaseContainment(System.String, System.String)
+  nameWithType: ISQLServerDDLHelper.SetDatabaseContainment(String, String)
+- uid: OrpheusInterfaces.ISQLServerDDLHelper.SetDatabaseContainment*
+  name: SetDatabaseContainment
+  href: api/OrpheusInterfaces.ISQLServerDDLHelper.html#OrpheusInterfaces_ISQLServerDDLHelper_SetDatabaseContainment_
+  commentId: Overload:OrpheusInterfaces.ISQLServerDDLHelper.SetDatabaseContainment
+  fullName: OrpheusInterfaces.ISQLServerDDLHelper.SetDatabaseContainment
+  nameWithType: ISQLServerDDLHelper.SetDatabaseContainment
 - uid: OrpheusInterfaces.IUniqueKeySchemaConstraint
   name: IUniqueKeySchemaConstraint
   href: api/OrpheusInterfaces.IUniqueKeySchemaConstraint.html
@@ -7169,6 +7406,18 @@ references:
   commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor
   fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.OrpheusMySQLServerDDLHelper
   nameWithType: OrpheusMySQLServerDDLHelper.OrpheusMySQLServerDDLHelper
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString
+  name: ConnectionString
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ConnectionString
+  commentId: P:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString
+  nameWithType: OrpheusMySQLServerDDLHelper.ConnectionString
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString*
+  name: ConnectionString
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ConnectionString_
+  commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString
+  nameWithType: OrpheusMySQLServerDDLHelper.ConnectionString
 - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase
   name: CreateDatabase()
   href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase
@@ -7445,6 +7694,18 @@ references:
   commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ChangeDatabaseUserPassword
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ChangeDatabaseUserPassword
   nameWithType: OrpheusSQLServerDDLHelper.ChangeDatabaseUserPassword
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ConnectionString
+  name: ConnectionString
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_ConnectionString
+  commentId: P:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ConnectionString
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ConnectionString
+  nameWithType: OrpheusSQLServerDDLHelper.ConnectionString
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ConnectionString*
+  name: ConnectionString
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_ConnectionString_
+  commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ConnectionString
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ConnectionString
+  nameWithType: OrpheusSQLServerDDLHelper.ConnectionString
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.CreateDatabase
   name: CreateDatabase()
   href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_CreateDatabase
@@ -7619,6 +7880,33 @@ references:
   commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DelimitedIndetifierStart
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DelimitedIndetifierStart
   nameWithType: OrpheusSQLServerDDLHelper.DelimitedIndetifierStart
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.Collections.Generic.List{System.String},System.String)
+  name: Deny(List<String>, String)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Deny_System_Collections_Generic_List_System_String__System_String_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.Collections.Generic.List{System.String},System.String)
+  name.vb: Deny(List(Of String), String)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.Collections.Generic.List<System.String>, System.String)
+  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.Collections.Generic.List(Of System.String), System.String)
+  nameWithType: OrpheusSQLServerDDLHelper.Deny(List<String>, String)
+  nameWithType.vb: OrpheusSQLServerDDLHelper.Deny(List(Of String), String)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.String,System.String)
+  name: Deny(String, String)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Deny_System_String_System_String_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.String,System.String)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.String, System.String)
+  nameWithType: OrpheusSQLServerDDLHelper.Deny(String, String)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.String,System.String,System.String)
+  name: Deny(String, String, String)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Deny_System_String_System_String_System_String_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.String,System.String,System.String)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny(System.String, System.String, System.String)
+  nameWithType: OrpheusSQLServerDDLHelper.Deny(String, String, String)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny*
+  name: Deny
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Deny_
+  commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Deny
+  nameWithType: OrpheusSQLServerDDLHelper.Deny
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.DropDatabaseRole(System.String)
   name: DropDatabaseRole(String)
   href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_DropDatabaseRole_System_String_
@@ -7679,6 +7967,33 @@ references:
   commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.EnableContainedDatabases
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.EnableContainedDatabases
   nameWithType: OrpheusSQLServerDDLHelper.EnableContainedDatabases
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.Collections.Generic.List{System.String},System.String)
+  name: Grant(List<String>, String)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Grant_System_Collections_Generic_List_System_String__System_String_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.Collections.Generic.List{System.String},System.String)
+  name.vb: Grant(List(Of String), String)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.Collections.Generic.List<System.String>, System.String)
+  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.Collections.Generic.List(Of System.String), System.String)
+  nameWithType: OrpheusSQLServerDDLHelper.Grant(List<String>, String)
+  nameWithType.vb: OrpheusSQLServerDDLHelper.Grant(List(Of String), String)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.String,System.String)
+  name: Grant(String, String)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Grant_System_String_System_String_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.String,System.String)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.String, System.String)
+  nameWithType: OrpheusSQLServerDDLHelper.Grant(String, String)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.String,System.String,System.String)
+  name: Grant(String, String, String)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Grant_System_String_System_String_System_String_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.String,System.String,System.String)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant(System.String, System.String, System.String)
+  nameWithType: OrpheusSQLServerDDLHelper.Grant(String, String, String)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant*
+  name: Grant
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Grant_
+  commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Grant
+  nameWithType: OrpheusSQLServerDDLHelper.Grant
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ModifyColumnCommand
   name: ModifyColumnCommand
   href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_ModifyColumnCommand
@@ -7691,6 +8006,27 @@ references:
   commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ModifyColumnCommand
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.ModifyColumnCommand
   nameWithType: OrpheusSQLServerDDLHelper.ModifyColumnCommand
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke(System.Collections.Generic.List{System.String},System.String,System.String)
+  name: Revoke(List<String>, String, String)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Revoke_System_Collections_Generic_List_System_String__System_String_System_String_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke(System.Collections.Generic.List{System.String},System.String,System.String)
+  name.vb: Revoke(List(Of String), String, String)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke(System.Collections.Generic.List<System.String>, System.String, System.String)
+  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke(System.Collections.Generic.List(Of System.String), System.String, System.String)
+  nameWithType: OrpheusSQLServerDDLHelper.Revoke(List<String>, String, String)
+  nameWithType.vb: OrpheusSQLServerDDLHelper.Revoke(List(Of String), String, String)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke(System.String,System.String,System.String)
+  name: Revoke(String, String, String)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Revoke_System_String_System_String_System_String_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke(System.String,System.String,System.String)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke(System.String, System.String, System.String)
+  nameWithType: OrpheusSQLServerDDLHelper.Revoke(String, String, String)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke*
+  name: Revoke
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_Revoke_
+  commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.Revoke
+  nameWithType: OrpheusSQLServerDDLHelper.Revoke
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
   name: SafeFormatAlterTableAddColumn(String, List<String>)
   href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__
@@ -7775,6 +8111,30 @@ references:
   commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectExists
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectExists
   nameWithType: OrpheusSQLServerDDLHelper.SchemaObjectExists
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaSeparator
+  name: SchemaSeparator
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SchemaSeparator
+  commentId: P:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaSeparator
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaSeparator
+  nameWithType: OrpheusSQLServerDDLHelper.SchemaSeparator
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaSeparator*
+  name: SchemaSeparator
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SchemaSeparator_
+  commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaSeparator
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaSeparator
+  nameWithType: OrpheusSQLServerDDLHelper.SchemaSeparator
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SetDatabaseContainment(System.String,System.String)
+  name: SetDatabaseContainment(String, String)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SetDatabaseContainment_System_String_System_String_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SetDatabaseContainment(System.String,System.String)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SetDatabaseContainment(System.String, System.String)
+  nameWithType: OrpheusSQLServerDDLHelper.SetDatabaseContainment(String, String)
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SetDatabaseContainment*
+  name: SetDatabaseContainment
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SetDatabaseContainment_
+  commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SetDatabaseContainment
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SetDatabaseContainment
+  nameWithType: OrpheusSQLServerDDLHelper.SetDatabaseContainment
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SupportsGuidType
   name: SupportsGuidType
   href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SupportsGuidType

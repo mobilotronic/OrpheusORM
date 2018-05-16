@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using OrpheusCore.Configuration;
 using OrpheusInterfaces;
 using System;
 using System.Collections.Generic;
@@ -14,12 +15,12 @@ namespace OrpheusMySQLDDLHelper
     {
         private Dictionary<Type, string> typeMap = new Dictionary<Type, string>();
         private Dictionary<int, string> dbTypeMap = new Dictionary<int, string>();
-        private string databaseName;
         private IDbCommand selectSchemaObjectTable;
         private IDbCommand selectSchemaObjectConstraint;
         private IDbCommand selectSchemaObjectPrimaryConstraint;
         private MySqlConnection secondConnection;
         private IOrpheusDatabase db;
+        private string dataConnectionString;
 
         private void initializeTypeMap()
         {
@@ -98,7 +99,7 @@ namespace OrpheusMySQLDDLHelper
         public bool CreateDatabase()
         {
             var result = false;
-            MySql.Data.MySqlClient.MySqlConnectionStringBuilder connStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder(this.db.ConnectionString);
+            MySql.Data.MySqlClient.MySqlConnectionStringBuilder connStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder(this.ConnectionString);
             var dbName = connStringBuilder.Database;
             if (this.secondConnection != null && !this.DatabaseExists(dbName))
             {
@@ -368,9 +369,18 @@ namespace OrpheusMySQLDDLHelper
                 this.db = value;
                 if (this.db != null && this.secondConnection == null)
                 {
-                    MySqlConnectionStringBuilder connStringBuilder = new MySqlConnectionStringBuilder(this.db.ConnectionString);
-                    connStringBuilder.Database = "sys";
-                    this.secondConnection = new MySqlConnection(connStringBuilder.ConnectionString);
+                    var sysConnectionConfiguration = ConfigurationManager.Configuration.DatabaseConnection;
+                    if (sysConnectionConfiguration == null)
+                        throw new ArgumentNullException("Missing database configuration from the configuration file.\r\nThis is required so Orpheus can perform database schema related actions.");
+                    var connBuilder = new MySqlConnectionStringBuilder();
+                    connBuilder.Server = sysConnectionConfiguration.Server;
+                    connBuilder.Database = sysConnectionConfiguration.DatabaseName;
+                    if (sysConnectionConfiguration.UserName != null)
+                        connBuilder.UserID = sysConnectionConfiguration.UserName;
+                    if (sysConnectionConfiguration.Password != null)
+                        connBuilder.Password = sysConnectionConfiguration.Password;
+                    connBuilder.Database = "sys";
+                    this.secondConnection = new MySqlConnection(connBuilder.ConnectionString);
                     try
                     {
                         this.secondConnection.Open();
@@ -473,12 +483,36 @@ namespace OrpheusMySQLDDLHelper
         {
             get
             {
-                if (databaseName == null)
+                return ConfigurationManager.Configuration.DatabaseConnection.DatabaseName; 
+            }
+        }
+
+
+        /// <summary>
+        /// Builds the connection string.
+        /// </summary>
+        /// <returns></returns>
+        public string ConnectionString
+        {
+            get
+            {
+                if (this.dataConnectionString == null)
                 {
-                    var builder = new MySqlConnectionStringBuilder(this.DB.ConnectionString);
-                    databaseName =  builder.Database;
+                    var dataConnectionConfiguration = ConfigurationManager.Configuration.DatabaseConnection;
+                    if (dataConnectionConfiguration == null)
+                        throw new ArgumentNullException("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.");
+
+                    var connBuilder = new MySqlConnectionStringBuilder();
+                    connBuilder.Server = dataConnectionConfiguration.Server;
+                    connBuilder.Database = dataConnectionConfiguration.DatabaseName;
+                    if (dataConnectionConfiguration.UserName != null)
+                        connBuilder.UserID = dataConnectionConfiguration.UserName;
+                    if (dataConnectionConfiguration.Password != null)
+                        connBuilder.Password = dataConnectionConfiguration.Password;
+
+                    this.dataConnectionString = connBuilder.ConnectionString;
                 }
-                return databaseName;
+                return this.dataConnectionString;
             }
         }
 

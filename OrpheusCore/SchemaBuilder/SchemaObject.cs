@@ -91,7 +91,18 @@ namespace OrpheusCore.SchemaBuilder
         protected virtual string formatSQLName()
         {
             if (this.Schema.DB.DDLHelper.SupportsSchemaNameSpace && this.Schema.Name != null)
-                return String.Format("{0}.{1} {2}", this.Schema.Name, this._sqlName, this.AliasName);
+            {
+                //if the SQL name of the object already includes the schema name, just return the sqlname.
+                //there are cases, specially in views, where all the views can be belong to a schema
+                //but the tables that are part of the view, can belong to different schemas.
+                var schemaSeparator = this.Schema.DB.DDLHelperAs<ISQLServerDDLHelper>().SchemaSeparator;
+                if (this._sqlName.Contains(schemaSeparator))
+                {
+                    return String.Format("{0} {1}", this._sqlName, this.AliasName);
+                }
+                else
+                    return String.Format("{0}.{1} {2}", this.Schema.Name, this._sqlName, this.AliasName);
+            }
             else
                 return this.AliasName == null ? this._sqlName : String.Format("{0} {1}", this._sqlName, this.AliasName);
         }
@@ -952,19 +963,24 @@ namespace OrpheusCore.SchemaBuilder
         public string TableName { get; set; }
 
         /// <summary>
+        /// SQL server specific option, to create views with schema binding, in order to be able to create indexes on the view itself.
+        /// </summary>
+        public bool WithSchemaBinding { get; set; }
+
+        /// <summary>
         /// Gets the <see cref="SchemaObjectType"/>.
         /// </summary>
         /// <returns></returns>
         protected override SchemaObjectType getType() { return SchemaObjectType.sotView; }
 
-        /// <summary>
-        /// Overriding the default behavior, for view objects.
-        /// </summary>
-        /// <returns></returns>
-        protected override string formatSQLName()
-        {
-            return this._sqlName;
-        }
+        ///// <summary>
+        ///// Overriding the default behavior, for view objects.
+        ///// </summary>
+        ///// <returns></returns>
+        //protected override string formatSQLName()
+        //{
+        //    return this._sqlName;
+        //}
 
         /// <summary>
         /// Creates the DDL string for the schema object.
@@ -1002,12 +1018,20 @@ namespace OrpheusCore.SchemaBuilder
                                 joinObject.JoinDefinition.JoinKeyField);
                             joins.Add(joinString);
                         });
-                            result.Add(String.Format("CREATE VIEW {0} AS SELECT {1} FROM {2} {3}",
+                        if(this.WithSchemaBinding)
+                            result.Add(String.Format("CREATE VIEW {0} WITH SCHEMABINDING AS SELECT {1} FROM {2} {3}",
                                 this.SQLName,
                                 string.Join(",", fields.ToArray()),
                                 this.FormattedTableName(),
                                 string.Join(Environment.NewLine, joins.ToArray()))
                                 );
+                        else
+                        result.Add(String.Format("CREATE VIEW {0} AS SELECT {1} FROM {2} {3}",
+                            this.SQLName,
+                            string.Join(",", fields.ToArray()),
+                            this.FormattedTableName(),
+                            string.Join(Environment.NewLine, joins.ToArray()))
+                            );
                         break;
                     }
                 case DDLAction.ddlDrop:
@@ -1030,7 +1054,17 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public string FormattedTableName()
         {
-            return this.Schema.Name == null ? String.Format("{0} {1}", this.TableName, this.AliasName) : String.Format("{0}.{1} {2}", this.Schema.Name, this.TableName, this.AliasName);
+            if (this.Schema.Name == null)
+                return String.Format("{0} {1}", this.TableName, this.AliasName);
+            else
+            {
+                var schemaSeparator = this.Schema.DB.DDLHelperAs<ISQLServerDDLHelper>().SchemaSeparator;
+                if(this.TableName.Contains(schemaSeparator))
+                    return String.Format("{0} {1}", this.TableName, this.AliasName);
+                else
+                    return String.Format("{0}.{1} {2}", this.Schema.Name, this.TableName, this.AliasName);
+            }
+             
         }
 
         /// <summary>

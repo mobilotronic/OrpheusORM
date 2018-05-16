@@ -29,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OrpheusCore\OrpheusCore.csproj" />
     <ProjectReference Include="..\OrpheusInterfaces\OrpheusInterfaces.csproj" />
   </ItemGroup>
 

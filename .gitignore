@@ -51,3 +51,4 @@ Nuget/PublishPackage.cmd
 OrpheusTests/BaseTests/TestDatabaseConnectionStrings.cs
 Nuget/nuget.exe
 *.coverage
+*.nuspec
