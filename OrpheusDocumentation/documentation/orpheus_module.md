@@ -12,7 +12,7 @@ All master-detail relationships and keys will be updated automatically.
 ## Whats does the above mean exactly?
 You can use an OrpheusModule to logically group/divide your business logic.
 
-Using the example above, having an `OrdersModule`, you can have your BL for adding, updating
+Using the example above, having an `OrdersModule`, you can have your bussiness logic for adding, updating
 and deleting orders in one place.
 
 The OrpheusModule will manage for you, the master-detail relationships in your module.
@@ -123,10 +123,10 @@ var module = this.Database.CreateModule(moduleDefinition);
 
 ##### Getting references to module tables.
 ```csharp
-var transactors = module.GetReferenceTable<TestModelTransactor>("TestModelTransactor");
-var items = module.GetReferenceTable<TestModelItem>("TestModelItem");
-var orderLines = module.GetTable<TestModelOrderLine>("TestModelOrderLine");
-var order = module.GetTable<TestModelOrder>("TestModelOrder");
+var transactors = module.GetReferenceTable<TestModelTransactor>();
+var items = module.GetReferenceTable<TestModelItem>();
+var orderLines = module.GetTable<TestModelOrderLine>();
+var order = module.GetTable<TestModelOrder>();
 ```
 
 ##### Populating auxiliary data.

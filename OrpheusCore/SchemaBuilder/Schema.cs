@@ -1,14 +1,12 @@
-﻿using OrpheusInterfaces;
+﻿using Microsoft.Extensions.Logging;
+using OrpheusAttributes;
+using OrpheusInterfaces.Core;
+using OrpheusInterfaces.Schema;
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
-using System.Xml;
+using System.Linq;
 using System.Xml.Linq;
-using System.Runtime.InteropServices;
-using OrpheusAttributes;
-using Microsoft.Extensions.Logging;
 
 namespace OrpheusCore.SchemaBuilder
 {

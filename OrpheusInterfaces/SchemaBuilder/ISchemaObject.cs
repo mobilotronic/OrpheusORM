@@ -1,7 +1,8 @@
-﻿using System;
+﻿using OrpheusInterfaces.Core;
+using System;
 using System.Collections.Generic;
 
-namespace OrpheusInterfaces
+namespace OrpheusInterfaces.Schema
 {
 
     /// <summary>

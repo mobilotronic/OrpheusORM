@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
+using OrpheusInterfaces.Schema;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OrpheusTests.SQLServerTests
 {

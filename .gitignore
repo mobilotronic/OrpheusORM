@@ -21,6 +21,8 @@ OrpheusCore/OrpheusCore.config
 OrpheusDocumentation/_site/
 OrpheusDocumentation/DocFx
 OrpheusDocumentation/DocFx.original
+OrpheusDocumentation/DocFx.2.32.1.3
+OrpheusDocumentation/DocFx.2.25
 OrpheusDocumentation/obj
 OrpheusDocumentation/examples
 OrpheusAttributes/obj
@@ -52,3 +54,13 @@ OrpheusTests/BaseTests/TestDatabaseConnectionStrings.cs
 Nuget/nuget.exe
 *.coverage
 *.nuspec
+OrpheusTests/OrpheusSQLServerConfig.json
+OrpheusTests/OrpheusMySQLServerConfig.json
+*.cache
+*.props
+*.targets
+OrpheusSQLiteDDLHelper/obj/project.assets.json
+OrpheusSQLiteDDLHelper/OrpheusSQLiteDDLHelper.cs
+OrpheusSQLiteDDLHelper/OrpheusSQLiteDDLHelper.csproj
+OrpheusTests/OrpheusSQLiteServerConfig.json
+*.user

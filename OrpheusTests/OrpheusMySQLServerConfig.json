@@ -7,12 +7,12 @@
     },
     {
       "Implementation": "OrpheusCore.OrpheusDatabase, OrpheusCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "Service": "OrpheusInterfaces.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Service": "OrpheusInterfaces.Core.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "ServiceLifeTime": "Transient"
     },
     {
-      "Implementation": "OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper, OrpheusMySQLDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "Service": "OrpheusInterfaces.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Implementation": "OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Service": "OrpheusInterfaces.Core.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "ServiceLifeTime": "Transient"
     },
     {
@@ -22,15 +22,16 @@
     }
   ],
   "Logging": {
-    "Level": "Trace",
+    "Level": "Information",
     "MaxFileSize": 1
   },
-  "DatabaseConnection": 
+  "DatabaseConnections": [
     {
-      "ConfigurationName": "ServiceConnection",
-      "Server": "[YourServer]",
-      "DatabaseName": "[YourDatabaseName]",
-      "UserName": "[YourUser]",
-      "Password": "[YourPassword]"
+      "ConfigurationName": "Default",
+      "Server": "[redacted-host]",
+      "DatabaseName": "orpheusTestDB",
+      "UserName": "root",
+      "Password": "pQ5YtGJ3fdbMWKUFi8zz"
     }
+  ]
 }

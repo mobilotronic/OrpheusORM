@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using OrpheusCore.Configuration;
 using OrpheusCore.ServiceProvider;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
 using OrpheusTestModels;
 using System;
 using System.IO;

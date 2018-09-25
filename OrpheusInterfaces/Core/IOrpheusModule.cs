@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
-namespace OrpheusInterfaces
+namespace OrpheusInterfaces.Core
 {
     /// <summary>
     /// OrpheusModule represents a logical division and grouping of a set of tables.
@@ -42,21 +40,38 @@ namespace OrpheusInterfaces
         /// Saves all changes to the database.
         /// </summary>
         void Save();
-        
+       
         /// <summary>
         /// Loads a module's record from the database.
         /// </summary>
         /// <param name="keyValues"></param>
         void Load(List<object> keyValues = null);
 
-        ///<summary>
-        /// Loads a module's record from the database.
+        /// <summary>
+        /// Loads records from the DB to the table.
         /// You can configure having multiple fields and multiple values per field.
         /// Multiple field values are bound with a logical OR.
-        /// Multiple fields are bound with a logical AND
+        /// Multiple fields by default are bound with a logical OR.
+        /// Defining a logical operator, you can change the default behavior.
+        /// This applies only for the MainTable.
         /// </summary>
         /// <param name="keyValues"></param>
-        void Load(Dictionary<string, List<object>> keyValues);
+        /// <param name="logicalOperator"></param>
+        /// <param name="clearExistingData"></param>
+        void Load(Dictionary<string, List<object>> keyValues,LogicalOperator logicalOperator = LogicalOperator.loOR, bool clearExistingData = true);
+
+
+        /// <summary>
+        /// Loads main table data by executing a db command.
+        /// </summary>
+        /// <param name="dbCommand"></param>
+        /// <param name="clearExistingData"></param>
+        void Load(IDbCommand dbCommand, bool clearExistingData = true);
+
+        /// <summary>
+        /// Clears data from all module tables.
+        /// </summary>
+        void ClearData();
 
         /// <summary>
         /// The module's main table.

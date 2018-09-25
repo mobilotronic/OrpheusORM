@@ -1,4 +1,4 @@
-﻿using OrpheusInterfaces;
+﻿using OrpheusInterfaces.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -277,24 +277,54 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// Loads a module's record from the database.
+        /// Loads records from the DB to the table.
         /// You can configure having multiple fields and multiple values per field.
         /// Multiple field values are bound with a logical OR.
-        /// Multiple fields are bound with a logical AND
+        /// Multiple fields by default are bound with a logical OR.
+        /// Defining a logical operator, you can change the default behavior.
+        /// This applies only for the MainTable.
         /// </summary>
         /// <param name="keyValues"></param>
-        public void Load(Dictionary<string, List<object>> keyValues)
+        /// <param name="logicalOperator"></param>
+        /// <param name="clearExistingData"></param>
+        public void Load(Dictionary<string, List<object>> keyValues, LogicalOperator logicalOperator = LogicalOperator.loOR, bool clearExistingData = true)
         {
+
             if (this.MainTable != null)
             {
-                this.MainTable.Load(keyValues);
-                foreach (var table in this.Tables)
-                    table.Load();
+                this.MainTable.Load(keyValues,logicalOperator,clearExistingData);
+                this.MainTable.DetailTables.ForEach(t => t.Load());
             }
             else
             {
                 throw new Exception("If you want to load a record from the module level, you need to define the main table for the module.");
             }
+        }
+
+        /// <summary>
+        /// Loads main table data by executing a db command.
+        /// </summary>
+        /// <param name="dbCommand"></param>
+        /// <param name="clearExistingData"></param>
+        public void Load(IDbCommand dbCommand, bool clearExistingData = true)
+        {
+            if (this.MainTable != null)
+            {
+                this.MainTable.Load(dbCommand,clearExistingData);
+                this.MainTable.DetailTables.ForEach(t => t.Load());
+            }
+            else
+            {
+                throw new Exception("If you want to load a record from the module level, you need to define the main table for the module.");
+            }
+        }
+
+        /// <summary>
+        /// Clears data from all module tables.
+        /// </summary>
+        public void ClearData()
+        {
+            this.Tables.ForEach(t => t.ClearData());
         }
 
         /// <summary>

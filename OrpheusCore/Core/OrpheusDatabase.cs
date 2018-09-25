@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusCore.ServiceProvider;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Configuration;
+using OrpheusInterfaces.Core;
+using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,6 +23,8 @@ namespace OrpheusCore
         private Dictionary<Type, System.Data.DbType> typeMap = new Dictionary<Type, DbType>();
         private List<Type> nullableTypes = new List<Type>();
         private IOrpheusDDLHelper ddlHelper;
+        private IDbCommand rowCountCommand;
+        private IDatabaseConnectionConfiguration databaseConnectionConfiguration;
         #endregion
 
         #region private methods
@@ -172,6 +176,23 @@ namespace OrpheusCore
         /// Exposing the underlying IDbConnection instance.
         /// </summary>
         public IDbConnection DbConnection { get { return this.dbConnection; } }
+
+        /// <summary>
+        /// Database connection configuration.
+        /// </summary>
+        public IDatabaseConnectionConfiguration DatabaseConnectionConfiguration
+        {
+            get
+            {
+                return this.databaseConnectionConfiguration;
+            }
+            set
+            {
+                this.databaseConnectionConfiguration = value;
+                if (this.databaseConnectionConfiguration == null)
+                    throw new ArgumentNullException("The database connection configuration cannot be null.");
+            }
+        }
 
         #endregion
 
@@ -371,6 +392,19 @@ namespace OrpheusCore
         }
 
         /// <summary>
+        /// Connects to the database engine defined in the configuration object.
+        /// </summary>
+        /// <param name="databaseConnectionConfiguration"></param>
+        public void Connect(IDatabaseConnectionConfiguration databaseConnectionConfiguration)
+        {
+            if (!this.Connected)
+            {
+                this.DatabaseConnectionConfiguration = databaseConnectionConfiguration;
+                this.Connect();
+            }
+        }
+
+        /// <summary>
         /// Disconnects from the database engine.
         /// </summary>
         public void Disconnect()
@@ -488,6 +522,42 @@ namespace OrpheusCore
                 cmd.Dispose();
             }
             return result;
+        }
+
+        /// <summary>
+        /// Returns the row count of a table.
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <returns></returns>
+        public long GetTableCount(string tableName)
+        {
+            if(this.rowCountCommand == null)
+            {
+                this.rowCountCommand = this.CreateCommand();
+            }
+            this.rowCountCommand.CommandText = $"SELECT COUNT(*) FROM {tableName}";
+            var reader = this.rowCountCommand.ExecuteReader();
+            try
+            {
+                if (reader.Read())
+                    return Convert.ToInt64(reader.GetValue(0));
+            }
+            finally
+            {
+                reader.Close();
+                reader.Dispose();
+            }
+            return 0;
+        }
+
+        /// <summary>
+        /// Returns the row count of a table.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public long GetTableCount<T>()
+        {
+            return this.GetTableCount(typeof(T).Name);
         }
         #endregion
     }

@@ -1,13 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace OrpheusInterfaces
+namespace OrpheusInterfaces.Core
 {
+
+    /// <summary>
+    /// Logical operator
+    /// </summary>
+    public enum LogicalOperator
+    {
+        /// <summary>
+        /// The AND operator displays a record if all the conditions separated by AND is TRUE.
+        /// </summary>
+        loAND,
+
+        /// <summary>
+        /// The OR operator displays a record if any of the conditions separated by OR is TRUE.
+        /// </summary>
+        loOR,
+
+        /// <summary>
+        /// The NOT operator displays a record if the condition(s) is NOT TRUE.
+        /// </summary>
+        loNOT
+    }
 
     /// <summary>
     /// Orpheus table is the core Orpheus data object. It is responsible for performing data operations.
@@ -85,11 +103,13 @@ namespace OrpheusInterfaces
         /// Loads records from the DB to the table.
         /// You can configure having multiple fields and multiple values per field.
         /// Multiple field values are bound with a logical OR.
-        /// Multiple fields are bound with a logical AND
+        /// Multiple fields by default are bound with a logical OR.
+        /// Defining a logical operator, you can change the default behavior.
         /// </summary>
         /// <param name="keyValues"></param>
+        /// <param name="logicalOperator"></param>
         /// <param name="clearExistingData"></param>
-        void Load(Dictionary<string,List<object>> keyValues, bool clearExistingData = true);
+        void Load(Dictionary<string,List<object>> keyValues,LogicalOperator logicalOperator = LogicalOperator.loOR,  bool clearExistingData = true);
 
         /// <summary>
         /// Loads table data by executing a SQL command.
@@ -114,7 +134,7 @@ namespace OrpheusInterfaces
         /// Returns list of current key values.
         /// </summary>
         /// <returns>List of current key values</returns>
-        List<object> GetKeyValues();
+        List<KeyValuePair<string, object>> GetKeyValues();
 
         /// <summary>
         /// Save changes to the database.

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using OrpheusCore.Configuration;
-using OrpheusInterfaces.Interfaces;
+using OrpheusInterfaces.Logging;
 using System;
 using System.IO;
 using System.Linq;
@@ -277,6 +277,7 @@ namespace OrpheusLogger
         public OrpheusFileLogger(IOptionsMonitor<LoggingConfiguration> options)
         {
             this.optionsMonitor = options;
+            //this.loggingConfiguration = this.optionsMonitor.CurrentValue;
             this.loggingConfiguration = this.optionsMonitor.CurrentValue ?? new LoggingConfiguration()
             {
                 Level = "Error",

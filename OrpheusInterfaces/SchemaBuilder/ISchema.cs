@@ -1,11 +1,8 @@
-﻿using System;
+﻿using OrpheusInterfaces.Core;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace OrpheusInterfaces
+namespace OrpheusInterfaces.Schema
 {
     /// <summary>
     /// Represents an Orpheus Schema.

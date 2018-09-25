@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
-using OrpheusCore.Configuration;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
+using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -369,7 +369,7 @@ namespace OrpheusMySQLDDLHelper
                 this.db = value;
                 if (this.db != null && this.secondConnection == null)
                 {
-                    var sysConnectionConfiguration = ConfigurationManager.Configuration.DatabaseConnection;
+                    var sysConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
                     if (sysConnectionConfiguration == null)
                         throw new ArgumentNullException("Missing database configuration from the configuration file.\r\nThis is required so Orpheus can perform database schema related actions.");
                     var connBuilder = new MySqlConnectionStringBuilder();
@@ -483,7 +483,7 @@ namespace OrpheusMySQLDDLHelper
         {
             get
             {
-                return ConfigurationManager.Configuration.DatabaseConnection.DatabaseName; 
+                return this.db.DatabaseConnectionConfiguration.DatabaseName; 
             }
         }
 
@@ -498,7 +498,7 @@ namespace OrpheusMySQLDDLHelper
             {
                 if (this.dataConnectionString == null)
                 {
-                    var dataConnectionConfiguration = ConfigurationManager.Configuration.DatabaseConnection;
+                    var dataConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
                     if (dataConnectionConfiguration == null)
                         throw new ArgumentNullException("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.");
 

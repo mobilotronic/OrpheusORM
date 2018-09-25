@@ -1,15 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OrpheusCore.ServiceProvider;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
+using OrpheusTestModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using OrpheusCore;
-using OrpheusTestModels;
 
 namespace OrpheusTests
 {

@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OrpheusCore.Configuration;
 using OrpheusCore.SchemaBuilder;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
+using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -35,7 +36,7 @@ namespace OrpheusCore.ServiceProvider
             serviceCollection.AddOptions();
             serviceCollection.Configure<LoggingConfiguration>(ConfigurationManager.ConfigurationInstance.GetSection("Logging"));
             serviceCollection.Configure<List<ServiceProviderItem>>(ConfigurationManager.ConfigurationInstance.GetSection("Services"));
-            serviceCollection.Configure<DatabaseConnectionConfiguration>(ConfigurationManager.ConfigurationInstance.GetSection("DatabaseConnection"));
+            serviceCollection.Configure<List<DatabaseConnectionConfiguration>>(ConfigurationManager.ConfigurationInstance.GetSection("DatabaseConnections"));
             serviceCollection.Configure<OrpheusConfiguration>(ConfigurationManager.ConfigurationInstance);
         }
 

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OrpheusInterfaces.Interfaces.Attributes;
+using System;
 
 namespace OrpheusAttributes
 {
@@ -10,8 +7,13 @@ namespace OrpheusAttributes
     /// Primary key constraint attribute.
     /// Decorate a property with attribute to create a foreign key constraint on a schema object.
     /// </summary>
-    public class ForeignKey : OrpheusBaseAttribute
+    public class ForeignKey : OrpheusBaseAttribute, IForeignKey
     {
+        /// <summary>
+        /// The foreign key field name.
+        /// </summary>
+        public string Field { get; set; }
+
         /// <summary>
         /// The reference table.
         /// </summary>

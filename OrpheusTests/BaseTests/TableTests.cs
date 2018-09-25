@@ -1,14 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OrpheusInterfaces.Core;
+using OrpheusTestModels;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OrpheusCore.ServiceProvider;
-using OrpheusInterfaces;
 using System.Linq;
-using OrpheusTestModels;
-using Microsoft.Extensions.Logging;
 
 namespace OrpheusTests
 {

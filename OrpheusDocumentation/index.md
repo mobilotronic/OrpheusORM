@@ -10,7 +10,7 @@ footer{
 <div class="hero">
   <div class="wrap">
     <div class="text">
-      <strong>Orpheus ORM</strong>
+      <strong>Orpheus</strong>
     </div>
     <div class="minitext">
     The lightweight ORM.

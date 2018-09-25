@@ -1,12 +1,8 @@
-﻿using System;
-using System.Data.SqlClient;
-using System.IO;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OrpheusInterfaces;
-using OrpheusCore;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OrpheusInterfaces.Schema;
 using OrpheusTestModels;
+using System;
+using System.Text.RegularExpressions;
 
 namespace OrpheusTests
 {

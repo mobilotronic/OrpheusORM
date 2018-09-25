@@ -19,7 +19,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.10.9" />
+    <None Remove="OrpheusSQLServer.config" />
+    <None Remove="OrpheusSQLServerConfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.11.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,12 +34,6 @@
     <ProjectReference Include="..\OrpheusMySQLDDLHelper\OrpheusMySQLDDLHelper.csproj" />
     <ProjectReference Include="..\OrpheusSQLServerDDLHelper\OrpheusSQLServerDDLHelper.csproj" />
     <ProjectReference Include="..\OrpheusTests\OrpheusTests.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="OrpheusSQLServer.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

@@ -20,18 +20,13 @@
         {
           "files": [ "**.csproj" ],
           "exclude": [ "**/bin/**", "**/obj/**" ],
-          "src": "../OrpheusLogger"
-        },
-        {
-          "files": [ "**.csproj" ],
-          "exclude": [ "**/bin/**", "**/obj/**" ],
           "src": "../OrpheusMySQLDDLHelper"
         },
         {
           "files": [ "**.csproj" ],
           "exclude": [ "**/bin/**", "**/obj/**" ],
           "src": "../OrpheusSQLServerDDLHelper"
-        }
+        }		
       ],
       "dest": "obj/temp/docfxapi"
     }
@@ -67,10 +62,10 @@
     ],
     "postProcessors": ["ExtractSearchIndex"],
     "globalMetadata": {
-      "_appTitle": "Orpheus ORM",
-	  "_appLogoPath":"Images/OrpheusLogo.svg",
+      "_appTitle": "Orpheus",
+	  "_appLogoPath":"images/OrpheusLogo.svg",
 	  "_enableNewTab": true,
-	  "_appFooter":"Orpheus ORM - Original Author © 2018",
+	  "_appFooter":"Orpheus - Original Author © 2018",
 	  "_enableSearch":true	  
     },
     "fileMetadata": {

@@ -1,11 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
-using OrpheusAttributes;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
+using OrpheusInterfaces.Interfaces.Attributes;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
@@ -143,7 +144,6 @@ namespace OrpheusCore
         mraDelete
     }
 
-
     #endregion
 
     /// <summary>
@@ -159,6 +159,7 @@ namespace OrpheusCore
         private List<IOrpheusTableKeyField> masterTableKeyFields;
         private bool modified = false;
         private List<T> data = new List<T>();
+        private Dictionary<T, int> indexedData = new Dictionary<T, int>();
         private IDbCommand deleteCommand;
         private IDbCommand insertCommand;
         private IDbCommand updateCommand;
@@ -305,22 +306,57 @@ namespace OrpheusCore
         /// </summary>
         /// <param name="record">Record</param>
         /// <param name="masterKeyValues">Key values</param>
-        private void processRecordForMasterDetail(T record, List<object> masterKeyValues)
+        private void processRecordForMasterDetail(T record, List<KeyValuePair<string,object>> masterKeyValues)
         {
             if (this.masterTable != null && this.masterTableKeyFields != null)
             {
                 //var masterKeyValues = this.masterTable.GetKeyValues();
                 for (var i = 0; i <= this.masterTableKeyFields.Count - 1; i++)
                 {
-                    var property = this.modelHelper.ModelProperties.FirstOrDefault(pr => pr.Name == this.masterTableKeyFields[i].Name);
+                    var masterKeyFieldName = this.masterTableKeyFields[i].Name;
+                    var property = this.modelHelper.ModelProperties.FirstOrDefault(pr => pr.Name == masterKeyFieldName);
                     //if property exists in the model and it's null then
                     //set it to the master table key value.
                     if (this.isPropertyValueEmptyOrNull(property,record))
                     {
-                        property.SetValue(record, masterKeyValues[i]);
+                        //the masterKeyValues list has the field names of the master table.
+                        var fk = this.getMasterKeyFieldNameFromForeignKey(masterKeyFieldName);
+                        if (fk == null)
+                        {
+                            var errorMessage = $"No foreign key was found for field {masterKeyFieldName}";
+                            this.logger.LogError(errorMessage);
+                            throw new NoNullAllowedException(errorMessage);
+                        }
+                        //property.SetValue(record, masterKeyValues.First(k=>k.Key == fk.Value.ReferenceField).Value);
+                        property.SetValue(record, masterKeyValues.First(k => k.Key == fk).Value);
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns the master key field name, that is declared in this table master table by looking up the table's
+        /// foreign key list.
+        /// </summary>
+        /// <param name="masterTableKeyField"></param>
+        /// <returns></returns>
+        private string getMasterKeyFieldNameFromForeignKey(string masterTableKeyField)
+        {
+            var masterKey = this.modelHelper.ForeignKeys.FirstOrDefault(f => f.Value.Field == masterTableKeyField);
+            if (masterKey.Value != null)
+                return masterKey.Value.ReferenceField;
+            return null;
+        }
+
+        /// <summary>
+        /// Returns the master key field name, that is declared in this table master table by looking up the table's
+        /// foreign key list.
+        /// </summary>
+        /// <param name="masterKeyValue"></param>
+        /// <returns></returns>
+        private string getMasterKeyFieldNameFromForeignKey(KeyValuePair<string,object> masterKeyValue)
+        {
+            return this.getMasterKeyFieldNameFromForeignKey(masterKeyValue.Key);
         }
 
         /// <summary>
@@ -377,7 +413,7 @@ namespace OrpheusCore
         /// </summary>
         private void intializeModelProperties()
         {
-            foreach(KeyValuePair<string,PrimaryKey> pk in this.modelHelper.PrimaryKeys)
+            foreach(KeyValuePair<string,IPrimaryKey> pk in this.modelHelper.PrimaryKeys)
             {
                 if (this.KeyFields.Where(kf => kf.Name.ToLower() == pk.Key.ToLower()).Count() == 0)
                 {
@@ -390,11 +426,11 @@ namespace OrpheusCore
                 }
             }
 
-            foreach (KeyValuePair<string, ForeignKey> fk in this.modelHelper.ForeignKeys)
+            foreach (KeyValuePair<string, IForeignKey> fk in this.modelHelper.ForeignKeys)
             {
                 if (this.MasterTableKeyFields.Where(kf => kf.Name.ToLower() == fk.Key.ToLower()).Count() == 0)
                 {
-                    //master keys are not all foreign keys, but just the ones that belong to the master table.
+                    //foreign keys are not all master keys are not all  , but just the ones that belong to the master table.
                     if (this.MasterTable != null && this.MasterTable.Name.ToLower() == fk.Value.ReferenceTable.ToLower())
                     {
                         var newKeyField = new OrpheusTableKeyField();
@@ -613,30 +649,67 @@ namespace OrpheusCore
         /// Appends SQL to the WHERE clause based on key values passed or if the table has a master table.
         /// </summary>
         /// <param name="keyValues"></param>
-        private void appendSelectWhereClause(Dictionary<string,List<object>> keyValues)
+        /// <param name="logicalOperator"></param>
+        private void appendSelectWhereClause(Dictionary<string,List<object>> keyValues, LogicalOperator logicalOperator)
         {
             var commandText = String.Format("SELECT * FROM {0}", Name);
             //clearing parameters to avoid duplication.
             loadCommand.Parameters.Clear();
 
+            string logicalOperatorString = null;
+
+            switch (logicalOperator)
+            {
+                case LogicalOperator.loOR: { logicalOperatorString = "OR";break; }
+                case LogicalOperator.loAND: { logicalOperatorString = "AND"; break; }
+                case LogicalOperator.loNOT: { logicalOperatorString = "NOT"; break; }
+                default: { logicalOperatorString = "OR"; break; }
+            }
+
             //if a table has a master table it will only load records based on the current master record.if configured correctly.
             if (this.masterTable != null && this.masterTableKeyFields != null)
             {
-                commandText = commandText + " WHERE ";
-                var masterKeyValues = this.masterTable.GetKeyValues();
-                List<string> whereClause = new List<string>();
-                for (var i = 0; i <= this.masterTableKeyFields.Count - 1; i++)
+
+                var masterKeyValues = this.masterTable.GetKeyValues().ToList();
+                //if there are master key values, it means that the master table has at least one record loaded.
+                if (masterKeyValues.Count > 0)
                 {
-                    if (i > 0)
-                        whereClause.Add(String.Format(" AND {0} = @{1}", this.database.DDLHelper.SafeFormatField(this.masterTableKeyFields[i].Name), this.masterTableKeyFields[i].Name));
-                    else
-                        whereClause.Add(String.Format("{0} = @{1}", this.database.DDLHelper.SafeFormatField(this.masterTableKeyFields[i].Name), this.masterTableKeyFields[i].Name));
-                    var param = loadCommand.CreateParameter();
-                    param.ParameterName = "@" + this.masterTableKeyFields[i].Name;
-                    param.Value = masterKeyValues[i];
-                    loadCommand.Parameters.Add(param);
+                    //building the master key fields SQL part.
+                    var fieldsString = "";
+                    var paramsPerField = new NameValueCollection();
+                    //creating parameters and setting values.
+                    for (var i = 0; i <= masterKeyValues.Count - 1; i++)
+                    {
+                        KeyValuePair<string, object> masterKeyField = masterKeyValues[i];
+                        var param = loadCommand.CreateParameter();
+                        param.ParameterName = $"@{masterKeyField.Key}{i}";
+                        param.Value = masterKeyField.Value;
+                        loadCommand.Parameters.Add(param);
+                        paramsPerField.Add(masterKeyField.Key, param.ParameterName);
+                    }
+                    foreach (var masterKeyField in this.masterTableKeyFields)
+                    {
+                        //var fk = this.modelHelper.ForeignKeys.FirstOrDefault(k => k.Value.Field == masterKeyField.Name);
+                        var masterKeyFieldName = this.getMasterKeyFieldNameFromForeignKey(masterKeyField.Name);
+                        var parameterNames = paramsPerField.GetValues(masterKeyFieldName);
+
+                        if (fieldsString.Length == 0)
+                            fieldsString = $"{masterKeyField.Name} IN ({String.Join(",", parameterNames)})";
+                        else
+                        {
+                            fieldsString = fieldsString + $" {logicalOperatorString} {masterKeyField.Name} IN ({String.Join(",", parameterNames)})";
+                        }
+                    }
+
+                    commandText = commandText + $" WHERE {fieldsString}";
+
                 }
-                commandText = String.Format("{0} {1}", commandText, String.Join(",", whereClause));
+                else
+                {
+                    //if the master key values count is zero it means that the master table has no data.
+                    //if the master table has no data then neither should its detail tables.
+                    commandText = $"{commandText} WHERE 0 = 1";// String.Format("{0} {1}", commandText, " 0 = 1");
+                }
             }
             else
             {
@@ -645,40 +718,38 @@ namespace OrpheusCore
                 {
                     List<string> whereClause = new List<string>();
                     List<string> keyFieldWhereClause = new List<string>();
-                    
+
+                    var parameterNames = new List<string>();
                     for(var i = 0; i <= keyValues.Count - 1; i++)
                     {
                         var keyFld = keyValues.ElementAt(i);
                         if (keyFld.Value != null)
                         {
+                            keyFieldWhereClause.Clear();
                             for (var x = 0; x <= keyFld.Value.Count - 1; x++)
                             {
-                                var paramName = "";
-                                if (x > 0)
-                                {
-                                    paramName = String.Format("@{0}_{1}",
-                                        keyFld.Key,
-                                        x);
-                                    keyFieldWhereClause.Add(String.Format(" OR {0} = {1}", this.database.DDLHelper.SafeFormatField(keyFld.Key), paramName));
-                                }
-                                else
-                                {
-                                    paramName = String.Format("@{0}", keyFld.Key);
-                                    keyFieldWhereClause.Add(String.Format("{0} = {1}", this.database.DDLHelper.SafeFormatField(keyFld.Key), paramName));
-                                }
+                                var paramName = $"@{keyFld.Key}_{i}_{x}";
                                 var param = loadCommand.CreateParameter();
                                 param.ParameterName = paramName;
                                 param.Value = keyFld.Value[x];
                                 loadCommand.Parameters.Add(param);
+                                parameterNames.Add(paramName);
                             }
-                            if (i > 0)
-                                whereClause.Add(String.Format(" AND ({0})", String.Join("", keyFieldWhereClause)));
-                            else
-                                whereClause.Add(String.Format("{0}", String.Join("", keyFieldWhereClause)));
+                            if(parameterNames.Count > 0)
+                            {
+                                if (i > 0)
+                                    whereClause.Add($" {logicalOperatorString} {this.database.DDLHelper.SafeFormatField(keyFld.Key)} IN ({String.Join(",", parameterNames)})");
+                                else
+                                    whereClause.Add($"{this.database.DDLHelper.SafeFormatField(keyFld.Key)} IN ({String.Join(",",parameterNames)})");
+                                parameterNames.Clear();
+                            }
                         }
                     }
-                    if(whereClause.Count > 0)
-                        commandText = String.Format("{0} WHERE {1}", commandText, String.Join(",", whereClause));
+                    //if there is something in the whereClause list, then add it.
+                    if (whereClause.Count > 0)
+                        commandText = $"{commandText} WHERE {String.Join("", whereClause)}";// String.Format("{0} WHERE {1}", commandText, String.Join("", whereClause));
+                    else
+                        this.logger.LogWarning($"Warning all records will be loaded.{commandText}");
                 }
             }
 
@@ -694,11 +765,13 @@ namespace OrpheusCore
         protected void executeDelete(IDbTransaction transaction)
         {
             deleteCommand.Transaction = transaction;
+            var commandParameters = (DbParameterCollection)this.deleteCommand.Parameters;
             foreach (var deleteRecord in this.deleteCommandValues)
             {
                 foreach (var fieldValue in deleteRecord.Value)
                 {
-                    ((IDataParameter)this.deleteCommand.Parameters[fieldValue.Key]).Value = fieldValue.Value;
+                    //((IDataParameter)this.deleteCommand.Parameters[fieldValue.Key]).Value = fieldValue.Value;
+                    commandParameters[fieldValue.Key].Value = fieldValue.Value;
                 }
                 try
                 {
@@ -706,7 +779,7 @@ namespace OrpheusCore
                 }
                 catch (Exception e)
                 {
-                    this.logger.LogError(null, e, "Error executing insert statements : {0}", this.updateCommand.CommandText);
+                    this.logger.LogError(null, e, "Error executing delete statements : {0}", this.deleteCommand.CommandText);
                     throw e;
                 }
             }
@@ -722,16 +795,19 @@ namespace OrpheusCore
         protected void executeUpdate(IDbTransaction transaction)
         {
             this.updateCommand.Transaction = transaction;
+            var commandParameters = (DbParameterCollection)this.updateCommand.Parameters;
             foreach (var updateRecord in this.updateCommandValues)
             {
                 foreach (var fieldValue in updateRecord.Value)
                 {
                     this.validateParameterValue(fieldValue.Value);
-                    ((IDataParameter)this.updateCommand.Parameters[fieldValue.Key]).Value = fieldValue.Value;
+                    //((IDataParameter)this.updateCommand.Parameters[fieldValue.Key]).Value = fieldValue.Value;
+                    commandParameters[fieldValue.Key].Value = fieldValue.Value;
                 }
                 try
                 {
                     this.updateCommand.ExecuteNonQuery();
+                    //this.logger.LogTrace(this.updateCommand.CommandText);
                 }
                 catch (Exception e)
                 {
@@ -753,17 +829,20 @@ namespace OrpheusCore
         protected void executeInsert(IDbTransaction transaction)
         {
             insertCommand.Transaction = transaction;
+            var commandParameters = (DbParameterCollection)this.insertCommand.Parameters;
             foreach (var newRecord in this.insertCommandValues)
             {
 
                 foreach (var fieldValue in newRecord.Value)
                 {
                     this.validateParameterValue(fieldValue.Value);
-                    ((IDataParameter)this.insertCommand.Parameters[fieldValue.Key]).Value = fieldValue.Value;
+                    //((IDataParameter)this.insertCommand.Parameters[fieldValue.Key]).Value = fieldValue.Value;
+                    commandParameters[fieldValue.Key].Value = fieldValue.Value;
                 }
                 try
                 {
                     this.insertCommand.ExecuteNonQuery();
+                    //this.logger.LogTrace(this.insertCommand.CommandText);
                 }
                 catch (Exception e)
                 {
@@ -838,9 +917,11 @@ namespace OrpheusCore
                                     }
                                 case ModifiedRecordAction.mraUpdate:
                                     {
+
+
                                         //if record was already loaded in memory, we need to make sure that the update
                                         //will be executed against the correct key.
-                                        if(recordIndex >= 0)
+                                        if (recordIndex >= 0)
                                         {
                                             var existingRecord = this.data[recordIndex];
                                             var existingKeyValue = property.GetValue(existingRecord, null);
@@ -931,7 +1012,7 @@ namespace OrpheusCore
         /// <param name="keyFields">Table key fields.</param>
         /// <param name="masterTable" cref="IOrpheusTable">Master table (optional)</param>
         /// <param name="masterTableKeyFields" cref="List{IOrpheusTableKeyField}">Master table key fields (optional)</param>
-        public OrpheusTable(IOrpheusDatabase database,string tableName, List<IOrpheusTableKeyField> keyFields,IOrpheusTable masterTable = null, List<IOrpheusTableKeyField> masterTableKeyFields=null)
+        public OrpheusTable(IOrpheusDatabase database,List<IOrpheusTableKeyField> keyFields, string tableName = null, IOrpheusTable masterTable = null, List<IOrpheusTableKeyField> masterTableKeyFields=null)
         {
             this.logger = ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
             this.database = database;
@@ -949,15 +1030,37 @@ namespace OrpheusCore
                 this.level = this.masterTable.Level + 1;
                 this.masterTable.DetailTables.Add(this);
             }
+
             this.modelHelper = new OrpheusModelHelper(typeof(T));
-            //if there a table-name attribute on the model, then use that as the table name
-            if (this.modelHelper.SQLName != null)
-                this.Name = this.modelHelper.SQLName;
             this.SchemaName = this.modelHelper.SQLServerSchemaName;
-            if (this.modelHelper.SQLName == null && this.modelHelper.SQLServerSchemaName != null && !this.Name.Contains(this.modelHelper.SQLServerSchemaName))
+
+            if (this.Name != null && (this.Name.ToLower() != this.modelHelper.SQLName.ToLower()))
+                this.logger.LogWarning($"The table name {this.Name} passed into the constructor is not the same as the associated model's {this.modelHelper.SQLName}");
+
+            //if there is no table name defined in the constructor but
+            //there is a table-name attribute on the model, then use that as the table name
+            if (this.Name == null && this.modelHelper.SQLName != null)
+                this.Name = this.modelHelper.SQLName;
+            
+            if(this.Name == null)
             {
-                this.Name = String.Format("{0}.{1}", this.modelHelper.SQLServerSchemaName, tableName);
+                var errorMessage = "Table name cannot be null.";
+                this.logger.LogError(errorMessage);
+                throw new ArgumentNullException(errorMessage);
             }
+                
+
+            //if there is a schema name defined (through the model attribute) but the current table name doesn't start with/contain the schema name, then set it.
+            if(this.SchemaName != null && (!this.Name.ToLower().Contains($"{this.SchemaName.ToLower()}.")))
+            {
+                this.Name = $"{this.SchemaName}.{this.Name}";
+            }
+
+            //if (this.modelHelper.SQLName == null && this.modelHelper.SQLServerSchemaName != null && !this.Name.Contains(this.modelHelper.SQLServerSchemaName+"."))
+            //{
+            //    this.Name = String.Format("{0}.{1}", this.modelHelper.SQLServerSchemaName, tableName);
+            //}
+
             this.intializeModelProperties();
             this.createDeleteCommand();
             this.createUpdateCommand();
@@ -969,7 +1072,7 @@ namespace OrpheusCore
         /// 
         /// </summary>
         /// <param name="options"></param>
-        public OrpheusTable(IOrpheusTableOptions options):this(options.Database, options.TableName, options.KeyFields, options.MasterTable, options.MasterTableKeyFields)
+        public OrpheusTable(IOrpheusTableOptions options):this(options.Database,options.KeyFields, options.TableName, options.MasterTable, options.MasterTableKeyFields)
         {
         }
         #endregion
@@ -1007,7 +1110,7 @@ namespace OrpheusCore
         /// </summary>
         /// <param name="keyValues">Key values</param>
         /// <param name="clearExistingData">If true, clears existing loaded data.</param>
-        public void Load(List<object> keyValues = null,bool clearExistingData = true)
+        public void Load(List<object> keyValues = null, bool clearExistingData = true)
         {
             if (this.KeyFields.Count == 1)
             {
@@ -1016,7 +1119,7 @@ namespace OrpheusCore
                         this.KeyFields.First().Name,
                         keyValues
                     }
-                },clearExistingData);
+                }, LogicalOperator.loOR,clearExistingData);
             }
             else
                 throw new InvalidExpressionException("When an Orpheus table has more than one key fields, you cannot use the 'simple' load. Values for each field much be determined.");
@@ -1026,15 +1129,17 @@ namespace OrpheusCore
         /// Loads records from the DB to the table.
         /// You can configure having multiple fields and multiple values per field.
         /// Multiple field values are bound with a logical OR.
-        /// Multiple fields are bound with a logical AND
+        /// Multiple fields by default are bound with a logical OR.
+        /// Defining a logical operator, you can change the default behavior.
         /// </summary>
         /// <param name="keyValues"></param>
+        /// <param name="logicalOperator"></param>
         /// <param name="clearExistingData"></param>
-        public void Load(Dictionary<string, List<object>> keyValues = null, bool clearExistingData = true)
+        public void Load(Dictionary<string, List<object>> keyValues = null, LogicalOperator logicalOperator = LogicalOperator.loOR, bool clearExistingData = true)
         {
             if (clearExistingData)
                 this.ClearData();
-            this.appendSelectWhereClause(keyValues);
+            this.appendSelectWhereClause(keyValues, logicalOperator);
             this.loadData();
         }
 
@@ -1069,6 +1174,7 @@ namespace OrpheusCore
         public void ClearData()
         {
             this.data.Clear();
+            this.indexedData.Clear();
         }
 
         /// <summary>
@@ -1121,8 +1227,21 @@ namespace OrpheusCore
             }
             set
             {
+                //if the new value is null, but the previous not,
+                //remove this table from the list of detail tables
+                //of the masterTable.
+                if(value == null && this.masterTable != null)
+                {
+                    if (this.masterTable.DetailTables.Contains(this))
+                        this.masterTable.DetailTables.Remove(this);
+                }
                 masterTable = value;
-                this.level = this.masterTable.Level + 1;
+                if (this.masterTable != null)
+                {
+                    this.level = this.masterTable.Level + 1;
+                    if (!this.masterTable.DetailTables.Contains(this))
+                        this.masterTable.DetailTables.Add(this);
+                }
             }
         }
 
@@ -1154,9 +1273,9 @@ namespace OrpheusCore
         /// It's highly inadvisable to be used outside this scope.
         /// </summary>
         /// <returns></returns>
-        public List<object> GetKeyValues()
+        public List<KeyValuePair<string,object>> GetKeyValues()
         {
-            var result = new List<object>();
+            var result = new List<KeyValuePair<string, object>>();
             foreach (T record in data)
             {
                 for (var i = 0; i <= this.modelHelper.ModelProperties.Count() - 1; i++)
@@ -1165,7 +1284,7 @@ namespace OrpheusCore
                     var keyField = this.KeyFields.Find(kf => kf.Name == property.Name);
                     if(keyField != null)
                     {
-                        result.Add(property.GetValue(record));
+                        result.Add(new KeyValuePair<string, object>(keyField.Name,property.GetValue(record)));
                     }
                 }
             }
@@ -1190,6 +1309,7 @@ namespace OrpheusCore
         public void Add(T newRecord)
         {
             this.data.Add(newRecord);
+            this.indexedData.Add(newRecord, this.data.Count - 1);
             this.processModifiedRecord(newRecord,ModifiedRecordAction.mraInsert);
             this.modified = true;
         }
@@ -1210,7 +1330,12 @@ namespace OrpheusCore
         /// <param name="record"></param>
         public void Delete(T record)
         {
-            this.data.Remove(record);
+            if (this.indexedData.ContainsKey(record))
+            {
+                this.data.RemoveAt(this.indexedData[record]);
+                this.indexedData.Remove(record);
+            }
+            //this.data.Remove(record);
             this.processModifiedRecord(record, ModifiedRecordAction.mraDelete);
             this.modified = true;
         }
@@ -1231,15 +1356,15 @@ namespace OrpheusCore
         /// <param name="record"></param>
         public void Update(T record)
         {
-            var idx = this.data.IndexOf(record);
-            //if the record was already loaded in memory, update it as well.
-            if (idx >= 0)
-                this.data[idx] = record;
-            this.processModifiedRecord(record, ModifiedRecordAction.mraUpdate,idx);
-            //else
-            //{
-            //    throw new Exception("Could find a record to update.");
-            //}
+            var idx = -1;
+            if (this.indexedData.ContainsKey(record))
+            {
+                idx = this.indexedData[record];
+                //if the record was already loaded in memory, update it as well.
+                if (idx >= 0)
+                    this.data[idx] = record;
+            }
+            this.processModifiedRecord(record, ModifiedRecordAction.mraUpdate, idx);
         }
 
         /// <summary>
