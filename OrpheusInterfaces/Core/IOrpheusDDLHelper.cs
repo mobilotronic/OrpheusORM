@@ -1,8 +1,9 @@
-﻿using System;
+﻿using OrpheusInterfaces.Schema;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
-namespace OrpheusInterfaces
+namespace OrpheusInterfaces.Core
 {
     /// <summary>
     /// Extended DbTypes enumeration, for types that are not listed in the generic DbType enumeration.
@@ -31,7 +32,11 @@ namespace OrpheusInterfaces
         /// <summary>
         /// MySQL.
         /// </summary>
-        dbMySQL
+        dbMySQL,
+        /// <summary>
+        /// SQLite
+        /// </summary>
+        dbSQLite
     }
 
     /// <summary>

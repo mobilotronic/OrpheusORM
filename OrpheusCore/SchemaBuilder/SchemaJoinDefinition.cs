@@ -1,4 +1,4 @@
-﻿using OrpheusInterfaces;
+﻿using OrpheusInterfaces.Schema;
 
 namespace OrpheusCore.SchemaBuilder
 {

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OrpheusInterfaces.Interfaces.Attributes;
 
 namespace OrpheusAttributes
 {
     /// <summary>
     /// Composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.
     /// </summary>
-    public class OrpheusCompositeKeyBaseAttribute : OrpheusBaseAttribute
+    public class OrpheusCompositeKeyBaseAttribute : OrpheusBaseAttribute, IOrpheusBaseCompositeKeyAttribute
     {
         /// <summary>
         /// List of fields that are the key.

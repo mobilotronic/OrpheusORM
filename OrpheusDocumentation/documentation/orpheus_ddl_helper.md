@@ -1,5 +1,5 @@
 ﻿# Orpheus DDL Helper
-OrpheusORM is database engine type agnostic. This means that it does not include
+Orpheus is database engine type agnostic. This means that it does not include
 any code targeting a specific database engine.
 
 Despite the fact, that SQL based database engines use the SQL language, there are differences

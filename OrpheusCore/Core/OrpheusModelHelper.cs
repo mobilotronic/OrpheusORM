@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusAttributes;
 using OrpheusCore.ServiceProvider;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
+using OrpheusInterfaces.Interfaces.Attributes;
+using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -25,7 +27,7 @@ namespace OrpheusCore
     /// <summary>
     /// OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.
     /// </summary>
-    public class OrpheusModelHelper
+    public class OrpheusModelHelper : IOrpheusModelHelper
     {
         #region private fields
         private Type modelType;
@@ -207,10 +209,14 @@ namespace OrpheusCore
 
                     #region foreign keys
                     if (attributeType == typeof(ForeignKey))
-                        this.ForeignKeys.Add(prop.Name, (ForeignKey)attr);
+                    {
+                        ForeignKey fk = (ForeignKey)attr;
+                        fk.Field = prop.Name;
+                        this.ForeignKeys.Add(prop.Name, fk);
+                    }
                     #endregion
 
-                    #region foreign keys
+                    #region unique keys
                     if (attributeType == typeof(UniqueKey))
                        this.UniqueKeys.Add(prop.Name, (UniqueKey)attr);
                     #endregion
@@ -240,27 +246,27 @@ namespace OrpheusCore
         /// <summary>
         /// Model's primary keys.
         /// </summary>
-        public Dictionary<string,PrimaryKey> PrimaryKeys { get; private set; }
+        public Dictionary<string,IPrimaryKey> PrimaryKeys { get; private set; }
         
         /// <summary>
         /// Model's foreign keys.
         /// </summary>
-        public Dictionary<string,ForeignKey> ForeignKeys { get; private set; }
+        public Dictionary<string,IForeignKey> ForeignKeys { get; private set; }
         
         /// <summary>
         /// Model's unique keys.
         /// </summary>
-        public Dictionary<string,UniqueKey> UniqueKeys { get; private set; }
+        public Dictionary<string,IUniqueKey> UniqueKeys { get; private set; }
        
         /// <summary>
         /// Model's composite primary keys.
         /// </summary>
-        public List<PrimaryCompositeKey> PrimaryCompositeKeys { get; private set; }
+        public List<IOrpheusBaseCompositeKeyAttribute> PrimaryCompositeKeys { get; private set; }
         
         /// <summary>
         /// Model's composite unique keys.
         /// </summary>
-        public List<UniqueCompositeKey> UniqueCompositeKeys { get; private set; }
+        public List<IOrpheusBaseCompositeKeyAttribute> UniqueCompositeKeys { get; private set; }
        
         /// <summary>
         /// Model properties that are not part of the schema.
@@ -493,11 +499,12 @@ namespace OrpheusCore
         {
             this.logger = OrpheusServiceProvider.Resolve<ILogger>();
             this.modelType = modelType;
-            this.PrimaryKeys = new Dictionary<string, PrimaryKey>();
-            this.ForeignKeys = new Dictionary<string, ForeignKey>();
-            this.UniqueKeys = new Dictionary<string, UniqueKey>();
-            this.PrimaryCompositeKeys = new List<PrimaryCompositeKey>();
-            this.UniqueCompositeKeys = new List<UniqueCompositeKey>();
+            this.SQLName = this.modelType.Name;
+            this.PrimaryKeys = new Dictionary<string,IPrimaryKey>();
+            this.ForeignKeys = new Dictionary<string, IForeignKey>();
+            this.UniqueKeys = new Dictionary<string, IUniqueKey>();
+            this.PrimaryCompositeKeys = new List<IOrpheusBaseCompositeKeyAttribute>();
+            this.UniqueCompositeKeys = new List<IOrpheusBaseCompositeKeyAttribute>();
             this.SchemaIgnoreProperties = new List<string>();
             this.CustomFieldNameProperties = new Dictionary<string, string>();
             this.intializeModelProperties();

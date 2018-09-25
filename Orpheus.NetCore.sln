@@ -87,40 +87,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A867E0D-5B04-48DB-9D27-464A0233ED87}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 11
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://thelanguageexchange.visualstudio.com/
-		SccProjectUniqueName0 = OrpheusAttributes\\OrpheusAttributes.csproj
-		SccProjectName0 = OrpheusAttributes
-		SccLocalPath0 = OrpheusAttributes
-		SccProjectUniqueName1 = OrpheusCore\\OrpheusCore.csproj
-		SccProjectName1 = OrpheusCore
-		SccLocalPath1 = OrpheusCore
-		SccProjectUniqueName2 = OrpheusInterfaces\\OrpheusInterfaces.csproj
-		SccProjectName2 = OrpheusInterfaces
-		SccLocalPath2 = OrpheusInterfaces
-		SccProjectUniqueName3 = OrpheusLogger\\OrpheusLogger.csproj
-		SccProjectName3 = OrpheusLogger
-		SccLocalPath3 = OrpheusLogger
-		SccProjectUniqueName4 = OrpheusMySQLDDLHelper\\OrpheusMySQLDDLHelper.csproj
-		SccProjectName4 = OrpheusMySQLDDLHelper
-		SccLocalPath4 = OrpheusMySQLDDLHelper
-		SccProjectUniqueName5 = OrpheusSQLServerDDLHelper\\OrpheusSQLServerDDLHelper.csproj
-		SccProjectName5 = OrpheusSQLServerDDLHelper
-		SccLocalPath5 = OrpheusSQLServerDDLHelper
-		SccProjectUniqueName6 = OrpheusTests\\OrpheusTests.csproj
-		SccProjectName6 = OrpheusTests
-		SccLocalPath6 = OrpheusTests
-		SccProjectUniqueName7 = OrpheusTestModels\\OrpheusTestModels.csproj
-		SccProjectName7 = OrpheusTestModels
-		SccLocalPath7 = OrpheusTestModels
-		SccProjectUniqueName8 = OrpheusDocumentation\\OrpheusDocumentation.csproj
-		SccProjectName8 = OrpheusDocumentation
-		SccLocalPath8 = OrpheusDocumentation
-		SccProjectUniqueName9 = OrpheusTestsBenchMark\\OrpheusTestsBenchMark.csproj
-		SccProjectName9 = OrpheusTestsBenchMark
-		SccLocalPath9 = OrpheusTestsBenchMark
-		SccLocalPath10 = .
-	EndGlobalSection
 EndGlobal

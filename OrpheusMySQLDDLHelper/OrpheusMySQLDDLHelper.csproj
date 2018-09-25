@@ -25,11 +25,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="6.10.6" />
+    <PackageReference Include="MySql.Data" Version="8.0.12" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OrpheusCore\OrpheusCore.csproj" />
     <ProjectReference Include="..\OrpheusInterfaces\OrpheusInterfaces.csproj" />
   </ItemGroup>
 

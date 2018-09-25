@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace OrpheusInterfaces
+namespace OrpheusInterfaces.Core
 {
     /// <summary>
     /// The definition/database properties of a module.

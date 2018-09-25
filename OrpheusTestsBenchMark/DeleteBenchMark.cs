@@ -1,9 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
 using OrpheusTestModels;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace OrpheusTestsBenchMark
 {

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace OrpheusInterfaces.Interfaces
+namespace OrpheusInterfaces.Logging
 {
     /// <summary>
     /// Orpheus logger interface.

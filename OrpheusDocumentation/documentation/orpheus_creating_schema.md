@@ -11,7 +11,7 @@ In the ORM frameworks world, there are a few different options. Here are a coupl
 * Code First
   * Where you write your models and the ORM creates the schema for you.
 
-Orpheus supports (at the moment) the second option, where you write up your models and decorate them accordingly based on your needs.
+Orpheus supports the second option, where you write up your models and decorate them accordingly based on your needs.
 
 ### Decorating your classes with schema attributes
 There are plenty of attributes that you can use to decorate your classes and/or properties. Have a look at [Orpheus Attributes](../api/OrpheusAttributes.html)

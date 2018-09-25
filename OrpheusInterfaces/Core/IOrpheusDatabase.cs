@@ -1,8 +1,10 @@
-﻿using System;
+﻿using OrpheusInterfaces.Configuration;
+using OrpheusInterfaces.Schema;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
-namespace OrpheusInterfaces
+namespace OrpheusInterfaces.Core
 {
     /// <summary>
     /// Orpheus database access component.
@@ -13,6 +15,12 @@ namespace OrpheusInterfaces
         /// Connects to the database engine defined in the connection string.
         /// </summary>
         void Connect(string connectionString = null);
+
+        /// <summary>
+        /// Connects to the database engine defined in the configuration object.
+        /// </summary>
+        /// <param name="databaseConnectionConfiguration"></param>
+        void Connect(IDatabaseConnectionConfiguration databaseConnectionConfiguration);
 
         /// <summary>
         /// Disconnects from the database engine.
@@ -201,5 +209,24 @@ namespace OrpheusInterfaces
         /// Exposing the underlying IDbConnection instance.
         /// </summary>
         IDbConnection DbConnection { get; }
+
+        /// <summary>
+        /// Returns the row count of a table.
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <returns></returns>
+        long GetTableCount(string tableName);
+
+        /// <summary>
+        /// Returns the row count of a table.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        long GetTableCount<T>();
+
+        /// <summary>
+        /// Database connection configuration.
+        /// </summary>
+        IDatabaseConnectionConfiguration DatabaseConnectionConfiguration { get; set; }
     }
 }

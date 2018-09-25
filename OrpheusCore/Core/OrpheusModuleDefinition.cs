@@ -1,12 +1,11 @@
 ﻿using OrpheusAttributes;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
-using System.Xml.Serialization;
 
 namespace OrpheusCore
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OrpheusInterfaces.Interfaces.Attributes;
 
 namespace OrpheusAttributes
 {
@@ -10,7 +6,7 @@ namespace OrpheusAttributes
     /// Unique key constraint attribute.
     /// Decorate a property with attribute to create a unique key constraint on a schema object.
     /// </summary>
-    public class UniqueKey : OrpheusBaseAttribute
+    public class UniqueKey : OrpheusBaseAttribute, IUniqueKey
     { 
     }
 }

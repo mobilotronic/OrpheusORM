@@ -7,12 +7,12 @@
     },
     {
       "Implementation": "OrpheusCore.OrpheusDatabase, OrpheusCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "Service": "OrpheusInterfaces.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Service": "OrpheusInterfaces.Core.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "ServiceLifeTime": "Transient"
     },
     {
       "Implementation": "OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-      "Service": "OrpheusInterfaces.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Service": "OrpheusInterfaces.Core.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "ServiceLifeTime": "Transient"
     },
     {
@@ -21,16 +21,17 @@
       "ServiceLifeTime": "Singleton"
     }
   ],
-  "DatabaseConnection": 
+  "DatabaseConnections": [
     {
-      "ConfigurationName": "ServiceConnection",
-      "Server": "[YourServer]",
-      "DatabaseName": "[YourDatabase]",
-      "UseIntegratedSecurity": true
+      "ConfigurationName": "Default",
+      "Server": "[redacted-host]\\SQL2016",
+      "DatabaseName": "orpheusTestDB",
+      "UseIntegratedSecurity": true,
+      "UseIntegratedSecurityForServiceConnection": true
     }
-  ,
+  ],
   "Logging": {
-    "Level": "Debug",
+    "Level": "Trace",
     "MaxFileSize": 1
   }
 }

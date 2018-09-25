@@ -1,11 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
 using OrpheusTestModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace OrpheusTests
@@ -124,6 +125,8 @@ namespace OrpheusTests
             return this.configuration;
         }
 
+        public IConfiguration Configuration => this.configuration;
+
         public DbEngine DatabaseEngine { get; set; }
 
         public IOrpheusDatabase Database
@@ -150,6 +153,7 @@ namespace OrpheusTests
                             }
                     }
                     this.db = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusDatabase>();
+                    this.db.DatabaseConnectionConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c=>c.ConfigurationName == "Default");
                 }
                 return this.db;
             }

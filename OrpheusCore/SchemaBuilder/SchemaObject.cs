@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using OrpheusInterfaces;
+using OrpheusInterfaces.Core;
+using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -465,9 +466,12 @@ namespace OrpheusCore.SchemaBuilder
             if (this.SQLName == null)
                 this.SQLName = modelType.Name;
             this.modelHelper.CreateSchemaFields(this);
-            //if there was a [TableName] attribute set, then it takes precedence.
-            if (this.modelHelper.SQLName != null)
-                this.SQLName = this.modelHelper.SQLName;
+
+            if (this.SQLName != null && (this.SQLName.ToLower() != this.modelHelper.SQLName.ToLower()))
+                this.logger.LogWarning($"The table name {this.SQLName} passed into the constructor is not the same as the associated model's {this.modelHelper.SQLName}");
+            ////if there was a [TableName] attribute set, then it takes precedence.
+            //if (this.modelHelper.SQLName != null)
+            //    this.SQLName = this.modelHelper.SQLName;
         }
 
 
@@ -580,7 +584,10 @@ namespace OrpheusCore.SchemaBuilder
                 });
             });
 
-            this.seedDataTable = new OrpheusTable<T>(this.DB, this.SQLName, tableKeys);
+            this.seedDataTable = new OrpheusTable<T>(this.DB,tableKeys, this.SQLName);
+            //
+            //if (this.seedDataTable.Name != this.SQLName)
+            //    this.seedDataTable.Name = this.SQLName;
             data.ForEach(dataRow =>
             {
                 ((IOrpheusTable<T>)this.seedDataTable).Add(dataRow);

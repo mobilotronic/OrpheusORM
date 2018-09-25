@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OrpheusInterfaces.Interfaces.Attributes;
+using System;
 
 namespace OrpheusAttributes
 {
     /// <summary>
     /// The Orpheus base attribute class.
     /// </summary>
-    public class OrpheusBaseAttribute :Attribute
+    public class OrpheusBaseAttribute :Attribute, IOrpheusBaseAttribute
     {
     }
 }

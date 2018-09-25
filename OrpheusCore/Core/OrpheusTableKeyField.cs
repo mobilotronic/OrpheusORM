@@ -1,4 +1,4 @@
-﻿using OrpheusInterfaces;
+﻿using OrpheusInterfaces.Core;
 using System;
 
 namespace OrpheusCore

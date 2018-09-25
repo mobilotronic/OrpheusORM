@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using OrpheusInterfaces.Interfaces;
+using OrpheusInterfaces.Configuration;
+using OrpheusInterfaces.Logging;
 using System.Collections.Generic;
 
 namespace OrpheusCore.Configuration
@@ -60,12 +61,20 @@ namespace OrpheusCore.Configuration
         /// Maximum log file size.
         /// </summary>
         public int MaxFileSize { get; set; }
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public LoggingConfiguration()
+        {
+            this.Level = "None";
+        }
     }
 
     /// <summary>
     /// Orpheus database configuration.
     /// </summary>
-    public class DatabaseConnectionConfiguration
+    public class DatabaseConnectionConfiguration : IDatabaseConnectionConfiguration
     {
         /// <summary>
         /// Database configuration name.
@@ -96,6 +105,30 @@ namespace OrpheusCore.Configuration
         /// SQL Server specific.
         /// </summary>
         public bool UseIntegratedSecurity { get; set; }
+
+        /// <summary>
+        /// Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
+        /// This boolean sets this second connection, integrated security setting.
+        /// </summary>
+        public bool UseIntegratedSecurityForServiceConnection { get; set; }
+
+        /// <summary>
+        /// Creates a clone of this database configuration.
+        /// </summary>
+        /// <returns></returns>
+        public IDatabaseConnectionConfiguration Clone()
+        {
+            return new DatabaseConnectionConfiguration()
+            {
+                ConfigurationName = this.ConfigurationName,
+                DatabaseName = this.DatabaseName,
+                Server = this.Server,
+                UserName = this.UserName,
+                Password = this.Password,
+                UseIntegratedSecurity = this.UseIntegratedSecurity,
+                UseIntegratedSecurityForServiceConnection = this.UseIntegratedSecurityForServiceConnection
+            };
+        }
     }
 
     /// <summary>
@@ -109,9 +142,9 @@ namespace OrpheusCore.Configuration
         public List<ServiceProviderItem> Services { get; set; }
 
         /// <summary>
-        /// Database connection information.
+        /// Database connections information.
         /// </summary>
-        public DatabaseConnectionConfiguration DatabaseConnection { get; set; }
+        public List<DatabaseConnectionConfiguration> DatabaseConnections { get; set; }
 
         /// <summary>
         /// Logging configuration.
