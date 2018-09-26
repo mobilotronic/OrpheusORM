@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace OrpheusInterfaces
    | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.32.1.0">
+    <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -63,7 +63,9 @@
         
         <div id="search-results">
           <div class="search-list"></div>
-          <div class="sr-items"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
           <ul id="pagination"></ul>
         </div>
       </div>
@@ -86,8 +88,8 @@
   <div class="markdown level0 remarks"></div>
     <h3 id="interfaces">Interfaces
   </h3>
-      <h4><a class="xref" href="OrpheusInterfaces.IForeignKeySchemaConstraint.html">IForeignKeySchemaConstraint</a></h4>
-      <section><p>A foreign key constraint.</p>
+      <h4><a class="xref" href="OrpheusInterfaces.IDatabaseConnectionConfiguration.html">IDatabaseConnectionConfiguration</a></h4>
+      <section><p>Database connection configuration.</p>
 </section>
       <h4><a class="xref" href="OrpheusInterfaces.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments&lt;T&gt;</a></h4>
       <section><p>Orpheus record modify event. Occurs when data are processed in memory.</p>
@@ -130,67 +132,22 @@ Holds all the data of the connected table.</p>
       <h4><a class="xref" href="OrpheusInterfaces.IOrpheusTableOptions.html">IOrpheusTableOptions</a></h4>
       <section><p>Represents <a class="xref" href="OrpheusInterfaces.IOrpheusTable.html">IOrpheusTable</a> options, which can be used to instantiate a table.</p>
 </section>
-      <h4><a class="xref" href="OrpheusInterfaces.IPrimaryKeySchemaConstraint.html">IPrimaryKeySchemaConstraint</a></h4>
-      <section><p>A primary key constraint.</p>
-</section>
       <h4><a class="xref" href="OrpheusInterfaces.ISaveEventArguments.html">ISaveEventArguments</a></h4>
       <section><p>Orpheus save event arguments. Occurs when data are actually being save to the database.</p>
 </section>
-      <h4><a class="xref" href="OrpheusInterfaces.ISchema.html">ISchema</a></h4>
-      <section><p>Represents an Orpheus Schema.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.ISchemaConstraint.html">ISchemaConstraint</a></h4>
-      <section><p>Represents a schema constraint.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.ISchemaDataObject.html">ISchemaDataObject</a></h4>
-      <section><p>Base schema data object interface.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.ISchemaField.html">ISchemaField</a></h4>
-      <section><p>Represents a schema field.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.ISchemaJoinDefinition.html">ISchemaJoinDefinition</a></h4>
-      <section><p>Represents a schema join definition, which can be used by <a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a> when a schema is created.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.ISchemaObject.html">ISchemaObject</a></h4>
-      <section><p>Base schema object interface.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.ISchemaTable.html">ISchemaTable</a></h4>
-      <section><p>Create table schema interface.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.ISchemaView.html">ISchemaView</a></h4>
-      <section><p>Create view schema object.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.ISchemaViewTable.html">ISchemaViewTable</a></h4>
-      <section><p>A data table that is used in a View.</p>
-</section>
       <h4><a class="xref" href="OrpheusInterfaces.ISQLServerDDLHelper.html">ISQLServerDDLHelper</a></h4>
       <section><p>SQL Server specific DDL helper definition.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.IUniqueKeySchemaConstraint.html">IUniqueKeySchemaConstraint</a></h4>
-      <section><p>A unique key constraint.</p>
 </section>
     <h3 id="enums">Enums
   </h3>
       <h4><a class="xref" href="OrpheusInterfaces.DatabaseEngineType.html">DatabaseEngineType</a></h4>
       <section><p>Database engine type.</p>
 </section>
-      <h4><a class="xref" href="OrpheusInterfaces.DDLAction.html">DDLAction</a></h4>
-      <section><p>DDL action.</p>
-</section>
       <h4><a class="xref" href="OrpheusInterfaces.ExtendedDbTypes.html">ExtendedDbTypes</a></h4>
       <section><p>Extended DbTypes enumeration, for types that are not listed in the generic DbType enumeration.</p>
 </section>
-      <h4><a class="xref" href="OrpheusInterfaces.SchemaJoinOperator.html">SchemaJoinOperator</a></h4>
-      <section><p>Join operator type.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.SchemaJoinType.html">SchemaJoinType</a></h4>
-      <section><p>Schema join types.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.SchemaObjectType.html">SchemaObjectType</a></h4>
-      <section><p>Type of a schema object.</p>
-</section>
-      <h4><a class="xref" href="OrpheusInterfaces.SchemaSort.html">SchemaSort</a></h4>
-      <section><p>Schema sort type.</p>
+      <h4><a class="xref" href="OrpheusInterfaces.LogicalOperator.html">LogicalOperator</a></h4>
+      <section><p>Logical operator</p>
 </section>
 </article>
           </div>

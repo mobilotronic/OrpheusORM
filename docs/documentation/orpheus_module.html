@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Orpheus Module | Orpheus ORM </title>
+    <title>Orpheus Module | Orpheus </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Orpheus Module | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.32.1.0">
+    <meta name="title" content="Orpheus Module | Orpheus ">
+    <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -36,7 +36,7 @@
               </button>
               
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../Images/OrpheusLogo.svg" alt="">
+                <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -61,7 +61,9 @@
         
         <div id="search-results">
           <div class="search-list"></div>
-          <div class="sr-items"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
           <ul id="pagination"></ul>
         </div>
       </div>
@@ -86,7 +88,7 @@ will be saved as well. </p>
 <p>All master-detail relationships and keys will be updated automatically.</p>
 <h2 id="whats-does-the-above-mean-exactly">Whats does the above mean exactly?</h2>
 <p>You can use an OrpheusModule to logically group/divide your business logic.</p>
-<p>Using the example above, having an <code>OrdersModule</code>, you can have your BL for adding, updating
+<p>Using the example above, having an <code>OrdersModule</code>, you can have your bussiness logic for adding, updating
 and deleting orders in one place.</p>
 <p>The OrpheusModule will manage for you, the master-detail relationships in your module.</p>
 <p>For example an OrderLine must always have an OrderId. 
@@ -178,10 +180,10 @@ moduleDefinition.DetailTableOptions.Add(detailTableOptions);
 </code></pre><h5 id="creating-the-module">Creating the module.</h5>
 <pre><code class="lang-csharp">var module = this.Database.CreateModule(moduleDefinition);
 </code></pre><h5 id="getting-references-to-module-tables">Getting references to module tables.</h5>
-<pre><code class="lang-csharp">var transactors = module.GetReferenceTable&lt;TestModelTransactor&gt;(&quot;TestModelTransactor&quot;);
-var items = module.GetReferenceTable&lt;TestModelItem&gt;(&quot;TestModelItem&quot;);
-var orderLines = module.GetTable&lt;TestModelOrderLine&gt;(&quot;TestModelOrderLine&quot;);
-var order = module.GetTable&lt;TestModelOrder&gt;(&quot;TestModelOrder&quot;);
+<pre><code class="lang-csharp">var transactors = module.GetReferenceTable&lt;TestModelTransactor&gt;();
+var items = module.GetReferenceTable&lt;TestModelItem&gt;();
+var orderLines = module.GetTable&lt;TestModelOrderLine&gt;();
+var order = module.GetTable&lt;TestModelOrder&gt;();
 </code></pre><h5 id="populating-auxiliary-data">Populating auxiliary data.</h5>
 <pre><code class="lang-csharp">//populating auxiliary data.
 transactors.Add(TestDatabase.GetTransactors());
@@ -232,7 +234,7 @@ module.Save();
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Orpheus ORM - Original Author © 2018
+            Orpheus - Original Author © 2018
             
           </div>
         </div>
