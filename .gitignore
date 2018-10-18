@@ -64,3 +64,9 @@ OrpheusSQLiteDDLHelper/OrpheusSQLiteDDLHelper.cs
 OrpheusSQLiteDDLHelper/OrpheusSQLiteDDLHelper.csproj
 OrpheusTests/OrpheusSQLiteServerConfig.json
 *.user
+Nuget/PublishPackage.cmd.bak
+Nuget/CreatePackage.cmd.bak
+.vs/Orpheus.NetCore/v15/Server/sqlite3/storage.ide-wal
+.vs/Orpheus.NetCore/v15/Server/sqlite3/storage.ide-shm
+.vs/Orpheus.NetCore/DesignTimeBuild/.dtbcache
+.vs/Orpheus.NetCore/v15/Server/sqlite3/db.lock
