@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Class SQLServerSchemaName
-   | Orpheus ORM </title>
+   | Orpheus </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SQLServerSchemaName
-   | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.32.1.0">
+   | Orpheus ">
+    <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -38,7 +38,7 @@
               </button>
               
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../Images/OrpheusLogo.svg" alt="">
+                <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -63,7 +63,9 @@
         
         <div id="search-results">
           <div class="search-list"></div>
-          <div class="sr-items"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
           <ul id="pagination"></ul>
         </div>
       </div>
@@ -98,7 +100,7 @@ It&apos;s only applicable when the underlying database engine is SQL server, as 
   <h5 id="OrpheusAttributes_SQLServerSchemaName_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[AttributeUsage(AttributeTargets.Class)]
-public class SQLServerSchemaName : OrpheusBaseAttribute</code></pre>
+public class SQLServerSchemaName : OrpheusBaseAttribute, IOrpheusBaseAttribute</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -107,11 +109,11 @@ public class SQLServerSchemaName : OrpheusBaseAttribute</code></pre>
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusAttributes_SQLServerSchemaName__ctor_System_String_.md&amp;value=---%0Auid%3A%20OrpheusAttributes.SQLServerSchemaName.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusAttributes/OrpheusSchemaNameAttribute.cs/#L24">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusAttributes/OrpheusSchemaNameAttribute.cs/#L22">View Source</a>
   </span>
   <a id="OrpheusAttributes_SQLServerSchemaName__ctor_" data-uid="OrpheusAttributes.SQLServerSchemaName.#ctor*"></a>
   <h4 id="OrpheusAttributes_SQLServerSchemaName__ctor_System_String_" data-uid="OrpheusAttributes.SQLServerSchemaName.#ctor(System.String)">SQLServerSchemaName(String)</h4>
-  <div class="markdown level1 summary"><p>Schema name attribute constructor.</p>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusAttributes.SQLServerSchemaName.html">SQLServerSchemaName</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -131,7 +133,7 @@ public class SQLServerSchemaName : OrpheusBaseAttribute</code></pre>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">schemaName</span></td>
-        <td><p>Schema name.</p>
+        <td><p>Name of the schema.</p>
 </td>
       </tr>
     </tbody>
@@ -143,12 +145,11 @@ public class SQLServerSchemaName : OrpheusBaseAttribute</code></pre>
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusAttributes_SQLServerSchemaName_SchemaName.md&amp;value=---%0Auid%3A%20OrpheusAttributes.SQLServerSchemaName.SchemaName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusAttributes/OrpheusSchemaNameAttribute.cs/#L18">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusAttributes/OrpheusSchemaNameAttribute.cs/#L16">View Source</a>
   </span>
   <a id="OrpheusAttributes_SQLServerSchemaName_SchemaName_" data-uid="OrpheusAttributes.SQLServerSchemaName.SchemaName*"></a>
   <h4 id="OrpheusAttributes_SQLServerSchemaName_SchemaName" data-uid="OrpheusAttributes.SQLServerSchemaName.SchemaName">SchemaName</h4>
-  <div class="markdown level1 summary"><p>The schema name.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -165,10 +166,15 @@ public class SQLServerSchemaName : OrpheusBaseAttribute</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>The schema name.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.html">IOrpheusBaseAttribute</a>
+  </div>
 </article>
           </div>
         </div>
@@ -181,7 +187,7 @@ public class SQLServerSchemaName : OrpheusBaseAttribute</code></pre>
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Orpheus ORM - Original Author © 2018
+            Orpheus - Original Author © 2018
             
           </div>
         </div>

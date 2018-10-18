@@ -13,28 +13,41 @@ namespace OrpheusCore.Configuration
     public class ServiceProviderItem
     {
         /// <summary>
-        /// Fully qualified name for the service implementation.
+        /// Gets or sets the implementation.
         /// </summary>
+        /// <value>
+        /// The implementation.
+        /// </value>
         public string Implementation { get; set; }
 
         /// <summary>
-        /// Fully qualified name for the service interface.
+        /// Gets or sets the service.
         /// </summary>
+        /// <value>
+        /// The service.
+        /// </value>
         public string Service { get; set; }
-        
+
         /// <summary>
-        /// Service life time.
+        /// Gets or sets the service lifetime.
         /// </summary>
+        /// <value>
+        /// The service lifetime.
+        /// </value>
         [JsonConverter(typeof(StringEnumConverter))]
         public ServiceLifetime ServiceLifetime { get; set; }
 
         /// <summary>
-        /// Obsolete, to be removed.
+        /// Gets or sets the constructor parameters.
         /// </summary>
+        /// <value>
+        /// The constructor parameters.
+        /// </value>
+        /// <remarks>Obsolete</remarks>
         public List<string> ConstructorParameters { get; set; }
 
         /// <summary>
-        /// Creates a ServiceProviderItem.
+        /// Initializes a new instance of the <see cref="ServiceProviderItem"/> class.
         /// </summary>
         public ServiceProviderItem()
         {
@@ -47,24 +60,24 @@ namespace OrpheusCore.Configuration
     /// </summary>
     public class LoggingConfiguration : ILoggingConfiguration
     {
-        /// <summary>
+        /// <value>
         /// Logging level.
-        /// </summary>
+        /// </value>
         public string Level { get; set; }
 
-        /// <summary>
+        /// <value>
         /// Log file path.
-        /// </summary>
+        /// </value>
         public string FilePath { get; set; }
 
-        /// <summary>
+        /// <value>
         /// Maximum log file size.
-        /// </summary>
+        /// </value>
         public int MaxFileSize { get; set; }
 
-        /// <summary>
+        /// <value>
         /// Constructor
-        /// </summary>
+        /// </value>
         public LoggingConfiguration()
         {
             this.Level = "None";
@@ -76,41 +89,53 @@ namespace OrpheusCore.Configuration
     /// </summary>
     public class DatabaseConnectionConfiguration : IDatabaseConnectionConfiguration
     {
-        /// <summary>
+        /// <value>
         /// Database configuration name.
-        /// </summary>
+        /// </value>
         public string ConfigurationName { get; set; }
-        
-        /// <summary>
+
+        /// <value>
         /// The database name.
-        /// </summary>
+        /// </value>
         public string DatabaseName { get; set; }
 
-        /// <summary>
+        /// <value>
         /// Server name or IP address.
-        /// </summary>
+        /// </value>
         public string Server { get; set; }
-        
-        /// <summary>
+
+        /// <value>
         /// User name.
-        /// </summary>
+        /// </value>
         public string UserName { get; set; }
 
-        /// <summary>
+        /// <value>
         /// Password.
-        /// </summary>
+        /// </value>
         public string Password { get; set; }
 
-        /// <summary>
+        /// <value>
         /// SQL Server specific.
-        /// </summary>
+        /// </value>
         public bool UseIntegratedSecurity { get; set; }
 
-        /// <summary>
+        /// <value>
         /// Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
         /// This boolean sets this second connection, integrated security setting.
-        /// </summary>
+        /// </value>
         public bool UseIntegratedSecurityForServiceConnection { get; set; }
+
+        /// <value>
+        /// Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
+        /// The ServiceUserName is the one that will be used for that connection.
+        /// </value>
+        public string ServiceUserName { get; set; }
+
+        /// <value>
+        /// Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
+        /// The ServicePassword is the one that will be used for that connection.
+        /// </value>
+        public string ServicePassword { get; set; }
 
         /// <summary>
         /// Creates a clone of this database configuration.
@@ -137,27 +162,39 @@ namespace OrpheusCore.Configuration
     public class OrpheusConfiguration
     {
         /// <summary>
-        /// List of services.
+        /// Gets or sets the services.
         /// </summary>
+        /// <value>
+        /// The services.
+        /// </value>
         public List<ServiceProviderItem> Services { get; set; }
 
         /// <summary>
-        /// Database connections information.
+        /// Gets or sets the database connections.
         /// </summary>
+        /// <value>
+        /// The database connections.
+        /// </value>
         public List<DatabaseConnectionConfiguration> DatabaseConnections { get; set; }
 
         /// <summary>
-        /// Logging configuration.
+        /// Gets or sets the logging.
         /// </summary>
+        /// <value>
+        /// The logging.
+        /// </value>
         public LoggingConfiguration Logging { get; set; }
 
         /// <summary>
-        /// Default size for string field, when creating a db schema.
+        /// Gets or sets the default size of the string.
         /// </summary>
+        /// <value>
+        /// The default size of a string field, when creating the db schema.
+        /// </value>
         public int DefaultStringSize { get; set; }
 
         /// <summary>
-        /// Creates an Orpheus configuration.
+        /// Initializes a new instance of the <see cref="OrpheusConfiguration"/> class.
         /// </summary>
         public OrpheusConfiguration()
         {

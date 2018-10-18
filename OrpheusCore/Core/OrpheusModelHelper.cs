@@ -242,55 +242,55 @@ namespace OrpheusCore
         #endregion
 
         #region public properties
-        
-        /// <summary>
+
+        /// <value>
         /// Model's primary keys.
-        /// </summary>
+        /// </value>
         public Dictionary<string,IPrimaryKey> PrimaryKeys { get; private set; }
-        
-        /// <summary>
+
+        /// <value>
         /// Model's foreign keys.
-        /// </summary>
+        /// </value>
         public Dictionary<string,IForeignKey> ForeignKeys { get; private set; }
-        
-        /// <summary>
+
+        /// <value>
         /// Model's unique keys.
-        /// </summary>
+        /// </value>
         public Dictionary<string,IUniqueKey> UniqueKeys { get; private set; }
-       
-        /// <summary>
+
+        /// <value>
         /// Model's composite primary keys.
-        /// </summary>
+        /// </value>
         public List<IOrpheusBaseCompositeKeyAttribute> PrimaryCompositeKeys { get; private set; }
-        
-        /// <summary>
+
+        /// <value>
         /// Model's composite unique keys.
-        /// </summary>
+        /// </value>
         public List<IOrpheusBaseCompositeKeyAttribute> UniqueCompositeKeys { get; private set; }
-       
-        /// <summary>
+
+        /// <value>
         /// Model properties that are not part of the schema.
-        /// </summary>
+        /// </value>
         public List<string> SchemaIgnoreProperties { get; private set; }
-        
-        /// <summary>
+
+        /// <value>
         /// Model properties that have an explicitly set field name.
-        /// </summary>
+        /// </value>
         public Dictionary<string,string> CustomFieldNameProperties { get; private set; }
-        
-        /// <summary>
+
+        /// <value>
         /// Model's properties.
-        /// </summary>
+        /// </value>
         public PropertyInfo[] ModelProperties { get { return this.getModelProperties(); } }
-        
-        /// <summary>
+
+        /// <value>
         /// Model's SQLName. Defaults to the model's type name.
-        /// </summary>
+        /// </value>
         public string SQLName { get; private set; }
 
-        /// <summary>
+        /// <value>
         /// SQL server's schema name.
-        /// </summary>
+        /// </value>
         public string SQLServerSchemaName { get; private set; }
         #endregion
 
@@ -299,7 +299,7 @@ namespace OrpheusCore
         /// Helper function to iterate through the model properties and calls the given callback,
         /// for each property.
         /// </summary>
-        /// <param name="callback"></param>
+        /// <param name="callback">The callback method.</param>
         public void IterateModelProperties(ModelProperty callback)
         {
             foreach (var prop in this.getModelProperties())
@@ -315,8 +315,8 @@ namespace OrpheusCore
         /// Helper function to iterate through the property's attributes and calls the given callback,
         /// for each attribute.
         /// </summary>
-        /// <param name="property"></param>
-        /// <param name="callback"></param>
+        /// <param name="property">The property.</param>
+        /// <param name="callback">The callback method.</param>
         public void IteratePropertyAttributes(PropertyInfo property, PropertyAttribute callback)
         {
             foreach (var attr in this.getPropertyAttributes(property))
@@ -331,7 +331,7 @@ namespace OrpheusCore
         /// <summary>
         /// Helper function that returns true if the property is not actually part of the schema.
         /// </summary>
-        /// <param name="property"></param>
+        /// <param name="property">The property.</param>
         /// <returns></returns>
         public bool IsSchemaProperty(PropertyInfo property)
         {
@@ -341,7 +341,7 @@ namespace OrpheusCore
         /// <summary>
         /// Helper function that returns the corresponding field name for a property.
         /// </summary>
-        /// <param name="prop"></param>
+        /// <param name="prop">The property info.</param>
         /// <returns></returns>
         public string GetFieldNameForProperty(PropertyInfo prop)
         {
@@ -352,7 +352,7 @@ namespace OrpheusCore
         /// Creates an instance of the model and typecasts it to the given type.
         /// </summary>
         /// <typeparam name="T">Type to cast the model</typeparam>
-        /// <returns></returns>
+        /// <returns>An instance of 'T'</returns>
         public T CreateInstance<T>()
         {
             return (T)Activator.CreateInstance(modelType);
@@ -361,7 +361,7 @@ namespace OrpheusCore
         /// <summary>
         /// Creates schema fields and constraints for a model.
         /// </summary>
-        /// <param name="schemaObj"></param>
+        /// <param name="schemaObj">The schema object.</param>
         public void CreateSchemaFields(ISchemaDataObject schemaObj)
         {
             this.PrimaryCompositeKeys.ForEach(pk => {
@@ -383,8 +383,8 @@ namespace OrpheusCore
         /// Creates a list of SQL ALTER commands, based on the differences between the current version of the model
         /// and the current version of the corresponding db table.
         /// </summary>
-        /// <param name="schemaObj"></param>
-        /// <param name="ddlHelper"></param>
+        /// <param name="schemaObj">The schema object.</param>
+        /// <param name="ddlHelper">The ddl helper.</param>
         /// <returns></returns>
         public List<string> GetAlterDDLCommands(ISchemaDataObject schemaObj, IOrpheusDDLHelper ddlHelper)
         {
@@ -492,9 +492,10 @@ namespace OrpheusCore
         #endregion
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="OrpheusModelHelper"/> class.
         /// OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.
         /// </summary>
-        /// <param name="modelType"></param>
+        /// <param name="modelType">Type of the model.</param>
         public OrpheusModelHelper(Type modelType)
         {
             this.logger = OrpheusServiceProvider.Resolve<ILogger>();

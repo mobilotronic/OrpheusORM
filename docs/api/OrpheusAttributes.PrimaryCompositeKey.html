@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Class PrimaryCompositeKey
-   | Orpheus ORM </title>
+   | Orpheus </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class PrimaryCompositeKey
-   | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.32.1.0">
+   | Orpheus ">
+    <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -38,7 +38,7 @@
               </button>
               
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../Images/OrpheusLogo.svg" alt="">
+                <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -63,7 +63,9 @@
         
         <div id="search-results">
           <div class="search-list"></div>
-          <div class="sr-items"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
           <ul id="pagination"></ul>
         </div>
       </div>
@@ -97,7 +99,7 @@
   <h6><strong>Assembly</strong>: OrpheusAttributes.dll</h6>
   <h5 id="OrpheusAttributes_PrimaryCompositeKey_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PrimaryCompositeKey : OrpheusCompositeKeyBaseAttribute</code></pre>
+    <pre><code class="lang-csharp hljs">public class PrimaryCompositeKey : OrpheusCompositeKeyBaseAttribute, IOrpheusBaseCompositeKeyAttribute, IOrpheusBaseAttribute</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -106,11 +108,11 @@
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusAttributes_PrimaryCompositeKey__ctor_System_String___System_String_.md&amp;value=---%0Auid%3A%20OrpheusAttributes.PrimaryCompositeKey.%23ctor(System.String%5B%5D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusAttributes/OrpheusPrimaryCompositeKey.cs/#L19">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusAttributes/OrpheusPrimaryCompositeKey.cs/#L13">View Source</a>
   </span>
   <a id="OrpheusAttributes_PrimaryCompositeKey__ctor_" data-uid="OrpheusAttributes.PrimaryCompositeKey.#ctor*"></a>
   <h4 id="OrpheusAttributes_PrimaryCompositeKey__ctor_System_String___System_String_" data-uid="OrpheusAttributes.PrimaryCompositeKey.#ctor(System.String[],System.String)">PrimaryCompositeKey(String[], String)</h4>
-  <div class="markdown level1 summary"><p>Primary composite key.</p>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusAttributes.PrimaryCompositeKey.html">PrimaryCompositeKey</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -130,17 +132,24 @@
       <tr>
         <td><span class="xref">System.String</span>[]</td>
         <td><span class="parametername">fields</span></td>
-        <td><p>Fields that are part of the key</p>
+        <td><p>The fields.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">sort</span></td>
-        <td><p>Sort direction</p>
+        <td><p>The sort direction.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html">IOrpheusBaseCompositeKeyAttribute</a>
+  </div>
+  <div>
+      <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.html">IOrpheusBaseAttribute</a>
+  </div>
 </article>
           </div>
         </div>
@@ -153,7 +162,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Orpheus ORM - Original Author © 2018
+            Orpheus - Original Author © 2018
             
           </div>
         </div>

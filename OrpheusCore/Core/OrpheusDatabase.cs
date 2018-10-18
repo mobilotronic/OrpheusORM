@@ -97,10 +97,10 @@ namespace OrpheusCore
         }
         #endregion
 
-        #region public properties
-        /// <summary>
+        #region public properties                
+        /// <value>
         /// State of the database. Connected or not.
-        /// </summary>
+        /// </value>
         public bool Connected
         {
             get
@@ -109,9 +109,9 @@ namespace OrpheusCore
             }
         }
 
-        /// <summary>
+        /// <value>
         /// List of registered Orpheus modules.
-        /// </summary>
+        /// </value>
         public List<IOrpheusModule> Modules
         {
             get
@@ -119,10 +119,10 @@ namespace OrpheusCore
                 return this.modules;
             }
         }
-        
-        /// <summary>
-        /// Is dictionary map between .net data types and DBTypes.
-        /// </summary>
+
+        /// <value>
+        /// Mapping dictionary of types to data types.
+        /// </value>
         public Dictionary<Type, System.Data.DbType> TypeMap
         {
             get
@@ -130,20 +130,22 @@ namespace OrpheusCore
                 return this.typeMap;
             }
         }
-        
+
         /// <summary>
-        /// Returns true if the type is in the list of nullable types.
+        /// Returns true if the type is a nullable type.
         /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <param name="type">Type</param>
+        /// <returns>
+        /// True if type is nullable
+        /// </returns>
         public bool IsNullableType(Type type)
         {
             return this.nullableTypes.Contains(type);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <value>
+        /// Helps execute DDL specific commands for the underlying db engine.
+        /// </value>
         public IOrpheusDDLHelper DDLHelper
         {
             get
@@ -156,9 +158,9 @@ namespace OrpheusCore
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets the underlying IDbConnection connection string.
-        /// </summary>
+        /// </value>
         public string ConnectionString
         {
             get
@@ -167,19 +169,20 @@ namespace OrpheusCore
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Last active transaction.
-        /// </summary>
+        /// </value>
         public IDbTransaction LastActiveTransaction { get; private set; }
 
-        /// <summary>
+        /// <value>
         /// Exposing the underlying IDbConnection instance.
-        /// </summary>
+        /// </value>
         public IDbConnection DbConnection { get { return this.dbConnection; } }
 
-        /// <summary>
+        /// <value>
         /// Database connection configuration.
-        /// </summary>
+        /// </value>
+        /// <exception cref="ArgumentNullException">The database connection configuration cannot be null.</exception>
         public IDatabaseConnectionConfiguration DatabaseConnectionConfiguration
         {
             get
@@ -194,19 +197,25 @@ namespace OrpheusCore
             }
         }
 
+        /// <value>
+        /// Logger instance.
+        /// </value>
+        public ILogger Logger => this.logger;
+
         #endregion
 
-        #region constructors
+        #region constructors        
         /// <summary>
-        /// Creates an Orpheus database.
+        /// Initializes a new instance of the <see cref="OrpheusDatabase"/> class.
         /// </summary>
-        /// <param name="connection">Database connection</param>
-        /// <param name="ddlHelper">DDL helper</param>
-        /// <param name="logger">Logger</param>
+        /// <param name="connection">The connection.</param>
+        /// <param name="ddlHelper">The DDL helper.</param>
+        /// <param name="logger">The logger.</param>
         public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILogger logger)
         {
             this.dbConnection = connection;
             this.ddlHelper = ddlHelper;
+            this.ddlHelper.DB = this;
             this.modules = new List<IOrpheusModule>();
             this.logger = logger;
             this.initializeTypeMap();
@@ -218,8 +227,10 @@ namespace OrpheusCore
         /// <summary>
         /// Creates an OrpheusModule.
         /// </summary>
-        /// <param name="definition"></param>
-        /// <returns></returns>
+        /// <param name="definition">Module definition</param>
+        /// <returns>
+        /// An IOrpheusModule instance
+        /// </returns>
         public IOrpheusModule CreateModule(IOrpheusModuleDefinition definition = null)
         {
             return ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusModule>(new object[] { this, definition }); // new OrpheusModule(this, definition);
@@ -228,7 +239,9 @@ namespace OrpheusCore
         /// <summary>
         /// Creates an OrpheusTableOptions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// An IOrpheusTableOptions instance.
+        /// </returns>
         public IOrpheusTableOptions CreateTableOptions()
         {
             return ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusTableOptions>();
@@ -237,7 +250,9 @@ namespace OrpheusCore
         /// <summary>
         /// Creates an OrpheusTableKeyField.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// An IOrpheusTableKeyField instance.
+        /// </returns>
         public IOrpheusTableKeyField CreateTableKeyField()
         {
             return ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusTableKeyField>();
@@ -246,7 +261,9 @@ namespace OrpheusCore
         /// <summary>
         /// Creates an OrpheusModuleDefinition.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// An IOrpheusModuleDefinition instance.
+        /// </returns>
         public IOrpheusModuleDefinition CreateModuleDefinition()
         {
             var result = ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusModuleDefinition>();
@@ -254,12 +271,15 @@ namespace OrpheusCore
             return result;
         }
 
+
         /// <summary>
-        /// Creates an OrpheusTable.
+        /// Creates a table and sets its database.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="options"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">Model type for table</typeparam>
+        /// <param name="options">Table options</param>
+        /// <returns>
+        /// An Orpheus table instance.
+        /// </returns>
         public IOrpheusTable<T> CreateTable<T>(IOrpheusTableOptions options)
         {
             if(options != null)
@@ -270,13 +290,16 @@ namespace OrpheusCore
             return null;
         }
 
+
         /// <summary>
-        /// Creates an OrpheusTable.
+        /// Creates a table and sets its database.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">Model type for the table</typeparam>
         /// <param name="tableName">Table name</param>
         /// <param name="keyFields">Table key fields</param>
-        /// <returns></returns>
+        /// <returns>
+        /// An Orpheus table instance.
+        /// </returns>
         public IOrpheusTable<T> CreateTable<T>(string tableName,List<IOrpheusTableKeyField> keyFields = null)
         {
             var options = this.CreateTableOptions();
@@ -286,10 +309,12 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// Creates an OrpheusTable, using the type name as the table name.
+        /// Creates a table and sets its database,using the type name as the table name.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>
+        /// An Orpheus table instance.
+        /// </returns>
         public IOrpheusTable<T> CreateTable<T>()
         {
             var tableName = typeof(T).Name;
@@ -297,13 +322,15 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// Creates a schema object.
+        /// Creates a schema object and sets it's database.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="description"></param>
-        /// <param name="version"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
+        /// <param name="id">Schema id</param>
+        /// <param name="description">Schema description</param>
+        /// <param name="version">Schema version</param>
+        /// <param name="name">Schema name.From the supported db engines, only SQL server has support for named schemas.</param>
+        /// <returns>
+        /// An ISchema instance.
+        /// </returns>
         public ISchema CreateSchema(Guid id, string description, double version, string name = null)
         {
             if (id == Guid.Empty)
@@ -313,21 +340,25 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// Creates a DbCommand.
+        /// Create a DbCommand.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// A DbCommand instance.
+        /// </returns>
         public IDbCommand CreateCommand()
         {
             return this.dbConnection.CreateCommand();
         }
 
         /// <summary>
-        /// Returns a prepared query command.
+        /// Returns a prepared query with parameters created.
         /// </summary>
-        /// <param name="SQL">SQL query to prepare</param>
-        /// <param name="parameters">List of query parameters</param>
-        /// <param name="parameterValues">List of query parameter values</param>
-        /// <returns></returns>
+        /// <param name="SQL">SQL for the prepared query</param>
+        /// <param name="parameters">SQL parameters</param>
+        /// <param name="parameterValues">SQL parameter values</param>
+        /// <returns>
+        /// A DbCommand instance.
+        /// </returns>
         public IDbCommand CreatePreparedQuery(string SQL, List<string> parameters, List<object> parameterValues = null)
         {
             var result = this.CreateCommand();
@@ -348,10 +379,12 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// Returns a prepared query command.
+        /// Returns a prepared query with parameters created.
         /// </summary>
-        /// <param name="SQL">SQL query to prepare</param>
-        /// <returns></returns>
+        /// <param name="SQL">SQL for the prepared query</param>
+        /// <returns>
+        /// A DbCommand instance.
+        /// </returns>
         public IDbCommand CreatePreparedQuery(string SQL)
         {
             var result = this.CreateCommand();
@@ -368,6 +401,7 @@ namespace OrpheusCore
         /// <summary>
         /// Connects to the database engine defined in the connection string.
         /// </summary>
+        /// <param name="connectionString"></param>
         public void Connect(string connectionString = null)
         {
             if (!this.Connected)
@@ -377,7 +411,7 @@ namespace OrpheusCore
                     if (this.ddlHelper.DB == null)
                         this.ddlHelper.DB = this;
                     this.ddlHelper.CreateDatabase();
-                    if (connectionString != null)
+                    if (!String.IsNullOrEmpty(connectionString))
                         this.dbConnection.ConnectionString = connectionString;
                     else
                         this.dbConnection.ConnectionString = this.ddlHelper.ConnectionString;
@@ -386,6 +420,7 @@ namespace OrpheusCore
                 catch (Exception e)
                 {
                     this.logger.LogError(e.Message);
+                    this.logger.LogError($"Connection string {this.dbConnection.ConnectionString}");
                     throw e;
                 }
             }
@@ -411,19 +446,22 @@ namespace OrpheusCore
         {
             this.dbConnection.Close();
         }
+
         /// <summary>
         /// Register an Orpheus module to the database.
         /// </summary>
-        /// <param name="module"></param>
+        /// <param name="module">Module to be registered</param>
         public void RegisterModule(IOrpheusModule module)
         {
             this.modules.Add(module);
         }
 
         /// <summary>
-        /// Creates a transaction.
+        /// Creates a transaction object.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Returns a transaction instance
+        /// </returns>
         public IDbTransaction BeginTransaction()
         {
             this.LastActiveTransaction = this.dbConnection.BeginTransaction();
@@ -433,7 +471,7 @@ namespace OrpheusCore
         /// <summary>
         /// Commits a transaction.
         /// </summary>
-        /// <param name="transaction"></param>
+        /// <param name="transaction">Transaction to be committed.</param>
         public void CommitTransaction(IDbTransaction transaction)
         {
             transaction.Commit();
@@ -447,7 +485,7 @@ namespace OrpheusCore
         /// <summary>
         /// Rolls back a transaction.
         /// </summary>
-        /// <param name="transaction"></param>
+        /// <param name="transaction">Transaction to be rolled-back.</param>
         public void RollbackTransaction(IDbTransaction transaction)
         {
             transaction.Rollback();
@@ -462,9 +500,11 @@ namespace OrpheusCore
         /// Executes a SQL statement and returns it as specific model.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="SQL"></param>
-        /// <param name="tableName"></param>
-        /// <returns></returns>
+        /// <param name="SQL">SQL command to execute.</param>
+        /// <param name="tableName">Table name.</param>
+        /// <returns>
+        /// A list of 'T'
+        /// </returns>
         public List<T> SQL<T>(string SQL,string tableName = null)
         {
             tableName = tableName == null ? typeof(T).Name : tableName;
@@ -477,9 +517,11 @@ namespace OrpheusCore
         /// Executes a db command and returns it as specific model.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="dbCommand"></param>
-        /// <param name="tableName"></param>
-        /// <returns></returns>
+        /// <param name="dbCommand">DbCommand to run.</param>
+        /// <param name="tableName">Optionally set the table name, for which the query will run.</param>
+        /// <returns>
+        /// A list of 'T'
+        /// </returns>
         public List<T> SQL<T>(IDbCommand dbCommand, string tableName = null)
         {
             tableName = tableName == null ? typeof(T).Name : tableName;
@@ -491,8 +533,10 @@ namespace OrpheusCore
         /// <summary>
         /// Casts the DDL helper to the specified type.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <typeparam name="T">Type in which to cast the DDLHelper. Must be a descendant of IOrpheusDDLHelper.</typeparam>
+        /// <returns>
+        /// An instance of T.
+        /// </returns>
         public T DDLHelperAs<T>()
         {
             return (T)this.ddlHelper;
@@ -501,7 +545,10 @@ namespace OrpheusCore
         /// <summary>
         /// Executes a DDL command.
         /// </summary>
-        /// <param name="DDLCommand"></param>
+        /// <param name="DDLCommand">DbCommand to run.</param>
+        /// <returns>
+        /// True if command was successfully executed.
+        /// </returns>
         public bool ExecuteDDL(string DDLCommand)
         {
             var result = false;
@@ -527,7 +574,7 @@ namespace OrpheusCore
         /// <summary>
         /// Returns the row count of a table.
         /// </summary>
-        /// <param name="tableName"></param>
+        /// <param name="tableName">The table name.</param>
         /// <returns></returns>
         public long GetTableCount(string tableName)
         {
@@ -553,7 +600,7 @@ namespace OrpheusCore
         /// <summary>
         /// Returns the row count of a table.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The table type.</typeparam>
         /// <returns></returns>
         public long GetTableCount<T>()
         {

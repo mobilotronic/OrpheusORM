@@ -16,6 +16,7 @@ namespace OrpheusCore
     {
         private IOrpheusTable mainTable;
 
+        #region private methods
         /// <summary>
         /// Executes deletes for the module tables starting from the lowest level to the higher.
         /// </summary>
@@ -130,96 +131,33 @@ namespace OrpheusCore
             //    throw new Exception(String.Format("Table {0} not found.", tableName));
             return (IOrpheusTable<T>)moduleTable;
         }
+        #endregion
 
-        /// <summary>
+        #region public properties
+
+        /// <value>
         /// Module's definition.
-        /// </summary>
+        /// </value>
         public IOrpheusModuleDefinition Definition { get; private set; }
-        
-        /// <summary>
+
+        /// <value>
         /// List of module's tables.
-        /// </summary>
+        /// </value>
         public List<IOrpheusTable> Tables { get; private set; }
 
-        /// <summary>
-        /// Gets a reference table by index for a model
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public IOrpheusTable<T> GetTable<T>(int index)
-        {
-            return (IOrpheusTable<T>)this.Tables[index];
-        }
-
-        /// <summary>
-        /// Gets a table by name for a model
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="tableName"></param>
-        /// <returns></returns>
-        public IOrpheusTable<T> GetTable<T>(string tableName)
-        {
-            return this.getTableByName<T>(tableName,this.Tables);
-        }
-
-        /// <summary>
-        /// Gets a table by model. Uses the model class name as the table name.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public IOrpheusTable<T> GetTable<T>()
-        {
-            var tableName = typeof(T).Name;
-            return this.getTableByName<T>(tableName, this.Tables);
-        }
-
-        /// <summary>
-        /// Gets a reference table by index for a model
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        public IOrpheusTable<T> GetReferenceTable<T>(int index)
-        {
-            return (IOrpheusTable<T>)this.ReferenceTables[index];
-        }
-
-        /// <summary>
-        /// Gets a reference table by name for a model
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="tableName"></param>
-        /// <returns></returns>
-        public IOrpheusTable<T> GetReferenceTable<T>(string tableName)
-        {
-            return this.getTableByName<T>(tableName, this.ReferenceTables);
-        }
-
-        /// <summary>
-        /// Gets a table by model. Uses the model class name as the table name.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public IOrpheusTable<T> GetReferenceTable<T>()
-        {
-            var tableName = typeof(T).Name;
-            return this.getTableByName<T>(tableName, this.ReferenceTables);
-        }
-
-        /// <summary>
+        /// <value>
         /// List of module's reference tables. Reference tables are auxiliary or lookup tables.
-        /// </summary>
+        /// </value>
         public List<IOrpheusTable> ReferenceTables { get; private set; }
-        
-        /// <summary>
+
+        /// <value>
         /// Module's database.
-        /// </summary>
+        /// </value>
         public IOrpheusDatabase Database { get; private set; }
 
-        /// <summary>
+        /// <value>
         /// The module's main table.
-        /// </summary>
+        /// </value>
         public IOrpheusTable MainTable {
             get {
                 return this.mainTable;
@@ -232,7 +170,86 @@ namespace OrpheusCore
                 }
             }
         }
-        
+
+        /// <value>
+        /// Occurs before records are save in the database.
+        /// </value>
+        public event EventHandler<ISaveEventArguments> OnBeforeSave;
+
+        /// <value>
+        /// Occurs after the transaction has been committed.
+        /// </value>
+        public event EventHandler<ISaveEventArguments> OnAfterSave;
+        #endregion
+
+        #region public methods
+        /// <summary>
+        /// Gets a reference table by index for a model
+        /// </summary>
+        /// <typeparam name="T">Table type</typeparam>
+        /// <param name="index">Table index.</param>
+        /// <returns></returns>
+        public IOrpheusTable<T> GetTable<T>(int index)
+        {
+            return (IOrpheusTable<T>)this.Tables[index];
+        }
+
+        /// <summary>
+        /// Gets a table by name for a model
+        /// </summary>
+        /// <typeparam name="T">Table type.</typeparam>
+        /// <param name="tableName">Table name.</param>
+        /// <returns></returns>
+        public IOrpheusTable<T> GetTable<T>(string tableName)
+        {
+            return this.getTableByName<T>(tableName, this.Tables);
+        }
+
+        /// <summary>
+        /// Gets a table by model. Uses the model class name as the table name.
+        /// </summary>
+        /// <typeparam name="T">Table type.</typeparam>
+        /// <returns></returns>
+        public IOrpheusTable<T> GetTable<T>()
+        {
+            var tableName = typeof(T).Name;
+            return this.getTableByName<T>(tableName, this.Tables);
+        }
+
+        /// <summary>
+        /// Gets a reference table by index for a model
+        /// </summary>
+        /// <typeparam name="T">Table type.</typeparam>
+        /// <param name="index">Table index.</param>
+        /// <returns></returns>
+        public IOrpheusTable<T> GetReferenceTable<T>(int index)
+        {
+            return (IOrpheusTable<T>)this.ReferenceTables[index];
+        }
+
+        /// <summary>
+        /// Gets a reference table by name for a model
+        /// </summary>
+        /// <typeparam name="T">Table type.</typeparam>
+        /// <param name="tableName">Table name.</param>
+        /// <returns></returns>
+        public IOrpheusTable<T> GetReferenceTable<T>(string tableName)
+        {
+            return this.getTableByName<T>(tableName, this.ReferenceTables);
+        }
+
+        /// <summary>
+        /// Gets a table by model. Uses the model class name as the table name.
+        /// </summary>
+        /// <typeparam name="T">Table type.</typeparam>
+        /// <returns></returns>
+        public IOrpheusTable<T> GetReferenceTable<T>()
+        {
+            var tableName = typeof(T).Name;
+            return this.getTableByName<T>(tableName, this.ReferenceTables);
+        }
+
+
         /// <summary>
         /// Saves all changes to the database within a transaction.
         /// </summary>
@@ -254,11 +271,12 @@ namespace OrpheusCore
                 throw exception;
             }
         }
-        
+
         /// <summary>
         /// Loads a module's record from the database.
         /// </summary>
-        /// <param name="keyValues"></param>
+        /// <param name="keyValues">The key values</param>
+        /// <exception cref="Exception">If you want to load a record from the module level, you need to define the main table for the module.</exception>
         public void Load(List<object> keyValues = null)
         {
             if(this.MainTable != null)
@@ -284,9 +302,10 @@ namespace OrpheusCore
         /// Defining a logical operator, you can change the default behavior.
         /// This applies only for the MainTable.
         /// </summary>
-        /// <param name="keyValues"></param>
-        /// <param name="logicalOperator"></param>
-        /// <param name="clearExistingData"></param>
+        /// <param name="keyValues">The key values.</param>
+        /// <param name="logicalOperator">The logical operator.</param>
+        /// <param name="clearExistingData">If true, it will clear all existing data. Default is true.</param>
+        /// <exception cref="Exception">If you want to load a record from the module level, you need to define the main table for the module.</exception>
         public void Load(Dictionary<string, List<object>> keyValues, LogicalOperator logicalOperator = LogicalOperator.loOR, bool clearExistingData = true)
         {
 
@@ -304,8 +323,9 @@ namespace OrpheusCore
         /// <summary>
         /// Loads main table data by executing a db command.
         /// </summary>
-        /// <param name="dbCommand"></param>
-        /// <param name="clearExistingData"></param>
+        /// <param name="dbCommand">The IDbCommand instance.</param>
+        /// <param name="clearExistingData">If true, it will clear all existing data. Default is true.</param>
+        /// <exception cref="Exception">If you want to load a record from the module level, you need to define the main table for the module.</exception>
         public void Load(IDbCommand dbCommand, bool clearExistingData = true)
         {
             if (this.MainTable != null)
@@ -328,12 +348,13 @@ namespace OrpheusCore
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="OrpheusModule"/> class.
         /// OrpheusModule class represents a logical division and grouping of a set of tables.
         /// For example you can an OrdersModule, which will be comprised from many different tables.
         /// Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,
         /// will be saved as well. All master-detail relationships and keys will be updated automatically.
         /// </summary>
-        /// <param name="database">Module's database</param>
+        /// <param name="database">The database.</param>
         public OrpheusModule(IOrpheusDatabase database)
         {
             this.Database = database;
@@ -343,27 +364,21 @@ namespace OrpheusCore
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="OrpheusModule"/> class.
         /// OrpheusModule class represents a logical division and grouping of a set of tables.
         /// For example you can an OrdersModule, which will be comprised from many different tables.
         /// Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,
         /// will be saved as well. All master-detail relationships and keys will be updated automatically.
         /// </summary>
-        /// <param name="database">Module's database.</param>
-        /// <param name="definition">Module definition.</param>
+        /// <param name="database">The database.</param>
+        /// <param name="definition">The definition.</param>
         public OrpheusModule(IOrpheusDatabase database, IOrpheusModuleDefinition definition):this(database)
         {
             this.Definition = definition;
             this.initializeModuleDefinition();
         }
+        #endregion
 
-        /// <summary>
-        /// Occurs before records are save in the database.
-        /// </summary>
-        public event EventHandler<ISaveEventArguments> OnBeforeSave;
 
-        /// <summary>
-        /// Occurs after the transaction has been committed.
-        /// </summary>
-        public event EventHandler<ISaveEventArguments> OnAfterSave;
     }
 }

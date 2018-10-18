@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Class FieldName
-   | Orpheus ORM </title>
+   | Orpheus </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class FieldName
-   | Orpheus ORM ">
-    <meta name="generator" content="docfx 2.32.1.0">
+   | Orpheus ">
+    <meta name="generator" content="docfx 2.39.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -38,7 +38,7 @@
               </button>
               
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../Images/OrpheusLogo.svg" alt="">
+                <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -63,7 +63,9 @@
         
         <div id="search-results">
           <div class="search-list"></div>
-          <div class="sr-items"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
           <ul id="pagination"></ul>
         </div>
       </div>
@@ -97,7 +99,7 @@ to explicitly define the corresponding field name in the db table.</p>
   <h6><strong>Assembly</strong>: OrpheusAttributes.dll</h6>
   <h5 id="OrpheusAttributes_FieldName_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FieldName : OrpheusBaseAttribute</code></pre>
+    <pre><code class="lang-csharp hljs">public class FieldName : OrpheusBaseAttribute, IOrpheusBaseAttribute</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -110,7 +112,7 @@ to explicitly define the corresponding field name in the db table.</p>
   </span>
   <a id="OrpheusAttributes_FieldName__ctor_" data-uid="OrpheusAttributes.FieldName.#ctor*"></a>
   <h4 id="OrpheusAttributes_FieldName__ctor_System_String_" data-uid="OrpheusAttributes.FieldName.#ctor(System.String)">FieldName(String)</h4>
-  <div class="markdown level1 summary"><p>Field name constructor.</p>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusAttributes.FieldName.html">FieldName</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -130,7 +132,7 @@ to explicitly define the corresponding field name in the db table.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">fieldName</span></td>
-        <td><p>Field name</p>
+        <td><p>Name of the field.</p>
 </td>
       </tr>
     </tbody>
@@ -146,7 +148,7 @@ to explicitly define the corresponding field name in the db table.</p>
   </span>
   <a id="OrpheusAttributes_FieldName_Name_" data-uid="OrpheusAttributes.FieldName.Name*"></a>
   <h4 id="OrpheusAttributes_FieldName_Name" data-uid="OrpheusAttributes.FieldName.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Field name.</p>
+  <div class="markdown level1 summary"><p>Gets the name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -164,10 +166,19 @@ to explicitly define the corresponding field name in the db table.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>The name.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.html">IOrpheusBaseAttribute</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="OrpheusAttributes.OrpheusBaseAttribute.html">OrpheusBaseAttribute</a></div>
+  </div>
 </article>
           </div>
         </div>
@@ -180,7 +191,7 @@ to explicitly define the corresponding field name in the db table.</p>
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Orpheus ORM - Original Author © 2018
+            Orpheus - Original Author © 2018
             
           </div>
         </div>

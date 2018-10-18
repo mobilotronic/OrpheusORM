@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OrpheusAttributes
+﻿namespace OrpheusAttributes
 {
     /// <summary>
     /// TableName attribute. Decorate a model with this attribute to
@@ -10,15 +6,15 @@ namespace OrpheusAttributes
     /// </summary>
     public class TableName : OrpheusBaseAttribute
     {
-        /// <summary>
+        /// <value>
         /// Table name.
-        /// </summary>
+        /// </value>
         public string Name { get; private set;}
 
         /// <summary>
-        /// TableName constructor.
+        /// Initializes a new instance of the <see cref="TableName"/> class.
         /// </summary>
-        /// <param name="tableName"></param>
+        /// <param name="tableName">Name of the table.</param>
         public TableName(string tableName)
         {
             this.Name = tableName;

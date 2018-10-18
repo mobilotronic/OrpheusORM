@@ -4,8 +4,10 @@ using System;
 namespace OrpheusAttributes
 {
     /// <summary>
-    /// The Orpheus base attribute class.
+    /// Orpheus base attribute.
     /// </summary>
+    /// <seealso cref="System.Attribute" />
+    /// <seealso cref="OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute" />
     public class OrpheusBaseAttribute :Attribute, IOrpheusBaseAttribute
     {
     }

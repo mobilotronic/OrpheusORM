@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OrpheusAttributes
 {
@@ -13,10 +9,10 @@ namespace OrpheusAttributes
     public class UniqueCompositeKey : OrpheusCompositeKeyBaseAttribute
     {
         /// <summary>
-        /// Primary composite key.
+        /// Initializes a new instance of the <see cref="UniqueCompositeKey"/> class.
         /// </summary>
-        /// <param name="fields">Fields that are part of the key</param>
-        /// <param name="sort">Sort direction</param>
+        /// <param name="fields">The fields.</param>
+        /// <param name="sort">The sort direction.</param>
         public UniqueCompositeKey(string[] fields,string sort = null) : base(fields) { }
     }
 }

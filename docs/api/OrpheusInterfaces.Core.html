@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace OrpheusInterfaces.Core
+   | Orpheus </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace OrpheusInterfaces.Core
+   | Orpheus ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/code-syntax.css">  
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-12">
+            <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.Core">
+  
+  <h1 id="OrpheusInterfaces_Core" data-uid="OrpheusInterfaces.Core" class="text-break">Namespace OrpheusInterfaces.Core
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="interfaces">Interfaces
+  </h3>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments&lt;T&gt;</a></h4>
+      <section><p>Orpheus record modify event. Occurs when data are processed in memory.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IMySQLServerDDLHelper.html">IMySQLServerDDLHelper</a></h4>
+      <section><p>MySQL Server specific DDL helper definition.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></h4>
+      <section><p>Orpheus database access component.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></h4>
+      <section><p>Abstract definition of DDL helper.
+DDL helper is used to execute DB engine specific DDL commands.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusModelHelper.html">IOrpheusModelHelper</a></h4>
+      <section><p>Orpheus model helper</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusModule.html">IOrpheusModule</a></h4>
+      <section><p>OrpheusModule represents a logical division and grouping of a set of tables.
+For example you can an OrdersModule, which will be comprised from many different tables.
+Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,
+will be saved as well. All master-detail relationships and keys will be updated automatically.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusModuleDefinition.html">IOrpheusModuleDefinition</a></h4>
+      <section><p>The definition/database properties of a module.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusReferenceTable.html">IOrpheusReferenceTable</a></h4>
+      <section><p>Orpheus reference table.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusReferenceTable-1.html">IOrpheusReferenceTable&lt;T&gt;</a></h4>
+      <section><p>Orpheus reference table.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a></h4>
+      <section><p>Orpheus table is the core Orpheus data object. It is responsible for performing data operations.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable-1.html">IOrpheusTable&lt;T&gt;</a></h4>
+      <section><p>Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
+Holds all the data of the connected table.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a></h4>
+      <section><p>Represents an Orpheus table key field.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableOptions.html">IOrpheusTableOptions</a></h4>
+      <section><p>Represents <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a> options, which can be used to instantiate a table.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a></h4>
+      <section><p>Orpheus save event arguments. Occurs when data are actually being save to the database.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.ISQLServerDDLHelper.html">ISQLServerDDLHelper</a></h4>
+      <section><p>SQL Server specific DDL helper definition.</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.DatabaseEngineType.html">DatabaseEngineType</a></h4>
+      <section><p>Database engine type.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.ExtendedDbTypes.html">ExtendedDbTypes</a></h4>
+      <section><p>Extended DbTypes enumeration, for types that are not listed in the generic DbType enumeration.</p>
+</section>
+      <h4><a class="xref" href="OrpheusInterfaces.Core.LogicalOperator.html">LogicalOperator</a></h4>
+      <section><p>Logical operator</p>
+</section>
+</article>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Orpheus - Original Author © 2018
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-99241001-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+  </body>
+</html>

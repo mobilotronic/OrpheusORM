@@ -54,8 +54,8 @@ namespace OrpheusInterfaces.Schema
         /// <summary>
         /// Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="dependencies"></param>
+        /// <typeparam name="T">Schema table type</typeparam>
+        /// <param name="dependencies">The dependencies.</param>
         /// <returns></returns>
         ISchemaTable AddSchemaTable<T>(List<ISchemaObject> dependencies = null) where T : class;
 

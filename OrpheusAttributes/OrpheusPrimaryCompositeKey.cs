@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OrpheusAttributes
+﻿namespace OrpheusAttributes
 {
     /// <summary>
     /// Primary composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.
@@ -12,10 +6,10 @@ namespace OrpheusAttributes
     public class PrimaryCompositeKey : OrpheusCompositeKeyBaseAttribute
     {
         /// <summary>
-        /// Primary composite key.
+        /// Initializes a new instance of the <see cref="PrimaryCompositeKey"/> class.
         /// </summary>
-        /// <param name="fields">Fields that are part of the key</param>
-        /// <param name="sort">Sort direction</param>
+        /// <param name="fields">The fields.</param>
+        /// <param name="sort">The sort direction.</param>
         public PrimaryCompositeKey(string[] fields,string sort = null) : base(fields,sort) { }
     }
 }

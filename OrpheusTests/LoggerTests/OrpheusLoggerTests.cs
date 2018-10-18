@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using OrpheusCore.Configuration;
 using OrpheusLogger;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
@@ -41,8 +43,20 @@ namespace OrpheusTests.LoggerTests
             Assert.AreEqual(true, logFileContents.Contains(informationId));
             Assert.AreEqual(true, logFileContents.Contains(errorId));
             Assert.AreEqual(false, logFileContents.Contains(debugId));
+        }
 
-
+        [TestMethod]
+        public void TestCallStackLogging()
+        {
+            ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json"));
+            var logger = (IOrpheusFileLogger)OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            logger.LoggingConfiguration.Level = "Debug";
+            var debugId = Guid.NewGuid().ToString();
+            logger.LogDebug("Debug message {0}", debugId);
+            var logLines = new List<string>(File.ReadAllLines(logger.LogFileName));
+            var logLine = logLines.Find(l => l.Contains(debugId));
+            var logEntry = JsonConvert.DeserializeObject<LogEntry>(logLine);
+            Assert.IsNotNull(logEntry.StackTrace);
         }
 
         [TestMethod]

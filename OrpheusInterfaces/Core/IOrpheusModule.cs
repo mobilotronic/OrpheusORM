@@ -84,7 +84,7 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <typeparam name="T">Model type</typeparam>
         /// <param name="index">Table index</param>
-        /// <returns></returns>
+        /// <returns>An instance of IOrpheusTable<typeparamref name="T"/></returns>
         IOrpheusTable<T> GetTable<T>(int index);
 
         /// <summary>
@@ -92,14 +92,14 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <typeparam name="T">Model type</typeparam>
         /// <param name="tableName">Table name</param>
-        /// <returns></returns>
+        /// <returns>An instance of IOrpheusTable<typeparamref name="T"/></returns>
         IOrpheusTable<T> GetTable<T>(string tableName);
 
         /// <summary>
         /// Gets a table by model. Uses the model class name as the table name.
         /// </summary>
         /// <typeparam name="T">Model type</typeparam>
-        /// <returns></returns>
+        /// <returns>An instance of IOrpheusTable<typeparamref name="T"/></returns>
         IOrpheusTable<T> GetTable<T>();
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <typeparam name="T">Model type</typeparam>
         /// <param name="index">Table index</param>
-        /// <returns></returns>
+        /// <returns>An instance of IOrpheusTable<typeparamref name="T"/></returns>
         IOrpheusTable<T> GetReferenceTable<T>(int index);
 
         /// <summary>
@@ -115,14 +115,14 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <typeparam name="T">Model type</typeparam>
         /// <param name="tableName">Table index</param>
-        /// <returns></returns>
+        /// <returns>An instance of IOrpheusTable<typeparamref name="T"/></returns>
         IOrpheusTable<T> GetReferenceTable<T>(string tableName);
 
         /// <summary>
         /// Gets a table by model. Uses the model class name as the table name.
         /// </summary>
         /// <typeparam name="T">Model type</typeparam>
-        /// <returns></returns>
+        /// <returns>An instance of IOrpheusTable<typeparamref name="T"/></returns>
         IOrpheusTable<T> GetReferenceTable<T>();
 
         /// <summary>
