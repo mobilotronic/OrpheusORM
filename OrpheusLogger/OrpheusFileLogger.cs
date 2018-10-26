@@ -10,11 +10,27 @@ using System.Text;
 
 namespace OrpheusLogger
 {
+    /// <summary>
+    /// Log entry model.
+    /// </summary>
+    /// <seealso cref="OrpheusInterfaces.Logging.ILogEntry" />
     public class LogEntry : ILogEntry
     {
+        /// <summary>
+        /// Log entry type. Error, Information, Debug etc.
+        /// </summary>
         public string Type { get; set; }
+        /// <summary>
+        /// Log entry message.
+        /// </summary>
         public string Message { get; set; }
+        /// <summary>
+        /// Log entry time-stamp.
+        /// </summary>
         public DateTime TimeStamp { get; set; }
+        /// <summary>
+        /// Stack trace
+        /// </summary>
         public string StackTrace { get; set; }
     }
 
@@ -50,6 +66,7 @@ namespace OrpheusLogger
         private const string debug = "Debug";
         private const string trace = "Trace";
         private IOptionsMonitor<LoggingConfiguration> optionsMonitor;
+        private LogLevel configurationLogLevel = LogLevel.Information;
         #endregion
 
         #region private methods
@@ -127,6 +144,7 @@ namespace OrpheusLogger
         private void configurationChanged(LoggingConfiguration loggingConfiguration,string state)
         {
             this.loggingConfiguration = loggingConfiguration;
+            Enum.TryParse<LogLevel>(this.loggingConfiguration.Level, out this.configurationLogLevel);
         }
 
         private string getCallStack()
@@ -207,7 +225,9 @@ namespace OrpheusLogger
                         {
                             if (string.IsNullOrEmpty(message) && exception == null)
                                 return;
-                            var callStack = logLevel == LogLevel.Debug ? this.getCallStack() : null;
+
+                            
+                            var callStack = this.configurationLogLevel == LogLevel.Trace ? this.getCallStack() : null;
                             logWriter.WriteLine(this.formatLogEntry(logLevel.ToString(), message, callStack));
                         }
                         finally
