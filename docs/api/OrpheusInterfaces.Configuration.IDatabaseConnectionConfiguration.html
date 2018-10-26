@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IDatabaseConnectionConfiguration
    | Orpheus ">
-    <meta name="generator" content="docfx 2.39.2.0">
+    <meta name="generator" content="docfx 2.40.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -104,8 +104,7 @@
   </span>
   <a id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ConfigurationName_" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConfigurationName*"></a>
   <h4 id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ConfigurationName" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConfigurationName">ConfigurationName</h4>
-  <div class="markdown level1 summary"><p>Database configuration name.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -122,7 +121,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Database configuration name.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -135,8 +135,7 @@
   </span>
   <a id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_DatabaseName_" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.DatabaseName*"></a>
   <h4 id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_DatabaseName" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.DatabaseName">DatabaseName</h4>
-  <div class="markdown level1 summary"><p>The database name.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -153,7 +152,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>The database name.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -166,8 +166,7 @@
   </span>
   <a id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Password_" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Password*"></a>
   <h4 id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Password" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Password">Password</h4>
-  <div class="markdown level1 summary"><p>Password.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -184,7 +183,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Password.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -197,8 +197,7 @@
   </span>
   <a id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Server_" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Server*"></a>
   <h4 id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Server" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Server">Server</h4>
-  <div class="markdown level1 summary"><p>Server name or IP address.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -215,7 +214,72 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>Server name or IP address.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServicePassword.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs/#L60">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServicePassword_" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword*"></a>
+  <h4 id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServicePassword" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword">ServicePassword</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ServicePassword { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
+The ServicePassword is the one that will be used for that connection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServiceUserName.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs/#L54">View Source</a>
+  </span>
+  <a id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServiceUserName_" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName*"></a>
+  <h4 id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServiceUserName" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName">ServiceUserName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ServiceUserName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
+The ServiceUserName is the one that will be used for that connection.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -228,8 +292,7 @@
   </span>
   <a id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UseIntegratedSecurity_" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurity*"></a>
   <h4 id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UseIntegratedSecurity" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurity">UseIntegratedSecurity</h4>
-  <div class="markdown level1 summary"><p>SQL Server specific.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -246,7 +309,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>SQL Server specific.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -259,9 +323,7 @@
   </span>
   <a id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UseIntegratedSecurityForServiceConnection_" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection*"></a>
   <h4 id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UseIntegratedSecurityForServiceConnection" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection">UseIntegratedSecurityForServiceConnection</h4>
-  <div class="markdown level1 summary"><p>Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
-This boolean sets this second connection, integrated security setting.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -278,7 +340,9 @@ This boolean sets this second connection, integrated security setting.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p>Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
+This boolean sets this second connection, integrated security setting.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -291,8 +355,7 @@ This boolean sets this second connection, integrated security setting.</p>
   </span>
   <a id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UserName_" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UserName*"></a>
   <h4 id="OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UserName" data-uid="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UserName">UserName</h4>
-  <div class="markdown level1 summary"><p>User name.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -309,7 +372,8 @@ This boolean sets this second connection, integrated security setting.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td></td>
+        <td><p>User name.</p>
+</td>
       </tr>
     </tbody>
   </table>

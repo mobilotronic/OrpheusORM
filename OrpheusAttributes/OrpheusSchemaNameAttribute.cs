@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OrpheusAttributes
 {
@@ -12,15 +10,15 @@ namespace OrpheusAttributes
     [AttributeUsage(AttributeTargets.Class)]
     public class SQLServerSchemaName:OrpheusBaseAttribute
     {
-        /// <summary>
+        /// <value>
         /// The schema name.
-        /// </summary>
+        /// </value>
         public string SchemaName { get; private set; }
 
         /// <summary>
-        /// Schema name attribute constructor.
+        /// Initializes a new instance of the <see cref="SQLServerSchemaName"/> class.
         /// </summary>
-        /// <param name="schemaName">Schema name.</param>
+        /// <param name="schemaName">Name of the schema.</param>
         public SQLServerSchemaName(string schemaName) { this.SchemaName = schemaName; }
     }
 }

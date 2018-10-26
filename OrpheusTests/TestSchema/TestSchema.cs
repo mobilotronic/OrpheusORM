@@ -4,7 +4,6 @@ using OrpheusInterfaces.Schema;
 using OrpheusTestModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace OrpheusTests
 {
@@ -27,8 +26,6 @@ namespace OrpheusTests
             userProfilesData.Add(new TestModelUserProfile() { UserProfileId = TestSchemaConstants.AdminUserProfileId, Description = "Admin profile", CanSearch = true, CanTalkToOthers = true });
             userProfilesData.Add(new TestModelUserProfile() { UserProfileId = TestSchemaConstants.MemberProfileId, Description = "Member profile", CanSearch = true, CanTalkToOthers = false });
             userProfiles.SetData<TestModelUserProfile>(userProfilesData);
-
-            
         }
 
         private void createUserGroups()
@@ -343,10 +340,10 @@ namespace OrpheusTests
 
         private void createMembers()
         {
-            var members = this.schema.AddSchemaTable(typeof(TestModelMember));
+            var members = this.schema.AddSchemaTable<TestModelMember>();
 
-            members.AddDependency(typeof(TestModelCountry));
-            members.AddDependency(typeof(TestModelUser));
+            members.AddDependency<TestModelCountry>();
+            members.AddDependency<TestModelUser>();
 
             var memberData = new List<TestModelMember>();
             memberData.Add(new TestModelMember()
@@ -414,19 +411,24 @@ namespace OrpheusTests
             orderLines.AddDependency(typeof(TestModelItem));
         }
 
+        private string getTypeSQLName<T>()
+        {
+            return this.schema.Name == null ? typeof(T).Name : $"{this.schema.Name}.{typeof(T).Name}";
+        }
+
         private void createMasterDetailTenLevelSchema()
         {
-            this.schema.AddSchemaTable(typeof(TestMasterModel));
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel1), this.SchemaObjects.Where(t => t.SQLName == typeof(TestMasterModel).Name).ToList());
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel2), this.SchemaObjects.Where(t => t.SQLName == typeof(TestDetailModelLevel1).Name).ToList());
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel3), this.SchemaObjects.Where(t => t.SQLName == typeof(TestDetailModelLevel2).Name).ToList());
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel4), this.SchemaObjects.Where(t => t.SQLName == typeof(TestDetailModelLevel3).Name).ToList());
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel5), this.SchemaObjects.Where(t => t.SQLName == typeof(TestDetailModelLevel4).Name).ToList());
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel6), this.SchemaObjects.Where(t => t.SQLName == typeof(TestDetailModelLevel5).Name).ToList());
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel7), this.SchemaObjects.Where(t => t.SQLName == typeof(TestDetailModelLevel6).Name).ToList());
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel8), this.SchemaObjects.Where(t => t.SQLName == typeof(TestDetailModelLevel7).Name).ToList());
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel9), this.SchemaObjects.Where(t => t.SQLName == typeof(TestDetailModelLevel8).Name).ToList());
-            this.schema.AddSchemaTable(typeof(TestDetailModelLevel10), this.SchemaObjects.Where(t => t.SQLName == typeof(TestDetailModelLevel9).Name).ToList());
+            this.schema.AddSchemaTable<TestMasterModel>();
+            this.schema.AddSchemaTable<TestDetailModelLevel1>().AddDependency<TestMasterModel>();
+            this.schema.AddSchemaTable<TestDetailModelLevel2>().AddDependency<TestDetailModelLevel1>();
+            this.schema.AddSchemaTable<TestDetailModelLevel3>().AddDependency<TestDetailModelLevel2>();
+            this.schema.AddSchemaTable<TestDetailModelLevel4>().AddDependency<TestDetailModelLevel3>();
+            this.schema.AddSchemaTable<TestDetailModelLevel5>().AddDependency<TestDetailModelLevel4>();
+            this.schema.AddSchemaTable<TestDetailModelLevel6>().AddDependency<TestDetailModelLevel5>();
+            this.schema.AddSchemaTable<TestDetailModelLevel7>().AddDependency<TestDetailModelLevel6>();
+            this.schema.AddSchemaTable<TestDetailModelLevel8>().AddDependency<TestDetailModelLevel7>();
+            this.schema.AddSchemaTable<TestDetailModelLevel9>().AddDependency<TestDetailModelLevel8>();
+            this.schema.AddSchemaTable<TestDetailModelLevel10>().AddDependency<TestDetailModelLevel9>();
         }
 
         private void createBinarySchema()

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace OrpheusAttributes
 {
@@ -11,28 +6,31 @@ namespace OrpheusAttributes
     /// <summary>
     /// Annotate a property with attribute to set it's DbType
     /// </summary>
+    /// <seealso cref="OrpheusAttributes.OrpheusBaseAttribute" />
     public class DataTypeAttribute : OrpheusBaseAttribute
     {
 
         /// <summary>
-        /// Field's data type.
+        /// Gets the type of the data.
         /// </summary>
-        /// <returns>Data type</returns>
+        /// <value>
+        /// The type of the data.
+        /// </value>
         public DbType DataType { get; private set; }
 
         /// <summary>
-        /// Data type attribute constructor.
+        /// Initializes a new instance of the <see cref="DataTypeAttribute"/> class.
         /// </summary>
-        /// <param name="dbType">Data type</param>
+        /// <param name="dbType">Type of the database.</param>
         public DataTypeAttribute(DbType dbType)
         {
             this.DataType = dbType;
         }
 
         /// <summary>
-        /// Data type attribute constructor.
+        /// Initializes a new instance of the <see cref="DataTypeAttribute"/> class.
         /// </summary>
-        /// <param name="dbType">Casted to System.Data.DbType</param>
+        /// <param name="dbType">Type of the database.</param>
         public DataTypeAttribute(int dbType):this((DbType)dbType)
         {
 

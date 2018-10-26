@@ -1,10 +1,13 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using OrpheusCore.Configuration;
 using OrpheusLogger;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace OrpheusTests.LoggerTests
 {
@@ -41,7 +44,41 @@ namespace OrpheusTests.LoggerTests
             Assert.AreEqual(true, logFileContents.Contains(informationId));
             Assert.AreEqual(true, logFileContents.Contains(errorId));
             Assert.AreEqual(false, logFileContents.Contains(debugId));
+        }
 
+        [TestMethod]
+        public async Task TestCallStackLogging()
+        {
+            var configurationFileName = this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json";
+            ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(configurationFileName));
+            OrpheusConfiguration orpheusConfiguration = JsonConvert.DeserializeObject<OrpheusConfiguration>(File.ReadAllText(configurationFileName));
+
+            var debugId = Guid.NewGuid().ToString();
+            var traceId = Guid.NewGuid().ToString();
+
+            //make sure the logging level is set to debug.
+            var logger = (IOrpheusFileLogger)OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            orpheusConfiguration.Logging.Level = "Debug";
+            File.WriteAllText(configurationFileName, JsonConvert.SerializeObject(orpheusConfiguration));
+            await Task.Delay(1000);
+            //log the debug message, which should not have a stack trace.
+            logger.LogDebug("Debug message {0}", debugId);
+            var logLines = new List<string>(File.ReadAllLines(logger.LogFileName));
+            var logLine = logLines.Find(l => l.Contains(debugId));
+            var logEntry = JsonConvert.DeserializeObject<LogEntry>(logLine);
+            Assert.IsNull(logEntry.StackTrace);
+
+            //now change the logging level back to trace.
+            orpheusConfiguration.Logging.Level = "Trace";
+            File.WriteAllText(configurationFileName, JsonConvert.SerializeObject(orpheusConfiguration));
+            await Task.Delay(1000);
+
+            //log any message, which should  have a stack trace.
+            logger.LogInformation("Trace message {0}", traceId);
+            logLines = new List<string>(File.ReadAllLines(logger.LogFileName));
+            logLine = logLines.Find(l => l.Contains(traceId));
+            logEntry = JsonConvert.DeserializeObject<LogEntry>(logLine);
+            Assert.IsNotNull(logEntry.StackTrace);
 
         }
 

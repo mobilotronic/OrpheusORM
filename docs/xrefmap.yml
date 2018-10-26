@@ -616,6 +616,32 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
   nameWithType: DatabaseConnectionConfiguration.Server
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
+  name: ServicePassword
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ServicePassword
+  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
+  nameWithType: DatabaseConnectionConfiguration.ServicePassword
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword*
+  name: ServicePassword
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ServicePassword_
+  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
+  isSpec: "True"
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
+  nameWithType: DatabaseConnectionConfiguration.ServicePassword
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
+  name: ServiceUserName
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ServiceUserName
+  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
+  nameWithType: DatabaseConnectionConfiguration.ServiceUserName
+- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName*
+  name: ServiceUserName
+  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ServiceUserName_
+  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
+  isSpec: "True"
+  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
+  nameWithType: DatabaseConnectionConfiguration.ServiceUserName
 - uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
   name: UseIntegratedSecurity
   href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UseIntegratedSecurity
@@ -1238,6 +1264,19 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.OrpheusDatabase.LastActiveTransaction
   nameWithType: OrpheusDatabase.LastActiveTransaction
+- uid: OrpheusCore.OrpheusDatabase.Logger
+  name: Logger
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_Logger
+  commentId: P:OrpheusCore.OrpheusDatabase.Logger
+  fullName: OrpheusCore.OrpheusDatabase.Logger
+  nameWithType: OrpheusDatabase.Logger
+- uid: OrpheusCore.OrpheusDatabase.Logger*
+  name: Logger
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_Logger_
+  commentId: Overload:OrpheusCore.OrpheusDatabase.Logger
+  isSpec: "True"
+  fullName: OrpheusCore.OrpheusDatabase.Logger
+  nameWithType: OrpheusDatabase.Logger
 - uid: OrpheusCore.OrpheusDatabase.Modules
   name: Modules
   href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_Modules
@@ -4498,6 +4537,32 @@ references:
   isSpec: "True"
   fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Server
   nameWithType: IDatabaseConnectionConfiguration.Server
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword
+  name: ServicePassword
+  href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServicePassword
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword
+  nameWithType: IDatabaseConnectionConfiguration.ServicePassword
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword*
+  name: ServicePassword
+  href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServicePassword_
+  commentId: Overload:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword
+  nameWithType: IDatabaseConnectionConfiguration.ServicePassword
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
+  name: ServiceUserName
+  href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServiceUserName
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
+  nameWithType: IDatabaseConnectionConfiguration.ServiceUserName
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName*
+  name: ServiceUserName
+  href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServiceUserName_
+  commentId: Overload:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
+  nameWithType: IDatabaseConnectionConfiguration.ServiceUserName
 - uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurity
   name: UseIntegratedSecurity
   href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UseIntegratedSecurity
@@ -4634,6 +4699,19 @@ references:
   commentId: T:OrpheusInterfaces.Core.IMySQLServerDDLHelper
   fullName: OrpheusInterfaces.Core.IMySQLServerDDLHelper
   nameWithType: IMySQLServerDDLHelper
+- uid: OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  name: SSLMode
+  href: api/OrpheusInterfaces.Core.IMySQLServerDDLHelper.html#OrpheusInterfaces_Core_IMySQLServerDDLHelper_SSLMode
+  commentId: P:OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  fullName: OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  nameWithType: IMySQLServerDDLHelper.SSLMode
+- uid: OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode*
+  name: SSLMode
+  href: api/OrpheusInterfaces.Core.IMySQLServerDDLHelper.html#OrpheusInterfaces_Core_IMySQLServerDDLHelper_SSLMode_
+  commentId: Overload:OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  nameWithType: IMySQLServerDDLHelper.SSLMode
 - uid: OrpheusInterfaces.Core.IOrpheusDatabase
   name: IOrpheusDatabase
   href: api/OrpheusInterfaces.Core.IOrpheusDatabase.html
@@ -4974,6 +5052,19 @@ references:
   isSpec: "True"
   fullName: OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction
   nameWithType: IOrpheusDatabase.LastActiveTransaction
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Logger
+  name: Logger
+  href: api/OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Logger
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.Logger
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Logger
+  nameWithType: IOrpheusDatabase.Logger
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Logger*
+  name: Logger
+  href: api/OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Logger_
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.Logger
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Logger
+  nameWithType: IOrpheusDatabase.Logger
 - uid: OrpheusInterfaces.Core.IOrpheusDatabase.Modules
   name: Modules
   href: api/OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Modules
@@ -5276,6 +5367,22 @@ references:
   isSpec: "True"
   fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists
   nameWithType: IOrpheusDDLHelper.SchemaObjectExists
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId*
+  name: SchemaObjectId
+  href: api/OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectId_
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId
+  nameWithType: IOrpheusDDLHelper.SchemaObjectId
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name: SchemaObjectId<T>(ISchemaObject)
+  href: api/OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name.vb: SchemaObjectId(Of T)(ISchemaObject)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId<T>(OrpheusInterfaces.Schema.ISchemaObject)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId(Of T)(OrpheusInterfaces.Schema.ISchemaObject)
+  nameWithType: IOrpheusDDLHelper.SchemaObjectId<T>(ISchemaObject)
+  nameWithType.vb: IOrpheusDDLHelper.SchemaObjectId(Of T)(ISchemaObject)
 - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsGuidType
   name: SupportsGuidType
   href: api/OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SupportsGuidType
@@ -6959,19 +7066,6 @@ references:
   commentId: T:OrpheusInterfaces.Logging.ILogEntry
   fullName: OrpheusInterfaces.Logging.ILogEntry
   nameWithType: ILogEntry
-- uid: OrpheusInterfaces.Logging.ILogEntry.LineNumber
-  name: LineNumber
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_LineNumber
-  commentId: P:OrpheusInterfaces.Logging.ILogEntry.LineNumber
-  fullName: OrpheusInterfaces.Logging.ILogEntry.LineNumber
-  nameWithType: ILogEntry.LineNumber
-- uid: OrpheusInterfaces.Logging.ILogEntry.LineNumber*
-  name: LineNumber
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_LineNumber_
-  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.LineNumber
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.ILogEntry.LineNumber
-  nameWithType: ILogEntry.LineNumber
 - uid: OrpheusInterfaces.Logging.ILogEntry.Message
   name: Message
   href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_Message
@@ -6985,19 +7079,19 @@ references:
   isSpec: "True"
   fullName: OrpheusInterfaces.Logging.ILogEntry.Message
   nameWithType: ILogEntry.Message
-- uid: OrpheusInterfaces.Logging.ILogEntry.SourceFile
-  name: SourceFile
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_SourceFile
-  commentId: P:OrpheusInterfaces.Logging.ILogEntry.SourceFile
-  fullName: OrpheusInterfaces.Logging.ILogEntry.SourceFile
-  nameWithType: ILogEntry.SourceFile
-- uid: OrpheusInterfaces.Logging.ILogEntry.SourceFile*
-  name: SourceFile
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_SourceFile_
-  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.SourceFile
+- uid: OrpheusInterfaces.Logging.ILogEntry.StackTrace
+  name: StackTrace
+  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_StackTrace
+  commentId: P:OrpheusInterfaces.Logging.ILogEntry.StackTrace
+  fullName: OrpheusInterfaces.Logging.ILogEntry.StackTrace
+  nameWithType: ILogEntry.StackTrace
+- uid: OrpheusInterfaces.Logging.ILogEntry.StackTrace*
+  name: StackTrace
+  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_StackTrace_
+  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.StackTrace
   isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.ILogEntry.SourceFile
-  nameWithType: ILogEntry.SourceFile
+  fullName: OrpheusInterfaces.Logging.ILogEntry.StackTrace
+  nameWithType: ILogEntry.StackTrace
 - uid: OrpheusInterfaces.Logging.ILogEntry.TimeStamp
   name: TimeStamp
   href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_TimeStamp
@@ -8673,6 +8767,35 @@ references:
   isSpec: "True"
   fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists
   nameWithType: OrpheusMySQLServerDDLHelper.SchemaObjectExists
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId*
+  name: SchemaObjectId
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectId_
+  commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId
+  isSpec: "True"
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId
+  nameWithType: OrpheusMySQLServerDDLHelper.SchemaObjectId
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name: SchemaObjectId<T>(ISchemaObject)
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_
+  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name.vb: SchemaObjectId(Of T)(ISchemaObject)
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId<T>(OrpheusInterfaces.Schema.ISchemaObject)
+  fullName.vb: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId(Of T)(OrpheusInterfaces.Schema.ISchemaObject)
+  nameWithType: OrpheusMySQLServerDDLHelper.SchemaObjectId<T>(ISchemaObject)
+  nameWithType.vb: OrpheusMySQLServerDDLHelper.SchemaObjectId(Of T)(ISchemaObject)
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode
+  name: SSLMode
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SSLMode
+  commentId: P:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode
+  nameWithType: OrpheusMySQLServerDDLHelper.SSLMode
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode*
+  name: SSLMode
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SSLMode_
+  commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode
+  isSpec: "True"
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode
+  nameWithType: OrpheusMySQLServerDDLHelper.SSLMode
 - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsGuidType
   name: SupportsGuidType
   href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsGuidType
@@ -9209,6 +9332,22 @@ references:
   isSpec: "True"
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectExists
   nameWithType: OrpheusSQLServerDDLHelper.SchemaObjectExists
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId*
+  name: SchemaObjectId
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SchemaObjectId_
+  commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId
+  isSpec: "True"
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId
+  nameWithType: OrpheusSQLServerDDLHelper.SchemaObjectId
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name: SchemaObjectId<T>(ISchemaObject)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name.vb: SchemaObjectId(Of T)(ISchemaObject)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId<T>(OrpheusInterfaces.Schema.ISchemaObject)
+  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId(Of T)(OrpheusInterfaces.Schema.ISchemaObject)
+  nameWithType: OrpheusSQLServerDDLHelper.SchemaObjectId<T>(ISchemaObject)
+  nameWithType.vb: OrpheusSQLServerDDLHelper.SchemaObjectId(Of T)(ISchemaObject)
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaSeparator
   name: SchemaSeparator
   href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SchemaSeparator

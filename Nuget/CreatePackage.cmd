@@ -1,3 +1,6 @@
+@echo building solution
+"%programfiles(x86)%\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\msbuild.exe" ..\Orpheus.NetCore.sln /t:Clean,Build /p:Configuration=Release
+
 mkdir 2.0.0\lib\netstandard2.0
 @echo Nuget folder created.
 xcopy ..\OrpheusAttributes\bin\release\netcoreapp2.0\OrpheusAttributes.dll 2.0.0\lib\netstandard2.0 /Y /Q

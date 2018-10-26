@@ -7,9 +7,9 @@ namespace OrpheusInterfaces.Core
     /// </summary>
     public interface ISaveEventArguments
     {
-        /// <summary>
+        /// <value>
         /// Current transaction.
-        /// </summary>
+        /// </value>
         IDbTransaction Transaction { get; set; }
     }
 
@@ -19,13 +19,13 @@ namespace OrpheusInterfaces.Core
     /// <typeparam name="T">Model type</typeparam>
     public interface IModifyRecordEventArguments<T>
     {
-        /// <summary>
+        /// <value>
         /// Modified record.
-        /// </summary>
+        /// </value>
         T Record { get; }
-        /// <summary>
+        /// <value>
         /// Modify action. 0 Insert, 1 Update, 2 Delete
-        /// </summary>
+        /// </value>
         int ModifyAction { get;}
     }
 }

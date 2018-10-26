@@ -1,6 +1,5 @@
 ﻿using OrpheusAttributes;
 using System;
-using System.Dynamic;
 
 namespace OrpheusTestModels
 {
@@ -178,7 +177,9 @@ namespace OrpheusTestModels
     [PrimaryCompositeKey(new string[] { "MemberId","ContactTypeId" })]
     public class TestModelMemberContactType
     {
+        [ForeignKey("TestModelMember", "MemberId")]
         public Guid MemberId { get; set; }
+        [ForeignKey("TestModelContactType", "ContactTypeId")]
         public Guid ContactTypeId { get; set; }
     }
 

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class OrpheusModule
    | Orpheus ">
-    <meta name="generator" content="docfx 2.39.2.0">
+    <meta name="generator" content="docfx 2.40.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -108,11 +108,12 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.%23ctor(OrpheusInterfaces.Core.IOrpheusDatabase)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L337">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L358">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule__ctor_" data-uid="OrpheusCore.OrpheusModule.#ctor*"></a>
   <h4 id="OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_" data-uid="OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase)">OrpheusModule(IOrpheusDatabase)</h4>
-  <div class="markdown level1 summary"><p>OrpheusModule class represents a logical division and grouping of a set of tables.
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.OrpheusModule.html">OrpheusModule</a> class.
+OrpheusModule class represents a logical division and grouping of a set of tables.
 For example you can an OrdersModule, which will be comprised from many different tables.
 Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,
 will be saved as well. All master-detail relationships and keys will be updated automatically.</p>
@@ -135,7 +136,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
         <td><span class="parametername">database</span></td>
-        <td><p>Module&apos;s database</p>
+        <td><p>The database.</p>
 </td>
       </tr>
     </tbody>
@@ -145,11 +146,12 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_OrpheusInterfaces_Core_IOrpheusModuleDefinition_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.%23ctor(OrpheusInterfaces.Core.IOrpheusDatabase%2COrpheusInterfaces.Core.IOrpheusModuleDefinition)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L353">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L375">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule__ctor_" data-uid="OrpheusCore.OrpheusModule.#ctor*"></a>
   <h4 id="OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_OrpheusInterfaces_Core_IOrpheusModuleDefinition_" data-uid="OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,OrpheusInterfaces.Core.IOrpheusModuleDefinition)">OrpheusModule(IOrpheusDatabase, IOrpheusModuleDefinition)</h4>
-  <div class="markdown level1 summary"><p>OrpheusModule class represents a logical division and grouping of a set of tables.
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.OrpheusModule.html">OrpheusModule</a> class.
+OrpheusModule class represents a logical division and grouping of a set of tables.
 For example you can an OrdersModule, which will be comprised from many different tables.
 Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,
 will be saved as well. All master-detail relationships and keys will be updated automatically.</p>
@@ -172,13 +174,13 @@ will be saved as well. All master-detail relationships and keys will be updated 
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
         <td><span class="parametername">database</span></td>
-        <td><p>Module&apos;s database.</p>
+        <td><p>The database.</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusModuleDefinition.html">IOrpheusModuleDefinition</a></td>
         <td><span class="parametername">definition</span></td>
-        <td><p>Module definition.</p>
+        <td><p>The definition.</p>
 </td>
       </tr>
     </tbody>
@@ -190,12 +192,11 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_Database.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.Database%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L218">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L156">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_Database_" data-uid="OrpheusCore.OrpheusModule.Database*"></a>
   <h4 id="OrpheusCore_OrpheusModule_Database" data-uid="OrpheusCore.OrpheusModule.Database">Database</h4>
-  <div class="markdown level1 summary"><p>Module&apos;s database.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -212,7 +213,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
-        <td></td>
+        <td><p>Module&apos;s database.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -221,12 +223,11 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_Definition.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.Definition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L137">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L141">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_Definition_" data-uid="OrpheusCore.OrpheusModule.Definition*"></a>
   <h4 id="OrpheusCore_OrpheusModule_Definition" data-uid="OrpheusCore.OrpheusModule.Definition">Definition</h4>
-  <div class="markdown level1 summary"><p>Module&apos;s definition.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -243,7 +244,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusModuleDefinition.html">IOrpheusModuleDefinition</a></td>
-        <td></td>
+        <td><p>Module&apos;s definition.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -252,12 +254,11 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_MainTable.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.MainTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L223">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L161">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_MainTable_" data-uid="OrpheusCore.OrpheusModule.MainTable*"></a>
   <h4 id="OrpheusCore_OrpheusModule_MainTable" data-uid="OrpheusCore.OrpheusModule.MainTable">MainTable</h4>
-  <div class="markdown level1 summary"><p>The module&apos;s main table.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -274,7 +275,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a></td>
-        <td></td>
+        <td><p>The module&apos;s main table.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -283,12 +285,11 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_ReferenceTables.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.ReferenceTables%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L213">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L151">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_ReferenceTables_" data-uid="OrpheusCore.OrpheusModule.ReferenceTables*"></a>
   <h4 id="OrpheusCore_OrpheusModule_ReferenceTables" data-uid="OrpheusCore.OrpheusModule.ReferenceTables">ReferenceTables</h4>
-  <div class="markdown level1 summary"><p>List of module&apos;s reference tables. Reference tables are auxiliary or lookup tables.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -305,7 +306,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</td>
-        <td></td>
+        <td><p>List of module&apos;s reference tables. Reference tables are auxiliary or lookup tables.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -314,12 +316,11 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_Tables.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.Tables%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L142">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L146">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_Tables_" data-uid="OrpheusCore.OrpheusModule.Tables*"></a>
   <h4 id="OrpheusCore_OrpheusModule_Tables" data-uid="OrpheusCore.OrpheusModule.Tables">Tables</h4>
-  <div class="markdown level1 summary"><p>List of module&apos;s tables.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -336,7 +337,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</td>
-        <td></td>
+        <td><p>List of module&apos;s tables.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -347,7 +349,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_ClearData.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.ClearData%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L325">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L345">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_ClearData_" data-uid="OrpheusCore.OrpheusModule.ClearData*"></a>
   <h4 id="OrpheusCore_OrpheusModule_ClearData" data-uid="OrpheusCore.OrpheusModule.ClearData">ClearData()</h4>
@@ -363,7 +365,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_GetReferenceTable__1.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.GetReferenceTable%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L204">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L246">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_GetReferenceTable_" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable*"></a>
   <h4 id="OrpheusCore_OrpheusModule_GetReferenceTable__1" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable``1">GetReferenceTable&lt;T&gt;()</h4>
@@ -400,7 +402,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Table type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -409,7 +412,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_GetReferenceTable__1_System_Int32_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.GetReferenceTable%60%601(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L183">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L225">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_GetReferenceTable_" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable*"></a>
   <h4 id="OrpheusCore_OrpheusModule_GetReferenceTable__1_System_Int32_" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable``1(System.Int32)">GetReferenceTable&lt;T&gt;(Int32)</h4>
@@ -433,7 +436,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">index</span></td>
-        <td></td>
+        <td><p>Table index.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -463,7 +467,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Table type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -472,7 +477,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_GetReferenceTable__1_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.GetReferenceTable%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L194">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L236">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_GetReferenceTable_" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable*"></a>
   <h4 id="OrpheusCore_OrpheusModule_GetReferenceTable__1_System_String_" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable``1(System.String)">GetReferenceTable&lt;T&gt;(String)</h4>
@@ -496,7 +501,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td></td>
+        <td><p>Table name.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -526,7 +532,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Table type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -535,7 +542,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_GetTable__1.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.GetTable%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L171">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L213">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_GetTable_" data-uid="OrpheusCore.OrpheusModule.GetTable*"></a>
   <h4 id="OrpheusCore_OrpheusModule_GetTable__1" data-uid="OrpheusCore.OrpheusModule.GetTable``1">GetTable&lt;T&gt;()</h4>
@@ -572,7 +579,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Table type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -581,7 +589,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_GetTable__1_System_Int32_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.GetTable%60%601(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L150">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L192">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_GetTable_" data-uid="OrpheusCore.OrpheusModule.GetTable*"></a>
   <h4 id="OrpheusCore_OrpheusModule_GetTable__1_System_Int32_" data-uid="OrpheusCore.OrpheusModule.GetTable``1(System.Int32)">GetTable&lt;T&gt;(Int32)</h4>
@@ -605,7 +613,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">index</span></td>
-        <td></td>
+        <td><p>Table index.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -635,7 +644,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Table type</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -644,7 +654,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_GetTable__1_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.GetTable%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L161">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L203">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_GetTable_" data-uid="OrpheusCore.OrpheusModule.GetTable*"></a>
   <h4 id="OrpheusCore_OrpheusModule_GetTable__1_System_String_" data-uid="OrpheusCore.OrpheusModule.GetTable``1(System.String)">GetTable&lt;T&gt;(String)</h4>
@@ -668,7 +678,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">tableName</span></td>
-        <td></td>
+        <td><p>Table name.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -698,7 +709,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Table type.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -707,7 +719,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.Load(System.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Collections.Generic.List%7BSystem.Object%7D%7D%2COrpheusInterfaces.Core.LogicalOperator%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L290">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L309">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_Load_" data-uid="OrpheusCore.OrpheusModule.Load*"></a>
   <h4 id="OrpheusCore_OrpheusModule_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_" data-uid="OrpheusCore.OrpheusModule.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},OrpheusInterfaces.Core.LogicalOperator,System.Boolean)">Load(Dictionary&lt;String, List&lt;Object&gt;&gt;, LogicalOperator, Boolean)</h4>
@@ -736,7 +748,36 @@ This applies only for the MainTable.</p>
       <tr>
         <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
         <td><span class="parametername">keyValues</span></td>
-        <td></td>
+        <td><p>The key values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="OrpheusInterfaces.Core.LogicalOperator.html">LogicalOperator</a></td>
+        <td><span class="parametername">logicalOperator</span></td>
+        <td><p>The logical operator.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clearExistingData</span></td>
+        <td><p>If true, it will clear all existing data. Default is true.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><p>If you want to load a record from the module level, you need to define the main table for the module.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="OrpheusInterfaces.Core.LogicalOperator.html">LogicalOperator</a></td>
@@ -755,7 +796,7 @@ This applies only for the MainTable.</p>
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_Load_System_Collections_Generic_List_System_Object__.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.Load(System.Collections.Generic.List%7BSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L262">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L280">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_Load_" data-uid="OrpheusCore.OrpheusModule.Load*"></a>
   <h4 id="OrpheusCore_OrpheusModule_Load_System_Collections_Generic_List_System_Object__" data-uid="OrpheusCore.OrpheusModule.Load(System.Collections.Generic.List{System.Object})">Load(List&lt;Object&gt;)</h4>
@@ -779,7 +820,80 @@ This applies only for the MainTable.</p>
       <tr>
         <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">keyValues</span></td>
-        <td></td>
+        <td><p>The key values</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><p>If you want to load a record from the module level, you need to define the main table for the module.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_Load_System_Data_IDbCommand_System_Boolean_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.Load(System.Data.IDbCommand%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L329">View Source</a>
+  </span>
+  <a id="OrpheusCore_OrpheusModule_Load_" data-uid="OrpheusCore.OrpheusModule.Load*"></a>
+  <h4 id="OrpheusCore_OrpheusModule_Load_System_Data_IDbCommand_System_Boolean_" data-uid="OrpheusCore.OrpheusModule.Load(System.Data.IDbCommand,System.Boolean)">Load(IDbCommand, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Loads main table data by executing a db command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(IDbCommand dbCommand, bool clearExistingData = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDbCommand</span></td>
+        <td><span class="parametername">dbCommand</span></td>
+        <td><p>The IDbCommand instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clearExistingData</span></td>
+        <td><p>If true, it will clear all existing data. Default is true.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><p>If you want to load a record from the module level, you need to define the main table for the module.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -826,7 +940,7 @@ This applies only for the MainTable.</p>
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_Save.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.Save%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L239">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L256">View Source</a>
   </span>
   <a id="OrpheusCore_OrpheusModule_Save_" data-uid="OrpheusCore.OrpheusModule.Save*"></a>
   <h4 id="OrpheusCore_OrpheusModule_Save" data-uid="OrpheusCore.OrpheusModule.Save">Save()</h4>
@@ -844,11 +958,10 @@ This applies only for the MainTable.</p>
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_OnAfterSave.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.OnAfterSave%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L367">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L182">View Source</a>
   </span>
   <h4 id="OrpheusCore_OrpheusModule_OnAfterSave" data-uid="OrpheusCore.OrpheusModule.OnAfterSave">OnAfterSave</h4>
-  <div class="markdown level1 summary"><p>Occurs after the transaction has been committed.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -865,7 +978,8 @@ This applies only for the MainTable.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</td>
-        <td></td>
+        <td><p>Occurs after the transaction has been committed.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -874,11 +988,10 @@ This applies only for the MainTable.</p>
     <a href="https://github.com/redacted-user/OrpheusORM/new/feature/apiSpec/new?filename=OrpheusCore_OrpheusModule_OnBeforeSave.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule.OnBeforeSave%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L362">View Source</a>
+    <a href="https://github.com/redacted-user/OrpheusORM/blob/feature/OrpheusCore/Core/OrpheusModule.cs/#L177">View Source</a>
   </span>
   <h4 id="OrpheusCore_OrpheusModule_OnBeforeSave" data-uid="OrpheusCore.OrpheusModule.OnBeforeSave">OnBeforeSave</h4>
-  <div class="markdown level1 summary"><p>Occurs before records are save in the database.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -895,7 +1008,8 @@ This applies only for the MainTable.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</td>
-        <td></td>
+        <td><p>Occurs before records are save in the database.</p>
+</td>
       </tr>
     </tbody>
   </table>

@@ -5,38 +5,38 @@
     /// </summary>
     public interface IForeignKey : IOrpheusBaseAttribute
     {
-        /// <summary>
+        /// <value>
         /// The foreign key field name.
-        /// </summary>
+        /// </value>
         string Field { get; set; }
 
-        /// <summary>
+        /// <value>
         /// The reference table.
-        /// </summary>
+        /// </value>
         /// <returns>The referenced table name</returns>
         string ReferenceTable { get;  }
 
-        /// <summary>
+        /// <value>
         /// The reference table key.
-        /// </summary>
+        /// </value>
         /// <returns>The referenced table key</returns>
         string ReferenceField { get;  }
 
-        /// <summary>
+        /// <value>
         /// Set to true to enable cascade delete.
-        /// </summary>
+        /// </value>
         /// <returns>Delete cascade flag</returns>
         bool OnDeleteCascade { get;  }
 
-        /// <summary>
+        /// <value>
         /// Set to true to enable cascade update.
-        /// </summary>
+        /// </value>
         /// <returns>Update cascade flag</returns>
         bool OnUpdateCascade { get;  }
 
-        /// <summary>
+        /// <value>
         /// Optional. Set the schema name of the reference table, if there is one.
-        /// </summary>
-        string SchemaName { get; }
+        /// </value>
+        string SchemaName { get; set; }
     }
 }

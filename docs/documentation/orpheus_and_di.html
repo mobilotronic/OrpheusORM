@@ -8,7 +8,7 @@
     <title>Orpheus and DI | Orpheus </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Orpheus and DI | Orpheus ">
-    <meta name="generator" content="docfx 2.39.2.0">
+    <meta name="generator" content="docfx 2.40.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -111,12 +111,12 @@ This means that the consumer will need to somehow configure, which database engi
     },
     {
       &quot;Implementation&quot;: &quot;OrpheusCore.OrpheusDatabase, OrpheusCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;Service&quot;: &quot;OrpheusInterfaces.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
+      &quot;Service&quot;: &quot;OrpheusInterfaces.Core.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
       &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
     },
     {
       &quot;Implementation&quot;: &quot;OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;Service&quot;: &quot;OrpheusInterfaces.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
+      &quot;Service&quot;: &quot;OrpheusInterfaces.Core.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
       &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
     },
     {

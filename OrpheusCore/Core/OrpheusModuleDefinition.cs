@@ -36,37 +36,39 @@ namespace OrpheusCore
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Orpheus database.
-        /// </summary>
+        /// </value>
         [IgnoreDataMember]
         public IOrpheusDatabase Database { get; set; }
 
-        /// <summary>
+        /// <value>
         /// Module's main table options.
-        /// </summary>
+        /// </value>
         public IOrpheusTableOptions MainTableOptions { get; set; }
 
-        /// <summary>
+        /// <value>
         /// List of module's detail table options.
-        /// </summary>
+        /// </value>
         public List<IOrpheusTableOptions> DetailTableOptions { get; set; }
 
-        /// <summary>
+        /// <value>
         /// List of module reference tables.
-        /// </summary>
+        /// </value>
         public List<IOrpheusTableOptions> ReferenceTableOptions { get; set; }
 
-        /// <summary>
+        /// <value>
         /// Module's name.
-        /// </summary>
+        /// </value>
         public string Name { get; set; }
 
 
         /// <summary>
         /// Creates an instance of OrpheusTableOptions.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// An IOrpheusTableOptions instance
+        /// </returns>
         public IOrpheusTableOptions CreateTableOptions()
         {
             return this.Database.CreateTableOptions();
@@ -75,7 +77,11 @@ namespace OrpheusCore
         /// <summary>
         /// Creates an instance of OrpheusTableOptions.
         /// </summary>
-        /// <returns></returns>
+        /// <param name="tableName">The table name.</param>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// An IOrpheusTableOptions instance
+        /// </returns>
         public IOrpheusTableOptions CreateTableOptions(string tableName, Type modelType)
         {
             var result = this.CreateTableOptions();
@@ -87,16 +93,19 @@ namespace OrpheusCore
         /// <summary>
         /// Creates an instance of OrpheusTableOptions.
         /// </summary>
-        /// <returns></returns>
+        /// <param name="modelType">The model type.</param>
+        /// <returns>
+        /// An IOrpheusTableOptions instance
+        /// </returns>
         public IOrpheusTableOptions CreateTableOptions(Type modelType)
         {
             return this.CreateTableOptions(modelType.Name, modelType);
         }
 
         /// <summary>
-        /// Load definition from memory.
+        /// Load definition from stream.
         /// </summary>
-        /// <param name="stream"></param>
+        /// <param name="stream">The stream.</param>
         public void LoadFrom(Stream stream)
         {
             this.prepareSerializer();
@@ -108,8 +117,9 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// Load definition from the database.
+        /// Loads definition from the connected database.
         /// </summary>
+        /// <param name="moduleName">The module name.</param>
         public void LoadFromDB(string moduleName)
         {
             if (this.Database != null)
@@ -131,10 +141,11 @@ namespace OrpheusCore
                 }
             }
         }
+
         /// <summary>
-        /// Load definition from a file.
+        /// Loads definition from a file.
         /// </summary>
-        /// <param name="fileName"></param>
+        /// <param name="fileName">The filename.</param>
         public void LoadFrom(string fileName)
         {
             if (File.Exists(fileName))
@@ -154,7 +165,7 @@ namespace OrpheusCore
         /// <summary>
         /// Save definition to a file.
         /// </summary>
-        /// <param name="fileName"></param>
+        /// <param name="fileName">The filename.</param>
         public void SaveTo(string fileName)
         {
             FileStream fs = new FileStream(fileName, FileMode.Create);
@@ -171,7 +182,7 @@ namespace OrpheusCore
         /// <summary>
         /// Save definition to memory.
         /// </summary>
-        /// <param name="stream"></param>
+        /// <param name="stream">The stream.</param>
         public void SaveTo(Stream stream)
         {
             this.prepareSerializer();
@@ -232,7 +243,7 @@ namespace OrpheusCore
         }
 
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="OrpheusModuleDefinition"/> class.
         /// </summary>
         public OrpheusModuleDefinition()
         {

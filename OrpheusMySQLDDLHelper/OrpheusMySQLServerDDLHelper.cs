@@ -18,9 +18,8 @@ namespace OrpheusMySQLDDLHelper
         private IDbCommand selectSchemaObjectTable;
         private IDbCommand selectSchemaObjectConstraint;
         private IDbCommand selectSchemaObjectPrimaryConstraint;
-        private MySqlConnection secondConnection;
+        private MySqlConnection _secondConnection;
         private IOrpheusDatabase db;
-        private string dataConnectionString;
 
         private void initializeTypeMap()
         {
@@ -79,6 +78,34 @@ namespace OrpheusMySQLDDLHelper
             dbTypeMap[(int)DbType.Time] = "TIME";
 
             dbTypeMap[(int)ExtendedDbTypes.StringBlob] = "LONGTEXT";
+        }
+
+        private MySqlConnection secondConnection
+        {
+            get
+            {
+                if (this._secondConnection == null)
+                {
+                    var sysConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
+                    if (sysConnectionConfiguration == null)
+                        throw new ArgumentNullException("Missing database configuration from the configuration file.\r\nThis is required so Orpheus can perform database schema related actions.");
+                    var connBuilder = new MySqlConnectionStringBuilder();
+                    connBuilder.Server = sysConnectionConfiguration.Server;
+                    connBuilder.Database = sysConnectionConfiguration.DatabaseName;
+                    MySqlSslMode sslMode;
+                    if (Enum.TryParse(this.SSLMode, out sslMode))
+                    {
+                        connBuilder.SslMode = sslMode;
+                    }
+                    if (sysConnectionConfiguration.ServiceUserName != null)
+                        connBuilder.UserID = sysConnectionConfiguration.ServiceUserName;
+                    if (sysConnectionConfiguration.ServicePassword != null)
+                        connBuilder.Password = sysConnectionConfiguration.ServicePassword;
+                    connBuilder.Database = "sys";
+                    this._secondConnection = new MySqlConnection(connBuilder.ConnectionString);
+                }
+                return this._secondConnection;
+            }
         }
 
         /// <summary>
@@ -358,6 +385,16 @@ namespace OrpheusMySQLDDLHelper
         }
 
         /// <summary>
+        /// Gets the schema object, db engine assigned/generated, identifier.
+        /// </summary>
+        /// <param name="schemaObject">The schema object.</param>
+        /// <returns></returns>
+        public T SchemaObjectId<T>(ISchemaObject schemaObject)
+        {
+            return default(T);
+        }
+
+        /// <summary>
         /// Database for the DDL helper.
         /// </summary>
         /// <returns>Database the helper is associated with</returns>
@@ -367,31 +404,6 @@ namespace OrpheusMySQLDDLHelper
             set
             {
                 this.db = value;
-                if (this.db != null && this.secondConnection == null)
-                {
-                    var sysConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
-                    if (sysConnectionConfiguration == null)
-                        throw new ArgumentNullException("Missing database configuration from the configuration file.\r\nThis is required so Orpheus can perform database schema related actions.");
-                    var connBuilder = new MySqlConnectionStringBuilder();
-                    connBuilder.Server = sysConnectionConfiguration.Server;
-                    connBuilder.Database = sysConnectionConfiguration.DatabaseName;
-                    if (sysConnectionConfiguration.UserName != null)
-                        connBuilder.UserID = sysConnectionConfiguration.UserName;
-                    if (sysConnectionConfiguration.Password != null)
-                        connBuilder.Password = sysConnectionConfiguration.Password;
-                    connBuilder.Database = "sys";
-                    this.secondConnection = new MySqlConnection(connBuilder.ConnectionString);
-                    try
-                    {
-                        this.secondConnection.Open();
-                        this.secondConnection.Close();
-                    }
-                    catch
-                    {
-                        this.secondConnection.Dispose();
-                        this.secondConnection = null;
-                    }
-                }
             }
         }
 
@@ -496,25 +508,32 @@ namespace OrpheusMySQLDDLHelper
         {
             get
             {
-                if (this.dataConnectionString == null)
-                {
-                    var dataConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
-                    if (dataConnectionConfiguration == null)
-                        throw new ArgumentNullException("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.");
+                var dataConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
+                if (dataConnectionConfiguration == null)
+                    throw new ArgumentNullException("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.");
 
-                    var connBuilder = new MySqlConnectionStringBuilder();
-                    connBuilder.Server = dataConnectionConfiguration.Server;
-                    connBuilder.Database = dataConnectionConfiguration.DatabaseName;
-                    if (dataConnectionConfiguration.UserName != null)
-                        connBuilder.UserID = dataConnectionConfiguration.UserName;
-                    if (dataConnectionConfiguration.Password != null)
-                        connBuilder.Password = dataConnectionConfiguration.Password;
+                var connBuilder = new MySqlConnectionStringBuilder();
+                connBuilder.Server = dataConnectionConfiguration.Server;
+                connBuilder.Database = dataConnectionConfiguration.DatabaseName;
 
-                    this.dataConnectionString = connBuilder.ConnectionString;
+                MySqlSslMode sslMode;
+                if(Enum.TryParse(this.SSLMode, out sslMode)){
+                    connBuilder.SslMode = sslMode;
                 }
-                return this.dataConnectionString;
+
+                if (dataConnectionConfiguration.UserName != null)
+                    connBuilder.UserID = dataConnectionConfiguration.UserName;
+                if (dataConnectionConfiguration.Password != null)
+                    connBuilder.Password = dataConnectionConfiguration.Password;
+
+                return connBuilder.ConnectionString;
             }
         }
+
+        /// <summary>
+        /// SSL connection mode.
+        /// </summary>
+        public string SSLMode { get; set; }
 
         /// <summary>
         /// MySQL Server DDL helper constructor.
@@ -525,6 +544,7 @@ namespace OrpheusMySQLDDLHelper
             this.SupportsGuidType = false;
             this.SupportsSchemaNameSpace = false;
             this.DbEngineType = DatabaseEngineType.dbMySQL;
+            this.SSLMode = MySqlSslMode.None.ToString();
         }
     }
 }
