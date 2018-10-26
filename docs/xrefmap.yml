@@ -5367,6 +5367,22 @@ references:
   isSpec: "True"
   fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists
   nameWithType: IOrpheusDDLHelper.SchemaObjectExists
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId*
+  name: SchemaObjectId
+  href: api/OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectId_
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId
+  nameWithType: IOrpheusDDLHelper.SchemaObjectId
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name: SchemaObjectId<T>(ISchemaObject)
+  href: api/OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name.vb: SchemaObjectId(Of T)(ISchemaObject)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId<T>(OrpheusInterfaces.Schema.ISchemaObject)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId(Of T)(OrpheusInterfaces.Schema.ISchemaObject)
+  nameWithType: IOrpheusDDLHelper.SchemaObjectId<T>(ISchemaObject)
+  nameWithType.vb: IOrpheusDDLHelper.SchemaObjectId(Of T)(ISchemaObject)
 - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsGuidType
   name: SupportsGuidType
   href: api/OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SupportsGuidType
@@ -8751,6 +8767,22 @@ references:
   isSpec: "True"
   fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists
   nameWithType: OrpheusMySQLServerDDLHelper.SchemaObjectExists
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId*
+  name: SchemaObjectId
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectId_
+  commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId
+  isSpec: "True"
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId
+  nameWithType: OrpheusMySQLServerDDLHelper.SchemaObjectId
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name: SchemaObjectId<T>(ISchemaObject)
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_
+  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name.vb: SchemaObjectId(Of T)(ISchemaObject)
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId<T>(OrpheusInterfaces.Schema.ISchemaObject)
+  fullName.vb: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId(Of T)(OrpheusInterfaces.Schema.ISchemaObject)
+  nameWithType: OrpheusMySQLServerDDLHelper.SchemaObjectId<T>(ISchemaObject)
+  nameWithType.vb: OrpheusMySQLServerDDLHelper.SchemaObjectId(Of T)(ISchemaObject)
 - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode
   name: SSLMode
   href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SSLMode
@@ -9300,6 +9332,22 @@ references:
   isSpec: "True"
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectExists
   nameWithType: OrpheusSQLServerDDLHelper.SchemaObjectExists
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId*
+  name: SchemaObjectId
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SchemaObjectId_
+  commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId
+  isSpec: "True"
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId
+  nameWithType: OrpheusSQLServerDDLHelper.SchemaObjectId
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name: SchemaObjectId<T>(ISchemaObject)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  name.vb: SchemaObjectId(Of T)(ISchemaObject)
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId<T>(OrpheusInterfaces.Schema.ISchemaObject)
+  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaObjectId(Of T)(OrpheusInterfaces.Schema.ISchemaObject)
+  nameWithType: OrpheusSQLServerDDLHelper.SchemaObjectId<T>(ISchemaObject)
+  nameWithType.vb: OrpheusSQLServerDDLHelper.SchemaObjectId(Of T)(ISchemaObject)
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.SchemaSeparator
   name: SchemaSeparator
   href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper_SchemaSeparator
