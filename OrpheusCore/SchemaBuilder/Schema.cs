@@ -27,6 +27,9 @@ namespace OrpheusCore.SchemaBuilder
 
         public Guid ObjectId { get; set; }
 
+        [DefaultValue(null)]
+        public int? DbEngineObjectId { get; set; }
+
         [DataTypeAttribute((int)ExtendedDbTypes.StringBlob)]
         public string DDL { get; set; }
 

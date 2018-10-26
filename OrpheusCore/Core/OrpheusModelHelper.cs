@@ -107,6 +107,13 @@ namespace OrpheusCore
                             fk.OnDeleteCascade,
                             fk.OnUpdateCascade
                             );
+                        if(schemaObj.Schema.Name != null && fk.ReferenceTable != null)
+                        {
+                            if (!fk.ReferenceTable.Contains(schemaObj.Schema.Name))
+                            {
+                                this.logger.LogWarning($"Table {schemaObj.SQLName} references a table in foreign key constraint, which doesn't belong to the same schema. {fk.ReferenceTable}");
+                            }
+                        }
                     }
 
                     if (attributeType == typeof(RequiredField))
@@ -364,6 +371,8 @@ namespace OrpheusCore
         /// <param name="schemaObj">The schema object.</param>
         public void CreateSchemaFields(ISchemaDataObject schemaObj)
         {
+            schemaObj.Fields.Clear();
+            schemaObj.Constraints.Clear();
             this.PrimaryCompositeKeys.ForEach(pk => {
                 var primaryKeyName = String.Format("PK_COMPOSITE_{0}_{1}", schemaObj.SQLName, String.Join("_", pk.Fields));
                 schemaObj.AddPrimaryKeyConstraint(primaryKeyName, pk.Fields.ToList());

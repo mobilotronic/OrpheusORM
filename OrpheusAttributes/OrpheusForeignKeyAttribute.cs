@@ -39,7 +39,7 @@ namespace OrpheusAttributes
         /// <value>
         /// Optional. Set the schema name of the reference table, if there is one.
         /// </value>
-        public string SchemaName { get; private set; }
+        public string SchemaName { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ForeignKey"/> class.

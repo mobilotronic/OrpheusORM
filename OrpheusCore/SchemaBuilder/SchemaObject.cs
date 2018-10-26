@@ -327,7 +327,7 @@ namespace OrpheusCore.SchemaBuilder
         /// Registers an Orpheus schema.
         /// </summary>
         /// <param name="transaction"></param>
-        protected override void registerSchema(IDbTransaction transaction)
+        protected override void registerSchema(IDbTransaction transaction = null)
         {
             if (this.Schema.SchemaObjectExists(this) == Guid.Empty && this.SQLName != this.Schema.SchemaInfoTable)
             {
@@ -344,10 +344,11 @@ namespace OrpheusCore.SchemaBuilder
                     ConstraintsDDL = string.Join(",", this.GetConstraintsDDL().ToArray()),
                     CreatedOn = DateTime.Now,
                     ObjectType = (int)this.GetSchemaType(),
-                    SchemaId = this.Schema.Id
+                    SchemaId = this.Schema.Id,
+                    DbEngineObjectId = this.DB.DDLHelper.SchemaObjectId<int?>(this)
                 });
 
-                this.schemaObjectsTable.Save(transaction,false);
+                this.schemaObjectsTable.Save(transaction,transaction == null ? true : false);
             }
 
         }
@@ -356,7 +357,7 @@ namespace OrpheusCore.SchemaBuilder
         /// Unregisters an Orpheus schema.
         /// </summary>
         /// <param name="transaction"></param>
-        protected override void unRegisterSchema(IDbTransaction transaction)
+        protected override void unRegisterSchema(IDbTransaction transaction = null)
         {
             if (this.Schema.SchemaObjectExists(this) != Guid.Empty)
             {
@@ -377,7 +378,7 @@ namespace OrpheusCore.SchemaBuilder
                     SchemaId = this.Schema.Id
                 });
 
-                this.schemaObjectsTable.Save(transaction,false);
+                this.schemaObjectsTable.Save(transaction, transaction == null ? true : false);
             }
         }
 
@@ -642,9 +643,9 @@ namespace OrpheusCore.SchemaBuilder
                         {
                             if (this.SchemaObjectsThatIDepend.Count > 0)
                             {
-                                this.logger.LogDebug(this.formatLoggerMessage("Begin creating dependencies"));
+                                this.logger.LogTrace(this.formatLoggerMessage("Begin creating dependencies"));
                                 this.SchemaObjectsThatIDepend.ForEach(dep => dep.Execute());
-                                this.logger.LogDebug(this.formatLoggerMessage("End creating dependencies"));
+                                this.logger.LogTrace(this.formatLoggerMessage("End creating dependencies"));
                             }
 
                             break;
@@ -653,9 +654,9 @@ namespace OrpheusCore.SchemaBuilder
                         {
                             if (this.SchemaObjectsThatDependOnMe.Count > 0)
                             {
-                                this.logger.LogDebug(this.formatLoggerMessage("Begin dropping dependencies"));
+                                this.logger.LogTrace(this.formatLoggerMessage("Begin dropping dependencies"));
                                 this.SchemaObjectsThatDependOnMe.ForEach(dep => dep.Drop());
-                                this.logger.LogDebug(this.formatLoggerMessage("End dropping dependencies"));
+                                this.logger.LogTrace(this.formatLoggerMessage("End dropping dependencies"));
                             }
                             break;
                         }
@@ -694,23 +695,19 @@ namespace OrpheusCore.SchemaBuilder
                                             {
                                                 if (this.UniqueKey == Guid.Empty)
                                                     this.UniqueKey = Guid.NewGuid();
-                                                //registering the newly created schema object.
-                                                this.registerSchema(transaction);
                                                 //apply constraints primary,foreign keys
                                                 this.applyConstraints(cmd);
                                                 //seeding any data if set.
                                                 this.seedData(cmd);
 
                                                 this.IsCreated = true;
-                                                this.logger.LogDebug(this.formatLoggerMessage("Schema created"));
+                                                this.logger.LogTrace(this.formatLoggerMessage("Schema created"));
                                                 break;
                                             }
                                         case DDLAction.ddlDrop:
                                             {
-                                                if (this.SQLName != this.Schema.SchemaObjectsTable)
-                                                    this.unRegisterSchema(transaction);
                                                 this.IsCreated = false;
-                                                this.logger.LogDebug(this.formatLoggerMessage("Schema dropped"));
+                                                this.logger.LogTrace(this.formatLoggerMessage("Schema dropped"));
                                                 break;
                                             }
                                         case DDLAction.ddlAlter:
@@ -719,7 +716,7 @@ namespace OrpheusCore.SchemaBuilder
                                                 this.applyConstraints(cmd);
                                                 this.IsCreated = true;
                                                 this.seedData(cmd);
-                                                this.logger.LogDebug(this.formatLoggerMessage("Schema altered"));
+                                                this.logger.LogTrace(this.formatLoggerMessage("Schema altered"));
                                                 break;
                                             }
                                     }
@@ -739,11 +736,19 @@ namespace OrpheusCore.SchemaBuilder
                                 }
                             }
                             this.DB.CommitTransaction(transaction);
-                            if(Action == DDLAction.ddlDrop)
+                            switch (Action)
                             {
-                                this.SchemaObjectsThatDependOnMe.ForEach((obj) => {
-                                    obj.SchemaObjectsThatIDepend.Remove(this);
-                                });
+                                //registering the newly created schema object.
+                                case DDLAction.ddlCreate: { this.registerSchema(); break; }
+                                case DDLAction.ddlDrop:
+                                    {
+                                        if (this.SQLName != this.Schema.SchemaObjectsTable)
+                                            this.unRegisterSchema();
+                                        this.SchemaObjectsThatDependOnMe.ForEach((obj) => {
+                                            obj.SchemaObjectsThatIDepend.Remove(this);
+                                        });
+                                        break;
+                                    }
                             }
                         }
                         finally

@@ -37,6 +37,6 @@
         /// <value>
         /// Optional. Set the schema name of the reference table, if there is one.
         /// </value>
-        string SchemaName { get; }
+        string SchemaName { get; set; }
     }
 }

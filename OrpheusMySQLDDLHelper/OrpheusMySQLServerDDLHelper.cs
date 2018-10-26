@@ -97,9 +97,9 @@ namespace OrpheusMySQLDDLHelper
                     {
                         connBuilder.SslMode = sslMode;
                     }
-                    if (sysConnectionConfiguration.UserName != null)
+                    if (sysConnectionConfiguration.ServiceUserName != null)
                         connBuilder.UserID = sysConnectionConfiguration.ServiceUserName;
-                    if (sysConnectionConfiguration.Password != null)
+                    if (sysConnectionConfiguration.ServicePassword != null)
                         connBuilder.Password = sysConnectionConfiguration.ServicePassword;
                     connBuilder.Database = "sys";
                     this._secondConnection = new MySqlConnection(connBuilder.ConnectionString);
@@ -382,6 +382,16 @@ namespace OrpheusMySQLDDLHelper
                 }
             }
             return false;
+        }
+
+        /// <summary>
+        /// Gets the schema object, db engine assigned/generated, identifier.
+        /// </summary>
+        /// <param name="schemaObject">The schema object.</param>
+        /// <returns></returns>
+        public T SchemaObjectId<T>(ISchemaObject schemaObject)
+        {
+            return default(T);
         }
 
         /// <summary>

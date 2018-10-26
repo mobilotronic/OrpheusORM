@@ -1,1 +1,20 @@
-<Playlist Version="1.0"><Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleMasterDetailTables" /><Add Test="OrpheusTests.MySQLTests.MySQLServerSchemaTests.MySQLServerCreateDynamicSchema" /><Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleSingleTable" /><Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleLoadSpecificKeyValues" /><Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestLoadSpecificKeyValues" /><Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestUserDefinedSQL" /><Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestDeleteCommandRandomData" /><Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestCreateCommandRandomData" /><Add Test="OrpheusTests.MySQLTests.MySQLServerSchemaTests.MySQLServerDropCreateSchema" /><Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleDefinitionLoadSave" /><Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestKeyValueAutoGenerate" /><Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestPrimaryKeyInfer" /><Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleDefinition" /><Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestSaveBinaryData" /><Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestMasterDetailTenLevelsDeep" /><Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestUpdateCommandRandomData" /><Add Test="OrpheusTests.MySQLTests.MySQLServerSchemaTests.MySQLServerDropTestSchema" /><Add Test="OrpheusTests.MySQLTests.MySQLServerSchemaTests.MySQLServerCreateTestSchema" /></Playlist>
+<Playlist Version="1.0">
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerSchemaTests.MySQLServerDropCreateSchema" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleMasterDetailTables" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerSchemaTests.MySQLServerCreateDynamicSchema" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleSingleTable" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleLoadSpecificKeyValues" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestLoadSpecificKeyValues" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestUserDefinedSQL" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestDeleteCommandRandomData" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestCreateCommandRandomData" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleDefinitionLoadSave" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestKeyValueAutoGenerate" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestPrimaryKeyInfer" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestModuleDefinition" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestSaveBinaryData" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerModuleTests.MySQLServerTestMasterDetailTenLevelsDeep" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerTableTests.MySQLServerTestUpdateCommandRandomData" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerSchemaTests.MySQLServerDropTestSchema" />
+	<Add Test="OrpheusTests.MySQLTests.MySQLServerSchemaTests.MySQLServerCreateTestSchema" />
+</Playlist>

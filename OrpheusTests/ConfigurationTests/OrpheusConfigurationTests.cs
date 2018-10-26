@@ -3,8 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using OrpheusCore.Configuration;
 using OrpheusCore.ServiceProvider;
-using OrpheusInterfaces.Core;
-using OrpheusTestModels;
 using System;
 using System.IO;
 using System.Linq;
@@ -195,16 +193,16 @@ namespace OrpheusTests.ConfigurationTests
         //    var table = database.CreateTable<TestModelItem>();
         //}
 
-        [TestMethod]
-        public void LoadServicesConfiguration()
-        {
-            ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json"));
-            var database = OrpheusServiceProvider.Resolve<IOrpheusDatabase>();
-            this.DatabaseEngine = DbEngine.dbSQLServer;
-            database.Connect(this.ConnectionString);
-            var module = database.CreateModule();
-            var table = database.CreateTable<TestModelItem>();
-        }
+        //[TestMethod]
+        //public void LoadServicesConfiguration()
+        //{
+        //    ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json"));
+        //    var database = OrpheusServiceProvider.Resolve<IOrpheusDatabase>();
+        //    this.DatabaseEngine = DbEngine.dbSQLServer;
+        //    database.Connect(this.ConnectionString);
+        //    var module = database.CreateModule();
+        //    var table = database.CreateTable<TestModelItem>();
+        //}
 
         [TestMethod]
         public async Task ReloadConfigurationAsync()

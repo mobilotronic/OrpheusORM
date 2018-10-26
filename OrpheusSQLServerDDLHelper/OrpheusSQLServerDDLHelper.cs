@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Text;
 
 namespace OrpheusSQLDDLHelper
@@ -15,16 +16,21 @@ namespace OrpheusSQLDDLHelper
     /// </summary>
     public class OrpheusSQLServerDDLHelper : ISQLServerDDLHelper
     {
+        #region private properties
         private Dictionary<Type,string> typeMap = new Dictionary<Type,string>();
         private Dictionary<int, string> dbTypeMap = new Dictionary<int, string>();
         private string schemaSeparator = ".";
         //private ISchemaObject dummySchemaObject;
 
-        private IDbCommand selectSchemaObjectQuery;
-        private IDbCommand selectNamedSchemaObjectQuery;
         private SqlConnection _secondConnection;
         private SqlConnection _masterConnection;
+        private IOrpheusDatabase db;
+        private List<string> builtInSchemas = new List<string>() { "dbo", "sys", "information_schema", "guest" };
+        private delegate void DDLCommandCallback(IDbCommand dbCommand);
+        private delegate void ErrorCallback(Exception exception);
+        #endregion
 
+        #region auxiliary connections
         /// <summary>
         /// A second connection is required to perform database related actions, without affecting the connected state of the main database object.
         /// </summary>
@@ -34,7 +40,8 @@ namespace OrpheusSQLDDLHelper
             {
                 if (this._secondConnection == null)
                 {
-                    this._secondConnection = new SqlConnection(this.ConnectionString);
+                    var sqlConnBuilder = new SqlConnectionStringBuilder(this.ConnectionString);
+                    this._secondConnection = new SqlConnection(sqlConnBuilder.ConnectionString);
                 }
                 return this._secondConnection;
             }
@@ -51,8 +58,8 @@ namespace OrpheusSQLDDLHelper
                         SqlConnectionStringBuilder masterConnectionString = new SqlConnectionStringBuilder();
                         var masterConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
                         if (masterConnectionConfiguration == null)
-                            throw new ArgumentNullException("Missing database configuration from the configuration file.\r\nThis is required so Orpheus can perform database schema related actions.");
-
+                            throw new Exception("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.Configuration will be infer from the connection string.");
+                        masterConnectionString = new SqlConnectionStringBuilder();
                         masterConnectionString.DataSource = masterConnectionConfiguration.Server;
                         masterConnectionString.InitialCatalog = "master";
                         masterConnectionString.IntegratedSecurity = masterConnectionConfiguration.UseIntegratedSecurityForServiceConnection;
@@ -72,10 +79,12 @@ namespace OrpheusSQLDDLHelper
                 return this._masterConnection;
             }
         }
-        private IOrpheusDatabase db;
-        private delegate void DDLCommandCallback(IDbCommand dbCommand);
-        private delegate void ErrorCallback(Exception exception);
+        #endregion
 
+        #region private methods        
+        /// <summary>
+        /// Initializes the type map.
+        /// </summary>
         private void initializeTypeMap()
         {
             typeMap[typeof(byte)] = "TINYINT";
@@ -172,6 +181,13 @@ namespace OrpheusSQLDDLHelper
             }
         }
 
+        /// <summary>
+        /// Prepares the SQL command.
+        /// </summary>
+        /// <param name="sql">The SQL.</param>
+        /// <param name="parameters">The parameters.</param>
+        /// <param name="parameterValues">The parameter values.</param>
+        /// <returns></returns>
         private IDbCommand prepareSQLCommand(string sql, List<string> parameters = null, List<object> parameterValues = null)
         {
             var cmd = this.secondConnection.CreateCommand();
@@ -191,84 +207,165 @@ namespace OrpheusSQLDDLHelper
 
         }
 
-        private bool schemaObjectExists(string schemaObjectName, string schemaName = null)
+        /// <summary>
+        /// Creates a DbCommand that searches for an object schema, part of specific schema or not.
+        /// </summary>
+        /// <param name="schemaObjectName">Name of the schema object.</param>
+        /// <param name="schemaName">Name of the schema.</param>
+        /// <returns></returns>
+        private IDbCommand getSelectSchemaObjectQuery(string schemaObjectName, string schemaName = null)
         {
-            var result = false;
-            if (this.secondConnection != null)
+            var isNamedSchema = schemaName != null;
+            IDbCommand result = null;
+            if (isNamedSchema)
             {
-                var isNamedSchema = schemaName != null;
-                if (this.selectNamedSchemaObjectQuery == null && isNamedSchema)
-                {
-                    //this.selectSchemaObjectQuery = this.db.CreatePreparedQuery(String.Format("SELECT OBJECT_ID FROM {0}.SYS.OBJECTS WHERE NAME = @NAME",this.DatabaseName),
-                    //    new List<string>() { "@NAME" });
-                    this.selectNamedSchemaObjectQuery = this.secondConnection.CreateCommand();
-                    var SQL = new StringBuilder();
-                    SQL.AppendFormat("SELECT OBJECT_ID,{0}.SYS.SCHEMAS.NAME FROM {1}.SYS.OBJECTS ", this.DatabaseName, this.DatabaseName);
-                    SQL.Append("LEFT JOIN SYS.SCHEMAS on SYS.SCHEMAS.SCHEMA_ID = SYS.OBJECTS.SCHEMA_ID");
-                    SQL.Append(" WHERE SYS.OBJECTS.NAME = @NAME");
-                     SQL.Append(" AND SYS.SCHEMAS.NAME = @SCHEMA_NAME");
-                    this.selectNamedSchemaObjectQuery.CommandText = SQL.ToString();
+                //this.selectSchemaObjectQuery = this.db.CreatePreparedQuery(String.Format("SELECT OBJECT_ID FROM {0}.SYS.OBJECTS WHERE NAME = @NAME",this.DatabaseName),
+                //    new List<string>() { "@NAME" });
+                result = this.secondConnection.CreateCommand();
+                var SQL = new StringBuilder();
+                SQL.AppendFormat("SELECT OBJECT_ID,{0}.SYS.SCHEMAS.NAME FROM {1}.SYS.OBJECTS ", this.DatabaseName, this.DatabaseName);
+                SQL.Append("LEFT JOIN SYS.SCHEMAS on SYS.SCHEMAS.SCHEMA_ID = SYS.OBJECTS.SCHEMA_ID");
+                SQL.Append(" WHERE SYS.OBJECTS.NAME = @NAME");
+                SQL.Append(" AND SYS.SCHEMAS.NAME = @SCHEMA_NAME");
+                result.CommandText = SQL.ToString();
 
-                    var param = this.selectNamedSchemaObjectQuery.CreateParameter();
-                    param.ParameterName = "@NAME";
+                var param = result.CreateParameter();
+                param.ParameterName = "@NAME";
 
-                    this.selectNamedSchemaObjectQuery.Parameters.Add(param);
+                result.Parameters.Add(param);
 
-                    var schemaNameParam = this.selectNamedSchemaObjectQuery.CreateParameter();
-                    schemaNameParam.ParameterName = "@SCHEMA_NAME";
-                    this.selectNamedSchemaObjectQuery.Parameters.Add(schemaNameParam);
-                }
-                if (this.selectSchemaObjectQuery == null && !isNamedSchema)
-                {
-                    this.selectSchemaObjectQuery = this.secondConnection.CreateCommand();
-                    var SQL = new StringBuilder();
-                    SQL.AppendFormat("SELECT OBJECT_ID FROM {0}.SYS.OBJECTS ", this.DatabaseName);
-                    SQL.Append("WHERE SYS.OBJECTS.NAME = @NAME");
+                var schemaNameParam = result.CreateParameter();
+                schemaNameParam.ParameterName = "@SCHEMA_NAME";
+                result.Parameters.Add(schemaNameParam);
+                ((IDataParameter)result.Parameters["@NAME"]).Value = schemaObjectName;
+                ((IDataParameter)result.Parameters["@SCHEMA_NAME"]).Value = schemaName;
+            }
+            if (!isNamedSchema)
+            {
+                result = this.secondConnection.CreateCommand();
+                var SQL = new StringBuilder();
+                SQL.Append($"SELECT OBJECT_ID,{this.DatabaseName}.SYS.SCHEMAS.NAME FROM {this.DatabaseName}.SYS.OBJECTS ");
+                SQL.Append($"LEFT JOIN {this.DatabaseName}.SYS.SCHEMAS on {this.DatabaseName}.SYS.SCHEMAS.SCHEMA_ID = {this.DatabaseName}.SYS.OBJECTS.SCHEMA_ID");
+                SQL.Append($" WHERE {this.DatabaseName}.SYS.OBJECTS.NAME = @NAME");
 
-                    this.selectSchemaObjectQuery.CommandText = SQL.ToString();
+                result.CommandText = SQL.ToString();
 
-                    var param = this.selectSchemaObjectQuery.CreateParameter();
-                    param.ParameterName = "@NAME";
+                var param = result.CreateParameter();
+                param.ParameterName = "@NAME";
 
-                    this.selectSchemaObjectQuery.Parameters.Add(param);
-                }
-
-                if (this.secondConnection.State != ConnectionState.Open)
-                    this.secondConnection.Open();
-                IDataReader reader = null;
-                try
-                {
-                    IDbCommand commandForExecution = isNamedSchema ? this.selectNamedSchemaObjectQuery : this.selectSchemaObjectQuery;
-                    if (isNamedSchema)
-                    {
-                        ((IDataParameter)commandForExecution.Parameters["@NAME"]).Value = schemaObjectName;
-                        ((IDataParameter)commandForExecution.Parameters["@SCHEMA_NAME"]).Value = schemaName;
-                    }
-                    else
-                    {
-                        ((IDataParameter)commandForExecution.Parameters["@NAME"]).Value = schemaObjectName;
-                    }
-
-                    reader = commandForExecution.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        result = reader.GetValue(0) != null;
-                    }
-                }
-                catch
-                {
-                    throw;
-                }
-                finally
-                {
-                    if (reader != null)
-                        reader.Close();
-                    this.secondConnection.Close();
-                }
+                result.Parameters.Add(param);
+                ((IDataParameter)result.Parameters["@NAME"]).Value = schemaObjectName;
             }
             return result;
         }
 
+        /// <summary>
+        /// Returns true if the schema object exists.
+        /// </summary>
+        /// <param name="schemaObjectName">Name of the schema object.</param>
+        /// <param name="schemaName">Name of the schema.</param>
+        /// <returns></returns>
+        private bool schemaObjectExists(string schemaObjectName, string schemaName = null)
+        {
+            return this.schemaObjectId<int?>(schemaObjectName, schemaName) != null;
+        }
+
+        /// <summary>
+        /// Determines whether [is built in schema] [the specified schema name].
+        /// </summary>
+        /// <param name="schemaName">Name of the schema.</param>
+        /// <returns>
+        ///   <c>true</c> if [is built in schema] [the specified schema name]; otherwise, <c>false</c>.
+        /// </returns>
+        private bool isBuiltInSchema(string schemaName)
+        {
+            return this.builtInSchemas.Contains(schemaName.ToLower());
+        }
+
+        /// <summary>
+        /// Returns the object id value of a schema object, if it exists.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="schemaObjectName">Name of the schema object.</param>
+        /// <param name="schemaName">Name of the schema.</param>
+        /// <returns></returns>
+        private T schemaObjectId<T>(string schemaObjectName, string schemaName = null)
+        {
+            T result = default(T);
+            if(this.secondConnection != null)
+            {
+                if (this.secondConnection.State != ConnectionState.Open)
+                    this.secondConnection.Open();
+                IDataReader reader = null;
+                IDbCommand commandForExecution = this.getSelectSchemaObjectQuery(schemaObjectName, schemaName);
+                try
+                {
+                    var results = new Dictionary<T,string>();
+                    reader = commandForExecution.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        results.Add((T)reader.GetValue(0),reader.GetString(1));
+                    }
+                    if(results.Count > 0)
+                    {
+                        //if there was only one result 
+                        if (results.Count == 1)
+                        {
+                            //if a schema name was defined, then table's schema must be same.
+                            if (schemaName != null)
+                            {
+                                if (string.Equals(schemaName, results.Values.First(), StringComparison.OrdinalIgnoreCase))
+                                {
+                                    return results.Keys.First();
+                                }
+                            }
+                            else
+                            {
+                                //return true, only if the schema that the object belongs is a built in schema.
+                                if (this.isBuiltInSchema(results.Values.First()))
+                                    //if no schema was defined, we need to ignore user created schemas. If the table is part of one.
+                                    return results.Keys.First();
+                            }
+                        }
+                        else
+                        {
+                            //TODO: something different when we get multiple results.
+                            //if a schema name was defined, then table's schema must be same.
+                            if (schemaName != null)
+                            {
+                                return results.First(r => string.Equals(r.Value, schemaName, StringComparison.OrdinalIgnoreCase)).Key;
+                            }
+                            else
+                            {
+                                //return true, only if the schema that the object belongs is a built in schema.
+                                return results.First(r => this.isBuiltInSchema(r.Value)).Key;
+                            }
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    this.db.Logger.LogError(e.Message);
+                    throw e;
+                }
+                finally
+                {
+                    if (reader != null)
+                    {
+                        reader.Close();
+                        reader.Dispose();
+                    }
+                    if (commandForExecution != null)
+                        commandForExecution.Dispose();
+                    this.secondConnection.Close();
+                }
+            }
+
+            return result;
+        }
+        #endregion
+
+        #region public properties
         /// <summary>
         /// Returns true if the DBEngine supports natively the Guid type.
         /// </summary>
@@ -280,6 +377,83 @@ namespace OrpheusSQLDDLHelper
         /// </summary>
         public bool SupportsSchemaNameSpace { get; private set; }
 
+        /// <summary>
+        /// Database for the DDL helper.
+        /// </summary>
+        /// <returns>Database the helper is associated with</returns>
+        public IOrpheusDatabase DB
+        {
+            get { return this.db; }
+            set
+            {
+                this.db = value;
+            }
+        }
+
+        /// <summary>
+        /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
+        /// </summary>
+        /// <returns>Char</returns>
+        public char DelimitedIndetifierStart { get { return '['; } }
+
+        /// <summary>
+        /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
+        /// </summary>
+        /// <returns>Char</returns>
+        public char DelimitedIndetifierEnd { get { return ']'; } }
+
+        /// <summary>
+        /// Returns the underlying database engine type.
+        /// </summary>
+        public DatabaseEngineType DbEngineType { get; private set; }
+
+        /// <summary>
+        /// Returns the DB specific modify table command.
+        /// </summary>
+        public string ModifyColumnCommand { get { return " ALTER COLUMN "; } }
+
+        /// <summary>
+        /// Gets the database name.
+        /// </summary>
+        public string DatabaseName
+        {
+            get
+            {
+                return this.db.DatabaseConnectionConfiguration.DatabaseName;
+            }
+        }
+
+        /// <summary>
+        /// Builds the connection string.
+        /// </summary>
+        /// <returns></returns>
+        public string ConnectionString
+        {
+            get
+            {
+                SqlConnectionStringBuilder connBuilder = null;
+                var dataConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
+                if (dataConnectionConfiguration == null)
+                    throw new Exception("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.Configuration will be infer from the connection string.");
+
+                connBuilder = new SqlConnectionStringBuilder()
+                {
+                    DataSource = dataConnectionConfiguration.Server,
+                    InitialCatalog = dataConnectionConfiguration.DatabaseName,
+                    IntegratedSecurity = dataConnectionConfiguration.UseIntegratedSecurity
+                };
+                if (dataConnectionConfiguration.UserName != null)
+                    connBuilder.UserID = dataConnectionConfiguration.UserName;
+                if (dataConnectionConfiguration.Password != null)
+                    connBuilder.Password = dataConnectionConfiguration.Password;
+
+                return connBuilder.ConnectionString;
+            }
+
+        }
+        #endregion
+
+        #region public methods
         /// <summary>
         /// Returns true if a database is successfully created using the underlying db engine settings.
         /// </summary>
@@ -404,16 +578,22 @@ namespace OrpheusSQLDDLHelper
         }
 
         /// <summary>
-        /// Database for the DDL helper.
+        /// Gets the schema object, db engine assigned/generated, identifier.
         /// </summary>
-        /// <returns>Database the helper is associated with</returns>
-        public IOrpheusDatabase DB
+        /// <param name="schemaObject">The schema object.</param>
+        /// <returns></returns>
+        public T SchemaObjectId<T>(ISchemaObject schemaObject)
         {
-            get { return this.db; }
-            set
+            string objectName = null;
+            string schemaName = schemaObject.Schema == null ? null : schemaObject.Schema.Name;
+            if (schemaName == null)
+                objectName = schemaObject.SQLName;
+            else
             {
-                this.db = value;
+                var hasDot = schemaObject.SQLName.IndexOf(".") >= 0;
+                objectName = hasDot ? schemaObject.SQLName.Split('.')[1] : schemaObject.SQLName;
             }
+            return this.schemaObjectId<T>(objectName, schemaName);
         }
 
         /// <summary>
@@ -447,33 +627,11 @@ namespace OrpheusSQLDDLHelper
         }
 
         /// <summary>
-        /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
-        /// </summary>
-        /// <returns>Char</returns>
-        public char DelimitedIndetifierStart { get { return '['; } }
-
-        /// <summary>
-        /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
-        /// </summary>
-        /// <returns>Char</returns>
-        public char DelimitedIndetifierEnd { get { return ']'; } }
-
-        /// <summary>
         /// Properly formats a field name, to be used in a SQL statement, in case the field name is a reserved word.
         /// </summary>
         /// <param name="fieldName"></param>
         /// <returns></returns>
         public string SafeFormatField(string fieldName) {  return String.Format("{0}{1}{2}",this.DelimitedIndetifierStart,fieldName,this.DelimitedIndetifierEnd);}
-
-        /// <summary>
-        /// Returns the DB specific modify table command.
-        /// </summary>
-        public string ModifyColumnCommand { get { return " ALTER COLUMN "; } }
-
-        /// <summary>
-        /// Returns the underlying database engine type.
-        /// </summary>
-        public DatabaseEngineType DbEngineType { get; private set; }
 
         /// <summary>
         /// Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.
@@ -496,43 +654,9 @@ namespace OrpheusSQLDDLHelper
         {
             return String.Format("ALTER TABLE {0} ADD {1}", tableName, string.Join(",", columnsToAdd.ToArray()));
         }
+        #endregion
 
-        /// <summary>
-        /// Gets the database name.
-        /// </summary>
-        public string DatabaseName
-        {
-            get
-            {
-                return this.db.DatabaseConnectionConfiguration.DatabaseName;
-            }
-        }
-
-        /// <summary>
-        /// Builds the connection string.
-        /// </summary>
-        /// <returns></returns>
-        public string ConnectionString
-        {
-            get
-            {
-                var dataConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
-                if (dataConnectionConfiguration == null)
-                    throw new ArgumentNullException("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.");
-                var connBuilder = new SqlConnectionStringBuilder();
-                connBuilder.DataSource = dataConnectionConfiguration.Server;
-                connBuilder.InitialCatalog = dataConnectionConfiguration.DatabaseName;
-                connBuilder.IntegratedSecurity = dataConnectionConfiguration.UseIntegratedSecurity;
-                if (dataConnectionConfiguration.UserName != null)
-                    connBuilder.UserID = dataConnectionConfiguration.UserName;
-                if (dataConnectionConfiguration.Password != null)
-                    connBuilder.Password = dataConnectionConfiguration.Password;
-
-                return connBuilder.ConnectionString;
-            }
-
-        }
-
+        #region constructors
         /// <summary>
         /// 
         /// </summary>
@@ -543,6 +667,7 @@ namespace OrpheusSQLDDLHelper
             this.SupportsSchemaNameSpace = true;
             this.DbEngineType = DatabaseEngineType.dbSQLServer;
         }
+        #endregion
 
         #region schema 
         /// <summary>
@@ -659,7 +784,7 @@ namespace OrpheusSQLDDLHelper
             {
                 var ddlString = String.Format("CREATE ROLE {0}", roleName);
                 if (owner != null)
-                    ddlString = String.Format("{0} AUTHORIZATION {1}", owner);
+                    ddlString = String.Format("{0} AUTHORIZATION {1}",ddlString, owner);
                 this.executeDDLCommand(ddlString);
             }
         }

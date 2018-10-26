@@ -73,6 +73,13 @@ namespace OrpheusInterfaces.Core
         bool SchemaObjectExists(ISchemaConstraint schemaConstraint);
 
         /// <summary>
+        /// Gets the schema object, db engine assigned/generated, identifier.
+        /// </summary>
+        /// <param name="schemaObject">The schema object.</param>
+        /// <returns></returns>
+        T SchemaObjectId<T>(ISchemaObject schemaObject);
+
+        /// <summary>
         /// Returns true if a database is successfully created using the underlying db engine settings.
         /// </summary>
         /// <returns>True if database was created successfully</returns>

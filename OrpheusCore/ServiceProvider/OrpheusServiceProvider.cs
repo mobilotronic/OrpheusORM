@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OrpheusCore.Configuration;
 using OrpheusCore.SchemaBuilder;
+using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
@@ -32,6 +33,9 @@ namespace OrpheusCore.ServiceProvider
             serviceCollection.AddTransient<ISchemaObject, SchemaObject>();
             serviceCollection.AddTransient<ISchemaJoinDefinition, SchemaJoinDefinition>();
             serviceCollection.AddTransient<ISchemaDataObject, SchemaDataObject>();
+
+            //configuration services
+            serviceCollection.AddTransient<IDatabaseConnectionConfiguration, DatabaseConnectionConfiguration>();
 
             serviceCollection.AddOptions();
             serviceCollection.Configure<LoggingConfiguration>(ConfigurationManager.ConfigurationInstance.GetSection("Logging"));
