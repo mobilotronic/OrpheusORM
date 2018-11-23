@@ -24,7 +24,7 @@
   "DatabaseConnections": [
     {
       "ConfigurationName": "Default",
-      "Server": "[redacted-host]\\SQL2016",
+      "Server": "[server]",
       "DatabaseName": "orpheusTestDB",
       "UseIntegratedSecurity": true,
       "UseIntegratedSecurityForServiceConnection": true
@@ -32,6 +32,6 @@
   ],
   "Logging": {
     "Level": "Trace",
-    "MaxFileSize": 1
+    "MaxFileSize": 10
   }
 }

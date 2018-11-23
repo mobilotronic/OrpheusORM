@@ -11,7 +11,7 @@
       "ServiceLifeTime": "Transient"
     },
     {
-      "Implementation": "OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Implementation": "OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper, OrpheusMySQLDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "Service": "OrpheusInterfaces.Core.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
       "ServiceLifeTime": "Transient"
     },
@@ -28,10 +28,12 @@
   "DatabaseConnections": [
     {
       "ConfigurationName": "Default",
-      "Server": "[redacted-host]",
+      "Server": "[Server]",
       "DatabaseName": "orpheusTestDB",
-      "UserName": "root",
-      "Password": "pQ5YtGJ3fdbMWKUFi8zz"
+      "UserName": "[username]",
+      "Password": "[password]",
+      "ServiceUserName": "[username]",
+      "ServicePassword": "[password]"
     }
   ]
 }
