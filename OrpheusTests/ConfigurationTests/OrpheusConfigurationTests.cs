@@ -216,7 +216,7 @@ namespace OrpheusTests.ConfigurationTests
             var logger = (OrpheusLogger.OrpheusFileLogger)OrpheusServiceProvider.Resolve<ILogger>();
             logger.LogError($"ErrorId {errorId} test Error log entry");
 
-            var logFileContents = File.ReadAllText(logger.LogFileName);
+            var logFileContents = File.ReadAllText(logger.CurrentFileName);
 
             //making sure that the error is logged.
             Assert.AreEqual(true, logFileContents.Contains(errorId));
@@ -231,7 +231,7 @@ namespace OrpheusTests.ConfigurationTests
 
             logger.LogTrace($"TraceId {traceId} test Trace log entry");
 
-            logFileContents = File.ReadAllText(logger.LogFileName);
+            logFileContents = File.ReadAllText(logger.CurrentFileName);
 
             //making sure that the trace is logged.
             Assert.AreEqual(true, logFileContents.Contains(traceId));
@@ -249,7 +249,7 @@ namespace OrpheusTests.ConfigurationTests
             var logger = (OrpheusLogger.OrpheusFileLogger)OrpheusServiceProvider.Resolve<ILogger>();
             logger.LogError($"ErrorId {errorId} test Error log entry");
 
-            var logFileContents = File.ReadAllText(logger.LogFileName);
+            var logFileContents = File.ReadAllText(logger.CurrentFileName);
 
             //making sure that the error is logged.
             Assert.AreEqual(true, logFileContents.Contains(errorId));
@@ -265,7 +265,7 @@ namespace OrpheusTests.ConfigurationTests
 
             logger.LogTrace($"TraceId {traceId} test Trace log entry");
 
-            logFileContents = File.ReadAllText(logger.LogFileName);
+            logFileContents = File.ReadAllText(logger.CurrentFileName);
 
             //making sure that the trace is logged.
             Assert.AreEqual(true, logFileContents.Contains(traceId));
@@ -288,7 +288,7 @@ namespace OrpheusTests.ConfigurationTests
             var logger = (OrpheusLogger.OrpheusFileLogger)OrpheusServiceProvider.Resolve<ILogger>();
             logger.LogError($"ErrorId {errorId} test Error log entry");
 
-            var logFileContents = File.ReadAllText(logger.LogFileName);
+            var logFileContents = File.ReadAllText(logger.CurrentFileName);
 
             //making sure that the error is logged.
             Assert.AreEqual(true, logFileContents.Contains(errorId));
@@ -305,7 +305,7 @@ namespace OrpheusTests.ConfigurationTests
             logger = (OrpheusLogger.OrpheusFileLogger)OrpheusServiceProvider.Resolve<ILogger>();
             logger.LogTrace($"TraceId {traceId} test Trace log entry");
 
-            logFileContents = File.ReadAllText(logger.LogFileName);
+            logFileContents = File.ReadAllText(logger.CurrentFileName);
 
             //making sure that the trace is logged.
             Assert.AreEqual(true, logFileContents.Contains(traceId));

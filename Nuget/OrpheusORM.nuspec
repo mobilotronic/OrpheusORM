@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>OrpheusORM</id>
-        <version>1.1.4</version>
+        <version>1.1.5</version>
         <title>OrpheusORM</title>
         <authors>Original Author</authors>
         <owners>Original Author</owners>
@@ -20,16 +20,16 @@
         </dependencies>
     </metadata>
     <files>
-    <file src="2.0.0\lib\netstandard2.0\OrpheusCore.dll" target="lib\netstandard2.0\OrpheusCore.dll" />
-    <file src="2.0.0\lib\netstandard2.0\OrpheusCore.xml" target="lib\netstandard2.0\OrpheusCore.xml" />
+    <file src="2.0.0\lib\netstandard2.1\OrpheusCore.dll" target="lib\netstandard2.1\OrpheusCore.dll" />
+    <file src="2.0.0\lib\netstandard2.1\OrpheusCore.xml" target="lib\netstandard2.0\OrpheusCore.xml" />
       
-		<file src="2.0.0\lib\netstandard2.0\OrpheusInterfaces.dll" target="lib\netstandard2.0\OrpheusInterfaces.dll" />
-    <file src="2.0.0\lib\netstandard2.0\OrpheusInterfaces.xml" target="lib\netstandard2.0\OrpheusInterfaces.xml" />
+		<file src="2.0.0\lib\netstandard2.1\OrpheusInterfaces.dll" target="lib\netstandard2.1\OrpheusInterfaces.dll" />
+    <file src="2.0.0\lib\netstandard2.1\OrpheusInterfaces.xml" target="lib\netstandard2.1\OrpheusInterfaces.xml" />
       
-    <file src="2.0.0\lib\netstandard2.0\OrpheusAttributes.dll" target="lib\netstandard2.0\OrpheusAttributes.dll" />
-    <file src="2.0.0\lib\netstandard2.0\OrpheusAttributes.xml" target="lib\netstandard2.0\OrpheusAttributes.xml" />
+    <file src="2.0.0\lib\netstandard2.1\OrpheusAttributes.dll" target="lib\netstandard2.1\OrpheusAttributes.dll" />
+    <file src="2.0.0\lib\netstandard2.1\OrpheusAttributes.xml" target="lib\netstandard2.1\OrpheusAttributes.xml" />
       
-    <file src="2.0.0\lib\netstandard2.0\OrpheusLogger.dll" target="lib\netstandard2.0\OrpheusLogger.dll" />
-    <file src="2.0.0\lib\netstandard2.0\OrpheusLogger.xml" target="lib\netstandard2.0\OrpheusLogger.xml" />
+    <file src="2.0.0\lib\netstandard2.1\OrpheusLogger.dll" target="lib\netstandard2.1\OrpheusLogger.dll" />
+    <file src="2.0.0\lib\netstandard2.1\OrpheusLogger.xml" target="lib\netstandard2.1\OrpheusLogger.xml" />
     </files>
 </package>

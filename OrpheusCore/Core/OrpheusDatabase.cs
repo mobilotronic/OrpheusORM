@@ -410,7 +410,15 @@ namespace OrpheusCore
                 {
                     if (this.ddlHelper.DB == null)
                         this.ddlHelper.DB = this;
-                    this.ddlHelper.CreateDatabase();
+                    try
+                    {
+                        this.ddlHelper.CreateDatabase();
+                    }
+                    catch(Exception e)
+                    {
+                        this.logger.LogError(e, "Error creating database");
+                        throw e;
+                    }
                     if (!String.IsNullOrEmpty(connectionString))
                         this.dbConnection.ConnectionString = connectionString;
                     else
@@ -420,7 +428,6 @@ namespace OrpheusCore
                 catch (Exception e)
                 {
                     this.logger.LogError(e.Message);
-                    this.logger.LogError($"Connection string {this.dbConnection.ConnectionString}");
                     throw e;
                 }
             }

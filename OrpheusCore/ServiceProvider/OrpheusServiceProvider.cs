@@ -42,6 +42,9 @@ namespace OrpheusCore.ServiceProvider
             serviceCollection.Configure<List<ServiceProviderItem>>(ConfigurationManager.ConfigurationInstance.GetSection("Services"));
             serviceCollection.Configure<List<DatabaseConnectionConfiguration>>(ConfigurationManager.ConfigurationInstance.GetSection("DatabaseConnections"));
             serviceCollection.Configure<OrpheusConfiguration>(ConfigurationManager.ConfigurationInstance);
+
+            //add loggging services.
+            serviceCollection.AddLogging();
         }
 
         /// <summary>

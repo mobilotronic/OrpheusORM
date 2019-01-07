@@ -58,7 +58,7 @@ namespace OrpheusCore.Configuration
     /// <summary>
     /// Orpheus logging configuration.
     /// </summary>
-    public class LoggingConfiguration : ILoggingConfiguration
+    public class LoggingConfiguration : IFileLoggingConfiguration
     {
         /// <value>
         /// Logging level.
@@ -74,6 +74,22 @@ namespace OrpheusCore.Configuration
         /// Maximum log file size.
         /// </value>
         public int MaxFileSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the file. If not defined, a file name will be automatically assigned.
+        /// </summary>
+        /// <value>
+        /// The name of the file.
+        /// </value>
+        public string FileName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the file extension. Default extension is .log
+        /// </summary>
+        /// <value>
+        /// The file extension.
+        /// </value>
+        public string FileExtension { get; set; }
 
         /// <value>
         /// Constructor
@@ -115,7 +131,7 @@ namespace OrpheusCore.Configuration
         public string Password { get; set; }
 
         /// <value>
-        /// SQL Server specific.
+        /// SQL Server specific. If true, any UserName/Password configured will be ignored.
         /// </value>
         public bool UseIntegratedSecurity { get; set; }
 
@@ -151,7 +167,9 @@ namespace OrpheusCore.Configuration
                 UserName = this.UserName,
                 Password = this.Password,
                 UseIntegratedSecurity = this.UseIntegratedSecurity,
-                UseIntegratedSecurityForServiceConnection = this.UseIntegratedSecurityForServiceConnection
+                UseIntegratedSecurityForServiceConnection = this.UseIntegratedSecurityForServiceConnection,
+                ServicePassword = this.ServicePassword,
+                ServiceUserName = this.ServiceUserName
             };
         }
     }

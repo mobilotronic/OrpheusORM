@@ -35,44 +35,26 @@ namespace OrpheusLogger
     }
 
     /// <summary>
-    /// Orpheus logger interface.
-    /// </summary>
-    public interface IOrpheusFileLogger : ILogger, IOrpheusLogger
-    {
-       
-        /// <summary>
-        /// Log filename.
-        /// </summary>
-        string LogFileName { get; }
-    }
-
-    /// <summary>
     /// Orpheus default logger implementation.
     /// </summary>
-    public class OrpheusFileLogger : IOrpheusFileLogger
+    public class OrpheusFileLogger : IOrpheusLogger
     {
         #region private properties
-        private object objectLock = new object();
-        private string logFileName;
-        private ILoggingConfiguration loggingConfiguration;
-        private const string information = "Information";
-        private const string warning = "Warning";
-        private const string error = "Error";
-        private const string critical = "Critical";
-        private const string logEntryFormat = "{0} {1} {2}";
-        private const string callStacklogEntryFormat = "{0},Line:{1} {2} {3} {4}";
-        private const string logPrefix = "ORPHEUS_";
-        private const string fileExtension = ".log";
-        private const string debug = "Debug";
-        private const string trace = "Trace";
+        #region private properties
+        private string defaultFileName = "oprheusFileLog";
+        private string defaultFolderName = "Orpheus";
+        private string defaultFileExtension = "log";
+        private string newLogFileNamePath;
         private IOptionsMonitor<LoggingConfiguration> optionsMonitor;
+        private object objectLock = new object();
         private LogLevel configurationLogLevel = LogLevel.Information;
+        #endregion
         #endregion
 
         #region private methods
         private bool needToStartNewFile()
         {
-            return this.getFileSizeInMB(this.logFileName) > this.loggingConfiguration.MaxFileSize;
+            return this.getFileSizeInMB(this.newLogFileNamePath) > this.Configuration.MaxFileSize;
         }
         private double getFileSizeInMB(string filePath)
         {
@@ -82,33 +64,49 @@ namespace OrpheusLogger
 
         private void createLogFile()
         {
-            var logFilePath = String.IsNullOrWhiteSpace(this.loggingConfiguration.FilePath) ?  Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\" :
-                this.loggingConfiguration.FilePath;
+            newLogFileNamePath = null;
+            var logFilePath = String.IsNullOrWhiteSpace(this.Configuration.FilePath) ? $"{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}\\{this.defaultFolderName}":
+                this.Configuration.FilePath;
             logFilePath = Path.Combine(logFilePath, " ").Trim();
+            if (!Directory.Exists(logFilePath))
+            {
+                try
+                {
+                    Directory.CreateDirectory(logFilePath);
+                }
+                catch
+                {
+                    throw new UnauthorizedAccessException($"Could not create folder {logFilePath}");
+                }
+            }
+            //building the dynamically changing part of the file name.
+            var dynamicFilenamePart = DateTime.Now.ToString("yyyy-MM-dd");
+            dynamicFilenamePart = this.Configuration.FileExtension == null ? $"{dynamicFilenamePart}.{defaultFileExtension}" : $"{dynamicFilenamePart}.{this.Configuration.FileExtension.Replace(".", "")}";
 
-            Directory.CreateDirectory(logFilePath + "Orpheus");
-            this.logFileName = logFilePath + @"Orpheus\" + logPrefix + DateTime.Now.ToString("yyyy-MM-dd");
+            //building the new log file name. just the name, not the full file name path.
+            var newLogFileName = String.IsNullOrEmpty(this.Configuration.FileName) ? defaultFileName : this.Configuration.FileName;
+
+            //setting the new full file name path.
+            newLogFileNamePath = $"{logFilePath}\\{newLogFileName}_{dynamicFilenamePart}";
+
             //getting existing log files.
-            var logFiles = Directory.GetFiles(logFilePath + "Orpheus").ToList();
-            var lastLogFile = logFiles.Where(logFile => logFile.Contains(this.logFileName)).LastOrDefault();
-            if(lastLogFile != null)
+            var logFiles = Directory.GetFiles(logFilePath).ToList();
+            var lastLogFile = logFiles.Where(logFile => logFile.Contains(newLogFileName)).LastOrDefault();
+            if (lastLogFile != null)
             {
                 var sizeInMB = this.getFileSizeInMB(lastLogFile);
-                if (sizeInMB > this.loggingConfiguration.MaxFileSize)
-                    this.logFileName = this.logFileName + string.Format("_{0}", logFiles.Count() + 1) + fileExtension;
+                if (sizeInMB > this.Configuration.MaxFileSize)
+                    newLogFileNamePath = $"{newLogFileNamePath}_{logFiles.Count() + 1}{dynamicFilenamePart}";
                 else
-                    this.logFileName = lastLogFile;
+                    newLogFileNamePath = lastLogFile;
             }
-            else
-            {
-                this.logFileName = this.logFileName + fileExtension;
-            }
-            using (var fs = new System.IO.FileStream(this.logFileName, FileMode.OpenOrCreate))
+
+            using (var fs = new System.IO.FileStream(newLogFileNamePath, FileMode.OpenOrCreate))
             {
                 var streamWriter = new StreamWriter(fs);
                 try
                 {
-                    streamWriter.WriteLine("Orpheus ORM log start");
+                    streamWriter.WriteLine("Simple file log start");
                 }
                 finally
                 {
@@ -116,6 +114,8 @@ namespace OrpheusLogger
                     fs.Close();
                 }
             }
+
+            this.Configuration.FileName = this.newLogFileNamePath;
         }
 
         private string formatLogEntry(string entryType, string logEntry,string stackTrace = null)
@@ -143,8 +143,8 @@ namespace OrpheusLogger
         /// <param name="state"></param>
         private void configurationChanged(LoggingConfiguration loggingConfiguration,string state)
         {
-            this.loggingConfiguration = loggingConfiguration;
-            Enum.TryParse<LogLevel>(this.loggingConfiguration.Level, out this.configurationLogLevel);
+            this.Configuration = loggingConfiguration;
+            Enum.TryParse<LogLevel>(this.Configuration.Level, out this.configurationLogLevel);
         }
 
         private string getCallStack()
@@ -184,7 +184,7 @@ namespace OrpheusLogger
             if (logLevel == LogLevel.None)
                 return false;
             LogLevel configurationLevel = LogLevel.None;
-            Enum.TryParse<LogLevel>(this.loggingConfiguration.Level, out configurationLevel);
+            Enum.TryParse<LogLevel>(this.Configuration.Level, out configurationLevel);
 
             //if configured level is none, then do nothing.
             if (configurationLevel == LogLevel.None)
@@ -207,14 +207,14 @@ namespace OrpheusLogger
             {
                 lock (this.objectLock)
                 {
-                    if (!String.IsNullOrWhiteSpace(this.loggingConfiguration.FilePath))
+                    if (!String.IsNullOrWhiteSpace(this.Configuration.FilePath))
                     {
-                        if (Path.GetFullPath(this.LogFileName).ToLower() != Path.GetFullPath(this.loggingConfiguration.FilePath).ToLower())
+                        if (Path.GetFullPath(this.newLogFileNamePath).ToLower() != Path.GetFullPath(this.Configuration.FilePath).ToLower())
                             this.initialize();
                     }
-                    if (!File.Exists(this.logFileName) || this.needToStartNewFile())
+                    if (!File.Exists(newLogFileNamePath) || this.needToStartNewFile())
                         this.initialize();
-                    using (var fileStream = new FileStream(this.logFileName, FileMode.Append, FileAccess.Write, FileShare.Read))
+                    using (var fileStream = new FileStream(this.newLogFileNamePath, FileMode.Append, FileAccess.Write, FileShare.Read))
                     {
                         var logWriter = new StreamWriter(fileStream)
                         {
@@ -226,7 +226,7 @@ namespace OrpheusLogger
                             if (string.IsNullOrEmpty(message) && exception == null)
                                 return;
 
-                            
+
                             var callStack = this.configurationLogLevel == LogLevel.Trace ? this.getCallStack() : null;
                             logWriter.WriteLine(this.formatLogEntry(logLevel.ToString(), message, callStack));
                         }
@@ -241,23 +241,20 @@ namespace OrpheusLogger
         }
 
         /// <summary>
-        /// Log file name.
+        /// Gets or sets the configuration.
         /// </summary>
-        public string LogFileName { get { return this.logFileName; } }
+        /// <value>
+        /// The configuration.
+        /// </value>
+        public IFileLoggingConfiguration Configuration { get; set; }
 
         /// <summary>
-        /// Logger configuration.
+        /// Gets the name of the current file.
         /// </summary>
-        public ILoggingConfiguration LoggingConfiguration {
-            get
-            {
-                return this.loggingConfiguration;
-            }
-            set
-            {
-                this.loggingConfiguration = value;
-            }
-        }
+        /// <value>
+        /// The name of the current file.
+        /// </value>
+        public string CurrentFileName => this.newLogFileNamePath;
 
         /// <summary>
         /// Creates the default Orpheus logger.
@@ -265,20 +262,12 @@ namespace OrpheusLogger
         public OrpheusFileLogger(IOptionsMonitor<LoggingConfiguration> options)
         {
             this.optionsMonitor = options;
-            //this.loggingConfiguration = this.optionsMonitor.CurrentValue;
-            this.loggingConfiguration = this.optionsMonitor.CurrentValue ?? new LoggingConfiguration()
+            this.Configuration = this.optionsMonitor.CurrentValue ?? new LoggingConfiguration()
             {
                 Level = "Error",
                 MaxFileSize = 10
             };
             this.initialize();
-        }
-
-        /// <summary>
-        /// Destructor.
-        /// </summary>
-        ~OrpheusFileLogger()
-        {
         }
     }
 }

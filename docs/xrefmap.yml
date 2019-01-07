@@ -700,6 +700,32 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.Configuration.LoggingConfiguration.LoggingConfiguration
   nameWithType: LoggingConfiguration.LoggingConfiguration
+- uid: OrpheusCore.Configuration.LoggingConfiguration.FileExtension
+  name: FileExtension
+  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FileExtension
+  commentId: P:OrpheusCore.Configuration.LoggingConfiguration.FileExtension
+  fullName: OrpheusCore.Configuration.LoggingConfiguration.FileExtension
+  nameWithType: LoggingConfiguration.FileExtension
+- uid: OrpheusCore.Configuration.LoggingConfiguration.FileExtension*
+  name: FileExtension
+  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FileExtension_
+  commentId: Overload:OrpheusCore.Configuration.LoggingConfiguration.FileExtension
+  isSpec: "True"
+  fullName: OrpheusCore.Configuration.LoggingConfiguration.FileExtension
+  nameWithType: LoggingConfiguration.FileExtension
+- uid: OrpheusCore.Configuration.LoggingConfiguration.FileName
+  name: FileName
+  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FileName
+  commentId: P:OrpheusCore.Configuration.LoggingConfiguration.FileName
+  fullName: OrpheusCore.Configuration.LoggingConfiguration.FileName
+  nameWithType: LoggingConfiguration.FileName
+- uid: OrpheusCore.Configuration.LoggingConfiguration.FileName*
+  name: FileName
+  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FileName_
+  commentId: Overload:OrpheusCore.Configuration.LoggingConfiguration.FileName
+  isSpec: "True"
+  fullName: OrpheusCore.Configuration.LoggingConfiguration.FileName
+  nameWithType: LoggingConfiguration.FileName
 - uid: OrpheusCore.Configuration.LoggingConfiguration.FilePath
   name: FilePath
   href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FilePath
@@ -7060,6 +7086,77 @@ references:
   commentId: N:OrpheusInterfaces.Logging
   fullName: OrpheusInterfaces.Logging
   nameWithType: OrpheusInterfaces.Logging
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  name: IFileLoggingConfiguration
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html
+  commentId: T:OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  nameWithType: IFileLoggingConfiguration
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
+  name: FileExtension
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FileExtension
+  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
+  nameWithType: IFileLoggingConfiguration.FileExtension
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension*
+  name: FileExtension
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FileExtension_
+  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
+  nameWithType: IFileLoggingConfiguration.FileExtension
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
+  name: FileName
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FileName
+  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
+  nameWithType: IFileLoggingConfiguration.FileName
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName*
+  name: FileName
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FileName_
+  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
+  nameWithType: IFileLoggingConfiguration.FileName
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
+  name: FilePath
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FilePath
+  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
+  nameWithType: IFileLoggingConfiguration.FilePath
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath*
+  name: FilePath
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FilePath_
+  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
+  nameWithType: IFileLoggingConfiguration.FilePath
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
+  name: Level
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_Level
+  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
+  nameWithType: IFileLoggingConfiguration.Level
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level*
+  name: Level
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_Level_
+  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
+  nameWithType: IFileLoggingConfiguration.Level
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
+  name: MaxFileSize
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_MaxFileSize
+  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
+  nameWithType: IFileLoggingConfiguration.MaxFileSize
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize*
+  name: MaxFileSize
+  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_MaxFileSize_
+  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
+  nameWithType: IFileLoggingConfiguration.MaxFileSize
 - uid: OrpheusInterfaces.Logging.ILogEntry
   name: ILogEntry
   href: api/OrpheusInterfaces.Logging.ILogEntry.html
@@ -7118,70 +7215,38 @@ references:
   isSpec: "True"
   fullName: OrpheusInterfaces.Logging.ILogEntry.Type
   nameWithType: ILogEntry.Type
-- uid: OrpheusInterfaces.Logging.ILoggingConfiguration
-  name: ILoggingConfiguration
-  href: api/OrpheusInterfaces.Logging.ILoggingConfiguration.html
-  commentId: T:OrpheusInterfaces.Logging.ILoggingConfiguration
-  fullName: OrpheusInterfaces.Logging.ILoggingConfiguration
-  nameWithType: ILoggingConfiguration
-- uid: OrpheusInterfaces.Logging.ILoggingConfiguration.FilePath
-  name: FilePath
-  href: api/OrpheusInterfaces.Logging.ILoggingConfiguration.html#OrpheusInterfaces_Logging_ILoggingConfiguration_FilePath
-  commentId: P:OrpheusInterfaces.Logging.ILoggingConfiguration.FilePath
-  fullName: OrpheusInterfaces.Logging.ILoggingConfiguration.FilePath
-  nameWithType: ILoggingConfiguration.FilePath
-- uid: OrpheusInterfaces.Logging.ILoggingConfiguration.FilePath*
-  name: FilePath
-  href: api/OrpheusInterfaces.Logging.ILoggingConfiguration.html#OrpheusInterfaces_Logging_ILoggingConfiguration_FilePath_
-  commentId: Overload:OrpheusInterfaces.Logging.ILoggingConfiguration.FilePath
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.ILoggingConfiguration.FilePath
-  nameWithType: ILoggingConfiguration.FilePath
-- uid: OrpheusInterfaces.Logging.ILoggingConfiguration.Level
-  name: Level
-  href: api/OrpheusInterfaces.Logging.ILoggingConfiguration.html#OrpheusInterfaces_Logging_ILoggingConfiguration_Level
-  commentId: P:OrpheusInterfaces.Logging.ILoggingConfiguration.Level
-  fullName: OrpheusInterfaces.Logging.ILoggingConfiguration.Level
-  nameWithType: ILoggingConfiguration.Level
-- uid: OrpheusInterfaces.Logging.ILoggingConfiguration.Level*
-  name: Level
-  href: api/OrpheusInterfaces.Logging.ILoggingConfiguration.html#OrpheusInterfaces_Logging_ILoggingConfiguration_Level_
-  commentId: Overload:OrpheusInterfaces.Logging.ILoggingConfiguration.Level
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.ILoggingConfiguration.Level
-  nameWithType: ILoggingConfiguration.Level
-- uid: OrpheusInterfaces.Logging.ILoggingConfiguration.MaxFileSize
-  name: MaxFileSize
-  href: api/OrpheusInterfaces.Logging.ILoggingConfiguration.html#OrpheusInterfaces_Logging_ILoggingConfiguration_MaxFileSize
-  commentId: P:OrpheusInterfaces.Logging.ILoggingConfiguration.MaxFileSize
-  fullName: OrpheusInterfaces.Logging.ILoggingConfiguration.MaxFileSize
-  nameWithType: ILoggingConfiguration.MaxFileSize
-- uid: OrpheusInterfaces.Logging.ILoggingConfiguration.MaxFileSize*
-  name: MaxFileSize
-  href: api/OrpheusInterfaces.Logging.ILoggingConfiguration.html#OrpheusInterfaces_Logging_ILoggingConfiguration_MaxFileSize_
-  commentId: Overload:OrpheusInterfaces.Logging.ILoggingConfiguration.MaxFileSize
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.ILoggingConfiguration.MaxFileSize
-  nameWithType: ILoggingConfiguration.MaxFileSize
 - uid: OrpheusInterfaces.Logging.IOrpheusLogger
   name: IOrpheusLogger
   href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html
   commentId: T:OrpheusInterfaces.Logging.IOrpheusLogger
   fullName: OrpheusInterfaces.Logging.IOrpheusLogger
   nameWithType: IOrpheusLogger
-- uid: OrpheusInterfaces.Logging.IOrpheusLogger.LoggingConfiguration
-  name: LoggingConfiguration
-  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_LoggingConfiguration
-  commentId: P:OrpheusInterfaces.Logging.IOrpheusLogger.LoggingConfiguration
-  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.LoggingConfiguration
-  nameWithType: IOrpheusLogger.LoggingConfiguration
-- uid: OrpheusInterfaces.Logging.IOrpheusLogger.LoggingConfiguration*
-  name: LoggingConfiguration
-  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_LoggingConfiguration_
-  commentId: Overload:OrpheusInterfaces.Logging.IOrpheusLogger.LoggingConfiguration
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  name: Configuration
+  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_Configuration
+  commentId: P:OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  nameWithType: IOrpheusLogger.Configuration
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration*
+  name: Configuration
+  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_Configuration_
+  commentId: Overload:OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
   isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.LoggingConfiguration
-  nameWithType: IOrpheusLogger.LoggingConfiguration
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  nameWithType: IOrpheusLogger.Configuration
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  name: CurrentFileName
+  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_CurrentFileName
+  commentId: P:OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  nameWithType: IOrpheusLogger.CurrentFileName
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName*
+  name: CurrentFileName
+  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_CurrentFileName_
+  commentId: Overload:OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  nameWithType: IOrpheusLogger.CurrentFileName
 - uid: OrpheusInterfaces.Schema
   name: OrpheusInterfaces.Schema
   href: api/OrpheusInterfaces.Schema.html

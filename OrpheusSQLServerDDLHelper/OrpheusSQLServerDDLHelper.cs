@@ -73,7 +73,6 @@ namespace OrpheusSQLDDLHelper
                                 masterConnectionString.Password = masterConnectionConfiguration.ServicePassword;
                         }
                         this._masterConnection = new SqlConnection(masterConnectionString.ConnectionString);
-                        this.db.Logger.LogDebug($"Master connection string:{this._masterConnection.ConnectionString}");
                     }
                 }
                 return this._masterConnection;

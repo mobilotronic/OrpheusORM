@@ -1,16 +1,25 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace OrpheusInterfaces.Logging
 {
     /// <summary>
     /// Orpheus logger interface.
     /// </summary>
-    public interface IOrpheusLogger
+    public interface IOrpheusLogger : ILogger
     {
         /// <summary>
         /// Logging configuration.
         /// </summary>
-        ILoggingConfiguration LoggingConfiguration { get; set; }
+        IFileLoggingConfiguration Configuration { get; set; }
+
+        /// <summary>
+        /// Gets the name of the current file.
+        /// </summary>
+        /// <value>
+        /// The name of the current file.
+        /// </value>
+        string CurrentFileName { get; }
     }
 
     /// <summary>
@@ -43,7 +52,7 @@ namespace OrpheusInterfaces.Logging
     /// <summary>
     /// Logging configuration model.
     /// </summary>
-    public interface ILoggingConfiguration
+    public interface IFileLoggingConfiguration
     {
         /// <summary>
         /// Logging level.
@@ -54,6 +63,22 @@ namespace OrpheusInterfaces.Logging
         /// Log file path.
         /// </summary>
         string FilePath { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the file. If not defined, a file name will be automatically assigned.
+        /// </summary>
+        /// <value>
+        /// The name of the file.
+        /// </value>
+        string FileName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the file extension. Default extension is .log
+        /// </summary>
+        /// <value>
+        /// The file extension.
+        /// </value>
+        string FileExtension { get; set; }
 
         /// <summary>
         /// Maximum log file size.
