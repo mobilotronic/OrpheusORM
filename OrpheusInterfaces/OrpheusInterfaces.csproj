@@ -11,17 +11,17 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Version>1.1.0</Version>
     <Copyright>Original Author</Copyright>
-    <AssemblyVersion>1.1.5</AssemblyVersion>
-    <FileVersion>1.1.5</FileVersion>
+    <AssemblyVersion>1.1.6</AssemblyVersion>
+    <FileVersion>1.1.6</FileVersion>
     <Product>Orpheus ORM</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp2.0\OrpheusInterfaces.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netcoreapp2.1\OrpheusInterfaces.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.0\OrpheusInterfaces.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp2.1\OrpheusInterfaces.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

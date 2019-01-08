@@ -11,8 +11,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Version>1.1.0</Version>
     <Copyright>Original Author</Copyright>
-    <AssemblyVersion>1.1.5</AssemblyVersion>
-    <FileVersion>1.1.5</FileVersion>
+    <AssemblyVersion>1.1.6</AssemblyVersion>
+    <FileVersion>1.1.6</FileVersion>
     <Product>Orpheus ORM</Product>
   </PropertyGroup>
 
