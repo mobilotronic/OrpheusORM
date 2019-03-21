@@ -1,6 +1,7 @@
 # Orpheus
 Orpheus is a lightweight flexible ORM, that gives the developer real flexibility, on how to create schemas, load/save data configure complex constraints and relationships between models.
 
+[![Build Status](https://dev.azure.com/thetardigrade/OrpheusORM/_apis/build/status/OrpheusORM-CI?branchName=master)](https://dev.azure.com/thetardigrade/OrpheusORM/_build/latest?definitionId=16&branchName=master)
 ## Overview
 
 ### Schema creation
