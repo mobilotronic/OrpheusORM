@@ -37,6 +37,7 @@ namespace OrpheusTests
             module.Load();
 
             Assert.IsTrue(module.GetTable<TestModelTransactor>(0).Data.First().Type == TestModelTransactorType.ttCustomer,"Expected to have a customer type transactor.");
+            this.DisconnectDatabase();
         }
 
         protected void TestModuleMasterDetailTables()
@@ -109,6 +110,7 @@ namespace OrpheusTests
             });
 
             module.Save();
+            this.DisconnectDatabase();
         }
 
         protected void TestModuleDefinition()
@@ -169,6 +171,7 @@ namespace OrpheusTests
             });
 
             module.Save();
+            this.DisconnectDatabase();
         }
 
         protected void TestModuleDefinitionLoadSave()
@@ -206,6 +209,7 @@ namespace OrpheusTests
             Assert.IsTrue(moduleDefinition.ReferenceTableOptions.Count() == newReferenceCount, "New and old reference tables definition must be equal.");
             Assert.IsTrue(moduleDefinition.Name == newModuleDefinition.Name, "New and old name must be equal.");
             Assert.IsTrue(moduleDefinition.MainTableOptions.TableName == newModuleDefinition.MainTableOptions.TableName, "New and old main table name must be equal.");
+            this.DisconnectDatabase();
         }
 
         protected void TestModuleDefinitionLoadSaveFromDB()
@@ -243,7 +247,7 @@ namespace OrpheusTests
             Assert.IsTrue(moduleDefinition.ReferenceTableOptions.Count() == newReferenceCount, "New and old reference tables definition must be equal.");
             Assert.IsTrue(moduleDefinition.Name == newModuleDefinition.Name, "New and old name must be equal.");
             Assert.IsTrue(moduleDefinition.MainTableOptions.TableName == newModuleDefinition.MainTableOptions.TableName, "New and old main table name must be equal.");
-
+            this.DisconnectDatabase();
         }
 
         protected void TestMasterDetailTenLevelsDeep()
@@ -304,6 +308,7 @@ namespace OrpheusTests
             Assert.AreEqual(true, module.GetTable<TestDetailModelLevel3>("TestDetailModelLevel3").Data[0].MasterKey == module.GetTable<TestDetailModelLevel2>("TestDetailModelLevel2").Data[0].Key);
             Assert.AreEqual(true, module.GetTable<TestDetailModelLevel2>("TestDetailModelLevel2").Data[0].MasterKey == module.GetTable<TestDetailModelLevel1>("TestDetailModelLevel1").Data[0].Key);
             Assert.AreEqual(true, module.GetTable<TestDetailModelLevel1>("TestDetailModelLevel1").Data[0].MasterKey == module.GetTable<TestMasterModel>("TestMasterModel").Data[0].Key);
+            this.DisconnectDatabase();
         }
 
         protected void TestSaveBinaryData()
@@ -333,6 +338,7 @@ namespace OrpheusTests
             string savedString = Encoding.UTF8.GetString(module.GetTable<TestBinaryDataModel>().Data[0].Image);
 
             Assert.AreEqual(true, testString == savedString);
+            this.DisconnectDatabase();
         }
 
         protected void TestModuleLoadSpecificKeyValues()
@@ -431,6 +437,8 @@ namespace OrpheusTests
             Assert.AreEqual(true, order.Data.Count() == 1);
             Assert.AreEqual(true, Guid.Equals(order.Data.First().OrderId, firstOrderId));
             Assert.AreEqual(true, Guid.Equals(orderLines.Data.First().OrderId, firstOrderId));
+            this.DisconnectDatabase();
         }
     }
 }
+

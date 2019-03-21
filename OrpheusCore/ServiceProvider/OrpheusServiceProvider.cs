@@ -6,6 +6,7 @@ using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace OrpheusCore.ServiceProvider
@@ -16,6 +17,7 @@ namespace OrpheusCore.ServiceProvider
     public class OrpheusServiceProvider
     {
         private static IServiceProvider serviceProvider;
+        private static Assembly[] assemblies;
         private static void initializeInternalOrpheusServices(IServiceCollection serviceCollection)
         {
 
@@ -158,15 +160,23 @@ namespace OrpheusCore.ServiceProvider
                     }
                 }
 
-                T service = Resolve<T>();
+                if (assemblies == null)
+                    assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
-                //try to find a matching constructor based on the constructor parameters.
-                //if a constructor is found, then instantiate the class.
-                ConstructorInfo[] constructors = service.GetType().GetConstructors();
-                ConstructorInfo constructorInfo = service.GetType().GetConstructor(parametersType.ToArray());
-                if(constructorInfo != null)
+                var concreteType = assemblies.SelectMany(x => x.GetTypes())
+                                .Where(x => typeof(T).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
+                                .ToList().FirstOrDefault();
+
+                if(concreteType != null)
                 {
-                    return (T)constructorInfo.Invoke(parameterValues.ToArray());
+                    //try to find a matching constructor based on the constructor parameters.
+                    //if a constructor is found, then instantiate the class.
+                    ConstructorInfo[] constructors = concreteType.GetConstructors();
+                    ConstructorInfo constructorInfo = concreteType.GetConstructor(parametersType.ToArray());
+                    if (constructorInfo != null)
+                    {
+                        return (T)constructorInfo.Invoke(parameterValues.ToArray());
+                    }
                 }
             }
             catch (Exception e)

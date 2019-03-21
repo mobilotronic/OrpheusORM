@@ -40,10 +40,12 @@ namespace OrpheusTests
                 sw.Stop();
                 Trace.TraceInformation("{0:c}", sw.Elapsed);
                 Trace.Close();
+                this.DisconnectDatabase();
             }
             catch(Exception e)
             {
                 this.Database.RollbackTransaction(trans);
+                this.DisconnectDatabase();
                 throw e;
             }
         }
@@ -72,6 +74,7 @@ namespace OrpheusTests
                 catch
                 {
                     this.Database.RollbackTransaction(tr);
+                    this.DisconnectDatabase();
                     throw;
                 }
             }
@@ -100,9 +103,10 @@ namespace OrpheusTests
             catch (Exception e)
             {
                 this.Database.RollbackTransaction(trans);
+                this.DisconnectDatabase();
                 throw e;
             }
-
+            this.DisconnectDatabase();
         }
 
         protected void TestDeleteCommandRandomData()
@@ -129,6 +133,7 @@ namespace OrpheusTests
                 catch
                 {
                     this.Database.RollbackTransaction(tr);
+                    this.DisconnectDatabase();
                     throw;
                 }
             }
@@ -152,9 +157,10 @@ namespace OrpheusTests
             catch (Exception e)
             {
                 this.Database.RollbackTransaction(trans);
+                this.DisconnectDatabase();
                 throw e;
             }
-
+            this.DisconnectDatabase();
         }
 
         protected void TestPrimaryKeyInfer()
@@ -164,6 +170,7 @@ namespace OrpheusTests
 
             Assert.IsTrue(transactorsTable.KeyFields.Count == 1, "Expected to have one primary key.");
             Assert.IsTrue(transactorsTable.KeyFields.First().Name == "TransactorId", "Expected TransactorId to be the primary key.");
+            this.DisconnectDatabase();
         }
 
         protected void TestKeyValueAutoGenerate()
@@ -205,6 +212,7 @@ namespace OrpheusTests
                 Price = 10
             });
             Assert.IsTrue(itemsTable.Data.Where(t => t.Code == "002").First().ItemId != null, "Expected to have a itemId");
+            this.DisconnectDatabase();
         }
 
         protected void TestLoadSpecificKeyValues()
@@ -233,6 +241,7 @@ namespace OrpheusTests
             catch (Exception e)
             {
                 this.Database.RollbackTransaction(trans);
+                this.DisconnectDatabase();
                 throw e;
             }
             usersTable.ClearData();
@@ -264,6 +273,7 @@ namespace OrpheusTests
             Assert.AreEqual(true, usersTable.Data.Where(usr => Guid.Equals(usr.UserId, (Guid)userKeys[0])).Count() == 1);
             Assert.AreEqual(true, usersTable.Data.Where(usr => Guid.Equals(usr.UserId, (Guid)userKeys[1])).Count() == 1);
             Assert.AreEqual(true, usersTable.Data.Where(usr => Guid.Equals(usr.UserId, (Guid)userKeys[2])).Count() == 1);
+            this.DisconnectDatabase();
         }
 
         protected void TestLoadBenchMark()
@@ -295,6 +305,7 @@ namespace OrpheusTests
             catch (Exception e)
             {
                 this.Database.RollbackTransaction(trans);
+                this.DisconnectDatabase();
                 throw e;
             }
             usersTable.ClearData();
@@ -310,6 +321,7 @@ namespace OrpheusTests
             usersTable.Load();
             this.StopAndLogWatch(loadAllStopWatch);
             Trace.Close();
+            this.DisconnectDatabase();
         }
 
         protected void TestUserDefinedSQL()
@@ -327,6 +339,7 @@ namespace OrpheusTests
             {
                 Assert.AreEqual("admin@test.com", usr.Email);
             }
+            this.DisconnectDatabase();
         }
     }
 }

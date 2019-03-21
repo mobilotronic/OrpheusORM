@@ -99,12 +99,23 @@ namespace OrpheusTests
         #endregion
 
         #region public declarations
+        public const string SQLServerTests = "SQLServer";
+        public const string MySQLServerTests = "MySQLServerTests";
+        public const string LoggerTests = "LoggerTests";
+        public const string ConfigurationTests = "ConfigurationTests";
+
         /// <summary>
         /// Initializes Orpheus configuration (Unity) and creates and connects the Database object.
         /// </summary>
         public void Initialize()
         {
             this.Database.Connect();
+        }
+
+        public void DisconnectDatabase()
+        {
+            if (this.db != null)
+                this.db.Disconnect();
         }
 
         public TestSchema CreateSchema(string name = null)
@@ -185,6 +196,7 @@ namespace OrpheusTests
         }
 
         public string CurrentDirectory { get { return this.assemblyDirectory; } }
+
         #endregion
 
         #region schema related

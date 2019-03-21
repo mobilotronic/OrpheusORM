@@ -154,7 +154,7 @@ namespace OrpheusInterfaces.Core
         /// <param name="id">Schema id</param>
         /// <param name="description">Schema description</param>
         /// <param name="version">Schema version</param>
-        /// <param name="name">Schema name.From the supported db engines, only SQL server has support for named schemas.</param>
+        /// <param name="name">Schema name.From the supported db engines, only SQL server has support for named schema's.</param>
         /// <returns>An ISchema instance.</returns>
         ISchema CreateSchema(Guid id, string description, double version, string name = null);
 

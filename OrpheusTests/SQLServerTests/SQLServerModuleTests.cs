@@ -3,6 +3,7 @@
 namespace OrpheusTests.SQLServerTests
 {
     [TestClass]
+    [TestCategory(BaseTestClass.SQLServerTests)]
     public class SQLServerModuleTests : ModuleTests
     {
         [TestMethod]

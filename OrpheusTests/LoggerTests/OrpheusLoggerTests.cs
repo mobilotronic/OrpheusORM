@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 namespace OrpheusTests.LoggerTests
 {
     [TestClass]
+    [TestCategory(BaseTestClass.LoggerTests)]
     public class OrpheusLoggerTests : BaseTestClass
     {
         private static string assemblyDirectory

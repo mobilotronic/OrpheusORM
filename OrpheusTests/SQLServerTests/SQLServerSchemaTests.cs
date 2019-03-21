@@ -1,8 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OrpheusInterfaces.Core;
 
 namespace OrpheusTests.SQLServerTests
 {
     [TestClass]
+    [TestCategory(BaseTestClass.SQLServerTests)]
     public class SQLServerSchemaTests : SchemaTests
     {
         //[TestMethod]
@@ -27,6 +29,15 @@ namespace OrpheusTests.SQLServerTests
         public void SQLServerCreateDynamicSchema()
         {
             this.CreateDynamicSchema();
+        }
+
+        [TestMethod]
+        public void SQLServerEnableContainedDatabase()
+        {
+            this.DropCreateSchema();
+            this.Database.Disconnect();
+            this.Database.DDLHelperAs<ISQLServerDDLHelper>().EnableContainedDatabases(true);
+            this.Database.DDLHelperAs<ISQLServerDDLHelper>().SetDatabaseContainment("PARTIAL");
         }
 
         public SQLServerSchemaTests()

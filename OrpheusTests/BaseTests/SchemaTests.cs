@@ -29,6 +29,7 @@ namespace OrpheusTests
             {
                 Assert.AreEqual(true, this.Database.DDLHelper.SchemaObjectExists(shemaObj));
             }
+            this.DisconnectDatabase();
         }
 
         public void DropTestSchema()
@@ -40,6 +41,7 @@ namespace OrpheusTests
             {
                 Assert.AreEqual(false, this.Database.DDLHelper.SchemaObjectExists(shemaObj));
             }
+            this.DisconnectDatabase();
         }
 
         public void DropCreateSchema()
@@ -58,6 +60,7 @@ namespace OrpheusTests
             {
                 Assert.AreEqual(true, this.Database.DDLHelper.SchemaObjectExists(shemaObj));
             }
+            this.DisconnectDatabase();
         }
 
         public void CreateDynamicSchema()
@@ -110,6 +113,7 @@ namespace OrpheusTests
                 Price = 10
             });
             table3.Save();
+            this.DisconnectDatabase();
         }
 
         //[TestMethod]

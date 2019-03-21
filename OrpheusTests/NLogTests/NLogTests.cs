@@ -7,6 +7,7 @@ using System.IO;
 namespace OrpheusTests.NLogTests
 {
     [TestClass]
+    [TestCategory(BaseTestClass.LoggerTests)]
     public class NLogTests : BaseTestClass
     {
         [TestMethod]

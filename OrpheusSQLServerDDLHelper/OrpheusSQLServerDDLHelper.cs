@@ -511,13 +511,27 @@ namespace OrpheusSQLDDLHelper
         public bool DatabaseExists(string dbName)
         {
             var result = false;
-            this.executeDDLCommand(String.Format("SELECT DATABASE_ID FROM SYS.DATABASES WHERE NAME ='{0}'", dbName), true, (dbCommand) => {
-                IDataReader reader = dbCommand.ExecuteReader();
-                if (reader.Read())
+            this.executeDDLCommand(String.Format("SELECT DATABASE_ID FROM SYS.DATABASES WHERE NAME ='{0}'", dbName), true, (dbCommand) =>
                 {
-                    result = reader.GetValue(0) != null;
+                    IDataReader reader = dbCommand.ExecuteReader();
+                    try
+                    {
+                        if (reader.Read())
+                        {
+                            result = reader.GetValue(0) != null;
+                        }
+                    }
+                    finally
+                    {
+                        if (reader != null)
+                        {
+                            reader.Close();
+                            reader.Dispose();
+                        }
+
+                    }
                 }
-            }, (error) => {
+                ,(error) => {
                 this.db.Logger.LogError(error.Message);
                 result = false;
             });
@@ -698,7 +712,10 @@ namespace OrpheusSQLDDLHelper
             finally
             {
                 if (reader != null)
+                {
                     reader.Close();
+                    reader.Dispose();
+                }
                 this.secondConnection.Close();
             }
             return result;
@@ -765,7 +782,10 @@ namespace OrpheusSQLDDLHelper
             finally
             {
                 if (reader != null)
+                {
                     reader.Close();
+                    reader.Dispose();
+                }
                 this.secondConnection.Close();
             }
             return result;
@@ -896,7 +916,10 @@ namespace OrpheusSQLDDLHelper
             finally
             {
                 if (reader != null)
+                {
                     reader.Close();
+                    reader.Dispose();
+                }
                 this.secondConnection.Close();
             }
             return result;
@@ -944,6 +967,8 @@ namespace OrpheusSQLDDLHelper
             //before we can set the containment option, we need to close all open connections.
             SqlConnection.ClearAllPools();
             this.secondConnection.Close();
+            if(this.masterConnection != null)
+                this.masterConnection.Close();
             this.db.Disconnect();
             this.executeDDLCommand($"ALTER DATABASE [{databaseName}] SET CONTAINMENT = {containment}", true);
             this.db.Connect();

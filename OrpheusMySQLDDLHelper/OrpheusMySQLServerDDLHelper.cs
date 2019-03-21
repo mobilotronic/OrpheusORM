@@ -243,9 +243,20 @@ namespace OrpheusMySQLDDLHelper
                         try
                         {
                             IDataReader reader = cmd.ExecuteReader();
-                            if (reader.Read())
+                            try
                             {
-                                result = reader.GetValue(0) != null;
+                                if (reader.Read())
+                                {
+                                    result = reader.GetValue(0) != null;
+                                }
+                            }
+                            finally
+                            {
+                                if(reader != null)
+                                {
+                                    reader.Close();
+                                    reader.Dispose();
+                                }
                             }
                         }
                         catch
@@ -309,7 +320,10 @@ namespace OrpheusMySQLDDLHelper
                 finally
                 {
                     if (reader != null)
+                    {
                         reader.Close();
+                        reader.Dispose();
+                    }
                     this.secondConnection.Close();
                 }
             }
@@ -377,7 +391,10 @@ namespace OrpheusMySQLDDLHelper
                 finally
                 {
                     if (reader != null)
+                    {
                         reader.Close();
+                        reader.Dispose();
+                    }
                     this.secondConnection.Close();
                 }
             }

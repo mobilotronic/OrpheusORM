@@ -8,6 +8,7 @@ using System.Reflection;
 namespace OrpheusTests.SQLServerTests
 {
     [TestClass]
+    [TestCategory(BaseTestClass.SQLServerTests)]
     public class SQLServerSchemaNameTests : BaseTestClass
     {
         [TestMethod]

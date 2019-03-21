@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace OrpheusTests.ConfigurationTests
 {
     [TestClass]
+    [TestCategory(BaseTestClass.ConfigurationTests)]
     public class OrpheusConfigurationTests : BaseTestClass
     {
         //public void SaveFullServicesConfiguration()
