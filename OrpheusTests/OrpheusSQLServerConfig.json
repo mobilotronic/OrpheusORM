@@ -24,7 +24,7 @@
   "DatabaseConnections": [
     {
       "ConfigurationName": "Default",
-      "Server": "[server]",
+      "Server": "(LocalDb)\\MSSQLLocalDB",
       "DatabaseName": "orpheusTestDB",
       "UseIntegratedSecurity": true,
       "UseIntegratedSecurityForServiceConnection": true

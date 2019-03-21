@@ -172,29 +172,6 @@ namespace OrpheusTests
             }
         }
 
-        public string ConnectionString
-        {
-            get
-            {
-                switch (this.DatabaseEngine)
-                {
-                    case DbEngine.dbSQLServer:
-                        {
-                            return TestDatabaseConnectionStrings.SQLServer;
-                        }
-                    case DbEngine.dbMySQL:
-                        {
-                            #if MYSQL_DEBUG
-                            return TestDatabaseConnectionStrings.MySQLProfiling;
-                            #else
-                            return TestDatabaseConnectionStrings.MySQL;
-                            #endif
-                        }
-                    default: return null;
-                }
-            }
-        }
-
         public string CurrentDirectory { get { return this.assemblyDirectory; } }
 
         #endregion

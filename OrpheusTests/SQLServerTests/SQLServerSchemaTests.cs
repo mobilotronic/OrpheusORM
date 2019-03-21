@@ -35,7 +35,6 @@ namespace OrpheusTests.SQLServerTests
         public void SQLServerEnableContainedDatabase()
         {
             this.DropCreateSchema();
-            this.Database.Disconnect();
             this.Database.DDLHelperAs<ISQLServerDDLHelper>().EnableContainedDatabases(true);
             this.Database.DDLHelperAs<ISQLServerDDLHelper>().SetDatabaseContainment("PARTIAL");
         }
