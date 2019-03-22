@@ -1,7 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
+using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Toolchains.CsProj;
 using OrpheusTests;
 
 namespace OrpheusTestsBenchMark
@@ -24,8 +26,8 @@ namespace OrpheusTestsBenchMark
     {
         public Config()
         {
-            Add(new MemoryDiagnoser());
-            Add(Job.Default
+            Add(MemoryDiagnoser.Default);
+            Add(Job.Default.With(Jit.RyuJit).With(Runtime.Core).With(CsProjCoreToolchain.NetCoreApp22)
                 //.WithUnrollFactor(BaseBenchMark.Iterations)
                 //.WithIterationTime(new TimeInterval(500, TimeUnit.Millisecond))
                 .WithLaunchCount(1)

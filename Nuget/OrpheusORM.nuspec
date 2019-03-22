@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>OrpheusORM</id>
-        <version>1.1.6</version>
+        <version>1.1.7</version>
         <title>OrpheusORM</title>
         <authors>Original Author</authors>
         <owners>Original Author</owners>
@@ -10,7 +10,8 @@
         <description>OrpheusORM is a lightweight flexible ORM, that gives the developer real flexibility, on how to create schema, load/save data and configure complex constraints and relationships between models.</description>
         <copyright>https://github.com/redacted-user/OrpheusORM</copyright>
         <language>en-US</language>
-		<iconUrl>https://github.com/redacted-user/OrpheusORM/raw/master/OrpheusIcon.png</iconUrl>
+      <license type="expression">MPL-2.0</license>
+      <iconUrl>https://github.com/redacted-user/OrpheusORM/raw/master/OrpheusIcon.png</iconUrl>
 		<projectUrl>https://github.com/redacted-user/OrpheusORM</projectUrl>
         <dependencies>
       <dependency id="Microsoft.Extensions.Logging" version="2.0" />
@@ -20,16 +21,16 @@
         </dependencies>
     </metadata>
     <files>
-    <file src="2.0.0\lib\netcoreapp2.1\OrpheusCore.dll" target="lib\netcoreapp2.1\OrpheusCore.dll" />
-    <file src="2.0.0\lib\netcoreapp2.1\OrpheusCore.xml" target="lib\netcoreapp2.1\OrpheusCore.xml" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusCore.dll" target="lib\netcoreapp2.2\OrpheusCore.dll" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusCore.xml" target="lib\netcoreapp2.2\OrpheusCore.xml" />
       
-		<file src="2.0.0\lib\netcoreapp2.1\OrpheusInterfaces.dll" target="lib\netcoreapp2.1\OrpheusInterfaces.dll" />
-    <file src="2.0.0\lib\netcoreapp2.1\OrpheusInterfaces.xml" target="lib\netcoreapp2.1\OrpheusInterfaces.xml" />
+		<file src="2.0.0\lib\netcoreapp2.2\OrpheusInterfaces.dll" target="lib\netcoreapp2.2\OrpheusInterfaces.dll" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusInterfaces.xml" target="lib\netcoreapp2.2\OrpheusInterfaces.xml" />
       
-    <file src="2.0.0\lib\netcoreapp2.1\OrpheusAttributes.dll" target="lib\netcoreapp2.1\OrpheusAttributes.dll" />
-    <file src="2.0.0\lib\netcoreapp2.1\OrpheusAttributes.xml" target="lib\netcoreapp2.1\OrpheusAttributes.xml" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusAttributes.dll" target="lib\netcoreapp2.2\OrpheusAttributes.dll" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusAttributes.xml" target="lib\netcoreapp2.2\OrpheusAttributes.xml" />
       
-    <file src="2.0.0\lib\netcoreapp2.1\OrpheusLogger.dll" target="lib\netcoreapp2.1\OrpheusLogger.dll" />
-    <file src="2.0.0\lib\netcoreapp2.1\OrpheusLogger.xml" target="lib\netcoreapp2.1\OrpheusLogger.xml" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusLogger.dll" target="lib\netcoreapp2.2\OrpheusLogger.dll" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusLogger.xml" target="lib\netcoreapp2.2\OrpheusLogger.xml" />
     </files>
 </package>

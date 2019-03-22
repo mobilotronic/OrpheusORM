@@ -71,5 +71,6 @@ OrpheusTests/OrpheusSQLiteServerConfig.json
 /.vs/Orpheus.NetCore/DesignTimeBuild/.dtbcache
 /Nuget/2.0.0/lib/netstandard2.1
 /Nuget/2.0.0/lib/netcoreapp2.1
+/Nuget/2.0.0/lib/netcoreapp2.2
 /.vs/VSWorkspaceState.json
 /.vs/slnx.sqlite

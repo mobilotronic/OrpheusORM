@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>OrpheusORMSQLServerDDLHelper</id>
-        <version>1.1.6</version>
+        <version>1.1.7</version>
         <title>OrpheusORM SQL Server DDL Helper</title>
         <authors>Original Author</authors>
         <owners>Original Author</owners>
@@ -10,6 +10,7 @@
         <description>OrpheusORM SQL server DDL helper is a helper class, specifically for MS SQL Server database engines.</description>
         <copyright>https://github.com/redacted-user/OrpheusORM</copyright>
         <language>en-US</language>
+        <license type="expression">MPL-2.0</license>
 		<iconUrl>https://github.com/redacted-user/OrpheusORM/raw/master/OrpheusIcon.png</iconUrl>
 		<projectUrl>https://github.com/redacted-user/OrpheusORM</projectUrl>
         <dependencies>
@@ -18,7 +19,7 @@
         </dependencies>
     </metadata>
     <files>
-    <file src="2.0.0\lib\netcoreapp2.1\OrpheusSQLServerDDLHelper.dll" target="lib\netcoreapp2.1\OrpheusSQLServerDDLHelper.dll" />
-    <file src="2.0.0\lib\netcoreapp2.1\OrpheusSQLServerDDLHelper.xml" target="lib\netcoreapp2.1\OrpheusSQLServerDDLHelper.xml" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusSQLServerDDLHelper.dll" target="lib\netcoreapp2.2\OrpheusSQLServerDDLHelper.dll" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusSQLServerDDLHelper.xml" target="lib\netcoreapp2.2\OrpheusSQLServerDDLHelper.xml" />
     </files>
 </package>
