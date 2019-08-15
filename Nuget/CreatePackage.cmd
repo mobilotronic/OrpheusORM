@@ -24,6 +24,7 @@ xcopy ..\OrpheusSQLServerDDLHelper\bin\release\netcoreapp2.2\OrpheusSQLServerDDL
 @echo assemblies copied.
 del *.nupkg /F
 nuget.exe pack OrpheusORM.nuspec
+nuget.exe pack OrpheusORMInterfaces.nuspec
 nuget.exe pack OrpheusORMMySQLServerHelper.nuspec
 nuget.exe pack OrpheusORMSQLServerHelper.nuspec
 @echo new nupkg file created.

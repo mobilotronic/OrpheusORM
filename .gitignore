@@ -53,7 +53,6 @@ Nuget/PublishPackage.cmd
 OrpheusTests/BaseTests/TestDatabaseConnectionStrings.cs
 Nuget/nuget.exe
 *.coverage
-*.nuspec
 OrpheusTests/OrpheusSQLServerConfig.json
 OrpheusTests/OrpheusMySQLServerConfig.json
 *.cache

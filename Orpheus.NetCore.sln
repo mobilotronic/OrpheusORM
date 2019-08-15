@@ -29,6 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{B2F48277
 		Nuget\nuget.exe = Nuget\nuget.exe
 		Nuget\OrpheusIcon.png = Nuget\OrpheusIcon.png
 		Nuget\OrpheusORM.nuspec = Nuget\OrpheusORM.nuspec
+		Nuget\OrpheusORMInterfaces.nuspec = Nuget\OrpheusORMInterfaces.nuspec
 		Nuget\OrpheusORMMySQLServerHelper.nuspec = Nuget\OrpheusORMMySQLServerHelper.nuspec
 		Nuget\OrpheusORMSQLServerHelper.nuspec = Nuget\OrpheusORMSQLServerHelper.nuspec
 		Nuget\PublishPackage.cmd = Nuget\PublishPackage.cmd

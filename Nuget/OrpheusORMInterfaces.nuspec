@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>OrpheusORMInterfaces</id>
+        <version>1.1.8</version>
+        <title>OrpheusORM</title>
+        <authors>Original Author</authors>
+        <owners>Original Author</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>OrpheusORM abstractions (interfaces).</description>
+        <copyright>https://github.com/redacted-user/OrpheusORM</copyright>
+        <language>en-US</language>
+      <license type="expression">MPL-2.0</license>
+      <iconUrl>https://github.com/redacted-user/OrpheusORM/raw/master/OrpheusIcon.png</iconUrl>
+		<projectUrl>https://github.com/redacted-user/OrpheusORM</projectUrl>
+    </metadata>
+    <files>
+		<file src="2.0.0\lib\netcoreapp2.2\OrpheusInterfaces.dll" target="lib\netcoreapp2.2\OrpheusInterfaces.dll" />
+    <file src="2.0.0\lib\netcoreapp2.2\OrpheusInterfaces.xml" target="lib\netcoreapp2.2\OrpheusInterfaces.xml" />
+    </files>
+</package>

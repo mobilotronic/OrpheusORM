@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>OrpheusORM</id>
-        <version>1.1.7</version>
+        <version>1.1.8</version>
         <title>OrpheusORM</title>
         <authors>Original Author</authors>
         <owners>Original Author</owners>
@@ -18,14 +18,12 @@
       <dependency id="Microsoft.Extensions.Configuration" version="2.0" />
       <dependency id="Microsoft.Extensions.DependencyInjection" version="2.0" />
       <dependency id="Microsoft.Extensions.Options" version="2.0" />
+      <dependency id="OrpheusORMInterfaces" version="1.1.8" />
         </dependencies>
     </metadata>
     <files>
     <file src="2.0.0\lib\netcoreapp2.2\OrpheusCore.dll" target="lib\netcoreapp2.2\OrpheusCore.dll" />
     <file src="2.0.0\lib\netcoreapp2.2\OrpheusCore.xml" target="lib\netcoreapp2.2\OrpheusCore.xml" />
-      
-		<file src="2.0.0\lib\netcoreapp2.2\OrpheusInterfaces.dll" target="lib\netcoreapp2.2\OrpheusInterfaces.dll" />
-    <file src="2.0.0\lib\netcoreapp2.2\OrpheusInterfaces.xml" target="lib\netcoreapp2.2\OrpheusInterfaces.xml" />
       
     <file src="2.0.0\lib\netcoreapp2.2\OrpheusAttributes.dll" target="lib\netcoreapp2.2\OrpheusAttributes.dll" />
     <file src="2.0.0\lib\netcoreapp2.2\OrpheusAttributes.xml" target="lib\netcoreapp2.2\OrpheusAttributes.xml" />
