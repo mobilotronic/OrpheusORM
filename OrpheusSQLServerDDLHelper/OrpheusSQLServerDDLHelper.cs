@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using OrpheusCore.Configuration;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
@@ -28,6 +29,7 @@ namespace OrpheusSQLDDLHelper
         private List<string> builtInSchemas = new List<string>() { "dbo", "sys", "information_schema", "guest" };
         private delegate void DDLCommandCallback(IDbCommand dbCommand);
         private delegate void ErrorCallback(Exception exception);
+        private ILogger<OrpheusSQLServerDDLHelper> logger;
         #endregion
 
         #region auxiliary connections
@@ -344,7 +346,7 @@ namespace OrpheusSQLDDLHelper
                 }
                 catch (Exception e)
                 {
-                    this.db.Logger.LogError(e.Message);
+                    this.logger.LogError(e.Message);
                     throw e;
                 }
                 finally
@@ -464,7 +466,7 @@ namespace OrpheusSQLDDLHelper
                 this.executeDDLCommand($"CREATE DATABASE {this.db.DatabaseConnectionConfiguration.DatabaseName}", true, (dbCommand) => {
                     result = true;
                 },(error)=> {
-                    this.db.Logger.LogError(error.Message);
+                    this.logger.LogError(error.Message);
                     result = false;
                 });
             return result;
@@ -532,7 +534,7 @@ namespace OrpheusSQLDDLHelper
                     }
                 }
                 ,(error) => {
-                this.db.Logger.LogError(error.Message);
+                this.logger.LogError(error.Message);
                 result = false;
             });
             return result;
@@ -679,6 +681,7 @@ namespace OrpheusSQLDDLHelper
             this.SupportsGuidType = true;
             this.SupportsSchemaNameSpace = true;
             this.DbEngineType = DatabaseEngineType.dbSQLServer;
+            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusSQLServerDDLHelper>();
         }
         #endregion
 

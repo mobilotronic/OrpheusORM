@@ -1,12 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
 using OrpheusCore.Configuration;
-using OrpheusCore.ServiceProvider;
 using System;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace OrpheusTests.ConfigurationTests
 {
@@ -208,105 +206,41 @@ namespace OrpheusTests.ConfigurationTests
         [TestMethod]
         public async Task ReloadConfigurationAsync()
         {
-            var configurationFileName = this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json";
-            ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(configurationFileName));
+            this.InitializeConfiguration();
 
             var errorId = Guid.NewGuid().ToString();
             var traceId = Guid.NewGuid().ToString();
+            var logFileContentsName = $"c:\\temp\\orpheus\\nlog-all-{DateTime.Now.ToString("yyyy-MM-dd")}.log";
 
-            var logger = (OrpheusLogger.OrpheusFileLogger)OrpheusServiceProvider.Resolve<ILogger>();
+            var logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusConfigurationTests>();
             logger.LogError($"ErrorId {errorId} test Error log entry");
 
-            var logFileContents = File.ReadAllText(logger.CurrentFileName);
+            //loading the log file content.
+            var logFileContents = File.ReadAllText(logFileContentsName);
 
             //making sure that the error is logged.
             Assert.AreEqual(true, logFileContents.Contains(errorId));
 
-            OrpheusConfiguration orpheusConfiguration = JsonConvert.DeserializeObject<OrpheusConfiguration>(File.ReadAllText(configurationFileName));
+            //loading the NLog XML configuration file and updating the logging level.
+            XmlDocument doc = new XmlDocument();
+            doc.Load(this.CurrentDirectory + @"\" + "nlog.config");
+            XmlNodeList nlogRules = doc.DocumentElement.SelectNodes("//*[name()='nlog']/*[name()='rules']/*[name()='logger']");
+            foreach(XmlNode nlogRule in nlogRules)
+            {
+                XmlAttribute logLevel = nlogRule.Attributes["minlevel"];
+                if(logLevel != null)
+                {
+                    logLevel.Value = "Trace";
+                }
+            }
+            doc.Save(this.CurrentDirectory + @"\" + "nlog.config");
 
-            orpheusConfiguration.Logging.Level = "Trace";
-
-            File.WriteAllText(configurationFileName, JsonConvert.SerializeObject(orpheusConfiguration));
-
-            await Task.Delay(1000);
-
+            //give NLog some time to reload its configuration.
+            await Task.Delay(3000);
             logger.LogTrace($"TraceId {traceId} test Trace log entry");
-
-            logFileContents = File.ReadAllText(logger.CurrentFileName);
-
-            //making sure that the trace is logged.
-            Assert.AreEqual(true, logFileContents.Contains(traceId));
-        }
-
-        [TestMethod]
-        public async Task ReloadConfigurationFromFileAsync()
-        {
-            var configurationFileName = this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json";
-            ConfigurationManager.InitializeConfiguration(configurationFileName);
-
-            var errorId = Guid.NewGuid().ToString();
-            var traceId = Guid.NewGuid().ToString();
-
-            var logger = (OrpheusLogger.OrpheusFileLogger)OrpheusServiceProvider.Resolve<ILogger>();
-            logger.LogError($"ErrorId {errorId} test Error log entry");
-
-            var logFileContents = File.ReadAllText(logger.CurrentFileName);
-
-            //making sure that the error is logged.
-            Assert.AreEqual(true, logFileContents.Contains(errorId));
-
-            OrpheusConfiguration orpheusConfiguration = JsonConvert.DeserializeObject<OrpheusConfiguration>(File.ReadAllText(configurationFileName));
-
-            orpheusConfiguration.Logging.Level = "Trace";
-
-            File.WriteAllText(configurationFileName, JsonConvert.SerializeObject(orpheusConfiguration));
-
-            // the default delay for the reload callback in JsonFileProvider is 250ms, so 1 sec would be more than enough in order to reload the latest configuration settings.
-            await Task.Delay(1000);
-
-            logger.LogTrace($"TraceId {traceId} test Trace log entry");
-
-            logFileContents = File.ReadAllText(logger.CurrentFileName);
-
-            //making sure that the trace is logged.
-            Assert.AreEqual(true, logFileContents.Contains(traceId));
-        }
-
-        [TestMethod]
-        public async Task ReloadConfigurationFromFileLoggerTransientAsync()
-        {
-            var configurationFileName = this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json";
-            //loading configuration and changing the default service lifetime from singleton to transient.
-            OrpheusConfiguration orpheusConfiguration = JsonConvert.DeserializeObject<OrpheusConfiguration>(File.ReadAllText(configurationFileName));
-            orpheusConfiguration.Services.First(s => s.Service.Contains("ILogger")).ServiceLifetime = Microsoft.Extensions.DependencyInjection.ServiceLifetime.Transient;
-            File.WriteAllText(configurationFileName, JsonConvert.SerializeObject(orpheusConfiguration));
-
-            ConfigurationManager.InitializeConfiguration(configurationFileName);
-
-            var errorId = Guid.NewGuid().ToString();
-            var traceId = Guid.NewGuid().ToString();
-
-            var logger = (OrpheusLogger.OrpheusFileLogger)OrpheusServiceProvider.Resolve<ILogger>();
-            logger.LogError($"ErrorId {errorId} test Error log entry");
-
-            var logFileContents = File.ReadAllText(logger.CurrentFileName);
-
-            //making sure that the error is logged.
-            Assert.AreEqual(true, logFileContents.Contains(errorId));
-
-            orpheusConfiguration = JsonConvert.DeserializeObject<OrpheusConfiguration>(File.ReadAllText(configurationFileName));
-
-            orpheusConfiguration.Logging.Level = "Trace";
-
-            File.WriteAllText(configurationFileName, JsonConvert.SerializeObject(orpheusConfiguration));
-
-            // the default delay for the reload callback in JsonFileProvider is 250ms, so 1 sec would be more than enough in order to reload the latest configuration settings.
-            await Task.Delay(1000);
-
-            logger = (OrpheusLogger.OrpheusFileLogger)OrpheusServiceProvider.Resolve<ILogger>();
-            logger.LogTrace($"TraceId {traceId} test Trace log entry");
-
-            logFileContents = File.ReadAllText(logger.CurrentFileName);
+            
+            //reload log file content.
+            logFileContents = File.ReadAllText(logFileContentsName);
 
             //making sure that the trace is logged.
             Assert.AreEqual(true, logFileContents.Contains(traceId));

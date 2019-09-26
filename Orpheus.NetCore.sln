@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusCore", "OrpheusCore\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusInterfaces", "OrpheusInterfaces\OrpheusInterfaces.csproj", "{FE8FE773-92DF-41D1-8938-14C333CEEC22}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusLogger", "OrpheusLogger\OrpheusLogger.csproj", "{C975B525-F5C4-4064-9B40-C0E4E1793E26}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusMySQLDDLHelper", "OrpheusMySQLDDLHelper\OrpheusMySQLDDLHelper.csproj", "{E256BF9C-4563-401B-B2F3-2A0C41A33EA6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusSQLServerDDLHelper", "OrpheusSQLServerDDLHelper\OrpheusSQLServerDDLHelper.csproj", "{8CA94B3F-FC19-4809-B246-9B255E55F020}"
@@ -53,10 +51,6 @@ Global
 		{FE8FE773-92DF-41D1-8938-14C333CEEC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE8FE773-92DF-41D1-8938-14C333CEEC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE8FE773-92DF-41D1-8938-14C333CEEC22}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C975B525-F5C4-4064-9B40-C0E4E1793E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C975B525-F5C4-4064-9B40-C0E4E1793E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C975B525-F5C4-4064-9B40-C0E4E1793E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C975B525-F5C4-4064-9B40-C0E4E1793E26}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E256BF9C-4563-401B-B2F3-2A0C41A33EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E256BF9C-4563-401B-B2F3-2A0C41A33EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E256BF9C-4563-401B-B2F3-2A0C41A33EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU

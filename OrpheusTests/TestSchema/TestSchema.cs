@@ -1,4 +1,4 @@
-﻿using OrpheusCore.ServiceProvider;
+﻿using OrpheusCore.Configuration;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using OrpheusTestModels;
@@ -466,7 +466,7 @@ namespace OrpheusTests
         public ISchema Schema { get { return this.schema; } }
         public TestSchema(IOrpheusDatabase db, string description, double version, Guid id, string name = null)
         {
-            this.schema = OrpheusServiceProvider.Resolve<ISchema>(new object[] { db,description,version,id, name });
+            this.schema = ConfigurationManager.Resolve<ISchema>(new object[] { db,description,version,id, name });
             this.createSchema();
         }
     }

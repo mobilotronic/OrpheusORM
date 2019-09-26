@@ -1,0 +1,25 @@
+﻿{
+  "DatabaseConnections": [
+    {
+      "ConfigurationName": "SQLServer",
+      "Server": "(LocalDb)\\MSSQLLocalDB",
+      "DatabaseName": "orpheusTestDB",
+      "UseIntegratedSecurity": true,
+      "UseIntegratedSecurityForServiceConnection": true
+    },
+    {
+      "ConfigurationName": "MySQL",
+      "Server": "[ServerName]",
+      "DatabaseName": "orpheusTestDB",
+      "UserName": "root",
+      "Password": "[Password]",
+      "ServiceUserName": "root",
+      "ServicePassword": "[Password]"
+    }
+  ],
+  "Logging": {
+    "LogLevel": {
+      "Default": "Trace"
+    }
+  }
+}

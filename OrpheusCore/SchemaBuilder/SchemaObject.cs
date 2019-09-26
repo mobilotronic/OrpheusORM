@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using OrpheusCore.Configuration;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
@@ -269,7 +270,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public SchemaObject()
         {
-            this.logger = ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<SchemaObject>();
             this.IsCreated = false;
             this.SchemaObjectsThatDependOnMe = new List<ISchemaObject>();
             this.SchemaObjectsThatIDepend = new List<ISchemaObject>();

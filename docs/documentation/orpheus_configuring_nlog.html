@@ -8,7 +8,7 @@
     <title>Configuring NLog | Orpheus </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Configuring NLog | Orpheus ">
-    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -80,100 +80,28 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="configuring-nlog">Configuring NLog</h1>
 
-<p>To configure NLog to work with Orpheus, you&#39;ll need to have a wrapper class.</p>
+<p>Here is an example of how to configure NLog with Orpheus.</p>
 <p>Prerequisite is to add <a href="https://github.com/NLog/NLog.Extensions.Logging">NLog</a> to your project.</p>
-<pre><code class="lang-csharp">using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System;
-
-namespace YourNameSpace
-{
-    /// &lt;summary&gt;
-    /// NLog wrapper
-    /// &lt;/summary&gt;
-    /// &lt;seealso cref=&quot;Microsoft.Extensions.Logging.ILogger&quot; /&gt;
-    public class CommonLogger : ILogger
+<pre><code class="lang-csharp">    LogManager.LoadConfiguration(&quot;nlog.config&quot;);
+    var logger = LogManager.GetCurrentClassLogger();
+    try
     {
-        private ILogger nlogLogger;
-
-        /// &lt;summary&gt;
-        /// Initializes a new instance of the &lt;see cref=&quot;CommonLogger&quot;/&gt; class.
-        /// &lt;/summary&gt;
-        public CommonLogger()
+        IServiceCollection serviceCollection = new ServiceCollection();
+        this.configuration = this.createConfiguration(&quot;appSettings.json&quot;);
+        serviceCollection.AddLogging((builder) =&gt;
         {
-            //your ServiceProvider instance.
-            var loggerFactory = ServiceProvider.GetRequiredService&lt;ILoggerFactory&gt;();
-            //load nlog configuration
-            NLog.Web.NLogBuilder.ConfigureNLog(&quot;logging.config&quot;);
-            this.nlogLogger = loggerFactory.CreateLogger(&quot;YourLoggerName&quot;);
-        }
-
-        /// &lt;summary&gt;
-        /// Begins a logical operation scope.
-        /// &lt;/summary&gt;
-        /// &lt;typeparam name=&quot;TState&quot;&gt;&lt;/typeparam&gt;
-        /// &lt;param name=&quot;state&quot;&gt;The identifier for the scope.&lt;/param&gt;
-        /// &lt;returns&gt;
-        /// An IDisposable that ends the logical operation scope on dispose.
-        /// &lt;/returns&gt;
-        /// &lt;exception cref=&quot;NotImplementedException&quot;&gt;&lt;/exception&gt;
-        public IDisposable BeginScope&lt;TState&gt;(TState state)
-        {
-            return this.nlogLogger.BeginScope&lt;TState&gt;(state);
-        }
-
-        /// &lt;summary&gt;
-        /// Checks if the given &lt;paramref name=&quot;logLevel&quot; /&gt; is enabled.
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;logLevel&quot;&gt;level to be checked.&lt;/param&gt;
-        /// &lt;returns&gt;
-        ///   &lt;c&gt;true&lt;/c&gt; if enabled.
-        /// &lt;/returns&gt;
-        /// &lt;exception cref=&quot;NotImplementedException&quot;&gt;&lt;/exception&gt;
-        public bool IsEnabled(LogLevel logLevel)
-        {
-            return this.nlogLogger.IsEnabled(logLevel);
-        }
-
-        /// &lt;summary&gt;
-        /// Writes a log entry.
-        /// &lt;/summary&gt;
-        /// &lt;typeparam name=&quot;TState&quot;&gt;&lt;/typeparam&gt;
-        /// &lt;param name=&quot;logLevel&quot;&gt;Entry will be written on this level.&lt;/param&gt;
-        /// &lt;param name=&quot;eventId&quot;&gt;Id of the event.&lt;/param&gt;
-        /// &lt;param name=&quot;state&quot;&gt;The entry to be written. Can be also an object.&lt;/param&gt;
-        /// &lt;param name=&quot;exception&quot;&gt;The exception related to this entry.&lt;/param&gt;
-        /// &lt;param name=&quot;formatter&quot;&gt;Function to create a &lt;c&gt;string&lt;/c&gt; message of the &lt;paramref name=&quot;state&quot; /&gt; and &lt;paramref name=&quot;exception&quot; /&gt;.&lt;/param&gt;
-        /// &lt;exception cref=&quot;NotImplementedException&quot;&gt;&lt;/exception&gt;
-        public void Log&lt;TState&gt;(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func&lt;TState, Exception, string&gt; formatter)
-        {
-            this.nlogLogger.Log&lt;TState&gt;(logLevel, eventId, state, exception, formatter);
-        }
+            builder.ClearProviders();
+            //setting the MEL minimum level to trace, will essentially cancel whatever logging settings might present in the appsettings.json file
+            //the logging level would be controlled solely from the NLog configuration file.
+            builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+            builder.AddNLog(configuration);
+        });
+        OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
     }
-}
-</code></pre><p>After that you&#39;ll have to register your wrapper into Orpheu&#39;s configuration.</p>
-<pre><code class="lang-json">  &quot;Services&quot;: [
+    catch (Exception e)
     {
-      &quot;Implementation&quot;: &quot;System.Data.SqlClient.SqlConnection, System.Data.SqlClient, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;,
-      &quot;Service&quot;: &quot;System.Data.IDbConnection, System.Data.Common, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;,
-      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
-    },
-    {
-      &quot;Implementation&quot;: &quot;OrpheusCore.OrpheusDatabase, OrpheusCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;Service&quot;: &quot;OrpheusInterfaces.Core.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
-    },
-    {
-      &quot;Implementation&quot;: &quot;OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;Service&quot;: &quot;OrpheusInterfaces.Core.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
-    },
-    {
-      &quot;Implementation&quot;: &quot;YourAssembly.CommonLogger, YourAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;Service&quot;: &quot;Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;,
-      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
+        logger.Log(NLog.LogLevel.Error, e);
     }
-  ],
 </code></pre><p>Other logging frameworks, might require a similar approach.</p>
 </article>
           </div>

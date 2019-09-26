@@ -8,7 +8,7 @@
     <title>Orpheus and DI | Orpheus </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Orpheus and DI | Orpheus ">
-    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="generator" content="docfx 2.45.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -99,7 +99,7 @@ This means that the consumer will need to somehow configure, which database engi
 <pre><code class="lang-csharp">OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(IConfiguration configuration, IServiceCollection services = null);
 </code></pre><p>  If no services are defined, then Orpheus will be in self-service mode. This means that it will create its own service collection and register all required services there.</p>
 <p>  Alternatively you can define a file name. This will implicitly set Orpheus to self-service mode.</p>
-<pre><code class="lang-csharp">OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(&quot;MyPath\Orpheus.config&quot;);
+<pre><code class="lang-csharp">OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(&quot;MyPath\appSettings.json&quot;);
 </code></pre><p>  <strong>Note:</strong> You don&#39;t have to have a separate file for Orpheus&#39;s configuration. Its configuration can live inside your existing configuration file.</p>
 <h5 id="configuration-sample">Configuration Sample</h5>
 <pre><code class="lang-javascript">{
@@ -118,11 +118,6 @@ This means that the consumer will need to somehow configure, which database engi
       &quot;Implementation&quot;: &quot;OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
       &quot;Service&quot;: &quot;OrpheusInterfaces.Core.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
       &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
-    },
-    {
-      &quot;Implementation&quot;: &quot;OrpheusLogger.OrpheusFileLogger, OrpheusLogger, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;Service&quot;: &quot;Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60&quot;,
-      &quot;ServiceLifeTime&quot;: &quot;Singleton&quot;
     }
   ],
   &quot;DatabaseConnection&quot;: 
@@ -132,11 +127,6 @@ This means that the consumer will need to somehow configure, which database engi
       &quot;DatabaseName&quot;: &quot;[YourDatabase]&quot;,
       &quot;UseIntegratedSecurity&quot;: true
     }
-  ,
-  &quot;Logging&quot;: {
-    &quot;Level&quot;: &quot;Debug&quot;,
-    &quot;MaxFileSize&quot;: 1
-  }
 }
 </code></pre></li>
 </ul>

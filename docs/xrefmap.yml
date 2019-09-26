@@ -500,19 +500,6 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.Configuration.ConfigurationManager.Configuration
   nameWithType: ConfigurationManager.Configuration
-- uid: OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
-  name: ConfigurationInstance
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_ConfigurationInstance
-  commentId: P:OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
-  fullName: OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
-  nameWithType: ConfigurationManager.ConfigurationInstance
-- uid: OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance*
-  name: ConfigurationInstance
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_ConfigurationInstance_
-  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.ConfigurationManager.ConfigurationInstance
-  nameWithType: ConfigurationManager.ConfigurationInstance
 - uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyInjection.IServiceCollection)
   name: InitializeConfiguration(IConfiguration, IServiceCollection)
   href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_DependencyInjection_IServiceCollection_
@@ -532,6 +519,44 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration
   nameWithType: ConfigurationManager.InitializeConfiguration
+- uid: OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
+  name: LoggerFactory
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_LoggerFactory
+  commentId: P:OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
+  fullName: OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
+  nameWithType: ConfigurationManager.LoggerFactory
+- uid: OrpheusCore.Configuration.ConfigurationManager.LoggerFactory*
+  name: LoggerFactory
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_LoggerFactory_
+  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
+  isSpec: "True"
+  fullName: OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
+  nameWithType: ConfigurationManager.LoggerFactory
+- uid: OrpheusCore.Configuration.ConfigurationManager.Resolve*
+  name: Resolve
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_Resolve_
+  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.Resolve
+  isSpec: "True"
+  fullName: OrpheusCore.Configuration.ConfigurationManager.Resolve
+  nameWithType: ConfigurationManager.Resolve
+- uid: OrpheusCore.Configuration.ConfigurationManager.Resolve``1
+  name: Resolve<T>()
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_Resolve__1
+  commentId: M:OrpheusCore.Configuration.ConfigurationManager.Resolve``1
+  name.vb: Resolve(Of T)()
+  fullName: OrpheusCore.Configuration.ConfigurationManager.Resolve<T>()
+  fullName.vb: OrpheusCore.Configuration.ConfigurationManager.Resolve(Of T)()
+  nameWithType: ConfigurationManager.Resolve<T>()
+  nameWithType.vb: ConfigurationManager.Resolve(Of T)()
+- uid: OrpheusCore.Configuration.ConfigurationManager.Resolve``1(System.Object[])
+  name: Resolve<T>(Object[])
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_Resolve__1_System_Object___
+  commentId: M:OrpheusCore.Configuration.ConfigurationManager.Resolve``1(System.Object[])
+  name.vb: Resolve(Of T)(Object())
+  fullName: OrpheusCore.Configuration.ConfigurationManager.Resolve<T>(System.Object[])
+  fullName.vb: OrpheusCore.Configuration.ConfigurationManager.Resolve(Of T)(System.Object())
+  nameWithType: ConfigurationManager.Resolve<T>(Object[])
+  nameWithType.vb: ConfigurationManager.Resolve(Of T)(Object())
 - uid: OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration(System.String)
   name: SaveConfiguration(String)
   href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_SaveConfiguration_System_String_
@@ -545,368 +570,318 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration
   nameWithType: ConfigurationManager.SaveConfiguration
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration
+- uid: OrpheusCore.Configuration.Models
+  name: OrpheusCore.Configuration.Models
+  href: api/OrpheusCore.Configuration.Models.html
+  commentId: N:OrpheusCore.Configuration.Models
+  fullName: OrpheusCore.Configuration.Models
+  nameWithType: OrpheusCore.Configuration.Models
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
   name: DatabaseConnectionConfiguration
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html
-  commentId: T:OrpheusCore.Configuration.DatabaseConnectionConfiguration
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html
+  commentId: T:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
   nameWithType: DatabaseConnectionConfiguration
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Clone
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone
   name: Clone()
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Clone
-  commentId: M:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Clone
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Clone()
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Clone
+  commentId: M:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone()
   nameWithType: DatabaseConnectionConfiguration.Clone()
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Clone*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone*
   name: Clone
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Clone_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Clone
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Clone_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Clone
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone
   nameWithType: DatabaseConnectionConfiguration.Clone
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
   name: ConfigurationName
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ConfigurationName
-  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ConfigurationName
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
   nameWithType: DatabaseConnectionConfiguration.ConfigurationName
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName*
   name: ConfigurationName
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ConfigurationName_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ConfigurationName_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ConfigurationName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
   nameWithType: DatabaseConnectionConfiguration.ConfigurationName
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
   name: DatabaseName
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_DatabaseName
-  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_DatabaseName
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
   nameWithType: DatabaseConnectionConfiguration.DatabaseName
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName*
   name: DatabaseName
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_DatabaseName_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_DatabaseName_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.DatabaseName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
   nameWithType: DatabaseConnectionConfiguration.DatabaseName
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
   name: Password
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Password
-  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Password
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
   nameWithType: DatabaseConnectionConfiguration.Password
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password*
   name: Password
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Password_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Password_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Password
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
   nameWithType: DatabaseConnectionConfiguration.Password
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
   name: Server
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Server
-  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Server
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
   nameWithType: DatabaseConnectionConfiguration.Server
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server*
   name: Server
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_Server_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Server_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.Server
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
   nameWithType: DatabaseConnectionConfiguration.Server
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
   name: ServicePassword
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ServicePassword
-  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ServicePassword
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
   nameWithType: DatabaseConnectionConfiguration.ServicePassword
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword*
   name: ServicePassword
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ServicePassword_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ServicePassword_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServicePassword
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
   nameWithType: DatabaseConnectionConfiguration.ServicePassword
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
   name: ServiceUserName
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ServiceUserName
-  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ServiceUserName
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
   nameWithType: DatabaseConnectionConfiguration.ServiceUserName
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName*
   name: ServiceUserName
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_ServiceUserName_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ServiceUserName_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.ServiceUserName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
   nameWithType: DatabaseConnectionConfiguration.ServiceUserName
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
   name: UseIntegratedSecurity
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UseIntegratedSecurity
-  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UseIntegratedSecurity
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
   nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurity
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity*
   name: UseIntegratedSecurity
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UseIntegratedSecurity_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UseIntegratedSecurity_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
   nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurity
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
   name: UseIntegratedSecurityForServiceConnection
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UseIntegratedSecurityForServiceConnection
-  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UseIntegratedSecurityForServiceConnection
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
   nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection*
   name: UseIntegratedSecurityForServiceConnection
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UseIntegratedSecurityForServiceConnection_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UseIntegratedSecurityForServiceConnection_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
   nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
   name: UserName
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UserName
-  commentId: P:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UserName
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
   nameWithType: DatabaseConnectionConfiguration.UserName
-- uid: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName*
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName*
   name: UserName
-  href: api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_DatabaseConnectionConfiguration_UserName_
-  commentId: Overload:OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UserName_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.DatabaseConnectionConfiguration.UserName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
   nameWithType: DatabaseConnectionConfiguration.UserName
-- uid: OrpheusCore.Configuration.LoggingConfiguration
-  name: LoggingConfiguration
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html
-  commentId: T:OrpheusCore.Configuration.LoggingConfiguration
-  fullName: OrpheusCore.Configuration.LoggingConfiguration
-  nameWithType: LoggingConfiguration
-- uid: OrpheusCore.Configuration.LoggingConfiguration.#ctor
-  name: LoggingConfiguration()
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration__ctor
-  commentId: M:OrpheusCore.Configuration.LoggingConfiguration.#ctor
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.LoggingConfiguration()
-  nameWithType: LoggingConfiguration.LoggingConfiguration()
-- uid: OrpheusCore.Configuration.LoggingConfiguration.#ctor*
-  name: LoggingConfiguration
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration__ctor_
-  commentId: Overload:OrpheusCore.Configuration.LoggingConfiguration.#ctor
+- uid: OrpheusCore.Configuration.Models.DIBinderOptions
+  name: DIBinderOptions
+  href: api/OrpheusCore.Configuration.Models.DIBinderOptions.html
+  commentId: T:OrpheusCore.Configuration.Models.DIBinderOptions
+  fullName: OrpheusCore.Configuration.Models.DIBinderOptions
+  nameWithType: DIBinderOptions
+- uid: OrpheusCore.Configuration.Models.DIBinderOptions.ServiceProvider
+  name: ServiceProvider
+  href: api/OrpheusCore.Configuration.Models.DIBinderOptions.html#OrpheusCore_Configuration_Models_DIBinderOptions_ServiceProvider
+  commentId: P:OrpheusCore.Configuration.Models.DIBinderOptions.ServiceProvider
+  fullName: OrpheusCore.Configuration.Models.DIBinderOptions.ServiceProvider
+  nameWithType: DIBinderOptions.ServiceProvider
+- uid: OrpheusCore.Configuration.Models.DIBinderOptions.ServiceProvider*
+  name: ServiceProvider
+  href: api/OrpheusCore.Configuration.Models.DIBinderOptions.html#OrpheusCore_Configuration_Models_DIBinderOptions_ServiceProvider_
+  commentId: Overload:OrpheusCore.Configuration.Models.DIBinderOptions.ServiceProvider
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.LoggingConfiguration
-  nameWithType: LoggingConfiguration.LoggingConfiguration
-- uid: OrpheusCore.Configuration.LoggingConfiguration.FileExtension
-  name: FileExtension
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FileExtension
-  commentId: P:OrpheusCore.Configuration.LoggingConfiguration.FileExtension
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.FileExtension
-  nameWithType: LoggingConfiguration.FileExtension
-- uid: OrpheusCore.Configuration.LoggingConfiguration.FileExtension*
-  name: FileExtension
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FileExtension_
-  commentId: Overload:OrpheusCore.Configuration.LoggingConfiguration.FileExtension
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.FileExtension
-  nameWithType: LoggingConfiguration.FileExtension
-- uid: OrpheusCore.Configuration.LoggingConfiguration.FileName
-  name: FileName
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FileName
-  commentId: P:OrpheusCore.Configuration.LoggingConfiguration.FileName
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.FileName
-  nameWithType: LoggingConfiguration.FileName
-- uid: OrpheusCore.Configuration.LoggingConfiguration.FileName*
-  name: FileName
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FileName_
-  commentId: Overload:OrpheusCore.Configuration.LoggingConfiguration.FileName
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.FileName
-  nameWithType: LoggingConfiguration.FileName
-- uid: OrpheusCore.Configuration.LoggingConfiguration.FilePath
-  name: FilePath
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FilePath
-  commentId: P:OrpheusCore.Configuration.LoggingConfiguration.FilePath
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.FilePath
-  nameWithType: LoggingConfiguration.FilePath
-- uid: OrpheusCore.Configuration.LoggingConfiguration.FilePath*
-  name: FilePath
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_FilePath_
-  commentId: Overload:OrpheusCore.Configuration.LoggingConfiguration.FilePath
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.FilePath
-  nameWithType: LoggingConfiguration.FilePath
-- uid: OrpheusCore.Configuration.LoggingConfiguration.Level
-  name: Level
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_Level
-  commentId: P:OrpheusCore.Configuration.LoggingConfiguration.Level
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.Level
-  nameWithType: LoggingConfiguration.Level
-- uid: OrpheusCore.Configuration.LoggingConfiguration.Level*
-  name: Level
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_Level_
-  commentId: Overload:OrpheusCore.Configuration.LoggingConfiguration.Level
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.Level
-  nameWithType: LoggingConfiguration.Level
-- uid: OrpheusCore.Configuration.LoggingConfiguration.MaxFileSize
-  name: MaxFileSize
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_MaxFileSize
-  commentId: P:OrpheusCore.Configuration.LoggingConfiguration.MaxFileSize
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.MaxFileSize
-  nameWithType: LoggingConfiguration.MaxFileSize
-- uid: OrpheusCore.Configuration.LoggingConfiguration.MaxFileSize*
-  name: MaxFileSize
-  href: api/OrpheusCore.Configuration.LoggingConfiguration.html#OrpheusCore_Configuration_LoggingConfiguration_MaxFileSize_
-  commentId: Overload:OrpheusCore.Configuration.LoggingConfiguration.MaxFileSize
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.LoggingConfiguration.MaxFileSize
-  nameWithType: LoggingConfiguration.MaxFileSize
-- uid: OrpheusCore.Configuration.OrpheusConfiguration
+  fullName: OrpheusCore.Configuration.Models.DIBinderOptions.ServiceProvider
+  nameWithType: DIBinderOptions.ServiceProvider
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration
   name: OrpheusConfiguration
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html
-  commentId: T:OrpheusCore.Configuration.OrpheusConfiguration
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html
+  commentId: T:OrpheusCore.Configuration.Models.OrpheusConfiguration
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration
   nameWithType: OrpheusConfiguration
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.#ctor
-  name: OrpheusConfiguration()
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration__ctor
-  commentId: M:OrpheusCore.Configuration.OrpheusConfiguration.#ctor
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.OrpheusConfiguration()
-  nameWithType: OrpheusConfiguration.OrpheusConfiguration()
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.#ctor*
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.IServiceProvider)
+  name: OrpheusConfiguration(IConfiguration, IServiceProvider)
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration__ctor_Microsoft_Extensions_Configuration_IConfiguration_System_IServiceProvider_
+  commentId: M:OrpheusCore.Configuration.Models.OrpheusConfiguration.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.IServiceProvider)
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.OrpheusConfiguration(Microsoft.Extensions.Configuration.IConfiguration, System.IServiceProvider)
+  nameWithType: OrpheusConfiguration.OrpheusConfiguration(IConfiguration, IServiceProvider)
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.#ctor*
   name: OrpheusConfiguration
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration__ctor_
-  commentId: Overload:OrpheusCore.Configuration.OrpheusConfiguration.#ctor
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration__ctor_
+  commentId: Overload:OrpheusCore.Configuration.Models.OrpheusConfiguration.#ctor
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.OrpheusConfiguration
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.OrpheusConfiguration
   nameWithType: OrpheusConfiguration.OrpheusConfiguration
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnections
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.DatabaseConnections
   name: DatabaseConnections
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_DatabaseConnections
-  commentId: P:OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnections
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnections
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration_DatabaseConnections
+  commentId: P:OrpheusCore.Configuration.Models.OrpheusConfiguration.DatabaseConnections
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.DatabaseConnections
   nameWithType: OrpheusConfiguration.DatabaseConnections
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnections*
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.DatabaseConnections*
   name: DatabaseConnections
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_DatabaseConnections_
-  commentId: Overload:OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnections
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration_DatabaseConnections_
+  commentId: Overload:OrpheusCore.Configuration.Models.OrpheusConfiguration.DatabaseConnections
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.DatabaseConnections
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.DatabaseConnections
   nameWithType: OrpheusConfiguration.DatabaseConnections
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.DefaultStringSize
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.DefaultStringSize
   name: DefaultStringSize
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_DefaultStringSize
-  commentId: P:OrpheusCore.Configuration.OrpheusConfiguration.DefaultStringSize
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.DefaultStringSize
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration_DefaultStringSize
+  commentId: P:OrpheusCore.Configuration.Models.OrpheusConfiguration.DefaultStringSize
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.DefaultStringSize
   nameWithType: OrpheusConfiguration.DefaultStringSize
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.DefaultStringSize*
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.DefaultStringSize*
   name: DefaultStringSize
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_DefaultStringSize_
-  commentId: Overload:OrpheusCore.Configuration.OrpheusConfiguration.DefaultStringSize
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration_DefaultStringSize_
+  commentId: Overload:OrpheusCore.Configuration.Models.OrpheusConfiguration.DefaultStringSize
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.DefaultStringSize
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.DefaultStringSize
   nameWithType: OrpheusConfiguration.DefaultStringSize
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.Logging
-  name: Logging
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_Logging
-  commentId: P:OrpheusCore.Configuration.OrpheusConfiguration.Logging
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.Logging
-  nameWithType: OrpheusConfiguration.Logging
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.Logging*
-  name: Logging
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_Logging_
-  commentId: Overload:OrpheusCore.Configuration.OrpheusConfiguration.Logging
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.Logging
-  nameWithType: OrpheusConfiguration.Logging
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.Services
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
   name: Services
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_Services
-  commentId: P:OrpheusCore.Configuration.OrpheusConfiguration.Services
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.Services
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration_Services
+  commentId: P:OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
   nameWithType: OrpheusConfiguration.Services
-- uid: OrpheusCore.Configuration.OrpheusConfiguration.Services*
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.Services*
   name: Services
-  href: api/OrpheusCore.Configuration.OrpheusConfiguration.html#OrpheusCore_Configuration_OrpheusConfiguration_Services_
-  commentId: Overload:OrpheusCore.Configuration.OrpheusConfiguration.Services
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration_Services_
+  commentId: Overload:OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.OrpheusConfiguration.Services
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
   nameWithType: OrpheusConfiguration.Services
-- uid: OrpheusCore.Configuration.ServiceProviderItem
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem
   name: ServiceProviderItem
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html
-  commentId: T:OrpheusCore.Configuration.ServiceProviderItem
-  fullName: OrpheusCore.Configuration.ServiceProviderItem
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html
+  commentId: T:OrpheusCore.Configuration.Models.ServiceProviderItem
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem
   nameWithType: ServiceProviderItem
-- uid: OrpheusCore.Configuration.ServiceProviderItem.#ctor
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.#ctor
   name: ServiceProviderItem()
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem__ctor
-  commentId: M:OrpheusCore.Configuration.ServiceProviderItem.#ctor
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.ServiceProviderItem()
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem__ctor
+  commentId: M:OrpheusCore.Configuration.Models.ServiceProviderItem.#ctor
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.ServiceProviderItem()
   nameWithType: ServiceProviderItem.ServiceProviderItem()
-- uid: OrpheusCore.Configuration.ServiceProviderItem.#ctor*
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.#ctor*
   name: ServiceProviderItem
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem__ctor_
-  commentId: Overload:OrpheusCore.Configuration.ServiceProviderItem.#ctor
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem__ctor_
+  commentId: Overload:OrpheusCore.Configuration.Models.ServiceProviderItem.#ctor
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.ServiceProviderItem
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.ServiceProviderItem
   nameWithType: ServiceProviderItem.ServiceProviderItem
-- uid: OrpheusCore.Configuration.ServiceProviderItem.ConstructorParameters
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.ConstructorParameters
   name: ConstructorParameters
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem_ConstructorParameters
-  commentId: P:OrpheusCore.Configuration.ServiceProviderItem.ConstructorParameters
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.ConstructorParameters
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem_ConstructorParameters
+  commentId: P:OrpheusCore.Configuration.Models.ServiceProviderItem.ConstructorParameters
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.ConstructorParameters
   nameWithType: ServiceProviderItem.ConstructorParameters
-- uid: OrpheusCore.Configuration.ServiceProviderItem.ConstructorParameters*
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.ConstructorParameters*
   name: ConstructorParameters
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem_ConstructorParameters_
-  commentId: Overload:OrpheusCore.Configuration.ServiceProviderItem.ConstructorParameters
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem_ConstructorParameters_
+  commentId: Overload:OrpheusCore.Configuration.Models.ServiceProviderItem.ConstructorParameters
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.ConstructorParameters
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.ConstructorParameters
   nameWithType: ServiceProviderItem.ConstructorParameters
-- uid: OrpheusCore.Configuration.ServiceProviderItem.Implementation
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.Implementation
   name: Implementation
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem_Implementation
-  commentId: P:OrpheusCore.Configuration.ServiceProviderItem.Implementation
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.Implementation
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem_Implementation
+  commentId: P:OrpheusCore.Configuration.Models.ServiceProviderItem.Implementation
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.Implementation
   nameWithType: ServiceProviderItem.Implementation
-- uid: OrpheusCore.Configuration.ServiceProviderItem.Implementation*
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.Implementation*
   name: Implementation
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem_Implementation_
-  commentId: Overload:OrpheusCore.Configuration.ServiceProviderItem.Implementation
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem_Implementation_
+  commentId: Overload:OrpheusCore.Configuration.Models.ServiceProviderItem.Implementation
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.Implementation
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.Implementation
   nameWithType: ServiceProviderItem.Implementation
-- uid: OrpheusCore.Configuration.ServiceProviderItem.Service
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.Service
   name: Service
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem_Service
-  commentId: P:OrpheusCore.Configuration.ServiceProviderItem.Service
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.Service
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem_Service
+  commentId: P:OrpheusCore.Configuration.Models.ServiceProviderItem.Service
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.Service
   nameWithType: ServiceProviderItem.Service
-- uid: OrpheusCore.Configuration.ServiceProviderItem.Service*
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.Service*
   name: Service
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem_Service_
-  commentId: Overload:OrpheusCore.Configuration.ServiceProviderItem.Service
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem_Service_
+  commentId: Overload:OrpheusCore.Configuration.Models.ServiceProviderItem.Service
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.Service
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.Service
   nameWithType: ServiceProviderItem.Service
-- uid: OrpheusCore.Configuration.ServiceProviderItem.ServiceLifetime
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.ServiceLifetime
   name: ServiceLifetime
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem_ServiceLifetime
-  commentId: P:OrpheusCore.Configuration.ServiceProviderItem.ServiceLifetime
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.ServiceLifetime
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem_ServiceLifetime
+  commentId: P:OrpheusCore.Configuration.Models.ServiceProviderItem.ServiceLifetime
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.ServiceLifetime
   nameWithType: ServiceProviderItem.ServiceLifetime
-- uid: OrpheusCore.Configuration.ServiceProviderItem.ServiceLifetime*
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem.ServiceLifetime*
   name: ServiceLifetime
-  href: api/OrpheusCore.Configuration.ServiceProviderItem.html#OrpheusCore_Configuration_ServiceProviderItem_ServiceLifetime_
-  commentId: Overload:OrpheusCore.Configuration.ServiceProviderItem.ServiceLifetime
+  href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html#OrpheusCore_Configuration_Models_ServiceProviderItem_ServiceLifetime_
+  commentId: Overload:OrpheusCore.Configuration.Models.ServiceProviderItem.ServiceLifetime
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.ServiceProviderItem.ServiceLifetime
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem.ServiceLifetime
   nameWithType: ServiceProviderItem.ServiceLifetime
+- uid: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder
+  name: TardigradeConfigurationBinder
+  href: api/OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.html
+  commentId: T:OrpheusCore.Configuration.Models.TardigradeConfigurationBinder
+  fullName: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder
+  nameWithType: TardigradeConfigurationBinder
+- uid: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.BindDI(Microsoft.Extensions.Configuration.IConfiguration,System.Object,System.Action{OrpheusCore.Configuration.Models.DIBinderOptions})
+  name: BindDI(IConfiguration, Object, Action<DIBinderOptions>)
+  href: api/OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.html#OrpheusCore_Configuration_Models_TardigradeConfigurationBinder_BindDI_Microsoft_Extensions_Configuration_IConfiguration_System_Object_System_Action_OrpheusCore_Configuration_Models_DIBinderOptions__
+  commentId: M:OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.BindDI(Microsoft.Extensions.Configuration.IConfiguration,System.Object,System.Action{OrpheusCore.Configuration.Models.DIBinderOptions})
+  name.vb: BindDI(IConfiguration, Object, Action(Of DIBinderOptions))
+  fullName: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.BindDI(Microsoft.Extensions.Configuration.IConfiguration, System.Object, System.Action<OrpheusCore.Configuration.Models.DIBinderOptions>)
+  fullName.vb: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.BindDI(Microsoft.Extensions.Configuration.IConfiguration, System.Object, System.Action(Of OrpheusCore.Configuration.Models.DIBinderOptions))
+  nameWithType: TardigradeConfigurationBinder.BindDI(IConfiguration, Object, Action<DIBinderOptions>)
+  nameWithType.vb: TardigradeConfigurationBinder.BindDI(IConfiguration, Object, Action(Of DIBinderOptions))
+- uid: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.BindDI*
+  name: BindDI
+  href: api/OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.html#OrpheusCore_Configuration_Models_TardigradeConfigurationBinder_BindDI_
+  commentId: Overload:OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.BindDI
+  isSpec: "True"
+  fullName: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.BindDI
+  nameWithType: TardigradeConfigurationBinder.BindDI
 - uid: OrpheusCore.ModelProperty
   name: ModelProperty
   href: api/OrpheusCore.ModelProperty.html
@@ -943,12 +918,12 @@ references:
   commentId: T:OrpheusCore.OrpheusDatabase
   fullName: OrpheusCore.OrpheusDatabase
   nameWithType: OrpheusDatabase
-- uid: OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.Core.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILogger)
-  name: OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase__ctor_System_Data_IDbConnection_OrpheusInterfaces_Core_IOrpheusDDLHelper_Microsoft_Extensions_Logging_ILogger_
-  commentId: M:OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.Core.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILogger)
-  fullName: OrpheusCore.OrpheusDatabase.OrpheusDatabase(System.Data.IDbConnection, OrpheusInterfaces.Core.IOrpheusDDLHelper, Microsoft.Extensions.Logging.ILogger)
-  nameWithType: OrpheusDatabase.OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger)
+- uid: OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.Core.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILoggerFactory)
+  name: OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILoggerFactory)
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase__ctor_System_Data_IDbConnection_OrpheusInterfaces_Core_IOrpheusDDLHelper_Microsoft_Extensions_Logging_ILoggerFactory_
+  commentId: M:OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.Core.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILoggerFactory)
+  fullName: OrpheusCore.OrpheusDatabase.OrpheusDatabase(System.Data.IDbConnection, OrpheusInterfaces.Core.IOrpheusDDLHelper, Microsoft.Extensions.Logging.ILoggerFactory)
+  nameWithType: OrpheusDatabase.OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILoggerFactory)
 - uid: OrpheusCore.OrpheusDatabase.#ctor*
   name: OrpheusDatabase
   href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase__ctor_
@@ -1303,6 +1278,19 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.OrpheusDatabase.Logger
   nameWithType: OrpheusDatabase.Logger
+- uid: OrpheusCore.OrpheusDatabase.LoggerFactory
+  name: LoggerFactory
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_LoggerFactory
+  commentId: P:OrpheusCore.OrpheusDatabase.LoggerFactory
+  fullName: OrpheusCore.OrpheusDatabase.LoggerFactory
+  nameWithType: OrpheusDatabase.LoggerFactory
+- uid: OrpheusCore.OrpheusDatabase.LoggerFactory*
+  name: LoggerFactory
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_LoggerFactory_
+  commentId: Overload:OrpheusCore.OrpheusDatabase.LoggerFactory
+  isSpec: "True"
+  fullName: OrpheusCore.OrpheusDatabase.LoggerFactory
+  nameWithType: OrpheusDatabase.LoggerFactory
 - uid: OrpheusCore.OrpheusDatabase.Modules
   name: Modules
   href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_Modules
@@ -4410,82 +4398,6 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint.SQL
   nameWithType: UniqueKeySchemaConstraint.SQL
-- uid: OrpheusCore.ServiceProvider
-  name: OrpheusCore.ServiceProvider
-  href: api/OrpheusCore.ServiceProvider.html
-  commentId: N:OrpheusCore.ServiceProvider
-  fullName: OrpheusCore.ServiceProvider
-  nameWithType: OrpheusCore.ServiceProvider
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider
-  name: OrpheusServiceProvider
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html
-  commentId: T:OrpheusCore.ServiceProvider.OrpheusServiceProvider
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider
-  nameWithType: OrpheusServiceProvider
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  name: InitializeServiceCollection(IServiceCollection)
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceCollection_Microsoft_Extensions_DependencyInjection_IServiceCollection_
-  commentId: M:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  nameWithType: OrpheusServiceProvider.InitializeServiceCollection(IServiceCollection)
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection*
-  name: InitializeServiceCollection
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceCollection_
-  commentId: Overload:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection
-  isSpec: "True"
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceCollection
-  nameWithType: OrpheusServiceProvider.InitializeServiceCollection
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  name: InitializeServiceProvider(IServiceCollection)
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceProvider_Microsoft_Extensions_DependencyInjection_IServiceCollection_
-  commentId: M:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  nameWithType: OrpheusServiceProvider.InitializeServiceProvider(IServiceCollection)
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider*
-  name: InitializeServiceProvider
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_InitializeServiceProvider_
-  commentId: Overload:OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider
-  isSpec: "True"
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.InitializeServiceProvider
-  nameWithType: OrpheusServiceProvider.InitializeServiceProvider
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Provider
-  name: Provider
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_Provider
-  commentId: P:OrpheusCore.ServiceProvider.OrpheusServiceProvider.Provider
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Provider
-  nameWithType: OrpheusServiceProvider.Provider
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Provider*
-  name: Provider
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_Provider_
-  commentId: Overload:OrpheusCore.ServiceProvider.OrpheusServiceProvider.Provider
-  isSpec: "True"
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Provider
-  nameWithType: OrpheusServiceProvider.Provider
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve*
-  name: Resolve
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_Resolve_
-  commentId: Overload:OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve
-  isSpec: "True"
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve
-  nameWithType: OrpheusServiceProvider.Resolve
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve``1
-  name: Resolve<T>()
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_Resolve__1
-  commentId: M:OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve``1
-  name.vb: Resolve(Of T)()
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<T>()
-  fullName.vb: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve(Of T)()
-  nameWithType: OrpheusServiceProvider.Resolve<T>()
-  nameWithType.vb: OrpheusServiceProvider.Resolve(Of T)()
-- uid: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve``1(System.Object[])
-  name: Resolve<T>(Object[])
-  href: api/OrpheusCore.ServiceProvider.OrpheusServiceProvider.html#OrpheusCore_ServiceProvider_OrpheusServiceProvider_Resolve__1_System_Object___
-  commentId: M:OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve``1(System.Object[])
-  name.vb: Resolve(Of T)(Object())
-  fullName: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<T>(System.Object[])
-  fullName.vb: OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve(Of T)(System.Object())
-  nameWithType: OrpheusServiceProvider.Resolve<T>(Object[])
-  nameWithType.vb: OrpheusServiceProvider.Resolve(Of T)(Object())
 - uid: OrpheusInterfaces.Configuration
   name: OrpheusInterfaces.Configuration
   href: api/OrpheusInterfaces.Configuration.html
@@ -5078,19 +4990,6 @@ references:
   isSpec: "True"
   fullName: OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction
   nameWithType: IOrpheusDatabase.LastActiveTransaction
-- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Logger
-  name: Logger
-  href: api/OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Logger
-  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.Logger
-  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Logger
-  nameWithType: IOrpheusDatabase.Logger
-- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Logger*
-  name: Logger
-  href: api/OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Logger_
-  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.Logger
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Logger
-  nameWithType: IOrpheusDatabase.Logger
 - uid: OrpheusInterfaces.Core.IOrpheusDatabase.Modules
   name: Modules
   href: api/OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Modules
@@ -7080,173 +6979,6 @@ references:
   commentId: T:OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
   fullName: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
   nameWithType: IUniqueKey
-- uid: OrpheusInterfaces.Logging
-  name: OrpheusInterfaces.Logging
-  href: api/OrpheusInterfaces.Logging.html
-  commentId: N:OrpheusInterfaces.Logging
-  fullName: OrpheusInterfaces.Logging
-  nameWithType: OrpheusInterfaces.Logging
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration
-  name: IFileLoggingConfiguration
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html
-  commentId: T:OrpheusInterfaces.Logging.IFileLoggingConfiguration
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration
-  nameWithType: IFileLoggingConfiguration
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
-  name: FileExtension
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FileExtension
-  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
-  nameWithType: IFileLoggingConfiguration.FileExtension
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension*
-  name: FileExtension
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FileExtension_
-  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileExtension
-  nameWithType: IFileLoggingConfiguration.FileExtension
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
-  name: FileName
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FileName
-  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
-  nameWithType: IFileLoggingConfiguration.FileName
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName*
-  name: FileName
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FileName_
-  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FileName
-  nameWithType: IFileLoggingConfiguration.FileName
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
-  name: FilePath
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FilePath
-  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
-  nameWithType: IFileLoggingConfiguration.FilePath
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath*
-  name: FilePath
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_FilePath_
-  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.FilePath
-  nameWithType: IFileLoggingConfiguration.FilePath
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
-  name: Level
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_Level
-  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
-  nameWithType: IFileLoggingConfiguration.Level
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level*
-  name: Level
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_Level_
-  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.Level
-  nameWithType: IFileLoggingConfiguration.Level
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
-  name: MaxFileSize
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_MaxFileSize
-  commentId: P:OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
-  nameWithType: IFileLoggingConfiguration.MaxFileSize
-- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize*
-  name: MaxFileSize
-  href: api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html#OrpheusInterfaces_Logging_IFileLoggingConfiguration_MaxFileSize_
-  commentId: Overload:OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration.MaxFileSize
-  nameWithType: IFileLoggingConfiguration.MaxFileSize
-- uid: OrpheusInterfaces.Logging.ILogEntry
-  name: ILogEntry
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html
-  commentId: T:OrpheusInterfaces.Logging.ILogEntry
-  fullName: OrpheusInterfaces.Logging.ILogEntry
-  nameWithType: ILogEntry
-- uid: OrpheusInterfaces.Logging.ILogEntry.Message
-  name: Message
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_Message
-  commentId: P:OrpheusInterfaces.Logging.ILogEntry.Message
-  fullName: OrpheusInterfaces.Logging.ILogEntry.Message
-  nameWithType: ILogEntry.Message
-- uid: OrpheusInterfaces.Logging.ILogEntry.Message*
-  name: Message
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_Message_
-  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.Message
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.ILogEntry.Message
-  nameWithType: ILogEntry.Message
-- uid: OrpheusInterfaces.Logging.ILogEntry.StackTrace
-  name: StackTrace
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_StackTrace
-  commentId: P:OrpheusInterfaces.Logging.ILogEntry.StackTrace
-  fullName: OrpheusInterfaces.Logging.ILogEntry.StackTrace
-  nameWithType: ILogEntry.StackTrace
-- uid: OrpheusInterfaces.Logging.ILogEntry.StackTrace*
-  name: StackTrace
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_StackTrace_
-  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.StackTrace
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.ILogEntry.StackTrace
-  nameWithType: ILogEntry.StackTrace
-- uid: OrpheusInterfaces.Logging.ILogEntry.TimeStamp
-  name: TimeStamp
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_TimeStamp
-  commentId: P:OrpheusInterfaces.Logging.ILogEntry.TimeStamp
-  fullName: OrpheusInterfaces.Logging.ILogEntry.TimeStamp
-  nameWithType: ILogEntry.TimeStamp
-- uid: OrpheusInterfaces.Logging.ILogEntry.TimeStamp*
-  name: TimeStamp
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_TimeStamp_
-  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.TimeStamp
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.ILogEntry.TimeStamp
-  nameWithType: ILogEntry.TimeStamp
-- uid: OrpheusInterfaces.Logging.ILogEntry.Type
-  name: Type
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_Type
-  commentId: P:OrpheusInterfaces.Logging.ILogEntry.Type
-  fullName: OrpheusInterfaces.Logging.ILogEntry.Type
-  nameWithType: ILogEntry.Type
-- uid: OrpheusInterfaces.Logging.ILogEntry.Type*
-  name: Type
-  href: api/OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_Type_
-  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.Type
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.ILogEntry.Type
-  nameWithType: ILogEntry.Type
-- uid: OrpheusInterfaces.Logging.IOrpheusLogger
-  name: IOrpheusLogger
-  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html
-  commentId: T:OrpheusInterfaces.Logging.IOrpheusLogger
-  fullName: OrpheusInterfaces.Logging.IOrpheusLogger
-  nameWithType: IOrpheusLogger
-- uid: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
-  name: Configuration
-  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_Configuration
-  commentId: P:OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
-  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
-  nameWithType: IOrpheusLogger.Configuration
-- uid: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration*
-  name: Configuration
-  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_Configuration_
-  commentId: Overload:OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
-  nameWithType: IOrpheusLogger.Configuration
-- uid: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
-  name: CurrentFileName
-  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_CurrentFileName
-  commentId: P:OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
-  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
-  nameWithType: IOrpheusLogger.CurrentFileName
-- uid: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName*
-  name: CurrentFileName
-  href: api/OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_CurrentFileName_
-  commentId: Overload:OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
-  isSpec: "True"
-  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
-  nameWithType: IOrpheusLogger.CurrentFileName
 - uid: OrpheusInterfaces.Schema
   name: OrpheusInterfaces.Schema
   href: api/OrpheusInterfaces.Schema.html

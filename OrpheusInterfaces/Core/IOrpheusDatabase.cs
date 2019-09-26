@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using OrpheusInterfaces.Configuration;
+﻿using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
@@ -231,10 +230,5 @@ namespace OrpheusInterfaces.Core
         /// Database connection configuration.
         /// </value>
         IDatabaseConnectionConfiguration DatabaseConnectionConfiguration { get; set; }
-
-        /// <value>
-        /// Logger instance.
-        /// </value>
-        ILogger Logger { get; }
     }
 }

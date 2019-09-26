@@ -28,7 +28,7 @@ One easy way to configure Orpheus is by using a configuration file. The configur
 
     Alternatively you can define a file name. This will implicitly set Orpheus to self-service mode.
     ```csharp
-    OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration("MyPath\Orpheus.config");
+    OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration("MyPath\appSettings.json");
     ```
     **Note:** You don't have to have a separate file for Orpheus's configuration. Its configuration can live inside your existing configuration file.
 
@@ -50,11 +50,6 @@ One easy way to configure Orpheus is by using a configuration file. The configur
           "Implementation": "OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
           "Service": "OrpheusInterfaces.Core.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
           "ServiceLifeTime": "Transient"
-        },
-        {
-          "Implementation": "OrpheusLogger.OrpheusFileLogger, OrpheusLogger, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-          "Service": "Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60",
-          "ServiceLifeTime": "Singleton"
         }
       ],
       "DatabaseConnection": 
@@ -64,10 +59,5 @@ One easy way to configure Orpheus is by using a configuration file. The configur
           "DatabaseName": "[YourDatabase]",
           "UseIntegratedSecurity": true
         }
-      ,
-      "Logging": {
-        "Level": "Debug",
-        "MaxFileSize": 1
-      }
     }
     ```

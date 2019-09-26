@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusAttributes;
-using OrpheusCore.ServiceProvider;
+using OrpheusCore.Configuration;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Interfaces.Attributes;
 using OrpheusInterfaces.Schema;
@@ -507,7 +507,7 @@ namespace OrpheusCore
         /// <param name="modelType">Type of the model.</param>
         public OrpheusModelHelper(Type modelType)
         {
-            this.logger = OrpheusServiceProvider.Resolve<ILogger>();
+            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusModelHelper>();
             this.modelType = modelType;
             this.SQLName = this.modelType.Name;
             this.PrimaryKeys = new Dictionary<string,IPrimaryKey>();

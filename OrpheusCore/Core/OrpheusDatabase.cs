@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using OrpheusCore.ServiceProvider;
+using OrpheusCore.Configuration;
 using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
@@ -20,6 +20,7 @@ namespace OrpheusCore
         private IDbConnection dbConnection;
         private List<IOrpheusModule> modules;
         private ILogger logger;
+        private ILoggerFactory loggerFactory;
         private Dictionary<Type, System.Data.DbType> typeMap = new Dictionary<Type, DbType>();
         private List<Type> nullableTypes = new List<Type>();
         private IOrpheusDDLHelper ddlHelper;
@@ -201,7 +202,13 @@ namespace OrpheusCore
         /// Logger instance.
         /// </value>
         public ILogger Logger => this.logger;
-
+        /// <summary>
+        /// Gets the logger factory.
+        /// </summary>
+        /// <value>
+        /// The logger factory.
+        /// </value>
+        public ILoggerFactory LoggerFactory => this.loggerFactory;
         #endregion
 
         #region constructors        
@@ -210,14 +217,15 @@ namespace OrpheusCore
         /// </summary>
         /// <param name="connection">The connection.</param>
         /// <param name="ddlHelper">The DDL helper.</param>
-        /// <param name="logger">The logger.</param>
-        public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILogger logger)
+        /// <param name="loggerFactory">The logger.</param>
+        public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILoggerFactory loggerFactory)
         {
             this.dbConnection = connection;
             this.ddlHelper = ddlHelper;
             this.ddlHelper.DB = this;
             this.modules = new List<IOrpheusModule>();
-            this.logger = logger;
+            this.loggerFactory = loggerFactory;
+            this.logger = loggerFactory.CreateLogger<OrpheusDatabase>();
             this.initializeTypeMap();
         }
         #endregion
@@ -233,7 +241,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusModule CreateModule(IOrpheusModuleDefinition definition = null)
         {
-            return ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusModule>(new object[] { this, definition }); // new OrpheusModule(this, definition);
+            return ConfigurationManager.Resolve<IOrpheusModule>(new object[] { this, definition }); // new OrpheusModule(this, definition);
         }
 
         /// <summary>
@@ -244,7 +252,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusTableOptions CreateTableOptions()
         {
-            return ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusTableOptions>();
+            return ConfigurationManager.Resolve<IOrpheusTableOptions>();
         }
 
         /// <summary>
@@ -255,7 +263,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusTableKeyField CreateTableKeyField()
         {
-            return ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusTableKeyField>();
+            return ConfigurationManager.Resolve<IOrpheusTableKeyField>();
         }
 
         /// <summary>
@@ -266,7 +274,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusModuleDefinition CreateModuleDefinition()
         {
-            var result = ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusModuleDefinition>();
+            var result = ConfigurationManager.Resolve<IOrpheusModuleDefinition>();
             result.Database = this;
             return result;
         }
@@ -336,7 +344,7 @@ namespace OrpheusCore
             if (id == Guid.Empty)
                 id = Guid.NewGuid();
             //return new SchemaBuilder.Schema(this,description, version, id, name);
-            return OrpheusServiceProvider.Resolve<ISchema>(new object[] { this, description, version, id, name });
+            return ConfigurationManager.Resolve<ISchema>(new object[] { this, description, version, id, name });
         }
 
         /// <summary>

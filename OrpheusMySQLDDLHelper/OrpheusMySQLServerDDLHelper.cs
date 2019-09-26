@@ -561,7 +561,7 @@ namespace OrpheusMySQLDDLHelper
             this.SupportsGuidType = false;
             this.SupportsSchemaNameSpace = false;
             this.DbEngineType = DatabaseEngineType.dbMySQL;
-            this.SSLMode = MySqlSslMode.None.ToString();
+            this.SSLMode = MySqlSslMode.Required.ToString();
         }
     }
 }

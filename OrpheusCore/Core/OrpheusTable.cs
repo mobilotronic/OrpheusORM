@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using OrpheusCore.Configuration;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Interfaces.Attributes;
 using System;
@@ -1014,7 +1015,7 @@ namespace OrpheusCore
         /// <param name="masterTableKeyFields" cref="List{IOrpheusTableKeyField}">Master table key fields (optional)</param>
         public OrpheusTable(IOrpheusDatabase database,List<IOrpheusTableKeyField> keyFields, string tableName = null, IOrpheusTable masterTable = null, List<IOrpheusTableKeyField> masterTableKeyFields=null)
         {
-            this.logger = ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusTable<T>>();
             this.database = database;
             this.Name = tableName;
             this.KeyFields = keyFields;

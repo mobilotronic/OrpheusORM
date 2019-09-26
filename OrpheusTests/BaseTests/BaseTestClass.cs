@@ -1,9 +1,19 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MySql.Data.MySqlClient;
+using NLog;
+using NLog.Extensions.Logging;
+using OrpheusCore;
+using OrpheusCore.Configuration;
 using OrpheusInterfaces.Core;
+using OrpheusMySQLDDLHelper;
+using OrpheusSQLDDLHelper;
 using OrpheusTestModels;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -29,7 +39,7 @@ namespace OrpheusTests
     public class BaseTestClass
     {
         #region private declarations
-        private ILogger logger;
+        private Microsoft.Extensions.Logging.ILogger logger;
         private string schemaId = "6E8653BE-CB9C-4855-8909-2846AFBB72E1";
         private IConfiguration configuration;
         private IOrpheusDatabase db;
@@ -46,55 +56,19 @@ namespace OrpheusTests
                 return Path.GetDirectoryName(path);
             }
         }
-        ////taken from https://docs.microsoft.com/en-us/aspnet/core/fundamentals/primitives/change-tokens
-        //private byte[] computeHash(string filePath)
-        //{
-        //    var runCount = 1;
 
-        //    while (runCount < 4)
-        //    {
-        //        try
-        //        {
-        //            if (File.Exists(filePath))
-        //            {
-        //                using (var fs = File.OpenRead(filePath))
-        //                {
-        //                    return System.Security.Cryptography.SHA1.Create().ComputeHash(fs);
-        //                }
-        //            }
-        //        }
-        //        catch (IOException ex)
-        //        {
-        //            if (runCount == 3 || ex.HResult != -2147024864)
-        //            {
-        //                throw;
-        //            }
-        //            else
-        //            {
-        //                Thread.Sleep(TimeSpan.FromSeconds(Math.Pow(2, runCount)));
-        //                runCount++;
-        //            }
-        //        }
-        //    }
-
-        //    return new byte[20];
-        //}
-
-        //// monitoring configuration file for changes.
-        //// the logger is registered as a Singleton, therefore it loads configuration only once during initialization.
-        //// if we want to make the logger react to changes made to the logging configuration, we have to manually monitor the file.
-        //// there is always the option to make the logger a transient, and through IOptionsSnapShot, always load the latest configuration
-        //// i am not sure how performant that would be in this case.
-        //private void configurationChanged()
-        //{
-        //    byte[] newAppsettingsHash = this.computeHash(this.fileName);
-        //    if (!this.currentAppsettingsHash.SequenceEqual(newAppsettingsHash))
-        //    {
-        //        this.currentAppsettingsHash = newAppsettingsHash;
-        //        var logger = (IOrpheusFileLogger)OrpheusServiceProvider.Resolve<ILogger>();
-        //        logger.LoggingConfiguration = this.configuration.Get<OrpheusConfiguration>().Logging;
-        //    }
-        //}
+        private IConfiguration createConfiguration(string configurationFile)
+        {
+            if (this.configuration == null)
+            {
+                this.fileName = configurationFile;
+                var configurationBuilder = new ConfigurationBuilder();
+                configurationBuilder.SetBasePath(Path.GetDirectoryName(configurationFile));
+                configurationBuilder.AddJsonFile(configurationFile, optional: false, reloadOnChange: true);
+                this.configuration = configurationBuilder.Build();
+            }
+            return this.configuration;
+        }
 
         #endregion
 
@@ -103,6 +77,7 @@ namespace OrpheusTests
         public const string MySQLServerTests = "MySQLServerTests";
         public const string LoggerTests = "LoggerTests";
         public const string ConfigurationTests = "ConfigurationTests";
+        public const string ConfigurationFileName = "OrpheusConfig.json";
 
         /// <summary>
         /// Initializes Orpheus configuration (Unity) and creates and connects the Database object.
@@ -123,17 +98,52 @@ namespace OrpheusTests
             return new TestSchema(this.Database,"Test Schema", 1.1, Guid.Parse(this.schemaId), name);
         }
 
-        public IConfiguration CreateConfiguration(string configurationFile)
+
+
+        public void InitializeConfiguration(string configurationFileName = null)
         {
-                if (this.configuration == null)
+            //we only need to initialize once.
+            if (this.configuration == null)
+            {
+                LogManager.LoadConfiguration(this.assemblyDirectory + @"\" + "nlog.config");
+                var logger = LogManager.GetCurrentClassLogger();
+                try
                 {
-                    this.fileName = configurationFile;
-                    var configurationBuilder = new ConfigurationBuilder();
-                    configurationBuilder.SetBasePath(Path.GetDirectoryName(configurationFile));
-                    configurationBuilder.AddJsonFile(configurationFile, optional: false, reloadOnChange: true);
-                    this.configuration = configurationBuilder.Build();
+                    if (configurationFileName == null)
+                        configurationFileName = $"{this.assemblyDirectory}\\{ConfigurationFileName}";
+                    IServiceCollection serviceCollection = new ServiceCollection();
+                    this.configuration = this.createConfiguration($"{this.assemblyDirectory}\\{ConfigurationFileName}");
+                    serviceCollection.AddTransient<IOrpheusDatabase, OrpheusDatabase>();
+                    switch (this.DatabaseEngine)
+                    {
+                        case DbEngine.dbSQLServer:
+                            {
+                                serviceCollection.AddTransient<IDbConnection, SqlConnection>();
+                                serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusSQLServerDDLHelper>();
+                                break;
+                            }
+                        case DbEngine.dbMySQL:
+                            {
+                                serviceCollection.AddTransient<IDbConnection, MySqlConnection>();
+                                serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusMySQLServerDDLHelper>();
+                                break;
+                            }
+                    }
+                    serviceCollection.AddLogging((builder) =>
+                    {
+                        builder.ClearProviders();
+                        //setting the MEL minimum level to trace, will essentially cancel whatever logging settings might present in the appsettings.json file
+                        //the logging level would be controlled solely from the NLog configuration file.
+                        builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+                        builder.AddNLog(configuration);
+                    });
+                    ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
+                }
+                catch (Exception e)
+                {
+                    logger.Log(NLog.LogLevel.Error, e);
+                }
             }
-            return this.configuration;
         }
 
         public IConfiguration Configuration => this.configuration;
@@ -146,33 +156,16 @@ namespace OrpheusTests
             {
                 if (this.db == null)
                 {
-                    switch (this.DatabaseEngine)
-                    {
-                        case DbEngine.dbSQLServer:
-                            {
-                                OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(
-                                    this.CreateConfiguration(this.assemblyDirectory + @"\" + "OrpheusSQLServerConfig.json")
-                                    );
-                                this.db = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusDatabase>();
-                                this.db.DatabaseConnectionConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == "default").Clone();
-                                break;
-                            }
-                        case DbEngine.dbMySQL:
-                            {
-                                OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(
-                                    this.CreateConfiguration(this.assemblyDirectory + @"\" + "OrpheusMySQLServerConfig.json")
-                                    );
-                                this.db = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<IOrpheusDatabase>();
-                                this.db.DatabaseConnectionConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == "default");
-                                break;
-                            }
-                    }
+                    this.InitializeConfiguration();
+                    string databaseConnectionName = this.DatabaseEngine == DbEngine.dbSQLServer ? "SQLServer" : "MySQL";
+                    this.db = ConfigurationManager.Resolve<IOrpheusDatabase>();
+                    this.db.DatabaseConnectionConfiguration = ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == databaseConnectionName.ToLower()).Clone();
                 }
                 return this.db;
             }
         }
 
-        public string CurrentDirectory { get { return this.assemblyDirectory; } }
+        public string CurrentDirectory => this.assemblyDirectory;
 
         #endregion
 
@@ -186,13 +179,13 @@ namespace OrpheusTests
         #endregion
 
         #region logging 
-        public ILogger Logger
+        public Microsoft.Extensions.Logging.ILogger Logger
         {
             get
             {
                 if (this.logger == null)
                 {
-                    this.logger = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+                    this.logger = ConfigurationManager.LoggerFactory.CreateLogger<BaseTestClass>();
                 }
                 return this.logger;
             }

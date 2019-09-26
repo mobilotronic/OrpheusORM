@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusAttributes;
+using OrpheusCore.Configuration;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
@@ -177,7 +178,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public Schema()
         {
-            this.logger = ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<Schema>();
         }
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace OrpheusCore.SchemaBuilder
             this.Description = description;
             this.Version = version;
             this.id = id;
-            this.logger = ServiceProvider.OrpheusServiceProvider.Resolve<ILogger>();
+            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<Schema>();
             this.SchemaObjects = new List<ISchemaObject>();
             this.ReferencedSchemas = new List<ISchema>();
         }
@@ -313,7 +314,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaView CreateSchemaView()
         {
-            var result = ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaView>();
+            var result = ConfigurationManager.Resolve<ISchemaView>();
             result.Schema = this;
             return result;
         }
@@ -324,7 +325,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaViewTable CreateSchemaViewTable()
         {
-            var result = ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaViewTable>();
+            var result = ConfigurationManager.Resolve<ISchemaViewTable>();
             result.Schema = this;
             return result;
         }
@@ -335,7 +336,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaTable CreateSchemaTable()
         {
-            var result = ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaTable>();
+            var result = ConfigurationManager.Resolve<ISchemaTable>();
             result.Schema = this;
             return result;
         }
@@ -346,7 +347,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaObject CreateSchemaObject()
         {
-            var result = ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaObject>();
+            var result = ConfigurationManager.Resolve<ISchemaObject>();
             result.Schema = this;
             return result;
         }
@@ -357,7 +358,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaJoinDefinition CreateSchemaJoinDefinition()
         {
-            return ServiceProvider.OrpheusServiceProvider.Resolve<ISchemaJoinDefinition>();
+            return ConfigurationManager.Resolve<ISchemaJoinDefinition>();
         }
 
         /// <summary>
