@@ -31,7 +31,6 @@ namespace OrpheusTests.SQLServerTests
             this.CreateDynamicSchema();
         }
 
-        [TestMethod]
         public void SQLServerEnableContainedDatabase()
         {
             this.DropCreateSchema();
