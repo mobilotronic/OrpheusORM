@@ -12,9 +12,6 @@ xcopy ..\OrpheusCore\bin\release\netcoreapp2.2\OrpheusCore.xml 2.0.0\lib\netcore
 xcopy ..\OrpheusInterfaces\bin\release\netcoreapp2.2\OrpheusInterfaces.dll 2.0.0\lib\netcoreapp2.2 /Y /Q
 xcopy ..\OrpheusInterfaces\bin\release\netcoreapp2.2\OrpheusInterfaces.xml 2.0.0\lib\netcoreapp2.2 /Y /Q
 
-xcopy ..\OrpheusLogger\bin\release\netcoreapp2.2\OrpheusLogger.dll 2.0.0\lib\netcoreapp2.2 /Y /Q
-xcopy ..\OrpheusLogger\bin\release\netcoreapp2.2\OrpheusLogger.xml 2.0.0\lib\netcoreapp2.2 /Y /Q
-
 xcopy ..\OrpheusMySQLDDLHelper\bin\release\netcoreapp2.2\OrpheusMySQLDDLHelper.dll 2.0.0\lib\netcoreapp2.2 /Y /Q
 xcopy ..\OrpheusMySQLDDLHelper\bin\release\netcoreapp2.2\OrpheusMySQLDDLHelper.xml 2.0.0\lib\netcoreapp2.2 /Y /Q
 
@@ -23,8 +20,9 @@ xcopy ..\OrpheusSQLServerDDLHelper\bin\release\netcoreapp2.2\OrpheusSQLServerDDL
 
 @echo assemblies copied.
 del *.nupkg /F
-nuget.exe pack OrpheusORM.nuspec
 nuget.exe pack OrpheusORMInterfaces.nuspec
+nuget.exe pack OrpheusORMAttributes.nuspec
+nuget.exe pack OrpheusORM.nuspec
 nuget.exe pack OrpheusORMMySQLServerHelper.nuspec
 nuget.exe pack OrpheusORMSQLServerHelper.nuspec
 @echo new nupkg file created.

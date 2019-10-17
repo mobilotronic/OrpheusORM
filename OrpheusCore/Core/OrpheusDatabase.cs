@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusCore.Configuration;
+using OrpheusCore.Errors;
 using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
@@ -424,7 +425,7 @@ namespace OrpheusCore
                     }
                     catch(Exception e)
                     {
-                        this.logger.LogError(e, "Error creating database");
+                        this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB,e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB));
                         throw e;
                     }
                     if (!String.IsNullOrEmpty(connectionString))
@@ -435,7 +436,7 @@ namespace OrpheusCore
                 }
                 catch (Exception e)
                 {
-                    this.logger.LogError(e.Message);
+                    this.logger.LogError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB,e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB));
                     throw e;
                 }
             }
@@ -576,8 +577,7 @@ namespace OrpheusCore
             }
             catch(Exception e)
             {
-                this.logger.LogError(e.Message);
-                this.logger.LogError("DDL Command [{0}] failed",DDLCommand);
+                this.logger.LogError(ErrorCodes.ERR_CANNOT_RUN_DDL,e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)} | {DDLCommand}");
             }
             finally
             {

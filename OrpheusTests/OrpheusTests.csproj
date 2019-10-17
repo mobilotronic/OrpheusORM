@@ -47,7 +47,10 @@
 
   <ItemGroup>
     <None Update="nlog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="NLog.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="OrpheusMySQL.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

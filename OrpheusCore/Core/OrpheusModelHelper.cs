@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusAttributes;
 using OrpheusCore.Configuration;
+using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Interfaces.Attributes;
 using OrpheusInterfaces.Schema;
@@ -485,7 +486,7 @@ namespace OrpheusCore
             }
             catch (Exception e)
             {
-                this.logger.LogError(e.Message);
+                this.logger.LogError(ErrorCodes.ERR_CANNOT_RUN_DDL,e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)}");
                 throw e;
             }
             finally

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusAttributes;
 using OrpheusCore.Configuration;
+using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
@@ -511,7 +512,7 @@ namespace OrpheusCore.SchemaBuilder
             catch (Exception e)
             {
                 result = Guid.Empty;
-                this.logger.LogError(e.Message);
+                this.logger.LogError(ErrorCodes.ERR_SCHEMA_OBJECT_EXISTS,e, ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_OBJECT_EXISTS));
             }
             finally
             {

@@ -1,4 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Extensions.Logging;
+using MySql.Data.MySqlClient;
+using OrpheusCore.Configuration;
+using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
@@ -20,6 +23,7 @@ namespace OrpheusMySQLDDLHelper
         private IDbCommand selectSchemaObjectPrimaryConstraint;
         private MySqlConnection _secondConnection;
         private IOrpheusDatabase db;
+        private ILogger<OrpheusMySQLServerDDLHelper> logger;
 
         private void initializeTypeMap()
         {
@@ -128,7 +132,7 @@ namespace OrpheusMySQLDDLHelper
             var result = false;
             MySql.Data.MySqlClient.MySqlConnectionStringBuilder connStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder(this.ConnectionString);
             var dbName = connStringBuilder.Database;
-            if (this.secondConnection != null && !this.DatabaseExists(dbName))
+            if (!this.DatabaseExists(dbName))
             {
                 this.secondConnection.Open();
                 try
@@ -141,9 +145,10 @@ namespace OrpheusMySQLDDLHelper
                             cmd.ExecuteNonQuery();
                             result = true;
                         }
-                        catch
+                        catch(Exception e)
                         {
                             result = false;
+                            this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB)} {dbName}");
                             throw;
                         }
                     }
@@ -164,7 +169,7 @@ namespace OrpheusMySQLDDLHelper
         public bool CreateDatabase(string dbName)
         {
             var result = false;
-            if (this.secondConnection != null && !this.DatabaseExists(dbName))
+            if (!this.DatabaseExists(dbName))
             {
                 this.secondConnection.Open();
                 try
@@ -176,8 +181,9 @@ namespace OrpheusMySQLDDLHelper
                         {
                             result = cmd.ExecuteNonQuery() > 0;
                         }
-                        catch
+                        catch (Exception e)
                         {
+                            this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB)} {dbName}");
                             throw;
                         }
                     }
@@ -198,7 +204,7 @@ namespace OrpheusMySQLDDLHelper
         public bool CreateDatabaseWithDDL(string ddlString)
         {
             var result = false;
-            if (this.secondConnection != null)
+            try
             {
                 this.secondConnection.Open();
                 try
@@ -210,8 +216,9 @@ namespace OrpheusMySQLDDLHelper
                         {
                             result = cmd.ExecuteNonQuery() > 0;
                         }
-                        catch
+                        catch (Exception e)
                         {
+                            this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB, e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB));
                             throw;
                         }
                     }
@@ -221,6 +228,12 @@ namespace OrpheusMySQLDDLHelper
                     this.secondConnection.Close();
                 }
             }
+            catch(Exception e)
+            {
+                this.logger.LogError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB, e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB));
+                throw;
+            }
+
             return result;
         }
 
@@ -259,8 +272,9 @@ namespace OrpheusMySQLDDLHelper
                                 }
                             }
                         }
-                        catch
+                        catch(Exception e)
                         {
+                            this.logger.LogError(e,"");
                             throw;
                         }
                     }
@@ -562,6 +576,7 @@ namespace OrpheusMySQLDDLHelper
             this.SupportsSchemaNameSpace = false;
             this.DbEngineType = DatabaseEngineType.dbMySQL;
             this.SSLMode = MySqlSslMode.Required.ToString();
+            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusMySQLServerDDLHelper>();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusCore.Configuration;
+using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
@@ -346,7 +347,7 @@ namespace OrpheusSQLDDLHelper
                 }
                 catch (Exception e)
                 {
-                    this.logger.LogError(e.Message);
+                    this.logger.LogError(ErrorCodes.ERR_SCHEMA_OBJECT_ID,e,$"{ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_OBJECT_ID)} {schemaObjectName}");
                     throw e;
                 }
                 finally
@@ -466,7 +467,7 @@ namespace OrpheusSQLDDLHelper
                 this.executeDDLCommand($"CREATE DATABASE {this.db.DatabaseConnectionConfiguration.DatabaseName}", true, (dbCommand) => {
                     result = true;
                 },(error)=> {
-                    this.logger.LogError(error.Message);
+                    this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB, error, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB)} {this.db.DatabaseConnectionConfiguration.DatabaseName}");
                     result = false;
                 });
             return result;
@@ -534,7 +535,7 @@ namespace OrpheusSQLDDLHelper
                     }
                 }
                 ,(error) => {
-                this.logger.LogError(error.Message);
+                    this.logger.LogError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB, error, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB)} {dbName}");
                 result = false;
             });
             return result;

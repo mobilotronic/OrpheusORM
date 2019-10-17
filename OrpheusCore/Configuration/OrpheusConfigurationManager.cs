@@ -192,7 +192,11 @@ namespace OrpheusCore.Configuration
                 if (assemblies == null)
                     assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
-                var concreteType = assemblies.SelectMany(x => x.GetTypes())
+                //var concreteType = assemblies.Where(x => x.FullName.Contains("Orpheus")).SelectMany(x => x.GetTypes())
+                //                .Where(x => typeof(T).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
+                //                .ToList().FirstOrDefault();
+
+                var concreteType = assemblies.Where(asm=>asm.IsDynamic == false).SelectMany(x => x.GetExportedTypes())
                                 .Where(x => typeof(T).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
                                 .ToList().FirstOrDefault();
 

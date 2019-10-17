@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusCore.Configuration;
+using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
@@ -235,7 +236,7 @@ namespace OrpheusCore.SchemaBuilder
                 }
                 catch (Exception e)
                 {
-                    this.logger.LogError(e.Message);
+                    this.logger.LogError(ErrorCodes.ERR_SCHEMA_ADD_DEPENDENCY, e,ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_ADD_DEPENDENCY));
                     if (e is NullReferenceException)
                     {
                         this.logger.LogError("Table with name {0} not found", modelType.Name);
@@ -725,12 +726,13 @@ namespace OrpheusCore.SchemaBuilder
                                 catch (Exception e)
                                 {
                                     this.DB.RollbackTransaction(transaction);
-                                    this.logger.LogError(ddlCommand);
-                                    this.logger.LogError(this.getConstraintsDDL());
+                                    this.logger.LogError(ErrorCodes.ERR_SCHEMA_EXECUTE, this.formatLoggerMessage(ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_EXECUTE)));
+                                    this.logger.LogDebug(ddlCommand);
+                                    this.logger.LogDebug(this.getConstraintsDDL());
                                     var ex = e;
                                     while (ex != null)
                                     {
-                                        this.logger.LogError(ex.Message);
+                                        this.logger.LogError(ErrorCodes.ERR_SCHEMA_EXECUTE,ex,"");
                                         ex = ex.InnerException;
                                     }
                                     throw e;

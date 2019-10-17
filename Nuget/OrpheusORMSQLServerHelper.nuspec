@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>OrpheusORMSQLServerDDLHelper</id>
-        <version>1.2.0</version>
+        <version>1.2.1</version>
         <title>OrpheusORM SQL Server DDL Helper</title>
         <authors>Original Author</authors>
         <owners>Original Author</owners>
@@ -15,8 +15,8 @@
 		<projectUrl>https://github.com/redacted-user/OrpheusORM</projectUrl>
         <dependencies>
           <dependency id="System.Data.SqlClient" version="4.5.1" />
-          <dependency id="OrpheusORMInterfaces" version="1.2.0" />
-          <dependency id="OrpheusORM" version="1.2.0" />
+          <dependency id="OrpheusORMInterfaces" version="1.2.1" />
+          <dependency id="OrpheusORM" version="1.2.1" />
         </dependencies>
     </metadata>
     <files>
