@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29324.140
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusAttributes", "OrpheusAttributes\OrpheusAttributes.csproj", "{63089206-F8D2-437E-ACB2-BF2D101A7BD5}"
 EndProject
@@ -32,6 +32,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{B2F48277
 		Nuget\OrpheusORMMySQLServerHelper.nuspec = Nuget\OrpheusORMMySQLServerHelper.nuspec
 		Nuget\OrpheusORMSQLServerHelper.nuspec = Nuget\OrpheusORMSQLServerHelper.nuspec
 		Nuget\PublishPackage.cmd = Nuget\PublishPackage.cmd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{1F27E8E9-4A7E-41B5-A06A-0E9458F1C7E7}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Global
