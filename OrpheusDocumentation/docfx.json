@@ -1,4 +1,4 @@
-﻿{
+{
   "metadata": [
     {
       "src": [
@@ -26,64 +26,65 @@
           "files": [ "**.csproj" ],
           "exclude": [ "**/bin/**", "**/obj/**" ],
           "src": "../OrpheusSQLServerDDLHelper"
-        }		
+        }
       ],
-      "dest": "obj/temp/docfxapi"
+      "dest": "api",
+      "includePrivateMembers": false,
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "noRestore": false,
+      "namespaceLayout": "flattened",
+      "memberLayout": "samePage",
+      "EnumSortOrder": "alphabetic",
+      "allowCompilationErrors": false
     }
   ],
   "build": {
     "content": [
       {
-        "files": [ "**/*.yml" ],
-        "src": "obj/temp/docfxapi",
-        "dest": "api"
+        "files": [
+          "api/**.yml",
+          "api/index.md"
+        ]
       },
       {
         "files": [
-          "*.{md,yml}",
-          "examples/**/*.{md,yml}",
-          "about/**/*.{md,yml}",
-          "documentation/**/*.{md,yml}"
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "about/**.md",
+          "about/**/toc.yml",
+          "documentation/**.md",
+          "documentation/**/toc.yml",
+          "toc.yml",
+          "*.md"
         ]
       }
     ],
     "resource": [
       {
         "files": [
-				"images/**", 
-				"**/images/**"
-				],
-        "exclude": [ "_site/**", "**/obj/**", "**.meta" ]
-      },
-      {
-        "files": "schemas/**schema.json",
-        "src": ".."
+          "images/**"
+        ]
       }
     ],
-    "postProcessors": ["ExtractSearchIndex"],
-    "globalMetadata": {
-      "_appTitle": "Orpheus",
-	  "_appLogoPath":"images/OrpheusLogo.svg",
-	  "_enableNewTab": true,
-	  "_appFooter":"Orpheus - Trifidis Georgios(Yiorgos) © 2017 - 2019",
-	  "_enableSearch":true	  
-    },
-    "fileMetadata": {
-      "priority": {
-        "obj/docfx/**": 1.0,
-        "**.md": 2.5,
-        "installationguides/**.md": 3,
-        "tutorial/**.md": 1.2
-      },
-      "keywords": {
-        "obj/docfx/**": ["API", "Reference"]
-      }
-    },
-    "dest": "_site",
-    "markdownEngineName": "dfm-latest",
+    "output": "_site",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
     "template": [
       "default",
-      "template"
-    ]
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appTitle": "Orpheus",
+      "_appLogoPath": "images/OrpheusLogo.svg",
+      "_enableNewTab": true,
+      "_appFaviconPath": "images/favicon.ico",
+      "_appFooter": "Orpheus - Mobilotronic © 2017 - 2023",
+      "_enableSearch": true,
+      "_disableContribution": true
+    },
+    "postProcessors": [],
+    "keepFileLink": false,
+    "disableGitFeatures": false
   }
 }

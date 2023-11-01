@@ -1,7 +1,11 @@
-﻿using OrpheusInterfaces.Core;
+﻿using Microsoft.Extensions.Logging;
+using OrpheusCore.Configuration;
+using OrpheusCore.Errors;
+using OrpheusInterfaces.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Linq;
 
 namespace OrpheusCore
@@ -15,6 +19,7 @@ namespace OrpheusCore
     public class OrpheusModule : IOrpheusModule
     {
         private IOrpheusTable mainTable;
+        private ILogger<OrpheusModule> logger;
 
         #region private methods
         /// <summary>
@@ -265,10 +270,11 @@ namespace OrpheusCore
                 this.Database.CommitTransaction(transaction);
                 this.OnAfterSave?.Invoke(this, new SaveEventArguments() { Transaction = transaction });
             }
-            catch(Exception exception)
+            catch(Exception e)
             {
+                this.logger.LogError(ErrorCodes.ERR_SAVING_DATA, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_SAVING_DATA)}");
                 this.Database.RollbackTransaction(transaction);
-                throw exception;
+                throw;
             }
         }
 
@@ -361,6 +367,7 @@ namespace OrpheusCore
             this.Tables = new List<IOrpheusTable>();
             this.ReferenceTables = new List<IOrpheusTable>();
             this.initializeModuleDefinition();
+            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusModule>();
         }
 
         /// <summary>

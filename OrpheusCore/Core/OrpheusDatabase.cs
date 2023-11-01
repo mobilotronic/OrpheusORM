@@ -426,7 +426,7 @@ namespace OrpheusCore
                     catch(Exception e)
                     {
                         this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB,e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB));
-                        throw e;
+                        throw;
                     }
                     if (!String.IsNullOrEmpty(connectionString))
                         this.dbConnection.ConnectionString = connectionString;
@@ -437,7 +437,7 @@ namespace OrpheusCore
                 catch (Exception e)
                 {
                     this.logger.LogError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB,e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB));
-                    throw e;
+                    throw;
                 }
             }
         }

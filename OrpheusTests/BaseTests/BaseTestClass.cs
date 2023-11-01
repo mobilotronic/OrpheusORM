@@ -50,7 +50,7 @@ namespace OrpheusTests
         {
             get
             {
-                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                string codeBase = Assembly.GetExecutingAssembly().Location;
                 UriBuilder uri = new UriBuilder(codeBase);
                 string path = Uri.UnescapeDataString(uri.Path);
                 return Path.GetDirectoryName(path);
@@ -105,7 +105,7 @@ namespace OrpheusTests
             //we only need to initialize once.
             if (this.configuration == null)
             {
-                LogManager.LoadConfiguration(this.assemblyDirectory + @"\" + "nlog.config");
+                LogManager.Setup().LoadConfigurationFromFile(this.assemblyDirectory + @"\" + "nlog.config");
                 var logger = LogManager.GetCurrentClassLogger();
                 try
                 {
@@ -137,7 +137,7 @@ namespace OrpheusTests
                         builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
                         builder.AddNLog(configuration);
                     });
-                    ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
+                    OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
                 }
                 catch (Exception e)
                 {
@@ -158,8 +158,8 @@ namespace OrpheusTests
                 {
                     this.InitializeConfiguration();
                     string databaseConnectionName = this.DatabaseEngine == DbEngine.dbSQLServer ? "SQLServer" : "MySQL";
-                    this.db = ConfigurationManager.Resolve<IOrpheusDatabase>();
-                    this.db.DatabaseConnectionConfiguration = ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == databaseConnectionName.ToLower()).Clone();
+                    this.db = OrpheusCore.Configuration.ConfigurationManager.Resolve<IOrpheusDatabase>();
+                    this.db.DatabaseConnectionConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == databaseConnectionName.ToLower()).Clone();
                 }
                 return this.db;
             }
@@ -185,7 +185,7 @@ namespace OrpheusTests
             {
                 if (this.logger == null)
                 {
-                    this.logger = ConfigurationManager.LoggerFactory.CreateLogger<BaseTestClass>();
+                    this.logger = OrpheusCore.Configuration.ConfigurationManager.LoggerFactory.CreateLogger<BaseTestClass>();
                 }
                 return this.logger;
             }

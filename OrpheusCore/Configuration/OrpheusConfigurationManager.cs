@@ -162,9 +162,9 @@ namespace OrpheusCore.Configuration
             {
                 result = serviceProvider.GetService<T>();
             }
-            catch (Exception e)
+            catch
             {
-                throw e;
+                throw;
             }
             return result;
         }
@@ -212,9 +212,9 @@ namespace OrpheusCore.Configuration
                     }
                 }
             }
-            catch (Exception e)
+            catch
             {
-                throw e;
+                throw;
             }
             return default(T);
         }
