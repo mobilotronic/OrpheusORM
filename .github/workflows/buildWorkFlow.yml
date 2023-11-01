@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
+    - name: Start SQL Server
+      run: docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=1StrongPwd!!"
     - name: Start MySQL
       run: sudo systemctl start mysql.service
     - name: Restore dependencies
