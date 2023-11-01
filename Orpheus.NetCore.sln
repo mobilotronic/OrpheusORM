@@ -37,6 +37,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{1F27E8E9-4A7E-41B5-A06A-0E9458F1C7E7}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		.github\workflows\buildWorkFlow.yml = .github\workflows\buildWorkFlow.yml
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
