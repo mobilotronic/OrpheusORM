@@ -216,7 +216,9 @@ namespace OrpheusTests.ConfigurationTests
             logger.LogError($"ErrorId {errorId} test Error log entry");
 
             //loading the log file content.
-            var logFileContents = File.ReadAllText(logFileContentsName);
+
+            using var fileStream = new StreamReader(logFileContentsName, new FileStreamOptions() { Mode = FileMode.Open, Access = FileAccess.Read, Share = FileShare.ReadWrite});
+            string logFileContents = fileStream.ReadToEnd();
 
             //making sure that the error is logged.
             Assert.AreEqual(true, logFileContents.Contains(errorId));
@@ -238,9 +240,10 @@ namespace OrpheusTests.ConfigurationTests
             //give NLog some time to reload its configuration.
             await Task.Delay(3000);
             logger.LogTrace($"TraceId {traceId} test Trace log entry");
-            
+
             //reload log file content.
-            logFileContents = File.ReadAllText(logFileContentsName);
+            using var fileStream2 = new StreamReader(logFileContentsName, new FileStreamOptions() { Mode = FileMode.Open, Access = FileAccess.Read, Share = FileShare.ReadWrite });
+            logFileContents = fileStream2.ReadToEnd();
 
             //making sure that the trace is logged.
             Assert.AreEqual(true, logFileContents.Contains(traceId));

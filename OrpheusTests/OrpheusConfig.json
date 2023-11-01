@@ -9,12 +9,12 @@
     },
     {
       "ConfigurationName": "MySQL",
-      "Server": "[ServerName]",
+      "Server": "localhost",
       "DatabaseName": "orpheusTestDB",
       "UserName": "root",
-      "Password": "[Password]",
+      "Password": "root",
       "ServiceUserName": "root",
-      "ServicePassword": "[Password]"
+      "ServicePassword": "root"
     }
   ],
   "Logging": {

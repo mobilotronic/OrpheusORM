@@ -46,4 +46,4 @@ First let's load the configuration
     var dbConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == "database2");
     database2.Connect(dbConfiguration);
 ```
-For more details on each configuration option go to [Database Connection Configuration](../api/OrpheusCore.Configuration.DatabaseConnectionConfiguration.html)
+For more details on each configuration option go to [Database Connection Configuration](../api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.yml)
