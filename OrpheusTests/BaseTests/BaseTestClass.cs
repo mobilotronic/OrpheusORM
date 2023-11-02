@@ -54,7 +54,7 @@ namespace OrpheusTests
                 if(_assemblyDirectory == null)
                 {
                     string codeBase = Assembly.GetExecutingAssembly().Location;
-                    Console.WriteLine($"Assembly path is: {codeBase}");
+                    //Console.WriteLine($"Assembly path is: {codeBase}");
                     _assemblyDirectory = Path.GetDirectoryName(codeBase);
                 }
 
@@ -116,7 +116,7 @@ namespace OrpheusTests
                 {
                     if (configurationFileName == null)
                         configurationFileName = $"{this.assemblyDirectory}/{ConfigurationFileName}";
-                    Console.WriteLine($"Configuration file is: {configurationFileName}");
+                    //Console.WriteLine($"Configuration file is: {configurationFileName}");
                     IServiceCollection serviceCollection = new ServiceCollection();
                     this.configuration = this.createConfiguration($"{this.assemblyDirectory}/{ConfigurationFileName}");
                     serviceCollection.AddTransient<IOrpheusDatabase, OrpheusDatabase>();
@@ -126,14 +126,14 @@ namespace OrpheusTests
                             {
                                 serviceCollection.AddTransient<IDbConnection, SqlConnection>();
                                 serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusSQLServerDDLHelper>();
-                                Console.WriteLine($"SQL services configured");
+                                //Console.WriteLine($"SQL services configured");
                                 break;
                             }
                         case DbEngine.dbMySQL:
                             {
                                 serviceCollection.AddTransient<IDbConnection, MySqlConnection>();
                                 serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusMySQLServerDDLHelper>();
-                                Console.WriteLine($"MySQL services configured");
+                                //Console.WriteLine($"MySQL services configured");
                                 break;
                             }
                     }
@@ -146,7 +146,7 @@ namespace OrpheusTests
                         builder.AddNLog(configuration);
                     });
                     OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
-                    Console.WriteLine($"Configuration initialized");
+                    //Console.WriteLine($"Configuration initialized");
                 }
                 catch (Exception e)
                 {
@@ -169,7 +169,6 @@ namespace OrpheusTests
                     string databaseConnectionName = this.DatabaseEngine == DbEngine.dbSQLServer ? "SQLServer" : "MySQL";
                     this.db = OrpheusCore.Configuration.ConfigurationManager.Resolve<IOrpheusDatabase>();
                     this.db.DatabaseConnectionConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == databaseConnectionName.ToLower()).Clone();
-                    Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(this.db.DatabaseConnectionConfiguration));
                 }
                 return this.db;
             }
