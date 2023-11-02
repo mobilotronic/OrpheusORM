@@ -116,6 +116,7 @@ namespace OrpheusTests
                 {
                     if (configurationFileName == null)
                         configurationFileName = $"{this.assemblyDirectory}\\{ConfigurationFileName}";
+                    Console.WriteLine($"Configuration file is: {configurationFileName}");
                     IServiceCollection serviceCollection = new ServiceCollection();
                     this.configuration = this.createConfiguration($"{this.assemblyDirectory}\\{ConfigurationFileName}");
                     serviceCollection.AddTransient<IOrpheusDatabase, OrpheusDatabase>();
