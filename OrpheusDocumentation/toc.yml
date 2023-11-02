@@ -1,7 +1,5 @@
-- name: Home
-  href: index.md
 - name: Documentation
   href: documentation/
-  homepage: documentation/index.md
-- name: API
-  href: obj/temp/docfxapi/
+- name: Api Reference
+  href: api/
+  homepage: api/index.md

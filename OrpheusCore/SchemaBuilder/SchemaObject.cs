@@ -735,7 +735,7 @@ namespace OrpheusCore.SchemaBuilder
                                         this.logger.LogError(ErrorCodes.ERR_SCHEMA_EXECUTE,ex,"");
                                         ex = ex.InnerException;
                                     }
-                                    throw e;
+                                    throw;
                                 }
                             }
                             this.DB.CommitTransaction(transaction);
