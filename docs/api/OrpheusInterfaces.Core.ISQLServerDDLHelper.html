@@ -1,1086 +1,1054 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Interface ISQLServerDDLHelper
-   | Orpheus </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Interface ISQLServerDDLHelper
-   | Orpheus ">
-    <meta name="generator" content="docfx 2.45.1.0">
-    
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/font-awesome.min.css">
-    <link rel="stylesheet" href="../styles/code-syntax.css">  
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+      <title>Interface ISQLServerDDLHelper
+ | Orpheus </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface ISQLServerDDLHelper
+ | Orpheus ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
   </head>
-  <body data-spy="scroll" data-target="#affix">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list"></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper">
-  
-  
-  <h1 id="OrpheusInterfaces_Core_ISQLServerDDLHelper" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper" class="text-break">Interface ISQLServerDDLHelper
+
+        <article data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper">
+
+
+
+  <h1 id="OrpheusInterfaces_Core_ISQLServerDDLHelper" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper" class="text-break">
+    Interface ISQLServerDDLHelper
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L193"><i class="bi bi-code-slash"></i></a>
   </h1>
-  <div class="markdown level0 summary"><p>SQL Server specific DDL helper definition.</p>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a>.<a class="xref" href="OrpheusInterfaces.Core.html">Core</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>OrpheusInterfaces.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>SQL Server specific DDL helper definition.</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="OrpheusInterfaces.Core.html">OrpheusInterfaces.Core</a></h6>
-  <h6><strong>Assembly</strong>: OrpheusInterfaces.dll</h6>
-  <h5 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_syntax">Syntax</h5>
+  <div class="markdown conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface ISQLServerDDLHelper : IOrpheusDDLHelper</code></pre>
   </div>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaSeparator.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaSeparator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L218">View Source</a>
-  </span>
+
+
+
+
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseExists_System_String_">IOrpheusDDLHelper.DatabaseExists(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_">IOrpheusDDLHelper.SchemaObjectExists(ISchemaObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_System_String_">IOrpheusDDLHelper.SchemaObjectExists(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_">IOrpheusDDLHelper.SchemaObjectExists(ISchemaConstraint)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_">IOrpheusDDLHelper.SchemaObjectId&lt;T&gt;(ISchemaObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase">IOrpheusDDLHelper.CreateDatabase()</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase_System_String_">IOrpheusDDLHelper.CreateDatabase(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabaseWithDDL_System_String_">IOrpheusDDLHelper.CreateDatabaseWithDDL(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DB">IOrpheusDDLHelper.DB</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_TypeToString_System_Type_">IOrpheusDDLHelper.TypeToString(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DbTypeToString_System_Data_DbType_">IOrpheusDDLHelper.DbTypeToString(DbType)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DelimitedIndetifierStart">IOrpheusDDLHelper.DelimitedIndetifierStart</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DelimitedIndetifierEnd">IOrpheusDDLHelper.DelimitedIndetifierEnd</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SupportsGuidType">IOrpheusDDLHelper.SupportsGuidType</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SupportsSchemaNameSpace">IOrpheusDDLHelper.SupportsSchemaNameSpace</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatField_System_String_">IOrpheusDDLHelper.SafeFormatField(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ModifyColumnCommand">IOrpheusDDLHelper.ModifyColumnCommand</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__">IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(string, List&lt;string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__">IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(string, List&lt;string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseName">IOrpheusDDLHelper.DatabaseName</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DbEngineType">IOrpheusDDLHelper.DbEngineType</a>
+    </div>
+    <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ConnectionString">IOrpheusDDLHelper.ConnectionString</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaSeparator_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaSeparator*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaSeparator" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaSeparator">SchemaSeparator</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaSeparator" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaSeparator">
+  SchemaSeparator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Schema separator. Char that separates the schema name and the schema object. By default in SQL server, the separator is the dot char.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">string SchemaSeparator { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_AddDatabaseRoleMember_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.AddDatabaseRoleMember(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L255">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_AddDatabaseRoleMember_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.AddDatabaseRoleMember*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_AddDatabaseRoleMember_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.AddDatabaseRoleMember(System.String,System.String)">AddDatabaseRoleMember(String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_AddDatabaseRoleMember_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.AddDatabaseRoleMember(System.String,System.String)">
+  AddDatabaseRoleMember(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Adds a database user to the specified role.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void AddDatabaseRoleMember(string roleName, string userName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">roleName</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_ChangeDatabaseUserPassword_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.ChangeDatabaseUserPassword(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L280">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>roleName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>userName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_ChangeDatabaseUserPassword_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.ChangeDatabaseUserPassword*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_ChangeDatabaseUserPassword_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.ChangeDatabaseUserPassword(System.String,System.String,System.String)">ChangeDatabaseUserPassword(String, String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_ChangeDatabaseUserPassword_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.ChangeDatabaseUserPassword(System.String,System.String,System.String)">
+  ChangeDatabaseUserPassword(string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L280"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Changes the password for an existing user.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void ChangeDatabaseUserPassword(string userName, string oldPassword, string newPassword)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">oldPassword</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">newPassword</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateDatabaseRole_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateDatabaseRole(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L242">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>oldPassword</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>newPassword</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateDatabaseRole_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateDatabaseRole*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateDatabaseRole_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateDatabaseRole(System.String,System.String)">CreateDatabaseRole(String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateDatabaseRole_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateDatabaseRole(System.String,System.String)">
+  CreateDatabaseRole(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a database role.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void CreateDatabaseRole(string roleName, string owner = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">roleName</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">owner</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateDatabaseUser_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateDatabaseUser(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L272">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>roleName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>owner</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateDatabaseUser_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateDatabaseUser*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateDatabaseUser_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateDatabaseUser(System.String,System.String)">CreateDatabaseUser(String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateDatabaseUser_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateDatabaseUser(System.String,System.String)">
+  CreateDatabaseUser(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a contained database user.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void CreateDatabaseUser(string userName, string password)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">password</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateSchema_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateSchema(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L207">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>password</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateSchema_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateSchema*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateSchema_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateSchema(System.String)">CreateSchema(String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_CreateSchema_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.CreateSchema(System.String)">
+  CreateSchema(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a schema.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void CreateSchema(string schemaName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_DatabaseRoleExists_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.DatabaseRoleExists(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L235">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DatabaseRoleExists_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DatabaseRoleExists*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DatabaseRoleExists_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DatabaseRoleExists(System.String)">DatabaseRoleExists(String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DatabaseRoleExists_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DatabaseRoleExists(System.String)">
+  DatabaseRoleExists(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if the database role exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool DatabaseRoleExists(string roleName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">roleName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_DatabaseUserExists_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.DatabaseUserExists(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L294">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>roleName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DatabaseUserExists_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DatabaseUserExists*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DatabaseUserExists_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DatabaseUserExists(System.String)">DatabaseUserExists(String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DatabaseUserExists_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DatabaseUserExists(System.String)">
+  DatabaseUserExists(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if a database user exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool DatabaseUserExists(string userName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_System_Collections_Generic_List_System_String__System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny(System.Collections.Generic.List%7BSystem.String%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L347">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_System_Collections_Generic_List_System_String__System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny(System.Collections.Generic.List{System.String},System.String)">Deny(List&lt;String&gt;, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_System_Collections_Generic_List_System_String__System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny(System.Collections.Generic.List{System.String},System.String)">
+  Deny(List&lt;string&gt;, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L347"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Deny permissions to a database principal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Deny(List&lt;string&gt; permissions, string databasePrincipal)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">permissions</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">databasePrincipal</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L340">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>permissions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>databasePrincipal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny(System.String,System.String)">Deny(String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny(System.String,System.String)">
+  Deny(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Deny permission to a database principal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Deny(string permission, string databasePrincipal)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">permission</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">databasePrincipal</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L355">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>permission</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>databasePrincipal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny(System.String,System.String,System.String)">Deny(String, String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Deny_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Deny(System.String,System.String,System.String)">
+  Deny(string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L355"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Denies permission to a database principal for a specific schema object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Deny(string permission, string schemaObject, string databasePrincipal)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">permission</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaObject</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">databasePrincipal</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseRole_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseRole(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L248">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>permission</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>schemaObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>databasePrincipal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseRole_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseRole*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseRole_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseRole(System.String)">DropDatabaseRole(String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseRole_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseRole(System.String)">
+  DropDatabaseRole(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Drops a database role.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void DropDatabaseRole(string roleName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">roleName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseRoleMember_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseRoleMember(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L262">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>roleName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseRoleMember_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseRoleMember*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseRoleMember_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseRoleMember(System.String,System.String)">DropDatabaseRoleMember(String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseRoleMember_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseRoleMember(System.String,System.String)">
+  DropDatabaseRoleMember(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L262"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Drops a database user to the specified role.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void DropDatabaseRoleMember(string roleName, string userName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">roleName</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseUser_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseUser(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L287">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>roleName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>userName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseUser_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseUser*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseUser_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseUser(System.String)">DropDatabaseUser(String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropDatabaseUser_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropDatabaseUser(System.String)">
+  DropDatabaseUser(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L287"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Drops a user.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void DropDatabaseUser(string userName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">userName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_DropSchema_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.DropSchema(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L213">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropSchema_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropSchema*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropSchema_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropSchema(System.String)">DropSchema(String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_DropSchema_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.DropSchema(System.String)">
+  DropSchema(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L213"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Drops a schema.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void DropSchema(string schemaName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_EnableContainedDatabases_System_Boolean_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.EnableContainedDatabases(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L302">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_EnableContainedDatabases_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.EnableContainedDatabases*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_EnableContainedDatabases_System_Boolean_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.EnableContainedDatabases(System.Boolean)">EnableContainedDatabases(Boolean)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_EnableContainedDatabases_System_Boolean_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.EnableContainedDatabases(System.Boolean)">
+  EnableContainedDatabases(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L302"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Enables/disables the contained database feature on the SQL server instance. A feature supported from SQL server 2012 and later.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void EnableContainedDatabases(bool enable)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><span class="parametername">enable</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_System_Collections_Generic_List_System_String__System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant(System.Collections.Generic.List%7BSystem.String%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L325">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_System_Collections_Generic_List_System_String__System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant(System.Collections.Generic.List{System.String},System.String)">Grant(List&lt;String&gt;, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_System_Collections_Generic_List_System_String__System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant(System.Collections.Generic.List{System.String},System.String)">
+  Grant(List&lt;string&gt;, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L325"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Grants permission to a database principal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Grant(List&lt;string&gt; permissions, string databasePrincipal)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">permissions</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">databasePrincipal</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L318">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>permissions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>databasePrincipal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant(System.String,System.String)">Grant(String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant(System.String,System.String)">
+  Grant(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Grants permission to a database principal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Grant(string permission, string databasePrincipal)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">permission</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">databasePrincipal</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L333">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>permission</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>databasePrincipal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant(System.String,System.String,System.String)">Grant(String, String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Grant_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Grant(System.String,System.String,System.String)">
+  Grant(string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L333"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Grants permission to a database principal for a specific schema object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Grant(string permission, string schemaObject, string databasePrincipal)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">permission</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaObject</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">databasePrincipal</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_Revoke_System_Collections_Generic_List_System_String__System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.Revoke(System.Collections.Generic.List%7BSystem.String%7D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L371">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>permission</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>schemaObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>databasePrincipal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Revoke_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Revoke*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Revoke_System_Collections_Generic_List_System_String__System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Revoke(System.Collections.Generic.List{System.String},System.String,System.String)">Revoke(List&lt;String&gt;, String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Revoke_System_Collections_Generic_List_System_String__System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Revoke(System.Collections.Generic.List{System.String},System.String,System.String)">
+  Revoke(List&lt;string&gt;, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L371"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Revoke permissions for a database principal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Revoke(List&lt;string&gt; permissions, string schemaObject, string databasePrincipal)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">permissions</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaObject</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">databasePrincipal</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_Revoke_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.Revoke(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L363">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>permissions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>schemaObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>databasePrincipal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Revoke_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Revoke*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Revoke_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Revoke(System.String,System.String,System.String)">Revoke(String, String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_Revoke_System_String_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.Revoke(System.String,System.String,System.String)">
+  Revoke(string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L363"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Revoke permission for a database principal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Revoke(string permission, string schemaObject, string databasePrincipal)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">permission</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaObject</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">databasePrincipal</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaExists_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaExists(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L201">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>permission</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>schemaObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>databasePrincipal</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaExists_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaExists*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaExists_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaExists(System.String)">SchemaExists(String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaExists_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaExists(System.String)">
+  SchemaExists(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if the schema exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool SchemaExists(string schemaName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaObjectExists_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaObjectExists(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L226">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaObjectExists_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaObjectExists*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaObjectExists_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaObjectExists(System.String,System.String)">SchemaObjectExists(String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SchemaObjectExists_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SchemaObjectExists(System.String,System.String)">
+  SchemaObjectExists(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L226"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">bool SchemaObjectExists(string schemaObjectName, string schemaName = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaObjectName</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_ISQLServerDDLHelper_SetDatabaseContainment_System_String_System_String_.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.ISQLServerDDLHelper.SetDatabaseContainment(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L309">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObjectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>schemaName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SetDatabaseContainment_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SetDatabaseContainment*"></a>
-  <h4 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SetDatabaseContainment_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SetDatabaseContainment(System.String,System.String)">SetDatabaseContainment(String, String)</h4>
+
+  <h3 id="OrpheusInterfaces_Core_ISQLServerDDLHelper_SetDatabaseContainment_System_String_System_String_" data-uid="OrpheusInterfaces.Core.ISQLServerDDLHelper.SetDatabaseContainment(System.String,System.String)">
+  SetDatabaseContainment(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L309"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets the containment option for a database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void SetDatabaseContainment(string containment, string databaseName = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">containment</span></td>
-        <td><p>Containment value. NONE or PARTIAL</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">databaseName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containment</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Containment value. NONE or PARTIAL</p>
+</dd>
+    <dt><code>databaseName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
-          </div>
+
+
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Orpheus - Mobilotronic © 2017 - 2023
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            Orpheus - Trifidis Georgios(Yiorgos) © 2017 - 2019
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
-    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-99241001-1', 'auto');
-      ga('send', 'pageview');
-    
-    </script>
+    </footer>
   </body>
 </html>
