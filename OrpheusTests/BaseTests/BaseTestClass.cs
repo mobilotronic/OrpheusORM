@@ -45,15 +45,20 @@ namespace OrpheusTests
         private IOrpheusDatabase db;
         private string fileName;
         private byte[] currentAppsettingsHash = new byte[0];
+        private string _assemblyDirectory = null;
 
         private string assemblyDirectory
         {
             get
             {
-                string codeBase = Assembly.GetExecutingAssembly().Location;
-                UriBuilder uri = new UriBuilder(codeBase);
-                string path = Uri.UnescapeDataString(uri.Path);
-                return Path.GetDirectoryName(path);
+                if(_assemblyDirectory == null)
+                {
+                    string codeBase = Assembly.GetExecutingAssembly().Location;
+                    Console.WriteLine($"Assembly path is: {codeBase}");
+                    _assemblyDirectory = Path.GetDirectoryName(codeBase);
+                }
+
+                return _assemblyDirectory;
             }
         }
 
