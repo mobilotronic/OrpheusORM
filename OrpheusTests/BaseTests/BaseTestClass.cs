@@ -110,15 +110,15 @@ namespace OrpheusTests
             //we only need to initialize once.
             if (this.configuration == null)
             {
-                LogManager.Setup().LoadConfigurationFromFile(this.assemblyDirectory + @"\" + "nlog.config");
+                LogManager.Setup().LoadConfigurationFromFile($"{this.assemblyDirectory}/nlog.config");
                 var logger = LogManager.GetCurrentClassLogger();
                 try
                 {
                     if (configurationFileName == null)
-                        configurationFileName = $"{this.assemblyDirectory}\\{ConfigurationFileName}";
+                        configurationFileName = $"{this.assemblyDirectory}/{ConfigurationFileName}";
                     Console.WriteLine($"Configuration file is: {configurationFileName}");
                     IServiceCollection serviceCollection = new ServiceCollection();
-                    this.configuration = this.createConfiguration($"{this.assemblyDirectory}\\{ConfigurationFileName}");
+                    this.configuration = this.createConfiguration($"{this.assemblyDirectory}/{ConfigurationFileName}");
                     serviceCollection.AddTransient<IOrpheusDatabase, OrpheusDatabase>();
                     switch (this.DatabaseEngine)
                     {
@@ -126,12 +126,14 @@ namespace OrpheusTests
                             {
                                 serviceCollection.AddTransient<IDbConnection, SqlConnection>();
                                 serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusSQLServerDDLHelper>();
+                                Console.WriteLine($"SQL services configured");
                                 break;
                             }
                         case DbEngine.dbMySQL:
                             {
                                 serviceCollection.AddTransient<IDbConnection, MySqlConnection>();
                                 serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusMySQLServerDDLHelper>();
+                                Console.WriteLine($"MySQL services configured");
                                 break;
                             }
                     }
@@ -144,6 +146,7 @@ namespace OrpheusTests
                         builder.AddNLog(configuration);
                     });
                     OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
+                    Console.WriteLine($"Configuration initialized");
                 }
                 catch (Exception e)
                 {
