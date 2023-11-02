@@ -78,7 +78,7 @@ namespace OrpheusTests
         public const string LoggerTests = "LoggerTests";
         public const string ConfigurationTests = "ConfigurationTests";
         public const string ConfigurationFileName = "OrpheusConfig.json";
-
+ 
         /// <summary>
         /// Initializes Orpheus configuration (Unity) and creates and connects the Database object.
         /// </summary>
@@ -160,6 +160,7 @@ namespace OrpheusTests
                     string databaseConnectionName = this.DatabaseEngine == DbEngine.dbSQLServer ? "SQLServer" : "MySQL";
                     this.db = OrpheusCore.Configuration.ConfigurationManager.Resolve<IOrpheusDatabase>();
                     this.db.DatabaseConnectionConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == databaseConnectionName.ToLower()).Clone();
+                    Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(this.db.DatabaseConnectionConfiguration));
                 }
                 return this.db;
             }
