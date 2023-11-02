@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/YT/Github/OrpheusORM/OrpheusDocumentation",
+  "source_base_path": "C:/Workspaces/Github/OrpheusORM/OrpheusDocumentation",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,19 +9,16 @@
         "resource": {
           "relative_path": "index.json"
         }
-      },
-      "is_incremental": false
+      }
     },
     {
       "type": "Conceptual",
       "source_relative_path": "about/about.md",
       "output": {
         ".html": {
-          "relative_path": "about/about.html",
-          "hash": "kxJUMaISdszYwzx3sIb1uw=="
+          "relative_path": "about/about.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -29,11 +26,1025 @@
       "source_relative_path": "about/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "about/toc.html",
-          "hash": "b84zk5/psIQCA6fB0jhsYA=="
+          "relative_path": "about/toc.html"
+        },
+        ".json": {
+          "relative_path": "about/toc.json"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.DataTypeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.DataTypeAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.DefaultValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.DefaultValue.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.FieldName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.FieldName.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.ForeignKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.ForeignKey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.Length.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.Length.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.OrpheusBaseAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.OrpheusBaseAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.OrpheusCompositeKeyBaseAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.OrpheusCompositeKeyBaseAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.PrimaryCompositeKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.PrimaryCompositeKey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.PrimaryKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.PrimaryKey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.RequiredField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.RequiredField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.SQLServerSchemaName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.SQLServerSchemaName.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.SchemaIgnore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.SchemaIgnore.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.TableName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.TableName.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.UniqueCompositeKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.UniqueCompositeKey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.UniqueKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.UniqueKey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusAttributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusAttributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.ConfigurationManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.ConfigurationManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.Models.DIBinderOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.Models.DIBinderOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.Models.OrpheusConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.Models.ServiceProviderItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.Models.ServiceProviderItem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Errors.ErrorCodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Errors.ErrorCodes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Errors.ErrorDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Errors.ErrorDictionary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Errors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Errors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.ModelProperty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.ModelProperty.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.ModifiedRecordAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.ModifiedRecordAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.OrpheusDatabase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.OrpheusDatabase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.OrpheusModelHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.OrpheusModelHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.OrpheusModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.OrpheusModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.OrpheusModuleDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.OrpheusModuleDefinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.OrpheusTable-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.OrpheusTable-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.OrpheusTableKeyField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.OrpheusTableKeyField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.OrpheusTableOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.OrpheusTableOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.PropertyAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.PropertyAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.Schema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.Schema.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.SchemaDataObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaDataObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.SchemaField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.SchemaJoinDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaJoinDefinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectTable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectViewTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectViewTable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.SchemaBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.SchemaBuilder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Configuration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.DatabaseEngineType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.DatabaseEngineType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.ExtendedDbTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.ExtendedDbTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IModifyRecordEventArguments-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IMySQLServerDDLHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IMySQLServerDDLHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusDDLHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusDDLHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusDatabase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusDatabase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusModelHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusModelHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusModuleDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusModuleDefinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusReferenceTable-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusReferenceTable-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusReferenceTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusReferenceTable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusTable-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTable-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusTableKeyField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTableKeyField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusTableOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTableOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.ISQLServerDDLHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.ISQLServerDDLHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.ISaveEventArguments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.ISaveEventArguments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.LogicalOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.LogicalOperator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IForeignKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.DDLAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.DDLAction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.ISchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.ISchema.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.ISchemaConstraint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaConstraint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.ISchemaDataObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaDataObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.ISchemaField.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaField.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.ISchemaJoinDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaJoinDefinition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.ISchemaObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.ISchemaTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaTable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.ISchemaView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaView.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.ISchemaViewTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaViewTable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.SchemaJoinOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.SchemaJoinOperator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.SchemaJoinType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.SchemaJoinType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.SchemaObjectType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.SchemaObjectType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.SchemaSort.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.SchemaSort.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Schema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Schema.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusMySQLDDLHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusMySQLDDLHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusSQLDDLHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusSQLDDLHelper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
       "version": ""
     },
     {
@@ -41,11 +1052,9 @@
       "source_relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.1.2.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.1.2.html",
-          "hash": "s6M9XWA/pXtVcLzDfzSqSg=="
+          "relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.1.2.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -53,11 +1062,19 @@
       "source_relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.1.3.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.1.3.html",
-          "hash": "JuyzfDTYZlg5bACtD8gCSA=="
+          "relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.1.3.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.3.0.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.3.0.html"
+        }
+      },
       "version": ""
     },
     {
@@ -65,11 +1082,9 @@
       "source_relative_path": "documentation/index.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/index.html",
-          "hash": "MqkGAHYRnQ3LCJp6KZnJ8w=="
+          "relative_path": "documentation/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -77,11 +1092,9 @@
       "source_relative_path": "documentation/orpheus_and_di.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_and_di.html",
-          "hash": "QXr2ZUAQId5SvysrgBqpaQ=="
+          "relative_path": "documentation/orpheus_and_di.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -89,41 +1102,29 @@
       "source_relative_path": "documentation/orpheus_configuring_nlog.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_configuring_nlog.html",
-          "hash": "0E+27LS58QB7Z6r3RusQWg=="
+          "relative_path": "documentation/orpheus_configuring_nlog.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "documentation/orpheus_connecting_to_db.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_connecting_to_db.html",
-          "hash": "n/dzFUBCCusZJGFS2uk6ow=="
+          "relative_path": "documentation/orpheus_connecting_to_db.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "documentation/orpheus_creating_schema.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_creating_schema.html",
-          "hash": "sVEpi2EHUYyAjOsoO0z8QQ=="
+          "relative_path": "documentation/orpheus_creating_schema.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -131,11 +1132,9 @@
       "source_relative_path": "documentation/orpheus_database_creation_flow.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_database_creation_flow.html",
-          "hash": "qGcE2OyvZoQd0h+jNBufrg=="
+          "relative_path": "documentation/orpheus_database_creation_flow.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -143,11 +1142,9 @@
       "source_relative_path": "documentation/orpheus_ddl_helper.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_ddl_helper.html",
-          "hash": "FaHGfZYAc4MFpuj0Rzrf2g=="
+          "relative_path": "documentation/orpheus_ddl_helper.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -155,11 +1152,9 @@
       "source_relative_path": "documentation/orpheus_module.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_module.html",
-          "hash": "FQ7/qYDUXZqZnbBAQwq5Qw=="
+          "relative_path": "documentation/orpheus_module.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -167,11 +1162,9 @@
       "source_relative_path": "documentation/orpheus_table.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/orpheus_table.html",
-          "hash": "OGLiWvLGlEZS7Y8i3k987Q=="
+          "relative_path": "documentation/orpheus_table.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -179,11 +1172,12 @@
       "source_relative_path": "documentation/toc.md",
       "output": {
         ".html": {
-          "relative_path": "documentation/toc.html",
-          "hash": "d33L3FLBTvsu6f5EFy+UIg=="
+          "relative_path": "documentation/toc.html"
+        },
+        ".json": {
+          "relative_path": "documentation/toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -194,7 +1188,6 @@
           "relative_path": "images/OrpheusLogo.png"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -205,7 +1198,6 @@
           "relative_path": "images/OrpheusLogo.svg"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -216,1183 +1208,16 @@
           "relative_path": "images/favicon.ico"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
-      "type": "index",
+      "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "M8lU+t4jRaDOkYM982phkg=="
+          "relative_path": "index.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.DataTypeAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.DataTypeAttribute.html",
-          "hash": "Uw7eaWv7MFETPCBMuSIvbQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.DefaultValue.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.DefaultValue.html",
-          "hash": "eH1jRiv8HzNHpXCwBZ6Rpw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.FieldName.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.FieldName.html",
-          "hash": "WW9c0b3vUyvjOjIK2jtP0A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.ForeignKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.ForeignKey.html",
-          "hash": "qaIQH5P0mP0GAYzoM7f3IA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.Length.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.Length.html",
-          "hash": "iY/M+wiYpALwS+rMLIRHQw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.OrpheusBaseAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.OrpheusBaseAttribute.html",
-          "hash": "tEMzDQxEOIMP92s8/EFS1w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.OrpheusCompositeKeyBaseAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.OrpheusCompositeKeyBaseAttribute.html",
-          "hash": "tmhXF5bBo/GtvrA+yJ+IfQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.PrimaryCompositeKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.PrimaryCompositeKey.html",
-          "hash": "bWTL6Kn26aKYwDpkKX6a3A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.PrimaryKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.PrimaryKey.html",
-          "hash": "tKnbeLxTBihRSxJd2Nws5A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.RequiredField.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.RequiredField.html",
-          "hash": "5LIP2aeZXwI8tVBxQbnBzA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.SQLServerSchemaName.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.SQLServerSchemaName.html",
-          "hash": "IGVPF4qhCKLruPMFN/0u8Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.SchemaIgnore.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.SchemaIgnore.html",
-          "hash": "IghV8lt1hYw5fX7TAG++Fw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.TableName.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.TableName.html",
-          "hash": "WvIxyH5z6RdWDtifNFgXBw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.UniqueCompositeKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.UniqueCompositeKey.html",
-          "hash": "Z2FAYFs0PZefizxPZ1DEpQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.UniqueKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.UniqueKey.html",
-          "hash": "YFx1j+xCVxyGEHEzmvLdaA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusAttributes.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusAttributes.html",
-          "hash": "Jvw/rto3pm13671riLlWHw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.Configuration.ConfigurationManager.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.Configuration.ConfigurationManager.html",
-          "hash": "k5sFXPKJXM1b4aw/BSBAKA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.Configuration.Models.DIBinderOptions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.Configuration.Models.DIBinderOptions.html",
-          "hash": "YxRG2cRQEJ/gzFeO9ntaHg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html",
-          "hash": "eWEooe72YhKbL7LBUPdong=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.Configuration.Models.OrpheusConfiguration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html",
-          "hash": "MYb65gg6ut1mbZzFEmoe8A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.Configuration.Models.ServiceProviderItem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.Configuration.Models.ServiceProviderItem.html",
-          "hash": "mXUHHOA7HhuF15yQc/XvgQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.html",
-          "hash": "2JnV9KB92s9M9pRcz59yYQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.Configuration.Models.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.Configuration.Models.html",
-          "hash": "vEPKswrmL/5fVvPICefEeg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.Configuration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.Configuration.html",
-          "hash": "DTEKNTDhH9ir3wuV0hFvUA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.ModelProperty.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.ModelProperty.html",
-          "hash": "yHvLzh6TISWdT94y7NB3Rw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.ModifiedRecordAction.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.ModifiedRecordAction.html",
-          "hash": "qjLTO4Fh8dfUDKQBPNB8aw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.OrpheusDatabase.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.OrpheusDatabase.html",
-          "hash": "GmxgPWxyRCGu1GvfzTYqHQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.OrpheusModelHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.OrpheusModelHelper.html",
-          "hash": "x89wuHCBCL8qTvltqbdPFQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.OrpheusModule.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.OrpheusModule.html",
-          "hash": "YS42foNaiES9soq5osiyMg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.OrpheusModuleDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.OrpheusModuleDefinition.html",
-          "hash": "tPO9i78s+3BRY6eqE6LXqw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.OrpheusTable-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.OrpheusTable-1.html",
-          "hash": "IgPPQINe4DjXoJKeyh2Qig=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.OrpheusTableKeyField.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.OrpheusTableKeyField.html",
-          "hash": "5yUj3EyGg/+hMdiem43Kzw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.OrpheusTableOptions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.OrpheusTableOptions.html",
-          "hash": "4G1XLk7w6Ho0FekonbBeWA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.PropertyAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.PropertyAttribute.html",
-          "hash": "0n0+72AoUzuuY6dlVJK3aQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint.html",
-          "hash": "oN+Jca6RLFESmDQHGlaqRw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint.html",
-          "hash": "Cixb/af9EZiLoVm1BzXTvQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.Schema.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.Schema.html",
-          "hash": "U3vBcMb0LegMnydy/eH18Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.SchemaDataObject.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaDataObject.html",
-          "hash": "IckVpnKgb69S0KckOJoHKA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.SchemaField.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaField.html",
-          "hash": "vLXkaHyPammr4dFX8tj+DA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.SchemaJoinDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaJoinDefinition.html",
-          "hash": "Kdrt5KooejypN9qez1AIng=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.SchemaObject.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObject.html",
-          "hash": "mQ0GGyQjWFBko6Bf0BoraA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.SchemaObjectTable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectTable.html",
-          "hash": "1kQ4n3f5gVc/wVZXcq2ChA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.SchemaObjectView.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectView.html",
-          "hash": "y6B1e3luVT4kDuUfSOKU2g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.SchemaObjectViewTable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectViewTable.html",
-          "hash": "I1nC4I1MzXtSMBDAVf/olw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint.html",
-          "hash": "4JGw9H2T/LqaPHNvzguvAQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.SchemaBuilder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.SchemaBuilder.html",
-          "hash": "Ec2Z8GymTjAX8b/Jj8R3Dw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusCore.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusCore.html",
-          "hash": "KFJ1eQDdSAkKnq7vMdHs6w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html",
-          "hash": "verV+VkDecGEjFGk1N/psA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Configuration.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Configuration.html",
-          "hash": "oSJXqJB7BjBAAOjFU8xv9A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.DatabaseEngineType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.DatabaseEngineType.html",
-          "hash": "uuSo7Mayezi/T8/6YzqP1w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.ExtendedDbTypes.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.ExtendedDbTypes.html",
-          "hash": "FcCqCKDQV1FkexTsPI1KWg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IModifyRecordEventArguments-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html",
-          "hash": "cZDkJ0F59BRUZjtJ7aI2fw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IMySQLServerDDLHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IMySQLServerDDLHelper.html",
-          "hash": "j147qA76XAqHnrVP1rqzxA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusDDLHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusDDLHelper.html",
-          "hash": "DRo/AAZWMIiIh4fxTiB0xA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusDatabase.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusDatabase.html",
-          "hash": "tOUZuMklBuplJznCUo4U6Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusModelHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusModelHelper.html",
-          "hash": "iDHUQxfyF6Oam2f901wweg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusModule.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusModule.html",
-          "hash": "CY470W5vuf1g5fFmAgKFSQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusModuleDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusModuleDefinition.html",
-          "hash": "Kagg2b6i6NKRcBicYmSdPA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusReferenceTable-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusReferenceTable-1.html",
-          "hash": "EnRTL0hCsOXhQNDGnaq/2Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusReferenceTable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusReferenceTable.html",
-          "hash": "qhgNGUt+mT6We8uhvTN1hA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusTable-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTable-1.html",
-          "hash": "JCt9Cku3Ev0kmkoRA4YUgg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusTable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTable.html",
-          "hash": "+k8jUk/uUprWY8hLxe76+g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusTableKeyField.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTableKeyField.html",
-          "hash": "l6JKAc81D91OzdPE778lfQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.IOrpheusTableOptions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTableOptions.html",
-          "hash": "Uv/25p+UQDM3VVM8T8d4VA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.ISQLServerDDLHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.ISQLServerDDLHelper.html",
-          "hash": "tPGc12PxAdBWOrC+Ar+u2w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.ISaveEventArguments.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.ISaveEventArguments.html",
-          "hash": "/ND4tATylQurvpnbJzis7A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.LogicalOperator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.LogicalOperator.html",
-          "hash": "eTbabsyCab5RjltlVrTxtQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Core.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Core.html",
-          "hash": "oYO0BFy/2p6w5H8rcIudzQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Interfaces.Attributes.IForeignKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html",
-          "hash": "6HeDspux1DwN/fXxR/Ro6w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.html",
-          "hash": "HofSGCg7bX1YEV4o3eFiwg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html",
-          "hash": "fGodIZiTXPeB2FNNyeq3WQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.html",
-          "hash": "XqnLBNsF41LGS7bh7bCzFQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.html",
-          "hash": "asPOcWH5U57/fDOdp5rBeA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Interfaces.Attributes.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.html",
-          "hash": "mDGveyz6suyHJQN0MweOOg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.DDLAction.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.DDLAction.html",
-          "hash": "H+5HmhJkT1DnslvAgxqSlQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.html",
-          "hash": "iN5I/D6DIWs6oNADY4qaRQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint.html",
-          "hash": "G7nYQQRbfm05jSCAW2QYxQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.ISchema.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.ISchema.html",
-          "hash": "FnPkQ3sXmRJn5OqHGRNUOw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.ISchemaConstraint.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaConstraint.html",
-          "hash": "Ent62LXax8TUVaELI1RrwA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.ISchemaDataObject.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaDataObject.html",
-          "hash": "ePxnyBiyvc3yg+DLF/3XDA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.ISchemaField.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaField.html",
-          "hash": "jHNhgix/zXmlGTStkgUkKw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.ISchemaJoinDefinition.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaJoinDefinition.html",
-          "hash": "XE4wXwI2jiGVwHb5aQ4Dfw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.ISchemaObject.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaObject.html",
-          "hash": "Y5Oc9I2rNnoy4hGt3s4beg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.ISchemaTable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaTable.html",
-          "hash": "AqXEPzjVt2GAWy2VDbGkzA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.ISchemaView.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaView.html",
-          "hash": "RZvCf4x8dSekXbdrJJS5lw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.ISchemaViewTable.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.ISchemaViewTable.html",
-          "hash": "LJxfiVeudTHFm58JSZSB2A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint.html",
-          "hash": "9NdWwFbxUUp33ikcN2nFpw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.SchemaJoinOperator.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.SchemaJoinOperator.html",
-          "hash": "8DID7VFe1sGzbIsNNNYwUQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.SchemaJoinType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.SchemaJoinType.html",
-          "hash": "3vkLUmR2A/FAtoJROBqjqw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.SchemaObjectType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.SchemaObjectType.html",
-          "hash": "XzrTkSKXeLdZoCz4cxXnyw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.SchemaSort.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.SchemaSort.html",
-          "hash": "ocxSFpous7AoI8TBL/eb4A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusInterfaces.Schema.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusInterfaces.Schema.html",
-          "hash": "qRyKBe3smE5eXvzvQ7zWcA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html",
-          "hash": "DwlKDnO2BgwW/z0gzfUpMg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusMySQLDDLHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusMySQLDDLHelper.html",
-          "hash": "NZy1WnsoJrzJ8QtRQqM3oA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html",
-          "hash": "9Q/Q4KMi6bbdnyucUUuDTg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/temp/docfxapi/OrpheusSQLDDLHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/OrpheusSQLDDLHelper.html",
-          "hash": "BPJT7VTJ8fQfsaUp5Z2pcA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "obj/temp/docfxapi/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "25UxjN0jbLgRB9X15yJQUg=="
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -1400,62 +1225,13 @@
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
-          "relative_path": "toc.html",
-          "hash": "N0q52iVgKLy4EP9UFq45vw=="
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
-    }
-  ],
-  "incremental_info": [
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
-        "incrementalPhase": "build",
-        "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "ForceRebuild"
-      },
-      "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 13,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 96,
-          "skipped_file_count": 0
-        },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        }
-      }
-    },
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
-        "incrementalPhase": "postProcessing",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {}
     }
   ],
   "version_info": {},
