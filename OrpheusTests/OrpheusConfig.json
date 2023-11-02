@@ -2,7 +2,7 @@
   "DatabaseConnections": [
     {
       "ConfigurationName": "SQLServer",
-      "Server": "localhost",
+      "Server": "127.0.0.1",
       "DatabaseName": "orpheusTestDB",
       "UserName": "sa",
       "Password": "1StrongPwd!!",
