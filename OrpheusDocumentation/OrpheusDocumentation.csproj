@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Copyright>Trifidis Georgios (Yiorgos)</Copyright>
+    <TargetFramework>net7.0</TargetFramework>
+    <Copyright>Mobilotronic</Copyright>
     <Product>Orpheus ORM</Product>
     <Version>1.2.0</Version>
     <AssemblyVersion>1.2.0</AssemblyVersion>
@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="docfx.console" Version="2.45.1">
+    <PackageReference Include="docfx.console" Version="2.59.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>

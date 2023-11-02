@@ -210,20 +210,22 @@ namespace OrpheusTests.ConfigurationTests
 
             var errorId = Guid.NewGuid().ToString();
             var traceId = Guid.NewGuid().ToString();
-            var logFileContentsName = $"c:\\temp\\orpheus\\nlog-all-{DateTime.Now.ToString("yyyy-MM-dd")}.log";
+            var logFileContentsName = $"{this.CurrentDirectory}/nlog-all-{DateTime.Now.ToString("yyyy-MM-dd")}.log";
 
             var logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusConfigurationTests>();
             logger.LogError($"ErrorId {errorId} test Error log entry");
 
             //loading the log file content.
-            var logFileContents = File.ReadAllText(logFileContentsName);
+
+            using var fileStream = new StreamReader(logFileContentsName, new FileStreamOptions() { Mode = FileMode.Open, Access = FileAccess.Read, Share = FileShare.ReadWrite});
+            string logFileContents = fileStream.ReadToEnd();
 
             //making sure that the error is logged.
             Assert.AreEqual(true, logFileContents.Contains(errorId));
 
             //loading the NLog XML configuration file and updating the logging level.
             XmlDocument doc = new XmlDocument();
-            doc.Load(this.CurrentDirectory + @"\" + "nlog.config");
+            doc.Load($"{this.CurrentDirectory}/nlog.config");
             XmlNodeList nlogRules = doc.DocumentElement.SelectNodes("//*[name()='nlog']/*[name()='rules']/*[name()='logger']");
             foreach(XmlNode nlogRule in nlogRules)
             {
@@ -233,14 +235,15 @@ namespace OrpheusTests.ConfigurationTests
                     logLevel.Value = "Trace";
                 }
             }
-            doc.Save(this.CurrentDirectory + @"\" + "nlog.config");
+            doc.Save($"{this.CurrentDirectory}/nlog.config");
 
             //give NLog some time to reload its configuration.
             await Task.Delay(3000);
             logger.LogTrace($"TraceId {traceId} test Trace log entry");
-            
+
             //reload log file content.
-            logFileContents = File.ReadAllText(logFileContentsName);
+            using var fileStream2 = new StreamReader(logFileContentsName, new FileStreamOptions() { Mode = FileMode.Open, Access = FileAccess.Read, Share = FileShare.ReadWrite });
+            logFileContents = fileStream2.ReadToEnd();
 
             //making sure that the trace is logged.
             Assert.AreEqual(true, logFileContents.Contains(traceId));

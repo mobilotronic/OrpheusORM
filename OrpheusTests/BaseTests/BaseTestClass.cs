@@ -45,15 +45,20 @@ namespace OrpheusTests
         private IOrpheusDatabase db;
         private string fileName;
         private byte[] currentAppsettingsHash = new byte[0];
+        private string _assemblyDirectory = null;
 
         private string assemblyDirectory
         {
             get
             {
-                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
-                UriBuilder uri = new UriBuilder(codeBase);
-                string path = Uri.UnescapeDataString(uri.Path);
-                return Path.GetDirectoryName(path);
+                if(_assemblyDirectory == null)
+                {
+                    string codeBase = Assembly.GetExecutingAssembly().Location;
+                    //Console.WriteLine($"Assembly path is: {codeBase}");
+                    _assemblyDirectory = Path.GetDirectoryName(codeBase);
+                }
+
+                return _assemblyDirectory;
             }
         }
 
@@ -78,7 +83,7 @@ namespace OrpheusTests
         public const string LoggerTests = "LoggerTests";
         public const string ConfigurationTests = "ConfigurationTests";
         public const string ConfigurationFileName = "OrpheusConfig.json";
-
+ 
         /// <summary>
         /// Initializes Orpheus configuration (Unity) and creates and connects the Database object.
         /// </summary>
@@ -105,14 +110,15 @@ namespace OrpheusTests
             //we only need to initialize once.
             if (this.configuration == null)
             {
-                LogManager.LoadConfiguration(this.assemblyDirectory + @"\" + "nlog.config");
+                LogManager.Setup().LoadConfigurationFromFile($"{this.assemblyDirectory}/nlog.config");
                 var logger = LogManager.GetCurrentClassLogger();
                 try
                 {
                     if (configurationFileName == null)
-                        configurationFileName = $"{this.assemblyDirectory}\\{ConfigurationFileName}";
+                        configurationFileName = $"{this.assemblyDirectory}/{ConfigurationFileName}";
+                    //Console.WriteLine($"Configuration file is: {configurationFileName}");
                     IServiceCollection serviceCollection = new ServiceCollection();
-                    this.configuration = this.createConfiguration($"{this.assemblyDirectory}\\{ConfigurationFileName}");
+                    this.configuration = this.createConfiguration($"{this.assemblyDirectory}/{ConfigurationFileName}");
                     serviceCollection.AddTransient<IOrpheusDatabase, OrpheusDatabase>();
                     switch (this.DatabaseEngine)
                     {
@@ -120,12 +126,14 @@ namespace OrpheusTests
                             {
                                 serviceCollection.AddTransient<IDbConnection, SqlConnection>();
                                 serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusSQLServerDDLHelper>();
+                                //Console.WriteLine($"SQL services configured");
                                 break;
                             }
                         case DbEngine.dbMySQL:
                             {
                                 serviceCollection.AddTransient<IDbConnection, MySqlConnection>();
                                 serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusMySQLServerDDLHelper>();
+                                //Console.WriteLine($"MySQL services configured");
                                 break;
                             }
                     }
@@ -137,7 +145,8 @@ namespace OrpheusTests
                         builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
                         builder.AddNLog(configuration);
                     });
-                    ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
+                    OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
+                    //Console.WriteLine($"Configuration initialized");
                 }
                 catch (Exception e)
                 {
@@ -158,8 +167,8 @@ namespace OrpheusTests
                 {
                     this.InitializeConfiguration();
                     string databaseConnectionName = this.DatabaseEngine == DbEngine.dbSQLServer ? "SQLServer" : "MySQL";
-                    this.db = ConfigurationManager.Resolve<IOrpheusDatabase>();
-                    this.db.DatabaseConnectionConfiguration = ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == databaseConnectionName.ToLower()).Clone();
+                    this.db = OrpheusCore.Configuration.ConfigurationManager.Resolve<IOrpheusDatabase>();
+                    this.db.DatabaseConnectionConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c => c.ConfigurationName.ToLower() == databaseConnectionName.ToLower()).Clone();
                 }
                 return this.db;
             }
@@ -185,7 +194,7 @@ namespace OrpheusTests
             {
                 if (this.logger == null)
                 {
-                    this.logger = ConfigurationManager.LoggerFactory.CreateLogger<BaseTestClass>();
+                    this.logger = OrpheusCore.Configuration.ConfigurationManager.LoggerFactory.CreateLogger<BaseTestClass>();
                 }
                 return this.logger;
             }

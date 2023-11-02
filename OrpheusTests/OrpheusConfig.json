@@ -2,19 +2,21 @@
   "DatabaseConnections": [
     {
       "ConfigurationName": "SQLServer",
-      "Server": "(LocalDb)\\MSSQLLocalDB",
+      "Server": "127.0.0.1",
       "DatabaseName": "orpheusTestDB",
-      "UseIntegratedSecurity": true,
-      "UseIntegratedSecurityForServiceConnection": true
+      "UserName": "sa",
+      "Password": "1StrongPwd!!",
+      "ServiceUserName": "sa",
+      "ServicePassword": "1StrongPwd!!"
     },
     {
       "ConfigurationName": "MySQL",
-      "Server": "[ServerName]",
+      "Server": "127.0.0.1",
       "DatabaseName": "orpheusTestDB",
       "UserName": "root",
-      "Password": "[Password]",
+      "Password": "root",
       "ServiceUserName": "root",
-      "ServicePassword": "[Password]"
+      "ServicePassword": "root"
     }
   ],
   "Logging": {

@@ -2,19 +2,19 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>OrpheusORMAttributes</id>
-        <version>1.2.1</version>
+        <version>1.3.0</version>
         <title>OrpheusORM Attributes</title>
-        <authors>Trifidis Georgios(Yiorgos)</authors>
-        <owners>Trifidis Georgios(Yiorgos)</owners>
+        <authors>Mobilotronic</authors>
+        <owners>Mobilotronic</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>OrpheusORM schema creation/code first attributes.</description>
-        <copyright>https://github.com/gtrifidis/OrpheusORM</copyright>
+        <copyright>https://github.com/mobilotronic/OrpheusORM</copyright>
         <language>en-US</language>
       <license type="expression">MPL-2.0</license>
-      <iconUrl>https://github.com/gtrifidis/OrpheusORM/raw/master/OrpheusIcon.png</iconUrl>
-		<projectUrl>https://github.com/gtrifidis/OrpheusORM</projectUrl>
+      <iconUrl>https://github.com/mobilotronic/OrpheusORM/raw/master/OrpheusIcon.png</iconUrl>
+		<projectUrl>https://github.com/mobilotronic/OrpheusORM</projectUrl>
       <dependencies>
-        <dependency id="OrpheusORMInterfaces" version="1.2.1" />
+        <dependency id="OrpheusORMInterfaces" version="1.3.0" />
       </dependencies>
     </metadata>
     <files>

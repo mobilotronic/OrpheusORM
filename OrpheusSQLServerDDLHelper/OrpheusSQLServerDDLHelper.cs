@@ -348,7 +348,7 @@ namespace OrpheusSQLDDLHelper
                 catch (Exception e)
                 {
                     this.logger.LogError(ErrorCodes.ERR_SCHEMA_OBJECT_ID,e,$"{ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_OBJECT_ID)} {schemaObjectName}");
-                    throw e;
+                    throw;
                 }
                 finally
                 {
