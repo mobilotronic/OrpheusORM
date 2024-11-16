@@ -1,803 +1,812 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class OrpheusModelHelper
-   | Orpheus </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class OrpheusModelHelper
-   | Orpheus ">
-    <meta name="generator" content="docfx 2.45.1.0">
-    
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/font-awesome.min.css">
-    <link rel="stylesheet" href="../styles/code-syntax.css">  
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+      <title>Class OrpheusModelHelper
+ | Orpheus </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OrpheusModelHelper
+ | Orpheus ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
   </head>
-  <body data-spy="scroll" data-target="#affix">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list"></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="OrpheusCore.OrpheusModelHelper">
-  
-  
-  <h1 id="OrpheusCore_OrpheusModelHelper" data-uid="OrpheusCore.OrpheusModelHelper" class="text-break">Class OrpheusModelHelper
+
+        <article data-uid="OrpheusCore.OrpheusModelHelper">
+
+
+
+  <h1 id="OrpheusCore_OrpheusModelHelper" data-uid="OrpheusCore.OrpheusModelHelper" class="text-break">
+    Class OrpheusModelHelper
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h1>
-  <div class="markdown level0 summary"><p>OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">OrpheusModelHelper</span></div>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusCore.html">OrpheusCore</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>OrpheusCore.dll</dd></dl>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="OrpheusCore.html">OrpheusCore</a></h6>
-  <h6><strong>Assembly</strong>: OrpheusCore.dll</h6>
-  <h5 id="OrpheusCore_OrpheusModelHelper_syntax">Syntax</h5>
+
+  <div class="markdown summary"><p>OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class OrpheusModelHelper : IOrpheusModelHelper</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper__ctor_System_Type_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.%23ctor(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L508">View Source</a>
-  </span>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">OrpheusModelHelper</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="OrpheusInterfaces.Core.IOrpheusModelHelper.html">IOrpheusModelHelper</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="OrpheusCore_OrpheusModelHelper__ctor_" data-uid="OrpheusCore.OrpheusModelHelper.#ctor*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper__ctor_System_Type_" data-uid="OrpheusCore.OrpheusModelHelper.#ctor(System.Type)">OrpheusModelHelper(Type)</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper__ctor_System_Type_" data-uid="OrpheusCore.OrpheusModelHelper.#ctor(System.Type)">
+  OrpheusModelHelper(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L509"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.OrpheusModelHelper.html">OrpheusModelHelper</a> class.
 OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public OrpheusModelHelper(Type modelType)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Type</span></td>
-        <td><span class="parametername">modelType</span></td>
-        <td><p>Type of the model.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_CustomFieldNameProperties.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.CustomFieldNameProperties%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L286">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>Type of the model.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="OrpheusCore_OrpheusModelHelper_CustomFieldNameProperties_" data-uid="OrpheusCore.OrpheusModelHelper.CustomFieldNameProperties*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_CustomFieldNameProperties" data-uid="OrpheusCore.OrpheusModelHelper.CustomFieldNameProperties">CustomFieldNameProperties</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_CustomFieldNameProperties" data-uid="OrpheusCore.OrpheusModelHelper.CustomFieldNameProperties">
+  CustomFieldNameProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L287"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Dictionary&lt;string, string&gt; CustomFieldNameProperties { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><p>Model properties that have an explicitly set field name.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_ForeignKeys.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.ForeignKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L261">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Model properties that have an explicitly set field name.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_ForeignKeys_" data-uid="OrpheusCore.OrpheusModelHelper.ForeignKeys*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_ForeignKeys" data-uid="OrpheusCore.OrpheusModelHelper.ForeignKeys">ForeignKeys</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_ForeignKeys" data-uid="OrpheusCore.OrpheusModelHelper.ForeignKeys">
+  ForeignKeys
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L262"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Dictionary&lt;string, IForeignKey&gt; ForeignKeys { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html">IForeignKey</a>&gt;</td>
-        <td><p>Model&apos;s foreign keys.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_ModelProperties.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.ModelProperties%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L291">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html">IForeignKey</a>&gt;</dt>
+    <dd><p>Model's foreign keys.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_ModelProperties_" data-uid="OrpheusCore.OrpheusModelHelper.ModelProperties*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_ModelProperties" data-uid="OrpheusCore.OrpheusModelHelper.ModelProperties">ModelProperties</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_ModelProperties" data-uid="OrpheusCore.OrpheusModelHelper.ModelProperties">
+  ModelProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public PropertyInfo[] ModelProperties { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Reflection.PropertyInfo</span>[]</td>
-        <td><p>Model&apos;s properties.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_PrimaryCompositeKeys.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.PrimaryCompositeKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L271">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>[]</dt>
+    <dd><p>Model's properties.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_PrimaryCompositeKeys_" data-uid="OrpheusCore.OrpheusModelHelper.PrimaryCompositeKeys*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_PrimaryCompositeKeys" data-uid="OrpheusCore.OrpheusModelHelper.PrimaryCompositeKeys">PrimaryCompositeKeys</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_PrimaryCompositeKeys" data-uid="OrpheusCore.OrpheusModelHelper.PrimaryCompositeKeys">
+  PrimaryCompositeKeys
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;IOrpheusBaseCompositeKeyAttribute&gt; PrimaryCompositeKeys { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html">IOrpheusBaseCompositeKeyAttribute</a>&gt;</td>
-        <td><p>Model&apos;s composite primary keys.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_PrimaryKeys.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.PrimaryKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L256">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html">IOrpheusBaseCompositeKeyAttribute</a>&gt;</dt>
+    <dd><p>Model's composite primary keys.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_PrimaryKeys_" data-uid="OrpheusCore.OrpheusModelHelper.PrimaryKeys*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_PrimaryKeys" data-uid="OrpheusCore.OrpheusModelHelper.PrimaryKeys">PrimaryKeys</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_PrimaryKeys" data-uid="OrpheusCore.OrpheusModelHelper.PrimaryKeys">
+  PrimaryKeys
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Dictionary&lt;string, IPrimaryKey&gt; PrimaryKeys { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.html">IPrimaryKey</a>&gt;</td>
-        <td><p>Model&apos;s primary keys.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_SchemaIgnoreProperties.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.SchemaIgnoreProperties%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L281">View Source</a>
-  </span>
-  <a id="OrpheusCore_OrpheusModelHelper_SchemaIgnoreProperties_" data-uid="OrpheusCore.OrpheusModelHelper.SchemaIgnoreProperties*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_SchemaIgnoreProperties" data-uid="OrpheusCore.OrpheusModelHelper.SchemaIgnoreProperties">SchemaIgnoreProperties</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; SchemaIgnoreProperties { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><p>Model properties that are not part of the schema.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_SQLName.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.SQLName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L296">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.html">IPrimaryKey</a>&gt;</dt>
+    <dd><p>Model's primary keys.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_SQLName_" data-uid="OrpheusCore.OrpheusModelHelper.SQLName*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_SQLName" data-uid="OrpheusCore.OrpheusModelHelper.SQLName">SQLName</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_SQLName" data-uid="OrpheusCore.OrpheusModelHelper.SQLName">
+  SQLName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L297"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SQLName { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>Model&apos;s SQLName. Defaults to the model&apos;s type name.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_SQLServerSchemaName.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.SQLServerSchemaName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L301">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Model's SQLName. Defaults to the model's type name.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_SQLServerSchemaName_" data-uid="OrpheusCore.OrpheusModelHelper.SQLServerSchemaName*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_SQLServerSchemaName" data-uid="OrpheusCore.OrpheusModelHelper.SQLServerSchemaName">SQLServerSchemaName</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_SQLServerSchemaName" data-uid="OrpheusCore.OrpheusModelHelper.SQLServerSchemaName">
+  SQLServerSchemaName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L302"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SQLServerSchemaName { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>SQL server&apos;s schema name.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_UniqueCompositeKeys.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.UniqueCompositeKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L276">View Source</a>
-  </span>
-  <a id="OrpheusCore_OrpheusModelHelper_UniqueCompositeKeys_" data-uid="OrpheusCore.OrpheusModelHelper.UniqueCompositeKeys*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_UniqueCompositeKeys" data-uid="OrpheusCore.OrpheusModelHelper.UniqueCompositeKeys">UniqueCompositeKeys</h4>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>SQL server's schema name.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusModelHelper_SchemaIgnoreProperties_" data-uid="OrpheusCore.OrpheusModelHelper.SchemaIgnoreProperties*"></a>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_SchemaIgnoreProperties" data-uid="OrpheusCore.OrpheusModelHelper.SchemaIgnoreProperties">
+  SchemaIgnoreProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L282"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; SchemaIgnoreProperties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Model properties that are not part of the schema.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusModelHelper_UniqueCompositeKeys_" data-uid="OrpheusCore.OrpheusModelHelper.UniqueCompositeKeys*"></a>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_UniqueCompositeKeys" data-uid="OrpheusCore.OrpheusModelHelper.UniqueCompositeKeys">
+  UniqueCompositeKeys
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;IOrpheusBaseCompositeKeyAttribute&gt; UniqueCompositeKeys { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html">IOrpheusBaseCompositeKeyAttribute</a>&gt;</td>
-        <td><p>Model&apos;s composite unique keys.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_UniqueKeys.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.UniqueKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L266">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html">IOrpheusBaseCompositeKeyAttribute</a>&gt;</dt>
+    <dd><p>Model's composite unique keys.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_UniqueKeys_" data-uid="OrpheusCore.OrpheusModelHelper.UniqueKeys*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_UniqueKeys" data-uid="OrpheusCore.OrpheusModelHelper.UniqueKeys">UniqueKeys</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_UniqueKeys" data-uid="OrpheusCore.OrpheusModelHelper.UniqueKeys">
+  UniqueKeys
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Dictionary&lt;string, IUniqueKey&gt; UniqueKeys { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.html">IUniqueKey</a>&gt;</td>
-        <td><p>Model&apos;s unique keys.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_CreateInstance__1.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.CreateInstance%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L363">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.html">IUniqueKey</a>&gt;</dt>
+    <dd><p>Model's unique keys.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="OrpheusCore_OrpheusModelHelper_CreateInstance_" data-uid="OrpheusCore.OrpheusModelHelper.CreateInstance*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_CreateInstance__1" data-uid="OrpheusCore.OrpheusModelHelper.CreateInstance``1">CreateInstance&lt;T&gt;()</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_CreateInstance__1" data-uid="OrpheusCore.OrpheusModelHelper.CreateInstance``1">
+  CreateInstance&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L364"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates an instance of the model and typecasts it to the given type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public T CreateInstance&lt;T&gt;()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><p>An instance of &apos;T&apos;</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>Type to cast the model</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_CreateSchemaFields_OrpheusInterfaces_Schema_ISchemaDataObject_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.CreateSchemaFields(OrpheusInterfaces.Schema.ISchemaDataObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L372">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>An instance of 'T'</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type to cast the model</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_CreateSchemaFields_" data-uid="OrpheusCore.OrpheusModelHelper.CreateSchemaFields*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_CreateSchemaFields_OrpheusInterfaces_Schema_ISchemaDataObject_" data-uid="OrpheusCore.OrpheusModelHelper.CreateSchemaFields(OrpheusInterfaces.Schema.ISchemaDataObject)">CreateSchemaFields(ISchemaDataObject)</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_CreateSchemaFields_OrpheusInterfaces_Schema_ISchemaDataObject_" data-uid="OrpheusCore.OrpheusModelHelper.CreateSchemaFields(OrpheusInterfaces.Schema.ISchemaDataObject)">
+  CreateSchemaFields(ISchemaDataObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L373"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates schema fields and constraints for a model.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void CreateSchemaFields(ISchemaDataObject schemaObj)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaDataObject.html">ISchemaDataObject</a></td>
-        <td><span class="parametername">schemaObj</span></td>
-        <td><p>The schema object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_GetAlterDDLCommands_OrpheusInterfaces_Schema_ISchemaDataObject_OrpheusInterfaces_Core_IOrpheusDDLHelper_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.Schema.ISchemaDataObject%2COrpheusInterfaces.Core.IOrpheusDDLHelper)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L398">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObj</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaDataObject.html">ISchemaDataObject</a></dt>
+    <dd><p>The schema object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_GetAlterDDLCommands_" data-uid="OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_GetAlterDDLCommands_OrpheusInterfaces_Schema_ISchemaDataObject_OrpheusInterfaces_Core_IOrpheusDDLHelper_" data-uid="OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.Schema.ISchemaDataObject,OrpheusInterfaces.Core.IOrpheusDDLHelper)">GetAlterDDLCommands(ISchemaDataObject, IOrpheusDDLHelper)</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_GetAlterDDLCommands_OrpheusInterfaces_Schema_ISchemaDataObject_OrpheusInterfaces_Core_IOrpheusDDLHelper_" data-uid="OrpheusCore.OrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.Schema.ISchemaDataObject,OrpheusInterfaces.Core.IOrpheusDDLHelper)">
+  GetAlterDDLCommands(ISchemaDataObject, IOrpheusDDLHelper)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L399"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a list of SQL ALTER commands, based on the differences between the current version of the model
 and the current version of the corresponding db table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;string&gt; GetAlterDDLCommands(ISchemaDataObject schemaObj, IOrpheusDDLHelper ddlHelper)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaDataObject.html">ISchemaDataObject</a></td>
-        <td><span class="parametername">schemaObj</span></td>
-        <td><p>The schema object.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></td>
-        <td><span class="parametername">ddlHelper</span></td>
-        <td><p>The ddl helper.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_GetFieldNameForProperty_System_Reflection_PropertyInfo_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L353">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObj</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaDataObject.html">ISchemaDataObject</a></dt>
+    <dd><p>The schema object.</p>
+</dd>
+    <dt><code>ddlHelper</code> <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></dt>
+    <dd><p>The ddl helper.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_GetFieldNameForProperty_" data-uid="OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_GetFieldNameForProperty_System_Reflection_PropertyInfo_" data-uid="OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)">GetFieldNameForProperty(PropertyInfo)</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_GetFieldNameForProperty_System_Reflection_PropertyInfo_" data-uid="OrpheusCore.OrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)">
+  GetFieldNameForProperty(PropertyInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L354"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Helper function that returns the corresponding field name for a property.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string GetFieldNameForProperty(PropertyInfo prop)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Reflection.PropertyInfo</span></td>
-        <td><span class="parametername">prop</span></td>
-        <td><p>The property info.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_IsSchemaProperty_System_Reflection_PropertyInfo_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L343">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>prop</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></dt>
+    <dd><p>The property info.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_IsSchemaProperty_" data-uid="OrpheusCore.OrpheusModelHelper.IsSchemaProperty*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_IsSchemaProperty_System_Reflection_PropertyInfo_" data-uid="OrpheusCore.OrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)">IsSchemaProperty(PropertyInfo)</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_IsSchemaProperty_System_Reflection_PropertyInfo_" data-uid="OrpheusCore.OrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)">
+  IsSchemaProperty(PropertyInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L344"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Helper function that returns true if the property is not actually part of the schema.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsSchemaProperty(PropertyInfo property)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Reflection.PropertyInfo</span></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The property.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_IterateModelProperties_OrpheusCore_ModelProperty_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.IterateModelProperties(OrpheusCore.ModelProperty)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L310">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></dt>
+    <dd><p>The property.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_IterateModelProperties_" data-uid="OrpheusCore.OrpheusModelHelper.IterateModelProperties*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_IterateModelProperties_OrpheusCore_ModelProperty_" data-uid="OrpheusCore.OrpheusModelHelper.IterateModelProperties(OrpheusCore.ModelProperty)">IterateModelProperties(ModelProperty)</h4>
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_IterateModelProperties_OrpheusCore_ModelProperty_" data-uid="OrpheusCore.OrpheusModelHelper.IterateModelProperties(OrpheusCore.ModelProperty)">
+  IterateModelProperties(ModelProperty)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L311"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Helper function to iterate through the model properties and calls the given callback,
 for each property.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void IterateModelProperties(ModelProperty callback)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusCore.ModelProperty.html">ModelProperty</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td><p>The callback method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModelHelper_IteratePropertyAttributes_System_Reflection_PropertyInfo_OrpheusCore_PropertyAttribute_.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes(System.Reflection.PropertyInfo%2COrpheusCore.PropertyAttribute)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModelHelper.cs/#L327">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>callback</code> <a class="xref" href="OrpheusCore.ModelProperty.html">ModelProperty</a></dt>
+    <dd><p>The callback method.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusModelHelper_IteratePropertyAttributes_" data-uid="OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes*"></a>
-  <h4 id="OrpheusCore_OrpheusModelHelper_IteratePropertyAttributes_System_Reflection_PropertyInfo_OrpheusCore_PropertyAttribute_" data-uid="OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes(System.Reflection.PropertyInfo,OrpheusCore.PropertyAttribute)">IteratePropertyAttributes(PropertyInfo, PropertyAttribute)</h4>
-  <div class="markdown level1 summary"><p>Helper function to iterate through the property&apos;s attributes and calls the given callback,
+
+  <h3 id="OrpheusCore_OrpheusModelHelper_IteratePropertyAttributes_System_Reflection_PropertyInfo_OrpheusCore_PropertyAttribute_" data-uid="OrpheusCore.OrpheusModelHelper.IteratePropertyAttributes(System.Reflection.PropertyInfo,OrpheusCore.PropertyAttribute)">
+  IteratePropertyAttributes(PropertyInfo, PropertyAttribute)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModelHelper.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Helper function to iterate through the property's attributes and calls the given callback,
 for each attribute.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void IteratePropertyAttributes(PropertyInfo property, PropertyAttribute callback)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Reflection.PropertyInfo</span></td>
-        <td><span class="parametername">property</span></td>
-        <td><p>The property.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="OrpheusCore.PropertyAttribute.html">PropertyAttribute</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td><p>The callback method.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusModelHelper.html">IOrpheusModelHelper</a>
-  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a></dt>
+    <dd><p>The property.</p>
+</dd>
+    <dt><code>callback</code> <a class="xref" href="OrpheusCore.PropertyAttribute.html">PropertyAttribute</a></dt>
+    <dd><p>The callback method.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
-          </div>
+
+
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Orpheus - Mobilotronic © 2017 - 2023
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            Orpheus - Trifidis Georgios(Yiorgos) © 2017 - 2019
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
-    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-99241001-1', 'auto');
-      ga('send', 'pageview');
-    
-    </script>
+    </footer>
   </body>
 </html>

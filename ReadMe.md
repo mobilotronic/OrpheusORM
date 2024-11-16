@@ -1,9 +1,7 @@
 # Orpheus
 Orpheus is a lightweight flexible ORM, that gives the developer real flexibility, on how to create schemas, load/save data configure complex constraints and relationships between models.
 
-[![Build Status](https://dev.azure.com/thetardigrade/OrpheusORM/_apis/build/status/OrpheusORM-CI?branchName=master)](https://dev.azure.com/thetardigrade/OrpheusORM/_build/latest?definitionId=16&branchName=master)
-[![Nuget](https://img.shields.io/nuget/v/OrpheusOrm.svg)](https://www.nuget.org/packages?q=orpheusorm "Orpheus ORM")
-[![Nuget](https://img.shields.io/nuget/dt/OrpheusORM.svg)](https://www.nuget.org/packages?q=orpheusorm "Downloads")
+[![CI Build](https://github.com/mobilotronic/OrpheusORM/actions/workflows/buildWorkFlow.yml/badge.svg)](https://github.com/mobilotronic/OrpheusORM/actions/workflows/buildWorkFlow.yml)
 ## Overview
 
 ### Schema creation
@@ -20,7 +18,7 @@ Using an OrpheusModule you can save nested data (master-detail-subdetail) with j
 All master-detail relationships and keys will be updated automatically.
 
 ## Documentation
-To get started go to Orpheus's [documentation](https://gtrifidis.github.io/OrpheusORM/), where besides a fully documented API, you can also find examples on how to use Orpheus.
+To get started go to Orpheus's [documentation](https://mobilotronic.github.io/OrpheusORM/), where besides a fully documented API, you can also find examples on how to use Orpheus.
 
 ## Nuget packages
 There are three available nuget packages.
@@ -31,7 +29,7 @@ There are three available nuget packages.
 As mentioned in the documentation, Orpheus is database engine agnostic, but between different database engines there are differences.
 
 That's the role of the DDL helpers, to reconcile the differences between the underlying database engines.
-Read more about DDL helpers [here](https://gtrifidis.github.io/OrpheusORM/documentation/orpheus_ddl_helper.html)
+Read more about DDL helpers [here](https://mobilotronic.github.io/OrpheusORM/documentation/orpheus_ddl_helper.html)
 
 There are already two DDL helpers available for SQL and MySQL, but you can implement your own and use it.
 **Note:** MySQL DDL helper has a dependency on [MySQL.Data](https://dev.mysql.com/downloads/) 

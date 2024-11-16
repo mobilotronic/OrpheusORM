@@ -1,83 +1,92 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Benchmark results | Orpheus </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Benchmark results | Orpheus ">
-    <meta name="generator" content="docfx 2.45.1.0">
-    
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link rel="stylesheet" href="../../styles/font-awesome.min.css">
-    <link rel="stylesheet" href="../../styles/code-syntax.css">  
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
-    <meta property="docfx:rel" content="../../">
-    <meta property="docfx:newtab" content="true">
+      <title>Benchmark results | Orpheus </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Benchmark results | Orpheus ">
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusDocumentation/documentation/benchmarks/orpheus_benchmarking_results_1.1.2.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
   </head>
-  <body data-spy="scroll" data-target="#affix">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../images/OrpheusLogo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/OrpheusLogo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list"></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="">
+
+        <article data-uid="">
 <h1 id="benchmark-results">Benchmark results</h1>
 
 <h2 id="machine-details">Machine details</h2>
@@ -85,33 +94,33 @@
 <thead>
 <tr>
 <th>Attribute</th>
-<th style="text-align:right">Value</th>
+<th style="text-align: right;">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Operating System</td>
-<td style="text-align:right">Windows 10</td>
+<td style="text-align: right;">Windows 10</td>
 </tr>
 <tr>
 <td>CPU</td>
-<td style="text-align:right">I7</td>
+<td style="text-align: right;">I7</td>
 </tr>
 <tr>
 <td>Database engine</td>
-<td style="text-align:right">SQL Server</td>
+<td style="text-align: right;">SQL Server</td>
 </tr>
 <tr>
 <td>Database engine location</td>
-<td style="text-align:right">Local</td>
+<td style="text-align: right;">Local</td>
 </tr>
 <tr>
 <td>HDD type</td>
-<td style="text-align:right">SSD</td>
+<td style="text-align: right;">SSD</td>
 </tr>
 <tr>
 <td>RAM</td>
-<td style="text-align:right">8GB</td>
+<td style="text-align: right;">8GB</td>
 </tr>
 </tbody>
 </table>
@@ -120,25 +129,25 @@
 <thead>
 <tr>
 <th>Attribute</th>
-<th style="text-align:right">Value</th>
+<th style="text-align: right;">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Serialization type</td>
-<td style="text-align:right">POCO</td>
+<td style="text-align: right;">POCO</td>
 </tr>
 <tr>
 <td>Benchmark framework</td>
-<td style="text-align:right"><a href="https://github.com/dotnet/BenchmarkDotNet">BenchmarkDotNet</a></td>
+<td style="text-align: right;"><a href="https://github.com/dotnet/BenchmarkDotNet">BenchmarkDotNet</a></td>
 </tr>
 <tr>
 <td>Performed on</td>
-<td style="text-align:right">October 14th 2017</td>
+<td style="text-align: right;">October 14th 2017</td>
 </tr>
 <tr>
 <td>Orpheus version</td>
-<td style="text-align:right">1.1.2</td>
+<td style="text-align: right;">1.1.2</td>
 </tr>
 </tbody>
 </table>
@@ -167,107 +176,108 @@
 
         public TestModelTransactorType Type { get; set; }
     }
-</code></pre><h2 id="insert-results">Insert results</h2>
+</code></pre>
+<h2 id="insert-results">Insert results</h2>
 <p>Inserting rows in a batch. One transaction per test.</p>
 <table>
 <thead>
 <tr>
 <th>Method</th>
-<th style="text-align:right">Mean</th>
-<th style="text-align:right">Error</th>
-<th style="text-align:right">StdDev</th>
-<th style="text-align:right">Scaled</th>
-<th style="text-align:right">ScaledSD</th>
-<th style="text-align:right">Gen 0</th>
-<th style="text-align:right">Gen 1</th>
-<th style="text-align:right">Gen 2</th>
-<th style="text-align:right">Allocated</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Scaled</th>
+<th style="text-align: right;">ScaledSD</th>
+<th style="text-align: right;">Gen 0</th>
+<th style="text-align: right;">Gen 1</th>
+<th style="text-align: right;">Gen 2</th>
+<th style="text-align: right;">Allocated</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Insert10Rows</td>
-<td style="text-align:right">1.564 ms</td>
-<td style="text-align:right">1.666 ms</td>
-<td style="text-align:right">0.4328 ms</td>
-<td style="text-align:right">1.00</td>
-<td style="text-align:right">0.00</td>
-<td style="text-align:right">11.7188</td>
-<td style="text-align:right">5.8594</td>
-<td style="text-align:right">-</td>
-<td style="text-align:right">72.2 KB</td>
+<td style="text-align: right;">1.564 ms</td>
+<td style="text-align: right;">1.666 ms</td>
+<td style="text-align: right;">0.4328 ms</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">11.7188</td>
+<td style="text-align: right;">5.8594</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">72.2 KB</td>
 </tr>
 <tr>
 <td>Insert100Rows</td>
-<td style="text-align:right">9.711 ms</td>
-<td style="text-align:right">3.261 ms</td>
-<td style="text-align:right">0.8470 ms</td>
-<td style="text-align:right">6.62</td>
-<td style="text-align:right">1.75</td>
-<td style="text-align:right">93.7500</td>
-<td style="text-align:right">46.8750</td>
-<td style="text-align:right">-</td>
-<td style="text-align:right">553.4 KB</td>
+<td style="text-align: right;">9.711 ms</td>
+<td style="text-align: right;">3.261 ms</td>
+<td style="text-align: right;">0.8470 ms</td>
+<td style="text-align: right;">6.62</td>
+<td style="text-align: right;">1.75</td>
+<td style="text-align: right;">93.7500</td>
+<td style="text-align: right;">46.8750</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">553.4 KB</td>
 </tr>
 <tr>
 <td>Insert1000Rows</td>
-<td style="text-align:right">92.750 ms</td>
-<td style="text-align:right">31.579 ms</td>
-<td style="text-align:right">8.2026 ms</td>
-<td style="text-align:right">63.21</td>
-<td style="text-align:right">16.78</td>
-<td style="text-align:right">875.0000</td>
-<td style="text-align:right">250.0000</td>
-<td style="text-align:right">125.0000</td>
-<td style="text-align:right">5391.61 KB</td>
+<td style="text-align: right;">92.750 ms</td>
+<td style="text-align: right;">31.579 ms</td>
+<td style="text-align: right;">8.2026 ms</td>
+<td style="text-align: right;">63.21</td>
+<td style="text-align: right;">16.78</td>
+<td style="text-align: right;">875.0000</td>
+<td style="text-align: right;">250.0000</td>
+<td style="text-align: right;">125.0000</td>
+<td style="text-align: right;">5391.61 KB</td>
 </tr>
 </tbody>
 </table>
 <h2 id="load-results">Load results</h2>
-<p>Loading and serializing one model/record per iteration. </p>
+<p>Loading and serializing one model/record per iteration.</p>
 <table>
 <thead>
 <tr>
 <th>Method</th>
-<th style="text-align:right">Mean</th>
-<th style="text-align:right">Error</th>
-<th style="text-align:right">StdDev</th>
-<th style="text-align:right">Scaled</th>
-<th style="text-align:right">ScaledSD</th>
-<th style="text-align:right">Gen 0</th>
-<th style="text-align:right">Allocated</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Scaled</th>
+<th style="text-align: right;">ScaledSD</th>
+<th style="text-align: right;">Gen 0</th>
+<th style="text-align: right;">Allocated</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Load50RowsOneAtATime</td>
-<td style="text-align:right">4.804 ms</td>
-<td style="text-align:right">1.870 ms</td>
-<td style="text-align:right">0.4856 ms</td>
-<td style="text-align:right">1.00</td>
-<td style="text-align:right">0.00</td>
-<td style="text-align:right">156.2500</td>
-<td style="text-align:right">333.16 KB</td>
+<td style="text-align: right;">4.804 ms</td>
+<td style="text-align: right;">1.870 ms</td>
+<td style="text-align: right;">0.4856 ms</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">156.2500</td>
+<td style="text-align: right;">333.16 KB</td>
 </tr>
 <tr>
 <td>Load500RowsOneAtATime</td>
-<td style="text-align:right">44.574 ms</td>
-<td style="text-align:right">5.552 ms</td>
-<td style="text-align:right">1.4420 ms</td>
-<td style="text-align:right">9.35</td>
-<td style="text-align:right">0.86</td>
-<td style="text-align:right">1625.0000</td>
-<td style="text-align:right">3331.54 KB</td>
+<td style="text-align: right;">44.574 ms</td>
+<td style="text-align: right;">5.552 ms</td>
+<td style="text-align: right;">1.4420 ms</td>
+<td style="text-align: right;">9.35</td>
+<td style="text-align: right;">0.86</td>
+<td style="text-align: right;">1625.0000</td>
+<td style="text-align: right;">3331.54 KB</td>
 </tr>
 <tr>
 <td>Load5000RowsOneAtATime</td>
-<td style="text-align:right">456.932 ms</td>
-<td style="text-align:right">86.088 ms</td>
-<td style="text-align:right">22.3610 ms</td>
-<td style="text-align:right">95.87</td>
-<td style="text-align:right">9.36</td>
-<td style="text-align:right">16250.0000</td>
-<td style="text-align:right">33315.86 KB</td>
+<td style="text-align: right;">456.932 ms</td>
+<td style="text-align: right;">86.088 ms</td>
+<td style="text-align: right;">22.3610 ms</td>
+<td style="text-align: right;">95.87</td>
+<td style="text-align: right;">9.36</td>
+<td style="text-align: right;">16250.0000</td>
+<td style="text-align: right;">33315.86 KB</td>
 </tr>
 </tbody>
 </table>
@@ -277,49 +287,49 @@
 <thead>
 <tr>
 <th>Method</th>
-<th style="text-align:right">Mean</th>
-<th style="text-align:right">Error</th>
-<th style="text-align:right">StdDev</th>
-<th style="text-align:right">Scaled</th>
-<th style="text-align:right">ScaledSD</th>
-<th style="text-align:right">Gen 0</th>
-<th style="text-align:right">Gen 1</th>
-<th style="text-align:right">Allocated</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Scaled</th>
+<th style="text-align: right;">ScaledSD</th>
+<th style="text-align: right;">Gen 0</th>
+<th style="text-align: right;">Gen 1</th>
+<th style="text-align: right;">Allocated</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Update10Rows</td>
-<td style="text-align:right">14.27 ms</td>
-<td style="text-align:right">13.302 ms</td>
-<td style="text-align:right">3.4551 ms</td>
-<td style="text-align:right">1.00</td>
-<td style="text-align:right">0.00</td>
-<td style="text-align:right">93.7500</td>
-<td style="text-align:right">46.8750</td>
-<td style="text-align:right">578.02 KB</td>
+<td style="text-align: right;">14.27 ms</td>
+<td style="text-align: right;">13.302 ms</td>
+<td style="text-align: right;">3.4551 ms</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">93.7500</td>
+<td style="text-align: right;">46.8750</td>
+<td style="text-align: right;">578.02 KB</td>
 </tr>
 <tr>
 <td>Update100Rows</td>
-<td style="text-align:right">13.31 ms</td>
-<td style="text-align:right">2.445 ms</td>
-<td style="text-align:right">0.6352 ms</td>
-<td style="text-align:right">0.97</td>
-<td style="text-align:right">0.16</td>
-<td style="text-align:right">93.7500</td>
-<td style="text-align:right">46.8750</td>
-<td style="text-align:right">578.02 KB</td>
+<td style="text-align: right;">13.31 ms</td>
+<td style="text-align: right;">2.445 ms</td>
+<td style="text-align: right;">0.6352 ms</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">93.7500</td>
+<td style="text-align: right;">46.8750</td>
+<td style="text-align: right;">578.02 KB</td>
 </tr>
 <tr>
 <td>Update1000Rows</td>
-<td style="text-align:right">130.70 ms</td>
-<td style="text-align:right">15.357 ms</td>
-<td style="text-align:right">3.9890 ms</td>
-<td style="text-align:right">9.50</td>
-<td style="text-align:right">1.59</td>
-<td style="text-align:right">1000.0000</td>
-<td style="text-align:right">250.0000</td>
-<td style="text-align:right">5592.98 KB</td>
+<td style="text-align: right;">130.70 ms</td>
+<td style="text-align: right;">15.357 ms</td>
+<td style="text-align: right;">3.9890 ms</td>
+<td style="text-align: right;">9.50</td>
+<td style="text-align: right;">1.59</td>
+<td style="text-align: right;">1000.0000</td>
+<td style="text-align: right;">250.0000</td>
+<td style="text-align: right;">5592.98 KB</td>
 </tr>
 </tbody>
 </table>
@@ -329,49 +339,49 @@
 <thead>
 <tr>
 <th>Method</th>
-<th style="text-align:right">Mean</th>
-<th style="text-align:right">Error</th>
-<th style="text-align:right">StdDev</th>
-<th style="text-align:right">Scaled</th>
-<th style="text-align:right">ScaledSD</th>
-<th style="text-align:right">Gen 0</th>
-<th style="text-align:right">Gen 1</th>
-<th style="text-align:right">Allocated</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Scaled</th>
+<th style="text-align: right;">ScaledSD</th>
+<th style="text-align: right;">Gen 0</th>
+<th style="text-align: right;">Gen 1</th>
+<th style="text-align: right;">Allocated</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Delete10Rows</td>
-<td style="text-align:right">11.22 ms</td>
-<td style="text-align:right">7.682 ms</td>
-<td style="text-align:right">1.995 ms</td>
-<td style="text-align:right">1.00</td>
-<td style="text-align:right">0.00</td>
-<td style="text-align:right">-</td>
-<td style="text-align:right">-</td>
-<td style="text-align:right">25.96 KB</td>
+<td style="text-align: right;">11.22 ms</td>
+<td style="text-align: right;">7.682 ms</td>
+<td style="text-align: right;">1.995 ms</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">25.96 KB</td>
 </tr>
 <tr>
 <td>Delete100Rows</td>
-<td style="text-align:right">121.19 ms</td>
-<td style="text-align:right">32.724 ms</td>
-<td style="text-align:right">8.500 ms</td>
-<td style="text-align:right">11.04</td>
-<td style="text-align:right">1.68</td>
-<td style="text-align:right">125.0000</td>
-<td style="text-align:right">-</td>
-<td style="text-align:right">277.24 KB</td>
+<td style="text-align: right;">121.19 ms</td>
+<td style="text-align: right;">32.724 ms</td>
+<td style="text-align: right;">8.500 ms</td>
+<td style="text-align: right;">11.04</td>
+<td style="text-align: right;">1.68</td>
+<td style="text-align: right;">125.0000</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">277.24 KB</td>
 </tr>
 <tr>
 <td>Delete1000Rows</td>
-<td style="text-align:right">890.56 ms</td>
-<td style="text-align:right">139.418 ms</td>
-<td style="text-align:right">36.213 ms</td>
-<td style="text-align:right">81.14</td>
-<td style="text-align:right">11.60</td>
-<td style="text-align:right">750.0000</td>
-<td style="text-align:right">250.0000</td>
-<td style="text-align:right">2578.13 KB</td>
+<td style="text-align: right;">890.56 ms</td>
+<td style="text-align: right;">139.418 ms</td>
+<td style="text-align: right;">36.213 ms</td>
+<td style="text-align: right;">81.14</td>
+<td style="text-align: right;">11.60</td>
+<td style="text-align: right;">750.0000</td>
+<td style="text-align: right;">250.0000</td>
+<td style="text-align: right;">2578.13 KB</td>
 </tr>
 </tbody>
 </table>
@@ -388,38 +398,25 @@
 <li><strong>1 ms</strong>     : 1 Millisecond (0.001 sec)</li>
 </ul>
 </article>
-          </div>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Orpheus - Mobilotronic © 2017 - 2023
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            Orpheus - Trifidis Georgios(Yiorgos) © 2017 - 2019
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
-    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-99241001-1', 'auto');
-      ga('send', 'pageview');
-    
-    </script>
+    </footer>
   </body>
 </html>

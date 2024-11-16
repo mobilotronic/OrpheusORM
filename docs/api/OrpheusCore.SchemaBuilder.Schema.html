@@ -1,1280 +1,1264 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Schema
-   | Orpheus </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Schema
-   | Orpheus ">
-    <meta name="generator" content="docfx 2.45.1.0">
-    
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/font-awesome.min.css">
-    <link rel="stylesheet" href="../styles/code-syntax.css">  
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+      <title>Class Schema
+ | Orpheus </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Schema
+ | Orpheus ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
   </head>
-  <body data-spy="scroll" data-target="#affix">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list"></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="OrpheusCore.SchemaBuilder.Schema">
-  
-  
-  <h1 id="OrpheusCore_SchemaBuilder_Schema" data-uid="OrpheusCore.SchemaBuilder.Schema" class="text-break">Class Schema
+
+        <article data-uid="OrpheusCore.SchemaBuilder.Schema">
+
+
+
+  <h1 id="OrpheusCore_SchemaBuilder_Schema" data-uid="OrpheusCore.SchemaBuilder.Schema" class="text-break">
+    Class Schema
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h1>
-  <div class="markdown level0 summary"><p>Represents an Orpheus Schema.</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Schema</span></div>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusCore.html">OrpheusCore</a>.<a class="xref" href="OrpheusCore.SchemaBuilder.html">SchemaBuilder</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>OrpheusCore.dll</dd></dl>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="OrpheusCore.SchemaBuilder.html">OrpheusCore.SchemaBuilder</a></h6>
-  <h6><strong>Assembly</strong>: OrpheusCore.dll</h6>
-  <h5 id="OrpheusCore_SchemaBuilder_Schema_syntax">Syntax</h5>
+
+  <div class="markdown summary"><p>Represents an Orpheus Schema.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class Schema : ISchema</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema__ctor.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L179">View Source</a>
-  </span>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Schema</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISchema</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema__ctor_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema__ctor" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor">Schema()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema__ctor" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor">
+  Schema()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.SchemaBuilder.Schema.html">Schema</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Schema()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_String_System_Double_System_Guid_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.%23ctor(OrpheusInterfaces.Core.IOrpheusDatabase%2CSystem.String%2CSystem.Double%2CSystem.Guid)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L204">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema__ctor_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_String_System_Double_System_Guid_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.String,System.Double,System.Guid)">Schema(IOrpheusDatabase, String, Double, Guid)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_String_System_Double_System_Guid_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.String,System.Double,System.Guid)">
+  Schema(IOrpheusDatabase, string, double, Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.SchemaBuilder.Schema.html">Schema</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Schema(IOrpheusDatabase db, string description, double version, Guid id)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
-        <td><span class="parametername">db</span></td>
-        <td><p>The database.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">description</span></td>
-        <td><p>The description.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">version</span></td>
-        <td><p>The version.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Guid</span></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>The identifier.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_String_System_Double_System_Guid_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.%23ctor(OrpheusInterfaces.Core.IOrpheusDatabase%2CSystem.String%2CSystem.Double%2CSystem.Guid%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L192">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>db</code> <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
+    <dd><p>The database.</p>
+</dd>
+    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The description.</p>
+</dd>
+    <dt><code>version</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The version.</p>
+</dd>
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>The identifier.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema__ctor_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_String_System_Double_System_Guid_System_String_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.String,System.Double,System.Guid,System.String)">Schema(IOrpheusDatabase, String, Double, Guid, String)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_String_System_Double_System_Guid_System_String_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.String,System.Double,System.Guid,System.String)">
+  Schema(IOrpheusDatabase, string, double, Guid, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L193"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.SchemaBuilder.Schema.html">Schema</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Schema(IOrpheusDatabase db, string description, double version, Guid id, string name = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
-        <td><span class="parametername">db</span></td>
-        <td><p>The database.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">description</span></td>
-        <td><p>The description.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">version</span></td>
-        <td><p>The version.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Guid</span></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>The identifier.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
-        <td><p>Schema name. If the DB engine is SQL server, and the name value is set, it will be used as SCHEMA name.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_DB.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.DB%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L104">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>db</code> <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
+    <dd><p>The database.</p>
+</dd>
+    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The description.</p>
+</dd>
+    <dt><code>version</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The version.</p>
+</dd>
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>The identifier.</p>
+</dd>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Schema name. If the DB engine is SQL server, and the name value is set, it will be used as SCHEMA name.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_DB_" data-uid="OrpheusCore.SchemaBuilder.Schema.DB*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_DB" data-uid="OrpheusCore.SchemaBuilder.Schema.DB">DB</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_DB" data-uid="OrpheusCore.SchemaBuilder.Schema.DB">
+  DB
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Orpheus database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IOrpheusDatabase DB { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
-        <td><p>Instance of the Orpheus Database</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_Description.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L126">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
+    <dd><p>Instance of the Orpheus Database</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_Description_" data-uid="OrpheusCore.SchemaBuilder.Schema.Description*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_Description" data-uid="OrpheusCore.SchemaBuilder.Schema.Description">Description</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_Description" data-uid="OrpheusCore.SchemaBuilder.Schema.Description">
+  Description
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Schema description.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Description { get; protected set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>Schema description</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_Id.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L138">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Schema description</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_Id_" data-uid="OrpheusCore.SchemaBuilder.Schema.Id*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_Id" data-uid="OrpheusCore.SchemaBuilder.Schema.Id">Id</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_Id" data-uid="OrpheusCore.SchemaBuilder.Schema.Id">
+  Id
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Schema Id.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Guid Id { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Guid</span></td>
-        <td><p>Schema unique id</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_Name.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L120">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>Schema unique id</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_Name_" data-uid="OrpheusCore.SchemaBuilder.Schema.Name*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_Name" data-uid="OrpheusCore.SchemaBuilder.Schema.Name">Name</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_Name" data-uid="OrpheusCore.SchemaBuilder.Schema.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Schema name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Name { get; protected set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>Schema description</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_ReferencedSchemas.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.ReferencedSchemas%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L114">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Schema description</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_ReferencedSchemas_" data-uid="OrpheusCore.SchemaBuilder.Schema.ReferencedSchemas*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_ReferencedSchemas" data-uid="OrpheusCore.SchemaBuilder.Schema.ReferencedSchemas">ReferencedSchemas</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_ReferencedSchemas" data-uid="OrpheusCore.SchemaBuilder.Schema.ReferencedSchemas">
+  ReferencedSchemas
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;ISchema&gt; ReferencedSchemas { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISchema</a>&gt;</td>
-        <td><p>List of reference schemas</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_SchemaInfoTable.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.SchemaInfoTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L153">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISchema</a>&gt;</dt>
+    <dd><p>List of reference schemas</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_SchemaInfoTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaInfoTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_SchemaInfoTable" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaInfoTable">SchemaInfoTable</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaInfoTable" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaInfoTable">
+  SchemaInfoTable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SchemaInfoTable { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>Orpheus schema info table.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_SchemaModulesTable.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.SchemaModulesTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L165">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Orpheus schema info table.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_SchemaModulesTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaModulesTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_SchemaModulesTable" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaModulesTable">SchemaModulesTable</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaModulesTable" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaModulesTable">
+  SchemaModulesTable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Orpheus module definition table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SchemaModulesTable { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>Table name for the Orpheus schema modules table</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_SchemaObjects.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.SchemaObjects%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L109">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Table name for the Orpheus schema modules table</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_SchemaObjects_" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjects*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_SchemaObjects" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjects">SchemaObjects</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaObjects" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjects">
+  SchemaObjects
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public List&lt;ISchemaObject&gt; SchemaObjects { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</td>
-        <td><p>List of schema objects. <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_SchemaObjectsTable.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.SchemaObjectsTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L143">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dd><p>List of schema objects. <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_SchemaObjectsTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjectsTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_SchemaObjectsTable" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjectsTable">SchemaObjectsTable</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaObjectsTable" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjectsTable">
+  SchemaObjectsTable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SchemaObjectsTable { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>Orpheus schema objects table.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_Version.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.Version%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L132">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Orpheus schema objects table.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_Version_" data-uid="OrpheusCore.SchemaBuilder.Schema.Version*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_Version" data-uid="OrpheusCore.SchemaBuilder.Schema.Version">Version</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_Version" data-uid="OrpheusCore.SchemaBuilder.Schema.Version">
+  Version
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Schema version.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public double Version { get; protected set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><p>Schema version</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_AddSchemaObject_OrpheusInterfaces_Schema_ISchemaObject_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.AddSchemaObject(OrpheusInterfaces.Schema.ISchemaObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L224">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>Schema version</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_AddSchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaObject*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaObject_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaObject(OrpheusInterfaces.Schema.ISchemaObject)">AddSchemaObject(ISchemaObject)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaObject_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaObject(OrpheusInterfaces.Schema.ISchemaObject)">
+  AddSchemaObject(ISchemaObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Adds a schema object to the list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaObject AddSchemaObject(ISchemaObject schemaObject)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></td>
-        <td><span class="parametername">schemaObject</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></td>
-        <td><p>The schema object that was added</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Object_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object%2CSystem.Collections.Generic.List%7BOrpheusInterfaces.Schema.ISchemaObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L264">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObject</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></dt>
+    <dd><p>The schema object that was added</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Object_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object,System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject})">AddSchemaTable(Object, List&lt;ISchemaObject&gt;)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Object_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object,System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject})">
+  AddSchemaTable(object, List&lt;ISchemaObject&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaTable AddSchemaTable(object model, List&lt;ISchemaObject&gt; dependencies = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">model</span></td>
-        <td><p>Model will be used to auto-generate fields, primary keys etc, for the schema object</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</td>
-        <td><span class="parametername">dependencies</span></td>
-        <td><p>List of schema objects, that this objects depends upon</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_String_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__System_Object_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String%2CSystem.Collections.Generic.List%7BOrpheusInterfaces.Schema.ISchemaObject%7D%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L242">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Model will be used to auto-generate fields, primary keys etc, for the schema object</p>
+</dd>
+    <dt><code>dependencies</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dd><p>List of schema objects, that this objects depends upon</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_String_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__System_Object_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String,System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject},System.Object)">AddSchemaTable(String, List&lt;ISchemaObject&gt;, Object)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_String_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__System_Object_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String,System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject},System.Object)">
+  AddSchemaTable(string, List&lt;ISchemaObject&gt;, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaTable AddSchemaTable(string tableName, List&lt;ISchemaObject&gt; dependencies = null, object model = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">tableName</span></td>
-        <td><p>Table name</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</td>
-        <td><span class="parametername">dependencies</span></td>
-        <td><p>List of schema objects, that this objects depends upon</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td><span class="parametername">model</span></td>
-        <td><p>Model will be used to auto-generate fields, primary keys etc, for the schema object</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Type_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Type%2CSystem.Collections.Generic.List%7BOrpheusInterfaces.Schema.ISchemaObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L275">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Table name</p>
+</dd>
+    <dt><code>dependencies</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dd><p>List of schema objects, that this objects depends upon</p>
+</dd>
+    <dt><code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Model will be used to auto-generate fields, primary keys etc, for the schema object</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Type_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Type,System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject})">AddSchemaTable(Type, List&lt;ISchemaObject&gt;)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Type_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Type,System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject})">
+  AddSchemaTable(Type, List&lt;ISchemaObject&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaTable AddSchemaTable(Type modelType, List&lt;ISchemaObject&gt; dependencies = null)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Type</span></td>
-        <td><span class="parametername">modelType</span></td>
-        <td><p>Model type will be used to auto-generate fields, primary keys etc, for the schema object</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</td>
-        <td><span class="parametername">dependencies</span></td>
-        <td><p>List of schema objects, that this objects depends upon</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__1_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.AddSchemaTable%60%601(System.Collections.Generic.List%7BOrpheusInterfaces.Schema.ISchemaObject%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L288">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>Model type will be used to auto-generate fields, primary keys etc, for the schema object</p>
+</dd>
+    <dt><code>dependencies</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dd><p>List of schema objects, that this objects depends upon</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__1_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject})">AddSchemaTable&lt;T&gt;(List&lt;ISchemaObject&gt;)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__1_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject})">
+  AddSchemaTable&lt;T&gt;(List&lt;ISchemaObject&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L289"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ISchemaTable AddSchemaTable&lt;T&gt;(List&lt;ISchemaObject&gt; dependencies = null)
-    where T : class</code></pre>
+    <pre><code class="lang-csharp hljs">public ISchemaTable AddSchemaTable&lt;T&gt;(List&lt;ISchemaObject&gt; dependencies = null) where T : class</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</td>
-        <td><span class="parametername">dependencies</span></td>
-        <td><p>The dependencies.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>Schema table type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__2.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.AddSchemaTable%60%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L300">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dependencies</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dd><p>The dependencies.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Schema table type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__2" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``2">AddSchemaTable&lt;T, D&gt;()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__2" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``2">
+  AddSchemaTable&lt;T, D&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L301"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaTable AddSchemaTable&lt;T, D&gt;()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>Model type</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">D</span></td>
-        <td><p>Dependency model type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_CreateSchemaJoinDefinition.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.CreateSchemaJoinDefinition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L359">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Model type</p>
+</dd>
+    <dt><code>D</code></dt>
+    <dd><p>Dependency model type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaJoinDefinition_" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaJoinDefinition*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaJoinDefinition" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaJoinDefinition">CreateSchemaJoinDefinition()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaJoinDefinition" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaJoinDefinition">
+  CreateSchemaJoinDefinition()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L360"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a join schema definition.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaJoinDefinition CreateSchemaJoinDefinition()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaJoinDefinition.html">ISchemaJoinDefinition</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_CreateSchemaObject.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.CreateSchemaObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L348">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaJoinDefinition.html">ISchemaJoinDefinition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaObject*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaObject" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaObject">CreateSchemaObject()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaObject" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaObject">
+  CreateSchemaObject()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L349"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a schema object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaObject CreateSchemaObject()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_CreateSchemaTable.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.CreateSchemaTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L337">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaTable" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaTable">CreateSchemaTable()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaTable" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaTable">
+  CreateSchemaTable()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a table schema object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaTable CreateSchemaTable()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_CreateSchemaView.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.CreateSchemaView%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L315">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaTable.html">ISchemaTable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaView_" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaView*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaView" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaView">CreateSchemaView()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaView" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaView">
+  CreateSchemaView()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a view schema object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaView CreateSchemaView()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaView.html">ISchemaView</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_CreateSchemaViewTable.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.CreateSchemaViewTable%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L326">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaView.html">ISchemaView</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaViewTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaViewTable*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaViewTable" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaViewTable">CreateSchemaViewTable()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaViewTable" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaViewTable">
+  CreateSchemaViewTable()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L327"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Creates a view table schema object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ISchemaViewTable CreateSchemaViewTable()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaViewTable.html">ISchemaViewTable</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_Drop.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.Drop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L393">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Schema.ISchemaViewTable.html">ISchemaViewTable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_Drop_" data-uid="OrpheusCore.SchemaBuilder.Schema.Drop*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_Drop" data-uid="OrpheusCore.SchemaBuilder.Schema.Drop">Drop()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_Drop" data-uid="OrpheusCore.SchemaBuilder.Schema.Drop">
+  Drop()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L394"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Drops schema. Removes all schema objects from the database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Drop()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_Execute.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.Execute%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L376">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_Execute_" data-uid="OrpheusCore.SchemaBuilder.Schema.Execute*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_Execute" data-uid="OrpheusCore.SchemaBuilder.Schema.Execute">Execute()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_Execute" data-uid="OrpheusCore.SchemaBuilder.Schema.Execute">
+  Execute()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L377"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Iterates through registered schema objects and executes them.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Execute()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_LoadFromFile_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.LoadFromFile(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L416">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_LoadFromFile_" data-uid="OrpheusCore.SchemaBuilder.Schema.LoadFromFile*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_LoadFromFile_System_String_" data-uid="OrpheusCore.SchemaBuilder.Schema.LoadFromFile(System.String)">LoadFromFile(String)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_LoadFromFile_System_String_" data-uid="OrpheusCore.SchemaBuilder.Schema.LoadFromFile(System.String)">
+  LoadFromFile(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L417"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Loads schema definition from a file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void LoadFromFile(string fileName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">fileName</span></td>
-        <td><p>The filename.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_RegisterSchema.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.RegisterSchema%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L530">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The filename.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_RegisterSchema_" data-uid="OrpheusCore.SchemaBuilder.Schema.RegisterSchema*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_RegisterSchema" data-uid="OrpheusCore.SchemaBuilder.Schema.RegisterSchema">RegisterSchema()</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_RegisterSchema" data-uid="OrpheusCore.SchemaBuilder.Schema.RegisterSchema">
+  RegisterSchema()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L531"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Registers schema information, in the schema information table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void RegisterSchema()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_RemoveSchemaObject_OrpheusInterfaces_Schema_ISchemaObject_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.RemoveSchemaObject(OrpheusInterfaces.Schema.ISchemaObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L368">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_RemoveSchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.RemoveSchemaObject*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_RemoveSchemaObject_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.RemoveSchemaObject(OrpheusInterfaces.Schema.ISchemaObject)">RemoveSchemaObject(ISchemaObject)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_RemoveSchemaObject_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.RemoveSchemaObject(OrpheusInterfaces.Schema.ISchemaObject)">
+  RemoveSchemaObject(ISchemaObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L369"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Removes a schema object from the schema list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void RemoveSchemaObject(ISchemaObject schemaObject)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></td>
-        <td><span class="parametername">schemaObject</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_SaveToFile_System_String_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.SaveToFile(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L436">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObject</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_SaveToFile_" data-uid="OrpheusCore.SchemaBuilder.Schema.SaveToFile*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_SaveToFile_System_String_" data-uid="OrpheusCore.SchemaBuilder.Schema.SaveToFile(System.String)">SaveToFile(String)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_SaveToFile_System_String_" data-uid="OrpheusCore.SchemaBuilder.Schema.SaveToFile(System.String)">
+  SaveToFile(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L437"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Saves schema definition to a file. If the file exists it will overwrite it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void SaveToFile(string fileName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">fileName</span></td>
-        <td><p>The filename.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L465">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The filename.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_Schema_SchemaObjectExists_" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjectExists*"></a>
-  <h4 id="OrpheusCore_SchemaBuilder_Schema_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)">SchemaObjectExists(ISchemaObject)</h4>
+
+  <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)">
+  SchemaObjectExists(ISchemaObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L466"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns the guid of the schema object it is created.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public Guid SchemaObjectExists(ISchemaObject schemaObject)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></td>
-        <td><span class="parametername">schemaObject</span></td>
-        <td><p>Schema object to be checked if it exists</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Guid</span></td>
-        <td><p>The schema object unique id</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISchema</a>
-  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObject</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></dt>
+    <dd><p>Schema object to be checked if it exists</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>The schema object unique id</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
-          </div>
+
+
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Orpheus - Mobilotronic © 2017 - 2023
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            Orpheus - Trifidis Georgios(Yiorgos) © 2017 - 2019
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
-    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-99241001-1', 'auto');
-      ga('send', 'pageview');
-    
-    </script>
+    </footer>
   </body>
 </html>

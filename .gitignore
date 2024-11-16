@@ -40,6 +40,7 @@ OrpheusTests/OrpheusMySQL.config
 OrpheusTests/OrpheusSQLServer.config
 Nuget/2.0.0/*.*
 .vs/config/applicationhost.config
+.vs
 *.dll
 Nuget/2.0.0/lib/netstandard2.0/OrpheusAttributes.xml
 Nuget/2.0.0/lib/netstandard2.0/OrpheusCore.xml

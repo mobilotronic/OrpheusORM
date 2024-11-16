@@ -1,1130 +1,1053 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-  
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class OrpheusMySQLServerDDLHelper
-   | Orpheus </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class OrpheusMySQLServerDDLHelper
-   | Orpheus ">
-    <meta name="generator" content="docfx 2.45.1.0">
-    
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/font-awesome.min.css">
-    <link rel="stylesheet" href="../styles/code-syntax.css">  
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    <meta property="docfx:rel" content="../">
-    <meta property="docfx:newtab" content="true">
+      <title>Class OrpheusMySQLServerDDLHelper
+ | Orpheus </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OrpheusMySQLServerDDLHelper
+ | Orpheus ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
   </head>
-  <body data-spy="scroll" data-target="#affix">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+
+  <script type="module">
+    import options from './../public/main.js'
+    import { init } from './../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list"></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper">
-  
-  
-  <h1 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper" class="text-break">Class OrpheusMySQLServerDDLHelper
+
+        <article data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper">
+
+
+
+  <h1 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper" class="text-break">
+    Class OrpheusMySQLServerDDLHelper
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
-  <div class="markdown level0 summary"><p>MySQL Server definition of DDL helper.
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusMySQLDDLHelper.html">OrpheusMySQLDDLHelper</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>OrpheusMySQLDDLHelper.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>MySQL Server definition of DDL helper.
 DDL helper is used to execute DB engine specific DDL commands.</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">OrpheusMySQLServerDDLHelper</span></div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="OrpheusMySQLDDLHelper.html">OrpheusMySQLDDLHelper</a></h6>
-  <h6><strong>Assembly</strong>: OrpheusMySQLDDLHelper.dll</h6>
-  <h5 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_syntax">Syntax</h5>
+  <div class="markdown conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class OrpheusMySQLServerDDLHelper : IMySQLServerDDLHelper, IOrpheusDDLHelper</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L558">View Source</a>
-  </span>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">OrpheusMySQLServerDDLHelper</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="OrpheusInterfaces.Core.IMySQLServerDDLHelper.html">IMySQLServerDDLHelper</a></div>
+      <div><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor">OrpheusMySQLServerDDLHelper()</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor">
+  OrpheusMySQLServerDDLHelper()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L572"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>MySQL Server DDL helper constructor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public OrpheusMySQLServerDDLHelper()</code></pre>
   </div>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ConnectionString.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L524">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ConnectionString_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ConnectionString" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString">ConnectionString</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ConnectionString" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString">
+  ConnectionString
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L538"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Builds the connection string.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string ConnectionString { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseName.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L511">View Source</a>
-  </span>
-  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseName_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseName*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseName" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseName">DatabaseName</h4>
-  <div class="markdown level1 summary"><p>Gets the database name.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string DatabaseName { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DB.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DB%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L418">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DB_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DB*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DB" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DB">DB</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DB" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DB">
+  DB
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L432"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Database for the DDL helper.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IOrpheusDatabase DB { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></td>
-        <td><p>Database the helper is associated with</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbEngineType.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbEngineType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L484">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
+    <dd><p>Database the helper is associated with</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseName_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseName*"></a>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseName" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseName">
+  DatabaseName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L525"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the database name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DatabaseName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbEngineType_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbEngineType*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbEngineType" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbEngineType">DbEngineType</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbEngineType" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbEngineType">
+  DbEngineType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L498"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns the underlying database engine type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public DatabaseEngineType DbEngineType { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Core.DatabaseEngineType.html">DatabaseEngineType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierEnd.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierEnd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L467">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Core.DatabaseEngineType.html">DatabaseEngineType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierEnd_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierEnd*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierEnd" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierEnd">DelimitedIndetifierEnd</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierEnd" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierEnd">
+  DelimitedIndetifierEnd
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L481"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public char DelimitedIndetifierEnd { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><p>Char</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierStart.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierStart%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L461">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>Char</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierStart_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierStart*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierStart" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierStart">DelimitedIndetifierStart</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierStart" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierStart">
+  DelimitedIndetifierStart
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L475"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public char DelimitedIndetifierStart { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Char</span></td>
-        <td><p>Char</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ModifyColumnCommand.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ModifyColumnCommand%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L479">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>Char</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ModifyColumnCommand_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ModifyColumnCommand*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ModifyColumnCommand" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ModifyColumnCommand">ModifyColumnCommand</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ModifyColumnCommand" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ModifyColumnCommand">
+  ModifyColumnCommand
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L493"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns the DB specific modify table command.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string ModifyColumnCommand { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SSLMode.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L553">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SSLMode_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SSLMode" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode">SSLMode</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SSLMode" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode">
+  SSLMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L567"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>SSL connection mode.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SSLMode { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsGuidType.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsGuidType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L115">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsGuidType_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsGuidType*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsGuidType" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsGuidType">SupportsGuidType</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsGuidType" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsGuidType">
+  SupportsGuidType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if the DBEngine supports natively the Guid type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool SupportsGuidType { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p>True if the DBEngine supports natively the Guid type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsSchemaNameSpace.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsSchemaNameSpace%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L120">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the DBEngine supports natively the Guid type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsSchemaNameSpace_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsSchemaNameSpace*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsSchemaNameSpace" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsSchemaNameSpace">SupportsSchemaNameSpace</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsSchemaNameSpace" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsSchemaNameSpace">
+  SupportsSchemaNameSpace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if the DBEngine supports having schema name spaces. From the currently supported databases, only SQL has this feature.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool SupportsSchemaNameSpace { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L126">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase">CreateDatabase()</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase">
+  CreateDatabase()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the underlying db engine settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool CreateDatabase()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p>True if database was created successfully</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase_System_String_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L164">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if database was created successfully</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase(System.String)">CreateDatabase(String)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase(System.String)">
+  CreateDatabase(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the underlying db engine settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool CreateDatabase(string dbName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">dbName</span></td>
-        <td><p>Database name</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p>True if the database was created successfully</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabaseWithDDL_System_String_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabaseWithDDL(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L198">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Database name</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the database was created successfully</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabaseWithDDL_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabaseWithDDL*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabaseWithDDL_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabaseWithDDL(System.String)">CreateDatabaseWithDDL(String)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabaseWithDDL_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabaseWithDDL(System.String)">
+  CreateDatabaseWithDDL(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the passed DDL script.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool CreateDatabaseWithDDL(string ddlString)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">ddlString</span></td>
-        <td><p>DDL command</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p>True if the database was created successfully</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseExists_System_String_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseExists(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L232">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ddlString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>DDL command</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the database was created successfully</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseExists_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseExists*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseExists_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseExists(System.String)">DatabaseExists(String)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseExists_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseExists(System.String)">
+  DatabaseExists(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L245"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true the database exists.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool DatabaseExists(string dbName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">dbName</span></td>
-        <td><p>Database name</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p>True if the database exists</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbTypeToString_System_Data_DbType_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(System.Data.DbType)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L447">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Database name</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the database exists</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbTypeToString_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbTypeToString_System_Data_DbType_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(System.Data.DbType)">DbTypeToString(DbType)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbTypeToString_System_Data_DbType_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(System.Data.DbType)">
+  DbTypeToString(DbType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L461"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns the db engine specific string equivalent, for a DbType enumeration.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string DbTypeToString(DbType dataType)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Data.DbType</span></td>
-        <td><span class="parametername">dataType</span></td>
-        <td><p>DbType</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>String value for the DbType</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String%2CSystem.Collections.Generic.List%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L503">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.dbtype">DbType</a></dt>
+    <dd><p>DbType</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>String value for the DbType</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableAddColumn_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})">SafeFormatAlterTableAddColumn(String, List&lt;String&gt;)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})">
+  SafeFormatAlterTableAddColumn(string, List&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L517"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE ADD COLUMN command for the underlying database engine.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SafeFormatAlterTableAddColumn(string tableName, List&lt;string&gt; columnsToAdd)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">tableName</span></td>
-        <td><p>Table&apos;s name that schema is going to change</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">columnsToAdd</span></td>
-        <td><p>Columns for creation</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String%2CSystem.Collections.Generic.List%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L492">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Table's name that schema is going to change</p>
+</dd>
+    <dt><code>columnsToAdd</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Columns for creation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableDropColumn_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})">SafeFormatAlterTableDropColumn(String, List&lt;String&gt;)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})">
+  SafeFormatAlterTableDropColumn(string, List&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L506"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SafeFormatAlterTableDropColumn(string tableName, List&lt;string&gt; columnsToDelete)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">tableName</span></td>
-        <td><p>Table&apos;s name that schema is going to change</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">columnsToDelete</span></td>
-        <td><p>Columns for deletion</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatField_System_String_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatField(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L474">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Table's name that schema is going to change</p>
+</dd>
+    <dt><code>columnsToDelete</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Columns for deletion</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatField_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatField*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatField_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatField(System.String)">SafeFormatField(String)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatField_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatField(System.String)">
+  SafeFormatField(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L488"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Properly formats a field name, to be used in a SQL statement, in case the field name is a reserved word.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SafeFormatField(string fieldName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">fieldName</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L281">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fieldName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)">SchemaObjectExists(ISchemaConstraint)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)">
+  SchemaObjectExists(ISchemaConstraint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L295"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool SchemaObjectExists(ISchemaConstraint schemaConstraint)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaConstraint.html">ISchemaConstraint</a></td>
-        <td><span class="parametername">schemaConstraint</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L339">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaConstraint</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaConstraint.html">ISchemaConstraint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)">SchemaObjectExists(ISchemaObject)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)">
+  SchemaObjectExists(ISchemaObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L353"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool SchemaObjectExists(ISchemaObject schemaObject)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></td>
-        <td><span class="parametername">schemaObject</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_System_String_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L349">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObject</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(System.String)">SchemaObjectExists(String)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(System.String)">
+  SchemaObjectExists(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L363"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool SchemaObjectExists(string schemaObjectName)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">schemaObjectName</span></td>
-        <td><p>Schema object name</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p>True if the object exists</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId%60%601(OrpheusInterfaces.Schema.ISchemaObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L409">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObjectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Schema object name</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the object exists</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectId_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)">SchemaObjectId&lt;T&gt;(ISchemaObject)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)">
+  SchemaObjectId&lt;T&gt;(ISchemaObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L423"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the schema object, db engine assigned/generated, identifier.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public T SchemaObjectId&lt;T&gt;(ISchemaObject schemaObject)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></td>
-        <td><span class="parametername">schemaObject</span></td>
-        <td><p>The schema object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/gtrifidis/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_TypeToString_System_Type_.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/gtrifidis/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L432">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObject</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></dt>
+    <dd><p>The schema object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_TypeToString_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString*"></a>
-  <h4 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_TypeToString_System_Type_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(System.Type)">TypeToString(Type)</h4>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_TypeToString_System_Type_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(System.Type)">
+  TypeToString(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L446"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns the db engine specific string equivalent, for a .net type</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string TypeToString(Type type)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Type</span></td>
-        <td><span class="parametername">type</span></td>
-        <td><p>Type</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><p>String value for the mapped DbType</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="OrpheusInterfaces.Core.IMySQLServerDDLHelper.html">IMySQLServerDDLHelper</a>
-  </div>
-  <div>
-      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a>
-  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>Type</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>String value for the mapped DbType</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
 </article>
-          </div>
+
+
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Orpheus - Mobilotronic © 2017 - 2023
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            Orpheus - Trifidis Georgios(Yiorgos) © 2017 - 2019
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
-    <script id="dsq-count-scr" src="//docfx-github.disqus.com/count.js" async=""></script>
-    
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-99241001-1', 'auto');
-      ga('send', 'pageview');
-    
-    </script>
+    </footer>
   </body>
 </html>
