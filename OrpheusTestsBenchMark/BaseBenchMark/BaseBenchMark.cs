@@ -26,16 +26,25 @@ namespace OrpheusTestsBenchMark
     {
         public Config()
         {
-            Add(MemoryDiagnoser.Default);
-            Add(Job.Default.With(Jit.RyuJit).With(Runtime.Core).With(CsProjCoreToolchain.NetCoreApp22)
-                //.WithUnrollFactor(BaseBenchMark.Iterations)
-                //.WithIterationTime(new TimeInterval(500, TimeUnit.Millisecond))
+            AddDiagnoser(MemoryDiagnoser.Default);
+            AddJob(
+                Job.Default.WithJit(Jit.RyuJit)
+                .WithToolchain(CsProjCoreToolchain.NetCoreApp70)
                 .WithLaunchCount(1)
                 .WithIterationCount(15)
                 .WithWarmupCount(15)
-                //.WithOutlierMode(BenchmarkDotNet.Mathematics.OutlierMode.All)
                 .WithUnrollFactor(BaseBenchMark.Iterations)
             );
+
+            //Add(Job.Default.With(Jit.RyuJit).With(CsProjCoreToolchain.NetCoreApp70)
+            //    //.WithUnrollFactor(BaseBenchMark.Iterations)
+            //    //.WithIterationTime(new TimeInterval(500, TimeUnit.Millisecond))
+            //    .WithLaunchCount(1)
+            //    .WithIterationCount(15)
+            //    .WithWarmupCount(15)
+            //    //.WithOutlierMode(BenchmarkDotNet.Mathematics.OutlierMode.All)
+            //    .WithUnrollFactor(BaseBenchMark.Iterations)
+            //);
         }
     }
 }

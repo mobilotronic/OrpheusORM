@@ -42,11 +42,11 @@ namespace OrpheusTests
                 Trace.Close();
                 this.DisconnectDatabase();
             }
-            catch(Exception e)
+            catch
             {
                 this.Database.RollbackTransaction(trans);
                 this.DisconnectDatabase();
-                throw e;
+                throw;
             }
         }
 
@@ -100,11 +100,11 @@ namespace OrpheusTests
                 Trace.TraceInformation("{0:c}", sw.Elapsed);
                 Trace.Close();
             }
-            catch (Exception e)
+            catch
             {
                 this.Database.RollbackTransaction(trans);
                 this.DisconnectDatabase();
-                throw e;
+                throw;
             }
             this.DisconnectDatabase();
         }
@@ -154,11 +154,11 @@ namespace OrpheusTests
                 Trace.TraceInformation("{0:c}", sw.Elapsed);
                 Trace.Close();
             }
-            catch (Exception e)
+            catch
             {
                 this.Database.RollbackTransaction(trans);
                 this.DisconnectDatabase();
-                throw e;
+                throw;
             }
             this.DisconnectDatabase();
         }
@@ -211,7 +211,7 @@ namespace OrpheusTests
                 Description = "Item",
                 Price = 10
             });
-            Assert.IsTrue(itemsTable.Data.Where(t => t.Code == "002").First().ItemId != null, "Expected to have a itemId");
+            Assert.IsTrue(itemsTable.Data.First(t => t.Code == "002").ItemId != Guid.Empty, "Expected to have a itemId");
             this.DisconnectDatabase();
         }
 
@@ -238,11 +238,11 @@ namespace OrpheusTests
                 usersTable.ExecuteInserts(trans);
                 this.Database.CommitTransaction(trans);
             }
-            catch (Exception e)
+            catch
             {
                 this.Database.RollbackTransaction(trans);
                 this.DisconnectDatabase();
-                throw e;
+                throw;
             }
             usersTable.ClearData();
 
@@ -302,11 +302,11 @@ namespace OrpheusTests
                 this.StopAndLogWatch(insertStopWatch);
                 this.Database.CommitTransaction(trans);
             }
-            catch (Exception e)
+            catch
             {
                 this.Database.RollbackTransaction(trans);
                 this.DisconnectDatabase();
-                throw e;
+                throw;
             }
             usersTable.ClearData();
 

@@ -487,7 +487,7 @@ namespace OrpheusCore
             catch (Exception e)
             {
                 this.logger.LogError(ErrorCodes.ERR_CANNOT_RUN_DDL,e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)}");
-                throw e;
+                throw;
             }
             finally
             {
