@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_local
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root # Root user password
+      MYSQL_USER: developer     # Custom user
+      MYSQL_PASSWORD: password  # Password for the custom user
+      #MYSQL_DATABASE: customdb # Optional: Initial database to create
+    command: >
+      --default-authentication-plugin=mysql_native_password
+      --bind-address=0.0.0.0
+      --skip-name-resolve
+      --innodb_flush_log_at_trx_commit=2        
+      --innodb_doublewrite=0                    
+      --innodb_file_per_table=1                 
+      --innodb_buffer_pool_size=1G              
+      --innodb_log_buffer_size=16M              
+      --innodb_flush_method=O_DIRECT            
+      --tmp_table_size=64M                      
+      --max_heap_table_size=64M                 
+      --table_definition_cache=2000             
+      --table_open_cache=2000                   
+      --character_set_server=utf8               
+      --collation_server=utf8_general_ci
+      --general_log=0                          
+      --slow_query_log=0                       
+      --skip-log-bin                           
+    volumes:
+      - mysql_data:/var/lib/mysql
+    mem_limit: 4g
+    cpus: "4" 
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver_local
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"             # Accept the license terms
+      SA_PASSWORD: "1StrongPwd!!"  # Password for 'sa' user
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    mem_limit: 4g
+    cpus: "4" 
+
+volumes:
+  mysql_data:
+  sqlserver_data:

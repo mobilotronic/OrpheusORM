@@ -12,5 +12,6 @@
 ## [Version 1.1.2](benchmarks/orpheus_benchmarking_results_1.1.2.md)
 ## [Version 1.1.3](benchmarks/orpheus_benchmarking_results_1.1.3.md)
 ## [Version 1.3.0](benchmarks/orpheus_benchmarking_results_1.3.0.md)
+## [Version 1.4.0](benchmarks/orpheus_benchmarking_results_1.4.0.md)
 # Good to know
 ## [Database creation flow](orpheus_database_creation_flow.md)

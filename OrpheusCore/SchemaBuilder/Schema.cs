@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusAttributes;
-using OrpheusCore.Configuration;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
@@ -42,7 +41,7 @@ namespace OrpheusCore.SchemaBuilder
 
         public int ObjectType { get; set; }
 
-        [ForeignKey("OrpheusSchemaInfo","Id")]
+        [ForeignKey("OrpheusSchemaInfo", "Id")]
         public Guid SchemaId { get; set; }
     }
 
@@ -78,7 +77,8 @@ namespace OrpheusCore.SchemaBuilder
         private List<ISchemaObject> schemaObjectCache;
         private IDbCommand schemaObjectExistsPreparedQuery;
         private ILogger logger;
-        private OrpheusSchema orpheusSchema {
+        private OrpheusSchema orpheusSchema
+        {
             get
             {
                 if (this._orpheusSchema == null)
@@ -91,7 +91,7 @@ namespace OrpheusCore.SchemaBuilder
         {
             var result = "{0} [{1}]";
 
-            return String.Format(result,this.Name == null ? this.Description : this.Name,message);
+            return String.Format(result, this.Name == null ? this.Description : this.Name, message);
         }
 
         //private IOrpheusTable<OrpheusSchemaInfo> internalSchemaInfo;
@@ -179,7 +179,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public Schema()
         {
-            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<Schema>();
+            this.logger = ServiceManager.CreateLogger<Schema>();
         }
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <param name="version">The version.</param>
         /// <param name="id">The identifier.</param>
         /// <param name="name">Schema name. If the DB engine is SQL server, and the name value is set, it will be used as SCHEMA name.</param>
-        public Schema(IOrpheusDatabase db,string description, double version, Guid id, string name = null):this(db,description,version,id)
+        public Schema(IOrpheusDatabase db, string description, double version, Guid id, string name = null) : this(db, description, version, id)
         {
             this.Name = name;
         }
@@ -208,7 +208,7 @@ namespace OrpheusCore.SchemaBuilder
             this.Description = description;
             this.Version = version;
             this.id = id;
-            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<Schema>();
+            this.logger = ServiceManager.CreateLogger<Schema>();
             this.SchemaObjects = new List<ISchemaObject>();
             this.ReferencedSchemas = new List<ISchema>();
         }
@@ -224,7 +224,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </returns>
         public ISchemaObject AddSchemaObject(ISchemaObject schemaObject)
         {
-            if(schemaObject != null)
+            if (schemaObject != null)
             {
                 schemaObject.Schema = this;
                 this.SchemaObjects.Add(schemaObject);
@@ -244,7 +244,7 @@ namespace OrpheusCore.SchemaBuilder
         {
             var result = new SchemaObjectTable();
             result.SQLName = tableName;
-            if(dependencies != null)
+            if (dependencies != null)
             {
                 foreach (var dep in dependencies)
                     result.AddDependency(dep);
@@ -286,7 +286,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <typeparam name="T">Schema table type</typeparam>
         /// <param name="dependencies">The dependencies.</param>
         /// <returns></returns>
-        public ISchemaTable AddSchemaTable<T>(List<ISchemaObject> dependencies = null) where T:class
+        public ISchemaTable AddSchemaTable<T>(List<ISchemaObject> dependencies = null) where T : class
         {
             var modelInstance = Activator.CreateInstance(typeof(T));
             return this.AddSchemaTable(modelInstance, dependencies);
@@ -315,7 +315,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaView CreateSchemaView()
         {
-            var result = ConfigurationManager.Resolve<ISchemaView>();
+            var result = ServiceManager.Resolve<ISchemaView>();
             result.Schema = this;
             return result;
         }
@@ -326,7 +326,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaViewTable CreateSchemaViewTable()
         {
-            var result = ConfigurationManager.Resolve<ISchemaViewTable>();
+            var result = ServiceManager.Resolve<ISchemaViewTable>();
             result.Schema = this;
             return result;
         }
@@ -337,7 +337,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaTable CreateSchemaTable()
         {
-            var result = ConfigurationManager.Resolve<ISchemaTable>();
+            var result = ServiceManager.Resolve<ISchemaTable>();
             result.Schema = this;
             return result;
         }
@@ -348,7 +348,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaObject CreateSchemaObject()
         {
-            var result = ConfigurationManager.Resolve<ISchemaObject>();
+            var result = ServiceManager.Resolve<ISchemaObject>();
             result.Schema = this;
             return result;
         }
@@ -359,7 +359,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaJoinDefinition CreateSchemaJoinDefinition()
         {
-            return ConfigurationManager.Resolve<ISchemaJoinDefinition>();
+            return ServiceManager.Resolve<ISchemaJoinDefinition>();
         }
 
         /// <summary>
@@ -370,7 +370,7 @@ namespace OrpheusCore.SchemaBuilder
         {
             this.SchemaObjects.Remove(schemaObject);
         }
-        
+
         /// <summary>
         /// Iterates through registered schema objects and executes them.
         /// </summary>
@@ -424,9 +424,10 @@ namespace OrpheusCore.SchemaBuilder
                              id = node.Element("Id").Value,
                              Version = Convert.ToDouble(node.Element("Version").Value),
                              SchemaObjects = (from schemaNode in node.Element("SchemaObject").Elements()
-                                             select new {
-                                                 
-                                             }).ToList()
+                                              select new
+                                              {
+
+                                              }).ToList()
                          };
 
         }
@@ -439,15 +440,15 @@ namespace OrpheusCore.SchemaBuilder
             XDocument xDoc = null;
             try
             {
-                    xDoc = new XDocument(new XElement("OrpheusSchema",
-                    new XElement("Description", this.Description)),
-                    new XElement("Id",this.Id.ToString()),
-                    new XElement("Version",this.Version),
-                    new XElement("SchemaObject",
-                        from schemaObject in this.SchemaObjects
-                        select new XElement(schemaObject.SQLName,
-                            new XElement("DDL",schemaObject.GetDDLString())))
-                    );
+                xDoc = new XDocument(new XElement("OrpheusSchema",
+                new XElement("Description", this.Description)),
+                new XElement("Id", this.Id.ToString()),
+                new XElement("Version", this.Version),
+                new XElement("SchemaObject",
+                    from schemaObject in this.SchemaObjects
+                    select new XElement(schemaObject.SQLName,
+                        new XElement("DDL", schemaObject.GetDDLString())))
+                );
                 xDoc.Save(fileName);
             }
             finally
@@ -512,7 +513,7 @@ namespace OrpheusCore.SchemaBuilder
             catch (Exception e)
             {
                 result = Guid.Empty;
-                this.logger.LogError(ErrorCodes.ERR_SCHEMA_OBJECT_EXISTS,e, ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_OBJECT_EXISTS));
+                this.logger.LogError(ErrorCodes.ERR_SCHEMA_OBJECT_EXISTS, e, ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_OBJECT_EXISTS));
             }
             finally
             {
@@ -627,7 +628,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <param name="version">Schema version</param>
         /// <param name="id">Schema unique id</param>
         /// <param name="name">Schema name</param>
-        public OrpheusSchema(IOrpheusDatabase db, string description, double version, Guid id, string name) :base(db,description,version,id,name)
+        public OrpheusSchema(IOrpheusDatabase db, string description, double version, Guid id, string name) : base(db, description, version, id, name)
         {
             this.initializeOrpheusSchema();
         }

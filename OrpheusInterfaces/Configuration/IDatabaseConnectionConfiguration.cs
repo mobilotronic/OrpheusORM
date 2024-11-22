@@ -1,5 +1,29 @@
-﻿namespace OrpheusInterfaces.Configuration
+﻿using System.Text.Json.Serialization;
+
+namespace OrpheusInterfaces.Configuration
 {
+    /// <summary>
+    /// Database encryption connection mode
+    /// </summary>
+    public enum EncyrptConnection
+    {
+        /// <summary>
+        /// Optionally encrypt the connection.
+        /// </summary>
+        [JsonPropertyName("optional")]
+        ecOptional,
+        /// <summary>
+        /// Enforce encrypting the connection.
+        /// </summary>
+        [JsonPropertyName("mandatory")]
+        ecMandatory,
+        /// <summary>
+        /// Enables and requires TDS 8.0, TLS encryption to the server. If the server doesn't
+        /// support TDS 8.0, TLS encryption, the connection will fail.
+        /// </summary>
+        [JsonPropertyName("strict")]
+        ecStrict
+    }
     /// <summary>
     /// Database connection configuration.
     /// </summary>
@@ -58,5 +82,15 @@
         /// The ServicePassword is the one that will be used for that connection.
         /// </value>
         string ServicePassword { get; set; }
+
+        /// <summary>
+        /// True to trust the server certificate. Default is true.
+        /// </summary>
+        bool TrustServerCertificate { get; set; }
+
+        /// <summary>
+        /// Set if the connection will be encrytped or not.
+        /// </summary>
+        EncyrptConnection EncyrptConnection { get; set; }
     }
 }

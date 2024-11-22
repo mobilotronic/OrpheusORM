@@ -500,76 +500,19 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.Configuration.ConfigurationManager.Configuration
   nameWithType: ConfigurationManager.Configuration
-- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  name: InitializeConfiguration(IConfiguration, IServiceCollection)
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_Microsoft_Extensions_Configuration_IConfiguration_Microsoft_Extensions_DependencyInjection_IServiceCollection_
-  commentId: M:OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(Microsoft.Extensions.Configuration.IConfiguration, Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  nameWithType: ConfigurationManager.InitializeConfiguration(IConfiguration, IServiceCollection)
-- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(System.String)
-  name: InitializeConfiguration(String)
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_System_String_
-  commentId: M:OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(System.String)
-  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(System.String)
-  nameWithType: ConfigurationManager.InitializeConfiguration(String)
-- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration*
-  name: InitializeConfiguration
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeConfiguration_
-  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration
+- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeOrpheusConfiguration(Microsoft.Extensions.Configuration.IConfiguration)
+  name: InitializeOrpheusConfiguration(IConfiguration)
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeOrpheusConfiguration_Microsoft_Extensions_Configuration_IConfiguration_
+  commentId: M:OrpheusCore.Configuration.ConfigurationManager.InitializeOrpheusConfiguration(Microsoft.Extensions.Configuration.IConfiguration)
+  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeOrpheusConfiguration(Microsoft.Extensions.Configuration.IConfiguration)
+  nameWithType: ConfigurationManager.InitializeOrpheusConfiguration(IConfiguration)
+- uid: OrpheusCore.Configuration.ConfigurationManager.InitializeOrpheusConfiguration*
+  name: InitializeOrpheusConfiguration
+  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_InitializeOrpheusConfiguration_
+  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.InitializeOrpheusConfiguration
   isSpec: "True"
-  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration
-  nameWithType: ConfigurationManager.InitializeConfiguration
-- uid: OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
-  name: LoggerFactory
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_LoggerFactory
-  commentId: P:OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
-  fullName: OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
-  nameWithType: ConfigurationManager.LoggerFactory
-- uid: OrpheusCore.Configuration.ConfigurationManager.LoggerFactory*
-  name: LoggerFactory
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_LoggerFactory_
-  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.ConfigurationManager.LoggerFactory
-  nameWithType: ConfigurationManager.LoggerFactory
-- uid: OrpheusCore.Configuration.ConfigurationManager.Resolve*
-  name: Resolve
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_Resolve_
-  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.Resolve
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.ConfigurationManager.Resolve
-  nameWithType: ConfigurationManager.Resolve
-- uid: OrpheusCore.Configuration.ConfigurationManager.Resolve``1
-  name: Resolve<T>()
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_Resolve__1
-  commentId: M:OrpheusCore.Configuration.ConfigurationManager.Resolve``1
-  name.vb: Resolve(Of T)()
-  fullName: OrpheusCore.Configuration.ConfigurationManager.Resolve<T>()
-  fullName.vb: OrpheusCore.Configuration.ConfigurationManager.Resolve(Of T)()
-  nameWithType: ConfigurationManager.Resolve<T>()
-  nameWithType.vb: ConfigurationManager.Resolve(Of T)()
-- uid: OrpheusCore.Configuration.ConfigurationManager.Resolve``1(System.Object[])
-  name: Resolve<T>(Object[])
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_Resolve__1_System_Object___
-  commentId: M:OrpheusCore.Configuration.ConfigurationManager.Resolve``1(System.Object[])
-  name.vb: Resolve(Of T)(Object())
-  fullName: OrpheusCore.Configuration.ConfigurationManager.Resolve<T>(System.Object[])
-  fullName.vb: OrpheusCore.Configuration.ConfigurationManager.Resolve(Of T)(System.Object())
-  nameWithType: ConfigurationManager.Resolve<T>(Object[])
-  nameWithType.vb: ConfigurationManager.Resolve(Of T)(Object())
-- uid: OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration(System.String)
-  name: SaveConfiguration(String)
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_SaveConfiguration_System_String_
-  commentId: M:OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration(System.String)
-  fullName: OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration(System.String)
-  nameWithType: ConfigurationManager.SaveConfiguration(String)
-- uid: OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration*
-  name: SaveConfiguration
-  href: api/OrpheusCore.Configuration.ConfigurationManager.html#OrpheusCore_Configuration_ConfigurationManager_SaveConfiguration_
-  commentId: Overload:OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.ConfigurationManager.SaveConfiguration
-  nameWithType: ConfigurationManager.SaveConfiguration
+  fullName: OrpheusCore.Configuration.ConfigurationManager.InitializeOrpheusConfiguration
+  nameWithType: ConfigurationManager.InitializeOrpheusConfiguration
 - uid: OrpheusCore.Configuration.Models
   name: OrpheusCore.Configuration.Models
   href: api/OrpheusCore.Configuration.Models.html
@@ -621,6 +564,19 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
   nameWithType: DatabaseConnectionConfiguration.DatabaseName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  name: EncyrptConnection
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_EncyrptConnection
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  nameWithType: DatabaseConnectionConfiguration.EncyrptConnection
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection*
+  name: EncyrptConnection
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_EncyrptConnection_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  isSpec: "True"
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  nameWithType: DatabaseConnectionConfiguration.EncyrptConnection
 - uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
   name: Password
   href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Password
@@ -673,6 +629,19 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
   nameWithType: DatabaseConnectionConfiguration.ServiceUserName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  name: TrustServerCertificate
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_TrustServerCertificate
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  nameWithType: DatabaseConnectionConfiguration.TrustServerCertificate
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate*
+  name: TrustServerCertificate
+  href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_TrustServerCertificate_
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  isSpec: "True"
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  nameWithType: DatabaseConnectionConfiguration.TrustServerCertificate
 - uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
   name: UseIntegratedSecurity
   href: api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UseIntegratedSecurity
@@ -737,12 +706,12 @@ references:
   commentId: T:OrpheusCore.Configuration.Models.OrpheusConfiguration
   fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration
   nameWithType: OrpheusConfiguration
-- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.IServiceProvider)
-  name: OrpheusConfiguration(IConfiguration, IServiceProvider)
-  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration__ctor_Microsoft_Extensions_Configuration_IConfiguration_System_IServiceProvider_
-  commentId: M:OrpheusCore.Configuration.Models.OrpheusConfiguration.#ctor(Microsoft.Extensions.Configuration.IConfiguration,System.IServiceProvider)
-  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.OrpheusConfiguration(Microsoft.Extensions.Configuration.IConfiguration, System.IServiceProvider)
-  nameWithType: OrpheusConfiguration.OrpheusConfiguration(IConfiguration, IServiceProvider)
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.#ctor
+  name: OrpheusConfiguration()
+  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration__ctor
+  commentId: M:OrpheusCore.Configuration.Models.OrpheusConfiguration.#ctor
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.OrpheusConfiguration()
+  nameWithType: OrpheusConfiguration.OrpheusConfiguration()
 - uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.#ctor*
   name: OrpheusConfiguration
   href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration__ctor_
@@ -776,19 +745,6 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.DefaultStringSize
   nameWithType: OrpheusConfiguration.DefaultStringSize
-- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
-  name: Services
-  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration_Services
-  commentId: P:OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
-  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
-  nameWithType: OrpheusConfiguration.Services
-- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration.Services*
-  name: Services
-  href: api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html#OrpheusCore_Configuration_Models_OrpheusConfiguration_Services_
-  commentId: Overload:OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
-  isSpec: "True"
-  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration.Services
-  nameWithType: OrpheusConfiguration.Services
 - uid: OrpheusCore.Configuration.Models.ServiceProviderItem
   name: ServiceProviderItem
   href: api/OrpheusCore.Configuration.Models.ServiceProviderItem.html
@@ -1021,12 +977,15 @@ references:
   commentId: T:OrpheusCore.OrpheusDatabase
   fullName: OrpheusCore.OrpheusDatabase
   nameWithType: OrpheusDatabase
-- uid: OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.Core.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILoggerFactory)
-  name: OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILoggerFactory)
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase__ctor_System_Data_IDbConnection_OrpheusInterfaces_Core_IOrpheusDDLHelper_Microsoft_Extensions_Logging_ILoggerFactory_
-  commentId: M:OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.Core.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILoggerFactory)
-  fullName: OrpheusCore.OrpheusDatabase.OrpheusDatabase(System.Data.IDbConnection, OrpheusInterfaces.Core.IOrpheusDDLHelper, Microsoft.Extensions.Logging.ILoggerFactory)
-  nameWithType: OrpheusDatabase.OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILoggerFactory)
+- uid: OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.Core.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusDatabase})
+  name: OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger<IOrpheusDatabase>)
+  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase__ctor_System_Data_IDbConnection_OrpheusInterfaces_Core_IOrpheusDDLHelper_Microsoft_Extensions_Logging_ILogger_OrpheusInterfaces_Core_IOrpheusDatabase__
+  commentId: M:OrpheusCore.OrpheusDatabase.#ctor(System.Data.IDbConnection,OrpheusInterfaces.Core.IOrpheusDDLHelper,Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusDatabase})
+  name.vb: OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger(Of IOrpheusDatabase))
+  fullName: OrpheusCore.OrpheusDatabase.OrpheusDatabase(System.Data.IDbConnection, OrpheusInterfaces.Core.IOrpheusDDLHelper, Microsoft.Extensions.Logging.ILogger<OrpheusInterfaces.Core.IOrpheusDatabase>)
+  fullName.vb: OrpheusCore.OrpheusDatabase.OrpheusDatabase(System.Data.IDbConnection, OrpheusInterfaces.Core.IOrpheusDDLHelper, Microsoft.Extensions.Logging.ILogger(Of OrpheusInterfaces.Core.IOrpheusDatabase))
+  nameWithType: OrpheusDatabase.OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger<IOrpheusDatabase>)
+  nameWithType.vb: OrpheusDatabase.OrpheusDatabase(IDbConnection, IOrpheusDDLHelper, ILogger(Of IOrpheusDatabase))
 - uid: OrpheusCore.OrpheusDatabase.#ctor*
   name: OrpheusDatabase
   href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase__ctor_
@@ -1381,19 +1340,6 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.OrpheusDatabase.Logger
   nameWithType: OrpheusDatabase.Logger
-- uid: OrpheusCore.OrpheusDatabase.LoggerFactory
-  name: LoggerFactory
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_LoggerFactory
-  commentId: P:OrpheusCore.OrpheusDatabase.LoggerFactory
-  fullName: OrpheusCore.OrpheusDatabase.LoggerFactory
-  nameWithType: OrpheusDatabase.LoggerFactory
-- uid: OrpheusCore.OrpheusDatabase.LoggerFactory*
-  name: LoggerFactory
-  href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_LoggerFactory_
-  commentId: Overload:OrpheusCore.OrpheusDatabase.LoggerFactory
-  isSpec: "True"
-  fullName: OrpheusCore.OrpheusDatabase.LoggerFactory
-  nameWithType: OrpheusDatabase.LoggerFactory
 - uid: OrpheusCore.OrpheusDatabase.Modules
   name: Modules
   href: api/OrpheusCore.OrpheusDatabase.html#OrpheusCore_OrpheusDatabase_Modules
@@ -1720,18 +1666,24 @@ references:
   commentId: T:OrpheusCore.OrpheusModule
   fullName: OrpheusCore.OrpheusModule
   nameWithType: OrpheusModule
-- uid: OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase)
-  name: OrpheusModule(IOrpheusDatabase)
-  href: api/OrpheusCore.OrpheusModule.html#OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_
-  commentId: M:OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase)
-  fullName: OrpheusCore.OrpheusModule.OrpheusModule(OrpheusInterfaces.Core.IOrpheusDatabase)
-  nameWithType: OrpheusModule.OrpheusModule(IOrpheusDatabase)
-- uid: OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,OrpheusInterfaces.Core.IOrpheusModuleDefinition)
-  name: OrpheusModule(IOrpheusDatabase, IOrpheusModuleDefinition)
-  href: api/OrpheusCore.OrpheusModule.html#OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_OrpheusInterfaces_Core_IOrpheusModuleDefinition_
-  commentId: M:OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,OrpheusInterfaces.Core.IOrpheusModuleDefinition)
-  fullName: OrpheusCore.OrpheusModule.OrpheusModule(OrpheusInterfaces.Core.IOrpheusDatabase, OrpheusInterfaces.Core.IOrpheusModuleDefinition)
-  nameWithType: OrpheusModule.OrpheusModule(IOrpheusDatabase, IOrpheusModuleDefinition)
+- uid: OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusModule})
+  name: OrpheusModule(IOrpheusDatabase, ILogger<IOrpheusModule>)
+  href: api/OrpheusCore.OrpheusModule.html#OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_Microsoft_Extensions_Logging_ILogger_OrpheusInterfaces_Core_IOrpheusModule__
+  commentId: M:OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusModule})
+  name.vb: OrpheusModule(IOrpheusDatabase, ILogger(Of IOrpheusModule))
+  fullName: OrpheusCore.OrpheusModule.OrpheusModule(OrpheusInterfaces.Core.IOrpheusDatabase, Microsoft.Extensions.Logging.ILogger<OrpheusInterfaces.Core.IOrpheusModule>)
+  fullName.vb: OrpheusCore.OrpheusModule.OrpheusModule(OrpheusInterfaces.Core.IOrpheusDatabase, Microsoft.Extensions.Logging.ILogger(Of OrpheusInterfaces.Core.IOrpheusModule))
+  nameWithType: OrpheusModule.OrpheusModule(IOrpheusDatabase, ILogger<IOrpheusModule>)
+  nameWithType.vb: OrpheusModule.OrpheusModule(IOrpheusDatabase, ILogger(Of IOrpheusModule))
+- uid: OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,OrpheusInterfaces.Core.IOrpheusModuleDefinition,Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusModule})
+  name: OrpheusModule(IOrpheusDatabase, IOrpheusModuleDefinition, ILogger<IOrpheusModule>)
+  href: api/OrpheusCore.OrpheusModule.html#OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_OrpheusInterfaces_Core_IOrpheusModuleDefinition_Microsoft_Extensions_Logging_ILogger_OrpheusInterfaces_Core_IOrpheusModule__
+  commentId: M:OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,OrpheusInterfaces.Core.IOrpheusModuleDefinition,Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusModule})
+  name.vb: OrpheusModule(IOrpheusDatabase, IOrpheusModuleDefinition, ILogger(Of IOrpheusModule))
+  fullName: OrpheusCore.OrpheusModule.OrpheusModule(OrpheusInterfaces.Core.IOrpheusDatabase, OrpheusInterfaces.Core.IOrpheusModuleDefinition, Microsoft.Extensions.Logging.ILogger<OrpheusInterfaces.Core.IOrpheusModule>)
+  fullName.vb: OrpheusCore.OrpheusModule.OrpheusModule(OrpheusInterfaces.Core.IOrpheusDatabase, OrpheusInterfaces.Core.IOrpheusModuleDefinition, Microsoft.Extensions.Logging.ILogger(Of OrpheusInterfaces.Core.IOrpheusModule))
+  nameWithType: OrpheusModule.OrpheusModule(IOrpheusDatabase, IOrpheusModuleDefinition, ILogger<IOrpheusModule>)
+  nameWithType.vb: OrpheusModule.OrpheusModule(IOrpheusDatabase, IOrpheusModuleDefinition, ILogger(Of IOrpheusModule))
 - uid: OrpheusCore.OrpheusModule.#ctor*
   name: OrpheusModule
   href: api/OrpheusCore.OrpheusModule.html#OrpheusCore_OrpheusModule__ctor_
@@ -2123,23 +2075,24 @@ references:
   fullName.vb: OrpheusCore.OrpheusTable(Of T)
   nameWithType: OrpheusTable<T>
   nameWithType.vb: OrpheusTable(Of T)
-- uid: OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField},System.String,OrpheusInterfaces.Core.IOrpheusTable,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})
-  name: OrpheusTable(IOrpheusDatabase, List<IOrpheusTableKeyField>, String, IOrpheusTable, List<IOrpheusTableKeyField>)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_Collections_Generic_List_OrpheusInterfaces_Core_IOrpheusTableKeyField__System_String_OrpheusInterfaces_Core_IOrpheusTable_System_Collections_Generic_List_OrpheusInterfaces_Core_IOrpheusTableKeyField__
-  commentId: M:OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField},System.String,OrpheusInterfaces.Core.IOrpheusTable,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})
-  name.vb: OrpheusTable(IOrpheusDatabase, List(Of IOrpheusTableKeyField), String, IOrpheusTable, List(Of IOrpheusTableKeyField))
-  fullName: OrpheusCore.OrpheusTable<T>.OrpheusTable(OrpheusInterfaces.Core.IOrpheusDatabase, System.Collections.Generic.List<OrpheusInterfaces.Core.IOrpheusTableKeyField>, System.String, OrpheusInterfaces.Core.IOrpheusTable, System.Collections.Generic.List<OrpheusInterfaces.Core.IOrpheusTableKeyField>)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).OrpheusTable(OrpheusInterfaces.Core.IOrpheusDatabase, System.Collections.Generic.List(Of OrpheusInterfaces.Core.IOrpheusTableKeyField), System.String, OrpheusInterfaces.Core.IOrpheusTable, System.Collections.Generic.List(Of OrpheusInterfaces.Core.IOrpheusTableKeyField))
-  nameWithType: OrpheusTable<T>.OrpheusTable(IOrpheusDatabase, List<IOrpheusTableKeyField>, String, IOrpheusTable, List<IOrpheusTableKeyField>)
-  nameWithType.vb: OrpheusTable(Of T).OrpheusTable(IOrpheusDatabase, List(Of IOrpheusTableKeyField), String, IOrpheusTable, List(Of IOrpheusTableKeyField))
-- uid: OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusTableOptions)
-  name: OrpheusTable(IOrpheusTableOptions)
-  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_Core_IOrpheusTableOptions_
-  commentId: M:OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusTableOptions)
-  fullName: OrpheusCore.OrpheusTable<T>.OrpheusTable(OrpheusInterfaces.Core.IOrpheusTableOptions)
-  fullName.vb: OrpheusCore.OrpheusTable(Of T).OrpheusTable(OrpheusInterfaces.Core.IOrpheusTableOptions)
-  nameWithType: OrpheusTable<T>.OrpheusTable(IOrpheusTableOptions)
-  nameWithType.vb: OrpheusTable(Of T).OrpheusTable(IOrpheusTableOptions)
+- uid: OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField},Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusTable{`0}},System.String,OrpheusInterfaces.Core.IOrpheusTable,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})
+  name: OrpheusTable(IOrpheusDatabase, List<IOrpheusTableKeyField>, ILogger<IOrpheusTable<T>>, String, IOrpheusTable, List<IOrpheusTableKeyField>)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_Collections_Generic_List_OrpheusInterfaces_Core_IOrpheusTableKeyField__Microsoft_Extensions_Logging_ILogger_OrpheusInterfaces_Core_IOrpheusTable__0___System_String_OrpheusInterfaces_Core_IOrpheusTable_System_Collections_Generic_List_OrpheusInterfaces_Core_IOrpheusTableKeyField__
+  commentId: M:OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField},Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusTable{`0}},System.String,OrpheusInterfaces.Core.IOrpheusTable,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})
+  name.vb: OrpheusTable(IOrpheusDatabase, List(Of IOrpheusTableKeyField), ILogger(Of IOrpheusTable(Of T)), String, IOrpheusTable, List(Of IOrpheusTableKeyField))
+  fullName: OrpheusCore.OrpheusTable<T>.OrpheusTable(OrpheusInterfaces.Core.IOrpheusDatabase, System.Collections.Generic.List<OrpheusInterfaces.Core.IOrpheusTableKeyField>, Microsoft.Extensions.Logging.ILogger<OrpheusInterfaces.Core.IOrpheusTable<T>>, System.String, OrpheusInterfaces.Core.IOrpheusTable, System.Collections.Generic.List<OrpheusInterfaces.Core.IOrpheusTableKeyField>)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).OrpheusTable(OrpheusInterfaces.Core.IOrpheusDatabase, System.Collections.Generic.List(Of OrpheusInterfaces.Core.IOrpheusTableKeyField), Microsoft.Extensions.Logging.ILogger(Of OrpheusInterfaces.Core.IOrpheusTable(Of T)), System.String, OrpheusInterfaces.Core.IOrpheusTable, System.Collections.Generic.List(Of OrpheusInterfaces.Core.IOrpheusTableKeyField))
+  nameWithType: OrpheusTable<T>.OrpheusTable(IOrpheusDatabase, List<IOrpheusTableKeyField>, ILogger<IOrpheusTable<T>>, String, IOrpheusTable, List<IOrpheusTableKeyField>)
+  nameWithType.vb: OrpheusTable(Of T).OrpheusTable(IOrpheusDatabase, List(Of IOrpheusTableKeyField), ILogger(Of IOrpheusTable(Of T)), String, IOrpheusTable, List(Of IOrpheusTableKeyField))
+- uid: OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusTableOptions,Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusTable{`0}})
+  name: OrpheusTable(IOrpheusTableOptions, ILogger<IOrpheusTable<T>>)
+  href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_Core_IOrpheusTableOptions_Microsoft_Extensions_Logging_ILogger_OrpheusInterfaces_Core_IOrpheusTable__0___
+  commentId: M:OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusTableOptions,Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusTable{`0}})
+  name.vb: OrpheusTable(IOrpheusTableOptions, ILogger(Of IOrpheusTable(Of T)))
+  fullName: OrpheusCore.OrpheusTable<T>.OrpheusTable(OrpheusInterfaces.Core.IOrpheusTableOptions, Microsoft.Extensions.Logging.ILogger<OrpheusInterfaces.Core.IOrpheusTable<T>>)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T).OrpheusTable(OrpheusInterfaces.Core.IOrpheusTableOptions, Microsoft.Extensions.Logging.ILogger(Of OrpheusInterfaces.Core.IOrpheusTable(Of T)))
+  nameWithType: OrpheusTable<T>.OrpheusTable(IOrpheusTableOptions, ILogger<IOrpheusTable<T>>)
+  nameWithType.vb: OrpheusTable(Of T).OrpheusTable(IOrpheusTableOptions, ILogger(Of IOrpheusTable(Of T)))
 - uid: OrpheusCore.OrpheusTable`1.#ctor*
   name: OrpheusTable
   href: api/OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1__ctor_
@@ -4501,12 +4454,144 @@ references:
   isSpec: "True"
   fullName: OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint.SQL
   nameWithType: UniqueKeySchemaConstraint.SQL
+- uid: OrpheusCore.ServiceManager
+  name: ServiceManager
+  href: api/OrpheusCore.ServiceManager.html
+  commentId: T:OrpheusCore.ServiceManager
+  fullName: OrpheusCore.ServiceManager
+  nameWithType: ServiceManager
+- uid: OrpheusCore.ServiceManager.AddOrpheusServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: AddOrpheusServices(IServiceCollection)
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_AddOrpheusServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:OrpheusCore.ServiceManager.AddOrpheusServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: OrpheusCore.ServiceManager.AddOrpheusServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: ServiceManager.AddOrpheusServices(IServiceCollection)
+- uid: OrpheusCore.ServiceManager.AddOrpheusServices*
+  name: AddOrpheusServices
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_AddOrpheusServices_
+  commentId: Overload:OrpheusCore.ServiceManager.AddOrpheusServices
+  isSpec: "True"
+  fullName: OrpheusCore.ServiceManager.AddOrpheusServices
+  nameWithType: ServiceManager.AddOrpheusServices
+- uid: OrpheusCore.ServiceManager.CreateLogger*
+  name: CreateLogger
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_CreateLogger_
+  commentId: Overload:OrpheusCore.ServiceManager.CreateLogger
+  isSpec: "True"
+  fullName: OrpheusCore.ServiceManager.CreateLogger
+  nameWithType: ServiceManager.CreateLogger
+- uid: OrpheusCore.ServiceManager.CreateLogger``1
+  name: CreateLogger<T>()
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_CreateLogger__1
+  commentId: M:OrpheusCore.ServiceManager.CreateLogger``1
+  name.vb: CreateLogger(Of T)()
+  fullName: OrpheusCore.ServiceManager.CreateLogger<T>()
+  fullName.vb: OrpheusCore.ServiceManager.CreateLogger(Of T)()
+  nameWithType: ServiceManager.CreateLogger<T>()
+  nameWithType.vb: ServiceManager.CreateLogger(Of T)()
+- uid: OrpheusCore.ServiceManager.GetLoggerService(System.Type)
+  name: GetLoggerService(Type)
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_GetLoggerService_System_Type_
+  commentId: M:OrpheusCore.ServiceManager.GetLoggerService(System.Type)
+  fullName: OrpheusCore.ServiceManager.GetLoggerService(System.Type)
+  nameWithType: ServiceManager.GetLoggerService(Type)
+- uid: OrpheusCore.ServiceManager.GetLoggerService*
+  name: GetLoggerService
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_GetLoggerService_
+  commentId: Overload:OrpheusCore.ServiceManager.GetLoggerService
+  isSpec: "True"
+  fullName: OrpheusCore.ServiceManager.GetLoggerService
+  nameWithType: ServiceManager.GetLoggerService
+- uid: OrpheusCore.ServiceManager.LoggerFactory
+  name: LoggerFactory
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_LoggerFactory
+  commentId: P:OrpheusCore.ServiceManager.LoggerFactory
+  fullName: OrpheusCore.ServiceManager.LoggerFactory
+  nameWithType: ServiceManager.LoggerFactory
+- uid: OrpheusCore.ServiceManager.LoggerFactory*
+  name: LoggerFactory
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_LoggerFactory_
+  commentId: Overload:OrpheusCore.ServiceManager.LoggerFactory
+  isSpec: "True"
+  fullName: OrpheusCore.ServiceManager.LoggerFactory
+  nameWithType: ServiceManager.LoggerFactory
+- uid: OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])
+  name: Resolve(Type, Object[])
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve_System_Type_System_Object___
+  commentId: M:OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])
+  name.vb: Resolve(Type, Object())
+  fullName: OrpheusCore.ServiceManager.Resolve(System.Type, System.Object[])
+  fullName.vb: OrpheusCore.ServiceManager.Resolve(System.Type, System.Object())
+  nameWithType: ServiceManager.Resolve(Type, Object[])
+  nameWithType.vb: ServiceManager.Resolve(Type, Object())
+- uid: OrpheusCore.ServiceManager.Resolve*
+  name: Resolve
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve_
+  commentId: Overload:OrpheusCore.ServiceManager.Resolve
+  isSpec: "True"
+  fullName: OrpheusCore.ServiceManager.Resolve
+  nameWithType: ServiceManager.Resolve
+- uid: OrpheusCore.ServiceManager.Resolve``1
+  name: Resolve<T>()
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve__1
+  commentId: M:OrpheusCore.ServiceManager.Resolve``1
+  name.vb: Resolve(Of T)()
+  fullName: OrpheusCore.ServiceManager.Resolve<T>()
+  fullName.vb: OrpheusCore.ServiceManager.Resolve(Of T)()
+  nameWithType: ServiceManager.Resolve<T>()
+  nameWithType.vb: ServiceManager.Resolve(Of T)()
+- uid: OrpheusCore.ServiceManager.Resolve``1(System.Object[])
+  name: Resolve<T>(Object[])
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve__1_System_Object___
+  commentId: M:OrpheusCore.ServiceManager.Resolve``1(System.Object[])
+  name.vb: Resolve(Of T)(Object())
+  fullName: OrpheusCore.ServiceManager.Resolve<T>(System.Object[])
+  fullName.vb: OrpheusCore.ServiceManager.Resolve(Of T)(System.Object())
+  nameWithType: ServiceManager.Resolve<T>(Object[])
+  nameWithType.vb: ServiceManager.Resolve(Of T)(Object())
+- uid: OrpheusCore.ServiceManager.ServiceProvider
+  name: ServiceProvider
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_ServiceProvider
+  commentId: P:OrpheusCore.ServiceManager.ServiceProvider
+  fullName: OrpheusCore.ServiceManager.ServiceProvider
+  nameWithType: ServiceManager.ServiceProvider
+- uid: OrpheusCore.ServiceManager.ServiceProvider*
+  name: ServiceProvider
+  href: api/OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_ServiceProvider_
+  commentId: Overload:OrpheusCore.ServiceManager.ServiceProvider
+  isSpec: "True"
+  fullName: OrpheusCore.ServiceManager.ServiceProvider
+  nameWithType: ServiceManager.ServiceProvider
 - uid: OrpheusInterfaces.Configuration
   name: OrpheusInterfaces.Configuration
   href: api/OrpheusInterfaces.Configuration.html
   commentId: N:OrpheusInterfaces.Configuration
   fullName: OrpheusInterfaces.Configuration
   nameWithType: OrpheusInterfaces.Configuration
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection
+  name: EncyrptConnection
+  href: api/OrpheusInterfaces.Configuration.EncyrptConnection.html
+  commentId: T:OrpheusInterfaces.Configuration.EncyrptConnection
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection
+  nameWithType: EncyrptConnection
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory
+  name: ecMandatory
+  href: api/OrpheusInterfaces.Configuration.EncyrptConnection.html#OrpheusInterfaces_Configuration_EncyrptConnection_ecMandatory
+  commentId: F:OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory
+  nameWithType: EncyrptConnection.ecMandatory
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional
+  name: ecOptional
+  href: api/OrpheusInterfaces.Configuration.EncyrptConnection.html#OrpheusInterfaces_Configuration_EncyrptConnection_ecOptional
+  commentId: F:OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional
+  nameWithType: EncyrptConnection.ecOptional
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict
+  name: ecStrict
+  href: api/OrpheusInterfaces.Configuration.EncyrptConnection.html#OrpheusInterfaces_Configuration_EncyrptConnection_ecStrict
+  commentId: F:OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict
+  nameWithType: EncyrptConnection.ecStrict
 - uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
   name: IDatabaseConnectionConfiguration
   href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html
@@ -4552,6 +4637,19 @@ references:
   isSpec: "True"
   fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.DatabaseName
   nameWithType: IDatabaseConnectionConfiguration.DatabaseName
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection
+  name: EncyrptConnection
+  href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_EncyrptConnection
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection
+  nameWithType: IDatabaseConnectionConfiguration.EncyrptConnection
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection*
+  name: EncyrptConnection
+  href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_EncyrptConnection_
+  commentId: Overload:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection
+  nameWithType: IDatabaseConnectionConfiguration.EncyrptConnection
 - uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Password
   name: Password
   href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Password
@@ -4604,6 +4702,19 @@ references:
   isSpec: "True"
   fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
   nameWithType: IDatabaseConnectionConfiguration.ServiceUserName
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate
+  name: TrustServerCertificate
+  href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_TrustServerCertificate
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate
+  nameWithType: IDatabaseConnectionConfiguration.TrustServerCertificate
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate*
+  name: TrustServerCertificate
+  href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_TrustServerCertificate_
+  commentId: Overload:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate
+  isSpec: "True"
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate
+  nameWithType: IDatabaseConnectionConfiguration.TrustServerCertificate
 - uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurity
   name: UseIntegratedSecurity
   href: api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UseIntegratedSecurity
@@ -8429,18 +8540,40 @@ references:
   commentId: N:OrpheusMySQLDDLHelper
   fullName: OrpheusMySQLDDLHelper
   nameWithType: OrpheusMySQLDDLHelper
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase
+  name: OrpheusMySQLServerDatabase
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.html
+  commentId: T:OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase
+  nameWithType: OrpheusMySQLServerDatabase
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.CreateDatabase
+  name: CreateDatabase()
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDatabase_CreateDatabase
+  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.CreateDatabase
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.CreateDatabase()
+  nameWithType: OrpheusMySQLServerDatabase.CreateDatabase()
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.CreateDatabase*
+  name: CreateDatabase
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDatabase_CreateDatabase_
+  commentId: Overload:OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.CreateDatabase
+  isSpec: "True"
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.CreateDatabase
+  nameWithType: OrpheusMySQLServerDatabase.CreateDatabase
 - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper
   name: OrpheusMySQLServerDDLHelper
   href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html
   commentId: T:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper
   fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper
   nameWithType: OrpheusMySQLServerDDLHelper
-- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor
-  name: OrpheusMySQLServerDDLHelper()
-  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor
-  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor
-  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.OrpheusMySQLServerDDLHelper()
-  nameWithType: OrpheusMySQLServerDDLHelper.OrpheusMySQLServerDDLHelper()
+- uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor(Microsoft.Extensions.Logging.ILogger{OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper})
+  name: OrpheusMySQLServerDDLHelper(ILogger<OrpheusMySQLServerDDLHelper>)
+  href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor_Microsoft_Extensions_Logging_ILogger_OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__
+  commentId: M:OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor(Microsoft.Extensions.Logging.ILogger{OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper})
+  name.vb: OrpheusMySQLServerDDLHelper(ILogger(Of OrpheusMySQLServerDDLHelper))
+  fullName: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.OrpheusMySQLServerDDLHelper(Microsoft.Extensions.Logging.ILogger<OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper>)
+  fullName.vb: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.OrpheusMySQLServerDDLHelper(Microsoft.Extensions.Logging.ILogger(Of OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper))
+  nameWithType: OrpheusMySQLServerDDLHelper.OrpheusMySQLServerDDLHelper(ILogger<OrpheusMySQLServerDDLHelper>)
+  nameWithType.vb: OrpheusMySQLServerDDLHelper.OrpheusMySQLServerDDLHelper(ILogger(Of OrpheusMySQLServerDDLHelper))
 - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor*
   name: OrpheusMySQLServerDDLHelper
   href: api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html#OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor_
@@ -8741,18 +8874,40 @@ references:
   commentId: N:OrpheusSQLDDLHelper
   fullName: OrpheusSQLDDLHelper
   nameWithType: OrpheusSQLDDLHelper
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase
+  name: OrpheusSQLServerDatabase
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.html
+  commentId: T:OrpheusSQLDDLHelper.OrpheusSQLServerDatabase
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase
+  nameWithType: OrpheusSQLServerDatabase
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.CreateDatabase
+  name: CreateDatabase()
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.html#OrpheusSQLDDLHelper_OrpheusSQLServerDatabase_CreateDatabase
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.CreateDatabase
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.CreateDatabase()
+  nameWithType: OrpheusSQLServerDatabase.CreateDatabase()
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.CreateDatabase*
+  name: CreateDatabase
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.html#OrpheusSQLDDLHelper_OrpheusSQLServerDatabase_CreateDatabase_
+  commentId: Overload:OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.CreateDatabase
+  isSpec: "True"
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.CreateDatabase
+  nameWithType: OrpheusSQLServerDatabase.CreateDatabase
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper
   name: OrpheusSQLServerDDLHelper
   href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html
   commentId: T:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper
   fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper
   nameWithType: OrpheusSQLServerDDLHelper
-- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.#ctor
-  name: OrpheusSQLServerDDLHelper()
-  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper__ctor
-  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.#ctor
-  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.OrpheusSQLServerDDLHelper()
-  nameWithType: OrpheusSQLServerDDLHelper.OrpheusSQLServerDDLHelper()
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.#ctor(Microsoft.Extensions.Logging.ILogger{OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper})
+  name: OrpheusSQLServerDDLHelper(ILogger<OrpheusSQLServerDDLHelper>)
+  href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper__ctor_Microsoft_Extensions_Logging_ILogger_OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper__
+  commentId: M:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.#ctor(Microsoft.Extensions.Logging.ILogger{OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper})
+  name.vb: OrpheusSQLServerDDLHelper(ILogger(Of OrpheusSQLServerDDLHelper))
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.OrpheusSQLServerDDLHelper(Microsoft.Extensions.Logging.ILogger<OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper>)
+  fullName.vb: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.OrpheusSQLServerDDLHelper(Microsoft.Extensions.Logging.ILogger(Of OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper))
+  nameWithType: OrpheusSQLServerDDLHelper.OrpheusSQLServerDDLHelper(ILogger<OrpheusSQLServerDDLHelper>)
+  nameWithType.vb: OrpheusSQLServerDDLHelper.OrpheusSQLServerDDLHelper(ILogger(Of OrpheusSQLServerDDLHelper))
 - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.#ctor*
   name: OrpheusSQLServerDDLHelper
   href: api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html#OrpheusSQLDDLHelper_OrpheusSQLServerDDLHelper__ctor_

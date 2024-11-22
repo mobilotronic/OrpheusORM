@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Schema
- | Orpheus </title>
+      <title>Class Schema | Orpheus </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Schema
- | Orpheus ">
+      <meta name="title" content="Class Schema | Orpheus ">
       
+      <meta name="description" content="Represents an Orpheus Schema.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_Schema.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.Schema%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,19 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module">
-    import options from './../public/main.js'
-    import { init } from './../public/docfx.min.js'
-    init(options)
-  </script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -58,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -81,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -93,12 +89,11 @@
 
 
   <h1 id="OrpheusCore_SchemaBuilder_Schema" data-uid="OrpheusCore.SchemaBuilder.Schema" class="text-break">
-    Class Schema
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L72"><i class="bi bi-code-slash"></i></a>
+Class Schema  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusCore.html">OrpheusCore</a>.<a class="xref" href="OrpheusCore.SchemaBuilder.html">SchemaBuilder</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusCore.SchemaBuilder.html">OrpheusCore.SchemaBuilder</a></dd></dl>
   <dl><dt>Assembly</dt><dd>OrpheusCore.dll</dd></dl>
   </div>
 
@@ -116,7 +111,7 @@
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Object</span></div>
       <div><span class="xref">Schema</span></div>
     </dd>
   </dl>
@@ -129,29 +124,29 @@
   </dl>
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+      <span class="xref">Object.Equals(Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+      <span class="xref">Object.Equals(Object, Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+      <span class="xref">Object.GetHashCode()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+      <span class="xref">Object.GetType()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+      <span class="xref">Object.MemberwiseClone()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+      <span class="xref">Object.ReferenceEquals(Object, Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+      <span class="xref">Object.ToString()</span>
     </div>
   </dd></dl>
 
@@ -168,7 +163,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema__ctor" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor">
   Schema()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L180"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.SchemaBuilder.Schema.html">Schema</a> class.</p>
@@ -194,8 +189,8 @@
   <a id="OrpheusCore_SchemaBuilder_Schema__ctor_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_String_System_Double_System_Guid_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.String,System.Double,System.Guid)">
-  Schema(IOrpheusDatabase, string, double, Guid)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  Schema(IOrpheusDatabase, String, Double, Guid)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L205"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.SchemaBuilder.Schema.html">Schema</a> class.</p>
@@ -211,13 +206,13 @@
     <dt><code>db</code> <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
     <dd><p>The database.</p>
 </dd>
-    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>description</code> <span class="xref">String</span></dt>
     <dd><p>The description.</p>
 </dd>
-    <dt><code>version</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dt><code>version</code> <span class="xref">Double</span></dt>
     <dd><p>The version.</p>
 </dd>
-    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dt><code>id</code> <span class="xref">Guid</span></dt>
     <dd><p>The identifier.</p>
 </dd>
   </dl>
@@ -236,8 +231,8 @@
   <a id="OrpheusCore_SchemaBuilder_Schema__ctor_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_String_System_Double_System_Guid_System_String_" data-uid="OrpheusCore.SchemaBuilder.Schema.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.String,System.Double,System.Guid,System.String)">
-  Schema(IOrpheusDatabase, string, double, Guid, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L193"><i class="bi bi-code-slash"></i></a>
+  Schema(IOrpheusDatabase, String, Double, Guid, String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L193"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.SchemaBuilder.Schema.html">Schema</a> class.</p>
@@ -253,16 +248,16 @@
     <dt><code>db</code> <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
     <dd><p>The database.</p>
 </dd>
-    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>description</code> <span class="xref">String</span></dt>
     <dd><p>The description.</p>
 </dd>
-    <dt><code>version</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dt><code>version</code> <span class="xref">Double</span></dt>
     <dd><p>The version.</p>
 </dd>
-    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dt><code>id</code> <span class="xref">Guid</span></dt>
     <dd><p>The identifier.</p>
 </dd>
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>name</code> <span class="xref">String</span></dt>
     <dd><p>Schema name. If the DB engine is SQL server, and the name value is set, it will be used as SCHEMA name.</p>
 </dd>
   </dl>
@@ -286,7 +281,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_DB" data-uid="OrpheusCore.SchemaBuilder.Schema.DB">
   DB
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Orpheus database.</p>
@@ -319,7 +314,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_Description" data-uid="OrpheusCore.SchemaBuilder.Schema.Description">
   Description
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L127"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schema description.</p>
@@ -336,7 +331,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>Schema description</p>
 </dd>
   </dl>
@@ -352,7 +347,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_Id" data-uid="OrpheusCore.SchemaBuilder.Schema.Id">
   Id
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L139"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schema Id.</p>
@@ -369,7 +364,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dt><span class="xref">Guid</span></dt>
     <dd><p>Schema unique id</p>
 </dd>
   </dl>
@@ -385,7 +380,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_Name" data-uid="OrpheusCore.SchemaBuilder.Schema.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L121"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schema name.</p>
@@ -402,7 +397,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>Schema description</p>
 </dd>
   </dl>
@@ -418,7 +413,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_ReferencedSchemas" data-uid="OrpheusCore.SchemaBuilder.Schema.ReferencedSchemas">
   ReferencedSchemas
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -434,7 +429,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISchema</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISchema</a>&gt;</dt>
     <dd><p>List of reference schemas</p>
 </dd>
   </dl>
@@ -450,7 +445,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaInfoTable" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaInfoTable">
   SchemaInfoTable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L154"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -466,7 +461,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>Orpheus schema info table.</p>
 </dd>
   </dl>
@@ -482,7 +477,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaModulesTable" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaModulesTable">
   SchemaModulesTable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L166"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Orpheus module definition table.</p>
@@ -499,7 +494,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>Table name for the Orpheus schema modules table</p>
 </dd>
   </dl>
@@ -515,7 +510,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaObjects" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjects">
   SchemaObjects
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -531,7 +526,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
     <dd><p>List of schema objects. <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></p>
 </dd>
   </dl>
@@ -547,7 +542,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaObjectsTable" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjectsTable">
   SchemaObjectsTable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -563,7 +558,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>Orpheus schema objects table.</p>
 </dd>
   </dl>
@@ -579,7 +574,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_Version" data-uid="OrpheusCore.SchemaBuilder.Schema.Version">
   Version
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L133"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schema version.</p>
@@ -596,7 +591,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dt><span class="xref">Double</span></dt>
     <dd><p>Schema version</p>
 </dd>
   </dl>
@@ -616,7 +611,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaObject_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaObject(OrpheusInterfaces.Schema.ISchemaObject)">
   AddSchemaObject(ISchemaObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L225"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a schema object to the list.</p>
@@ -653,8 +648,8 @@
   <a id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Object_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Object,System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject})">
-  AddSchemaTable(object, List&lt;ISchemaObject&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  AddSchemaTable(Object, List&lt;ISchemaObject&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L265"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
@@ -667,10 +662,10 @@
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dt><code>model</code> <span class="xref">Object</span></dt>
     <dd><p>Model will be used to auto-generate fields, primary keys etc, for the schema object</p>
 </dd>
-    <dt><code>dependencies</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dt><code>dependencies</code> <span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
     <dd><p>List of schema objects, that this objects depends upon</p>
 </dd>
   </dl>
@@ -694,8 +689,8 @@
   <a id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_String_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__System_Object_" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.String,System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject},System.Object)">
-  AddSchemaTable(string, List&lt;ISchemaObject&gt;, object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  AddSchemaTable(String, List&lt;ISchemaObject&gt;, Object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L243"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
@@ -708,13 +703,13 @@
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>tableName</code> <span class="xref">String</span></dt>
     <dd><p>Table name</p>
 </dd>
-    <dt><code>dependencies</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dt><code>dependencies</code> <span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
     <dd><p>List of schema objects, that this objects depends upon</p>
 </dd>
-    <dt><code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dt><code>model</code> <span class="xref">Object</span></dt>
     <dd><p>Model will be used to auto-generate fields, primary keys etc, for the schema object</p>
 </dd>
   </dl>
@@ -739,7 +734,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable_System_Type_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable(System.Type,System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject})">
   AddSchemaTable(Type, List&lt;ISchemaObject&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L276"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
@@ -752,10 +747,10 @@
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>modelType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dt><code>modelType</code> <span class="xref">Type</span></dt>
     <dd><p>Model type will be used to auto-generate fields, primary keys etc, for the schema object</p>
 </dd>
-    <dt><code>dependencies</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dt><code>dependencies</code> <span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
     <dd><p>List of schema objects, that this objects depends upon</p>
 </dd>
   </dl>
@@ -780,7 +775,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__1_System_Collections_Generic_List_OrpheusInterfaces_Schema_ISchemaObject__" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``1(System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaObject})">
   AddSchemaTable&lt;T&gt;(List&lt;ISchemaObject&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L289"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L289"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
@@ -788,12 +783,13 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ISchemaTable AddSchemaTable&lt;T&gt;(List&lt;ISchemaObject&gt; dependencies = null) where T : class</code></pre>
+    <pre><code class="lang-csharp hljs">public ISchemaTable AddSchemaTable&lt;T&gt;(List&lt;ISchemaObject&gt; dependencies = null)
+    where T : class</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dependencies</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
+    <dt><code>dependencies</code> <span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a>&gt;</dt>
     <dd><p>The dependencies.</p>
 </dd>
   </dl>
@@ -824,7 +820,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_AddSchemaTable__2" data-uid="OrpheusCore.SchemaBuilder.Schema.AddSchemaTable``2">
   AddSchemaTable&lt;T, D&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L301"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L301"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a schema table and initializes table-name, dependencies and generating fields from a model, if provided.</p>
@@ -865,7 +861,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaJoinDefinition" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaJoinDefinition">
   CreateSchemaJoinDefinition()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L360"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L360"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a join schema definition.</p>
@@ -897,7 +893,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaObject" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaObject">
   CreateSchemaObject()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L349"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L349"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a schema object.</p>
@@ -929,7 +925,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaTable" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaTable">
   CreateSchemaTable()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L338"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a table schema object.</p>
@@ -961,7 +957,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaView" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaView">
   CreateSchemaView()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L316"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a view schema object.</p>
@@ -993,7 +989,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_CreateSchemaViewTable" data-uid="OrpheusCore.SchemaBuilder.Schema.CreateSchemaViewTable">
   CreateSchemaViewTable()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L327"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L327"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a view table schema object.</p>
@@ -1025,7 +1021,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_Drop" data-uid="OrpheusCore.SchemaBuilder.Schema.Drop">
   Drop()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L394"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L394"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Drops schema. Removes all schema objects from the database.</p>
@@ -1052,7 +1048,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_Execute" data-uid="OrpheusCore.SchemaBuilder.Schema.Execute">
   Execute()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L377"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L377"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Iterates through registered schema objects and executes them.</p>
@@ -1078,8 +1074,8 @@
   <a id="OrpheusCore_SchemaBuilder_Schema_LoadFromFile_" data-uid="OrpheusCore.SchemaBuilder.Schema.LoadFromFile*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_LoadFromFile_System_String_" data-uid="OrpheusCore.SchemaBuilder.Schema.LoadFromFile(System.String)">
-  LoadFromFile(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L417"><i class="bi bi-code-slash"></i></a>
+  LoadFromFile(String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L417"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads schema definition from a file.</p>
@@ -1092,7 +1088,7 @@
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>fileName</code> <span class="xref">String</span></dt>
     <dd><p>The filename.</p>
 </dd>
   </dl>
@@ -1112,7 +1108,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_RegisterSchema" data-uid="OrpheusCore.SchemaBuilder.Schema.RegisterSchema">
   RegisterSchema()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L531"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L532"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Registers schema information, in the schema information table.</p>
@@ -1139,7 +1135,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_RemoveSchemaObject_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.RemoveSchemaObject(OrpheusInterfaces.Schema.ISchemaObject)">
   RemoveSchemaObject(ISchemaObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L369"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L369"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes a schema object from the schema list.</p>
@@ -1170,8 +1166,8 @@
   <a id="OrpheusCore_SchemaBuilder_Schema_SaveToFile_" data-uid="OrpheusCore.SchemaBuilder.Schema.SaveToFile*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_SaveToFile_System_String_" data-uid="OrpheusCore.SchemaBuilder.Schema.SaveToFile(System.String)">
-  SaveToFile(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L437"><i class="bi bi-code-slash"></i></a>
+  SaveToFile(String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L438"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Saves schema definition to a file. If the file exists it will overwrite it.</p>
@@ -1184,7 +1180,7 @@
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>fileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>fileName</code> <span class="xref">String</span></dt>
     <dd><p>The filename.</p>
 </dd>
   </dl>
@@ -1204,7 +1200,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_Schema_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusCore.SchemaBuilder.Schema.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)">
   SchemaObjectExists(ISchemaObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/Schema.cs/#L466"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/Schema.cs/#L467"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the guid of the schema object it is created.</p>
@@ -1224,7 +1220,7 @@
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dt><span class="xref">Guid</span></dt>
     <dd><p>The schema object unique id</p>
 </dd>
   </dl>
@@ -1243,7 +1239,7 @@
 </article>
 
 
-        
+
       </div>
 
       <div class="affix">
@@ -1253,7 +1249,7 @@
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           Orpheus - Mobilotronic © 2017 - 2023

@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class SchemaDataObject
- | Orpheus </title>
+      <title>Class SchemaDataObject | Orpheus </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class SchemaDataObject
- | Orpheus ">
+      <meta name="title" content="Class SchemaDataObject | Orpheus ">
       
+      <meta name="description" content="Base schema data object.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaDataObject.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaDataObject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_SchemaBuilder_SchemaDataObject.md&amp;value=---%0Auid%3A%20OrpheusCore.SchemaBuilder.SchemaDataObject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,19 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module">
-    import options from './../public/main.js'
-    import { init } from './../public/docfx.min.js'
-    init(options)
-  </script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -58,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -81,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -93,12 +89,11 @@
 
 
   <h1 id="OrpheusCore_SchemaBuilder_SchemaDataObject" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject" class="text-break">
-    Class SchemaDataObject
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L285"><i class="bi bi-code-slash"></i></a>
+Class SchemaDataObject  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L284"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusCore.html">OrpheusCore</a>.<a class="xref" href="OrpheusCore.SchemaBuilder.html">SchemaBuilder</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusCore.SchemaBuilder.html">OrpheusCore.SchemaBuilder</a></dd></dl>
   <dl><dt>Assembly</dt><dd>OrpheusCore.dll</dd></dl>
   </div>
 
@@ -116,7 +111,7 @@
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Object</span></div>
       <div><a class="xref" href="OrpheusCore.SchemaBuilder.SchemaObject.html">SchemaObject</a></div>
       <div><span class="xref">SchemaDataObject</span></div>
     </dd>
@@ -138,7 +133,7 @@
     </dd>
   </dl>
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -148,7 +143,7 @@
       <a class="xref" href="OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject__sqlName">SchemaObject._sqlName</a>
     </div>
     <div>
-      <a class="xref" href="OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_formatLoggerMessage_System_String_">SchemaObject.formatLoggerMessage(string)</a>
+      <a class="xref" href="OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_formatLoggerMessage_System_String_">SchemaObject.formatLoggerMessage(String)</a>
     </div>
     <div>
       <a class="xref" href="OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_createDDLString">SchemaObject.createDDLString()</a>
@@ -202,25 +197,25 @@
       <a class="xref" href="OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency__1">SchemaObject.AddDependency&lt;T&gt;()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+      <span class="xref">Object.Equals(Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+      <span class="xref">Object.Equals(Object, Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+      <span class="xref">Object.GetHashCode()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+      <span class="xref">Object.GetType()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+      <span class="xref">Object.MemberwiseClone()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+      <span class="xref">Object.ReferenceEquals(Object, Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+      <span class="xref">Object.ToString()</span>
     </div>
   </dd></dl>
 
@@ -237,7 +232,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject__ctor" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.#ctor">
   SchemaDataObject()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L794"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L797"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.SchemaBuilder.SchemaDataObject.html">SchemaDataObject</a> class.</p>
@@ -267,7 +262,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_modelHelper" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.modelHelper">
   modelHelper
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L293"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Schema model helper.</p>
@@ -298,7 +293,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_seedDataTable" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.seedDataTable">
   seedDataTable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L301"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L300"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Table that holds the initial seed data for the schema.</p>
@@ -334,7 +329,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_Constraints" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.Constraints">
   Constraints
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L438"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L439"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The list of constraints of the schema object.</p>
@@ -351,7 +346,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaConstraint.html">ISchemaConstraint</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaConstraint.html">ISchemaConstraint</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -366,7 +361,7 @@
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_DB" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.DB">
   DB
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L428"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L429"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Database that the schema object belongs to.
@@ -399,7 +394,7 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_Fields" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.Fields">
   Fields
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L433"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L434"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The list of fields of the schema object.</p>
@@ -416,7 +411,7 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaField.html">ISchemaField</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Schema.ISchemaField.html">ISchemaField</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -434,8 +429,8 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
   <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_AddField_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.AddField*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_AddField_System_String_System_String_System_Boolean_System_String_System_String_System_String_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)">
-  AddField(string, string, bool, string, string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L494"><i class="bi bi-code-slash"></i></a>
+  AddField(String, String, Boolean, String, String, String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L495"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates and adds a field to the field list.</p>
@@ -448,22 +443,22 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>name</code> <span class="xref">String</span></dt>
     <dd><p>Field name</p>
 </dd>
-    <dt><code>dataType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>dataType</code> <span class="xref">String</span></dt>
     <dd><p>Field data type</p>
 </dd>
-    <dt><code>nullable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>nullable</code> <span class="xref">Boolean</span></dt>
     <dd><p>Nullable</p>
 </dd>
-    <dt><code>defaultValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>defaultValue</code> <span class="xref">String</span></dt>
     <dd><p>Field default value</p>
 </dd>
-    <dt><code>size</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>size</code> <span class="xref">String</span></dt>
     <dd><p>Field size</p>
 </dd>
-    <dt><code>alias</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>alias</code> <span class="xref">String</span></dt>
     <dd><p>Field alias</p>
 </dd>
   </dl>
@@ -487,8 +482,8 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
   <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_AddForeignKeyConstraint_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_AddForeignKeyConstraint_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)">
-  AddForeignKeyConstraint(string, List&lt;string&gt;, string, List&lt;string&gt;, bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L537"><i class="bi bi-code-slash"></i></a>
+  AddForeignKeyConstraint(String, List&lt;String&gt;, String, List&lt;String&gt;, Boolean, Boolean)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L538"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the foreign key constraint.</p>
@@ -501,22 +496,22 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>name</code> <span class="xref">String</span></dt>
     <dd><p>The name.</p>
 </dd>
-    <dt><code>fields</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>fields</code> <span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
     <dd><p>The fields.</p>
 </dd>
-    <dt><code>foreignKeySchemaObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>foreignKeySchemaObject</code> <span class="xref">String</span></dt>
     <dd><p>The foreign key schema object.</p>
 </dd>
-    <dt><code>foreignKeySchemaFields</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>foreignKeySchemaFields</code> <span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
     <dd><p>The foreign key schema fields.</p>
 </dd>
-    <dt><code>onCascadeDelete</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>onCascadeDelete</code> <span class="xref">Boolean</span></dt>
     <dd><p>if set to <code>true</code> [on cascade delete].</p>
 </dd>
-    <dt><code>onUpdateCascade</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>onUpdateCascade</code> <span class="xref">Boolean</span></dt>
     <dd><p>if set to <code>true</code> [on update cascade].</p>
 </dd>
   </dl>
@@ -540,8 +535,8 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
   <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_AddPrimaryKeyConstraint_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_AddPrimaryKeyConstraint_System_String_System_Collections_Generic_List_System_String__OrpheusInterfaces_Schema_SchemaSort_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)">
-  AddPrimaryKeyConstraint(string, List&lt;string&gt;, SchemaSort)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L517"><i class="bi bi-code-slash"></i></a>
+  AddPrimaryKeyConstraint(String, List&lt;String&gt;, SchemaSort)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L518"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a primary key constraint.</p>
@@ -554,10 +549,10 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>name</code> <span class="xref">String</span></dt>
     <dd><p>Constraint name</p>
 </dd>
-    <dt><code>fields</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>fields</code> <span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
     <dd><p>Constraint fields</p>
 </dd>
     <dt><code>sort</code> <a class="xref" href="OrpheusInterfaces.Schema.SchemaSort.html">SchemaSort</a></dt>
@@ -584,8 +579,8 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
   <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_AddUniqueKeyConstraint_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_AddUniqueKeyConstraint_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})">
-  AddUniqueKeyConstraint(string, List&lt;string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L559"><i class="bi bi-code-slash"></i></a>
+  AddUniqueKeyConstraint(String, List&lt;String&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L560"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a unique key constraint.</p>
@@ -598,10 +593,10 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>name</code> <span class="xref">String</span></dt>
     <dd><p>Constraint name</p>
 </dd>
-    <dt><code>fields</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>fields</code> <span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
     <dd><p>Constraint fields</p>
 </dd>
   </dl>
@@ -623,11 +618,75 @@ Taken from the <a class="xref" href="OrpheusInterfaces.Schema.ISchema.html">ISch
 
 
 
+  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_applyConstraints_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints*"></a>
+
+  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_applyConstraints_System_Data_IDbCommand_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(System.Data.IDbCommand)">
+  applyConstraints(IDbCommand)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L320"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies schema constraints.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void applyConstraints(IDbCommand cmd)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cmd</code> <span class="xref">IDbCommand</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_canExecuteSchema_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema*"></a>
+
+  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_canExecuteSchema" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema">
+  canExecuteSchema()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L392"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if the schema can be executed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool canExecuteSchema()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Boolean</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_CreateFieldsFromModel_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_CreateFieldsFromModel_System_Object_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Object)">
-  CreateFieldsFromModel(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L448"><i class="bi bi-code-slash"></i></a>
+  CreateFieldsFromModel(Object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L449"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates fields from a given model.
@@ -642,7 +701,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dt><code>model</code> <span class="xref">Object</span></dt>
     <dd></dd>
   </dl>
 
@@ -661,7 +720,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_CreateFieldsFromModel_System_Type_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Type)">
   CreateFieldsFromModel(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L468"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L469"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates fields from a given model.
@@ -676,7 +735,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>modelType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dt><code>modelType</code> <span class="xref">Type</span></dt>
     <dd></dd>
   </dl>
 
@@ -695,7 +754,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_CreateFieldsFromModel__1" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel``1">
   CreateFieldsFromModel&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L458"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L459"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates fields from a given model.
@@ -729,7 +788,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_Drop" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.Drop">
   Drop()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L773"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L776"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Drops the schema from the database.</p>
@@ -756,7 +815,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_Execute" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.Execute">
   Execute()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L637"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L639"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates the schema object in the database.</p>
@@ -779,11 +838,43 @@ Supports OrpheusAttributes attributes</p>
 
 
 
+  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_getConstraintsDDL_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL*"></a>
+
+  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_getConstraintsDDL" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL">
+  getConstraintsDDL()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the schema constraints SQL.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string getConstraintsDDL()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">String</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_GetConstraintsDDL_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_GetConstraintsDDL" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL">
   GetConstraintsDDL()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L625"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L626"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Generate the schema's constraints DDL string.</p>
@@ -797,7 +888,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
     <dd><p>Returns the DDL string ready to be executed.</p>
 </dd>
   </dl>
@@ -816,7 +907,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_GetData__1" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.GetData``1">
   GetData&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L613"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L614"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the seed data for the table if defined.</p>
@@ -830,7 +921,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dt><span class="xref">List</span>&lt;T&gt;</dt>
     <dd><p>Schema object's data</p>
 </dd>
   </dl>
@@ -851,11 +942,75 @@ Supports OrpheusAttributes attributes</p>
 
 
 
+  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_registerSchema_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema*"></a>
+
+  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_registerSchema_System_Data_IDbTransaction_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(System.Data.IDbTransaction)">
+  registerSchema(IDbTransaction)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Registers an Orpheus schema.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void registerSchema(IDbTransaction transaction = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_seedData_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.seedData*"></a>
+
+  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_seedData_System_Data_IDbCommand_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(System.Data.IDbCommand)">
+  seedData(IDbCommand)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inserts data to the DB engine, if the schema is a Table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void seedData(IDbCommand cmd)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cmd</code> <span class="xref">IDbCommand</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_SetData_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.SetData*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_SetData__1_System_Collections_Generic_List___0__" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.SetData``1(System.Collections.Generic.List{``0})">
   SetData&lt;T&gt;(List&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L578"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L579"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Optional data to initialize a schema object. Practically applicable only to a table.</p>
@@ -868,7 +1023,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dt><code>data</code> <span class="xref">List</span>&lt;T&gt;</dt>
     <dd><p>The data.</p>
 </dd>
   </dl>
@@ -890,171 +1045,11 @@ Supports OrpheusAttributes attributes</p>
 
 
 
-  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_applyConstraints_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints*"></a>
-
-  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_applyConstraints_System_Data_IDbCommand_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(System.Data.IDbCommand)">
-  applyConstraints(IDbCommand)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L320"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Applies schema constraints.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void applyConstraints(IDbCommand cmd)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>cmd</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_canExecuteSchema_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema*"></a>
-
-  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_canExecuteSchema" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema">
-  canExecuteSchema()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L391"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Returns true if the schema can be executed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override bool canExecuteSchema()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_getConstraintsDDL_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL*"></a>
-
-  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_getConstraintsDDL" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL">
-  getConstraintsDDL()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L307"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Returns the schema constraints SQL.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected string getConstraintsDDL()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_registerSchema_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema*"></a>
-
-  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_registerSchema_System_Data_IDbTransaction_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(System.Data.IDbTransaction)">
-  registerSchema(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L332"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Registers an Orpheus schema.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void registerSchema(IDbTransaction transaction = null)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_seedData_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.seedData*"></a>
-
-  <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_seedData_System_Data_IDbCommand_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(System.Data.IDbCommand)">
-  seedData(IDbCommand)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L326"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Inserts data to the DB engine, if the schema is a Table.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void seedData(IDbCommand cmd)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>cmd</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="OrpheusCore_SchemaBuilder_SchemaDataObject_unRegisterSchema_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema*"></a>
 
   <h3 id="OrpheusCore_SchemaBuilder_SchemaDataObject_unRegisterSchema_System_Data_IDbTransaction_" data-uid="OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(System.Data.IDbTransaction)">
   unRegisterSchema(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L362"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/SchemaBuilder/SchemaObject.cs/#L363"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Unregisters an Orpheus schema.</p>
@@ -1067,7 +1062,7 @@ Supports OrpheusAttributes attributes</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
     <dd></dd>
   </dl>
 
@@ -1086,7 +1081,7 @@ Supports OrpheusAttributes attributes</p>
 </article>
 
 
-        
+
       </div>
 
       <div class="affix">
@@ -1096,7 +1091,7 @@ Supports OrpheusAttributes attributes</p>
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           Orpheus - Mobilotronic © 2017 - 2023

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using OrpheusCore.Configuration;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
@@ -236,7 +235,7 @@ namespace OrpheusCore.SchemaBuilder
                 }
                 catch (Exception e)
                 {
-                    this.logger.LogError(ErrorCodes.ERR_SCHEMA_ADD_DEPENDENCY, e,ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_ADD_DEPENDENCY));
+                    this.logger.LogError(ErrorCodes.ERR_SCHEMA_ADD_DEPENDENCY, e, ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_ADD_DEPENDENCY));
                     if (e is NullReferenceException)
                     {
                         this.logger.LogError("Table with name {0} not found", modelType.Name);
@@ -271,7 +270,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public SchemaObject()
         {
-            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<SchemaObject>();
+            this.logger = ServiceManager.CreateLogger<SchemaObject>();
             this.IsCreated = false;
             this.SchemaObjectsThatDependOnMe = new List<ISchemaObject>();
             this.SchemaObjectsThatIDepend = new List<ISchemaObject>();
@@ -307,7 +306,8 @@ namespace OrpheusCore.SchemaBuilder
         protected string getConstraintsDDL()
         {
             var sBuilder = new StringBuilder();
-            this.Constraints.ForEach(constraint => {
+            this.Constraints.ForEach(constraint =>
+            {
                 sBuilder.AppendLine(String.Format("ALTER TABLE {0} {1}", this.SQLName, constraint.SQL()));
             });
             return sBuilder.ToString();
@@ -334,12 +334,13 @@ namespace OrpheusCore.SchemaBuilder
             if (this.Schema.SchemaObjectExists(this) == Guid.Empty && this.SQLName != this.Schema.SchemaInfoTable)
             {
 
-                if(this.schemaObjectsTable == null)
+                if (this.schemaObjectsTable == null)
                 {
                     this.schemaObjectsTable = this.DB.CreateTable<OrpheusSchemaObject>();
                 }
 
-                this.schemaObjectsTable.Add(new OrpheusSchemaObject() {
+                this.schemaObjectsTable.Add(new OrpheusSchemaObject()
+                {
                     ObjectId = this.UniqueKey,
                     ObjectName = this.SQLName,
                     DDL = string.Join(",", this.GetDDLString().ToArray()),
@@ -350,7 +351,7 @@ namespace OrpheusCore.SchemaBuilder
                     DbEngineObjectId = this.DB.DDLHelper.SchemaObjectId<int?>(this)
                 });
 
-                this.schemaObjectsTable.Save(transaction,transaction == null ? true : false);
+                this.schemaObjectsTable.Save(transaction, transaction == null ? true : false);
             }
 
         }
@@ -398,7 +399,7 @@ namespace OrpheusCore.SchemaBuilder
             //does the schema object actually exist in the database?
             this.objectExistsInDatabase = this.DB.DDLHelper.SchemaObjectExists(this);
 
-            if(!this.objectExistsInDatabase && this.Action == DDLAction.ddlDrop)
+            if (!this.objectExistsInDatabase && this.Action == DDLAction.ddlDrop)
             {
                 //if the schema object does not actually exist but it still is set a created, then log a warning.
                 if (this.IsCreated)
@@ -406,7 +407,7 @@ namespace OrpheusCore.SchemaBuilder
                 return false;
             }
 
-            if(this.Action != DDLAction.ddlDrop)
+            if (this.Action != DDLAction.ddlDrop)
             {
                 if (this.objectExistsInDatabase)
                     this.Action = DDLAction.ddlAlter;
@@ -592,7 +593,7 @@ namespace OrpheusCore.SchemaBuilder
                 });
             });
 
-            this.seedDataTable = new OrpheusTable<T>(this.DB,tableKeys, this.SQLName);
+            this.seedDataTable = new OrpheusTable<T>(this.DB, tableKeys, ServiceManager.CreateLogger<IOrpheusTable<T>>(), this.SQLName);
             //
             //if (this.seedDataTable.Name != this.SQLName)
             //    this.seedDataTable.Name = this.SQLName;
@@ -625,7 +626,8 @@ namespace OrpheusCore.SchemaBuilder
         public List<string> GetConstraintsDDL()
         {
             var list = new List<string>();
-            this.Constraints.ForEach(constraint => {
+            this.Constraints.ForEach(constraint =>
+            {
                 list.Add(String.Format("ALTER TABLE {0} {1}", this.SQLName, constraint.SQL()));
             });
             return list;
@@ -662,16 +664,16 @@ namespace OrpheusCore.SchemaBuilder
                             }
                             break;
                         }
-                    //case DDLAction.ddlAlter:
-                    //    {
-                    //        if (this.SchemaObjectsThatDependOnMe.Count > 0)
-                    //        {
-                    //            this.logger.LogDebug(this.formatLoggerMessage("Begin altering dependencies"));
-                    //            this.SchemaObjectsThatDependOnMe.ForEach(dep => dep.Execute());
-                    //            this.logger.LogDebug(this.formatLoggerMessage("End altering dependencies"));
-                    //        }
-                    //        break;
-                    //    }
+                        //case DDLAction.ddlAlter:
+                        //    {
+                        //        if (this.SchemaObjectsThatDependOnMe.Count > 0)
+                        //        {
+                        //            this.logger.LogDebug(this.formatLoggerMessage("Begin altering dependencies"));
+                        //            this.SchemaObjectsThatDependOnMe.ForEach(dep => dep.Execute());
+                        //            this.logger.LogDebug(this.formatLoggerMessage("End altering dependencies"));
+                        //        }
+                        //        break;
+                        //    }
                 }
                 //if there was a direct DDL SQL then ignore any other configuration and run it.
                 var DDLString = this.RawDDL == null ? this.createDDLString() : new List<string>() { this.RawDDL };
@@ -732,7 +734,7 @@ namespace OrpheusCore.SchemaBuilder
                                     var ex = e;
                                     while (ex != null)
                                     {
-                                        this.logger.LogError(ErrorCodes.ERR_SCHEMA_EXECUTE,ex,"");
+                                        this.logger.LogError(ErrorCodes.ERR_SCHEMA_EXECUTE, ex, "");
                                         ex = ex.InnerException;
                                     }
                                     throw;
@@ -747,7 +749,8 @@ namespace OrpheusCore.SchemaBuilder
                                     {
                                         if (this.SQLName != this.Schema.SchemaObjectsTable)
                                             this.unRegisterSchema();
-                                        this.SchemaObjectsThatDependOnMe.ForEach((obj) => {
+                                        this.SchemaObjectsThatDependOnMe.ForEach((obj) =>
+                                        {
                                             obj.SchemaObjectsThatIDepend.Remove(this);
                                         });
                                         break;
@@ -797,14 +800,14 @@ namespace OrpheusCore.SchemaBuilder
             this.SchemaObjectsThatDependOnMe = new List<ISchemaObject>();
             this.Fields = new List<ISchemaField>();
             this.Constraints = new List<ISchemaConstraint>();
-       }
+        }
         #endregion
     }
 
     /// <summary>
     /// Derived class to specifically handle TABLE type schema objects.
     /// </summary>
-    public class SchemaObjectTable: SchemaDataObject, ISchemaTable
+    public class SchemaObjectTable : SchemaDataObject, ISchemaTable
     {
         /// <summary>
         /// Gets the <see cref="SchemaObjectType"/>.
@@ -818,7 +821,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         protected override List<string> createDDLString()
         {
-            
+
             var result = new List<string>();
             switch (this.Action)
             {
@@ -831,12 +834,12 @@ namespace OrpheusCore.SchemaBuilder
                     }
                 case DDLAction.ddlDrop:
                     {
-                        result.Add(String.Format("DROP TABLE {0}", this.SQLName)); 
+                        result.Add(String.Format("DROP TABLE {0}", this.SQLName));
                         break;
                     }
                 case DDLAction.ddlAlter:
                     {
-                        result.AddRange(this.modelHelper.GetAlterDDLCommands(this,this.DB.DDLHelper));
+                        result.AddRange(this.modelHelper.GetAlterDDLCommands(this, this.DB.DDLHelper));
                         break;
                     }
             }
@@ -851,8 +854,9 @@ namespace OrpheusCore.SchemaBuilder
         protected override void applyConstraints(IDbCommand cmd)
         {
             //first run the primary key constraints.
-            this.Constraints.Where(ct => ct.GetType() == typeof(PrimaryKeySchemaConstraint)).ToList().ForEach(constraint => {
-                if(this.Action == DDLAction.ddlAlter)
+            this.Constraints.Where(ct => ct.GetType() == typeof(PrimaryKeySchemaConstraint)).ToList().ForEach(constraint =>
+            {
+                if (this.Action == DDLAction.ddlAlter)
                 {
                     if (this.DB.DDLHelper.SchemaObjectExists(constraint))
                     {
@@ -861,8 +865,8 @@ namespace OrpheusCore.SchemaBuilder
                         {
                             cmd.CommandText = String.Format("ALTER TABLE {0} DROP PRIMARY KEY", this.DB.DDLHelper.SafeFormatField(this.SQLName));
                         }
-                        else 
-                            cmd.CommandText = String.Format("ALTER TABLE {0} DROP CONSTRAINT {1}",this.SQLName, constraint.Name);
+                        else
+                            cmd.CommandText = String.Format("ALTER TABLE {0} DROP CONSTRAINT {1}", this.SQLName, constraint.Name);
                         this.logger.LogDebug(cmd.CommandText);
                         cmd.ExecuteNonQuery();
                     }
@@ -874,7 +878,8 @@ namespace OrpheusCore.SchemaBuilder
             });
 
             //then the unique key constraints.
-            this.Constraints.Where(ct => ct.GetType() == typeof(UniqueKeySchemaConstraint)).ToList().ForEach(constraint => {
+            this.Constraints.Where(ct => ct.GetType() == typeof(UniqueKeySchemaConstraint)).ToList().ForEach(constraint =>
+            {
                 if (this.Action == DDLAction.ddlAlter)
                 {
                     if (this.DB.DDLHelper.SchemaObjectExists(constraint.Name))
@@ -895,7 +900,8 @@ namespace OrpheusCore.SchemaBuilder
             });
 
             //finally the foreign key constraints
-            this.Constraints.Where(ct => ct.GetType() == typeof(ForeignKeySchemaConstraint)).ToList().ForEach(constraint => {
+            this.Constraints.Where(ct => ct.GetType() == typeof(ForeignKeySchemaConstraint)).ToList().ForEach(constraint =>
+            {
                 if (this.Action == DDLAction.ddlAlter)
                 {
                     if (this.DB.DDLHelper.SchemaObjectExists(constraint.Name))
@@ -923,7 +929,7 @@ namespace OrpheusCore.SchemaBuilder
         protected override void seedData(IDbCommand cmd)
         {
             base.seedData(cmd);
-            if(this.seedDataTable != null)
+            if (this.seedDataTable != null)
                 this.seedDataTable.ExecuteInserts(cmd.Transaction);
         }
 
@@ -941,7 +947,7 @@ namespace OrpheusCore.SchemaBuilder
     /// <summary>
     /// Derived class to specifically handle data tables that are part of a view.
     /// </summary>
-    public class SchemaObjectViewTable: SchemaObjectTable, ISchemaViewTable
+    public class SchemaObjectViewTable : SchemaObjectTable, ISchemaViewTable
     {
         /// <value>
         /// Override for the schema name.
@@ -967,7 +973,7 @@ namespace OrpheusCore.SchemaBuilder
     /// <summary>
     /// Derived class to specifically handle VIEW type schema objects.
     /// </summary>
-    public class SchemaObjectView: SchemaDataObject, ISchemaView
+    public class SchemaObjectView : SchemaDataObject, ISchemaView
     {
         /// <value>
         /// View's Join definition. How and if this table is connected to other tables.
@@ -1020,7 +1026,8 @@ namespace OrpheusCore.SchemaBuilder
                         var fields = new List<string>();
                         List<string> joins = new List<string>();
                         this.Fields.ForEach(fld => fields.Add(fld.FullFieldName));
-                        this.JoinSchemaObjects.ForEach(joinObject => {
+                        this.JoinSchemaObjects.ForEach(joinObject =>
+                        {
                             var joinType = "";
                             switch (joinObject.JoinDefinition.JoinType)
                             {
@@ -1036,11 +1043,11 @@ namespace OrpheusCore.SchemaBuilder
                                 joinType,
                                 joinObject.SQLName,
                                 joinObject.JoinDefinition.KeyField,
-                                joinOperator,  
+                                joinOperator,
                                 joinObject.JoinDefinition.JoinKeyField);
                             joins.Add(joinString);
                         });
-                        if(this.WithSchemaBinding)
+                        if (this.WithSchemaBinding)
                             result.Add(String.Format("CREATE VIEW {0} WITH SCHEMABINDING AS SELECT {1} FROM {2} {3}",
                                 this.SQLName,
                                 string.Join(",", fields.ToArray()),
@@ -1048,12 +1055,12 @@ namespace OrpheusCore.SchemaBuilder
                                 string.Join(Environment.NewLine, joins.ToArray()))
                                 );
                         else
-                        result.Add(String.Format("CREATE VIEW {0} AS SELECT {1} FROM {2} {3}",
-                            this.SQLName,
-                            string.Join(",", fields.ToArray()),
-                            this.FormattedTableName(),
-                            string.Join(Environment.NewLine, joins.ToArray()))
-                            );
+                            result.Add(String.Format("CREATE VIEW {0} AS SELECT {1} FROM {2} {3}",
+                                this.SQLName,
+                                string.Join(",", fields.ToArray()),
+                                this.FormattedTableName(),
+                                string.Join(Environment.NewLine, joins.ToArray()))
+                                );
                         break;
                     }
                 case DDLAction.ddlDrop:
@@ -1081,17 +1088,17 @@ namespace OrpheusCore.SchemaBuilder
             else
             {
                 var schemaSeparator = this.Schema.DB.DDLHelperAs<ISQLServerDDLHelper>().SchemaSeparator;
-                if(this.TableName.Contains(schemaSeparator))
+                if (this.TableName.Contains(schemaSeparator))
                     return String.Format("{0} {1}", this.TableName, this.AliasName);
                 else
                     return String.Format("{0}.{1} {2}", this.Schema.Name, this.TableName, this.AliasName);
             }
-             
+
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SchemaObjectView"/> class.
         /// </summary>
-        public SchemaObjectView(){ }
+        public SchemaObjectView() { }
     }
 }

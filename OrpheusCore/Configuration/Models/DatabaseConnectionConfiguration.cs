@@ -56,6 +56,16 @@ namespace OrpheusCore.Configuration.Models
         public string ServicePassword { get; set; }
 
         /// <summary>
+        /// True to trust the server certificate. Default is true.
+        /// </summary>
+        public bool TrustServerCertificate { get; set; } = true;
+
+        /// <summary>
+        /// Set if the connection will be encrytped or not.
+        /// </summary>
+        public EncyrptConnection EncyrptConnection { get; set; }
+
+        /// <summary>
         /// Creates a clone of this database configuration.
         /// </summary>
         /// <returns></returns>
@@ -71,7 +81,9 @@ namespace OrpheusCore.Configuration.Models
                 UseIntegratedSecurity = this.UseIntegratedSecurity,
                 UseIntegratedSecurityForServiceConnection = this.UseIntegratedSecurityForServiceConnection,
                 ServicePassword = this.ServicePassword,
-                ServiceUserName = this.ServiceUserName
+                ServiceUserName = this.ServiceUserName,
+                TrustServerCertificate = this.TrustServerCertificate,
+                EncyrptConnection = this.EncyrptConnection
             };
         }
     }

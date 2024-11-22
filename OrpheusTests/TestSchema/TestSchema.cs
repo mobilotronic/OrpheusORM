@@ -1,4 +1,4 @@
-﻿using OrpheusCore.Configuration;
+﻿using OrpheusCore;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using OrpheusTestModels;
@@ -40,7 +40,7 @@ namespace OrpheusTests
         private void createUsers()
         {
             var users = this.schema.AddSchemaTable(typeof(TestModelUser));
-            
+
             users.AddDependency(typeof(TestModelUserProfile));
             users.AddDependency(typeof(TestModelUserGroup));
 
@@ -391,14 +391,14 @@ namespace OrpheusTests
             var memberContactTypes = this.schema.AddSchemaTable(typeof(TestModelMemberContactType));
             memberContactTypes.AddDependency(typeof(TestModelContactType));
             memberContactTypes.AddDependency(typeof(TestModelMember));
-            
+
         }
 
         private void createOrdersSchema()
         {
             var transactors = this.schema.AddSchemaTable(typeof(TestModelTransactor));
 
-            
+
 
             var items = this.schema.AddSchemaTable(typeof(TestModelItem));
 
@@ -466,7 +466,7 @@ namespace OrpheusTests
         public ISchema Schema { get { return this.schema; } }
         public TestSchema(IOrpheusDatabase db, string description, double version, Guid id, string name = null)
         {
-            this.schema = ConfigurationManager.Resolve<ISchema>(new object[] { db,description,version,id, name });
+            this.schema = ServiceManager.Resolve<ISchema>(new object[] { db, description, version, id, name });
             this.createSchema();
         }
     }

@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IOrpheusTable
- | Orpheus </title>
+      <title>Interface IOrpheusTable | Orpheus </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IOrpheusTable
- | Orpheus ">
+      <meta name="title" content="Interface IOrpheusTable | Orpheus ">
       
+      <meta name="description" content="Orpheus table is the core Orpheus data object. It is responsible for performing data operations.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusTable.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusTable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusTable.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusTable%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,19 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module">
-    import options from './../public/main.js'
-    import { init } from './../public/docfx.min.js'
-    init(options)
-  </script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -58,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -81,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -93,12 +89,11 @@
 
 
   <h1 id="OrpheusInterfaces_Core_IOrpheusTable" data-uid="OrpheusInterfaces.Core.IOrpheusTable" class="text-break">
-    Interface IOrpheusTable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L33"><i class="bi bi-code-slash"></i></a>
+Interface IOrpheusTable  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a>.<a class="xref" href="OrpheusInterfaces.Core.html">Core</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.Core.html">OrpheusInterfaces.Core</a></dd></dl>
   <dl><dt>Assembly</dt><dd>OrpheusInterfaces.dll</dd></dl>
   </div>
 
@@ -130,7 +125,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_DetailTables" data-uid="OrpheusInterfaces.Core.IOrpheusTable.DetailTables">
   DetailTables
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>List of dependent detail tables.</p>
@@ -147,7 +142,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</dt>
     <dd><p>List of detail tables</p>
 </dd>
   </dl>
@@ -163,7 +158,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_KeyFields" data-uid="OrpheusInterfaces.Core.IOrpheusTable.KeyFields">
   KeyFields
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Table's key field(s).</p>
@@ -180,7 +175,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
     <dd><p>Table's key field(s)</p>
 </dd>
   </dl>
@@ -196,7 +191,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_Level" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Level">
   Level
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Table's level. Zero if the table is not a child to any other table.</p>
@@ -213,7 +208,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dt><span class="xref">Int32</span></dt>
     <dd><p>Table's level</p>
 </dd>
   </dl>
@@ -229,7 +224,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_MasterTable" data-uid="OrpheusInterfaces.Core.IOrpheusTable.MasterTable">
   MasterTable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Master table name, if the table is a detail table.</p>
@@ -262,7 +257,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_MasterTableKeyFields" data-uid="OrpheusInterfaces.Core.IOrpheusTable.MasterTableKeyFields">
   MasterTableKeyFields
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Master table's key field(s), if the table is detail table.</p>
@@ -279,7 +274,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
     <dd><p>Master table key fields</p>
 </dd>
   </dl>
@@ -295,7 +290,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_Modified" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Modified">
   Modified
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>True when table data have been modified.</p>
@@ -312,7 +307,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd><p>True if table data have been modified</p>
 </dd>
   </dl>
@@ -328,7 +323,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_Name" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The table name.</p>
@@ -345,7 +340,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>Table name</p>
 </dd>
   </dl>
@@ -361,7 +356,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_SchemaName" data-uid="OrpheusInterfaces.Core.IOrpheusTable.SchemaName">
   SchemaName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The table's schema name. Applicable only if the db engine is SQL Server.</p>
@@ -378,7 +373,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd></dd>
   </dl>
 
@@ -397,7 +392,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_ClearData" data-uid="OrpheusInterfaces.Core.IOrpheusTable.ClearData">
   ClearData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L131"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Clears existing loaded data.</p>
@@ -424,7 +419,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_ExecuteDeletes_System_Data_IDbTransaction_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)">
   ExecuteDeletes(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes any delete changes that the table has.</p>
@@ -437,7 +432,7 @@
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
     <dd></dd>
   </dl>
 
@@ -456,7 +451,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_ExecuteInserts_System_Data_IDbTransaction_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)">
   ExecuteInserts(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes any insert changes that the table has.</p>
@@ -469,7 +464,7 @@
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
     <dd></dd>
   </dl>
 
@@ -488,7 +483,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_ExecuteUpdates_System_Data_IDbTransaction_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)">
   ExecuteUpdates(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes any update changes that the table has.</p>
@@ -501,7 +496,7 @@
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
     <dd></dd>
   </dl>
 
@@ -520,7 +515,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_GetKeyValues" data-uid="OrpheusInterfaces.Core.IOrpheusTable.GetKeyValues">
   GetKeyValues()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L137"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns list of current key values.</p>
@@ -534,7 +529,7 @@
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">String</span>, <span class="xref">Object</span>&gt;&gt;</dt>
     <dd><p>List of current key values</p>
 </dd>
   </dl>
@@ -552,8 +547,8 @@
   <a id="OrpheusInterfaces_Core_IOrpheusTable_Load_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Load*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},OrpheusInterfaces.Core.LogicalOperator,System.Boolean)">
-  Load(Dictionary&lt;string, List&lt;object&gt;&gt;, LogicalOperator, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  Load(Dictionary&lt;String, List&lt;Object&gt;&gt;, LogicalOperator, Boolean)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L112"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads records from the DB to the table.
@@ -570,11 +565,11 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dt><code>keyValues</code> <span class="xref">Dictionary</span>&lt;<span class="xref">String</span>, <span class="xref">List</span>&lt;<span class="xref">Object</span>&gt;&gt;</dt>
     <dd></dd>
     <dt><code>logicalOperator</code> <a class="xref" href="OrpheusInterfaces.Core.LogicalOperator.html">LogicalOperator</a></dt>
     <dd></dd>
-    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
     <dd></dd>
   </dl>
 
@@ -592,8 +587,8 @@ Defining a logical operator, you can change the default behavior.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusTable_Load_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Load*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_List_System_Object__System_Boolean_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.List{System.Object},System.Boolean)">
-  Load(List&lt;object&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  Load(List&lt;Object&gt;, Boolean)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads records from the DB to the table.</p>
@@ -606,9 +601,9 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dt><code>keyValues</code> <span class="xref">List</span>&lt;<span class="xref">Object</span>&gt;</dt>
     <dd></dd>
-    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
     <dd></dd>
   </dl>
 
@@ -626,8 +621,8 @@ Defining a logical operator, you can change the default behavior.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusTable_Load_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Load*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_Load_System_Data_IDbCommand_System_Boolean_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Load(System.Data.IDbCommand,System.Boolean)">
-  Load(IDbCommand, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  Load(IDbCommand, Boolean)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L126"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads table data by executing a db command.</p>
@@ -640,9 +635,9 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbCommand</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
+    <dt><code>dbCommand</code> <span class="xref">IDbCommand</span></dt>
     <dd></dd>
-    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
     <dd></dd>
   </dl>
 
@@ -660,8 +655,8 @@ Defining a logical operator, you can change the default behavior.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusTable_Load_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Load*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_Load_System_String_System_Boolean_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Load(System.String,System.Boolean)">
-  Load(string, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  Load(String, Boolean)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L119"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads table data by executing a SQL command.</p>
@@ -674,10 +669,10 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>SQL</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>SQL</code> <span class="xref">String</span></dt>
     <dd><p>SQL command to be executed</p>
 </dd>
-    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
     <dd></dd>
   </dl>
 
@@ -695,8 +690,8 @@ Defining a logical operator, you can change the default behavior.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusTable_Save_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Save*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_Save_System_Data_IDbTransaction_System_Boolean_" data-uid="OrpheusInterfaces.Core.IOrpheusTable.Save(System.Data.IDbTransaction,System.Boolean)">
-  Save(IDbTransaction, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  Save(IDbTransaction, Boolean)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Save changes to the database.</p>
@@ -709,10 +704,10 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbTransaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dt><code>dbTransaction</code> <span class="xref">IDbTransaction</span></dt>
     <dd><p>Transaction in which the commands will be executed</p>
 </dd>
-    <dt><code>commitTransaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>commitTransaction</code> <span class="xref">Boolean</span></dt>
     <dd><p>Commit transaction after save.</p>
 </dd>
   </dl>
@@ -735,7 +730,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_OnAfterSave" data-uid="OrpheusInterfaces.Core.IOrpheusTable.OnAfterSave">
   OnAfterSave
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L154"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Occurs after the transaction has been committed.</p>
@@ -753,7 +748,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
+    <dt><span class="xref">EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -766,7 +761,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTable_OnBeforeSave" data-uid="OrpheusInterfaces.Core.IOrpheusTable.OnBeforeSave">
   OnBeforeSave
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L149"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Occurs before records are save in the database.</p>
@@ -784,7 +779,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
+    <dt><span class="xref">EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -798,7 +793,7 @@ Defining a logical operator, you can change the default behavior.</p>
 </article>
 
 
-        
+
       </div>
 
       <div class="affix">
@@ -808,7 +803,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           Orpheus - Mobilotronic © 2017 - 2023
