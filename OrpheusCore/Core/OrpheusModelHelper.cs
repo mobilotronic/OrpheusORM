@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusAttributes;
-using OrpheusCore.Configuration;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Interfaces.Attributes;
@@ -18,7 +17,7 @@ namespace OrpheusCore
     /// </summary>
     /// <param name="property"></param>
     public delegate void ModelProperty(PropertyInfo property);
-    
+
     /// <summary>
     /// Helper delegate, to be called when iterating through property's attributes.
     /// </summary>
@@ -46,7 +45,7 @@ namespace OrpheusCore
                 modelProperties = this.modelType.GetProperties();
                 Array.Sort<PropertyInfo>(modelProperties, delegate (PropertyInfo p1, PropertyInfo p2) { return p1.Name.CompareTo(p2.Name); });
                 this.propertyAttributes = new Dictionary<PropertyInfo, object[]>();
-                foreach(var prop in this.modelProperties)
+                foreach (var prop in this.modelProperties)
                 {
                     this.propertyAttributes.Add(prop, prop.GetCustomAttributes(true));
                 }
@@ -75,7 +74,8 @@ namespace OrpheusCore
             string defaultValue = null;
             var fieldName = this.GetFieldNameForProperty(prop);
             var isSchemaIgnore = false;
-            this.IteratePropertyAttributes(prop, (Attribute attr) => {
+            this.IteratePropertyAttributes(prop, (Attribute attr) =>
+            {
                 Type attributeType = attr.GetType();
                 #region schema fields
                 if (this.IsSchemaProperty(prop))
@@ -103,12 +103,12 @@ namespace OrpheusCore
                         schemaObj.AddForeignKeyConstraint(
                             String.Format("FK_{0}_{1}_{2}", schemaObj.SQLName, fk.ReferenceTable, fieldName),
                             new List<string>() { fieldName },
-                            fk.SchemaName == null ? fk.ReferenceTable : String.Format("{0}.{1}",fk.SchemaName,fk.ReferenceTable),
+                            fk.SchemaName == null ? fk.ReferenceTable : String.Format("{0}.{1}", fk.SchemaName, fk.ReferenceTable),
                             new List<string>() { fk.ReferenceField },
                             fk.OnDeleteCascade,
                             fk.OnUpdateCascade
                             );
-                        if(schemaObj.Schema.Name != null && fk.ReferenceTable != null)
+                        if (schemaObj.Schema.Name != null && fk.ReferenceTable != null)
                         {
                             if (!fk.ReferenceTable.Contains(schemaObj.Schema.Name))
                             {
@@ -190,7 +190,7 @@ namespace OrpheusCore
                     this.UniqueCompositeKeys.Add((UniqueCompositeKey)modelAttribute);
                 }
 
-                if(attributeType == typeof(TableName))
+                if (attributeType == typeof(TableName))
                 {
                     this.SQLName = (modelAttribute as TableName).Name;
                 }
@@ -205,8 +205,10 @@ namespace OrpheusCore
 
             }
 
-            this.IterateModelProperties((PropertyInfo prop) => {
-                this.IteratePropertyAttributes(prop, (Attribute attr) => {
+            this.IterateModelProperties((PropertyInfo prop) =>
+            {
+                this.IteratePropertyAttributes(prop, (Attribute attr) =>
+                {
                     Type attributeType = attr.GetType();
                     #region primary keys
                     if (attributeType == typeof(PrimaryKey))
@@ -226,7 +228,7 @@ namespace OrpheusCore
 
                     #region unique keys
                     if (attributeType == typeof(UniqueKey))
-                       this.UniqueKeys.Add(prop.Name, (UniqueKey)attr);
+                        this.UniqueKeys.Add(prop.Name, (UniqueKey)attr);
                     #endregion
 
                     #region schema ignore properties
@@ -254,17 +256,17 @@ namespace OrpheusCore
         /// <value>
         /// Model's primary keys.
         /// </value>
-        public Dictionary<string,IPrimaryKey> PrimaryKeys { get; private set; }
+        public Dictionary<string, IPrimaryKey> PrimaryKeys { get; private set; }
 
         /// <value>
         /// Model's foreign keys.
         /// </value>
-        public Dictionary<string,IForeignKey> ForeignKeys { get; private set; }
+        public Dictionary<string, IForeignKey> ForeignKeys { get; private set; }
 
         /// <value>
         /// Model's unique keys.
         /// </value>
-        public Dictionary<string,IUniqueKey> UniqueKeys { get; private set; }
+        public Dictionary<string, IUniqueKey> UniqueKeys { get; private set; }
 
         /// <value>
         /// Model's composite primary keys.
@@ -284,7 +286,7 @@ namespace OrpheusCore
         /// <value>
         /// Model properties that have an explicitly set field name.
         /// </value>
-        public Dictionary<string,string> CustomFieldNameProperties { get; private set; }
+        public Dictionary<string, string> CustomFieldNameProperties { get; private set; }
 
         /// <value>
         /// Model's properties.
@@ -374,17 +376,20 @@ namespace OrpheusCore
         {
             schemaObj.Fields.Clear();
             schemaObj.Constraints.Clear();
-            this.PrimaryCompositeKeys.ForEach(pk => {
+            this.PrimaryCompositeKeys.ForEach(pk =>
+            {
                 var primaryKeyName = String.Format("PK_COMPOSITE_{0}_{1}", schemaObj.SQLName, String.Join("_", pk.Fields));
                 schemaObj.AddPrimaryKeyConstraint(primaryKeyName, pk.Fields.ToList());
             });
 
-            this.UniqueCompositeKeys.ForEach(uniqueyKey => {
+            this.UniqueCompositeKeys.ForEach(uniqueyKey =>
+            {
                 var uniqueKeyName = String.Format("UNQ_COMPOSITE_{0}_{1}", schemaObj.SQLName, String.Join("_", uniqueyKey.Fields));
                 schemaObj.AddUniqueKeyConstraint(uniqueKeyName, uniqueyKey.Fields.ToList());
             });
 
-            this.IterateModelProperties((PropertyInfo prop) => {
+            this.IterateModelProperties((PropertyInfo prop) =>
+            {
                 this.createSchemaField(prop, schemaObj);
             });
         }
@@ -430,7 +435,7 @@ namespace OrpheusCore
 
                         //if the underlying database engine doesn't support GUID type,
                         //expect that the field type would be string.
-                        if(modelProperty.PropertyType == typeof(Guid) && !ddlHelper.SupportsGuidType)
+                        if (modelProperty.PropertyType == typeof(Guid) && !ddlHelper.SupportsGuidType)
                         {
                             if (!isNullable && !modelProperty.PropertyType.IsEnum && fieldType != typeof(string))
                             {
@@ -486,7 +491,7 @@ namespace OrpheusCore
             }
             catch (Exception e)
             {
-                this.logger.LogError(ErrorCodes.ERR_CANNOT_RUN_DDL,e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)}");
+                this.logger.LogError(ErrorCodes.ERR_CANNOT_RUN_DDL, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)}");
                 throw;
             }
             finally
@@ -508,10 +513,10 @@ namespace OrpheusCore
         /// <param name="modelType">Type of the model.</param>
         public OrpheusModelHelper(Type modelType)
         {
-            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusModelHelper>();
+            this.logger = ServiceManager.CreateLogger<OrpheusModelHelper>();
             this.modelType = modelType;
             this.SQLName = this.modelType.Name;
-            this.PrimaryKeys = new Dictionary<string,IPrimaryKey>();
+            this.PrimaryKeys = new Dictionary<string, IPrimaryKey>();
             this.ForeignKeys = new Dictionary<string, IForeignKey>();
             this.UniqueKeys = new Dictionary<string, IUniqueKey>();
             this.PrimaryCompositeKeys = new List<IOrpheusBaseCompositeKeyAttribute>();

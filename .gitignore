@@ -57,7 +57,6 @@ Nuget/nuget.exe
 OrpheusTests/OrpheusSQLServerConfig.json
 OrpheusTests/OrpheusMySQLServerConfig.json
 *.cache
-*.props
 *.targets
 OrpheusSQLiteDDLHelper/obj/project.assets.json
 OrpheusSQLiteDDLHelper/OrpheusSQLiteDDLHelper.cs

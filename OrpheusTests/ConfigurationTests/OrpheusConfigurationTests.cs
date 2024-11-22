@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OrpheusCore.Configuration;
+using OrpheusCore;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -212,12 +212,12 @@ namespace OrpheusTests.ConfigurationTests
             var traceId = Guid.NewGuid().ToString();
             var logFileContentsName = $"{this.CurrentDirectory}/nlog-all-{DateTime.Now.ToString("yyyy-MM-dd")}.log";
 
-            var logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusConfigurationTests>();
+            var logger = ServiceManager.CreateLogger<OrpheusConfigurationTests>();
             logger.LogError($"ErrorId {errorId} test Error log entry");
 
             //loading the log file content.
 
-            using var fileStream = new StreamReader(logFileContentsName, new FileStreamOptions() { Mode = FileMode.Open, Access = FileAccess.Read, Share = FileShare.ReadWrite});
+            using var fileStream = new StreamReader(logFileContentsName, new FileStreamOptions() { Mode = FileMode.Open, Access = FileAccess.Read, Share = FileShare.ReadWrite });
             string logFileContents = fileStream.ReadToEnd();
 
             //making sure that the error is logged.
@@ -227,10 +227,10 @@ namespace OrpheusTests.ConfigurationTests
             XmlDocument doc = new XmlDocument();
             doc.Load($"{this.CurrentDirectory}/nlog.config");
             XmlNodeList nlogRules = doc.DocumentElement.SelectNodes("//*[name()='nlog']/*[name()='rules']/*[name()='logger']");
-            foreach(XmlNode nlogRule in nlogRules)
+            foreach (XmlNode nlogRule in nlogRules)
             {
                 XmlAttribute logLevel = nlogRule.Attributes["minlevel"];
-                if(logLevel != null)
+                if (logLevel != null)
                 {
                     logLevel.Value = "Trace";
                 }
