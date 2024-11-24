@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class OrpheusModule
- | Orpheus </title>
+      <title>Class OrpheusModule | Orpheus </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class OrpheusModule
- | Orpheus ">
+      <meta name="title" content="Class OrpheusModule | Orpheus ">
       
+      <meta name="description" content="OrpheusModule class represents a logical division and grouping of a set of tables. For example you can an OrdersModule, which will be comprised from many different tables. Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module, will be saved as well. All master-detail relationships and keys will be updated automatically.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusCore_OrpheusModule.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusModule.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusModule%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,19 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module">
-    import options from './../public/main.js'
-    import { init } from './../public/docfx.min.js'
-    init(options)
-  </script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -58,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -81,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -93,8 +89,7 @@
 
 
   <h1 id="OrpheusCore_OrpheusModule" data-uid="OrpheusCore.OrpheusModule" class="text-break">
-    Class OrpheusModule
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L19"><i class="bi bi-code-slash"></i></a>
+Class OrpheusModule  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -119,7 +114,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Object</span></div>
       <div><span class="xref">OrpheusModule</span></div>
     </dd>
   </dl>
@@ -132,29 +127,29 @@ will be saved as well. All master-detail relationships and keys will be updated 
   </dl>
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+      <span class="xref">Object.Equals(Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+      <span class="xref">Object.Equals(Object, Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+      <span class="xref">Object.GetHashCode()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+      <span class="xref">Object.GetType()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+      <span class="xref">Object.MemberwiseClone()</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+      <span class="xref">Object.ReferenceEquals(Object, Object)</span>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+      <span class="xref">Object.ToString()</span>
     </div>
   </dd></dl>
 
@@ -171,7 +166,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_" data-uid="OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase)">
   OrpheusModule(IOrpheusDatabase)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L364"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L365"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.OrpheusModule.html">OrpheusModule</a> class.
@@ -208,7 +203,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_OrpheusInterfaces_Core_IOrpheusModuleDefinition_" data-uid="OrpheusCore.OrpheusModule.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,OrpheusInterfaces.Core.IOrpheusModuleDefinition)">
   OrpheusModule(IOrpheusDatabase, IOrpheusModuleDefinition)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L382"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L383"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.OrpheusModule.html">OrpheusModule</a> class.
@@ -252,7 +247,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule_Database" data-uid="OrpheusCore.OrpheusModule.Database">
   Database
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L159"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -284,7 +279,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule_Definition" data-uid="OrpheusCore.OrpheusModule.Definition">
   Definition
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -316,7 +311,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule_MainTable" data-uid="OrpheusCore.OrpheusModule.MainTable">
   MainTable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L164"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -348,7 +343,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule_ReferenceTables" data-uid="OrpheusCore.OrpheusModule.ReferenceTables">
   ReferenceTables
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L154"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -364,7 +359,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</dt>
     <dd><p>List of module's reference tables. Reference tables are auxiliary or lookup tables.</p>
 </dd>
   </dl>
@@ -380,7 +375,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule_Tables" data-uid="OrpheusCore.OrpheusModule.Tables">
   Tables
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L149"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -396,7 +391,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</dt>
     <dd><p>List of module's tables.</p>
 </dd>
   </dl>
@@ -416,7 +411,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule_ClearData" data-uid="OrpheusCore.OrpheusModule.ClearData">
   ClearData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L351"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L352"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Clears data from all module tables.</p>
@@ -443,7 +438,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule_GetReferenceTable__1" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable``1">
   GetReferenceTable&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L252"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a table by model. Uses the model class name as the table name.</p>
@@ -480,8 +475,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
   <a id="OrpheusCore_OrpheusModule_GetReferenceTable_" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable*"></a>
 
   <h3 id="OrpheusCore_OrpheusModule_GetReferenceTable__1_System_Int32_" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable``1(System.Int32)">
-  GetReferenceTable&lt;T&gt;(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L230"><i class="bi bi-code-slash"></i></a>
+  GetReferenceTable&lt;T&gt;(Int32)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L231"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a reference table by index for a model</p>
@@ -494,7 +489,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dt><code>index</code> <span class="xref">Int32</span></dt>
     <dd><p>Table index.</p>
 </dd>
   </dl>
@@ -524,8 +519,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
   <a id="OrpheusCore_OrpheusModule_GetReferenceTable_" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable*"></a>
 
   <h3 id="OrpheusCore_OrpheusModule_GetReferenceTable__1_System_String_" data-uid="OrpheusCore.OrpheusModule.GetReferenceTable``1(System.String)">
-  GetReferenceTable&lt;T&gt;(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  GetReferenceTable&lt;T&gt;(String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L242"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a reference table by name for a model</p>
@@ -538,7 +533,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>tableName</code> <span class="xref">String</span></dt>
     <dd><p>Table name.</p>
 </dd>
   </dl>
@@ -569,7 +564,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h3 id="OrpheusCore_OrpheusModule_GetTable__1" data-uid="OrpheusCore.OrpheusModule.GetTable``1">
   GetTable&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L219"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a table by model. Uses the model class name as the table name.</p>
@@ -606,8 +601,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
   <a id="OrpheusCore_OrpheusModule_GetTable_" data-uid="OrpheusCore.OrpheusModule.GetTable*"></a>
 
   <h3 id="OrpheusCore_OrpheusModule_GetTable__1_System_Int32_" data-uid="OrpheusCore.OrpheusModule.GetTable``1(System.Int32)">
-  GetTable&lt;T&gt;(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  GetTable&lt;T&gt;(Int32)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L198"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a reference table by index for a model</p>
@@ -620,7 +615,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dt><code>index</code> <span class="xref">Int32</span></dt>
     <dd><p>Table index.</p>
 </dd>
   </dl>
@@ -650,8 +645,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
   <a id="OrpheusCore_OrpheusModule_GetTable_" data-uid="OrpheusCore.OrpheusModule.GetTable*"></a>
 
   <h3 id="OrpheusCore_OrpheusModule_GetTable__1_System_String_" data-uid="OrpheusCore.OrpheusModule.GetTable``1(System.String)">
-  GetTable&lt;T&gt;(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  GetTable&lt;T&gt;(String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L209"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a table by name for a model</p>
@@ -664,7 +659,7 @@ will be saved as well. All master-detail relationships and keys will be updated 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>tableName</code> <span class="xref">String</span></dt>
     <dd><p>Table name.</p>
 </dd>
   </dl>
@@ -694,8 +689,8 @@ will be saved as well. All master-detail relationships and keys will be updated 
   <a id="OrpheusCore_OrpheusModule_Load_" data-uid="OrpheusCore.OrpheusModule.Load*"></a>
 
   <h3 id="OrpheusCore_OrpheusModule_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_" data-uid="OrpheusCore.OrpheusModule.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},OrpheusInterfaces.Core.LogicalOperator,System.Boolean)">
-  Load(Dictionary&lt;string, List&lt;object&gt;&gt;, LogicalOperator, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L315"><i class="bi bi-code-slash"></i></a>
+  Load(Dictionary&lt;String, List&lt;Object&gt;&gt;, LogicalOperator, Boolean)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L316"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads records from the DB to the table.
@@ -713,13 +708,13 @@ This applies only for the MainTable.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dt><code>keyValues</code> <span class="xref">Dictionary</span>&lt;<span class="xref">String</span>, <span class="xref">List</span>&lt;<span class="xref">Object</span>&gt;&gt;</dt>
     <dd><p>The key values.</p>
 </dd>
     <dt><code>logicalOperator</code> <a class="xref" href="OrpheusInterfaces.Core.LogicalOperator.html">LogicalOperator</a></dt>
     <dd><p>The logical operator.</p>
 </dd>
-    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
     <dd><p>If true, it will clear all existing data. Default is true.</p>
 </dd>
   </dl>
@@ -734,7 +729,7 @@ This applies only for the MainTable.</p>
 
   <h4 class="section">Exceptions</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dt><span class="xref">System.Exception</span></dt>
     <dd><p>If you want to load a record from the module level, you need to define the main table for the module.</p>
 </dd>
   </dl>
@@ -744,8 +739,8 @@ This applies only for the MainTable.</p>
   <a id="OrpheusCore_OrpheusModule_Load_" data-uid="OrpheusCore.OrpheusModule.Load*"></a>
 
   <h3 id="OrpheusCore_OrpheusModule_Load_System_Collections_Generic_List_System_Object__" data-uid="OrpheusCore.OrpheusModule.Load(System.Collections.Generic.List{System.Object})">
-  Load(List&lt;object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L286"><i class="bi bi-code-slash"></i></a>
+  Load(List&lt;Object&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L287"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads a module's record from the database.</p>
@@ -758,7 +753,7 @@ This applies only for the MainTable.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dt><code>keyValues</code> <span class="xref">List</span>&lt;<span class="xref">Object</span>&gt;</dt>
     <dd><p>The key values</p>
 </dd>
   </dl>
@@ -773,7 +768,7 @@ This applies only for the MainTable.</p>
 
   <h4 class="section">Exceptions</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dt><span class="xref">System.Exception</span></dt>
     <dd><p>If you want to load a record from the module level, you need to define the main table for the module.</p>
 </dd>
   </dl>
@@ -783,8 +778,8 @@ This applies only for the MainTable.</p>
   <a id="OrpheusCore_OrpheusModule_Load_" data-uid="OrpheusCore.OrpheusModule.Load*"></a>
 
   <h3 id="OrpheusCore_OrpheusModule_Load_System_Data_IDbCommand_System_Boolean_" data-uid="OrpheusCore.OrpheusModule.Load(System.Data.IDbCommand,System.Boolean)">
-  Load(IDbCommand, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L335"><i class="bi bi-code-slash"></i></a>
+  Load(IDbCommand, Boolean)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L336"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads main table data by executing a db command.</p>
@@ -797,10 +792,10 @@ This applies only for the MainTable.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbCommand</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
+    <dt><code>dbCommand</code> <span class="xref">IDbCommand</span></dt>
     <dd><p>The IDbCommand instance.</p>
 </dd>
-    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
     <dd><p>If true, it will clear all existing data. Default is true.</p>
 </dd>
   </dl>
@@ -815,7 +810,7 @@ This applies only for the MainTable.</p>
 
   <h4 class="section">Exceptions</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dt><span class="xref">System.Exception</span></dt>
     <dd><p>If you want to load a record from the module level, you need to define the main table for the module.</p>
 </dd>
   </dl>
@@ -826,7 +821,7 @@ This applies only for the MainTable.</p>
 
   <h3 id="OrpheusCore_OrpheusModule_Save" data-uid="OrpheusCore.OrpheusModule.Save">
   Save()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L261"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L262"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Saves all changes to the database within a transaction.</p>
@@ -856,7 +851,7 @@ This applies only for the MainTable.</p>
 
   <h3 id="OrpheusCore_OrpheusModule_OnAfterSave" data-uid="OrpheusCore.OrpheusModule.OnAfterSave">
   OnAfterSave
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L188"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -873,7 +868,7 @@ This applies only for the MainTable.</p>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
+    <dt><span class="xref">EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
     <dd><p>Occurs after the transaction has been committed.</p>
 </dd>
   </dl>
@@ -887,7 +882,7 @@ This applies only for the MainTable.</p>
 
   <h3 id="OrpheusCore_OrpheusModule_OnBeforeSave" data-uid="OrpheusCore.OrpheusModule.OnBeforeSave">
   OnBeforeSave
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusCore/Core/OrpheusModule.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusModule.cs/#L183"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -904,7 +899,7 @@ This applies only for the MainTable.</p>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
+    <dt><span class="xref">EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
     <dd><p>Occurs before records are save in the database.</p>
 </dd>
   </dl>
@@ -919,7 +914,7 @@ This applies only for the MainTable.</p>
 </article>
 
 
-        
+
       </div>
 
       <div class="affix">
@@ -929,7 +924,7 @@ This applies only for the MainTable.</p>
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           Orpheus - Mobilotronic © 2017 - 2023

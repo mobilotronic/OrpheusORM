@@ -1,12 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
-using OrpheusCore.Configuration;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Logging;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
@@ -19,7 +18,7 @@ namespace OrpheusSQLDDLHelper
     public class OrpheusSQLServerDDLHelper : ISQLServerDDLHelper
     {
         #region private properties
-        private Dictionary<Type,string> typeMap = new Dictionary<Type,string>();
+        private Dictionary<Type, string> typeMap = new Dictionary<Type, string>();
         private Dictionary<int, string> dbTypeMap = new Dictionary<int, string>();
         private string schemaSeparator = ".";
         //private ISchemaObject dummySchemaObject;
@@ -56,7 +55,8 @@ namespace OrpheusSQLDDLHelper
             {
                 if (this._masterConnection == null)
                 {
-                    if(this.db.DatabaseConnectionConfiguration != null){
+                    if (this.db.DatabaseConnectionConfiguration != null)
+                    {
 
                         SqlConnectionStringBuilder masterConnectionString = new SqlConnectionStringBuilder();
                         var masterConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
@@ -66,6 +66,23 @@ namespace OrpheusSQLDDLHelper
                         masterConnectionString.DataSource = masterConnectionConfiguration.Server;
                         masterConnectionString.InitialCatalog = "master";
                         masterConnectionString.IntegratedSecurity = masterConnectionConfiguration.UseIntegratedSecurityForServiceConnection;
+                        masterConnectionString.TrustServerCertificate = masterConnectionConfiguration.TrustServerCertificate;
+                        switch (masterConnectionConfiguration.EncyrptConnection)
+                        {
+                            case OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional:
+                                {
+                                    masterConnectionString.Encrypt = SqlConnectionEncryptOption.Optional; break;
+                                }
+                            case OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory:
+                                {
+                                    masterConnectionString.Encrypt = SqlConnectionEncryptOption.Mandatory; break;
+                                }
+                            case OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict:
+                                {
+                                    masterConnectionString.Encrypt = SqlConnectionEncryptOption.Strict; break;
+                                }
+                        }
+                        masterConnectionString.Encrypt = SqlConnectionEncryptOption.Optional;
                         if (!masterConnectionString.IntegratedSecurity)
                         {
 
@@ -153,7 +170,7 @@ namespace OrpheusSQLDDLHelper
         /// <param name="successCallback"></param>
         /// <param name="errorCallback"></param>
         /// <param name="useMasterConnection"></param>
-        private void executeDDLCommand(string ddlCommand,bool useMasterConnection = false, DDLCommandCallback successCallback = null, ErrorCallback errorCallback = null)
+        private void executeDDLCommand(string ddlCommand, bool useMasterConnection = false, DDLCommandCallback successCallback = null, ErrorCallback errorCallback = null)
         {
             var sqlConnection = useMasterConnection ? this.masterConnection : this.secondConnection;
             sqlConnection.Open();
@@ -165,10 +182,10 @@ namespace OrpheusSQLDDLHelper
                     {
                         cmd.CommandText = ddlCommand;
                         cmd.ExecuteNonQuery();
-                        if(successCallback != null)
+                        if (successCallback != null)
                             successCallback(cmd);
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         if (errorCallback != null)
                             errorCallback(e);
@@ -194,13 +211,13 @@ namespace OrpheusSQLDDLHelper
         {
             var cmd = this.secondConnection.CreateCommand();
             cmd.CommandText = sql;
-            if(parameters != null)
+            if (parameters != null)
             {
-                for(var i=0;i<=parameters.Count - 1; i++)
+                for (var i = 0; i <= parameters.Count - 1; i++)
                 {
                     var param = cmd.CreateParameter();
                     param.ParameterName = parameters[i];
-                    if(parameterValues != null)
+                    if (parameterValues != null)
                         param.Value = parameterValues[i];
                     cmd.Parameters.Add(param);
                 }
@@ -294,7 +311,7 @@ namespace OrpheusSQLDDLHelper
         private T schemaObjectId<T>(string schemaObjectName, string schemaName = null)
         {
             T result = default(T);
-            if(this.secondConnection != null)
+            if (this.secondConnection != null)
             {
                 if (this.secondConnection.State != ConnectionState.Open)
                     this.secondConnection.Open();
@@ -302,13 +319,13 @@ namespace OrpheusSQLDDLHelper
                 IDbCommand commandForExecution = this.getSelectSchemaObjectQuery(schemaObjectName, schemaName);
                 try
                 {
-                    var results = new Dictionary<T,string>();
+                    var results = new Dictionary<T, string>();
                     reader = commandForExecution.ExecuteReader();
                     while (reader.Read())
                     {
-                        results.Add((T)reader.GetValue(0),reader.GetString(1));
+                        results.Add((T)reader.GetValue(0), reader.GetString(1));
                     }
-                    if(results.Count > 0)
+                    if (results.Count > 0)
                     {
                         //if there was only one result 
                         if (results.Count == 1)
@@ -347,7 +364,7 @@ namespace OrpheusSQLDDLHelper
                 }
                 catch (Exception e)
                 {
-                    this.logger.LogError(ErrorCodes.ERR_SCHEMA_OBJECT_ID,e,$"{ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_OBJECT_ID)} {schemaObjectName}");
+                    this.logger.LogError(ErrorCodes.ERR_SCHEMA_OBJECT_ID, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_SCHEMA_OBJECT_ID)} {schemaObjectName}");
                     throw;
                 }
                 finally
@@ -449,6 +466,22 @@ namespace OrpheusSQLDDLHelper
                 if (dataConnectionConfiguration.Password != null)
                     connBuilder.Password = dataConnectionConfiguration.Password;
 
+                switch (dataConnectionConfiguration.EncyrptConnection)
+                {
+                    case OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional:
+                        {
+                            connBuilder.Encrypt = SqlConnectionEncryptOption.Optional; break;
+                        }
+                    case OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory:
+                        {
+                            connBuilder.Encrypt = SqlConnectionEncryptOption.Mandatory; break;
+                        }
+                    case OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict:
+                        {
+                            connBuilder.Encrypt = SqlConnectionEncryptOption.Strict; break;
+                        }
+                }
+
                 return connBuilder.ConnectionString;
             }
 
@@ -464,9 +497,11 @@ namespace OrpheusSQLDDLHelper
         {
             var result = false;
             if (this.db.DatabaseConnectionConfiguration != null && !this.DatabaseExists(this.db.DatabaseConnectionConfiguration.DatabaseName))
-                this.executeDDLCommand($"CREATE DATABASE {this.db.DatabaseConnectionConfiguration.DatabaseName}", true, (dbCommand) => {
+                this.executeDDLCommand($"CREATE DATABASE {this.db.DatabaseConnectionConfiguration.DatabaseName}", true, (dbCommand) =>
+                {
                     result = true;
-                },(error)=> {
+                }, (error) =>
+                {
                     this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB, error, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB)} {this.db.DatabaseConnectionConfiguration.DatabaseName}");
                     result = false;
                 });
@@ -482,9 +517,11 @@ namespace OrpheusSQLDDLHelper
         {
             var result = false;
             if (!this.DatabaseExists(dbName))
-                this.executeDDLCommand(String.Format("CREATE DATABASE {0}", dbName), true, (dbCommand) => {
+                this.executeDDLCommand(String.Format("CREATE DATABASE {0}", dbName), true, (dbCommand) =>
+                {
                     result = true;
-                }, (error) => {
+                }, (error) =>
+                {
                     result = false;
                 });
             return result;
@@ -498,9 +535,11 @@ namespace OrpheusSQLDDLHelper
         public bool CreateDatabaseWithDDL(string ddlString)
         {
             var result = false;
-            this.executeDDLCommand(ddlString, true, (dbCommand) => {
+            this.executeDDLCommand(ddlString, true, (dbCommand) =>
+            {
                 result = true;
-            }, (error) => {
+            }, (error) =>
+            {
                 result = false;
             });
             return result;
@@ -534,10 +573,11 @@ namespace OrpheusSQLDDLHelper
 
                     }
                 }
-                ,(error) => {
+                , (error) =>
+                {
                     this.logger.LogError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB, error, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB)} {dbName}");
-                result = false;
-            });
+                    result = false;
+                });
             return result;
         }
 
@@ -558,7 +598,7 @@ namespace OrpheusSQLDDLHelper
         /// <returns>True if the object exists</returns>
         public bool SchemaObjectExists(ISchemaObject schemaObject)
         {
-            
+
             string objectName = null;
             string schemaName = schemaObject.Schema == null ? null : schemaObject.Schema.Name;
             if (schemaName == null)
@@ -621,7 +661,7 @@ namespace OrpheusSQLDDLHelper
         {
             if (this.typeMap.ContainsKey(type))
             {
-               return this.typeMap[type];
+                return this.typeMap[type];
             }
 
             return null;
@@ -647,7 +687,7 @@ namespace OrpheusSQLDDLHelper
         /// </summary>
         /// <param name="fieldName"></param>
         /// <returns></returns>
-        public string SafeFormatField(string fieldName) {  return String.Format("{0}{1}{2}",this.DelimitedIndetifierStart,fieldName,this.DelimitedIndetifierEnd);}
+        public string SafeFormatField(string fieldName) { return String.Format("{0}{1}{2}", this.DelimitedIndetifierStart, fieldName, this.DelimitedIndetifierEnd); }
 
         /// <summary>
         /// Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.
@@ -674,15 +714,16 @@ namespace OrpheusSQLDDLHelper
 
         #region constructors
         /// <summary>
-        /// 
+        /// SQL server DDL helper.
         /// </summary>
-        public OrpheusSQLServerDDLHelper()
+        /// <param name="logger"></param>
+        public OrpheusSQLServerDDLHelper(ILogger<OrpheusSQLServerDDLHelper> logger)
         {
             this.initializeTypeMap();
             this.SupportsGuidType = true;
             this.SupportsSchemaNameSpace = true;
             this.DbEngineType = DatabaseEngineType.dbSQLServer;
-            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusSQLServerDDLHelper>();
+            this.logger = logger;
         }
         #endregion
 
@@ -766,8 +807,8 @@ namespace OrpheusSQLDDLHelper
             //select * from sys.database_principals
             var result = false;
             var cmd = this.prepareSQLCommand("SELECT Name FROM SYS.DATABASE_PRINCIPALS WHERE NAME = @NAME AND TYPE = @ROLE_TYPE",
-                new List<string>() { "@NAME","@ROLE_TYPE" },
-                new List<object>() { roleName,"R" });
+                new List<string>() { "@NAME", "@ROLE_TYPE" },
+                new List<object>() { roleName, "R" });
 
             if (this.secondConnection.State != ConnectionState.Open)
                 this.secondConnection.Open();
@@ -807,7 +848,7 @@ namespace OrpheusSQLDDLHelper
             {
                 var ddlString = String.Format("CREATE ROLE {0}", roleName);
                 if (owner != null)
-                    ddlString = String.Format("{0} AUTHORIZATION {1}",ddlString, owner);
+                    ddlString = String.Format("{0} AUTHORIZATION {1}", ddlString, owner);
                 this.executeDDLCommand(ddlString);
             }
         }
@@ -820,7 +861,7 @@ namespace OrpheusSQLDDLHelper
         {
             if (this.DatabaseRoleExists(roleName))
             {
-                this.executeDDLCommand(String.Format("DROP ROLE {0}",roleName));
+                this.executeDDLCommand(String.Format("DROP ROLE {0}", roleName));
             }
         }
 
@@ -860,7 +901,7 @@ namespace OrpheusSQLDDLHelper
         /// <param name="password"></param>
         public void CreateDatabaseUser(string userName, string password)
         {
-            if(!this.DatabaseUserExists(userName))
+            if (!this.DatabaseUserExists(userName))
                 this.executeDDLCommand(String.Format("CREATE USER {0} WITH PASSWORD = '{1}'", userName, password));
         }
 
@@ -971,7 +1012,7 @@ namespace OrpheusSQLDDLHelper
             //before we can set the containment option, we need to close all open connections.
             SqlConnection.ClearAllPools();
             this.secondConnection.Close();
-            if(this.masterConnection != null)
+            if (this.masterConnection != null)
                 this.masterConnection.Close();
             this.db.Disconnect();
             this.executeDDLCommand($"ALTER DATABASE [{databaseName}] SET CONTAINMENT = {containment}", true);
@@ -1051,7 +1092,7 @@ namespace OrpheusSQLDDLHelper
         /// <param name="permission"></param>
         /// <param name="schemaObject"></param>
         /// <param name="databasePrincipal"></param>
-        public void Revoke(string permission,string schemaObject, string databasePrincipal)
+        public void Revoke(string permission, string schemaObject, string databasePrincipal)
         {
             this.executeDDLCommand($"REVOKE {permission} ON OBJECT::{schemaObject} FROM {databasePrincipal}");
         }
@@ -1062,10 +1103,10 @@ namespace OrpheusSQLDDLHelper
         /// <param name="permissions"></param>
         /// <param name="schemaObject"></param>
         /// <param name="databasePrincipal"></param>
-        public void Revoke(List<string> permissions,string schemaObject, string databasePrincipal)
+        public void Revoke(List<string> permissions, string schemaObject, string databasePrincipal)
         {
             foreach (var p in permissions)
-                this.Revoke(p, schemaObject,databasePrincipal);
+                this.Revoke(p, schemaObject, databasePrincipal);
         }
         #endregion
     }

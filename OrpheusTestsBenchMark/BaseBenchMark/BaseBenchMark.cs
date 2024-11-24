@@ -29,7 +29,7 @@ namespace OrpheusTestsBenchMark
             AddDiagnoser(MemoryDiagnoser.Default);
             AddJob(
                 Job.Default.WithJit(Jit.RyuJit)
-                .WithToolchain(CsProjCoreToolchain.NetCoreApp70)
+                .WithToolchain(CsProjCoreToolchain.NetCoreApp80)
                 .WithLaunchCount(1)
                 .WithIterationCount(15)
                 .WithWarmupCount(15)
