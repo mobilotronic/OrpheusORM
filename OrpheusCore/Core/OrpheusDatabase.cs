@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using OrpheusCore.Configuration;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Core;
@@ -21,7 +20,6 @@ namespace OrpheusCore
         private IDbConnection dbConnection;
         private List<IOrpheusModule> modules;
         private ILogger logger;
-        private ILoggerFactory loggerFactory;
         private Dictionary<Type, System.Data.DbType> typeMap = new Dictionary<Type, DbType>();
         private List<Type> nullableTypes = new List<Type>();
         private IOrpheusDDLHelper ddlHelper;
@@ -90,8 +88,8 @@ namespace OrpheusCore
         {
             //http://stackoverflow.com/questions/5877084/regex-to-match-whole-words-that-begin-with
             var result = new List<string>();
-            Regex reg = new Regex(@"\@(\w+)",RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
-            foreach(Match match in reg.Matches(SQL))
+            Regex reg = new Regex(@"\@(\w+)", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+            foreach (Match match in reg.Matches(SQL))
             {
                 result.Add(match.Value);
             }
@@ -203,13 +201,6 @@ namespace OrpheusCore
         /// Logger instance.
         /// </value>
         public ILogger Logger => this.logger;
-        /// <summary>
-        /// Gets the logger factory.
-        /// </summary>
-        /// <value>
-        /// The logger factory.
-        /// </value>
-        public ILoggerFactory LoggerFactory => this.loggerFactory;
         #endregion
 
         #region constructors        
@@ -218,15 +209,14 @@ namespace OrpheusCore
         /// </summary>
         /// <param name="connection">The connection.</param>
         /// <param name="ddlHelper">The DDL helper.</param>
-        /// <param name="loggerFactory">The logger.</param>
-        public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILoggerFactory loggerFactory)
+        /// <param name="logger">The logger</param>
+        public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILogger<IOrpheusDatabase> logger)
         {
             this.dbConnection = connection;
             this.ddlHelper = ddlHelper;
             this.ddlHelper.DB = this;
             this.modules = new List<IOrpheusModule>();
-            this.loggerFactory = loggerFactory;
-            this.logger = loggerFactory.CreateLogger<OrpheusDatabase>();
+            this.logger = logger;
             this.initializeTypeMap();
         }
         #endregion
@@ -242,7 +232,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusModule CreateModule(IOrpheusModuleDefinition definition = null)
         {
-            return ConfigurationManager.Resolve<IOrpheusModule>(new object[] { this, definition }); // new OrpheusModule(this, definition);
+            return ServiceManager.Resolve<IOrpheusModule>(new object[] { this, definition, ServiceManager.CreateLogger<IOrpheusModule>() }); // new OrpheusModule(this, definition);
         }
 
         /// <summary>
@@ -253,7 +243,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusTableOptions CreateTableOptions()
         {
-            return ConfigurationManager.Resolve<IOrpheusTableOptions>();
+            return ServiceManager.Resolve<IOrpheusTableOptions>();
         }
 
         /// <summary>
@@ -264,7 +254,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusTableKeyField CreateTableKeyField()
         {
-            return ConfigurationManager.Resolve<IOrpheusTableKeyField>();
+            return ServiceManager.Resolve<IOrpheusTableKeyField>();
         }
 
         /// <summary>
@@ -275,7 +265,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusModuleDefinition CreateModuleDefinition()
         {
-            var result = ConfigurationManager.Resolve<IOrpheusModuleDefinition>();
+            var result = ServiceManager.Resolve<IOrpheusModuleDefinition>();
             result.Database = this;
             return result;
         }
@@ -291,10 +281,10 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusTable<T> CreateTable<T>(IOrpheusTableOptions options)
         {
-            if(options != null)
+            if (options != null)
             {
                 options.Database = this;
-                return new OrpheusTable<T>(options);
+                return new OrpheusTable<T>(options, ServiceManager.CreateLogger<IOrpheusTable<T>>());
             }
             return null;
         }
@@ -309,7 +299,7 @@ namespace OrpheusCore
         /// <returns>
         /// An Orpheus table instance.
         /// </returns>
-        public IOrpheusTable<T> CreateTable<T>(string tableName,List<IOrpheusTableKeyField> keyFields = null)
+        public IOrpheusTable<T> CreateTable<T>(string tableName, List<IOrpheusTableKeyField> keyFields = null)
         {
             var options = this.CreateTableOptions();
             options.TableName = tableName;
@@ -345,7 +335,7 @@ namespace OrpheusCore
             if (id == Guid.Empty)
                 id = Guid.NewGuid();
             //return new SchemaBuilder.Schema(this,description, version, id, name);
-            return ConfigurationManager.Resolve<ISchema>(new object[] { this, description, version, id, name });
+            return ServiceManager.Resolve<ISchema>(new object[] { this, description, version, id, name });
         }
 
         /// <summary>
@@ -372,13 +362,13 @@ namespace OrpheusCore
         {
             var result = this.CreateCommand();
             result.CommandText = SQL;
-            for(var i=0;i<=parameters.Count - 1; i++)
+            for (var i = 0; i <= parameters.Count - 1; i++)
             {
                 var parameter = parameters[i];
 
                 var param = result.CreateParameter();
                 param.ParameterName = parameter.IndexOf("@") >= 0 ? parameter : "@" + parameter;
-                if(parameterValues != null)
+                if (parameterValues != null)
                 {
                     param.Value = parameterValues[i];
                 }
@@ -399,7 +389,8 @@ namespace OrpheusCore
             var result = this.CreateCommand();
             var parameters = this.createParametersList(SQL);
             result.CommandText = SQL;
-            parameters.ForEach(parameter => {
+            parameters.ForEach(parameter =>
+            {
                 var param = result.CreateParameter();
                 param.ParameterName = parameter.IndexOf("@") >= 0 ? parameter : "@" + parameter;
                 result.Parameters.Add(param);
@@ -423,9 +414,9 @@ namespace OrpheusCore
                     {
                         this.ddlHelper.CreateDatabase();
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
-                        this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB,e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB));
+                        this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB, e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB));
                         throw;
                     }
                     if (!String.IsNullOrEmpty(connectionString))
@@ -436,7 +427,7 @@ namespace OrpheusCore
                 }
                 catch (Exception e)
                 {
-                    this.logger.LogError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB,e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB));
+                    this.logger.LogError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB, e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB));
                     throw;
                 }
             }
@@ -491,7 +482,7 @@ namespace OrpheusCore
         public void CommitTransaction(IDbTransaction transaction)
         {
             transaction.Commit();
-            if(transaction == this.LastActiveTransaction)
+            if (transaction == this.LastActiveTransaction)
             {
                 this.LastActiveTransaction = null;
                 transaction.Dispose();
@@ -521,7 +512,7 @@ namespace OrpheusCore
         /// <returns>
         /// A list of 'T'
         /// </returns>
-        public List<T> SQL<T>(string SQL,string tableName = null)
+        public List<T> SQL<T>(string SQL, string tableName = null)
         {
             tableName = tableName == null ? typeof(T).Name : tableName;
             var table = this.CreateTable<T>(tableName);
@@ -575,9 +566,9 @@ namespace OrpheusCore
                 cmd.ExecuteNonQuery();
                 result = true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                this.logger.LogError(ErrorCodes.ERR_CANNOT_RUN_DDL,e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)} | {DDLCommand}");
+                this.logger.LogError(ErrorCodes.ERR_CANNOT_RUN_DDL, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)} | {DDLCommand}");
             }
             finally
             {
@@ -593,7 +584,7 @@ namespace OrpheusCore
         /// <returns></returns>
         public long GetTableCount(string tableName)
         {
-            if(this.rowCountCommand == null)
+            if (this.rowCountCommand == null)
             {
                 this.rowCountCommand = this.CreateCommand();
             }

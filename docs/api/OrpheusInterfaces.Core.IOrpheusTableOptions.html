@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IOrpheusTableOptions
- | Orpheus </title>
+      <title>Interface IOrpheusTableOptions | Orpheus </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IOrpheusTableOptions
- | Orpheus ">
+      <meta name="title" content="Interface IOrpheusTableOptions | Orpheus ">
       
+      <meta name="description" content="Represents  options, which can be used to instantiate a table.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusTableOptions.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusTableOptions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusTableOptions.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusTableOptions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,19 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module">
-    import options from './../public/main.js'
-    import { init } from './../public/docfx.min.js'
-    init(options)
-  </script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -58,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -81,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -93,12 +89,11 @@
 
 
   <h1 id="OrpheusInterfaces_Core_IOrpheusTableOptions" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions" class="text-break">
-    Interface IOrpheusTableOptions
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L222"><i class="bi bi-code-slash"></i></a>
+Interface IOrpheusTableOptions  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L222"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a>.<a class="xref" href="OrpheusInterfaces.Core.html">Core</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.Core.html">OrpheusInterfaces.Core</a></dd></dl>
   <dl><dt>Assembly</dt><dd>OrpheusInterfaces.dll</dd></dl>
   </div>
 
@@ -130,7 +125,7 @@
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTableOptions_Database" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.Database">
   Database
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L228"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L228"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Database that the table is a part of.</p>
@@ -164,7 +159,7 @@ IOrpheusDatabase Database { get; set; }</code></pre>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTableOptions_KeyFields" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.KeyFields">
   KeyFields
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L242"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Table's key field(s). Can be more than one to support composite keys.</p>
@@ -181,7 +176,7 @@ IOrpheusDatabase Database { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
     <dd><p>Table's key fields</p>
 </dd>
   </dl>
@@ -197,7 +192,7 @@ IOrpheusDatabase Database { get; set; }</code></pre>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTableOptions_MasterTable" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTable">
   MasterTable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L266"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L266"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Table's master table. To support the master-detail relationship.</p>
@@ -231,7 +226,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTableOptions_MasterTableKeyFields" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableKeyFields">
   MasterTableKeyFields
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L279"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Master table's key field(s). Can be more than one to support composite keys.</p>
@@ -248,7 +243,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
     <dd><p>Master table's key field</p>
 </dd>
   </dl>
@@ -264,7 +259,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTableOptions_MasterTableName" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableName">
   MasterTableName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L273"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Table's master table. To support the master-detail relationship.</p>
@@ -281,7 +276,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>Table's master table name</p>
 </dd>
   </dl>
@@ -297,7 +292,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTableOptions_ModelType" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.ModelType">
   ModelType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L285"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Model type.</p>
@@ -314,7 +309,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dt><span class="xref">Type</span></dt>
     <dd><p>Table model type</p>
 </dd>
   </dl>
@@ -330,7 +325,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTableOptions_TableName" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.TableName">
   TableName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L236"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L236"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Table's name.</p>
@@ -347,7 +342,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>Table's name</p>
 </dd>
   </dl>
@@ -366,8 +361,8 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
   <a id="OrpheusInterfaces_Core_IOrpheusTableOptions_AddKeyField_" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})">
-  AddKeyField(string, bool, bool, Func&lt;string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  AddKeyField(String, Boolean, Boolean, Func&lt;String&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L251"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new key field.</p>
@@ -380,16 +375,16 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>name</code> <span class="xref">String</span></dt>
     <dd><p>Field name</p>
 </dd>
-    <dt><code>isAutoGenerated</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>isAutoGenerated</code> <span class="xref">Boolean</span></dt>
     <dd><p>Auto generate flag</p>
 </dd>
-    <dt><code>isDBGenerated</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>isDBGenerated</code> <span class="xref">Boolean</span></dt>
     <dd><p>DB generated flag</p>
 </dd>
-    <dt><code>keySQLUpdate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>keySQLUpdate</code> <span class="xref">Func</span>&lt;<span class="xref">String</span>&gt;</dt>
     <dd><p>Function to return a custom SQL when updating the field value</p>
 </dd>
   </dl>
@@ -408,8 +403,8 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
   <a id="OrpheusInterfaces_Core_IOrpheusTableOptions_AddMasterKeyField_" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__" data-uid="OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})">
-  AddMasterKeyField(string, bool, bool, Func&lt;string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusTable.cs/#L260"><i class="bi bi-code-slash"></i></a>
+  AddMasterKeyField(String, Boolean, Boolean, Func&lt;String&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L260"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new master key field</p>
@@ -422,16 +417,16 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>name</code> <span class="xref">String</span></dt>
     <dd><p>Field name</p>
 </dd>
-    <dt><code>isAutoGenerated</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>isAutoGenerated</code> <span class="xref">Boolean</span></dt>
     <dd><p>Auto generate flag</p>
 </dd>
-    <dt><code>isDBGenerated</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>isDBGenerated</code> <span class="xref">Boolean</span></dt>
     <dd><p>DB generated flag</p>
 </dd>
-    <dt><code>keySQLUpdate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>keySQLUpdate</code> <span class="xref">Func</span>&lt;<span class="xref">String</span>&gt;</dt>
     <dd><p>Function to return a custom SQL when updating the field value</p>
 </dd>
   </dl>
@@ -451,7 +446,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 </article>
 
 
-        
+
       </div>
 
       <div class="affix">
@@ -461,7 +456,7 @@ IOrpheusTable MasterTable { get; set; }</code></pre>
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           Orpheus - Mobilotronic © 2017 - 2023

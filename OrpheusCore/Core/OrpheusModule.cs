@@ -1,11 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using OrpheusCore.Configuration;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Linq;
 
 namespace OrpheusCore
@@ -19,7 +17,7 @@ namespace OrpheusCore
     public class OrpheusModule : IOrpheusModule
     {
         private IOrpheusTable mainTable;
-        private ILogger<OrpheusModule> logger;
+        private ILogger<IOrpheusModule> logger;
 
         #region private methods
         /// <summary>
@@ -29,10 +27,10 @@ namespace OrpheusCore
         private void saveDeletes(IDbTransaction transaction)
         {
             var maxLevel = this.Tables.OrderByDescending(t => t.Level).ToList().First().Level;
-            for(var level = maxLevel; level >=0; level--)
+            for (var level = maxLevel; level >= 0; level--)
             {
                 var tables = this.Tables.FindAll(t => t.Level == level);
-                foreach(IOrpheusTable table in tables)
+                foreach (IOrpheusTable table in tables)
                 {
                     table.ExecuteDeletes(transaction);
                 }
@@ -75,23 +73,40 @@ namespace OrpheusCore
             Type generic = typeof(OrpheusTable<>);
             Type[] typeArgs = new Type[] { options.ModelType };
             Type constructedType = generic.MakeGenericType(typeArgs);
+
+            // Ensure the Database property is set
             if (options.Database == null)
                 options.Database = this.Database;
-            return (IOrpheusTable)Activator.CreateInstance(constructedType, new object[] { options });
+
+            // Dynamically create the logger type for IOrpheusTable<T>, not OrpheusTable<T>
+            Type genericLogger = typeof(ILogger<>);
+            Type tableInterface = typeof(IOrpheusTable<>).MakeGenericType(options.ModelType);
+            Type constructedLoggerType = genericLogger.MakeGenericType(tableInterface);
+
+            // Resolve the logger
+            object logger = ServiceManager.GetLoggerService(constructedLoggerType);
+
+            // Find the specific constructor with the matching parameters
+            var constructor = constructedType.GetConstructor(new[] { typeof(IOrpheusTableOptions), constructedLoggerType });
+            if (constructor == null)
+                throw new InvalidOperationException($"Constructor with expected signature not found for type {constructedType}.");
+
+            // Dynamically create the instance
+            return (IOrpheusTable)constructor.Invoke(new object[] { options, logger });
         }
 
         private void initializeModuleDefinition()
         {
-            if(this.Definition != null && this.Definition.MainTableOptions != null)
+            if (this.Definition != null && this.Definition.MainTableOptions != null)
             {
                 this.MainTable = this.createGenericTableFromOptions(this.Definition.MainTableOptions);
 
-                foreach(var detailTableOption in this.Definition.DetailTableOptions)
+                foreach (var detailTableOption in this.Definition.DetailTableOptions)
                 {
                     //if the table instance is not yet set, try to set it by using the master table name.
-                    if(detailTableOption.MasterTable == null)
+                    if (detailTableOption.MasterTable == null)
                     {
-                        detailTableOption.MasterTable = this.getTableByName(detailTableOption.MasterTableName,this.Tables);// this.Tables.Where(t => t.Name.ToLower() == detailTableOption.MasterTableName.ToLower()).FirstOrDefault();
+                        detailTableOption.MasterTable = this.getTableByName(detailTableOption.MasterTableName, this.Tables);// this.Tables.Where(t => t.Name.ToLower() == detailTableOption.MasterTableName.ToLower()).FirstOrDefault();
                     }
                     this.Tables.Add(this.createGenericTableFromOptions(detailTableOption));
                 }
@@ -105,7 +120,7 @@ namespace OrpheusCore
                     {
                         detailTable.MasterTable = this.getTableByName(detailTableOption.MasterTableName, this.Tables);// this.Tables.Where(t => t.Name.ToLower() == detailTableOption.MasterTableName.ToLower()).FirstOrDefault();
                     }
-                    
+
                 }
 
                 foreach (var referenceTableOption in this.Definition.ReferenceTableOptions)
@@ -163,11 +178,14 @@ namespace OrpheusCore
         /// <value>
         /// The module's main table.
         /// </value>
-        public IOrpheusTable MainTable {
-            get {
+        public IOrpheusTable MainTable
+        {
+            get
+            {
                 return this.mainTable;
             }
-            set {
+            set
+            {
                 this.mainTable = value;
                 if (!this.Tables.Contains(this.mainTable))
                 {
@@ -270,7 +288,7 @@ namespace OrpheusCore
                 this.Database.CommitTransaction(transaction);
                 this.OnAfterSave?.Invoke(this, new SaveEventArguments() { Transaction = transaction });
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 this.logger.LogError(ErrorCodes.ERR_SAVING_DATA, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_SAVING_DATA)}");
                 this.Database.RollbackTransaction(transaction);
@@ -285,12 +303,12 @@ namespace OrpheusCore
         /// <exception cref="Exception">If you want to load a record from the module level, you need to define the main table for the module.</exception>
         public void Load(List<object> keyValues = null)
         {
-            if(this.MainTable != null)
+            if (this.MainTable != null)
             {
                 this.MainTable.Load(keyValues);
                 foreach (var table in this.Tables)
                 {
-                    if(table.MasterTable != null)
+                    if (table.MasterTable != null)
                         table.Load();
                 }
             }
@@ -317,7 +335,7 @@ namespace OrpheusCore
 
             if (this.MainTable != null)
             {
-                this.MainTable.Load(keyValues,logicalOperator,clearExistingData);
+                this.MainTable.Load(keyValues, logicalOperator, clearExistingData);
                 this.MainTable.DetailTables.ForEach(t => t.Load());
             }
             else
@@ -336,7 +354,7 @@ namespace OrpheusCore
         {
             if (this.MainTable != null)
             {
-                this.MainTable.Load(dbCommand,clearExistingData);
+                this.MainTable.Load(dbCommand, clearExistingData);
                 this.MainTable.DetailTables.ForEach(t => t.Load());
             }
             else
@@ -361,13 +379,14 @@ namespace OrpheusCore
         /// will be saved as well. All master-detail relationships and keys will be updated automatically.
         /// </summary>
         /// <param name="database">The database.</param>
-        public OrpheusModule(IOrpheusDatabase database)
+        /// <param name="logger">The logger</param>
+        public OrpheusModule(IOrpheusDatabase database, ILogger<IOrpheusModule> logger)
         {
             this.Database = database;
             this.Tables = new List<IOrpheusTable>();
             this.ReferenceTables = new List<IOrpheusTable>();
             this.initializeModuleDefinition();
-            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusModule>();
+            this.logger = logger;
         }
 
         /// <summary>
@@ -379,7 +398,8 @@ namespace OrpheusCore
         /// </summary>
         /// <param name="database">The database.</param>
         /// <param name="definition">The definition.</param>
-        public OrpheusModule(IOrpheusDatabase database, IOrpheusModuleDefinition definition):this(database)
+        /// <param name="logger">The logger</param>
+        public OrpheusModule(IOrpheusDatabase database, IOrpheusModuleDefinition definition, ILogger<IOrpheusModule> logger) : this(database, logger)
         {
             this.Definition = definition;
             this.initializeModuleDefinition();

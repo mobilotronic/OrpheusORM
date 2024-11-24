@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace OrpheusCore.Errors
 {
@@ -93,7 +91,7 @@ namespace OrpheusCore.Errors
         /// </summary>
         /// <param name="errorCode">The error code.</param>
         /// <returns></returns>
-        public static string GetError(int errorCode) => orpheusErrors[errorCode];
+        public static string GetError(int errorCode) => orpheusErrors.ContainsKey(errorCode) ? orpheusErrors[errorCode] : "";
 
     }
 }

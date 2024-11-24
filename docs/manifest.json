@@ -1,5 +1,4 @@
 {
-  "homepages": [],
   "source_base_path": "C:/Workspaces/Github/OrpheusORM/OrpheusDocumentation",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -526,10 +525,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.ServiceManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.ServiceManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/OrpheusCore.yml",
       "output": {
         ".html": {
           "relative_path": "api/OrpheusCore.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Configuration.EncyrptConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Configuration.EncyrptConnection.html"
         }
       },
       "version": ""
@@ -1079,6 +1098,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.4.0.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.4.0.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "documentation/index.md",
       "output": {
         ".html": {
@@ -1234,7 +1263,6 @@
       "version": ""
     }
   ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"

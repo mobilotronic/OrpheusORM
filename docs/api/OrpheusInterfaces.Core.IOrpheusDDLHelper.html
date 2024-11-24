@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IOrpheusDDLHelper
- | Orpheus </title>
+      <title>Interface IOrpheusDDLHelper | Orpheus </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IOrpheusDDLHelper
- | Orpheus ">
+      <meta name="title" content="Interface IOrpheusDDLHelper | Orpheus ">
       
+      <meta name="description" content="Abstract definition of DDL helper. DDL helper is used to execute DB engine specific DDL commands.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/update_net_core/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusDDLHelper.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusDDLHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusDDLHelper.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusDDLHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,19 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module">
-    import options from './../public/main.js'
-    import { init } from './../public/docfx.min.js'
-    init(options)
-  </script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -58,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -81,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -93,12 +89,11 @@
 
 
   <h1 id="OrpheusInterfaces_Core_IOrpheusDDLHelper" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper" class="text-break">
-    Interface IOrpheusDDLHelper
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L46"><i class="bi bi-code-slash"></i></a>
+Interface IOrpheusDDLHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a>.<a class="xref" href="OrpheusInterfaces.Core.html">Core</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.Core.html">OrpheusInterfaces.Core</a></dd></dl>
   <dl><dt>Assembly</dt><dd>OrpheusInterfaces.dll</dd></dl>
   </div>
 
@@ -131,7 +126,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_ConnectionString" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.ConnectionString">
   ConnectionString
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L187"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Builds the connection string.</p>
@@ -148,7 +143,39 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseName_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseName*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseName" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseName">
+  DatabaseName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the database name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string DatabaseName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">String</span></dt>
     <dd></dd>
   </dl>
 
@@ -163,7 +190,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DB" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DB">
   DB
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Database for the DDL helper.</p>
@@ -192,43 +219,11 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
 
 
-  <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseName_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseName*"></a>
-
-  <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseName" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseName">
-  DatabaseName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L176"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets the database name.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string DatabaseName { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DbEngineType_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DbEngineType*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DbEngineType" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DbEngineType">
   DbEngineType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L181"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the underlying connection type.</p>
@@ -260,7 +255,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DelimitedIndetifierEnd" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIndetifierEnd">
   DelimitedIndetifierEnd
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.</p>
@@ -277,7 +272,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dt><span class="xref">Char</span></dt>
     <dd><p>Char</p>
 </dd>
   </dl>
@@ -293,7 +288,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DelimitedIndetifierStart" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIndetifierStart">
   DelimitedIndetifierStart
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L126"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.</p>
@@ -310,7 +305,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dt><span class="xref">Char</span></dt>
     <dd><p>Char</p>
 </dd>
   </dl>
@@ -326,7 +321,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_ModifyColumnCommand" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.ModifyColumnCommand">
   ModifyColumnCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L155"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the DB specific modify table command.</p>
@@ -343,7 +338,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd></dd>
   </dl>
 
@@ -358,7 +353,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SupportsGuidType" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsGuidType">
   SupportsGuidType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L138"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the DBEngine supports natively the Guid type.</p>
@@ -375,7 +370,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd><p>True if the DBEngine supports natively the Guid type</p>
 </dd>
   </dl>
@@ -391,7 +386,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SupportsSchemaNameSpace" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsSchemaNameSpace">
   SupportsSchemaNameSpace
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the DBEngine supports having schema name spaces. From the currently supported databases, only SQL has this feature.</p>
@@ -408,7 +403,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd></dd>
   </dl>
 
@@ -427,7 +422,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase">
   CreateDatabase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L86"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the underlying db engine settings.</p>
@@ -441,7 +436,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd><p>True if database was created successfully</p>
 </dd>
   </dl>
@@ -459,8 +454,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase(System.String)">
-  CreateDatabase(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  CreateDatabase(String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the underlying db engine settings.</p>
@@ -473,14 +468,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>dbName</code> <span class="xref">String</span></dt>
     <dd><p>Database name</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd><p>True if the database was created successfully</p>
 </dd>
   </dl>
@@ -498,8 +493,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabaseWithDDL_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabaseWithDDL*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabaseWithDDL_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabaseWithDDL(System.String)">
-  CreateDatabaseWithDDL(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  CreateDatabaseWithDDL(String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the passed DDL script.</p>
@@ -512,14 +507,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ddlString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>ddlString</code> <span class="xref">String</span></dt>
     <dd><p>DDL command</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd><p>True if the database was created successfully</p>
 </dd>
   </dl>
@@ -537,8 +532,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseExists_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseExists*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseExists_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseExists(System.String)">
-  DatabaseExists(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  DatabaseExists(String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true the database exists.</p>
@@ -551,14 +546,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>dbName</code> <span class="xref">String</span></dt>
     <dd><p>Database name</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd></dd>
   </dl>
 
@@ -576,7 +571,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_DbTypeToString_System_Data_DbType_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)">
   DbTypeToString(DbType)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L120"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the db engine specific string equivalent, for a DbType enumeration.</p>
@@ -589,14 +584,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dataType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.dbtype">DbType</a></dt>
+    <dt><code>dataType</code> <span class="xref">DbType</span></dt>
     <dd><p>DbType</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>String value for the DbType</p>
 </dd>
   </dl>
@@ -614,8 +609,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})">
-  SafeFormatAlterTableAddColumn(string, List&lt;string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  SafeFormatAlterTableAddColumn(String, List&lt;String&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L171"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE ADD COLUMN command for the underlying database engine.</p>
@@ -628,17 +623,17 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>tableName</code> <span class="xref">String</span></dt>
     <dd><p>Table's name that schema is going to change</p>
 </dd>
-    <dt><code>columnsToAdd</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>columnsToAdd</code> <span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
     <dd><p>Columns for creation</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd></dd>
   </dl>
 
@@ -655,8 +650,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})">
-  SafeFormatAlterTableDropColumn(string, List&lt;string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  SafeFormatAlterTableDropColumn(String, List&lt;String&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L163"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.</p>
@@ -669,17 +664,17 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>tableName</code> <span class="xref">String</span></dt>
     <dd><p>Table's name that schema is going to change</p>
 </dd>
-    <dt><code>columnsToDelete</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>columnsToDelete</code> <span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
     <dd><p>Columns for deletion</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd></dd>
   </dl>
 
@@ -696,8 +691,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatField_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatField*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatField_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatField(System.String)">
-  SafeFormatField(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  SafeFormatField(String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L150"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Properly formats a field name, to be used in a SQL statement, in case the field name is a reserved word.</p>
@@ -710,14 +705,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>fieldName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>fieldName</code> <span class="xref">String</span></dt>
     <dd><p>Field name</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>Safely formated field name</p>
 </dd>
   </dl>
@@ -736,7 +731,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)">
   SchemaObjectExists(ISchemaConstraint)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database.</p>
@@ -755,7 +750,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd></dd>
   </dl>
 
@@ -773,7 +768,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)">
   SchemaObjectExists(ISchemaObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.</p>
@@ -793,7 +788,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd><p>True if the object exists</p>
 </dd>
   </dl>
@@ -811,8 +806,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(System.String)">
-  SchemaObjectExists(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  SchemaObjectExists(String)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.</p>
@@ -825,14 +820,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>schemaObjectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>schemaObjectName</code> <span class="xref">String</span></dt>
     <dd><p>Schema</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">Boolean</span></dt>
     <dd><p>True if the object exists</p>
 </dd>
   </dl>
@@ -851,7 +846,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)">
   SchemaObjectId&lt;T&gt;(ISchemaObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the schema object, db engine assigned/generated, identifier.</p>
@@ -894,7 +889,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDDLHelper_TypeToString_System_Type_" data-uid="OrpheusInterfaces.Core.IOrpheusDDLHelper.TypeToString(System.Type)">
   TypeToString(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/update_net_core/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDDLHelper.cs/#L113"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the db engine specific string equivalent, for a .net type</p>
@@ -907,14 +902,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dt><code>type</code> <span class="xref">Type</span></dt>
     <dd><p>Type</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">String</span></dt>
     <dd><p>String value for the mapped DbType</p>
 </dd>
   </dl>
@@ -933,7 +928,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 </article>
 
 
-        
+
       </div>
 
       <div class="affix">
@@ -943,7 +938,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           Orpheus - Mobilotronic © 2017 - 2023

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
-using OrpheusCore.Configuration;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
@@ -145,7 +144,7 @@ namespace OrpheusMySQLDDLHelper
                             cmd.ExecuteNonQuery();
                             result = true;
                         }
-                        catch(Exception e)
+                        catch (Exception e)
                         {
                             result = false;
                             this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB)} {dbName}");
@@ -228,7 +227,7 @@ namespace OrpheusMySQLDDLHelper
                     this.secondConnection.Close();
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 this.logger.LogError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB, e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB));
                 throw;
@@ -265,16 +264,16 @@ namespace OrpheusMySQLDDLHelper
                             }
                             finally
                             {
-                                if(reader != null)
+                                if (reader != null)
                                 {
                                     reader.Close();
                                     reader.Dispose();
                                 }
                             }
                         }
-                        catch(Exception e)
+                        catch (Exception e)
                         {
-                            this.logger.LogError(e,"");
+                            this.logger.LogError(e, "");
                             throw;
                         }
                     }
@@ -294,7 +293,7 @@ namespace OrpheusMySQLDDLHelper
         /// <returns></returns>
         public bool SchemaObjectExists(ISchemaConstraint schemaConstraint)
         {
-            if(this.secondConnection != null)
+            if (this.secondConnection != null)
             {
                 if (this.selectSchemaObjectPrimaryConstraint == null)
                 {
@@ -490,7 +489,7 @@ namespace OrpheusMySQLDDLHelper
         /// <summary>
         /// Returns the DB specific modify table command.
         /// </summary>
-        public string ModifyColumnCommand { get{ return " MODIFY COLUMN "; } }
+        public string ModifyColumnCommand { get { return " MODIFY COLUMN "; } }
 
         /// <summary>
         /// Returns the underlying database engine type.
@@ -526,7 +525,7 @@ namespace OrpheusMySQLDDLHelper
         {
             get
             {
-                return this.db.DatabaseConnectionConfiguration.DatabaseName; 
+                return this.db.DatabaseConnectionConfiguration.DatabaseName;
             }
         }
 
@@ -548,9 +547,30 @@ namespace OrpheusMySQLDDLHelper
                 connBuilder.Database = dataConnectionConfiguration.DatabaseName;
 
                 MySqlSslMode sslMode;
-                if(Enum.TryParse(this.SSLMode, out sslMode)){
-                    connBuilder.SslMode = sslMode;
+                switch (dataConnectionConfiguration.EncyrptConnection)
+                {
+                    case OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional:
+                        {
+                            connBuilder.SslMode = MySqlSslMode.Preferred; break;
+                        }
+                    case OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory:
+                        {
+                            connBuilder.SslMode = MySqlSslMode.Required; break;
+                        }
+                    case OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict:
+                        {
+                            connBuilder.SslMode = MySqlSslMode.VerifyFull; break;
+                        }
+                    default:
+                        {
+                            if (Enum.TryParse(this.SSLMode, out sslMode))
+                            {
+                                connBuilder.SslMode = sslMode;
+                            }
+                            break;
+                        }
                 }
+
 
                 if (dataConnectionConfiguration.UserName != null)
                     connBuilder.UserID = dataConnectionConfiguration.UserName;
@@ -569,14 +589,14 @@ namespace OrpheusMySQLDDLHelper
         /// <summary>
         /// MySQL Server DDL helper constructor.
         /// </summary>
-        public OrpheusMySQLServerDDLHelper()
+        public OrpheusMySQLServerDDLHelper(ILogger<OrpheusMySQLServerDDLHelper> logger)
         {
             this.initializeTypeMap();
             this.SupportsGuidType = false;
             this.SupportsSchemaNameSpace = false;
             this.DbEngineType = DatabaseEngineType.dbMySQL;
             this.SSLMode = MySqlSslMode.Required.ToString();
-            this.logger = ConfigurationManager.LoggerFactory.CreateLogger<OrpheusMySQLServerDDLHelper>();
+            this.logger = logger;
         }
     }
 }

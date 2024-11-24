@@ -1,12 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace OrpheusInterfaces.Core
- | Orpheus </title>
+      <title>Namespace OrpheusInterfaces.Core | Orpheus </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace OrpheusInterfaces.Core
- | Orpheus ">
+      <meta name="title" content="Namespace OrpheusInterfaces.Core | Orpheus ">
+      
       
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -29,19 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module">
-    import options from './../public/main.js'
-    import { init } from './../public/docfx.min.js'
-    init(options)
-  </script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -58,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -81,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -90,8 +86,7 @@
 
         <article data-uid="OrpheusInterfaces.Core">
 
-  <h1 id="OrpheusInterfaces_Core" data-uid="OrpheusInterfaces.Core" class="text-break">Namespace OrpheusInterfaces.Core
-</h1>
+  <h1 id="OrpheusInterfaces_Core" data-uid="OrpheusInterfaces.Core" class="text-break">Namespace OrpheusInterfaces.Core</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
@@ -110,14 +105,14 @@ Interfaces
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></dt>
-      <dd><p>Abstract definition of DDL helper.
-DDL helper is used to execute DB engine specific DDL commands.</p>
+      <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
+      <dd><p>Orpheus database access component.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
-      <dd><p>Orpheus database access component.</p>
+      <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></dt>
+      <dd><p>Abstract definition of DDL helper.
+DDL helper is used to execute DB engine specific DDL commands.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -154,6 +149,12 @@ will be saved as well. All master-detail relationships and keys will be updated 
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable-1.html">IOrpheusTable&lt;T&gt;</a></dt>
+      <dd><p>Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
+Holds all the data of the connected table.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a></dt>
       <dd><p>Represents an Orpheus table key field.</p>
 </dd>
@@ -164,19 +165,13 @@ will be saved as well. All master-detail relationships and keys will be updated 
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable-1.html">IOrpheusTable&lt;T&gt;</a></dt>
-      <dd><p>Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
-Holds all the data of the connected table.</p>
+      <dt><a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a></dt>
+      <dd><p>Orpheus save event arguments. Occurs when data are actually being save to the database.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="OrpheusInterfaces.Core.ISQLServerDDLHelper.html">ISQLServerDDLHelper</a></dt>
       <dd><p>SQL Server specific DDL helper definition.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a></dt>
-      <dd><p>Orpheus save event arguments. Occurs when data are actually being save to the database.</p>
 </dd>
     </dl>
     <h3 id="enums">
@@ -202,7 +197,7 @@ Enums
 </article>
 
 
-        
+
       </div>
 
       <div class="affix">
@@ -212,7 +207,7 @@ Enums
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           Orpheus - Mobilotronic © 2017 - 2023
