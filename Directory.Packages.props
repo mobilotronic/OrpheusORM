@@ -4,29 +4,26 @@
 		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageVersion Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
-		<PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-		<PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
-		<PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-		<PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-		<PackageVersion Include="Microsoft.Extensions.Logging" Version="7.0.0" />
-		<PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="3.0.0" />
-		<PackageVersion Include="Microsoft.Extensions.Options" Version="7.0.1" />
-		<PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
-		<PackageVersion Include="Microsoft.Extensions.Primitives" Version="7.0.0" />
+		<PackageVersion Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+		<PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+		<PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+		<PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+		<PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+		<PackageVersion Include="Microsoft.Extensions.Logging" Version="8.0.1" />
+		<PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="8.0.1" />
+		<PackageVersion Include="Microsoft.Extensions.Options" Version="8.0.2" />
+		<PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+		<PackageVersion Include="Microsoft.Extensions.Primitives" Version="8.0.0" />
 		<PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageVersion Include="Microsoft.Data.SqlClient" Version="5.2.2" />
-		<PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
-		<PackageVersion Include="MySql.Data" Version="8.1.0" />
-		<PackageVersion Include="docfx.console" Version="2.59.4">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-		</PackageVersion>
-		<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-		<PackageVersion Include="MSTest.TestAdapter" Version="3.1.1" />
-		<PackageVersion Include="MSTest.TestFramework" Version="3.1.1" />
-		<PackageVersion Include="NLog" Version="5.2.4" />
-		<PackageVersion Include="NLog.Extensions.Logging" Version="5.3.4" />
-		<PackageVersion Include="BenchmarkDotNet" Version="0.13.8" />
+		<PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+		<PackageVersion Include="MySql.Data" Version="9.1.0" />
+		<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+		<PackageVersion Include="MSTest.TestAdapter" Version="3.6.3" />
+		<PackageVersion Include="MSTest.TestFramework" Version="3.6.3" />
+		<PackageVersion Include="NLog" Version="5.3.4" />
+		<PackageVersion Include="NLog.Extensions.Logging" Version="5.3.15" />
+		<PackageVersion Include="BenchmarkDotNet" Version="0.14.0" />
+		<PackageVersion Include="System.Text.Json" Version="8.0.5"/>
 	</ItemGroup>
 </Project>

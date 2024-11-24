@@ -13,8 +13,4 @@
     <None Remove="OrpheusDocumentation.csproj.vspscc" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="docfx.console"/>
-  </ItemGroup>
-
 </Project>
