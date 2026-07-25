@@ -468,7 +468,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public void CreateFieldsFromModel(Type modelType)
         {
-            this.modelHelper = new OrpheusModelHelper(modelType);
+            this.modelHelper = new OrpheusModelHelper(modelType, this.logger);
             //if the schema has no name, set it to the type name.
             if (this.SQLName == null)
                 this.SQLName = modelType.Name;

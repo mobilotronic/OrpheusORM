@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 ﻿using Microsoft.Extensions.Logging;
 using OrpheusAttributes;
 using OrpheusCore.Errors;
@@ -29,14 +30,36 @@ namespace OrpheusCore
     /// </summary>
     public class OrpheusModelHelper : IOrpheusModelHelper
     {
+        private static readonly System.Collections.Concurrent.ConcurrentDictionary<Type, OrpheusModelHelper> _cache = new();
+
         #region private fields
         private Type modelType;
         //caching in memory of properties and attributes, to improve performance.
         private PropertyInfo[] modelProperties;
         private Dictionary<PropertyInfo, object[]> propertyAttributes;
         private ILogger logger;
+
+        /// <summary>
+        /// Returns a cached <see cref="OrpheusModelHelper"/> for the given model type.
+        /// The cached instance has no logger; use the overload with ILogger if logging is needed.
+        /// </summary>
+        public static OrpheusModelHelper GetOrAdd(Type modelType)
+        {
+            return _cache.GetOrAdd(modelType, t => new OrpheusModelHelper(t, null));
+        }
         #endregion
 
+        /// <summary>
+        /// Returns a cached <see cref="OrpheusModelHelper"/> for the given model type,
+        /// with the provided logger attached.
+        /// </summary>
+        public static OrpheusModelHelper GetOrAdd(Type modelType, ILogger logger)
+        {
+            var helper = _cache.GetOrAdd(modelType, t => new OrpheusModelHelper(t, null));
+            if (logger != null)
+                helper.logger = logger;
+            return helper;
+        }
         #region private methods
         private PropertyInfo[] getModelProperties()
         {
@@ -511,9 +534,9 @@ namespace OrpheusCore
         /// OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.
         /// </summary>
         /// <param name="modelType">Type of the model.</param>
-        public OrpheusModelHelper(Type modelType)
+        public OrpheusModelHelper(Type modelType, ILogger logger = null)
         {
-            this.logger = ServiceManager.CreateLogger<OrpheusModelHelper>();
+            this.logger = logger;
             this.modelType = modelType;
             this.SQLName = this.modelType.Name;
             this.PrimaryKeys = new Dictionary<string, IPrimaryKey>();

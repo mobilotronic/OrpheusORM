@@ -40,8 +40,10 @@ OrpheusTests/OrpheusMySQL.config
 OrpheusTests/OrpheusSQLServer.config
 Nuget/2.0.0/*.*
 .vs/config/applicationhost.config
+OrpheusPostgreSQLDDLHelper/obj
 .vs
 *.dll
+OrpheusPostgreSQLDDLHelper/bin
 Nuget/2.0.0/lib/netstandard2.0/OrpheusAttributes.xml
 Nuget/2.0.0/lib/netstandard2.0/OrpheusCore.xml
 Nuget/2.0.0/lib/netstandard2.0/OrpheusInterfaces.xml
@@ -68,3 +70,9 @@ OrpheusTests/OrpheusSQLiteServerConfig.json
 /Nuget/2.0.0/lib/netcoreapp2.1
 /Nuget/2.0.0/lib/netcoreapp2.2
 .vs
+BenchmarkDotnet.Artifacts
+OrpheusTestApi/obj
+/ARCHITECTURE_REVIEW.md
+/COMPARATIVE_ANALYSIS.md
+/CONNECTION_POOLING_PLAN.md
+/MIGRATION.md

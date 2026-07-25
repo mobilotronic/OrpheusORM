@@ -1,4 +1,4 @@
-﻿using OrpheusInterfaces.Schema;
+using OrpheusInterfaces.Schema;
 using System;
 
 namespace OrpheusCore.SchemaBuilder
@@ -79,17 +79,17 @@ namespace OrpheusCore.SchemaBuilder
             var fieldName = this.Alias != null ? this.FullFieldName + " AS " + this.Alias : this.FullFieldName;
             if (this.Size != null)
                 result = String.Format("{0}{1}{2} {3} ({4}) {5}", 
-                    this.schemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                    this.schemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                     fieldName,
-                    this.schemaObject.DB.DDLHelper.DelimitedIndetifierEnd,
+                    this.schemaObject.DB.DDLHelper.DelimitedIdentifierEnd,
                     this.DataType,
                     this.Size,
                     this.Nullable ? "" :"NOT NULL");
             else
                 result = String.Format("{0}{1}{2} {3} {4}",
-                    this.schemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                    this.schemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                     fieldName,
-                    this.schemaObject.DB.DDLHelper.DelimitedIndetifierEnd,
+                    this.schemaObject.DB.DDLHelper.DelimitedIdentifierEnd,
                     this.DataType, 
                     this.Nullable ? "" : "NOT NULL");
             if(this.DefaultValue != null)

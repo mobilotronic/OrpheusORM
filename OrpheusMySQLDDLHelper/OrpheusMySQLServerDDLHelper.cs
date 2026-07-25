@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
@@ -471,20 +471,20 @@ namespace OrpheusMySQLDDLHelper
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
         /// <returns>Char</returns>
-        public char DelimitedIndetifierStart { get { return '`'; } }
+        public char DelimitedIdentifierStart { get { return '`'; } }
 
         /// <summary>
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
         /// <returns>Char</returns>
-        public char DelimitedIndetifierEnd { get { return '`'; } }
+        public char DelimitedIdentifierEnd { get { return '`'; } }
 
         /// <summary>
         /// Properly formats a field name, to be used in a SQL statement, in case the field name is a reserved word.
         /// </summary>
         /// <param name="fieldName"></param>
         /// <returns></returns>
-        public string SafeFormatField(string fieldName) { return String.Format("{0}{1}{2}", this.DelimitedIndetifierStart, fieldName, this.DelimitedIndetifierEnd); }
+        public string SafeFormatField(string fieldName) { return String.Format("{0}{1}{2}", this.DelimitedIdentifierStart, fieldName, this.DelimitedIdentifierEnd); }
 
         /// <summary>
         /// Returns the DB specific modify table command.
@@ -543,6 +543,8 @@ namespace OrpheusMySQLDDLHelper
                     throw new ArgumentNullException("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.");
 
                 var connBuilder = new MySqlConnectionStringBuilder();
+                 if (dataConnectionConfiguration.Port > 0)
+                    connBuilder.Port = (uint)dataConnectionConfiguration.Port;
                 connBuilder.Server = dataConnectionConfiguration.Server;
                 connBuilder.Database = dataConnectionConfiguration.DatabaseName;
 

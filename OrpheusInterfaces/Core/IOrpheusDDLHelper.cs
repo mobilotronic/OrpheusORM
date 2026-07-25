@@ -1,4 +1,4 @@
-﻿using OrpheusInterfaces.Schema;
+using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -33,6 +33,10 @@ namespace OrpheusInterfaces.Core
         /// MySQL.
         /// </summary>
         dbMySQL,
+        /// <summary>
+        /// PostgreSQL.
+        /// </summary>
+        dbPostgreSQL,
         /// <summary>
         /// SQLite
         /// </summary>
@@ -123,13 +127,13 @@ namespace OrpheusInterfaces.Core
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
         /// <returns>Char</returns>
-        char DelimitedIndetifierStart { get; }
+        char DelimitedIdentifierStart { get; }
 
         /// <summary>
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
         /// <returns>Char</returns>
-        char DelimitedIndetifierEnd { get; }
+        char DelimitedIdentifierEnd { get; }
 
         /// <summary>
         /// Returns true if the DBEngine supports natively the Guid type.

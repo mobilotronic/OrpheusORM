@@ -10,6 +10,11 @@ namespace OrpheusInterfaces.Configuration
         /// <summary>
         /// Optionally encrypt the connection.
         /// </summary>
+        /// <summary>
+        /// Do not encrypt the connection. Use for local dev / Docker without TLS.
+        /// </summary>
+        [JsonPropertyName("none")]
+        ecNone,
         [JsonPropertyName("optional")]
         ecOptional,
         /// <summary>
@@ -29,6 +34,11 @@ namespace OrpheusInterfaces.Configuration
     /// </summary>
     public interface IDatabaseConnectionConfiguration
     {
+        /// <value>
+        /// Port number. Optional — uses the DB engine default when 0.
+        /// </value>
+        int Port { get; set; }
+
         /// <value>
         /// Database configuration name.
         /// </value>

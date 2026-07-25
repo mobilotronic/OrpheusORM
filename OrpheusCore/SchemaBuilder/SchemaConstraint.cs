@@ -1,4 +1,4 @@
-﻿using OrpheusInterfaces.Schema;
+using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,13 +58,13 @@ namespace OrpheusCore.SchemaBuilder
                 case DDLAction.ddlCreate:
                     {
                         result = String.Format(" ADD CONSTRAINT {0}{1}{2} PRIMARY KEY ({3} {4})", 
-                            this.schemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                            this.schemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                             this.Name,
-                            this.schemaObject.DB.DDLHelper.DelimitedIndetifierEnd,
+                            this.schemaObject.DB.DDLHelper.DelimitedIdentifierEnd,
                             string.Join(",", this.Fields.Select(fld => string.Format("{0}{1}{2}",
-                            this.schemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                            this.schemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                             fld,
-                            this.schemaObject.DB.DDLHelper.DelimitedIndetifierEnd)).ToArray()), 
+                            this.schemaObject.DB.DDLHelper.DelimitedIdentifierEnd)).ToArray()), 
                             this.Sort == SchemaSort.ssAsc ? "ASC" : "DESC");
                         break;
                     }
@@ -145,16 +145,16 @@ namespace OrpheusCore.SchemaBuilder
                 case DDLAction.ddlCreate:
                     {
                         result = string.Format(" ADD CONSTRAINT {0}{1}{2} FOREIGN KEY ({3}{4}{5}) REFERENCES {6} ({7}{8}{9})",
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                            this.SchemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                             this.Name,
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierEnd,
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                            this.SchemaObject.DB.DDLHelper.DelimitedIdentifierEnd,
+                            this.SchemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                             string.Join(",", this.Fields.ToArray()),
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierEnd,
+                            this.SchemaObject.DB.DDLHelper.DelimitedIdentifierEnd,
                             this.ForeignKeySchemaObject,
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                            this.SchemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                             string.Join(",", this.ForeignKeyFields.ToArray()),
-                            this.SchemaObject.DB.DDLHelper.DelimitedIndetifierEnd
+                            this.SchemaObject.DB.DDLHelper.DelimitedIdentifierEnd
                             );
                         if (this.OnDeleteCascade)
                             result = result + " ON DELETE CASCADE";
@@ -207,15 +207,15 @@ namespace OrpheusCore.SchemaBuilder
                         //ADD CONSTRAINT {0}{1}{2} PRIMARY KEY ({3} {4})
                         var sBuilder = new StringBuilder();
                         sBuilder.Append(" ADD CONSTRAINT ");
-                        sBuilder.Append(String.Format("{0}{1}{2}",this.SchemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                        sBuilder.Append(String.Format("{0}{1}{2}",this.SchemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                                         this.Name,
-                                        this.SchemaObject.DB.DDLHelper.DelimitedIndetifierEnd));
+                                        this.SchemaObject.DB.DDLHelper.DelimitedIdentifierEnd));
 
                         sBuilder.Append(this.ConstraintSQLCommand);
                         sBuilder.Append(String.Format(" ({0}) ",string.Join(",", this.Fields.Select(fld => string.Format("{0}{1}{2}",
-                                                    this.SchemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                                                    this.SchemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                                                     fld,
-                                                    this.SchemaObject.DB.DDLHelper.DelimitedIndetifierEnd)))));
+                                                    this.SchemaObject.DB.DDLHelper.DelimitedIdentifierEnd)))));
                         result = sBuilder.ToString();
                         break;
                     }

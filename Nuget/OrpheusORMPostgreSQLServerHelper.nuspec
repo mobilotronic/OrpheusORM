@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>OrpheusORMPostgreSQLServerHelper</id>
+        <version>2.0.0</version>
+        <title>OrpheusORM PostgreSQL DDL Helper</title>
+        <authors>Mobilotronic</authors>
+        <owners>Mobilotronic</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>PostgreSQL DDL helper for OrpheusORM. Provides PostgreSQL-specific DDL generation, schema inspection, and type mapping using Npgsql.</description>
+        <copyright>https://github.com/mobilotronic/OrpheusORM</copyright>
+        <language>en-US</language>
+        <license type="expression">MPL-2.0</license>
+        <iconUrl>https://github.com/mobilotronic/OrpheusORM/raw/master/OrpheusIcon.png</iconUrl>
+        <projectUrl>https://github.com/mobilotronic/OrpheusORM</projectUrl>
+        <dependencies>
+            <dependency id="OrpheusORM" version="2.0.0" />
+            <dependency id="Npgsql" version="9.0.3" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="2.0.0\lib\net9.0\OrpheusPostgreSQLDDLHelper.dll" target="lib\net9.0\OrpheusPostgreSQLDDLHelper.dll" />
+        <file src="2.0.0\lib\net9.0\OrpheusPostgreSQLDDLHelper.xml" target="lib\net9.0\OrpheusPostgreSQLDDLHelper.xml" />
+    </files>
+</package>

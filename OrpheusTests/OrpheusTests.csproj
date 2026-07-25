@@ -18,6 +18,7 @@
     <ProjectReference Include="..\OrpheusCore\OrpheusCore.csproj" />
     <ProjectReference Include="..\OrpheusInterfaces\OrpheusInterfaces.csproj" />
     <ProjectReference Include="..\OrpheusMySQLDDLHelper\OrpheusMySQLDDLHelper.csproj" />
+    <ProjectReference Include="..\OrpheusPostgreSQLDDLHelper\OrpheusPostgreSQLDDLHelper.csproj" />
     <ProjectReference Include="..\OrpheusSQLServerDDLHelper\OrpheusSQLServerDDLHelper.csproj" />
     <ProjectReference Include="..\OrpheusTestModels\OrpheusTestModels.csproj" />
   </ItemGroup>

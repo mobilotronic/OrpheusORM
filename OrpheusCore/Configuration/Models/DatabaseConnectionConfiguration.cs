@@ -23,6 +23,12 @@ namespace OrpheusCore.Configuration.Models
         public string Server { get; set; }
 
         /// <value>
+        /// Port number. 0 means use the database engine default.
+        /// </value>
+        public int Port { get; set; }
+
+
+        /// <value>
         /// User name.
         /// </value>
         public string UserName { get; set; }
@@ -77,6 +83,7 @@ namespace OrpheusCore.Configuration.Models
                 DatabaseName = this.DatabaseName,
                 Server = this.Server,
                 UserName = this.UserName,
+                Port = this.Port,
                 Password = this.Password,
                 UseIntegratedSecurity = this.UseIntegratedSecurity,
                 UseIntegratedSecurityForServiceConnection = this.UseIntegratedSecurityForServiceConnection,

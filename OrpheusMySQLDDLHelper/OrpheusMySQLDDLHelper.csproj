@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp2.2\OrpheusMySQLDDLHelper.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net9.0\OrpheusMySQLDDLHelper.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.2\OrpheusMySQLDDLHelper.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net9.0\OrpheusMySQLDDLHelper.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

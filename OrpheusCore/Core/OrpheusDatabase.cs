@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Core;
@@ -24,7 +25,10 @@ namespace OrpheusCore
         private List<Type> nullableTypes = new List<Type>();
         private IOrpheusDDLHelper ddlHelper;
         private IDbCommand rowCountCommand;
+        private IOrpheusConnectionFactory connectionFactory;
         private IDatabaseConnectionConfiguration databaseConnectionConfiguration;
+        private IServiceProvider serviceProvider;
+        private ILoggerFactory loggerFactory;
         #endregion
 
         #region private methods
@@ -209,14 +213,19 @@ namespace OrpheusCore
         /// </summary>
         /// <param name="connection">The connection.</param>
         /// <param name="ddlHelper">The DDL helper.</param>
+        /// <param name="serviceProvider">Optional service provider for resolving dependencies.</param>
+        /// <param name="loggerFactory">Optional logger factory for creating typed loggers.</param>
         /// <param name="logger">The logger</param>
-        public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILogger<IOrpheusDatabase> logger)
+        public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILogger<IOrpheusDatabase> logger,
+            IServiceProvider serviceProvider = null, ILoggerFactory loggerFactory = null)
         {
             this.dbConnection = connection;
             this.ddlHelper = ddlHelper;
             this.ddlHelper.DB = this;
             this.modules = new List<IOrpheusModule>();
             this.logger = logger;
+            this.serviceProvider = serviceProvider;
+            this.loggerFactory = loggerFactory;
             this.initializeTypeMap();
         }
         #endregion
@@ -232,7 +241,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusModule CreateModule(IOrpheusModuleDefinition definition = null)
         {
-            return ServiceManager.Resolve<IOrpheusModule>(new object[] { this, definition, ServiceManager.CreateLogger<IOrpheusModule>() }); // new OrpheusModule(this, definition);
+            return ActivatorUtilities.CreateInstance<OrpheusModule>(this.serviceProvider, this, definition, this.loggerFactory.CreateLogger<IOrpheusModule>());
         }
 
         /// <summary>
@@ -243,7 +252,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusTableOptions CreateTableOptions()
         {
-            return ServiceManager.Resolve<IOrpheusTableOptions>();
+            return this.serviceProvider.GetRequiredService<IOrpheusTableOptions>();
         }
 
         /// <summary>
@@ -254,7 +263,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusTableKeyField CreateTableKeyField()
         {
-            return ServiceManager.Resolve<IOrpheusTableKeyField>();
+            return this.serviceProvider.GetRequiredService<IOrpheusTableKeyField>();
         }
 
         /// <summary>
@@ -265,7 +274,7 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusModuleDefinition CreateModuleDefinition()
         {
-            var result = ServiceManager.Resolve<IOrpheusModuleDefinition>();
+            var result = this.serviceProvider.GetRequiredService<IOrpheusModuleDefinition>();
             result.Database = this;
             return result;
         }
@@ -284,7 +293,7 @@ namespace OrpheusCore
             if (options != null)
             {
                 options.Database = this;
-                return new OrpheusTable<T>(options, ServiceManager.CreateLogger<IOrpheusTable<T>>());
+                return new OrpheusTable<T>(options, this.loggerFactory.CreateLogger<IOrpheusTable<T>>());
             }
             return null;
         }
@@ -335,7 +344,7 @@ namespace OrpheusCore
             if (id == Guid.Empty)
                 id = Guid.NewGuid();
             //return new SchemaBuilder.Schema(this,description, version, id, name);
-            return ServiceManager.Resolve<ISchema>(new object[] { this, description, version, id, name });
+            return ActivatorUtilities.CreateInstance<SchemaBuilder.Schema>(this.serviceProvider, this, description, version, id, name);
         }
 
         /// <summary>
@@ -346,7 +355,10 @@ namespace OrpheusCore
         /// </returns>
         public IDbCommand CreateCommand()
         {
-            return this.dbConnection.CreateCommand();
+            // Use a pooled connection from the factory when available; fall back
+            // to the held connection for backward compatibility.
+            var conn = this.connectionFactory?.CreateConnection() ?? this.dbConnection;
+            return conn.CreateCommand();
         }
 
         /// <summary>
@@ -452,6 +464,34 @@ namespace OrpheusCore
         public void Disconnect()
         {
             this.dbConnection.Close();
+        }
+        /// <summary>
+        /// Disposes the database connection and associated resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes managed resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                LastActiveTransaction?.Dispose();
+                LastActiveTransaction = null;
+                rowCountCommand?.Dispose();
+                rowCountCommand = null;
+                if (dbConnection != null)
+                {
+                    dbConnection.Close();
+                    dbConnection.Dispose();
+                    dbConnection = null;
+                }
+            }
         }
 
         /// <summary>
@@ -611,6 +651,49 @@ namespace OrpheusCore
         public long GetTableCount<T>()
         {
             return this.GetTableCount(typeof(T).Name);
+        }
+        #endregion
+
+        #region Async methods
+        /// <summary>
+        /// Asynchronously connects to the database engine.
+        /// </summary>
+        public async System.Threading.Tasks.Task ConnectAsync(string connectionString = null, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await System.Threading.Tasks.Task.Run(() => Connect(connectionString), cancellationToken);
+        }
+
+        /// <summary>
+        /// Asynchronously disconnects from the database engine.
+        /// </summary>
+        public System.Threading.Tasks.Task DisconnectAsync()
+        {
+            Disconnect();
+            return System.Threading.Tasks.Task.CompletedTask;
+        }
+
+        /// <summary>
+        /// Asynchronously executes a SQL statement and returns typed models.
+        /// </summary>
+        public async System.Threading.Tasks.Task<List<T>> SQLAsync<T>(string SQL, string tableName = null, System.Threading.CancellationToken cancellationToken = default)
+        {
+            return await System.Threading.Tasks.Task.Run(() => SQL<T>(SQL, tableName), cancellationToken);
+        }
+
+        /// <summary>
+        /// Asynchronously executes a prepared DbCommand and returns typed models.
+        /// </summary>
+        public async System.Threading.Tasks.Task<List<T>> SQLAsync<T>(IDbCommand dbCommand, string tableName = null, System.Threading.CancellationToken cancellationToken = default)
+        {
+            return await System.Threading.Tasks.Task.Run(() => SQL<T>(dbCommand, tableName), cancellationToken);
+        }
+
+        /// <summary>
+        /// Asynchronously executes a DDL command.
+        /// </summary>
+        public async System.Threading.Tasks.Task<bool> ExecuteDDLAsync(string DDLCommand, System.Threading.CancellationToken cancellationToken = default)
+        {
+            return await System.Threading.Tasks.Task.Run(() => ExecuteDDL(DDLCommand), cancellationToken);
         }
         #endregion
     }

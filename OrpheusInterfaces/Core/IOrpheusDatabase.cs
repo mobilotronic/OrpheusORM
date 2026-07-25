@@ -1,5 +1,7 @@
 ﻿using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Schema;
+using System.Threading;
+using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,6 +12,7 @@ namespace OrpheusInterfaces.Core
     /// Orpheus database access component.
     /// </summary>
     public interface IOrpheusDatabase
+    : IDisposable
     {
         /// <summary>
         /// Connects to the database engine defined in the connection string.
@@ -230,5 +233,32 @@ namespace OrpheusInterfaces.Core
         /// Database connection configuration.
         /// </value>
         IDatabaseConnectionConfiguration DatabaseConnectionConfiguration { get; set; }
+
+        #region Async methods
+        /// <summary>
+        /// Asynchronously connects to the database engine.
+        /// </summary>
+        Task ConnectAsync(string connectionString = null, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously disconnects from the database engine.
+        /// </summary>
+        Task DisconnectAsync();
+
+        /// <summary>
+        /// Asynchronously executes a SQL statement and returns the result as typed models.
+        /// </summary>
+        Task<List<T>> SQLAsync<T>(string SQL, string tableName = null, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously executes a prepared DbCommand and returns the result as typed models.
+        /// </summary>
+        Task<List<T>> SQLAsync<T>(IDbCommand dbCommand, string tableName = null, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously executes a DDL command.
+        /// </summary>
+        Task<bool> ExecuteDDLAsync(string DDLCommand, CancellationToken cancellationToken = default);
+        #endregion
     }
 }

@@ -413,13 +413,13 @@ namespace OrpheusSQLDDLHelper
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
         /// <returns>Char</returns>
-        public char DelimitedIndetifierStart { get { return '['; } }
+        public char DelimitedIdentifierStart { get { return '['; } }
 
         /// <summary>
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
         /// <returns>Char</returns>
-        public char DelimitedIndetifierEnd { get { return ']'; } }
+        public char DelimitedIdentifierEnd { get { return ']'; } }
 
         /// <summary>
         /// Returns the underlying database engine type.
@@ -459,6 +459,7 @@ namespace OrpheusSQLDDLHelper
                 {
                     DataSource = dataConnectionConfiguration.Server,
                     InitialCatalog = dataConnectionConfiguration.DatabaseName,
+                    TrustServerCertificate = dataConnectionConfiguration.TrustServerCertificate,
                     IntegratedSecurity = dataConnectionConfiguration.UseIntegratedSecurity
                 };
                 if (dataConnectionConfiguration.UserName != null)
@@ -470,7 +471,7 @@ namespace OrpheusSQLDDLHelper
                 {
                     case OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional:
                         {
-                            connBuilder.Encrypt = SqlConnectionEncryptOption.Optional; break;
+                            connBuilder["Encrypt"] = "false"; break;
                         }
                     case OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory:
                         {
@@ -687,7 +688,7 @@ namespace OrpheusSQLDDLHelper
         /// </summary>
         /// <param name="fieldName"></param>
         /// <returns></returns>
-        public string SafeFormatField(string fieldName) { return String.Format("{0}{1}{2}", this.DelimitedIndetifierStart, fieldName, this.DelimitedIndetifierEnd); }
+        public string SafeFormatField(string fieldName) { return String.Format("{0}{1}{2}", this.DelimitedIdentifierStart, fieldName, this.DelimitedIdentifierEnd); }
 
         /// <summary>
         /// Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.

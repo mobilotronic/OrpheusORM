@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Npgsql;
+using OrpheusPostgreSQLDDLHelper;
 using MySql.Data.MySqlClient;
 using NLog;
 using NLog.Extensions.Logging;
@@ -34,7 +36,8 @@ namespace OrpheusTests
     public enum DbEngine
     {
         dbSQLServer,
-        dbMySQL
+        dbMySQL,
+        dbPostgreSQL
     }
 
     public class BaseTestClass
@@ -111,6 +114,8 @@ namespace OrpheusTests
             //we only need to initialize once.
             if (this.configuration == null)
             {
+                // Load config before try so it always succeeds or throws clearly.
+                this.configuration = this.createConfiguration($"{this.assemblyDirectory}/{ConfigurationFileName}");
                 LogManager.Setup().LoadConfigurationFromFile($"{this.assemblyDirectory}/nlog.config");
                 var logger = LogManager.GetCurrentClassLogger();
                 try
@@ -119,25 +124,22 @@ namespace OrpheusTests
                         configurationFileName = $"{this.assemblyDirectory}/{ConfigurationFileName}";
                     //Console.WriteLine($"Configuration file is: {configurationFileName}");
                     IServiceCollection serviceCollection = new ServiceCollection();
-                    this.configuration = this.createConfiguration($"{this.assemblyDirectory}/{ConfigurationFileName}");
                     serviceCollection.AddTransient<IOrpheusDatabase, OrpheusDatabase>();
                     serviceCollection.Configure<OrpheusConfiguration>(this.configuration.GetSection("OrpheusConfiguration"));
                     switch (this.DatabaseEngine)
                     {
                         case DbEngine.dbSQLServer:
-                            {
-                                serviceCollection.AddTransient<IDbConnection, SqlConnection>();
-                                serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusSQLServerDDLHelper>();
-                                //Console.WriteLine($"SQL services configured");
-                                break;
-                            }
+                            serviceCollection.AddTransient<IDbConnection, SqlConnection>();
+                            serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusSQLServerDDLHelper>();
+                            break;
                         case DbEngine.dbMySQL:
-                            {
-                                serviceCollection.AddTransient<IDbConnection, MySqlConnection>();
-                                serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusMySQLServerDDLHelper>();
-                                //Console.WriteLine($"MySQL services configured");
-                                break;
-                            }
+                            serviceCollection.AddTransient<IDbConnection, MySqlConnection>();
+                            serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusMySQLServerDDLHelper>();
+                            break;
+                        case DbEngine.dbPostgreSQL:
+                            serviceCollection.AddTransient<IDbConnection, Npgsql.NpgsqlConnection>();
+                            serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper>();
+                            break;
                     }
                     serviceCollection.AddLogging((builder) =>
                     {
@@ -155,7 +157,8 @@ namespace OrpheusTests
                 }
                 catch (Exception e)
                 {
-                    logger.Log(NLog.LogLevel.Error, e);
+                    Console.Error.WriteLine($"Configuration initialization failed: {e}");
+                    throw;
                 }
             }
         }
@@ -171,7 +174,7 @@ namespace OrpheusTests
                 if (this.db == null)
                 {
                     this.InitializeConfiguration();
-                    string databaseConnectionName = this.DatabaseEngine == DbEngine.dbSQLServer ? "SQLServer" : "MySQL";
+                    string databaseConnectionName = this.DatabaseEngine switch { DbEngine.dbSQLServer => "SQLServer", DbEngine.dbMySQL => "MySQL", DbEngine.dbPostgreSQL => "PostgreSQL", _ => "SQLServer" };
                     var config = new OrpheusConfiguration();
                     this.configuration.GetSection("OrpheusConfiguration").Bind(config);
                     this.db = ServiceManager.Resolve<IOrpheusDatabase>();
@@ -189,7 +192,14 @@ namespace OrpheusTests
         public void ReCreateSchema()
         {
             var schema = this.CreateSchema();
-            schema.Drop();
+            try
+            {
+                schema.Drop();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Warning: schema drop failed (may not exist yet): {ex.Message}");
+            }
             schema.Execute();
         }
         #endregion

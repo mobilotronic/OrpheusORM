@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netcoreapp2.2\OrpheusCore.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net9.0\OrpheusCore.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.2\OrpheusCore.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net9.0\OrpheusCore.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,7 +19,7 @@
     <PackageReference Include="Microsoft.Extensions.Options"/>
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions"/>
     <PackageReference Include="Microsoft.Extensions.Primitives"/>
-    <PackageReference Include="Microsoft.Data.SqlClient"/>
+
 	<PackageReference Include="Newtonsoft.Json" />
 	<PackageReference Include="System.Text.Json" />
   </ItemGroup>
