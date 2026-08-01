@@ -1,0 +1,42 @@
+{
+  "OrpheusConfiguration": {
+    "DatabaseConnections": [
+      {
+        "ConfigurationName": "SQLServer",
+        "Server": "localhost",
+        "DatabaseName": "orpheusTestDB",
+        "UseIntegratedSecurity": false,
+        "UseIntegratedSecurityForServiceConnection": false,
+        "UserName": "sa",
+        "Password": "1StrongPwd!!",
+        "ServiceUserName": "sa",
+        "ServicePassword": "1StrongPwd!!",
+        "TrustServerCertificate": true
+      },
+      {
+        "ConfigurationName": "MySQL",
+        "Server": "127.0.0.1",
+        "Port": 3306,
+        "DatabaseName": "orpheusTestDB",
+        "UserName": "root",
+        "Password": "root",
+        "ServiceUserName": "root",
+        "ServicePassword": "root",
+        "EncyrptConnection": "ecNone",
+        "TrustServerCertificate": true
+      },
+      {
+        "ConfigurationName": "PostgreSQL",
+        "Server": "127.0.0.1",
+        "Port": 5432,
+        "DatabaseName": "orpheusTestDB",
+        "UserName": "postgres",
+        "Password": "postgres",
+        "ServiceUserName": "postgres",
+        "ServicePassword": "postgres",
+        "EncyrptConnection": "ecNone",
+        "TrustServerCertificate": true
+      }
+    ]
+  }
+}

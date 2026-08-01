@@ -70,6 +70,12 @@ namespace OrpheusTests
                 var configurationBuilder = new ConfigurationBuilder();
                 configurationBuilder.SetBasePath(Path.GetDirectoryName(configurationFile));
                 configurationBuilder.AddJsonFile(configurationFile, optional: false, reloadOnChange: true);
+                //CI runners have no Windows/Kerberos environment, so integrated security can't work there;
+                //this overlay swaps SQL Server to SQL authentication only when running under GitHub Actions.
+                if (string.Equals(Environment.GetEnvironmentVariable("CI"), "true", StringComparison.OrdinalIgnoreCase))
+                {
+                    configurationBuilder.AddJsonFile("OrpheusConfig.CI.json", optional: true, reloadOnChange: true);
+                }
                 this.configuration = configurationBuilder.Build();
             }
             return this.configuration;

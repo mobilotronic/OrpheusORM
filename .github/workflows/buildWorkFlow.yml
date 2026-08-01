@@ -24,9 +24,11 @@ jobs:
     - name: Start SQL Server
       run: docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=1StrongPwd!!" -p 1433:1433 -d --name sqlserver mcr.microsoft.com/mssql/server:2022-latest
     - name: Start MySQL
-      run: docker run -e "MYSQL_ROOT_PASSWORD=secret" -e "MYSQL_DATABASE=orpheusTestDB" -p 3307:3306 -d --name mysql mysql:8
+      run: sudo systemctl start mysql.service
     - name: Start PostgreSQL
-      run: docker run -e "POSTGRES_PASSWORD=dev_password" -e "POSTGRES_DB=orpheusTestDB" -p 5433:5432 -d --name postgres postgres:16
+      run: |
+        sudo systemctl start postgresql.service
+        sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 
     - name: Wait for SQL Server
       run: |
@@ -37,13 +39,13 @@ jobs:
     - name: Wait for MySQL
       run: |
         for i in $(seq 1 30); do
-          docker exec mysql mysqladmin ping -uroot -psecret --silent > /dev/null 2>&1 && break
+          mysqladmin ping -h127.0.0.1 -uroot -proot --silent > /dev/null 2>&1 && break
           sleep 3
         done
     - name: Wait for PostgreSQL
       run: |
         for i in $(seq 1 20); do
-          docker exec postgres pg_isready -U postgres > /dev/null 2>&1 && break
+          pg_isready -h 127.0.0.1 -U postgres > /dev/null 2>&1 && break
           sleep 3
         done
 
