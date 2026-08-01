@@ -8,6 +8,13 @@
   </PropertyGroup>
 
 
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>OrpheusORMAttributes</PackageId>
+    <Title>OrpheusORM Attributes</Title>
+    <Description>OrpheusORM schema creation/code first attributes.</Description>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\net9.0\OrpheusAttributes.xml</DocumentationFile>
   </PropertyGroup>

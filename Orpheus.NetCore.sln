@@ -29,6 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{B2F48277
 		Nuget\OrpheusORMAttributes.nuspec = Nuget\OrpheusORMAttributes.nuspec
 		Nuget\OrpheusORMInterfaces.nuspec = Nuget\OrpheusORMInterfaces.nuspec
 		Nuget\OrpheusORMMySQLServerHelper.nuspec = Nuget\OrpheusORMMySQLServerHelper.nuspec
+		Nuget\OrpheusORMPostgreSQLServerHelper.nuspec = Nuget\OrpheusORMPostgreSQLServerHelper.nuspec
 		Nuget\OrpheusORMSQLServerHelper.nuspec = Nuget\OrpheusORMSQLServerHelper.nuspec
 		Nuget\PublishPackage.cmd = Nuget\PublishPackage.cmd
 	EndProjectSection

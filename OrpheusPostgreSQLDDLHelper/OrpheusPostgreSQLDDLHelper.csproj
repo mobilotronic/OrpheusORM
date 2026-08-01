@@ -1,6 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>OrpheusORMPostgreSQLServerHelper</PackageId>
+    <Title>OrpheusORM PostgreSQL DDL Helper</Title>
+    <Description>PostgreSQL DDL helper for OrpheusORM. Provides PostgreSQL-specific DDL generation, schema inspection, and type mapping using Npgsql.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <DocumentationFile>bin\Release\net9.0\OrpheusPostgreSQLDDLHelper.xml</DocumentationFile>
   </PropertyGroup>
 

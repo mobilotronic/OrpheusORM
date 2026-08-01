@@ -6,4 +6,18 @@
 	   <FileVersion>2.0.0</FileVersion>
 	   <Product>Orpheus ORM</Product>
    </PropertyGroup>
+
+   <PropertyGroup>
+	   <IsPackable>false</IsPackable>
+	   <Authors>Mobilotronic</Authors>
+	   <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+	   <PackageProjectUrl>https://github.com/mobilotronic/OrpheusORM</PackageProjectUrl>
+	   <RepositoryUrl>https://github.com/mobilotronic/OrpheusORM</RepositoryUrl>
+	   <RepositoryType>git</RepositoryType>
+	   <PackageIcon>OrpheusIcon.png</PackageIcon>
+   </PropertyGroup>
+
+   <ItemGroup>
+	   <None Include="$(MSBuildThisFileDirectory)Nuget\OrpheusIcon.png" Pack="true" PackagePath="\" Visible="false" Condition="Exists('$(MSBuildThisFileDirectory)Nuget\OrpheusIcon.png')" />
+   </ItemGroup>
 </Project>

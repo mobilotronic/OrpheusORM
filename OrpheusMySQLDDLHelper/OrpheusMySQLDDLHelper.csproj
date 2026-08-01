@@ -1,5 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>OrpheusORMMySQLServerDDLHelper</PackageId>
+    <Title>OrpheusORM MySQL Server DDL Helper</Title>
+    <Description>OrpheusORM MySQL server DDL helper is a helper class, specifically for MySQL database engines.</Description>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\net9.0\OrpheusMySQLDDLHelper.xml</DocumentationFile>
   </PropertyGroup>
