@@ -1,0 +1,509 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  commentId: T:OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  id: IOrpheusConnectionFactory
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.IOrpheusConnectionFactory.ConnectionConfiguration
+  - OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateAdministrativeConnection
+  - OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection
+  - OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnectionAsync(System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateSecondaryConnection
+  langs:
+  - csharp
+  - vb
+  name: IOrpheusConnectionFactory
+  nameWithType: IOrpheusConnectionFactory
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IOrpheusConnectionFactory
+    path: ../OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+    startLine: 12
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: >-
+    Factory that creates database connections from the ADO.NET connection pool.
+
+    Implementations are specific to each database engine (SQL Server, MySQL, PostgreSQL).
+  example: []
+  syntax:
+    content: public interface IOrpheusConnectionFactory
+    content.vb: Public Interface IOrpheusConnectionFactory
+  derivedClasses:
+  - OrpheusMySQLDDLHelper.MySqlConnectionFactory
+  - OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory
+  - OrpheusSQLDDLHelper.SqlConnectionFactory
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.ConnectionConfiguration
+  commentId: P:OrpheusInterfaces.Core.IOrpheusConnectionFactory.ConnectionConfiguration
+  id: ConnectionConfiguration
+  parent: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  langs:
+  - csharp
+  - vb
+  name: ConnectionConfiguration
+  nameWithType: IOrpheusConnectionFactory.ConnectionConfiguration
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.ConnectionConfiguration
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ConnectionConfiguration
+    path: ../OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+    startLine: 18
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: >-
+    The database connection configuration used to build connection strings.
+
+    Must be set before calling CreateConnection()/CreateConnectionAsync().
+  example: []
+  syntax:
+    content: IDatabaseConnectionConfiguration ConnectionConfiguration { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+    content.vb: Property ConnectionConfiguration As IDatabaseConnectionConfiguration
+  overload: OrpheusInterfaces.Core.IOrpheusConnectionFactory.ConnectionConfiguration*
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection
+  commentId: M:OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection
+  id: CreateConnection
+  parent: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateConnection()
+  nameWithType: IOrpheusConnectionFactory.CreateConnection()
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateConnection
+    path: ../OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+    startLine: 24
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: >-
+    Creates and opens a new <xref href="System.Data.IDbConnection" data-throw-if-not-resolved="false"></xref> from the connection pool.
+
+    Callers must dispose the returned connection when done.
+  example: []
+  syntax:
+    content: IDbConnection CreateConnection()
+    return:
+      type: System.Data.IDbConnection
+    content.vb: Function CreateConnection() As IDbConnection
+  overload: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection*
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnectionAsync(System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnectionAsync(System.Threading.CancellationToken)
+  id: CreateConnectionAsync(System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateConnectionAsync(CancellationToken)
+  nameWithType: IOrpheusConnectionFactory.CreateConnectionAsync(CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnectionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateConnectionAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+    startLine: 30
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: >-
+    Asynchronously creates and opens a new <xref href="System.Data.IDbConnection" data-throw-if-not-resolved="false"></xref> from the connection pool.
+
+    Callers must dispose the returned connection when done.
+  example: []
+  syntax:
+    content: Task<IDbConnection> CreateConnectionAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Data.IDbConnection}
+    content.vb: Function CreateConnectionAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IDbConnection)
+  overload: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnectionAsync*
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateSecondaryConnection
+  commentId: M:OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateSecondaryConnection
+  id: CreateSecondaryConnection
+  parent: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateSecondaryConnection()
+  nameWithType: IOrpheusConnectionFactory.CreateSecondaryConnection()
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateSecondaryConnection()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateSecondaryConnection
+    path: ../OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+    startLine: 40
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: >-
+    Creates (but does not open) a new pooled connection to the same target database as
+
+    <xref href="OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection" data-throw-if-not-resolved="false"></xref>, independent of the main database's connection/transaction
+
+    state — e.g. for schema introspection while the main connection may be mid-transaction.
+
+    Unlike CreateConnection(), the connection is left closed: callers that hold onto this
+
+    connection across multiple operations manage its open/close state themselves.
+
+    Callers must dispose the returned connection when done.
+  example: []
+  syntax:
+    content: IDbConnection CreateSecondaryConnection()
+    return:
+      type: System.Data.IDbConnection
+    content.vb: Function CreateSecondaryConnection() As IDbConnection
+  overload: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateSecondaryConnection*
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateAdministrativeConnection
+  commentId: M:OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateAdministrativeConnection
+  id: CreateAdministrativeConnection
+  parent: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateAdministrativeConnection()
+  nameWithType: IOrpheusConnectionFactory.CreateAdministrativeConnection()
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateAdministrativeConnection()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateAdministrativeConnection
+    path: ../OrpheusInterfaces/Core/IOrpheusConnectionFactory.cs
+    startLine: 52
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: >-
+    Creates (but does not open) a new pooled connection to the engine's administrative/system
+
+    database (SQL Server: master, MySQL: sys, PostgreSQL: postgres), using ServiceUserName/
+
+    ServicePassword/UseIntegratedSecurityForServiceConnection when configured, falling back to
+
+    the main credentials otherwise. Used for database-level operations — existence checks,
+
+    CREATE DATABASE — that can't run against the target database itself. Unlike
+
+    CreateConnection(), the connection is left closed: callers that hold onto this connection
+
+    across multiple operations manage its open/close state themselves.
+
+    Callers must dispose the returned connection when done.
+  example: []
+  syntax:
+    content: IDbConnection CreateAdministrativeConnection()
+    return:
+      type: System.Data.IDbConnection
+    content.vb: Function CreateAdministrativeConnection() As IDbConnection
+  overload: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateAdministrativeConnection*
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.ConnectionConfiguration*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusConnectionFactory.ConnectionConfiguration
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html#OrpheusInterfaces_Core_IOrpheusConnectionFactory_ConnectionConfiguration
+  name: ConnectionConfiguration
+  nameWithType: IOrpheusConnectionFactory.ConnectionConfiguration
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.ConnectionConfiguration
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  commentId: T:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  parent: OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html
+  name: IDatabaseConnectionConfiguration
+  nameWithType: IDatabaseConnectionConfiguration
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+- uid: OrpheusInterfaces.Configuration
+  commentId: N:OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Configuration
+  nameWithType: OrpheusInterfaces.Configuration
+  fullName: OrpheusInterfaces.Configuration
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+- uid: System.Data.IDbConnection
+  commentId: T:System.Data.IDbConnection
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.idbconnection
+  name: IDbConnection
+  nameWithType: IDbConnection
+  fullName: System.Data.IDbConnection
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html#OrpheusInterfaces_Core_IOrpheusConnectionFactory_CreateConnection
+  name: CreateConnection
+  nameWithType: IOrpheusConnectionFactory.CreateConnection
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnectionAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnectionAsync
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html#OrpheusInterfaces_Core_IOrpheusConnectionFactory_CreateConnectionAsync_System_Threading_CancellationToken_
+  name: CreateConnectionAsync
+  nameWithType: IOrpheusConnectionFactory.CreateConnectionAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnectionAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Data.IDbConnection}
+  commentId: T:System.Threading.Tasks.Task{System.Data.IDbConnection}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IDbConnection>
+  nameWithType: Task<IDbConnection>
+  fullName: System.Threading.Tasks.Task<System.Data.IDbConnection>
+  nameWithType.vb: Task(Of IDbConnection)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Data.IDbConnection)
+  name.vb: Task(Of IDbConnection)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Data.IDbConnection
+    name: IDbConnection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbconnection
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Data.IDbConnection
+    name: IDbConnection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbconnection
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection
+  commentId: M:OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection
+  parent: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html#OrpheusInterfaces_Core_IOrpheusConnectionFactory_CreateConnection
+  name: CreateConnection()
+  nameWithType: IOrpheusConnectionFactory.CreateConnection()
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection
+    name: CreateConnection
+    href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html#OrpheusInterfaces_Core_IOrpheusConnectionFactory_CreateConnection
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateConnection
+    name: CreateConnection
+    href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html#OrpheusInterfaces_Core_IOrpheusConnectionFactory_CreateConnection
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateSecondaryConnection*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateSecondaryConnection
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html#OrpheusInterfaces_Core_IOrpheusConnectionFactory_CreateSecondaryConnection
+  name: CreateSecondaryConnection
+  nameWithType: IOrpheusConnectionFactory.CreateSecondaryConnection
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateSecondaryConnection
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  commentId: T:OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html
+  name: IOrpheusConnectionFactory
+  nameWithType: IOrpheusConnectionFactory
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateAdministrativeConnection*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateAdministrativeConnection
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html#OrpheusInterfaces_Core_IOrpheusConnectionFactory_CreateAdministrativeConnection
+  name: CreateAdministrativeConnection
+  nameWithType: IOrpheusConnectionFactory.CreateAdministrativeConnection
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory.CreateAdministrativeConnection

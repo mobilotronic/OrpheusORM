@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute
+  commentId: T:OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute
+  id: IOrpheusBaseAttribute
+  parent: OrpheusInterfaces.Interfaces.Attributes
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IOrpheusBaseAttribute
+  nameWithType: IOrpheusBaseAttribute
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IOrpheusBaseAttribute.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IOrpheusBaseAttribute
+    path: ../OrpheusInterfaces/Attributes/IOrpheusBaseAttribute.cs
+    startLine: 5
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  summary: Orpheus base attribute.
+  example: []
+  syntax:
+    content: public interface IOrpheusBaseAttribute
+    content.vb: Public Interface IOrpheusBaseAttribute
+  derivedClasses:
+  - OrpheusAttributes.DataTypeAttribute
+  - OrpheusAttributes.DefaultValue
+  - OrpheusAttributes.FieldName
+  - OrpheusAttributes.ForeignKey
+  - OrpheusAttributes.Length
+  - OrpheusAttributes.OrpheusBaseAttribute
+  - OrpheusAttributes.OrpheusCompositeKeyBaseAttribute
+  - OrpheusAttributes.PrimaryCompositeKey
+  - OrpheusAttributes.PrimaryKey
+  - OrpheusAttributes.RequiredField
+  - OrpheusAttributes.SQLServerSchemaName
+  - OrpheusAttributes.SchemaIgnore
+  - OrpheusAttributes.TableName
+  - OrpheusAttributes.UniqueCompositeKey
+  - OrpheusAttributes.UniqueKey
+references:
+- uid: OrpheusInterfaces.Interfaces.Attributes
+  commentId: N:OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Interfaces.Attributes
+  nameWithType: OrpheusInterfaces.Interfaces.Attributes
+  fullName: OrpheusInterfaces.Interfaces.Attributes
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html

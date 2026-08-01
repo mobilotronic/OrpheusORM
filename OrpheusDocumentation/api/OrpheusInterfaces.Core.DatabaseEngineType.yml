@@ -1,0 +1,205 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.DatabaseEngineType
+  commentId: T:OrpheusInterfaces.Core.DatabaseEngineType
+  id: DatabaseEngineType
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.DatabaseEngineType.dbMySQL
+  - OrpheusInterfaces.Core.DatabaseEngineType.dbPostgreSQL
+  - OrpheusInterfaces.Core.DatabaseEngineType.dbSQLServer
+  - OrpheusInterfaces.Core.DatabaseEngineType.dbSQLite
+  - OrpheusInterfaces.Core.DatabaseEngineType.dbUnknown
+  langs:
+  - csharp
+  - vb
+  name: DatabaseEngineType
+  nameWithType: DatabaseEngineType
+  fullName: OrpheusInterfaces.Core.DatabaseEngineType
+  type: Enum
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DatabaseEngineType
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 23
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Database engine type.
+  example: []
+  syntax:
+    content: public enum DatabaseEngineType
+    content.vb: Public Enum DatabaseEngineType
+- uid: OrpheusInterfaces.Core.DatabaseEngineType.dbUnknown
+  commentId: F:OrpheusInterfaces.Core.DatabaseEngineType.dbUnknown
+  id: dbUnknown
+  parent: OrpheusInterfaces.Core.DatabaseEngineType
+  langs:
+  - csharp
+  - vb
+  name: dbUnknown
+  nameWithType: DatabaseEngineType.dbUnknown
+  fullName: OrpheusInterfaces.Core.DatabaseEngineType.dbUnknown
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: dbUnknown
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 28
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Unknown - unsupported.
+  example: []
+  syntax:
+    content: dbUnknown = 0
+    return:
+      type: OrpheusInterfaces.Core.DatabaseEngineType
+- uid: OrpheusInterfaces.Core.DatabaseEngineType.dbSQLServer
+  commentId: F:OrpheusInterfaces.Core.DatabaseEngineType.dbSQLServer
+  id: dbSQLServer
+  parent: OrpheusInterfaces.Core.DatabaseEngineType
+  langs:
+  - csharp
+  - vb
+  name: dbSQLServer
+  nameWithType: DatabaseEngineType.dbSQLServer
+  fullName: OrpheusInterfaces.Core.DatabaseEngineType.dbSQLServer
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: dbSQLServer
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 32
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: SQL Server.
+  example: []
+  syntax:
+    content: dbSQLServer = 1
+    return:
+      type: OrpheusInterfaces.Core.DatabaseEngineType
+- uid: OrpheusInterfaces.Core.DatabaseEngineType.dbMySQL
+  commentId: F:OrpheusInterfaces.Core.DatabaseEngineType.dbMySQL
+  id: dbMySQL
+  parent: OrpheusInterfaces.Core.DatabaseEngineType
+  langs:
+  - csharp
+  - vb
+  name: dbMySQL
+  nameWithType: DatabaseEngineType.dbMySQL
+  fullName: OrpheusInterfaces.Core.DatabaseEngineType.dbMySQL
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: dbMySQL
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 36
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: MySQL.
+  example: []
+  syntax:
+    content: dbMySQL = 2
+    return:
+      type: OrpheusInterfaces.Core.DatabaseEngineType
+- uid: OrpheusInterfaces.Core.DatabaseEngineType.dbPostgreSQL
+  commentId: F:OrpheusInterfaces.Core.DatabaseEngineType.dbPostgreSQL
+  id: dbPostgreSQL
+  parent: OrpheusInterfaces.Core.DatabaseEngineType
+  langs:
+  - csharp
+  - vb
+  name: dbPostgreSQL
+  nameWithType: DatabaseEngineType.dbPostgreSQL
+  fullName: OrpheusInterfaces.Core.DatabaseEngineType.dbPostgreSQL
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: dbPostgreSQL
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 40
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: PostgreSQL.
+  example: []
+  syntax:
+    content: dbPostgreSQL = 3
+    return:
+      type: OrpheusInterfaces.Core.DatabaseEngineType
+- uid: OrpheusInterfaces.Core.DatabaseEngineType.dbSQLite
+  commentId: F:OrpheusInterfaces.Core.DatabaseEngineType.dbSQLite
+  id: dbSQLite
+  parent: OrpheusInterfaces.Core.DatabaseEngineType
+  langs:
+  - csharp
+  - vb
+  name: dbSQLite
+  nameWithType: DatabaseEngineType.dbSQLite
+  fullName: OrpheusInterfaces.Core.DatabaseEngineType.dbSQLite
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: dbSQLite
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 44
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: SQLite
+  example: []
+  syntax:
+    content: dbSQLite = 4
+    return:
+      type: OrpheusInterfaces.Core.DatabaseEngineType
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.DatabaseEngineType
+  commentId: T:OrpheusInterfaces.Core.DatabaseEngineType
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.DatabaseEngineType.html
+  name: DatabaseEngineType
+  nameWithType: DatabaseEngineType
+  fullName: OrpheusInterfaces.Core.DatabaseEngineType

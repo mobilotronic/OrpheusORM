@@ -1,0 +1,147 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Schema.DDLAction
+  commentId: T:OrpheusInterfaces.Schema.DDLAction
+  id: DDLAction
+  parent: OrpheusInterfaces.Schema
+  children:
+  - OrpheusInterfaces.Schema.DDLAction.ddlAlter
+  - OrpheusInterfaces.Schema.DDLAction.ddlCreate
+  - OrpheusInterfaces.Schema.DDLAction.ddlDrop
+  langs:
+  - csharp
+  - vb
+  name: DDLAction
+  nameWithType: DDLAction
+  fullName: OrpheusInterfaces.Schema.DDLAction
+  type: Enum
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DDLAction
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+    startLine: 36
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: DDL action.
+  example: []
+  syntax:
+    content: public enum DDLAction
+    content.vb: Public Enum DDLAction
+- uid: OrpheusInterfaces.Schema.DDLAction.ddlCreate
+  commentId: F:OrpheusInterfaces.Schema.DDLAction.ddlCreate
+  id: ddlCreate
+  parent: OrpheusInterfaces.Schema.DDLAction
+  langs:
+  - csharp
+  - vb
+  name: ddlCreate
+  nameWithType: DDLAction.ddlCreate
+  fullName: OrpheusInterfaces.Schema.DDLAction.ddlCreate
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ddlCreate
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+    startLine: 41
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: DDL create.
+  example: []
+  syntax:
+    content: ddlCreate = 0
+    return:
+      type: OrpheusInterfaces.Schema.DDLAction
+- uid: OrpheusInterfaces.Schema.DDLAction.ddlAlter
+  commentId: F:OrpheusInterfaces.Schema.DDLAction.ddlAlter
+  id: ddlAlter
+  parent: OrpheusInterfaces.Schema.DDLAction
+  langs:
+  - csharp
+  - vb
+  name: ddlAlter
+  nameWithType: DDLAction.ddlAlter
+  fullName: OrpheusInterfaces.Schema.DDLAction.ddlAlter
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ddlAlter
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+    startLine: 46
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: DDL alter.
+  example: []
+  syntax:
+    content: ddlAlter = 1
+    return:
+      type: OrpheusInterfaces.Schema.DDLAction
+- uid: OrpheusInterfaces.Schema.DDLAction.ddlDrop
+  commentId: F:OrpheusInterfaces.Schema.DDLAction.ddlDrop
+  id: ddlDrop
+  parent: OrpheusInterfaces.Schema.DDLAction
+  langs:
+  - csharp
+  - vb
+  name: ddlDrop
+  nameWithType: DDLAction.ddlDrop
+  fullName: OrpheusInterfaces.Schema.DDLAction.ddlDrop
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ddlDrop
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+    startLine: 51
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: DDL drop.
+  example: []
+  syntax:
+    content: ddlDrop = 2
+    return:
+      type: OrpheusInterfaces.Schema.DDLAction
+references:
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Schema.DDLAction
+  commentId: T:OrpheusInterfaces.Schema.DDLAction
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.DDLAction.html
+  name: DDLAction
+  nameWithType: DDLAction
+  fullName: OrpheusInterfaces.Schema.DDLAction

@@ -1,25 +1,66 @@
-using Npgsql;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using OrpheusCore;
+using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Core;
+using System;
 
 namespace OrpheusPostgreSQLDDLHelper
 {
     /// <summary>
-    /// Factory for creating an OrpheusDatabase backed by a PostgreSQL connection.
+    /// Factory for creating an OrpheusDatabase backed by a pooled PostgreSQL connection,
+    /// without requiring a dependency injection container.
     /// </summary>
     public static class OrpheusPostgreSQLServerDatabase
     {
         /// <summary>
-        /// Creates an <see cref="IOrpheusDatabase"/> with an Npgsql connection and
-        /// PostgreSQL DDL helper.
+        /// Creates an <see cref="IOrpheusDatabase"/> with a pooled <see cref="NpgsqlConnectionFactory"/>
+        /// and PostgreSQL DDL helper, using the supplied connection configuration.
         /// </summary>
-        public static IOrpheusDatabase CreateDatabase()
+        /// <param name="connectionConfiguration">The database connection configuration.</param>
+        /// <param name="loggerFactory">Optional logger factory. When omitted, logging is a no-op.</param>
+        public static IOrpheusDatabase CreateDatabase(IDatabaseConnectionConfiguration connectionConfiguration, ILoggerFactory loggerFactory = null)
         {
-            var helper = new OrpheusPostgreSQLDDLHelper(
-                ServiceManager.CreateLogger<OrpheusPostgreSQLDDLHelper>());
-            return new OrpheusDatabase(
-                new NpgsqlConnection(), helper,
-                ServiceManager.CreateLogger<IOrpheusDatabase>());
+            if (connectionConfiguration == null)
+                throw new ArgumentNullException(nameof(connectionConfiguration));
+
+            // OrpheusDatabase resolves internal helper types (IOrpheusTableOptions, IOrpheusTableKeyField,
+            // etc.) from its serviceProvider, and also uses its loggerFactory field directly (e.g. in
+            // CreateTable<T>()) — so both need a real, non-null instance even though the caller isn't
+            // using DI and didn't supply logging.
+            var effectiveLoggerFactory = loggerFactory ?? NullLoggerFactory.Instance;
+
+            var services = new ServiceCollection();
+            services.AddSingleton(effectiveLoggerFactory);
+            services.AddOrpheusServices();
+            var serviceProvider = services.BuildServiceProvider();
+
+            var connectionFactory = new NpgsqlConnectionFactory { ConnectionConfiguration = connectionConfiguration };
+            var helper = new OrpheusPostgreSQLDDLHelper(effectiveLoggerFactory.CreateLogger<OrpheusPostgreSQLDDLHelper>());
+            var db = new OrpheusDatabase(
+                connectionFactory,
+                helper,
+                effectiveLoggerFactory.CreateLogger<IOrpheusDatabase>(),
+                serviceProvider,
+                effectiveLoggerFactory);
+            db.DatabaseConnectionConfiguration = connectionConfiguration;
+            return db;
+        }
+
+        /// <summary>
+        /// Creates an <see cref="IOrpheusDatabase"/>, building the connection configuration inline.
+        /// </summary>
+        /// <param name="configureConnection">Callback to populate the connection configuration.</param>
+        /// <param name="loggerFactory">Optional logger factory. When omitted, logging is a no-op.</param>
+        public static IOrpheusDatabase CreateDatabase(Action<IDatabaseConnectionConfiguration> configureConnection, ILoggerFactory loggerFactory = null)
+        {
+            if (configureConnection == null)
+                throw new ArgumentNullException(nameof(configureConnection));
+
+            var config = new OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration();
+            configureConnection(config);
+            return CreateDatabase(config, loggerFactory);
         }
     }
 }

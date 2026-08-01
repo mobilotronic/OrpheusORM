@@ -54,7 +54,7 @@ namespace OrpheusTests
                     UserId = TestSchemaConstants.AdminUserId,
                     Active = 1,
                     UserName = "Administrator",
-                    Email = "webadmin@thelanguageexchange.com",
+                    Email = "webadmin@test.com",
                     PasswordHash = "passhash",
                     PasswordSalt = saltHash,
                     UserProfileId = TestSchemaConstants.AdminUserProfileId,
@@ -397,6 +397,8 @@ namespace OrpheusTests
         private void createOrdersSchema()
         {
             var transactors = this.schema.AddSchemaTable(typeof(TestModelTransactor));
+
+            var compositeKeyed = this.schema.AddSchemaTable(typeof(TestModelCompositeKeyed));
 
 
 

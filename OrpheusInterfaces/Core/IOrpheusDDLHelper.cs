@@ -2,6 +2,8 @@ using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace OrpheusInterfaces.Core
 {
@@ -189,6 +191,27 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <returns></returns>
         string ConnectionString { get; }
+
+        /// <summary>
+        /// Executes a batched INSERT of <paramref name="rows"/> and returns the DB-generated key
+        /// value for each row, in the same order the rows were passed in. There is no ADO.NET-
+        /// portable way to retrieve generated keys from a multi-row insert, so implementations are
+        /// engine-specific (e.g. SQL Server uses MERGE+OUTPUT with a correlation column since plain
+        /// multi-row OUTPUT doesn't preserve input order; PostgreSQL uses INSERT...RETURNING, which
+        /// does preserve order; MySQL has no RETURNING and instead derives the range from
+        /// LAST_INSERT_ID()).
+        /// </summary>
+        /// <param name="tableName">Fully-qualified table name.</param>
+        /// <param name="columns">Editable column names, in the order each row's values are provided.</param>
+        /// <param name="keyColumnName">The DB-generated key column to retrieve.</param>
+        /// <param name="rows">Each row's values, in column order, matching <paramref name="columns"/>.</param>
+        /// <param name="transaction">Transaction to execute within.</param>
+        List<object> ExecuteBatchedInsertWithKeyRetrieval(string tableName, List<string> columns, string keyColumnName, List<List<object>> rows, IDbTransaction transaction);
+
+        /// <summary>
+        /// Asynchronous counterpart of <see cref="ExecuteBatchedInsertWithKeyRetrieval"/>.
+        /// </summary>
+        Task<List<object>> ExecuteBatchedInsertWithKeyRetrievalAsync(string tableName, List<string> columns, string keyColumnName, List<List<object>> rows, IDbTransaction transaction, CancellationToken cancellationToken = default);
     }
 
     /// <summary>

@@ -1,0 +1,901 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusLogger.OrpheusFileLogger
+  commentId: T:OrpheusLogger.OrpheusFileLogger
+  id: OrpheusFileLogger
+  parent: OrpheusLogger
+  children:
+  - OrpheusLogger.OrpheusFileLogger.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration})
+  - OrpheusLogger.OrpheusFileLogger.BeginScope``1(``0)
+  - OrpheusLogger.OrpheusFileLogger.Configuration
+  - OrpheusLogger.OrpheusFileLogger.CurrentFileName
+  - OrpheusLogger.OrpheusFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  - OrpheusLogger.OrpheusFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  langs:
+  - csharp
+  - vb
+  name: OrpheusFileLogger
+  nameWithType: OrpheusFileLogger
+  fullName: OrpheusLogger.OrpheusFileLogger
+  type: Class
+  source:
+    remote:
+      path: OrpheusLogger/OrpheusFileLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: OrpheusFileLogger
+    path: ../OrpheusLogger/OrpheusFileLogger.cs
+    startLine: 39
+  assemblies:
+  - OrpheusLogger
+  namespace: OrpheusLogger
+  summary: Orpheus default logger implementation.
+  example: []
+  syntax:
+    content: 'public class OrpheusFileLogger : IOrpheusLogger'
+    content.vb: Public Class OrpheusFileLogger Implements IOrpheusLogger
+  inheritance:
+  - System.Object
+  implements:
+  - OrpheusInterfaces.Logging.IOrpheusLogger
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: OrpheusLogger.OrpheusFileLogger.BeginScope``1(``0)
+  commentId: M:OrpheusLogger.OrpheusFileLogger.BeginScope``1(``0)
+  id: BeginScope``1(``0)
+  parent: OrpheusLogger.OrpheusFileLogger
+  langs:
+  - csharp
+  - vb
+  name: BeginScope<TState>(TState)
+  nameWithType: OrpheusFileLogger.BeginScope<TState>(TState)
+  fullName: OrpheusLogger.OrpheusFileLogger.BeginScope<TState>(TState)
+  type: Method
+  source:
+    remote:
+      path: OrpheusLogger/OrpheusFileLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: BeginScope
+    path: ../OrpheusLogger/OrpheusFileLogger.cs
+    startLine: 170
+  assemblies:
+  - OrpheusLogger
+  namespace: OrpheusLogger
+  summary: Not supported.
+  example: []
+  syntax:
+    content: public IDisposable BeginScope<TState>(TState state)
+    parameters:
+    - id: state
+      type: '{TState}'
+      description: ''
+    typeParameters:
+    - id: TState
+      description: ''
+    return:
+      type: System.IDisposable
+      description: ''
+    content.vb: Public Function BeginScope(Of TState)(state As TState) As IDisposable
+  overload: OrpheusLogger.OrpheusFileLogger.BeginScope*
+  nameWithType.vb: OrpheusFileLogger.BeginScope(Of TState)(TState)
+  fullName.vb: OrpheusLogger.OrpheusFileLogger.BeginScope(Of TState)(TState)
+  name.vb: BeginScope(Of TState)(TState)
+- uid: OrpheusLogger.OrpheusFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  commentId: M:OrpheusLogger.OrpheusFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  id: IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  parent: OrpheusLogger.OrpheusFileLogger
+  langs:
+  - csharp
+  - vb
+  name: IsEnabled(LogLevel)
+  nameWithType: OrpheusFileLogger.IsEnabled(LogLevel)
+  fullName: OrpheusLogger.OrpheusFileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)
+  type: Method
+  source:
+    remote:
+      path: OrpheusLogger/OrpheusFileLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IsEnabled
+    path: ../OrpheusLogger/OrpheusFileLogger.cs
+    startLine: 180
+  assemblies:
+  - OrpheusLogger
+  namespace: OrpheusLogger
+  summary: Returns true if the log level is enabled.
+  example: []
+  syntax:
+    content: public bool IsEnabled(LogLevel logLevel)
+    parameters:
+    - id: logLevel
+      type: Microsoft.Extensions.Logging.LogLevel
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Function IsEnabled(logLevel As LogLevel) As Boolean
+  overload: OrpheusLogger.OrpheusFileLogger.IsEnabled*
+- uid: OrpheusLogger.OrpheusFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  commentId: M:OrpheusLogger.OrpheusFileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  id: Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})
+  parent: OrpheusLogger.OrpheusFileLogger
+  langs:
+  - csharp
+  - vb
+  name: Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, string>)
+  nameWithType: OrpheusFileLogger.Log<TState>(LogLevel, EventId, TState, Exception, Func<TState, Exception, string>)
+  fullName: OrpheusLogger.OrpheusFileLogger.Log<TState>(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func<TState, System.Exception, string>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusLogger/OrpheusFileLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Log
+    path: ../OrpheusLogger/OrpheusFileLogger.cs
+    startLine: 203
+  assemblies:
+  - OrpheusLogger
+  namespace: OrpheusLogger
+  summary: Enters a log entry.
+  example: []
+  syntax:
+    content: public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+    parameters:
+    - id: logLevel
+      type: Microsoft.Extensions.Logging.LogLevel
+      description: Log level
+    - id: eventId
+      type: Microsoft.Extensions.Logging.EventId
+      description: Event id
+    - id: state
+      type: '{TState}'
+      description: State
+    - id: exception
+      type: System.Exception
+      description: Exception object
+    - id: formatter
+      type: System.Func{{TState},System.Exception,System.String}
+      description: Formatter function
+    typeParameters:
+    - id: TState
+      description: ''
+    content.vb: Public Sub Log(Of TState)(logLevel As LogLevel, eventId As EventId, state As TState, exception As Exception, formatter As Func(Of TState, Exception, String))
+  overload: OrpheusLogger.OrpheusFileLogger.Log*
+  nameWithType.vb: OrpheusFileLogger.Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
+  fullName.vb: OrpheusLogger.OrpheusFileLogger.Log(Of TState)(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, TState, System.Exception, System.Func(Of TState, System.Exception, String))
+  name.vb: Log(Of TState)(LogLevel, EventId, TState, Exception, Func(Of TState, Exception, String))
+- uid: OrpheusLogger.OrpheusFileLogger.Configuration
+  commentId: P:OrpheusLogger.OrpheusFileLogger.Configuration
+  id: Configuration
+  parent: OrpheusLogger.OrpheusFileLogger
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: OrpheusFileLogger.Configuration
+  fullName: OrpheusLogger.OrpheusFileLogger.Configuration
+  type: Property
+  source:
+    remote:
+      path: OrpheusLogger/OrpheusFileLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Configuration
+    path: ../OrpheusLogger/OrpheusFileLogger.cs
+    startLine: 248
+  assemblies:
+  - OrpheusLogger
+  namespace: OrpheusLogger
+  summary: Gets or sets the configuration.
+  example: []
+  syntax:
+    content: public IFileLoggingConfiguration Configuration { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+      description: The configuration.
+    content.vb: Public Property Configuration As IFileLoggingConfiguration
+  overload: OrpheusLogger.OrpheusFileLogger.Configuration*
+  implements:
+  - OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+- uid: OrpheusLogger.OrpheusFileLogger.CurrentFileName
+  commentId: P:OrpheusLogger.OrpheusFileLogger.CurrentFileName
+  id: CurrentFileName
+  parent: OrpheusLogger.OrpheusFileLogger
+  langs:
+  - csharp
+  - vb
+  name: CurrentFileName
+  nameWithType: OrpheusFileLogger.CurrentFileName
+  fullName: OrpheusLogger.OrpheusFileLogger.CurrentFileName
+  type: Property
+  source:
+    remote:
+      path: OrpheusLogger/OrpheusFileLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CurrentFileName
+    path: ../OrpheusLogger/OrpheusFileLogger.cs
+    startLine: 256
+  assemblies:
+  - OrpheusLogger
+  namespace: OrpheusLogger
+  summary: Gets the name of the current file.
+  example: []
+  syntax:
+    content: public string CurrentFileName { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The name of the current file.
+    content.vb: Public ReadOnly Property CurrentFileName As String
+  overload: OrpheusLogger.OrpheusFileLogger.CurrentFileName*
+  implements:
+  - OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+- uid: OrpheusLogger.OrpheusFileLogger.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration})
+  commentId: M:OrpheusLogger.OrpheusFileLogger.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration})
+  id: '#ctor(Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration})'
+  parent: OrpheusLogger.OrpheusFileLogger
+  langs:
+  - csharp
+  - vb
+  name: OrpheusFileLogger(IOptionsMonitor<LoggingConfiguration>)
+  nameWithType: OrpheusFileLogger.OrpheusFileLogger(IOptionsMonitor<LoggingConfiguration>)
+  fullName: OrpheusLogger.OrpheusFileLogger.OrpheusFileLogger(Microsoft.Extensions.Options.IOptionsMonitor<OrpheusCore.Configuration.LoggingConfiguration>)
+  type: Constructor
+  source:
+    remote:
+      path: OrpheusLogger/OrpheusFileLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: .ctor
+    path: ../OrpheusLogger/OrpheusFileLogger.cs
+    startLine: 261
+  assemblies:
+  - OrpheusLogger
+  namespace: OrpheusLogger
+  summary: Creates the default Orpheus logger.
+  example: []
+  syntax:
+    content: public OrpheusFileLogger(IOptionsMonitor<LoggingConfiguration> options)
+    parameters:
+    - id: options
+      type: Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration}
+    content.vb: Public Sub New(options As IOptionsMonitor(Of LoggingConfiguration))
+  overload: OrpheusLogger.OrpheusFileLogger.#ctor*
+  nameWithType.vb: OrpheusFileLogger.New(IOptionsMonitor(Of LoggingConfiguration))
+  fullName.vb: OrpheusLogger.OrpheusFileLogger.New(Microsoft.Extensions.Options.IOptionsMonitor(Of OrpheusCore.Configuration.LoggingConfiguration))
+  name.vb: New(IOptionsMonitor(Of LoggingConfiguration))
+references:
+- uid: OrpheusLogger
+  commentId: N:OrpheusLogger
+  href: OrpheusLogger.html
+  name: OrpheusLogger
+  nameWithType: OrpheusLogger
+  fullName: OrpheusLogger
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger
+  commentId: T:OrpheusInterfaces.Logging.IOrpheusLogger
+  parent: OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.Logging.IOrpheusLogger.html
+  name: IOrpheusLogger
+  nameWithType: IOrpheusLogger
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Logging
+  commentId: N:OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Logging
+  nameWithType: OrpheusInterfaces.Logging
+  fullName: OrpheusInterfaces.Logging
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Logging
+    name: Logging
+    href: OrpheusInterfaces.Logging.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Logging
+    name: Logging
+    href: OrpheusInterfaces.Logging.html
+- uid: OrpheusLogger.OrpheusFileLogger.BeginScope*
+  commentId: Overload:OrpheusLogger.OrpheusFileLogger.BeginScope
+  href: OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_BeginScope__1___0_
+  name: BeginScope
+  nameWithType: OrpheusFileLogger.BeginScope
+  fullName: OrpheusLogger.OrpheusFileLogger.BeginScope
+- uid: '{TState}'
+  commentId: '!:TState'
+  definition: TState
+  name: TState
+  nameWithType: TState
+  fullName: TState
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: TState
+  name: TState
+  nameWithType: TState
+  fullName: TState
+- uid: OrpheusLogger.OrpheusFileLogger.IsEnabled*
+  commentId: Overload:OrpheusLogger.OrpheusFileLogger.IsEnabled
+  href: OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_IsEnabled_Microsoft_Extensions_Logging_LogLevel_
+  name: IsEnabled
+  nameWithType: OrpheusFileLogger.IsEnabled
+  fullName: OrpheusLogger.OrpheusFileLogger.IsEnabled
+- uid: Microsoft.Extensions.Logging.LogLevel
+  commentId: T:Microsoft.Extensions.Logging.LogLevel
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.loglevel
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: Microsoft.Extensions.Logging.LogLevel
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: OrpheusLogger.OrpheusFileLogger.Log*
+  commentId: Overload:OrpheusLogger.OrpheusFileLogger.Log
+  href: OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_Log__1_Microsoft_Extensions_Logging_LogLevel_Microsoft_Extensions_Logging_EventId___0_System_Exception_System_Func___0_System_Exception_System_String__
+  name: Log
+  nameWithType: OrpheusFileLogger.Log
+  fullName: OrpheusLogger.OrpheusFileLogger.Log
+- uid: Microsoft.Extensions.Logging.EventId
+  commentId: T:Microsoft.Extensions.Logging.EventId
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.eventid
+  name: EventId
+  nameWithType: EventId
+  fullName: Microsoft.Extensions.Logging.EventId
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: System.Func{{TState},System.Exception,System.String}
+  commentId: T:System.Func{``0,System.Exception,System.String}
+  parent: System
+  definition: System.Func`3
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<TState, Exception, string>
+  nameWithType: Func<TState, Exception, string>
+  fullName: System.Func<TState, System.Exception, string>
+  nameWithType.vb: Func(Of TState, Exception, String)
+  fullName.vb: System.Func(Of TState, System.Exception, String)
+  name.vb: Func(Of TState, Exception, String)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: TState
+  - name: ','
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TState
+  - name: ','
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-3
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: OrpheusLogger.OrpheusFileLogger.Configuration*
+  commentId: Overload:OrpheusLogger.OrpheusFileLogger.Configuration
+  href: OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_Configuration
+  name: Configuration
+  nameWithType: OrpheusFileLogger.Configuration
+  fullName: OrpheusLogger.OrpheusFileLogger.Configuration
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  commentId: P:OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  parent: OrpheusInterfaces.Logging.IOrpheusLogger
+  href: OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_Configuration
+  name: Configuration
+  nameWithType: IOrpheusLogger.Configuration
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  commentId: T:OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  parent: OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.Logging.IFileLoggingConfiguration.html
+  name: IFileLoggingConfiguration
+  nameWithType: IFileLoggingConfiguration
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+- uid: OrpheusLogger.OrpheusFileLogger.CurrentFileName*
+  commentId: Overload:OrpheusLogger.OrpheusFileLogger.CurrentFileName
+  href: OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger_CurrentFileName
+  name: CurrentFileName
+  nameWithType: OrpheusFileLogger.CurrentFileName
+  fullName: OrpheusLogger.OrpheusFileLogger.CurrentFileName
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  commentId: P:OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  parent: OrpheusInterfaces.Logging.IOrpheusLogger
+  href: OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_CurrentFileName
+  name: CurrentFileName
+  nameWithType: IOrpheusLogger.CurrentFileName
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: OrpheusLogger.OrpheusFileLogger.#ctor*
+  commentId: Overload:OrpheusLogger.OrpheusFileLogger.#ctor
+  href: OrpheusLogger.OrpheusFileLogger.html#OrpheusLogger_OrpheusFileLogger__ctor_Microsoft_Extensions_Options_IOptionsMonitor_OrpheusCore_Configuration_LoggingConfiguration__
+  name: OrpheusFileLogger
+  nameWithType: OrpheusFileLogger.OrpheusFileLogger
+  fullName: OrpheusLogger.OrpheusFileLogger.OrpheusFileLogger
+  nameWithType.vb: OrpheusFileLogger.New
+  fullName.vb: OrpheusLogger.OrpheusFileLogger.New
+  name.vb: New
+- uid: Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration}
+  commentId: T:Microsoft.Extensions.Options.IOptionsMonitor{OrpheusCore.Configuration.LoggingConfiguration}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptionsMonitor`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1
+  name: IOptionsMonitor<LoggingConfiguration>
+  nameWithType: IOptionsMonitor<LoggingConfiguration>
+  fullName: Microsoft.Extensions.Options.IOptionsMonitor<OrpheusCore.Configuration.LoggingConfiguration>
+  nameWithType.vb: IOptionsMonitor(Of LoggingConfiguration)
+  fullName.vb: Microsoft.Extensions.Options.IOptionsMonitor(Of OrpheusCore.Configuration.LoggingConfiguration)
+  name.vb: IOptionsMonitor(Of LoggingConfiguration)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptionsMonitor`1
+    name: IOptionsMonitor
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1
+  - name: <
+  - uid: OrpheusCore.Configuration.LoggingConfiguration
+    name: LoggingConfiguration
+    href: OrpheusCore.Configuration.LoggingConfiguration.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptionsMonitor`1
+    name: IOptionsMonitor
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusCore.Configuration.LoggingConfiguration
+    name: LoggingConfiguration
+    href: OrpheusCore.Configuration.LoggingConfiguration.html
+  - name: )
+- uid: Microsoft.Extensions.Options.IOptionsMonitor`1
+  commentId: T:Microsoft.Extensions.Options.IOptionsMonitor`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1
+  name: IOptionsMonitor<TOptions>
+  nameWithType: IOptionsMonitor<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptionsMonitor<TOptions>
+  nameWithType.vb: IOptionsMonitor(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptionsMonitor(Of TOptions)
+  name.vb: IOptionsMonitor(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptionsMonitor`1
+    name: IOptionsMonitor
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptionsMonitor`1
+    name: IOptionsMonitor
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options

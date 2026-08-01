@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.Errors
+  commentId: N:OrpheusCore.Errors
+  id: OrpheusCore.Errors
+  children:
+  - OrpheusCore.Errors.ErrorCodes
+  - OrpheusCore.Errors.ErrorDictionary
+  langs:
+  - csharp
+  - vb
+  name: OrpheusCore.Errors
+  nameWithType: OrpheusCore.Errors
+  fullName: OrpheusCore.Errors
+  type: Namespace
+  assemblies:
+  - OrpheusCore
+references:
+- uid: OrpheusCore.Errors.ErrorCodes
+  commentId: T:OrpheusCore.Errors.ErrorCodes
+  href: OrpheusCore.Errors.ErrorCodes.html
+  name: ErrorCodes
+  nameWithType: ErrorCodes
+  fullName: OrpheusCore.Errors.ErrorCodes
+- uid: OrpheusCore.Errors.ErrorDictionary
+  commentId: T:OrpheusCore.Errors.ErrorDictionary
+  href: OrpheusCore.Errors.ErrorDictionary.html
+  name: ErrorDictionary
+  nameWithType: ErrorDictionary
+  fullName: OrpheusCore.Errors.ErrorDictionary

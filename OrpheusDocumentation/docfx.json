@@ -26,6 +26,16 @@
           "files": [ "**.csproj" ],
           "exclude": [ "**/bin/**", "**/obj/**" ],
           "src": "../OrpheusSQLServerDDLHelper"
+        },
+        {
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
+          "src": "../OrpheusPostgreSQLDDLHelper"
+        },
+        {
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
+          "src": "../OrpheusLogger"
         }
       ],
       "dest": "api",

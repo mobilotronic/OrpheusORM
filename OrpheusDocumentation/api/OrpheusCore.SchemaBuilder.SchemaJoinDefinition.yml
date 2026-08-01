@@ -1,0 +1,602 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  id: SchemaJoinDefinition
+  parent: OrpheusCore.SchemaBuilder
+  children:
+  - OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinKeyField
+  - OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinOperator
+  - OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinTableName
+  - OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinType
+  - OrpheusCore.SchemaBuilder.SchemaJoinDefinition.KeyField
+  langs:
+  - csharp
+  - vb
+  name: SchemaJoinDefinition
+  nameWithType: SchemaJoinDefinition
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  type: Class
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SchemaJoinDefinition
+    path: ../OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+    startLine: 7
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Represents a schema join definition, which can be used by <xref href="OrpheusInterfaces.Schema.ISchemaObject" data-throw-if-not-resolved="false"></xref> when a schema is created.
+  example: []
+  syntax:
+    content: 'public class SchemaJoinDefinition : ISchemaJoinDefinition'
+    content.vb: Public Class SchemaJoinDefinition Implements ISchemaJoinDefinition
+  inheritance:
+  - System.Object
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinKeyField
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinKeyField
+  id: JoinKeyField
+  parent: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: JoinKeyField
+  nameWithType: SchemaJoinDefinition.JoinKeyField
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinKeyField
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: JoinKeyField
+    path: ../OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+    startLine: 13
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Key field name of the join object.
+  example: []
+  syntax:
+    content: public string JoinKeyField { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Key field name of the join object
+    content.vb: Public Property JoinKeyField As String
+  overload: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinKeyField*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinOperator
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinOperator
+  id: JoinOperator
+  parent: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: JoinOperator
+  nameWithType: SchemaJoinDefinition.JoinOperator
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinOperator
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: JoinOperator
+    path: ../OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+    startLine: 19
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Join operator <xref href="OrpheusInterfaces.Schema.SchemaJoinOperator" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public SchemaJoinOperator JoinOperator { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinOperator
+      description: Join operator
+    content.vb: Public Property JoinOperator As SchemaJoinOperator
+  overload: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinOperator*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinType
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinType
+  id: JoinType
+  parent: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: JoinType
+  nameWithType: SchemaJoinDefinition.JoinType
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinType
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: JoinType
+    path: ../OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+    startLine: 25
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Type of join <xref href="OrpheusInterfaces.Schema.SchemaJoinType" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public SchemaJoinType JoinType { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinType
+      description: Type of join
+    content.vb: Public Property JoinType As SchemaJoinType
+  overload: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinType*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.KeyField
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.KeyField
+  id: KeyField
+  parent: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: KeyField
+  nameWithType: SchemaJoinDefinition.KeyField
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.KeyField
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: KeyField
+    path: ../OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+    startLine: 31
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Key field name of the main object.
+  example: []
+  syntax:
+    content: public string KeyField { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Key field name of the main object
+    content.vb: Public Property KeyField As String
+  overload: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.KeyField*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinTableName
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinTableName
+  id: JoinTableName
+  parent: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: JoinTableName
+  nameWithType: SchemaJoinDefinition.JoinTableName
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinTableName
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: JoinTableName
+    path: ../OrpheusCore/SchemaBuilder/SchemaJoinDefinition.cs
+    startLine: 36
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  example: []
+  syntax:
+    content: public string JoinTableName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Table name to perform the join.
+    content.vb: Public Property JoinTableName As String
+  overload: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinTableName*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName
+references:
+- uid: OrpheusInterfaces.Schema.ISchemaObject
+  commentId: T:OrpheusInterfaces.Schema.ISchemaObject
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaObject.html
+  name: ISchemaObject
+  nameWithType: ISchemaObject
+  fullName: OrpheusInterfaces.Schema.ISchemaObject
+- uid: OrpheusCore.SchemaBuilder
+  commentId: N:OrpheusCore.SchemaBuilder
+  href: OrpheusCore.html
+  name: OrpheusCore.SchemaBuilder
+  nameWithType: OrpheusCore.SchemaBuilder
+  fullName: OrpheusCore.SchemaBuilder
+  spec.csharp:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.SchemaBuilder
+    name: SchemaBuilder
+    href: OrpheusCore.SchemaBuilder.html
+  spec.vb:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.SchemaBuilder
+    name: SchemaBuilder
+    href: OrpheusCore.SchemaBuilder.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  commentId: T:OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html
+  name: ISchemaJoinDefinition
+  nameWithType: ISchemaJoinDefinition
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinKeyField*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinKeyField
+  href: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.html#OrpheusCore_SchemaBuilder_SchemaJoinDefinition_JoinKeyField
+  name: JoinKeyField
+  nameWithType: SchemaJoinDefinition.JoinKeyField
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinKeyField
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_JoinKeyField
+  name: JoinKeyField
+  nameWithType: ISchemaJoinDefinition.JoinKeyField
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: OrpheusInterfaces.Schema.SchemaJoinOperator
+  commentId: T:OrpheusInterfaces.Schema.SchemaJoinOperator
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaJoinOperator.html
+  name: SchemaJoinOperator
+  nameWithType: SchemaJoinOperator
+  fullName: OrpheusInterfaces.Schema.SchemaJoinOperator
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinOperator*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinOperator
+  href: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.html#OrpheusCore_SchemaBuilder_SchemaJoinDefinition_JoinOperator
+  name: JoinOperator
+  nameWithType: SchemaJoinDefinition.JoinOperator
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinOperator
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_JoinOperator
+  name: JoinOperator
+  nameWithType: ISchemaJoinDefinition.JoinOperator
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+- uid: OrpheusInterfaces.Schema.SchemaJoinType
+  commentId: T:OrpheusInterfaces.Schema.SchemaJoinType
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaJoinType.html
+  name: SchemaJoinType
+  nameWithType: SchemaJoinType
+  fullName: OrpheusInterfaces.Schema.SchemaJoinType
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinType*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinType
+  href: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.html#OrpheusCore_SchemaBuilder_SchemaJoinDefinition_JoinType
+  name: JoinType
+  nameWithType: SchemaJoinDefinition.JoinType
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinType
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_JoinType
+  name: JoinType
+  nameWithType: ISchemaJoinDefinition.JoinType
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.KeyField*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.KeyField
+  href: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.html#OrpheusCore_SchemaBuilder_SchemaJoinDefinition_KeyField
+  name: KeyField
+  nameWithType: SchemaJoinDefinition.KeyField
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.KeyField
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_KeyField
+  name: KeyField
+  nameWithType: ISchemaJoinDefinition.KeyField
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinTableName*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinTableName
+  href: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.html#OrpheusCore_SchemaBuilder_SchemaJoinDefinition_JoinTableName
+  name: JoinTableName
+  nameWithType: SchemaJoinDefinition.JoinTableName
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.JoinTableName
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_JoinTableName
+  name: JoinTableName
+  nameWithType: ISchemaJoinDefinition.JoinTableName
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName

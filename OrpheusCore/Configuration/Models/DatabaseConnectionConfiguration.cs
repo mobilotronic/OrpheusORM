@@ -72,6 +72,26 @@ namespace OrpheusCore.Configuration.Models
         public EncyrptConnection EncyrptConnection { get; set; }
 
         /// <summary>
+        /// Whether ADO.NET connection pooling is enabled. Default: true.
+        /// </summary>
+        public bool Pooling { get; set; } = true;
+
+        /// <summary>
+        /// Minimum number of connections maintained in the pool. Default: 0.
+        /// </summary>
+        public int MinPoolSize { get; set; } = 0;
+
+        /// <summary>
+        /// Maximum number of connections allowed in the pool. Default: 100.
+        /// </summary>
+        public int MaxPoolSize { get; set; } = 100;
+
+        /// <summary>
+        /// Time, in seconds, a connection can remain idle in the pool before being removed. Default: 300.
+        /// </summary>
+        public int ConnectionIdleTimeout { get; set; } = 300;
+
+        /// <summary>
         /// Creates a clone of this database configuration.
         /// </summary>
         /// <returns></returns>
@@ -90,7 +110,11 @@ namespace OrpheusCore.Configuration.Models
                 ServicePassword = this.ServicePassword,
                 ServiceUserName = this.ServiceUserName,
                 TrustServerCertificate = this.TrustServerCertificate,
-                EncyrptConnection = this.EncyrptConnection
+                EncyrptConnection = this.EncyrptConnection,
+                Pooling = this.Pooling,
+                MinPoolSize = this.MinPoolSize,
+                MaxPoolSize = this.MaxPoolSize,
+                ConnectionIdleTimeout = this.ConnectionIdleTimeout
             };
         }
     }

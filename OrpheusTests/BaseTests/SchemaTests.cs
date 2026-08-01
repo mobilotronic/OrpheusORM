@@ -116,14 +116,5 @@ namespace OrpheusTests
             this.DisconnectDatabase();
         }
 
-        //[TestMethod]
-        //public void SaveToFileSchema()
-        //{
-        //    this.Initialize();
-        //    var schema = this.CreateSchema();
-        //    var fileName = @"c:\schema.xml";
-        //    schema.SaveToFile(fileName);
-        //    Assert.AreEqual(true, File.Exists(fileName));
-        //}
     }
 }

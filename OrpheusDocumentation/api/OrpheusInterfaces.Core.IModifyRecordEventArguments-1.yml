@@ -1,0 +1,171 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+  commentId: T:OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+  id: IModifyRecordEventArguments`1
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.IModifyRecordEventArguments`1.ModifyAction
+  - OrpheusInterfaces.Core.IModifyRecordEventArguments`1.Record
+  langs:
+  - csharp
+  - vb
+  name: IModifyRecordEventArguments<T>
+  nameWithType: IModifyRecordEventArguments<T>
+  fullName: OrpheusInterfaces.Core.IModifyRecordEventArguments<T>
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusEvents.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IModifyRecordEventArguments
+    path: ../OrpheusInterfaces/Core/IOrpheusEvents.cs
+    startLine: 19
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Orpheus record modify event. Occurs when data are processed in memory.
+  example: []
+  syntax:
+    content: public interface IModifyRecordEventArguments<T>
+    typeParameters:
+    - id: T
+      description: Model type
+    content.vb: Public Interface IModifyRecordEventArguments(Of T)
+  nameWithType.vb: IModifyRecordEventArguments(Of T)
+  fullName.vb: OrpheusInterfaces.Core.IModifyRecordEventArguments(Of T)
+  name.vb: IModifyRecordEventArguments(Of T)
+- uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1.Record
+  commentId: P:OrpheusInterfaces.Core.IModifyRecordEventArguments`1.Record
+  id: Record
+  parent: OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+  langs:
+  - csharp
+  - vb
+  name: Record
+  nameWithType: IModifyRecordEventArguments<T>.Record
+  fullName: OrpheusInterfaces.Core.IModifyRecordEventArguments<T>.Record
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusEvents.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Record
+    path: ../OrpheusInterfaces/Core/IOrpheusEvents.cs
+    startLine: 24
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: T Record { get; }
+    parameters: []
+    return:
+      type: '{T}'
+      description: Modified record.
+    content.vb: ReadOnly Property Record As T
+  overload: OrpheusInterfaces.Core.IModifyRecordEventArguments`1.Record*
+  nameWithType.vb: IModifyRecordEventArguments(Of T).Record
+  fullName.vb: OrpheusInterfaces.Core.IModifyRecordEventArguments(Of T).Record
+- uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1.ModifyAction
+  commentId: P:OrpheusInterfaces.Core.IModifyRecordEventArguments`1.ModifyAction
+  id: ModifyAction
+  parent: OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+  langs:
+  - csharp
+  - vb
+  name: ModifyAction
+  nameWithType: IModifyRecordEventArguments<T>.ModifyAction
+  fullName: OrpheusInterfaces.Core.IModifyRecordEventArguments<T>.ModifyAction
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusEvents.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ModifyAction
+    path: ../OrpheusInterfaces/Core/IOrpheusEvents.cs
+    startLine: 28
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: int ModifyAction { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: Modify action. 0 Insert, 1 Update, 2 Delete
+    content.vb: ReadOnly Property ModifyAction As Integer
+  overload: OrpheusInterfaces.Core.IModifyRecordEventArguments`1.ModifyAction*
+  nameWithType.vb: IModifyRecordEventArguments(Of T).ModifyAction
+  fullName.vb: OrpheusInterfaces.Core.IModifyRecordEventArguments(Of T).ModifyAction
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1.Record*
+  commentId: Overload:OrpheusInterfaces.Core.IModifyRecordEventArguments`1.Record
+  href: OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html#OrpheusInterfaces_Core_IModifyRecordEventArguments_1_Record
+  name: Record
+  nameWithType: IModifyRecordEventArguments<T>.Record
+  fullName: OrpheusInterfaces.Core.IModifyRecordEventArguments<T>.Record
+  nameWithType.vb: IModifyRecordEventArguments(Of T).Record
+  fullName.vb: OrpheusInterfaces.Core.IModifyRecordEventArguments(Of T).Record
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1.ModifyAction*
+  commentId: Overload:OrpheusInterfaces.Core.IModifyRecordEventArguments`1.ModifyAction
+  href: OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html#OrpheusInterfaces_Core_IModifyRecordEventArguments_1_ModifyAction
+  name: ModifyAction
+  nameWithType: IModifyRecordEventArguments<T>.ModifyAction
+  fullName: OrpheusInterfaces.Core.IModifyRecordEventArguments<T>.ModifyAction
+  nameWithType.vb: IModifyRecordEventArguments(Of T).ModifyAction
+  fullName.vb: OrpheusInterfaces.Core.IModifyRecordEventArguments(Of T).ModifyAction
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

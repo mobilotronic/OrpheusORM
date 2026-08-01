@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.Configuration
+  commentId: N:OrpheusCore.Configuration
+  id: OrpheusCore.Configuration
+  children:
+  - OrpheusCore.Configuration.ConfigurationManager
+  - OrpheusCore.Configuration.LoggingConfiguration
+  - OrpheusCore.Configuration.OrpheusConfigurationExtensions
+  langs:
+  - csharp
+  - vb
+  name: OrpheusCore.Configuration
+  nameWithType: OrpheusCore.Configuration
+  fullName: OrpheusCore.Configuration
+  type: Namespace
+  assemblies:
+  - OrpheusCore
+references:
+- uid: OrpheusCore.Configuration.LoggingConfiguration
+  commentId: T:OrpheusCore.Configuration.LoggingConfiguration
+  href: OrpheusCore.Configuration.LoggingConfiguration.html
+  name: LoggingConfiguration
+  nameWithType: LoggingConfiguration
+  fullName: OrpheusCore.Configuration.LoggingConfiguration
+- uid: OrpheusCore.Configuration.OrpheusConfigurationExtensions
+  commentId: T:OrpheusCore.Configuration.OrpheusConfigurationExtensions
+  href: OrpheusCore.Configuration.OrpheusConfigurationExtensions.html
+  name: OrpheusConfigurationExtensions
+  nameWithType: OrpheusConfigurationExtensions
+  fullName: OrpheusCore.Configuration.OrpheusConfigurationExtensions
+- uid: OrpheusCore.Configuration.ConfigurationManager
+  commentId: T:OrpheusCore.Configuration.ConfigurationManager
+  href: OrpheusCore.Configuration.ConfigurationManager.html
+  name: ConfigurationManager
+  nameWithType: ConfigurationManager
+  fullName: OrpheusCore.Configuration.ConfigurationManager

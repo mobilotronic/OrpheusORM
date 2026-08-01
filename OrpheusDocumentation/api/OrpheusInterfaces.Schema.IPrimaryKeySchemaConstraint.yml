@@ -1,0 +1,133 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint
+  commentId: T:OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint
+  id: IPrimaryKeySchemaConstraint
+  parent: OrpheusInterfaces.Schema
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IPrimaryKeySchemaConstraint
+  nameWithType: IPrimaryKeySchemaConstraint
+  fullName: OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IPrimaryKeySchemaConstraint
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 71
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: A primary key constraint.
+  example: []
+  syntax:
+    content: 'public interface IPrimaryKeySchemaConstraint : ISchemaConstraint'
+    content.vb: Public Interface IPrimaryKeySchemaConstraint Inherits ISchemaConstraint
+  derivedClasses:
+  - OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint
+  - OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint
+  - OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint
+  inheritedMembers:
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  - OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  - OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  - OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+references:
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Name
+  name: Name
+  nameWithType: ISchemaConstraint.Name
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Name
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Fields
+  name: Fields
+  nameWithType: ISchemaConstraint.Fields
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Sort
+  name: Sort
+  nameWithType: ISchemaConstraint.Sort
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  commentId: M:OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SQL
+  name: SQL()
+  nameWithType: ISchemaConstraint.SQL()
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.SQL()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+    name: SQL
+    href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SQL
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+    name: SQL
+    href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SQL
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Action
+  name: Action
+  nameWithType: ISchemaConstraint.Action
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Action
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SchemaObject
+  name: SchemaObject
+  nameWithType: ISchemaConstraint.SchemaObject
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_ConstraintSQLCommand
+  name: ConstraintSQLCommand
+  nameWithType: ISchemaConstraint.ConstraintSQLCommand
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint
+  commentId: T:OrpheusInterfaces.Schema.ISchemaConstraint
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html
+  name: ISchemaConstraint
+  nameWithType: ISchemaConstraint
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint

@@ -6,6 +6,9 @@ using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace OrpheusMySQLDDLHelper
 {
@@ -13,7 +16,7 @@ namespace OrpheusMySQLDDLHelper
     /// MySQL Server definition of DDL helper.
     /// DDL helper is used to execute DB engine specific DDL commands.
     /// </summary>
-    public class OrpheusMySQLServerDDLHelper : IMySQLServerDDLHelper
+    public class OrpheusMySQLServerDDLHelper : IMySQLServerDDLHelper, IDisposable
     {
         private Dictionary<Type, string> typeMap = new Dictionary<Type, string>();
         private Dictionary<int, string> dbTypeMap = new Dictionary<int, string>();
@@ -83,30 +86,31 @@ namespace OrpheusMySQLDDLHelper
             dbTypeMap[(int)ExtendedDbTypes.StringBlob] = "LONGTEXT";
         }
 
+        /// <summary>
+        /// The connection factory backing this database, required to build the auxiliary connection
+        /// below. Only null if the database was constructed from a raw IDbConnection instead of a
+        /// connection factory, which isn't supported for schema/DDL operations.
+        /// </summary>
+        private IOrpheusConnectionFactory connectionFactory
+        {
+            get
+            {
+                if (this.db?.ConnectionFactory == null)
+                    throw new InvalidOperationException("Schema/DDL operations require a database constructed with an IOrpheusConnectionFactory.");
+                return this.db.ConnectionFactory;
+            }
+        }
+
+        /// <summary>
+        /// Despite the name, this connects to MySQL's "sys" administrative database, not the target
+        /// database — used for database-level operations (existence checks, CREATE DATABASE).
+        /// </summary>
         private MySqlConnection secondConnection
         {
             get
             {
                 if (this._secondConnection == null)
-                {
-                    var sysConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
-                    if (sysConnectionConfiguration == null)
-                        throw new ArgumentNullException("Missing database configuration from the configuration file.\r\nThis is required so Orpheus can perform database schema related actions.");
-                    var connBuilder = new MySqlConnectionStringBuilder();
-                    connBuilder.Server = sysConnectionConfiguration.Server;
-                    connBuilder.Database = sysConnectionConfiguration.DatabaseName;
-                    MySqlSslMode sslMode;
-                    if (Enum.TryParse(this.SSLMode, out sslMode))
-                    {
-                        connBuilder.SslMode = sslMode;
-                    }
-                    if (sysConnectionConfiguration.ServiceUserName != null)
-                        connBuilder.UserID = sysConnectionConfiguration.ServiceUserName;
-                    if (sysConnectionConfiguration.ServicePassword != null)
-                        connBuilder.Password = sysConnectionConfiguration.ServicePassword;
-                    connBuilder.Database = "sys";
-                    this._secondConnection = new MySqlConnection(connBuilder.ConnectionString);
-                }
+                    this._secondConnection = (MySqlConnection)this.connectionFactory.CreateAdministrativeConnection();
                 return this._secondConnection;
             }
         }
@@ -584,7 +588,9 @@ namespace OrpheusMySQLDDLHelper
         }
 
         /// <summary>
-        /// SSL connection mode.
+        /// SSL connection mode. Retained for IMySQLServerDDLHelper interface compatibility; the
+        /// administrative/secondary connections now derive SSL mode from
+        /// IDatabaseConnectionConfiguration.EncyrptConnection via MySqlConnectionFactory instead.
         /// </summary>
         public string SSLMode { get; set; }
 
@@ -600,5 +606,92 @@ namespace OrpheusMySQLDDLHelper
             this.SSLMode = MySqlSslMode.Required.ToString();
             this.logger = logger;
         }
+
+        /// <summary>
+        /// Disposes the auxiliary administrative connection, if created.
+        /// </summary>
+        public void Dispose()
+        {
+            this._secondConnection?.Dispose();
+            this._secondConnection = null;
+            GC.SuppressFinalize(this);
+        }
+
+        #region batched insert with key retrieval
+        /// <inheritdoc/>
+        /// <remarks>
+        /// MySQL implementation note: MySQL has no RETURNING clause (that's a MariaDB-only
+        /// extension). Instead, MySQL guarantees the AUTO_INCREMENT values assigned within a single
+        /// multi-row INSERT are contiguous, starting at LAST_INSERT_ID(), in the same row order as
+        /// the VALUES list (default "consecutive" auto-increment lock mode) — so the per-row keys can
+        /// be derived client-side without a correlation column.
+        /// <para>
+        /// NOT VERIFIED against a real MySQL instance: no reachable MySQL server was available in the
+        /// environment this was implemented in (only SQL Server was reachable, and that path IS
+        /// verified — see SQLServerBatchedInsertKeyRetrievalTests). Verify this against a real
+        /// instance before relying on it in production.
+        /// </para>
+        /// </remarks>
+        public List<object> ExecuteBatchedInsertWithKeyRetrieval(string tableName, List<string> columns, string keyColumnName, List<List<object>> rows, IDbTransaction transaction)
+        {
+            using (var cmd = this.buildBatchedInsertCommand(tableName, columns, rows, transaction))
+            {
+                cmd.ExecuteNonQuery();
+            }
+            var firstId = this.readLastInsertId(transaction);
+            return Enumerable.Range(0, rows.Count).Select(i => (object)(firstId + i)).ToList();
+        }
+
+        /// <inheritdoc/>
+        public async Task<List<object>> ExecuteBatchedInsertWithKeyRetrievalAsync(string tableName, List<string> columns, string keyColumnName, List<List<object>> rows, IDbTransaction transaction, CancellationToken cancellationToken = default)
+        {
+            using (var cmd = (System.Data.Common.DbCommand)this.buildBatchedInsertCommand(tableName, columns, rows, transaction))
+            {
+                await cmd.ExecuteNonQueryAsync(cancellationToken);
+            }
+            var firstId = await this.readLastInsertIdAsync(transaction, cancellationToken);
+            return Enumerable.Range(0, rows.Count).Select(i => (object)(firstId + i)).ToList();
+        }
+
+        private IDbCommand buildBatchedInsertCommand(string tableName, List<string> columns, List<List<object>> rows, IDbTransaction transaction)
+        {
+            var cmd = this.DB.CreateCommand();
+            cmd.Transaction = transaction;
+            var columnList = string.Join(",", columns.Select(c => this.SafeFormatField(c)));
+            var rowValueLists = new List<string>();
+            for (var rowIndex = 0; rowIndex < rows.Count; rowIndex++)
+            {
+                var placeholders = new List<string>();
+                for (var colIndex = 0; colIndex < columns.Count; colIndex++)
+                {
+                    var paramName = $"@p_{rowIndex}_{colIndex}";
+                    placeholders.Add(paramName);
+                    var param = cmd.CreateParameter();
+                    param.ParameterName = paramName;
+                    param.Value = rows[rowIndex][colIndex] ?? DBNull.Value;
+                    cmd.Parameters.Add(param);
+                }
+                rowValueLists.Add($"({string.Join(",", placeholders)})");
+            }
+            cmd.CommandText = $"INSERT INTO {tableName} ({columnList}) VALUES {string.Join(",", rowValueLists)}";
+            return cmd;
+        }
+
+        private long readLastInsertId(IDbTransaction transaction)
+        {
+            using var idCmd = this.DB.CreateCommand();
+            idCmd.Transaction = transaction;
+            idCmd.CommandText = "SELECT LAST_INSERT_ID()";
+            return Convert.ToInt64(idCmd.ExecuteScalar());
+        }
+
+        private async Task<long> readLastInsertIdAsync(IDbTransaction transaction, CancellationToken cancellationToken)
+        {
+            using var idCmd = (System.Data.Common.DbCommand)this.DB.CreateCommand();
+            idCmd.Transaction = (System.Data.Common.DbTransaction)transaction;
+            idCmd.CommandText = "SELECT LAST_INSERT_ID()";
+            return Convert.ToInt64(await idCmd.ExecuteScalarAsync(cancellationToken));
+        }
+        #endregion
     }
 }

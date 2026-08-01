@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/upgrade-to-net-8/OrpheusDocumentation/documentation/orpheus_ddl_helper.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusDocumentation/documentation/orpheus_ddl_helper.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -93,11 +93,17 @@ any code targeting a specific database engine.</p>
 between them.</p>
 <p>Here is where the <code>IOrpheusDDLHelper</code> comes into play.</p>
 <p>Every <code>IOrpheusDatabase</code> requires a <code>IOrpheusDDLHelper</code>. Orpheus
-provides out of the box, helpers for MS SQL and MySQL database engines.</p>
+provides out of the box, helpers for SQL Server, MySQL, and PostgreSQL database engines
+(<code>OrpheusSQLServerDDLHelper</code>, <code>OrpheusMySQLDDLHelper</code>, <code>OrpheusPostgreSQLDDLHelper</code>).</p>
 <h3 id="so-what-do-these-helpers-do">So what do these helpers do?</h3>
 <p>As mentioned above, they reconcile differences between the different database engines.</p>
-<p>For example MS SQL natively supports the <code>UID</code> type while MySQL does not.
+<p>For example SQL Server natively supports the <code>UID</code> type while MySQL does not.
 The helper will give this kind of information to the <code>IOrpheusDatabase</code>.</p>
+<p>They're also where batched multi-row <code>INSERT</code>/<code>UPDATE</code>/<code>DELETE</code> commands get built, and — for
+tables with a DB-generated key — where the engine-specific technique for retrieving generated
+keys from a multi-row insert lives (SQL Server uses <code>MERGE</code>+<code>OUTPUT</code> with a correlation column,
+PostgreSQL uses <code>INSERT...RETURNING</code>, MySQL derives the range from <code>LAST_INSERT_ID()</code>), since
+there's no ADO.NET-portable way to do this generically.</p>
 <p>You can implement your own <code>IOrpheusDDLHelper</code> and register it in OrpheusORM.</p>
 <h4 id="implementing-a-custom-iorpheusddlhelper">Implementing a custom <code>IOrpheusDDLHelper</code></h4>
 <p>Implementing your own DDLHelper is not a requirement.</p>

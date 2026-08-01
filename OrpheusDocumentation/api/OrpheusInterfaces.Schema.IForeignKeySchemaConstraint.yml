@@ -1,0 +1,416 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+  commentId: T:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+  id: IForeignKeySchemaConstraint
+  parent: OrpheusInterfaces.Schema
+  children:
+  - OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeyFields
+  - OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeySchemaObject
+  - OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnDeleteCascade
+  - OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnUpdateCascade
+  langs:
+  - csharp
+  - vb
+  name: IForeignKeySchemaConstraint
+  nameWithType: IForeignKeySchemaConstraint
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IForeignKeySchemaConstraint
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 76
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: A foreign key constraint.
+  example: []
+  syntax:
+    content: 'public interface IForeignKeySchemaConstraint : ISchemaConstraint'
+    content.vb: Public Interface IForeignKeySchemaConstraint Inherits ISchemaConstraint
+  derivedClasses:
+  - OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint
+  inheritedMembers:
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  - OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  - OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  - OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeySchemaObject
+  commentId: P:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeySchemaObject
+  id: ForeignKeySchemaObject
+  parent: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: ForeignKeySchemaObject
+  nameWithType: IForeignKeySchemaConstraint.ForeignKeySchemaObject
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeySchemaObject
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ForeignKeySchemaObject
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 82
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Referenced table name. Applicable only when key is of type ktForeign.
+  example: []
+  syntax:
+    content: string ForeignKeySchemaObject { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Constraint's key
+    content.vb: Property ForeignKeySchemaObject As String
+  overload: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeySchemaObject*
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeyFields
+  commentId: P:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeyFields
+  id: ForeignKeyFields
+  parent: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: ForeignKeyFields
+  nameWithType: IForeignKeySchemaConstraint.ForeignKeyFields
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeyFields
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ForeignKeyFields
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 88
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Foreign key fields. Applicable only when key is of type ktForeign.
+  example: []
+  syntax:
+    content: List<string> ForeignKeyFields { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: List of key fields
+    content.vb: Property ForeignKeyFields As List(Of String)
+  overload: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeyFields*
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnDeleteCascade
+  commentId: P:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnDeleteCascade
+  id: OnDeleteCascade
+  parent: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: OnDeleteCascade
+  nameWithType: IForeignKeySchemaConstraint.OnDeleteCascade
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnDeleteCascade
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: OnDeleteCascade
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 94
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Cascade on delete.
+  example: []
+  syntax:
+    content: bool OnDeleteCascade { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: True if cascade on delete is on
+    content.vb: Property OnDeleteCascade As Boolean
+  overload: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnDeleteCascade*
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnUpdateCascade
+  commentId: P:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnUpdateCascade
+  id: OnUpdateCascade
+  parent: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: OnUpdateCascade
+  nameWithType: IForeignKeySchemaConstraint.OnUpdateCascade
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnUpdateCascade
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: OnUpdateCascade
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 100
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Cascade on update.
+  example: []
+  syntax:
+    content: bool OnUpdateCascade { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: True if cascade on update is on
+    content.vb: Property OnUpdateCascade As Boolean
+  overload: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnUpdateCascade*
+references:
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Name
+  name: Name
+  nameWithType: ISchemaConstraint.Name
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Name
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Fields
+  name: Fields
+  nameWithType: ISchemaConstraint.Fields
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Sort
+  name: Sort
+  nameWithType: ISchemaConstraint.Sort
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  commentId: M:OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SQL
+  name: SQL()
+  nameWithType: ISchemaConstraint.SQL()
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.SQL()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+    name: SQL
+    href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SQL
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+    name: SQL
+    href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SQL
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Action
+  name: Action
+  nameWithType: ISchemaConstraint.Action
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Action
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SchemaObject
+  name: SchemaObject
+  nameWithType: ISchemaConstraint.SchemaObject
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_ConstraintSQLCommand
+  name: ConstraintSQLCommand
+  nameWithType: ISchemaConstraint.ConstraintSQLCommand
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint
+  commentId: T:OrpheusInterfaces.Schema.ISchemaConstraint
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html
+  name: ISchemaConstraint
+  nameWithType: ISchemaConstraint
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeySchemaObject*
+  commentId: Overload:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeySchemaObject
+  href: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.html#OrpheusInterfaces_Schema_IForeignKeySchemaConstraint_ForeignKeySchemaObject
+  name: ForeignKeySchemaObject
+  nameWithType: IForeignKeySchemaConstraint.ForeignKeySchemaObject
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeySchemaObject
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeyFields*
+  commentId: Overload:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeyFields
+  href: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.html#OrpheusInterfaces_Schema_IForeignKeySchemaConstraint_ForeignKeyFields
+  name: ForeignKeyFields
+  nameWithType: IForeignKeySchemaConstraint.ForeignKeyFields
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.ForeignKeyFields
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnDeleteCascade*
+  commentId: Overload:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnDeleteCascade
+  href: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.html#OrpheusInterfaces_Schema_IForeignKeySchemaConstraint_OnDeleteCascade
+  name: OnDeleteCascade
+  nameWithType: IForeignKeySchemaConstraint.OnDeleteCascade
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnDeleteCascade
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnUpdateCascade*
+  commentId: Overload:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnUpdateCascade
+  href: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.html#OrpheusInterfaces_Schema_IForeignKeySchemaConstraint_OnUpdateCascade
+  name: OnUpdateCascade
+  nameWithType: IForeignKeySchemaConstraint.OnUpdateCascade
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.OnUpdateCascade

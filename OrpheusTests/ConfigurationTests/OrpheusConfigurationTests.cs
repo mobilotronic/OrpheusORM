@@ -1,6 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OrpheusCore;
+using OrpheusInterfaces.Core;
+using OrpheusSQLDDLHelper;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,196 +16,58 @@ namespace OrpheusTests.ConfigurationTests
     [TestCategory(BaseTestClass.ConfigurationTests)]
     public class OrpheusConfigurationTests : BaseTestClass
     {
-        //public void SaveFullServicesConfiguration()
-        //{
-        //    var configuration = new OrpheusConfiguration();
-        //    configuration.Services = new List<ServiceProviderItem>()
-        //    {
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IDbConnection).AssemblyQualifiedName,
-        //            Implementation = typeof(SqlConnection).AssemblyQualifiedName,
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusDatabase).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusDatabase).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(ISchemaField).AssemblyQualifiedName,
-        //            Implementation = typeof(SchemaField).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(ISchema).AssemblyQualifiedName,
-        //            Implementation = typeof(Schema).AssemblyQualifiedName,
-        //            ConstructorParameters = new List<string>()
-        //            {
-        //                "db","description","version","id"
-        //            }
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(ISchemaTable).AssemblyQualifiedName,
-        //            Implementation = typeof(SchemaObjectTable).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(ISchemaView).AssemblyQualifiedName,
-        //            Implementation = typeof(SchemaObjectView).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IPrimaryKeySchemaConstraint).AssemblyQualifiedName,
-        //            Implementation = typeof(PrimaryKeySchemaConstraint).AssemblyQualifiedName,
-        //            ConstructorParameters = new List<string>{ "schemaObject"}
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IForeignKeySchemaConstraint).AssemblyQualifiedName,
-        //            Implementation = typeof(ForeignKeySchemaConstraint).AssemblyQualifiedName,
-        //            ConstructorParameters = new List<string>{ "schemaObject"}
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IUniqueKeySchemaConstraint).AssemblyQualifiedName,
-        //            Implementation = typeof(UniqueKeySchemaConstraint).AssemblyQualifiedName,
-        //            ConstructorParameters = new List<string>{ "schemaObject"}
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusModule).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusModule).AssemblyQualifiedName,
-        //            ConstructorParameters = new List<string>{ "database","definition"}
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusModuleDefinition).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusModuleDefinition).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusTable<>).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusTable<>).AssemblyQualifiedName,
-        //            ConstructorParameters = new List<string>{ "options"}
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusTableKeyField).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusTableKeyField).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusTableOptions).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusTableOptions).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusDDLHelper).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusSQLServerDDLHelper).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(ILogger).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusLogger.OrpheusFileLogger).AssemblyQualifiedName,
-        //            ServiceLifetime = Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton
-        //        }
-        //    };
-        //    ConfigurationManager.InitializeConfiguration(configuration);
-        //    ConfigurationManager.SaveConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServer.config");
-        //}
+        [TestMethod]
+        [TestCategory(BaseTestClass.SQLServerTests)]
+        public void AddOrpheusSqlServerFromConfigurationOverload()
+        {
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(this.CurrentDirectory)
+                .AddJsonFile(BaseTestClass.ConfigurationFileName, optional: false)
+                .Build();
 
-        //[TestMethod]
-        //public void SaveSQLServerServicesConfiguration()
-        //{
-        //    var configuration = new OrpheusConfiguration();
-        //    configuration.Services = new List<ServiceProviderItem>()
-        //    {
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IDbConnection).AssemblyQualifiedName,
-        //            Implementation = typeof(SqlConnection).AssemblyQualifiedName,
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusDatabase).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusDatabase).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusDDLHelper).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusSQLServerDDLHelper).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(ILogger).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusLogger.OrpheusFileLogger).AssemblyQualifiedName,
-        //            ServiceLifetime = Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton
-        //        }
-        //    };
-        //    configuration.Logging = new LoggingConfiguration()
-        //    {
-        //        Level = "Error",
-        //        MaxFileSize = 1
-        //    };
-        //    ConfigurationManager.InitializeConfiguration(configuration);
-        //    ConfigurationManager.SaveConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServer.config");
-        //}
+            var services = new ServiceCollection();
+            services.AddOrpheusSqlServer(configuration, "SQLServer");
+            using var provider = services.BuildServiceProvider();
+            var db = provider.GetRequiredService<IOrpheusDatabase>();
 
-        //[TestMethod]
-        //public void SaveMySQLServerServicesConfiguration()
-        //{
-        //    var configuration = new OrpheusConfiguration();
-        //    configuration.Services = new List<ServiceProviderItem>()
-        //    {
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IDbConnection).AssemblyQualifiedName,
-        //            Implementation = typeof(MySql.Data.MySqlClient.MySqlConnection).AssemblyQualifiedName,
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusDatabase).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusDatabase).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(IOrpheusDDLHelper).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusSQLServerDDLHelper).AssemblyQualifiedName
-        //        },
-        //        new ServiceProviderItem()
-        //        {
-        //            Service = typeof(ILogger).AssemblyQualifiedName,
-        //            Implementation = typeof(OrpheusLogger.OrpheusFileLogger).AssemblyQualifiedName,
-        //            ServiceLifetime = Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton
-        //        }
-        //    };
-        //    ConfigurationManager.InitializeConfiguration(configuration);
-        //    ConfigurationManager.SaveConfiguration(this.CurrentDirectory + @"\" + "OrpheusMySQLServer.config");
-        //}
+            db.Connect();
+            Assert.IsTrue(db.Connected);
+            db.Disconnect();
+        }
 
-        //[TestMethod]
-        //public void LoadServicesXMLConfiguration()
-        //{
-        //    ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServer.config"));
-        //    var database = OrpheusServiceProvider.Resolve<IOrpheusDatabase>();
-        //    this.DatabaseEngine = DbEngine.dbSQLServer;
-        //    database.Connect(this.ConnectionString);
-        //    var module = database.CreateModule();
-        //    var table = database.CreateTable<TestModelItem>();
-        //}
+        [TestMethod]
+        [TestCategory(BaseTestClass.SQLServerTests)]
+        public void AddOrpheusSqlServerFromConfigurationOverloadWithCustomSection()
+        {
+            var json = @"{
+                ""MyApp"": {
+                    ""Orpheus"": {
+                        ""DatabaseConnections"": [
+                            {
+                                ""ConfigurationName"": ""SQLServer"",
+                                ""Server"": ""localhost"",
+                                ""DatabaseName"": ""orpheusTestDB"",
+                                ""UseIntegratedSecurity"": true,
+                                ""UseIntegratedSecurityForServiceConnection"": true
+                            }
+                        ]
+                    }
+                }
+            }";
+            using var jsonStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(json));
+            var configuration = new ConfigurationBuilder()
+                .AddJsonStream(jsonStream)
+                .Build();
 
-        //[TestMethod]
-        //public void LoadServicesConfiguration()
-        //{
-        //    ConfigurationManager.InitializeConfiguration(this.CreateConfiguration(this.CurrentDirectory + @"\" + "OrpheusSQLServerConfig.json"));
-        //    var database = OrpheusServiceProvider.Resolve<IOrpheusDatabase>();
-        //    this.DatabaseEngine = DbEngine.dbSQLServer;
-        //    database.Connect(this.ConnectionString);
-        //    var module = database.CreateModule();
-        //    var table = database.CreateTable<TestModelItem>();
-        //}
+            var services = new ServiceCollection();
+            services.AddOrpheusSqlServer(configuration, "SQLServer", "MyApp:Orpheus");
+            using var provider = services.BuildServiceProvider();
+            var db = provider.GetRequiredService<IOrpheusDatabase>();
+
+            db.Connect();
+            Assert.IsTrue(db.Connected);
+            db.Disconnect();
+        }
 
         [TestMethod]
         public async Task ReloadConfigurationAsync()

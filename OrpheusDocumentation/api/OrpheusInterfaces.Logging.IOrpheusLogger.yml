@@ -1,0 +1,156 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger
+  commentId: T:OrpheusInterfaces.Logging.IOrpheusLogger
+  id: IOrpheusLogger
+  parent: OrpheusInterfaces.Logging
+  children:
+  - OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  - OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  langs:
+  - csharp
+  - vb
+  name: IOrpheusLogger
+  nameWithType: IOrpheusLogger
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Logging/IOrpheusLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IOrpheusLogger
+    path: ../OrpheusInterfaces/Logging/IOrpheusLogger.cs
+    startLine: 5
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Logging
+  summary: Orpheus logger contract.
+  example: []
+  syntax:
+    content: public interface IOrpheusLogger
+    content.vb: Public Interface IOrpheusLogger
+  derivedClasses:
+  - OrpheusLogger.OrpheusFileLogger
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  commentId: P:OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  id: Configuration
+  parent: OrpheusInterfaces.Logging.IOrpheusLogger
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: IOrpheusLogger.Configuration
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Logging/IOrpheusLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Configuration
+    path: ../OrpheusInterfaces/Logging/IOrpheusLogger.cs
+    startLine: 8
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Logging
+  summary: The active file logging configuration.
+  example: []
+  syntax:
+    content: IFileLoggingConfiguration Configuration { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+    content.vb: Property Configuration As IFileLoggingConfiguration
+  overload: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration*
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  commentId: P:OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  id: CurrentFileName
+  parent: OrpheusInterfaces.Logging.IOrpheusLogger
+  langs:
+  - csharp
+  - vb
+  name: CurrentFileName
+  nameWithType: IOrpheusLogger.CurrentFileName
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Logging/IOrpheusLogger.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CurrentFileName
+    path: ../OrpheusInterfaces/Logging/IOrpheusLogger.cs
+    startLine: 10
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Logging
+  summary: Full path to the currently active log file.
+  example: []
+  syntax:
+    content: string CurrentFileName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property CurrentFileName As String
+  overload: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName*
+references:
+- uid: OrpheusInterfaces.Logging
+  commentId: N:OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Logging
+  nameWithType: OrpheusInterfaces.Logging
+  fullName: OrpheusInterfaces.Logging
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Logging
+    name: Logging
+    href: OrpheusInterfaces.Logging.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Logging
+    name: Logging
+    href: OrpheusInterfaces.Logging.html
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration*
+  commentId: Overload:OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+  href: OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_Configuration
+  name: Configuration
+  nameWithType: IOrpheusLogger.Configuration
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.Configuration
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  commentId: T:OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  parent: OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.Logging.IFileLoggingConfiguration.html
+  name: IFileLoggingConfiguration
+  nameWithType: IFileLoggingConfiguration
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName*
+  commentId: Overload:OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+  href: OrpheusInterfaces.Logging.IOrpheusLogger.html#OrpheusInterfaces_Logging_IOrpheusLogger_CurrentFileName
+  name: CurrentFileName
+  nameWithType: IOrpheusLogger.CurrentFileName
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger.CurrentFileName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

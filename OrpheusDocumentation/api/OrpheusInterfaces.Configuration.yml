@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Configuration
+  commentId: N:OrpheusInterfaces.Configuration
+  id: OrpheusInterfaces.Configuration
+  children:
+  - OrpheusInterfaces.Configuration.EncyrptConnection
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: OrpheusInterfaces.Configuration
+  nameWithType: OrpheusInterfaces.Configuration
+  fullName: OrpheusInterfaces.Configuration
+  type: Namespace
+  assemblies:
+  - OrpheusInterfaces
+references:
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection
+  commentId: T:OrpheusInterfaces.Configuration.EncyrptConnection
+  parent: OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.Configuration.EncyrptConnection.html
+  name: EncyrptConnection
+  nameWithType: EncyrptConnection
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  commentId: T:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  parent: OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html
+  name: IDatabaseConnectionConfiguration
+  nameWithType: IDatabaseConnectionConfiguration
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+- uid: OrpheusInterfaces.Configuration
+  commentId: N:OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Configuration
+  nameWithType: OrpheusInterfaces.Configuration
+  fullName: OrpheusInterfaces.Configuration
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html

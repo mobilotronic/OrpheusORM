@@ -37,6 +37,14 @@ namespace OrpheusInterfaces.Core
         /// <returns>True if database is connected</returns>
         bool Connected { get; }
 
+        /// <summary>
+        /// The connection factory this database was constructed with, if any. DDL helpers use it to
+        /// open auxiliary connections (schema introspection, administrative/system-database access)
+        /// that share the same pooling configuration as the main connection. Null if this database
+        /// was constructed from a raw <see cref="IDbConnection"/> instead of a connection factory.
+        /// </summary>
+        IOrpheusConnectionFactory ConnectionFactory { get; }
+
         /// <value>
         /// Last active transaction.
         /// </value>
@@ -71,6 +79,21 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <param name="transaction">Transaction to be rolled-back.</param>
         void RollbackTransaction(IDbTransaction transaction);
+
+        /// <summary>
+        /// Asynchronously creates a transaction object.
+        /// </summary>
+        Task<IDbTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously commits a transaction.
+        /// </summary>
+        Task CommitTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously rolls back a transaction.
+        /// </summary>
+        Task RollbackTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create a DbCommand.

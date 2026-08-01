@@ -1,0 +1,126 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.ISaveEventArguments
+  commentId: T:OrpheusInterfaces.Core.ISaveEventArguments
+  id: ISaveEventArguments
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.ISaveEventArguments.Transaction
+  langs:
+  - csharp
+  - vb
+  name: ISaveEventArguments
+  nameWithType: ISaveEventArguments
+  fullName: OrpheusInterfaces.Core.ISaveEventArguments
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusEvents.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ISaveEventArguments
+    path: ../OrpheusInterfaces/Core/IOrpheusEvents.cs
+    startLine: 7
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Orpheus save event arguments. Occurs when data are actually being save to the database.
+  example: []
+  syntax:
+    content: public interface ISaveEventArguments
+    content.vb: Public Interface ISaveEventArguments
+- uid: OrpheusInterfaces.Core.ISaveEventArguments.Transaction
+  commentId: P:OrpheusInterfaces.Core.ISaveEventArguments.Transaction
+  id: Transaction
+  parent: OrpheusInterfaces.Core.ISaveEventArguments
+  langs:
+  - csharp
+  - vb
+  name: Transaction
+  nameWithType: ISaveEventArguments.Transaction
+  fullName: OrpheusInterfaces.Core.ISaveEventArguments.Transaction
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusEvents.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Transaction
+    path: ../OrpheusInterfaces/Core/IOrpheusEvents.cs
+    startLine: 12
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: IDbTransaction Transaction { get; set; }
+    parameters: []
+    return:
+      type: System.Data.IDbTransaction
+      description: Current transaction.
+    content.vb: Property Transaction As IDbTransaction
+  overload: OrpheusInterfaces.Core.ISaveEventArguments.Transaction*
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.ISaveEventArguments.Transaction*
+  commentId: Overload:OrpheusInterfaces.Core.ISaveEventArguments.Transaction
+  href: OrpheusInterfaces.Core.ISaveEventArguments.html#OrpheusInterfaces_Core_ISaveEventArguments_Transaction
+  name: Transaction
+  nameWithType: ISaveEventArguments.Transaction
+  fullName: OrpheusInterfaces.Core.ISaveEventArguments.Transaction
+- uid: System.Data.IDbTransaction
+  commentId: T:System.Data.IDbTransaction
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  name: IDbTransaction
+  nameWithType: IDbTransaction
+  fullName: System.Data.IDbTransaction
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data

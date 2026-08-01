@@ -136,8 +136,6 @@ namespace OrpheusCore
             var moduleTable = tableCollection.Where(obj =>
                   obj.SchemaName == null ? obj.Name.ToLower() == tableName.ToLower() : obj.Name.Split(".")[1].Trim().ToLower() == tableName.ToLower()
                ).FirstOrDefault();
-            //if (moduleTable == null)
-            //    throw new Exception(String.Format("Table {0} not found.", tableName));
             return moduleTable;
         }
 
@@ -147,8 +145,6 @@ namespace OrpheusCore
             var moduleTable = tableCollection.Where(obj =>
                   obj.SchemaName == null ? obj.Name.ToLower() == tableName.ToLower() : obj.Name.Split(".")[1].Trim().ToLower() == tableName.ToLower()
                ).FirstOrDefault();
-            //if (moduleTable == null)
-            //    throw new Exception(String.Format("Table {0} not found.", tableName));
             return (IOrpheusTable<T>)moduleTable;
         }
         #endregion

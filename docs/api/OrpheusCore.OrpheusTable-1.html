@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_OrpheusTable_1.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/modernazitation-effort/apiSpec/new?filename=OrpheusCore_OrpheusTable_1.md&amp;value=---%0Auid%3A%20OrpheusCore.OrpheusTable%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="OrpheusCore_OrpheusTable_1" data-uid="OrpheusCore.OrpheusTable`1" class="text-break">
-Class OrpheusTable&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L155"><i class="bi bi-code-slash"></i></a>
+Class OrpheusTable&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L157"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +103,7 @@ Holds all the data of the connected table.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OrpheusTable&lt;T&gt; : IOrpheusTable&lt;T&gt;, IOrpheusTable</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrpheusTable&lt;T&gt; : IOrpheusTable&lt;T&gt;, IOrpheusTable, IDisposable</code></pre>
   </div>
 
 
@@ -118,7 +118,7 @@ Holds all the data of the connected table.</p>
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><span class="xref">Object</span></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><span class="xref">OrpheusTable&lt;T&gt;</span></div>
     </dd>
   </dl>
@@ -128,6 +128,7 @@ Holds all the data of the connected table.</p>
     <dd>
       <div><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable-1.html">IOrpheusTable</a>&lt;T&gt;</div>
       <div><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
     </dd>
   </dl>
 
@@ -136,25 +137,25 @@ Holds all the data of the connected table.</p>
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <span class="xref">Object.Equals(Object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
-      <span class="xref">Object.Equals(Object, Object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <span class="xref">Object.GetHashCode()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <span class="xref">Object.GetType()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <span class="xref">Object.MemberwiseClone()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <span class="xref">Object.ReferenceEquals(Object, Object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <span class="xref">Object.ToString()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </dd></dl>
 
@@ -169,9 +170,9 @@ Holds all the data of the connected table.</p>
 
   <a id="OrpheusCore_OrpheusTable_1__ctor_" data-uid="OrpheusCore.OrpheusTable`1.#ctor*"></a>
 
-  <h3 id="OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_Collections_Generic_List_OrpheusInterfaces_Core_IOrpheusTableKeyField__System_String_OrpheusInterfaces_Core_IOrpheusTable_System_Collections_Generic_List_OrpheusInterfaces_Core_IOrpheusTableKeyField__" data-uid="OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField},System.String,OrpheusInterfaces.Core.IOrpheusTable,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})">
-  OrpheusTable(IOrpheusDatabase, List&lt;IOrpheusTableKeyField&gt;, String, IOrpheusTable, List&lt;IOrpheusTableKeyField&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1018"><i class="bi bi-code-slash"></i></a>
+  <h3 id="OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_Core_IOrpheusDatabase_System_Collections_Generic_List_OrpheusInterfaces_Core_IOrpheusTableKeyField__Microsoft_Extensions_Logging_ILogger_OrpheusInterfaces_Core_IOrpheusTable__0___System_String_OrpheusInterfaces_Core_IOrpheusTable_System_Collections_Generic_List_OrpheusInterfaces_Core_IOrpheusTableKeyField__" data-uid="OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusDatabase,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField},Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusTable{`0}},System.String,OrpheusInterfaces.Core.IOrpheusTable,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})">
+  OrpheusTable(IOrpheusDatabase, List&lt;IOrpheusTableKeyField&gt;, ILogger&lt;IOrpheusTable&lt;T&gt;&gt;, string, IOrpheusTable, List&lt;IOrpheusTableKeyField&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1341"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Orpheus table constructor.</p>
@@ -179,7 +180,7 @@ Holds all the data of the connected table.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OrpheusTable(IOrpheusDatabase database, List&lt;IOrpheusTableKeyField&gt; keyFields, string tableName = null, IOrpheusTable masterTable = null, List&lt;IOrpheusTableKeyField&gt; masterTableKeyFields = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public OrpheusTable(IOrpheusDatabase database, List&lt;IOrpheusTableKeyField&gt; keyFields, ILogger&lt;IOrpheusTable&lt;T&gt;&gt; logger, string tableName = null, IOrpheusTable masterTable = null, List&lt;IOrpheusTableKeyField&gt; masterTableKeyFields = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -187,16 +188,19 @@ Holds all the data of the connected table.</p>
     <dt><code>database</code> <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
     <dd><p>Orpheus database</p>
 </dd>
-    <dt><code>keyFields</code> <span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
+    <dt><code>keyFields</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
     <dd><p>Table key fields.</p>
 </dd>
-    <dt><code>tableName</code> <span class="xref">String</span></dt>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable-1.html">IOrpheusTable</a>&lt;T&gt;&gt;</dt>
+    <dd><p>The logger</p>
+</dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Table name</p>
 </dd>
     <dt><code>masterTable</code> <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a></dt>
     <dd><p>Master table (optional)</p>
 </dd>
-    <dt><code>masterTableKeyFields</code> <span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
+    <dt><code>masterTableKeyFields</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
     <dd><p>Master table key fields (optional)</p>
 </dd>
   </dl>
@@ -214,9 +218,9 @@ Holds all the data of the connected table.</p>
 
   <a id="OrpheusCore_OrpheusTable_1__ctor_" data-uid="OrpheusCore.OrpheusTable`1.#ctor*"></a>
 
-  <h3 id="OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_Core_IOrpheusTableOptions_" data-uid="OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusTableOptions)">
-  OrpheusTable(IOrpheusTableOptions)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1078"><i class="bi bi-code-slash"></i></a>
+  <h3 id="OrpheusCore_OrpheusTable_1__ctor_OrpheusInterfaces_Core_IOrpheusTableOptions_Microsoft_Extensions_Logging_ILogger_OrpheusInterfaces_Core_IOrpheusTable__0___" data-uid="OrpheusCore.OrpheusTable`1.#ctor(OrpheusInterfaces.Core.IOrpheusTableOptions,Microsoft.Extensions.Logging.ILogger{OrpheusInterfaces.Core.IOrpheusTable{`0}})">
+  OrpheusTable(IOrpheusTableOptions, ILogger&lt;IOrpheusTable&lt;T&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1403"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="OrpheusCore.OrpheusTable-1.html">OrpheusTable&lt;T&gt;</a> class.</p>
@@ -224,13 +228,16 @@ Holds all the data of the connected table.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OrpheusTable(IOrpheusTableOptions options)</code></pre>
+    <pre><code class="lang-csharp hljs">public OrpheusTable(IOrpheusTableOptions options, ILogger&lt;IOrpheusTable&lt;T&gt;&gt; logger)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>options</code> <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableOptions.html">IOrpheusTableOptions</a></dt>
     <dd><p>The options.</p>
+</dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable-1.html">IOrpheusTable</a>&lt;T&gt;&gt;</dt>
+    <dd><p>The logger</p>
 </dd>
   </dl>
 
@@ -249,11 +256,48 @@ Holds all the data of the connected table.</p>
 </h2>
 
 
+  <a id="OrpheusCore_OrpheusTable_1_BatchSize_" data-uid="OrpheusCore.OrpheusTable`1.BatchSize*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_BatchSize" data-uid="OrpheusCore.OrpheusTable`1.BatchSize">
+  BatchSize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1607"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BatchSize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Maximum number of rows batched into a single round trip when executing
+queued inserts/updates/deletes. Default: 100 — empirically, larger batches
+(e.g. 250) trade fewer round trips for more expensive per-batch statement
+compilation, which can net out worse, especially for updates (each row still
+needs its own full UPDATE statement, unlike insert's compact multi-row VALUES).
+Tune per workload/engine if needed.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusTable_1_Data_" data-uid="OrpheusCore.OrpheusTable`1.Data*"></a>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Data" data-uid="OrpheusCore.OrpheusTable`1.Data">
   Data
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1187"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1512"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -269,7 +313,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;T&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
     <dd><p>Table's currently loaded data.</p>
 </dd>
   </dl>
@@ -285,7 +329,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_DetailTables" data-uid="OrpheusCore.OrpheusTable`1.DetailTables">
   DetailTables
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1255"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1580"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -301,7 +345,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html">IOrpheusTable</a>&gt;</dt>
     <dd><p>Associated detail tables.</p>
 </dd>
   </dl>
@@ -317,7 +361,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_KeyFields" data-uid="OrpheusCore.OrpheusTable`1.KeyFields">
   KeyFields
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1210"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1535"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -333,7 +377,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
     <dd><p>Table key fields.</p>
 </dd>
   </dl>
@@ -349,7 +393,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Level" data-uid="OrpheusCore.OrpheusTable`1.Level">
   Level
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1266"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1591"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -365,7 +409,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Int32</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>Table level.</p>
 </dd>
   </dl>
@@ -381,7 +425,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_MasterTable" data-uid="OrpheusCore.OrpheusTable`1.MasterTable">
   MasterTable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1226"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1551"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -413,7 +457,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_MasterTableKeyFields" data-uid="OrpheusCore.OrpheusTable`1.MasterTableKeyFields">
   MasterTableKeyFields
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1215"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1540"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -429,7 +473,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
     <dd><p>Table master table's key fields.</p>
 </dd>
   </dl>
@@ -445,7 +489,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Modified" data-uid="OrpheusCore.OrpheusTable`1.Modified">
   Modified
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1301"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1636"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -461,7 +505,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Modified flag.</p>
 </dd>
   </dl>
@@ -477,7 +521,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Name" data-uid="OrpheusCore.OrpheusTable`1.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1200"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1525"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -493,7 +537,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Table name.</p>
 </dd>
   </dl>
@@ -509,7 +553,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_SchemaName" data-uid="OrpheusCore.OrpheusTable`1.SchemaName">
   SchemaName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1205"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1530"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -525,7 +569,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The table's schema name. Applicable only if the db engine is SQL Server.</p>
 </dd>
   </dl>
@@ -543,9 +587,42 @@ Holds all the data of the connected table.</p>
 
   <a id="OrpheusCore_OrpheusTable_1_Add_" data-uid="OrpheusCore.OrpheusTable`1.Add*"></a>
 
+  <h3 id="OrpheusCore_OrpheusTable_1_Add_System_Collections_Generic_List__0__" data-uid="OrpheusCore.OrpheusTable`1.Add(System.Collections.Generic.List{`0})">
+  Add(List&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1660"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds a list of new records.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(List&lt;T&gt; newRecords)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newRecords</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd><p>New records to be added</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_Add_" data-uid="OrpheusCore.OrpheusTable`1.Add*"></a>
+
   <h3 id="OrpheusCore_OrpheusTable_1_Add__0_" data-uid="OrpheusCore.OrpheusTable`1.Add(`0)">
   Add(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1313"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1648"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a new record to the table.</p>
@@ -574,44 +651,11 @@ Holds all the data of the connected table.</p>
 
 
 
-  <a id="OrpheusCore_OrpheusTable_1_Add_" data-uid="OrpheusCore.OrpheusTable`1.Add*"></a>
-
-  <h3 id="OrpheusCore_OrpheusTable_1_Add_System_Collections_Generic_List__0__" data-uid="OrpheusCore.OrpheusTable`1.Add(System.Collections.Generic.List{`0})">
-  Add(List&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1325"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Adds a list of new records.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Add(List&lt;T&gt; newRecords)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>newRecords</code> <span class="xref">List</span>&lt;T&gt;</dt>
-    <dd><p>New records to be added</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <a id="OrpheusCore_OrpheusTable_1_ClearData_" data-uid="OrpheusCore.OrpheusTable`1.ClearData*"></a>
 
   <h3 id="OrpheusCore_OrpheusTable_1_ClearData" data-uid="OrpheusCore.OrpheusTable`1.ClearData">
   ClearData()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1178"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1503"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Clears existing loaded data.</p>
@@ -636,9 +680,42 @@ Holds all the data of the connected table.</p>
 
   <a id="OrpheusCore_OrpheusTable_1_Delete_" data-uid="OrpheusCore.OrpheusTable`1.Delete*"></a>
 
+  <h3 id="OrpheusCore_OrpheusTable_1_Delete_System_Collections_Generic_List__0__" data-uid="OrpheusCore.OrpheusTable`1.Delete(System.Collections.Generic.List{`0})">
+  Delete(List&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1685"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes records.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Delete(List&lt;T&gt; records)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>records</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd><p>Records to be deleted</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_Delete_" data-uid="OrpheusCore.OrpheusTable`1.Delete*"></a>
+
   <h3 id="OrpheusCore_OrpheusTable_1_Delete__0_" data-uid="OrpheusCore.OrpheusTable`1.Delete(`0)">
   Delete(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1335"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1670"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes a record.</p>
@@ -667,27 +744,21 @@ Holds all the data of the connected table.</p>
 
 
 
-  <a id="OrpheusCore_OrpheusTable_1_Delete_" data-uid="OrpheusCore.OrpheusTable`1.Delete*"></a>
+  <a id="OrpheusCore_OrpheusTable_1_Dispose_" data-uid="OrpheusCore.OrpheusTable`1.Dispose*"></a>
 
-  <h3 id="OrpheusCore_OrpheusTable_1_Delete_System_Collections_Generic_List__0__" data-uid="OrpheusCore.OrpheusTable`1.Delete(System.Collections.Generic.List{`0})">
-  Delete(List&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1351"><i class="bi bi-code-slash"></i></a>
+  <h3 id="OrpheusCore_OrpheusTable_1_Dispose" data-uid="OrpheusCore.OrpheusTable`1.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1774"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Deletes records.</p>
+  <div class="markdown level1 summary"><p>Disposes the table and its commands.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Delete(List&lt;T&gt; records)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>records</code> <span class="xref">List</span>&lt;T&gt;</dt>
-    <dd><p>Records to be deleted</p>
-</dd>
-  </dl>
 
 
 
@@ -700,24 +771,24 @@ Holds all the data of the connected table.</p>
 
 
 
-  <a id="OrpheusCore_OrpheusTable_1_executeDelete_" data-uid="OrpheusCore.OrpheusTable`1.executeDelete*"></a>
+  <a id="OrpheusCore_OrpheusTable_1_Dispose_" data-uid="OrpheusCore.OrpheusTable`1.Dispose*"></a>
 
-  <h3 id="OrpheusCore_OrpheusTable_1_executeDelete_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.executeDelete(System.Data.IDbTransaction)">
-  executeDelete(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L767"><i class="bi bi-code-slash"></i></a>
+  <h3 id="OrpheusCore_OrpheusTable_1_Dispose_System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Dispose(System.Boolean)">
+  Dispose(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1783"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Executes deletes.</p>
+  <div class="markdown level1 summary"><p>Disposes managed resources.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void executeDelete(IDbTransaction transaction)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
+    <dt><code>disposing</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -736,7 +807,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_ExecuteDeletes_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.ExecuteDeletes(System.Data.IDbTransaction)">
   ExecuteDeletes(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1088"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1413"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes any delete changes that the table has.</p>
@@ -749,41 +820,9 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
     <dd><p>The transaction.</p>
 </dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="OrpheusCore_OrpheusTable_1_executeInsert_" data-uid="OrpheusCore.OrpheusTable`1.executeInsert*"></a>
-
-  <h3 id="OrpheusCore_OrpheusTable_1_executeInsert_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.executeInsert(System.Data.IDbTransaction)">
-  executeInsert(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L831"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Executes inserts.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void executeInsert(IDbTransaction transaction)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
-    <dd></dd>
   </dl>
 
 
@@ -801,7 +840,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_ExecuteInserts_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.ExecuteInserts(System.Data.IDbTransaction)">
   ExecuteInserts(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1106"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1431"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes any insert changes that the table has.</p>
@@ -814,41 +853,9 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
     <dd><p>The transaction.</p>
 </dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="OrpheusCore_OrpheusTable_1_executeUpdate_" data-uid="OrpheusCore.OrpheusTable`1.executeUpdate*"></a>
-
-  <h3 id="OrpheusCore_OrpheusTable_1_executeUpdate_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.executeUpdate(System.Data.IDbTransaction)">
-  executeUpdate(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L797"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Executes updates.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void executeUpdate(IDbTransaction transaction)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
-    <dd></dd>
   </dl>
 
 
@@ -866,7 +873,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_ExecuteUpdates_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.ExecuteUpdates(System.Data.IDbTransaction)">
   ExecuteUpdates(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1097"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1422"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes any update changes that the table has.</p>
@@ -879,7 +886,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
     <dd><p>The transaction.</p>
 </dd>
   </dl>
@@ -899,7 +906,7 @@ Holds all the data of the connected table.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_GetKeyValues" data-uid="OrpheusCore.OrpheusTable`1.GetKeyValues">
   GetKeyValues()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1280"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1615"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -912,7 +919,7 @@ Holds all the data of the connected table.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">String</span>, <span class="xref">Object</span>&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
     <dd><p>Returns list of currently loaded key values. It's purpose is to be used on a master-detail schema
 where this will be used from the detail tables in order to load their data based on the current master record.
 It's highly inadvisable to be used outside this scope.</p>
@@ -932,8 +939,8 @@ It's highly inadvisable to be used outside this scope.</p>
   <a id="OrpheusCore_OrpheusTable_1_Load_" data-uid="OrpheusCore.OrpheusTable`1.Load*"></a>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},OrpheusInterfaces.Core.LogicalOperator,System.Boolean)">
-  Load(Dictionary&lt;String, List&lt;Object&gt;&gt;, LogicalOperator, Boolean)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1142"><i class="bi bi-code-slash"></i></a>
+  Load(Dictionary&lt;string, List&lt;object&gt;&gt;, LogicalOperator, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1467"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads records from the DB to the table.
@@ -950,13 +957,13 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>keyValues</code> <span class="xref">Dictionary</span>&lt;<span class="xref">String</span>, <span class="xref">List</span>&lt;<span class="xref">Object</span>&gt;&gt;</dt>
+    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
     <dd><p>The key values.</p>
 </dd>
     <dt><code>logicalOperator</code> <a class="xref" href="OrpheusInterfaces.Core.LogicalOperator.html">LogicalOperator</a></dt>
     <dd><p>The logical operator.</p>
 </dd>
-    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
+    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>If true, it will clear all existing data. Default is true.</p>
 </dd>
   </dl>
@@ -975,8 +982,8 @@ Defining a logical operator, you can change the default behavior.</p>
   <a id="OrpheusCore_OrpheusTable_1_Load_" data-uid="OrpheusCore.OrpheusTable`1.Load*"></a>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Load_System_Collections_Generic_List_System_Object__System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Load(System.Collections.Generic.List{System.Object},System.Boolean)">
-  Load(List&lt;Object&gt;, Boolean)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1117"><i class="bi bi-code-slash"></i></a>
+  Load(List&lt;object&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1442"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads records from the DB to the table.</p>
@@ -989,10 +996,10 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>keyValues</code> <span class="xref">List</span>&lt;<span class="xref">Object</span>&gt;</dt>
+    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
     <dd><p>The key values.</p>
 </dd>
-    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
+    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>If true, it will clear all existing data. Default is true.</p>
 </dd>
   </dl>
@@ -1007,7 +1014,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Exceptions</h4>
   <dl class="parameters">
-    <dt><span class="xref">System.Data.InvalidExpressionException</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.invalidexpressionexception">InvalidExpressionException</a></dt>
     <dd><p>When an Orpheus table has more than one key fields, you cannot use the 'simple' load. Values for each field much be determined.</p>
 </dd>
   </dl>
@@ -1017,8 +1024,8 @@ Defining a logical operator, you can change the default behavior.</p>
   <a id="OrpheusCore_OrpheusTable_1_Load_" data-uid="OrpheusCore.OrpheusTable`1.Load*"></a>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Load_System_Data_IDbCommand_System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Load(System.Data.IDbCommand,System.Boolean)">
-  Load(IDbCommand, Boolean)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1168"><i class="bi bi-code-slash"></i></a>
+  Load(IDbCommand, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1493"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads table data by executing a db command.</p>
@@ -1031,10 +1038,10 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbCommand</code> <span class="xref">IDbCommand</span></dt>
+    <dt><code>dbCommand</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
     <dd><p>The IDbCommand instance.</p>
 </dd>
-    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
+    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>If true, it will clear all existing data. Default is true.</p>
 </dd>
   </dl>
@@ -1053,8 +1060,8 @@ Defining a logical operator, you can change the default behavior.</p>
   <a id="OrpheusCore_OrpheusTable_1_Load_" data-uid="OrpheusCore.OrpheusTable`1.Load*"></a>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Load_System_String_System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Load(System.String,System.Boolean)">
-  Load(String, Boolean)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1155"><i class="bi bi-code-slash"></i></a>
+  Load(string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1480"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Loads table data by executing a SQL command.</p>
@@ -1067,10 +1074,10 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>SQL</code> <span class="xref">String</span></dt>
+    <dt><code>SQL</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>SQL command to be executed</p>
 </dd>
-    <dt><code>clearExistingData</code> <span class="xref">Boolean</span></dt>
+    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>If true, it will clear all existing data. Default is true.</p>
 </dd>
   </dl>
@@ -1086,11 +1093,169 @@ Defining a logical operator, you can change the default behavior.</p>
 
 
 
+  <a id="OrpheusCore_OrpheusTable_1_LoadAsync_" data-uid="OrpheusCore.OrpheusTable`1.LoadAsync*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_LoadAsync_System_Collections_Generic_List_System_Object__System_Threading_CancellationToken_" data-uid="OrpheusCore.OrpheusTable`1.LoadAsync(System.Collections.Generic.List{System.Object},System.Threading.CancellationToken)">
+  LoadAsync(List&lt;object&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1816"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously loads data using key-value pair filter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task LoadAsync(List&lt;object&gt; keyValues, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_LoadAsync_" data-uid="OrpheusCore.OrpheusTable`1.LoadAsync*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_LoadAsync_System_Data_IDbCommand_System_Boolean_System_Threading_CancellationToken_" data-uid="OrpheusCore.OrpheusTable`1.LoadAsync(System.Data.IDbCommand,System.Boolean,System.Threading.CancellationToken)">
+  LoadAsync(IDbCommand, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1845"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously loads table data by executing a db command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task LoadAsync(IDbCommand dbCommand, bool clearExistingData = true, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dbCommand</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
+    <dd></dd>
+    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_LoadAsync_" data-uid="OrpheusCore.OrpheusTable`1.LoadAsync*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_LoadAsync_System_String_System_Boolean_System_Threading_CancellationToken_" data-uid="OrpheusCore.OrpheusTable`1.LoadAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+  LoadAsync(string, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1834"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously loads table data by executing a SQL command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task LoadAsync(string SQL, bool clearExistingData = true, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>SQL</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>clearExistingData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_LoadAsync_" data-uid="OrpheusCore.OrpheusTable`1.LoadAsync*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_LoadAsync_System_Threading_CancellationToken_" data-uid="OrpheusCore.OrpheusTable`1.LoadAsync(System.Threading.CancellationToken)">
+  LoadAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1808"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously loads data from the database into the table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task LoadAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusCore_OrpheusTable_1_Save_" data-uid="OrpheusCore.OrpheusTable`1.Save*"></a>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Save_System_Data_IDbTransaction_System_Boolean_" data-uid="OrpheusCore.OrpheusTable`1.Save(System.Data.IDbTransaction,System.Boolean)">
-  Save(IDbTransaction, Boolean)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1389"><i class="bi bi-code-slash"></i></a>
+  Save(IDbTransaction, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1723"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Save changes to the database.</p>
@@ -1103,11 +1268,81 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbTransaction</code> <span class="xref">IDbTransaction</span></dt>
+    <dt><code>dbTransaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
     <dd><p>Transaction in which the commands will be executed</p>
 </dd>
-    <dt><code>commitTransaction</code> <span class="xref">Boolean</span></dt>
+    <dt><code>commitTransaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Commit transaction after save.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_SaveAsync_" data-uid="OrpheusCore.OrpheusTable`1.SaveAsync*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_SaveAsync_System_Threading_CancellationToken_" data-uid="OrpheusCore.OrpheusTable`1.SaveAsync(System.Threading.CancellationToken)">
+  SaveAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1855"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously saves all pending changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task SaveAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_Update_" data-uid="OrpheusCore.OrpheusTable`1.Update*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_Update_System_Collections_Generic_List__0__" data-uid="OrpheusCore.OrpheusTable`1.Update(System.Collections.Generic.List{`0})">
+  Update(List&lt;T&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1712"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates existing records.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Update(List&lt;T&gt; records)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>records</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
+    <dd><p>Records to be updated</p>
 </dd>
   </dl>
 
@@ -1126,7 +1361,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_Update__0_" data-uid="OrpheusCore.OrpheusTable`1.Update(`0)">
   Update(T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1361"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1695"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates an existing record.</p>
@@ -1155,28 +1390,211 @@ Defining a logical operator, you can change the default behavior.</p>
 
 
 
-  <a id="OrpheusCore_OrpheusTable_1_Update_" data-uid="OrpheusCore.OrpheusTable`1.Update*"></a>
+  <a id="OrpheusCore_OrpheusTable_1_executeDelete_" data-uid="OrpheusCore.OrpheusTable`1.executeDelete*"></a>
 
-  <h3 id="OrpheusCore_OrpheusTable_1_Update_System_Collections_Generic_List__0__" data-uid="OrpheusCore.OrpheusTable`1.Update(System.Collections.Generic.List{`0})">
-  Update(List&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1378"><i class="bi bi-code-slash"></i></a>
+  <h3 id="OrpheusCore_OrpheusTable_1_executeDelete_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.executeDelete(System.Data.IDbTransaction)">
+  executeDelete(IDbTransaction)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L853"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Updates existing records.</p>
+  <div class="markdown level1 summary"><p>Executes deletes, chunked into batches of <a class="xref" href="OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_BatchSize">BatchSize</a> rows per round trip.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Update(List&lt;T&gt; records)</code></pre>
+    <pre><code class="lang-csharp hljs">protected void executeDelete(IDbTransaction transaction)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>records</code> <span class="xref">List</span>&lt;T&gt;</dt>
-    <dd><p>Records to be updated</p>
-</dd>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_executeDeleteAsync_" data-uid="OrpheusCore.OrpheusTable`1.executeDeleteAsync*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_executeDeleteAsync_System_Data_IDbTransaction_System_Threading_CancellationToken_" data-uid="OrpheusCore.OrpheusTable`1.executeDeleteAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)">
+  executeDeleteAsync(IDbTransaction, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L875"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously executes deletes, chunked into batches of <a class="xref" href="OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_BatchSize">BatchSize</a> rows per round trip.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task executeDeleteAsync(IDbTransaction transaction, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_executeInsert_" data-uid="OrpheusCore.OrpheusTable`1.executeInsert*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_executeInsert_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.executeInsert(System.Data.IDbTransaction)">
+  executeInsert(IDbTransaction)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1095"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Executes inserts. Tables without DB-generated keys are batched into <a class="xref" href="OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_BatchSize">BatchSize</a>-row
+round trips. Tables with a DB-generated key are also batched into <a class="xref" href="OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_BatchSize">BatchSize</a>-row
+round trips, using the engine-specific key-retrieval strategy on <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a>
+(only a single DB-generated key column is supported).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void executeInsert(IDbTransaction transaction)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_executeInsertAsync_" data-uid="OrpheusCore.OrpheusTable`1.executeInsertAsync*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_executeInsertAsync_System_Data_IDbTransaction_System_Threading_CancellationToken_" data-uid="OrpheusCore.OrpheusTable`1.executeInsertAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)">
+  executeInsertAsync(IDbTransaction, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously executes inserts. See <a class="xref" href="OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_executeInsert_System_Data_IDbTransaction_">executeInsert(IDbTransaction)</a> for the batching rules.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task executeInsertAsync(IDbTransaction transaction, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_executeUpdate_" data-uid="OrpheusCore.OrpheusTable`1.executeUpdate*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_executeUpdate_System_Data_IDbTransaction_" data-uid="OrpheusCore.OrpheusTable`1.executeUpdate(System.Data.IDbTransaction)">
+  executeUpdate(IDbTransaction)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L956"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Executes updates, chunked into batches of <a class="xref" href="OrpheusCore.OrpheusTable-1.html#OrpheusCore_OrpheusTable_1_BatchSize">BatchSize</a> rows per round trip.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void executeUpdate(IDbTransaction transaction)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_OrpheusTable_1_executeUpdateAsync_" data-uid="OrpheusCore.OrpheusTable`1.executeUpdateAsync*"></a>
+
+  <h3 id="OrpheusCore_OrpheusTable_1_executeUpdateAsync_System_Data_IDbTransaction_System_Threading_CancellationToken_" data-uid="OrpheusCore.OrpheusTable`1.executeUpdateAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)">
+  executeUpdateAsync(IDbTransaction, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L981"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously executes updates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task executeUpdateAsync(IDbTransaction transaction, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -1195,7 +1613,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_OnAfterModify" data-uid="OrpheusCore.OrpheusTable`1.OnAfterModify">
   OnAfterModify
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1430"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1764"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1212,7 +1630,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><span class="xref">EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments</a>&lt;T&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments</a>&lt;T&gt;&gt;</dt>
     <dd><p>Occurs after a table modifies a record. It is fired on any Add,Update,Delete</p>
 </dd>
   </dl>
@@ -1226,7 +1644,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_OnAfterSave" data-uid="OrpheusCore.OrpheusTable`1.OnAfterSave">
   OnAfterSave
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1420"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1754"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1243,7 +1661,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><span class="xref">EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
     <dd><p>Occurs after the transaction has been committed.</p>
 </dd>
   </dl>
@@ -1257,7 +1675,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_OnBeforeModify" data-uid="OrpheusCore.OrpheusTable`1.OnBeforeModify">
   OnBeforeModify
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1425"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1759"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1274,7 +1692,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><span class="xref">EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments</a>&lt;T&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html">IModifyRecordEventArguments</a>&lt;T&gt;&gt;</dt>
     <dd><p>Occurs before a table modifies a record. It is fired on any Add,Update,Delete</p>
 </dd>
   </dl>
@@ -1288,7 +1706,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h3 id="OrpheusCore_OrpheusTable_1_OnBeforeSave" data-uid="OrpheusCore.OrpheusTable`1.OnBeforeSave">
   OnBeforeSave
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/Core/OrpheusTable.cs/#L1415"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/Core/OrpheusTable.cs/#L1749"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1305,7 +1723,7 @@ Defining a logical operator, you can change the default behavior.</p>
 
   <h4 class="section">Event Type</h4>
   <dl class="parameters">
-    <dt><span class="xref">EventHandler</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.ISaveEventArguments.html">ISaveEventArguments</a>&gt;</dt>
     <dd><p>Occurs before records are save in the database.</p>
 </dd>
   </dl>

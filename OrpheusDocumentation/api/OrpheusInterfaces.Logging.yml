@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Logging
+  commentId: N:OrpheusInterfaces.Logging
+  id: OrpheusInterfaces.Logging
+  children:
+  - OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  - OrpheusInterfaces.Logging.ILogEntry
+  - OrpheusInterfaces.Logging.IOrpheusLogger
+  langs:
+  - csharp
+  - vb
+  name: OrpheusInterfaces.Logging
+  nameWithType: OrpheusInterfaces.Logging
+  fullName: OrpheusInterfaces.Logging
+  type: Namespace
+  assemblies:
+  - OrpheusInterfaces
+references:
+- uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  commentId: T:OrpheusInterfaces.Logging.IFileLoggingConfiguration
+  parent: OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.Logging.IFileLoggingConfiguration.html
+  name: IFileLoggingConfiguration
+  nameWithType: IFileLoggingConfiguration
+  fullName: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+- uid: OrpheusInterfaces.Logging.ILogEntry
+  commentId: T:OrpheusInterfaces.Logging.ILogEntry
+  parent: OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.Logging.ILogEntry.html
+  name: ILogEntry
+  nameWithType: ILogEntry
+  fullName: OrpheusInterfaces.Logging.ILogEntry
+- uid: OrpheusInterfaces.Logging.IOrpheusLogger
+  commentId: T:OrpheusInterfaces.Logging.IOrpheusLogger
+  parent: OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.Logging.IOrpheusLogger.html
+  name: IOrpheusLogger
+  nameWithType: IOrpheusLogger
+  fullName: OrpheusInterfaces.Logging.IOrpheusLogger
+- uid: OrpheusInterfaces.Logging
+  commentId: N:OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Logging
+  nameWithType: OrpheusInterfaces.Logging
+  fullName: OrpheusInterfaces.Logging
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Logging
+    name: Logging
+    href: OrpheusInterfaces.Logging.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Logging
+    name: Logging
+    href: OrpheusInterfaces.Logging.html

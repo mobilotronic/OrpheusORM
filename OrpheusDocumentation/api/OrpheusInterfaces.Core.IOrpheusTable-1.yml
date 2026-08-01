@@ -1,0 +1,1507 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTable`1
+  id: IOrpheusTable`1
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.IOrpheusTable`1.Add(System.Collections.Generic.List{`0})
+  - OrpheusInterfaces.Core.IOrpheusTable`1.Add(`0)
+  - OrpheusInterfaces.Core.IOrpheusTable`1.Data
+  - OrpheusInterfaces.Core.IOrpheusTable`1.Delete(System.Collections.Generic.List{`0})
+  - OrpheusInterfaces.Core.IOrpheusTable`1.Delete(`0)
+  - OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.Collections.Generic.List{System.Object},System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.Data.IDbCommand,System.Boolean,System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusTable`1.OnAfterModify
+  - OrpheusInterfaces.Core.IOrpheusTable`1.OnBeforeModify
+  - OrpheusInterfaces.Core.IOrpheusTable`1.SaveAsync(System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusTable`1.Update(System.Collections.Generic.List{`0})
+  - OrpheusInterfaces.Core.IOrpheusTable`1.Update(`0)
+  langs:
+  - csharp
+  - vb
+  name: IOrpheusTable<T>
+  nameWithType: IOrpheusTable<T>
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IOrpheusTable
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 170
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: >-
+    Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
+
+    Holds all the data of the connected table.
+  example: []
+  syntax:
+    content: 'public interface IOrpheusTable<T> : IOrpheusTable, IDisposable'
+    typeParameters:
+    - id: T
+      description: Model type
+    content.vb: Public Interface IOrpheusTable(Of T) Inherits IOrpheusTable, IDisposable
+  derivedClasses:
+  - OrpheusCore.OrpheusTable`1
+  inheritedMembers:
+  - OrpheusInterfaces.Core.IOrpheusTable.Name
+  - OrpheusInterfaces.Core.IOrpheusTable.SchemaName
+  - OrpheusInterfaces.Core.IOrpheusTable.Modified
+  - OrpheusInterfaces.Core.IOrpheusTable.MasterTable
+  - OrpheusInterfaces.Core.IOrpheusTable.MasterTableKeyFields
+  - OrpheusInterfaces.Core.IOrpheusTable.KeyFields
+  - OrpheusInterfaces.Core.IOrpheusTable.DetailTables
+  - OrpheusInterfaces.Core.IOrpheusTable.Level
+  - OrpheusInterfaces.Core.IOrpheusTable.BatchSize
+  - OrpheusInterfaces.Core.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)
+  - OrpheusInterfaces.Core.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)
+  - OrpheusInterfaces.Core.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)
+  - OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.List{System.Object},System.Boolean)
+  - OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},OrpheusInterfaces.Core.LogicalOperator,System.Boolean)
+  - OrpheusInterfaces.Core.IOrpheusTable.Load(System.String,System.Boolean)
+  - OrpheusInterfaces.Core.IOrpheusTable.Load(System.Data.IDbCommand,System.Boolean)
+  - OrpheusInterfaces.Core.IOrpheusTable.ClearData
+  - OrpheusInterfaces.Core.IOrpheusTable.GetKeyValues
+  - OrpheusInterfaces.Core.IOrpheusTable.Save(System.Data.IDbTransaction,System.Boolean)
+  - OrpheusInterfaces.Core.IOrpheusTable.OnBeforeSave
+  - OrpheusInterfaces.Core.IOrpheusTable.OnAfterSave
+  - System.IDisposable.Dispose
+  nameWithType.vb: IOrpheusTable(Of T)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T)
+  name.vb: IOrpheusTable(Of T)
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Data
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable`1.Data
+  id: Data
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: IOrpheusTable<T>.Data
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Data
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Data
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 177
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Table's data.
+  example: []
+  syntax:
+    content: List<T> Data { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{{T}}
+      description: Table's data
+    content.vb: ReadOnly Property Data As List(Of T)
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.Data*
+  nameWithType.vb: IOrpheusTable(Of T).Data
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Data
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Add(`0)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.Add(`0)
+  id: Add(`0)
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T)
+  nameWithType: IOrpheusTable<T>.Add(T)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Add(T)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Add
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 183
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Adds a new record to the table.
+  example: []
+  syntax:
+    content: void Add(T newRecord)
+    parameters:
+    - id: newRecord
+      type: '{T}'
+      description: New record to be added
+    content.vb: Sub Add(newRecord As T)
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.Add*
+  nameWithType.vb: IOrpheusTable(Of T).Add(T)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Add(T)
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Add(System.Collections.Generic.List{`0})
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.Add(System.Collections.Generic.List{`0})
+  id: Add(System.Collections.Generic.List{`0})
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: Add(List<T>)
+  nameWithType: IOrpheusTable<T>.Add(List<T>)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Add(System.Collections.Generic.List<T>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Add
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 189
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Adds a list of new records.
+  example: []
+  syntax:
+    content: void Add(List<T> newRecords)
+    parameters:
+    - id: newRecords
+      type: System.Collections.Generic.List{{T}}
+      description: New records to be added
+    content.vb: Sub Add(newRecords As List(Of T))
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.Add*
+  nameWithType.vb: IOrpheusTable(Of T).Add(List(Of T))
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Add(System.Collections.Generic.List(Of T))
+  name.vb: Add(List(Of T))
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Update(`0)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.Update(`0)
+  id: Update(`0)
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: Update(T)
+  nameWithType: IOrpheusTable<T>.Update(T)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Update(T)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Update
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 195
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Updates an existing record.
+  example: []
+  syntax:
+    content: void Update(T record)
+    parameters:
+    - id: record
+      type: '{T}'
+      description: Record to be updated
+    content.vb: Sub Update(record As T)
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.Update*
+  nameWithType.vb: IOrpheusTable(Of T).Update(T)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Update(T)
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Update(System.Collections.Generic.List{`0})
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.Update(System.Collections.Generic.List{`0})
+  id: Update(System.Collections.Generic.List{`0})
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: Update(List<T>)
+  nameWithType: IOrpheusTable<T>.Update(List<T>)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Update(System.Collections.Generic.List<T>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Update
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 201
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Updates existing records.
+  example: []
+  syntax:
+    content: void Update(List<T> records)
+    parameters:
+    - id: records
+      type: System.Collections.Generic.List{{T}}
+      description: Records to be updated
+    content.vb: Sub Update(records As List(Of T))
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.Update*
+  nameWithType.vb: IOrpheusTable(Of T).Update(List(Of T))
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Update(System.Collections.Generic.List(Of T))
+  name.vb: Update(List(Of T))
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Delete(System.Collections.Generic.List{`0})
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.Delete(System.Collections.Generic.List{`0})
+  id: Delete(System.Collections.Generic.List{`0})
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: Delete(List<T>)
+  nameWithType: IOrpheusTable<T>.Delete(List<T>)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Delete(System.Collections.Generic.List<T>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Delete
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 207
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Deletes records.
+  example: []
+  syntax:
+    content: void Delete(List<T> records)
+    parameters:
+    - id: records
+      type: System.Collections.Generic.List{{T}}
+      description: Records to be deleted
+    content.vb: Sub Delete(records As List(Of T))
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.Delete*
+  nameWithType.vb: IOrpheusTable(Of T).Delete(List(Of T))
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Delete(System.Collections.Generic.List(Of T))
+  name.vb: Delete(List(Of T))
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Delete(`0)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.Delete(`0)
+  id: Delete(`0)
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: Delete(T)
+  nameWithType: IOrpheusTable<T>.Delete(T)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Delete(T)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Delete
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 213
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Deletes a record.
+  example: []
+  syntax:
+    content: void Delete(T record)
+    parameters:
+    - id: record
+      type: '{T}'
+      description: Record to delete
+    content.vb: Sub Delete(record As T)
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.Delete*
+  nameWithType.vb: IOrpheusTable(Of T).Delete(T)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Delete(T)
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.OnBeforeModify
+  commentId: E:OrpheusInterfaces.Core.IOrpheusTable`1.OnBeforeModify
+  id: OnBeforeModify
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: OnBeforeModify
+  nameWithType: IOrpheusTable<T>.OnBeforeModify
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.OnBeforeModify
+  type: Event
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: OnBeforeModify
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 218
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Occurs before a table modifies a record. It is fired on any Add,Update,Delete
+  example: []
+  syntax:
+    content: event EventHandler<IModifyRecordEventArguments<T>> OnBeforeModify
+    return:
+      type: System.EventHandler{OrpheusInterfaces.Core.IModifyRecordEventArguments{{T}}}
+    content.vb: Event OnBeforeModify As EventHandler(Of IModifyRecordEventArguments(Of T))
+  nameWithType.vb: IOrpheusTable(Of T).OnBeforeModify
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).OnBeforeModify
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.OnAfterModify
+  commentId: E:OrpheusInterfaces.Core.IOrpheusTable`1.OnAfterModify
+  id: OnAfterModify
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: OnAfterModify
+  nameWithType: IOrpheusTable<T>.OnAfterModify
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.OnAfterModify
+  type: Event
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: OnAfterModify
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 223
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Occurs after a table modifies a record. It is fired on any Add,Update,Delete
+  example: []
+  syntax:
+    content: event EventHandler<IModifyRecordEventArguments<T>> OnAfterModify
+    return:
+      type: System.EventHandler{OrpheusInterfaces.Core.IModifyRecordEventArguments{{T}}}
+    content.vb: Event OnAfterModify As EventHandler(Of IModifyRecordEventArguments(Of T))
+  nameWithType.vb: IOrpheusTable(Of T).OnAfterModify
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).OnAfterModify
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.Threading.CancellationToken)
+  id: LoadAsync(System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: LoadAsync(CancellationToken)
+  nameWithType: IOrpheusTable<T>.LoadAsync(CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.LoadAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LoadAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 230
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously loads data from the database into the table.
+  example: []
+  syntax:
+    content: Task LoadAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LoadAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync*
+  nameWithType.vb: IOrpheusTable(Of T).LoadAsync(CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).LoadAsync(System.Threading.CancellationToken)
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.Collections.Generic.List{System.Object},System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.Collections.Generic.List{System.Object},System.Threading.CancellationToken)
+  id: LoadAsync(System.Collections.Generic.List{System.Object},System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: LoadAsync(List<object>, CancellationToken)
+  nameWithType: IOrpheusTable<T>.LoadAsync(List<object>, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.LoadAsync(System.Collections.Generic.List<object>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LoadAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 235
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously loads data using a key-value pair filter.
+  example: []
+  syntax:
+    content: Task LoadAsync(List<object> keyValues, CancellationToken cancellationToken = default)
+    parameters:
+    - id: keyValues
+      type: System.Collections.Generic.List{System.Object}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LoadAsync(keyValues As List(Of Object), cancellationToken As CancellationToken = Nothing) As Task
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync*
+  nameWithType.vb: IOrpheusTable(Of T).LoadAsync(List(Of Object), CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).LoadAsync(System.Collections.Generic.List(Of Object), System.Threading.CancellationToken)
+  name.vb: LoadAsync(List(Of Object), CancellationToken)
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  id: LoadAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: LoadAsync(string, bool, CancellationToken)
+  nameWithType: IOrpheusTable<T>.LoadAsync(string, bool, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.LoadAsync(string, bool, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LoadAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 240
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously loads table data by executing a SQL command.
+  example: []
+  syntax:
+    content: Task LoadAsync(string SQL, bool clearExistingData = true, CancellationToken cancellationToken = default)
+    parameters:
+    - id: SQL
+      type: System.String
+    - id: clearExistingData
+      type: System.Boolean
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LoadAsync(SQL As String, clearExistingData As Boolean = True, cancellationToken As CancellationToken = Nothing) As Task
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync*
+  nameWithType.vb: IOrpheusTable(Of T).LoadAsync(String, Boolean, CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).LoadAsync(String, Boolean, System.Threading.CancellationToken)
+  name.vb: LoadAsync(String, Boolean, CancellationToken)
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.Data.IDbCommand,System.Boolean,System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync(System.Data.IDbCommand,System.Boolean,System.Threading.CancellationToken)
+  id: LoadAsync(System.Data.IDbCommand,System.Boolean,System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: LoadAsync(IDbCommand, bool, CancellationToken)
+  nameWithType: IOrpheusTable<T>.LoadAsync(IDbCommand, bool, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.LoadAsync(System.Data.IDbCommand, bool, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LoadAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 245
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously loads table data by executing a db command.
+  example: []
+  syntax:
+    content: Task LoadAsync(IDbCommand dbCommand, bool clearExistingData = true, CancellationToken cancellationToken = default)
+    parameters:
+    - id: dbCommand
+      type: System.Data.IDbCommand
+    - id: clearExistingData
+      type: System.Boolean
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function LoadAsync(dbCommand As IDbCommand, clearExistingData As Boolean = True, cancellationToken As CancellationToken = Nothing) As Task
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync*
+  nameWithType.vb: IOrpheusTable(Of T).LoadAsync(IDbCommand, Boolean, CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).LoadAsync(System.Data.IDbCommand, Boolean, System.Threading.CancellationToken)
+  name.vb: LoadAsync(IDbCommand, Boolean, CancellationToken)
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.SaveAsync(System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable`1.SaveAsync(System.Threading.CancellationToken)
+  id: SaveAsync(System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusTable`1
+  langs:
+  - csharp
+  - vb
+  name: SaveAsync(CancellationToken)
+  nameWithType: IOrpheusTable<T>.SaveAsync(CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.SaveAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SaveAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 250
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously saves all pending changes (adds, updates, deletes) to the database.
+  example: []
+  syntax:
+    content: Task SaveAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SaveAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: OrpheusInterfaces.Core.IOrpheusTable`1.SaveAsync*
+  nameWithType.vb: IOrpheusTable(Of T).SaveAsync(CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).SaveAsync(System.Threading.CancellationToken)
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.IOrpheusTable.Name
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable.Name
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Name
+  name: Name
+  nameWithType: IOrpheusTable.Name
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.Name
+- uid: OrpheusInterfaces.Core.IOrpheusTable.SchemaName
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable.SchemaName
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_SchemaName
+  name: SchemaName
+  nameWithType: IOrpheusTable.SchemaName
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.SchemaName
+- uid: OrpheusInterfaces.Core.IOrpheusTable.Modified
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable.Modified
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Modified
+  name: Modified
+  nameWithType: IOrpheusTable.Modified
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.Modified
+- uid: OrpheusInterfaces.Core.IOrpheusTable.MasterTable
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable.MasterTable
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_MasterTable
+  name: MasterTable
+  nameWithType: IOrpheusTable.MasterTable
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.MasterTable
+- uid: OrpheusInterfaces.Core.IOrpheusTable.MasterTableKeyFields
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable.MasterTableKeyFields
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_MasterTableKeyFields
+  name: MasterTableKeyFields
+  nameWithType: IOrpheusTable.MasterTableKeyFields
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.MasterTableKeyFields
+- uid: OrpheusInterfaces.Core.IOrpheusTable.KeyFields
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable.KeyFields
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_KeyFields
+  name: KeyFields
+  nameWithType: IOrpheusTable.KeyFields
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.KeyFields
+- uid: OrpheusInterfaces.Core.IOrpheusTable.DetailTables
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable.DetailTables
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_DetailTables
+  name: DetailTables
+  nameWithType: IOrpheusTable.DetailTables
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.DetailTables
+- uid: OrpheusInterfaces.Core.IOrpheusTable.Level
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable.Level
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Level
+  name: Level
+  nameWithType: IOrpheusTable.Level
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.Level
+- uid: OrpheusInterfaces.Core.IOrpheusTable.BatchSize
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTable.BatchSize
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_BatchSize
+  name: BatchSize
+  nameWithType: IOrpheusTable.BatchSize
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.BatchSize
+- uid: OrpheusInterfaces.Core.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteDeletes_System_Data_IDbTransaction_
+  name: ExecuteDeletes(IDbTransaction)
+  nameWithType: IOrpheusTable.ExecuteDeletes(IDbTransaction)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)
+    name: ExecuteDeletes
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteDeletes_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.ExecuteDeletes(System.Data.IDbTransaction)
+    name: ExecuteDeletes
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteDeletes_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteUpdates_System_Data_IDbTransaction_
+  name: ExecuteUpdates(IDbTransaction)
+  nameWithType: IOrpheusTable.ExecuteUpdates(IDbTransaction)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)
+    name: ExecuteUpdates
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteUpdates_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.ExecuteUpdates(System.Data.IDbTransaction)
+    name: ExecuteUpdates
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteUpdates_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteInserts_System_Data_IDbTransaction_
+  name: ExecuteInserts(IDbTransaction)
+  nameWithType: IOrpheusTable.ExecuteInserts(IDbTransaction)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)
+    name: ExecuteInserts
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteInserts_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.ExecuteInserts(System.Data.IDbTransaction)
+    name: ExecuteInserts
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteInserts_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.List{System.Object},System.Boolean)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.List{System.Object},System.Boolean)
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_List_System_Object__System_Boolean_
+  name: Load(List<object>, bool)
+  nameWithType: IOrpheusTable.Load(List<object>, bool)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.List<object>, bool)
+  nameWithType.vb: IOrpheusTable.Load(List(Of Object), Boolean)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.List(Of Object), Boolean)
+  name.vb: Load(List(Of Object), Boolean)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.List{System.Object},System.Boolean)
+    name: Load
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_List_System_Object__System_Boolean_
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.List{System.Object},System.Boolean)
+    name: Load
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_List_System_Object__System_Boolean_
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},OrpheusInterfaces.Core.LogicalOperator,System.Boolean)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},OrpheusInterfaces.Core.LogicalOperator,System.Boolean)
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_
+  name: Load(Dictionary<string, List<object>>, LogicalOperator, bool)
+  nameWithType: IOrpheusTable.Load(Dictionary<string, List<object>>, LogicalOperator, bool)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<object>>, OrpheusInterfaces.Core.LogicalOperator, bool)
+  nameWithType.vb: IOrpheusTable.Load(Dictionary(Of String, List(Of Object)), LogicalOperator, Boolean)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.Dictionary(Of String, System.Collections.Generic.List(Of Object)), OrpheusInterfaces.Core.LogicalOperator, Boolean)
+  name.vb: Load(Dictionary(Of String, List(Of Object)), LogicalOperator, Boolean)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},OrpheusInterfaces.Core.LogicalOperator,System.Boolean)
+    name: Load
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_
+  - name: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Core.LogicalOperator
+    name: LogicalOperator
+    href: OrpheusInterfaces.Core.LogicalOperator.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.Object}},OrpheusInterfaces.Core.LogicalOperator,System.Boolean)
+    name: Load
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_
+  - name: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Core.LogicalOperator
+    name: LogicalOperator
+    href: OrpheusInterfaces.Core.LogicalOperator.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.String,System.Boolean)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.Load(System.String,System.Boolean)
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_String_System_Boolean_
+  name: Load(string, bool)
+  nameWithType: IOrpheusTable.Load(string, bool)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.Load(string, bool)
+  nameWithType.vb: IOrpheusTable.Load(String, Boolean)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable.Load(String, Boolean)
+  name.vb: Load(String, Boolean)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.String,System.Boolean)
+    name: Load
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_String_System_Boolean_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.String,System.Boolean)
+    name: Load
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_String_System_Boolean_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Data.IDbCommand,System.Boolean)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.Load(System.Data.IDbCommand,System.Boolean)
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Data_IDbCommand_System_Boolean_
+  name: Load(IDbCommand, bool)
+  nameWithType: IOrpheusTable.Load(IDbCommand, bool)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Data.IDbCommand, bool)
+  nameWithType.vb: IOrpheusTable.Load(IDbCommand, Boolean)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Data.IDbCommand, Boolean)
+  name.vb: Load(IDbCommand, Boolean)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Data.IDbCommand,System.Boolean)
+    name: Load
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Data_IDbCommand_System_Boolean_
+  - name: (
+  - uid: System.Data.IDbCommand
+    name: IDbCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbcommand
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Load(System.Data.IDbCommand,System.Boolean)
+    name: Load
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Data_IDbCommand_System_Boolean_
+  - name: (
+  - uid: System.Data.IDbCommand
+    name: IDbCommand
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbcommand
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.ClearData
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.ClearData
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ClearData
+  name: ClearData()
+  nameWithType: IOrpheusTable.ClearData()
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.ClearData()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.ClearData
+    name: ClearData
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ClearData
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.ClearData
+    name: ClearData
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ClearData
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.GetKeyValues
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.GetKeyValues
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_GetKeyValues
+  name: GetKeyValues()
+  nameWithType: IOrpheusTable.GetKeyValues()
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.GetKeyValues()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.GetKeyValues
+    name: GetKeyValues
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_GetKeyValues
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.GetKeyValues
+    name: GetKeyValues
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_GetKeyValues
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.Save(System.Data.IDbTransaction,System.Boolean)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTable.Save(System.Data.IDbTransaction,System.Boolean)
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Save_System_Data_IDbTransaction_System_Boolean_
+  name: Save(IDbTransaction, bool)
+  nameWithType: IOrpheusTable.Save(IDbTransaction, bool)
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.Save(System.Data.IDbTransaction, bool)
+  nameWithType.vb: IOrpheusTable.Save(IDbTransaction, Boolean)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable.Save(System.Data.IDbTransaction, Boolean)
+  name.vb: Save(IDbTransaction, Boolean)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Save(System.Data.IDbTransaction,System.Boolean)
+    name: Save
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Save_System_Data_IDbTransaction_System_Boolean_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable.Save(System.Data.IDbTransaction,System.Boolean)
+    name: Save
+    href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Save_System_Data_IDbTransaction_System_Boolean_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable.OnBeforeSave
+  commentId: E:OrpheusInterfaces.Core.IOrpheusTable.OnBeforeSave
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_OnBeforeSave
+  name: OnBeforeSave
+  nameWithType: IOrpheusTable.OnBeforeSave
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.OnBeforeSave
+- uid: OrpheusInterfaces.Core.IOrpheusTable.OnAfterSave
+  commentId: E:OrpheusInterfaces.Core.IOrpheusTable.OnAfterSave
+  parent: OrpheusInterfaces.Core.IOrpheusTable
+  href: OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_OnAfterSave
+  name: OnAfterSave
+  nameWithType: IOrpheusTable.OnAfterSave
+  fullName: OrpheusInterfaces.Core.IOrpheusTable.OnAfterSave
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTable
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusTable.html
+  name: IOrpheusTable
+  nameWithType: IOrpheusTable
+  fullName: OrpheusInterfaces.Core.IOrpheusTable
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Data*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTable`1.Data
+  href: OrpheusInterfaces.Core.IOrpheusTable-1.html#OrpheusInterfaces_Core_IOrpheusTable_1_Data
+  name: Data
+  nameWithType: IOrpheusTable<T>.Data
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Data
+  nameWithType.vb: IOrpheusTable(Of T).Data
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Data
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Add*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTable`1.Add
+  href: OrpheusInterfaces.Core.IOrpheusTable-1.html#OrpheusInterfaces_Core_IOrpheusTable_1_Add__0_
+  name: Add
+  nameWithType: IOrpheusTable<T>.Add
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Add
+  nameWithType.vb: IOrpheusTable(Of T).Add
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Add
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Update*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTable`1.Update
+  href: OrpheusInterfaces.Core.IOrpheusTable-1.html#OrpheusInterfaces_Core_IOrpheusTable_1_Update__0_
+  name: Update
+  nameWithType: IOrpheusTable<T>.Update
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Update
+  nameWithType.vb: IOrpheusTable(Of T).Update
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Update
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.Delete*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTable`1.Delete
+  href: OrpheusInterfaces.Core.IOrpheusTable-1.html#OrpheusInterfaces_Core_IOrpheusTable_1_Delete_System_Collections_Generic_List__0__
+  name: Delete
+  nameWithType: IOrpheusTable<T>.Delete
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.Delete
+  nameWithType.vb: IOrpheusTable(Of T).Delete
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).Delete
+- uid: System.EventHandler{OrpheusInterfaces.Core.IModifyRecordEventArguments{{T}}}
+  commentId: T:System.EventHandler{OrpheusInterfaces.Core.IModifyRecordEventArguments{`0}}
+  parent: System
+  definition: System.EventHandler`1
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<IModifyRecordEventArguments<T>>
+  nameWithType: EventHandler<IModifyRecordEventArguments<T>>
+  fullName: System.EventHandler<OrpheusInterfaces.Core.IModifyRecordEventArguments<T>>
+  nameWithType.vb: EventHandler(Of IModifyRecordEventArguments(Of T))
+  fullName.vb: System.EventHandler(Of OrpheusInterfaces.Core.IModifyRecordEventArguments(Of T))
+  name.vb: EventHandler(Of IModifyRecordEventArguments(Of T))
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+    name: IModifyRecordEventArguments
+    href: OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+    name: IModifyRecordEventArguments
+    href: OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: <
+  - name: TEventArgs
+  - name: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.eventhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEventArgs
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTable`1.LoadAsync
+  href: OrpheusInterfaces.Core.IOrpheusTable-1.html#OrpheusInterfaces_Core_IOrpheusTable_1_LoadAsync_System_Threading_CancellationToken_
+  name: LoadAsync
+  nameWithType: IOrpheusTable<T>.LoadAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.LoadAsync
+  nameWithType.vb: IOrpheusTable(Of T).LoadAsync
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).LoadAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Collections.Generic.List{System.Object}
+  commentId: T:System.Collections.Generic.List{System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<object>
+  nameWithType: List<object>
+  fullName: System.Collections.Generic.List<object>
+  nameWithType.vb: List(Of Object)
+  fullName.vb: System.Collections.Generic.List(Of Object)
+  name.vb: List(Of Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Data.IDbCommand
+  commentId: T:System.Data.IDbCommand
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.idbcommand
+  name: IDbCommand
+  nameWithType: IDbCommand
+  fullName: System.Data.IDbCommand
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1.SaveAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTable`1.SaveAsync
+  href: OrpheusInterfaces.Core.IOrpheusTable-1.html#OrpheusInterfaces_Core_IOrpheusTable_1_SaveAsync_System_Threading_CancellationToken_
+  name: SaveAsync
+  nameWithType: IOrpheusTable<T>.SaveAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>.SaveAsync
+  nameWithType.vb: IOrpheusTable(Of T).SaveAsync
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T).SaveAsync

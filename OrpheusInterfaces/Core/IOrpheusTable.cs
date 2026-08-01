@@ -81,6 +81,12 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <returns>Table's level</returns>
         int Level { get; }
+
+        /// <summary>
+        /// Maximum number of rows batched into a single round trip when executing
+        /// queued inserts/updates/deletes. Default: 100.
+        /// </summary>
+        int BatchSize { get; set; }
         
         /// <summary>
         /// Executes any delete changes that the table has.
@@ -228,6 +234,16 @@ namespace OrpheusInterfaces.Core
         /// Asynchronously loads data using a key-value pair filter.
         /// </summary>
         Task LoadAsync(List<object> keyValues, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously loads table data by executing a SQL command.
+        /// </summary>
+        Task LoadAsync(string SQL, bool clearExistingData = true, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously loads table data by executing a db command.
+        /// </summary>
+        Task LoadAsync(IDbCommand dbCommand, bool clearExistingData = true, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Asynchronously saves all pending changes (adds, updates, deletes) to the database.

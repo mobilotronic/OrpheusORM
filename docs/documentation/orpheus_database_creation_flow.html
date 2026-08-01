@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/upgrade-to-net-8/OrpheusDocumentation/documentation/orpheus_database_creation_flow.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusDocumentation/documentation/orpheus_database_creation_flow.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -88,9 +88,11 @@
 <h1 id="database-creation-flow">Database creation flow</h1>
 
 <p>Orpheus will try to create the database, that it's trying to connect to, if it doesn't exist.</p>
-<p>To do that, it will create a second connection, using the ServiceUserName/ServicePassword
-credentials to connect to the server.</p>
-<p>The account configured in ServiceUserName/ServicePassword must have database creation priviliges.</p>
+<p>To do that, it will create a separate administrative connection — to <code>master</code> (SQL Server),
+<code>sys</code> (MySQL), or <code>postgres</code> (PostgreSQL) — using the ServiceUserName/ServicePassword credentials
+to connect to the server. If ServiceUserName/ServicePassword aren't configured, this
+administrative connection falls back to the main UserName/Password instead.</p>
+<p>The account used for this connection must have database creation priviliges.</p>
 
 </article>
 

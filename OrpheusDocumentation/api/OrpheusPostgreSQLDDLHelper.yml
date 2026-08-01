@@ -1,0 +1,44 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusPostgreSQLDDLHelper
+  commentId: N:OrpheusPostgreSQLDDLHelper
+  id: OrpheusPostgreSQLDDLHelper
+  children:
+  - OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory
+  - OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper
+  - OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase
+  - OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: OrpheusPostgreSQLDDLHelper
+  nameWithType: OrpheusPostgreSQLDDLHelper
+  fullName: OrpheusPostgreSQLDDLHelper
+  type: Namespace
+  assemblies:
+  - OrpheusPostgreSQLDDLHelper
+references:
+- uid: OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory
+  commentId: T:OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory
+  href: OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory.html
+  name: NpgsqlConnectionFactory
+  nameWithType: NpgsqlConnectionFactory
+  fullName: OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory
+- uid: OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper
+  commentId: T:OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper
+  href: OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.html
+  name: OrpheusPostgreSQLDDLHelper
+  nameWithType: OrpheusPostgreSQLDDLHelper
+  fullName: OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper
+- uid: OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase
+  commentId: T:OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase
+  href: OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase.html
+  name: OrpheusPostgreSQLServerDatabase
+  nameWithType: OrpheusPostgreSQLServerDatabase
+  fullName: OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase
+- uid: OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions
+  commentId: T:OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions
+  href: OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions.html
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions

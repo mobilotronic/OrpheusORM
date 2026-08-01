@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ServiceManager | Orpheus ">
       
-      <meta name="description" content="Class to register internal services needed by Orpheus">
+      <meta name="description" content="Class to register internal services needed by Orpheus. In v2.0.0+, prefer constructor injection via IServiceProvider/ILoggerFactory over the static methods. The ServiceProvider property is deprecated.">
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusCore_ServiceManager.md&amp;value=---%0Auid%3A%20OrpheusCore.ServiceManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/modernazitation-effort/apiSpec/new?filename=OrpheusCore_ServiceManager.md&amp;value=---%0Auid%3A%20OrpheusCore.ServiceManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="OrpheusCore_ServiceManager" data-uid="OrpheusCore.ServiceManager" class="text-break">
-Class ServiceManager  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/ServiceManager.cs/#L18"><i class="bi bi-code-slash"></i></a>
+Class ServiceManager  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/ServiceManager.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
   <dl><dt>Assembly</dt><dd>OrpheusCore.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Class to register internal services needed by Orpheus</p>
+  <div class="markdown summary"><p>Class to register internal services needed by Orpheus.
+In v2.0.0+, prefer constructor injection via IServiceProvider/ILoggerFactory
+over the static methods. The ServiceProvider property is deprecated.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -111,7 +113,7 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><span class="xref">Object</span></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><span class="xref">ServiceManager</span></div>
     </dd>
   </dl>
@@ -122,25 +124,25 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <span class="xref">Object.Equals(Object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
-      <span class="xref">Object.Equals(Object, Object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <span class="xref">Object.GetHashCode()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <span class="xref">Object.GetType()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <span class="xref">Object.MemberwiseClone()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <span class="xref">Object.ReferenceEquals(Object, Object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <span class="xref">Object.ToString()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </dd></dl>
 
@@ -157,10 +159,11 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
 
   <h3 id="OrpheusCore_ServiceManager_LoggerFactory" data-uid="OrpheusCore.ServiceManager.LoggerFactory">
   LoggerFactory
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/ServiceManager.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/ServiceManager.cs/#L173"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the logger factory.</p>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory">ILoggerFactory</a> resolved from <a class="xref" href="OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_ServiceProvider">ServiceProvider</a>, cached
+after the first access.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -174,9 +177,43 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">ILoggerFactory</span></dt>
-    <dd><p>The logger factory.</p>
-</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory">ILoggerFactory</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_ServiceManager_ServiceProvider_" data-uid="OrpheusCore.ServiceManager.ServiceProvider*"></a>
+
+  <h3 id="OrpheusCore_ServiceManager_ServiceProvider" data-uid="OrpheusCore.ServiceManager.ServiceProvider">
+  ServiceProvider
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/ServiceManager.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The service provider used by <a class="xref" href="OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve__1">Resolve&lt;T&gt;()</a>, <a class="xref" href="OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_LoggerFactory">LoggerFactory</a>, and
+the other static resolution helpers below. Must be assigned (typically right after
+building the service collection with <code>BuildServiceProvider()</code>) before calling them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Prefer constructor injection of IServiceProvider. This static property is retained for backward compatibility.&quot;)]
+public static IServiceProvider ServiceProvider { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></dt>
+    <dd></dd>
   </dl>
 
 
@@ -194,10 +231,15 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
 
   <h3 id="OrpheusCore_ServiceManager_AddOrpheusServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_" data-uid="OrpheusCore.ServiceManager.AddOrpheusServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
   AddOrpheusServices(IServiceCollection)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/ServiceManager.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/ServiceManager.cs/#L92"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Register Orpheus services</p>
+  <div class="markdown level1 summary"><p>Registers the internal services Orpheus needs at runtime: table options, module and
+schema types, a default <a class="xref" href="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html">IDatabaseConnectionConfiguration</a>, and (only if
+nothing has registered <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory">ILoggerFactory</a> yet) a console logger fallback.
+Engine-specific connection factories and DDL helpers are <b>not</b> registered here — use
+the per-engine <code>AddOrpheusSqlServer</code>/<code>AddOrpheusMySql</code>/<code>AddOrpheusPostgreSql</code>
+extension methods (which call this internally) instead of calling this directly.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -207,13 +249,139 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>services</code> <span class="xref">IServiceCollection</span></dt>
-    <dd></dd>
+    <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>The service collection to register Orpheus's services into.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">IServiceCollection</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
+    <dd><p>The same <code class="paramref">services</code> instance, for chaining.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_ServiceManager_CreateLogger_" data-uid="OrpheusCore.ServiceManager.CreateLogger*"></a>
+
+  <h3 id="OrpheusCore_ServiceManager_CreateLogger__1" data-uid="OrpheusCore.ServiceManager.CreateLogger``1">
+  CreateLogger&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/ServiceManager.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a logger for <code class="typeparamref">T</code> via <a class="xref" href="OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_LoggerFactory">LoggerFactory</a>. Returns
+null if no <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory">ILoggerFactory</a> is registered in <a class="xref" href="OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_ServiceProvider">ServiceProvider</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ILogger&lt;T&gt; CreateLogger&lt;T&gt;()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_ServiceManager_GetLoggerService_" data-uid="OrpheusCore.ServiceManager.GetLoggerService*"></a>
+
+  <h3 id="OrpheusCore_ServiceManager_GetLoggerService_System_Type_" data-uid="OrpheusCore.ServiceManager.GetLoggerService(System.Type)">
+  GetLoggerService(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/ServiceManager.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resolves an arbitrary service by type from <a class="xref" href="OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_ServiceProvider">ServiceProvider</a>. Despite the
+name, this is not limited to logging-related services — it's a general-purpose lookup.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object GetLoggerService(Type type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The service type to resolve.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusCore_ServiceManager_Resolve_" data-uid="OrpheusCore.ServiceManager.Resolve*"></a>
+
+  <h3 id="OrpheusCore_ServiceManager_Resolve_System_Type_System_Object___" data-uid="OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])">
+  Resolve(Type, object[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/ServiceManager.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resolves a service by type from <a class="xref" href="OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_ServiceProvider">ServiceProvider</a>. When
+<code class="paramref">constructorParameters</code> is supplied, instead of returning the
+DI-resolved instance directly, this looks up the resolved service's concrete type and
+invokes whichever of its constructors' parameter types are assignable from the supplied
+arguments — for constructing an instance with runtime-known arguments that aren't
+themselves resolvable from the container.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object Resolve(Type serviceType, object[] constructorParameters)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>serviceType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The service type to resolve.</p>
+</dd>
+    <dt><code>constructorParameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>Constructor arguments to invoke a matching constructor with, or null/empty to just return
+the DI-resolved instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
     <dd></dd>
   </dl>
 
@@ -231,10 +399,10 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
 
   <h3 id="OrpheusCore_ServiceManager_Resolve__1" data-uid="OrpheusCore.ServiceManager.Resolve``1">
   Resolve&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/ServiceManager.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/ServiceManager.cs/#L112"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Resolve an interface to a concrete implementation.</p>
+  <div class="markdown level1 summary"><p>Resolves a service of type <code class="typeparamref">T</code> from <a class="xref" href="OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_ServiceProvider">ServiceProvider</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -267,11 +435,11 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
   <a id="OrpheusCore_ServiceManager_Resolve_" data-uid="OrpheusCore.ServiceManager.Resolve*"></a>
 
   <h3 id="OrpheusCore_ServiceManager_Resolve__1_System_Object___" data-uid="OrpheusCore.ServiceManager.Resolve``1(System.Object[])">
-  Resolve&lt;T&gt;(Object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusCore/ServiceManager.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  Resolve&lt;T&gt;(object[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusCore/ServiceManager.cs/#L153"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Resolve an interface to a concrete implementation, with constructor parameter support.</p>
+  <div class="markdown level1 summary"><p>Generic counterpart of <a class="xref" href="OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve_System_Type_System_Object___">Resolve(Type, object[])</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -281,8 +449,10 @@ Class ServiceManager  <a class="header-action link-secondary" title="View source
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>constructorParameters</code> <span class="xref">Object</span>[]</dt>
-    <dd></dd>
+    <dt><code>constructorParameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>Constructor arguments to invoke a matching constructor with, or null/empty to just return
+the DI-resolved instance.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>

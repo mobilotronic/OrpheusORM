@@ -1,0 +1,89 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.ExtendedDbTypes
+  commentId: T:OrpheusInterfaces.Core.ExtendedDbTypes
+  id: ExtendedDbTypes
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.ExtendedDbTypes.StringBlob
+  langs:
+  - csharp
+  - vb
+  name: ExtendedDbTypes
+  nameWithType: ExtendedDbTypes
+  fullName: OrpheusInterfaces.Core.ExtendedDbTypes
+  type: Enum
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ExtendedDbTypes
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 12
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Extended DbTypes enumeration, for types that are not listed in the generic DbType enumeration.
+  example: []
+  syntax:
+    content: public enum ExtendedDbTypes
+    content.vb: Public Enum ExtendedDbTypes
+- uid: OrpheusInterfaces.Core.ExtendedDbTypes.StringBlob
+  commentId: F:OrpheusInterfaces.Core.ExtendedDbTypes.StringBlob
+  id: StringBlob
+  parent: OrpheusInterfaces.Core.ExtendedDbTypes
+  langs:
+  - csharp
+  - vb
+  name: StringBlob
+  nameWithType: ExtendedDbTypes.StringBlob
+  fullName: OrpheusInterfaces.Core.ExtendedDbTypes.StringBlob
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: StringBlob
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 17
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: A variable-length stream of Unicode data with a maximum length
+  example: []
+  syntax:
+    content: StringBlob = 999
+    return:
+      type: OrpheusInterfaces.Core.ExtendedDbTypes
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.ExtendedDbTypes
+  commentId: T:OrpheusInterfaces.Core.ExtendedDbTypes
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.ExtendedDbTypes.html
+  name: ExtendedDbTypes
+  nameWithType: ExtendedDbTypes
+  fullName: OrpheusInterfaces.Core.ExtendedDbTypes

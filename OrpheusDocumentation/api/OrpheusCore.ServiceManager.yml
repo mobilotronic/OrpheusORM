@@ -1,0 +1,980 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.ServiceManager
+  commentId: T:OrpheusCore.ServiceManager
+  id: ServiceManager
+  parent: OrpheusCore
+  children:
+  - OrpheusCore.ServiceManager.AddOrpheusServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  - OrpheusCore.ServiceManager.CreateLogger``1
+  - OrpheusCore.ServiceManager.GetLoggerService(System.Type)
+  - OrpheusCore.ServiceManager.LoggerFactory
+  - OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])
+  - OrpheusCore.ServiceManager.Resolve``1
+  - OrpheusCore.ServiceManager.Resolve``1(System.Object[])
+  - OrpheusCore.ServiceManager.ServiceProvider
+  langs:
+  - csharp
+  - vb
+  name: ServiceManager
+  nameWithType: ServiceManager
+  fullName: OrpheusCore.ServiceManager
+  type: Class
+  source:
+    remote:
+      path: OrpheusCore/ServiceManager.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ServiceManager
+    path: ../OrpheusCore/ServiceManager.cs
+    startLine: 19
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: >-
+    Class to register internal services needed by Orpheus.
+
+    In v2.0.0+, prefer constructor injection via IServiceProvider/ILoggerFactory
+
+    over the static methods. The ServiceProvider property is deprecated.
+  example: []
+  syntax:
+    content: public static class ServiceManager
+    content.vb: Public Module ServiceManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: OrpheusCore.ServiceManager.AddOrpheusServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  commentId: M:OrpheusCore.ServiceManager.AddOrpheusServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  id: AddOrpheusServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  isExtensionMethod: true
+  parent: OrpheusCore.ServiceManager
+  langs:
+  - csharp
+  - vb
+  name: AddOrpheusServices(IServiceCollection)
+  nameWithType: ServiceManager.AddOrpheusServices(IServiceCollection)
+  fullName: OrpheusCore.ServiceManager.AddOrpheusServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/ServiceManager.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddOrpheusServices
+    path: ../OrpheusCore/ServiceManager.cs
+    startLine: 91
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: >-
+    Registers the internal services Orpheus needs at runtime: table options, module and
+
+    schema types, a default <xref href="OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration" data-throw-if-not-resolved="false"></xref>, and (only if
+
+    nothing has registered <xref href="Microsoft.Extensions.Logging.ILoggerFactory" data-throw-if-not-resolved="false"></xref> yet) a console logger fallback.
+
+    Engine-specific connection factories and DDL helpers are <b>not</b> registered here — use
+
+    the per-engine <code>AddOrpheusSqlServer</code>/<code>AddOrpheusMySql</code>/<code>AddOrpheusPostgreSql</code>
+
+    extension methods (which call this internally) instead of calling this directly.
+  example: []
+  syntax:
+    content: public static IServiceCollection AddOrpheusServices(this IServiceCollection services)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection to register Orpheus's services into.
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The same <code class="paramref">services</code> instance, for chaining.
+    content.vb: Public Shared Function AddOrpheusServices(services As IServiceCollection) As IServiceCollection
+  overload: OrpheusCore.ServiceManager.AddOrpheusServices*
+- uid: OrpheusCore.ServiceManager.ServiceProvider
+  commentId: P:OrpheusCore.ServiceManager.ServiceProvider
+  id: ServiceProvider
+  parent: OrpheusCore.ServiceManager
+  langs:
+  - csharp
+  - vb
+  name: ServiceProvider
+  nameWithType: ServiceManager.ServiceProvider
+  fullName: OrpheusCore.ServiceManager.ServiceProvider
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/ServiceManager.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ServiceProvider
+    path: ../OrpheusCore/ServiceManager.cs
+    startLine: 105
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: >-
+    The service provider used by <xref href="OrpheusCore.ServiceManager.Resolve%60%601" data-throw-if-not-resolved="false"></xref>, <xref href="OrpheusCore.ServiceManager.LoggerFactory" data-throw-if-not-resolved="false"></xref>, and
+
+    the other static resolution helpers below. Must be assigned (typically right after
+
+    building the service collection with <code>BuildServiceProvider()</code>) before calling them.
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("Prefer constructor injection of IServiceProvider. This static property is retained for backward compatibility.")]
+
+      public static IServiceProvider ServiceProvider { get; set; }
+    parameters: []
+    return:
+      type: System.IServiceProvider
+    content.vb: >-
+      <Obsolete("Prefer constructor injection of IServiceProvider. This static property is retained for backward compatibility.")>
+
+      Public Shared Property ServiceProvider As IServiceProvider
+  overload: OrpheusCore.ServiceManager.ServiceProvider*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Prefer constructor injection of IServiceProvider. This static property is retained for backward compatibility.
+- uid: OrpheusCore.ServiceManager.Resolve``1
+  commentId: M:OrpheusCore.ServiceManager.Resolve``1
+  id: Resolve``1
+  parent: OrpheusCore.ServiceManager
+  langs:
+  - csharp
+  - vb
+  name: Resolve<T>()
+  nameWithType: ServiceManager.Resolve<T>()
+  fullName: OrpheusCore.ServiceManager.Resolve<T>()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/ServiceManager.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Resolve
+    path: ../OrpheusCore/ServiceManager.cs
+    startLine: 111
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: Resolves a service of type <code class="typeparamref">T</code> from <xref href="OrpheusCore.ServiceManager.ServiceProvider" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static T Resolve<T>()
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Shared Function Resolve(Of T)() As T
+  overload: OrpheusCore.ServiceManager.Resolve*
+  nameWithType.vb: ServiceManager.Resolve(Of T)()
+  fullName.vb: OrpheusCore.ServiceManager.Resolve(Of T)()
+  name.vb: Resolve(Of T)()
+- uid: OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])
+  commentId: M:OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])
+  id: Resolve(System.Type,System.Object[])
+  parent: OrpheusCore.ServiceManager
+  langs:
+  - csharp
+  - vb
+  name: Resolve(Type, object[])
+  nameWithType: ServiceManager.Resolve(Type, object[])
+  fullName: OrpheusCore.ServiceManager.Resolve(System.Type, object[])
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/ServiceManager.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Resolve
+    path: ../OrpheusCore/ServiceManager.cs
+    startLine: 129
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: >-
+    Resolves a service by type from <xref href="OrpheusCore.ServiceManager.ServiceProvider" data-throw-if-not-resolved="false"></xref>. When
+
+    <code class="paramref">constructorParameters</code> is supplied, instead of returning the
+
+    DI-resolved instance directly, this looks up the resolved service's concrete type and
+
+    invokes whichever of its constructors' parameter types are assignable from the supplied
+
+    arguments — for constructing an instance with runtime-known arguments that aren't
+
+    themselves resolvable from the container.
+  example: []
+  syntax:
+    content: public static object Resolve(Type serviceType, object[] constructorParameters)
+    parameters:
+    - id: serviceType
+      type: System.Type
+      description: The service type to resolve.
+    - id: constructorParameters
+      type: System.Object[]
+      description: >-
+        Constructor arguments to invoke a matching constructor with, or null/empty to just return
+
+        the DI-resolved instance.
+    return:
+      type: System.Object
+    content.vb: Public Shared Function Resolve(serviceType As Type, constructorParameters As Object()) As Object
+  overload: OrpheusCore.ServiceManager.Resolve*
+  nameWithType.vb: ServiceManager.Resolve(Type, Object())
+  fullName.vb: OrpheusCore.ServiceManager.Resolve(System.Type, Object())
+  name.vb: Resolve(Type, Object())
+- uid: OrpheusCore.ServiceManager.Resolve``1(System.Object[])
+  commentId: M:OrpheusCore.ServiceManager.Resolve``1(System.Object[])
+  id: Resolve``1(System.Object[])
+  parent: OrpheusCore.ServiceManager
+  langs:
+  - csharp
+  - vb
+  name: Resolve<T>(object[])
+  nameWithType: ServiceManager.Resolve<T>(object[])
+  fullName: OrpheusCore.ServiceManager.Resolve<T>(object[])
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/ServiceManager.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Resolve
+    path: ../OrpheusCore/ServiceManager.cs
+    startLine: 152
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: Generic counterpart of <xref href="OrpheusCore.ServiceManager.Resolve(System.Type%2cSystem.Object%5b%5d)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static T Resolve<T>(object[] constructorParameters)
+    parameters:
+    - id: constructorParameters
+      type: System.Object[]
+      description: >-
+        Constructor arguments to invoke a matching constructor with, or null/empty to just return
+
+        the DI-resolved instance.
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Shared Function Resolve(Of T)(constructorParameters As Object()) As T
+  overload: OrpheusCore.ServiceManager.Resolve*
+  nameWithType.vb: ServiceManager.Resolve(Of T)(Object())
+  fullName.vb: OrpheusCore.ServiceManager.Resolve(Of T)(Object())
+  name.vb: Resolve(Of T)(Object())
+- uid: OrpheusCore.ServiceManager.LoggerFactory
+  commentId: P:OrpheusCore.ServiceManager.LoggerFactory
+  id: LoggerFactory
+  parent: OrpheusCore.ServiceManager
+  langs:
+  - csharp
+  - vb
+  name: LoggerFactory
+  nameWithType: ServiceManager.LoggerFactory
+  fullName: OrpheusCore.ServiceManager.LoggerFactory
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/ServiceManager.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LoggerFactory
+    path: ../OrpheusCore/ServiceManager.cs
+    startLine: 172
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: >-
+    The <xref href="Microsoft.Extensions.Logging.ILoggerFactory" data-throw-if-not-resolved="false"></xref> resolved from <xref href="OrpheusCore.ServiceManager.ServiceProvider" data-throw-if-not-resolved="false"></xref>, cached
+
+    after the first access.
+  example: []
+  syntax:
+    content: public static ILoggerFactory LoggerFactory { get; }
+    parameters: []
+    return:
+      type: Microsoft.Extensions.Logging.ILoggerFactory
+    content.vb: Public Shared ReadOnly Property LoggerFactory As ILoggerFactory
+  overload: OrpheusCore.ServiceManager.LoggerFactory*
+- uid: OrpheusCore.ServiceManager.CreateLogger``1
+  commentId: M:OrpheusCore.ServiceManager.CreateLogger``1
+  id: CreateLogger``1
+  parent: OrpheusCore.ServiceManager
+  langs:
+  - csharp
+  - vb
+  name: CreateLogger<T>()
+  nameWithType: ServiceManager.CreateLogger<T>()
+  fullName: OrpheusCore.ServiceManager.CreateLogger<T>()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/ServiceManager.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateLogger
+    path: ../OrpheusCore/ServiceManager.cs
+    startLine: 186
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: >-
+    Creates a logger for <code class="typeparamref">T</code> via <xref href="OrpheusCore.ServiceManager.LoggerFactory" data-throw-if-not-resolved="false"></xref>. Returns
+
+    null if no <xref href="Microsoft.Extensions.Logging.ILoggerFactory" data-throw-if-not-resolved="false"></xref> is registered in <xref href="OrpheusCore.ServiceManager.ServiceProvider" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static ILogger<T> CreateLogger<T>()
+    typeParameters:
+    - id: T
+    return:
+      type: Microsoft.Extensions.Logging.ILogger{{T}}
+    content.vb: Public Shared Function CreateLogger(Of T)() As ILogger(Of T)
+  overload: OrpheusCore.ServiceManager.CreateLogger*
+  nameWithType.vb: ServiceManager.CreateLogger(Of T)()
+  fullName.vb: OrpheusCore.ServiceManager.CreateLogger(Of T)()
+  name.vb: CreateLogger(Of T)()
+- uid: OrpheusCore.ServiceManager.GetLoggerService(System.Type)
+  commentId: M:OrpheusCore.ServiceManager.GetLoggerService(System.Type)
+  id: GetLoggerService(System.Type)
+  parent: OrpheusCore.ServiceManager
+  langs:
+  - csharp
+  - vb
+  name: GetLoggerService(Type)
+  nameWithType: ServiceManager.GetLoggerService(Type)
+  fullName: OrpheusCore.ServiceManager.GetLoggerService(System.Type)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/ServiceManager.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: GetLoggerService
+    path: ../OrpheusCore/ServiceManager.cs
+    startLine: 196
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: >-
+    Resolves an arbitrary service by type from <xref href="OrpheusCore.ServiceManager.ServiceProvider" data-throw-if-not-resolved="false"></xref>. Despite the
+
+    name, this is not limited to logging-related services — it's a general-purpose lookup.
+  example: []
+  syntax:
+    content: public static object GetLoggerService(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+      description: The service type to resolve.
+    return:
+      type: System.Object
+    content.vb: Public Shared Function GetLoggerService(type As Type) As Object
+  overload: OrpheusCore.ServiceManager.GetLoggerService*
+references:
+- uid: OrpheusCore
+  commentId: N:OrpheusCore
+  href: OrpheusCore.html
+  name: OrpheusCore
+  nameWithType: OrpheusCore
+  fullName: OrpheusCore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  commentId: T:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  parent: OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html
+  name: IDatabaseConnectionConfiguration
+  nameWithType: IDatabaseConnectionConfiguration
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+- uid: Microsoft.Extensions.Logging.ILoggerFactory
+  commentId: T:Microsoft.Extensions.Logging.ILoggerFactory
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory
+  name: ILoggerFactory
+  nameWithType: ILoggerFactory
+  fullName: Microsoft.Extensions.Logging.ILoggerFactory
+- uid: OrpheusCore.ServiceManager.AddOrpheusServices*
+  commentId: Overload:OrpheusCore.ServiceManager.AddOrpheusServices
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_AddOrpheusServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  name: AddOrpheusServices
+  nameWithType: ServiceManager.AddOrpheusServices
+  fullName: OrpheusCore.ServiceManager.AddOrpheusServices
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: OrpheusInterfaces.Configuration
+  commentId: N:OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Configuration
+  nameWithType: OrpheusInterfaces.Configuration
+  fullName: OrpheusInterfaces.Configuration
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+- uid: OrpheusCore.ServiceManager.Resolve``1
+  commentId: M:OrpheusCore.ServiceManager.Resolve``1
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve__1
+  name: Resolve<T>()
+  nameWithType: ServiceManager.Resolve<T>()
+  fullName: OrpheusCore.ServiceManager.Resolve<T>()
+  nameWithType.vb: ServiceManager.Resolve(Of T)()
+  fullName.vb: OrpheusCore.ServiceManager.Resolve(Of T)()
+  name.vb: Resolve(Of T)()
+  spec.csharp:
+  - uid: OrpheusCore.ServiceManager.Resolve``1
+    name: Resolve
+    href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.ServiceManager.Resolve``1
+    name: Resolve
+    href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: OrpheusCore.ServiceManager.LoggerFactory
+  commentId: P:OrpheusCore.ServiceManager.LoggerFactory
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_LoggerFactory
+  name: LoggerFactory
+  nameWithType: ServiceManager.LoggerFactory
+  fullName: OrpheusCore.ServiceManager.LoggerFactory
+- uid: OrpheusCore.ServiceManager.ServiceProvider*
+  commentId: Overload:OrpheusCore.ServiceManager.ServiceProvider
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_ServiceProvider
+  name: ServiceProvider
+  nameWithType: ServiceManager.ServiceProvider
+  fullName: OrpheusCore.ServiceManager.ServiceProvider
+- uid: System.IServiceProvider
+  commentId: T:System.IServiceProvider
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iserviceprovider
+  name: IServiceProvider
+  nameWithType: IServiceProvider
+  fullName: System.IServiceProvider
+- uid: OrpheusCore.ServiceManager.ServiceProvider
+  commentId: P:OrpheusCore.ServiceManager.ServiceProvider
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_ServiceProvider
+  name: ServiceProvider
+  nameWithType: ServiceManager.ServiceProvider
+  fullName: OrpheusCore.ServiceManager.ServiceProvider
+- uid: OrpheusCore.ServiceManager.Resolve*
+  commentId: Overload:OrpheusCore.ServiceManager.Resolve
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve__1
+  name: Resolve
+  nameWithType: ServiceManager.Resolve
+  fullName: OrpheusCore.ServiceManager.Resolve
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Object[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object[]
+  nameWithType: object[]
+  fullName: object[]
+  nameWithType.vb: Object()
+  fullName.vb: Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+- uid: OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])
+  commentId: M:OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])
+  isExternal: true
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve_System_Type_System_Object___
+  name: Resolve(Type, object[])
+  nameWithType: ServiceManager.Resolve(Type, object[])
+  fullName: OrpheusCore.ServiceManager.Resolve(System.Type, object[])
+  nameWithType.vb: ServiceManager.Resolve(Type, Object())
+  fullName.vb: OrpheusCore.ServiceManager.Resolve(System.Type, Object())
+  name.vb: Resolve(Type, Object())
+  spec.csharp:
+  - uid: OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])
+    name: Resolve
+    href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve_System_Type_System_Object___
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.ServiceManager.Resolve(System.Type,System.Object[])
+    name: Resolve
+    href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_Resolve_System_Type_System_Object___
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+  - name: )
+- uid: OrpheusCore.ServiceManager.LoggerFactory*
+  commentId: Overload:OrpheusCore.ServiceManager.LoggerFactory
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_LoggerFactory
+  name: LoggerFactory
+  nameWithType: ServiceManager.LoggerFactory
+  fullName: OrpheusCore.ServiceManager.LoggerFactory
+- uid: OrpheusCore.ServiceManager.CreateLogger*
+  commentId: Overload:OrpheusCore.ServiceManager.CreateLogger
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_CreateLogger__1
+  name: CreateLogger
+  nameWithType: ServiceManager.CreateLogger
+  fullName: OrpheusCore.ServiceManager.CreateLogger
+- uid: Microsoft.Extensions.Logging.ILogger{{T}}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{``0}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<T>
+  nameWithType: ILogger<T>
+  fullName: Microsoft.Extensions.Logging.ILogger<T>
+  nameWithType.vb: ILogger(Of T)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of T)
+  name.vb: ILogger(Of T)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: OrpheusCore.ServiceManager.GetLoggerService*
+  commentId: Overload:OrpheusCore.ServiceManager.GetLoggerService
+  href: OrpheusCore.ServiceManager.html#OrpheusCore_ServiceManager_GetLoggerService_System_Type_
+  name: GetLoggerService
+  nameWithType: ServiceManager.GetLoggerService
+  fullName: OrpheusCore.ServiceManager.GetLoggerService

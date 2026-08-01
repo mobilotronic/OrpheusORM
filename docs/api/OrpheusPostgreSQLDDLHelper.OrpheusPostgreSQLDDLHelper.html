@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class OrpheusPostgreSQLDDLHelper | Orpheus </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OrpheusPostgreSQLDDLHelper | Orpheus ">
+      
+      <meta name="description" content="PostgreSQL DDL helper — generates and executes PostgreSQL-specific DDL commands.">
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/modernazitation-effort/apiSpec/new?filename=OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper.md&amp;value=---%0Auid%3A%20OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/OrpheusLogo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper">
+
+
+
+  <h1 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper" class="text-break">
+Class OrpheusPostgreSQLDDLHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusPostgreSQLDDLHelper.html">OrpheusPostgreSQLDDLHelper</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>OrpheusPostgreSQLDDLHelper.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>PostgreSQL DDL helper — generates and executes PostgreSQL-specific DDL commands.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class OrpheusPostgreSQLDDLHelper : IOrpheusDDLHelper, IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">OrpheusPostgreSQLDDLHelper</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper__ctor_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.#ctor*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper__ctor_Microsoft_Extensions_Logging_ILogger_OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper__" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.#ctor(Microsoft.Extensions.Logging.ILogger{OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper})">
+  OrpheusPostgreSQLDDLHelper(ILogger&lt;OrpheusPostgreSQLDDLHelper&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new PostgreSQL DDL helper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OrpheusPostgreSQLDDLHelper(ILogger&lt;OrpheusPostgreSQLDDLHelper&gt; logger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.html">OrpheusPostgreSQLDDLHelper</a>&gt;</dt>
+    <dd><p>Logger used for database-creation and DDL-execution failures.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_ConnectionString_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.ConnectionString*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_ConnectionString" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.ConnectionString">
+  ConnectionString
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Builds the connection string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConnectionString { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DB_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DB*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DB" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DB">
+  DB
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Database for the DDL helper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IOrpheusDatabase DB { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDatabase.html">IOrpheusDatabase</a></dt>
+    <dd><p>Database the helper is associated with</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DatabaseName_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DatabaseName*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DatabaseName" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DatabaseName">
+  DatabaseName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the database name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DatabaseName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DbEngineType_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DbEngineType*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DbEngineType" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DbEngineType">
+  DbEngineType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the underlying connection type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DatabaseEngineType DbEngineType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Core.DatabaseEngineType.html">DatabaseEngineType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DelimitedIdentifierEnd_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DelimitedIdentifierEnd*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DelimitedIdentifierEnd" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DelimitedIdentifierEnd">
+  DelimitedIdentifierEnd
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char DelimitedIdentifierEnd { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>Char</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DelimitedIdentifierStart_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DelimitedIdentifierStart*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DelimitedIdentifierStart" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DelimitedIdentifierStart">
+  DelimitedIdentifierStart
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L159"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char DelimitedIdentifierStart { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>Char</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_ModifyColumnCommand_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.ModifyColumnCommand*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_ModifyColumnCommand" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.ModifyColumnCommand">
+  ModifyColumnCommand
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the DB specific modify table command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ModifyColumnCommand { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SupportsGuidType_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SupportsGuidType*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SupportsGuidType" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SupportsGuidType">
+  SupportsGuidType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if the DBEngine supports natively the Guid type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SupportsGuidType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the DBEngine supports natively the Guid type</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SupportsSchemaNameSpace_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SupportsSchemaNameSpace*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SupportsSchemaNameSpace" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SupportsSchemaNameSpace">
+  SupportsSchemaNameSpace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if the DBEngine supports having schema name spaces. From the currently supported databases, only SQL has this feature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SupportsSchemaNameSpace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_CreateDatabase_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.CreateDatabase*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_CreateDatabase" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.CreateDatabase">
+  CreateDatabase()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the underlying db engine settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CreateDatabase()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if database was created successfully</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_CreateDatabase_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.CreateDatabase*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_CreateDatabase_System_String_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.CreateDatabase(System.String)">
+  CreateDatabase(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the underlying db engine settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CreateDatabase(string dbName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Database name</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the database was created successfully</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_CreateDatabaseWithDDL_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.CreateDatabaseWithDDL*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_CreateDatabaseWithDDL_System_String_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.CreateDatabaseWithDDL(System.String)">
+  CreateDatabaseWithDDL(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the passed DDL script.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CreateDatabaseWithDDL(string ddlString)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ddlString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>DDL command</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the database was created successfully</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DatabaseExists_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DatabaseExists*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DatabaseExists_System_String_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DatabaseExists(System.String)">
+  DatabaseExists(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L213"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true the database exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DatabaseExists(string dbName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Database name</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DbTypeToString_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DbTypeToString*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_DbTypeToString_System_Data_DbType_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.DbTypeToString(System.Data.DbType)">
+  DbTypeToString(DbType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the db engine specific string equivalent, for a DbType enumeration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DbTypeToString(DbType dataType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dataType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.dbtype">DbType</a></dt>
+    <dd><p>DbType</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>String value for the DbType</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_Dispose_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.Dispose*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_Dispose" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disposes the auxiliary secondary/administrative connections, if created.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.ExecuteBatchedInsertWithKeyRetrieval*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction)">
+  ExecuteBatchedInsertWithKeyRetrieval(string, List&lt;string&gt;, string, List&lt;List&lt;object&gt;&gt;, IDbTransaction)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L399"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Executes a batched INSERT of <code class="paramref">rows</code> and returns the DB-generated key
+value for each row, in the same order the rows were passed in. There is no ADO.NET-
+portable way to retrieve generated keys from a multi-row insert, so implementations are
+engine-specific (e.g. SQL Server uses MERGE+OUTPUT with a correlation column since plain
+multi-row OUTPUT doesn't preserve input order; PostgreSQL uses INSERT...RETURNING, which
+does preserve order; MySQL has no RETURNING and instead derives the range from
+LAST_INSERT_ID()).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;object&gt; ExecuteBatchedInsertWithKeyRetrieval(string tableName, List&lt;string&gt; columns, string keyColumnName, List&lt;List&lt;object&gt;&gt; rows, IDbTransaction transaction)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Fully-qualified table name.</p>
+</dd>
+    <dt><code>columns</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Editable column names, in the order each row's values are provided.</p>
+</dd>
+    <dt><code>keyColumnName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The DB-generated key column to retrieve.</p>
+</dd>
+    <dt><code>rows</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd><p>Each row's values, in column order, matching <code class="paramref">columns</code>.</p>
+</dd>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd><p>Transaction to execute within.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>PostgreSQL implementation note: INSERT...RETURNING preserves input VALUES row order for a
+single statement, so generated keys map back to rows positionally — no correlation column
+needed.</p>
+<p>
+NOT VERIFIED against a real PostgreSQL instance: no reachable PostgreSQL server was
+available in the environment this was implemented in (only SQL Server was reachable, and
+that path IS verified — see SQLServerBatchedInsertKeyRetrievalTests). Verify this against a
+real instance before relying on it in production.
+</p>
+</div>
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_ExecuteBatchedInsertWithKeyRetrievalAsync_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_ExecuteBatchedInsertWithKeyRetrievalAsync_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_System_Threading_CancellationToken_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction,System.Threading.CancellationToken)">
+  ExecuteBatchedInsertWithKeyRetrievalAsync(string, List&lt;string&gt;, string, List&lt;List&lt;object&gt;&gt;, IDbTransaction, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L410"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronous counterpart of <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_">ExecuteBatchedInsertWithKeyRetrieval(string, List&lt;string&gt;, string, List&lt;List&lt;object&gt;&gt;, IDbTransaction)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;List&lt;object&gt;&gt; ExecuteBatchedInsertWithKeyRetrievalAsync(string tableName, List&lt;string&gt; columns, string keyColumnName, List&lt;List&lt;object&gt;&gt; rows, IDbTransaction transaction, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>columns</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>keyColumnName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>rows</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SafeFormatAlterTableAddColumn_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SafeFormatAlterTableAddColumn*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})">
+  SafeFormatAlterTableAddColumn(string, List&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L379"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE ADD COLUMN command for the underlying database engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SafeFormatAlterTableAddColumn(string tableName, List&lt;string&gt; columnsToAdd)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Table's name that schema is going to change</p>
+</dd>
+    <dt><code>columnsToAdd</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Columns for creation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SafeFormatAlterTableDropColumn_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SafeFormatAlterTableDropColumn*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})">
+  SafeFormatAlterTableDropColumn(string, List&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L368"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SafeFormatAlterTableDropColumn(string tableName, List&lt;string&gt; columnsToDelete)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Table's name that schema is going to change</p>
+</dd>
+    <dt><code>columnsToDelete</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Columns for deletion</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SafeFormatField_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SafeFormatField*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SafeFormatField_System_String_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SafeFormatField(System.String)">
+  SafeFormatField(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L362"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Properly formats a field name, to be used in a SQL statement, in case the field name is a reserved word.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SafeFormatField(string fieldName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fieldName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Field name</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Safely formated field name</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SchemaObjectExists_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SchemaObjectExists*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)">
+  SchemaObjectExists(ISchemaConstraint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L327"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SchemaObjectExists(ISchemaConstraint schemaConstraint)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaConstraint</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaConstraint.html">ISchemaConstraint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SchemaObjectExists_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SchemaObjectExists*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)">
+  SchemaObjectExists(ISchemaObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SchemaObjectExists(ISchemaObject schemaObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObject</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></dt>
+    <dd><p>Schema</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the object exists</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SchemaObjectExists_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SchemaObjectExists*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SchemaObjectExists_System_String_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SchemaObjectExists(System.String)">
+  SchemaObjectExists(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SchemaObjectExists(string schemaObjectName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObjectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Schema</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the object exists</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SchemaObjectId_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SchemaObjectId*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)">
+  SchemaObjectId&lt;T&gt;(ISchemaObject)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L354"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the schema object, db engine assigned/generated, identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T SchemaObjectId&lt;T&gt;(ISchemaObject schemaObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>schemaObject</code> <a class="xref" href="OrpheusInterfaces.Schema.ISchemaObject.html">ISchemaObject</a></dt>
+    <dd><p>The schema object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Not implemented for PostgreSQL — always returns <code>default</code>. Nothing in this codebase
+currently calls it for the PostgreSQL engine, but implement this before relying on it.</p>
+</div>
+
+
+
+
+  <a id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_TypeToString_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.TypeToString*"></a>
+
+  <h3 id="OrpheusPostgreSQLDDLHelper_OrpheusPostgreSQLDDLHelper_TypeToString_System_Type_" data-uid="OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.TypeToString(System.Type)">
+  TypeToString(Type)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the db engine specific string equivalent, for a .net type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TypeToString(Type type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>Type</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>String value for the mapped DbType</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Orpheus - Mobilotronic © 2017 - 2023
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

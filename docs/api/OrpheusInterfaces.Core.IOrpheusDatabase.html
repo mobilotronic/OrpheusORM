@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusDatabase.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusDatabase%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/modernazitation-effort/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusDatabase.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusDatabase%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,11 +89,11 @@
 
 
   <h1 id="OrpheusInterfaces_Core_IOrpheusDatabase" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase" class="text-break">
-Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.Core.html">OrpheusInterfaces.Core</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a>.<a class="xref" href="OrpheusInterfaces.Core.html">Core</a></dd></dl>
   <dl><dt>Assembly</dt><dd>OrpheusInterfaces.dll</dd></dl>
   </div>
 
@@ -102,7 +102,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IOrpheusDatabase</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IOrpheusDatabase : IDisposable</code></pre>
   </div>
 
 
@@ -111,6 +111,13 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
 
 
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable.dispose">IDisposable.Dispose()</a>
+    </div>
+  </dd></dl>
 
 
 
@@ -125,7 +132,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_Connected" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.Connected">
   Connected
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>State of the database. Connected or not.</p>
@@ -142,9 +149,44 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if database is connected</p>
 </dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_ConnectionFactory_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_ConnectionFactory" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory">
+  ConnectionFactory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The connection factory this database was constructed with, if any. DDL helpers use it to
+open auxiliary connections (schema introspection, administrative/system-database access)
+that share the same pooling configuration as the main connection. Null if this database
+was constructed from a raw <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbconnection">IDbConnection</a> instead of a connection factory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IOrpheusConnectionFactory ConnectionFactory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusConnectionFactory.html">IOrpheusConnectionFactory</a></dt>
+    <dd></dd>
   </dl>
 
 
@@ -158,7 +200,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_ConnectionString" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionString">
   ConnectionString
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L150"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the underlying IDbConnection connection string.</p>
@@ -175,8 +217,41 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The database connection string.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_DDLHelper_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_DDLHelper" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper">
+  DDLHelper
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Helps execute DDL specific commands for the underlying db engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IOrpheusDDLHelper DDLHelper { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></dt>
+    <dd><p>An OrpheusDDLHelper instance.</p>
 </dd>
   </dl>
 
@@ -191,7 +266,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_DatabaseConnectionConfiguration" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DatabaseConnectionConfiguration">
   DatabaseConnectionConfiguration
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L258"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -223,7 +298,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_DbConnection" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DbConnection">
   DbConnection
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L213"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L239"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -239,41 +314,8 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">IDbConnection</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbconnection">IDbConnection</a></dt>
     <dd><p>Exposing the underlying IDbConnection instance.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_DDLHelper_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper*"></a>
-
-  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_DDLHelper" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper">
-  DDLHelper
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L111"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Helps execute DDL specific commands for the underlying db engine.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IOrpheusDDLHelper DDLHelper { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></dt>
-    <dd><p>An OrpheusDDLHelper instance.</p>
 </dd>
   </dl>
 
@@ -288,7 +330,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_LastActiveTransaction" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction">
   LastActiveTransaction
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -304,7 +346,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">IDbTransaction</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
     <dd><p>Last active transaction.</p>
 </dd>
   </dl>
@@ -320,7 +362,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_Modules" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.Modules">
   Modules
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>List of registered Orpheus modules.</p>
@@ -337,7 +379,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusModule.html">IOrpheusModule</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusModule.html">IOrpheusModule</a>&gt;</dt>
     <dd><p>Modules that are part in the database</p>
 </dd>
   </dl>
@@ -353,7 +395,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_TypeMap" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.TypeMap">
   TypeMap
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Mapping dictionary of types to data types.</p>
@@ -370,7 +412,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">Type</span>, <span class="xref">DbType</span>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.dbtype">DbType</a>&gt;</dt>
     <dd><p>Type map dictionary between types and DbType.</p>
 </dd>
   </dl>
@@ -390,7 +432,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_BeginTransaction" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransaction">
   BeginTransaction()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a transaction object.</p>
@@ -404,9 +446,46 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">IDbTransaction</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
     <dd><p>Returns a transaction instance</p>
 </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_BeginTransactionAsync_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_BeginTransactionAsync_System_Threading_CancellationToken_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync(System.Threading.CancellationToken)">
+  BeginTransactionAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously creates a transaction object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IDbTransaction&gt; BeginTransactionAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a>&gt;</dt>
+    <dd></dd>
   </dl>
 
 
@@ -423,7 +502,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CommitTransaction_System_Data_IDbTransaction_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)">
   CommitTransaction(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Commits a transaction.</p>
@@ -436,7 +515,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
     <dd><p>Transaction to be committed.</p>
 </dd>
   </dl>
@@ -452,11 +531,50 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
 
 
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CommitTransactionAsync_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CommitTransactionAsync_System_Data_IDbTransaction_System_Threading_CancellationToken_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)">
+  CommitTransactionAsync(IDbTransaction, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously commits a transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task CommitTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_Connect_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.Connect*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_Connect_OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.Connect(OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)">
   Connect(IDatabaseConnectionConfiguration)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Connects to the database engine defined in the configuration object.</p>
@@ -488,8 +606,8 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_Connect_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.Connect*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_Connect_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.Connect(System.String)">
-  Connect(String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  Connect(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Connects to the database engine defined in the connection string.</p>
@@ -502,7 +620,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>connectionString</code> <span class="xref">String</span></dt>
+    <dt><code>connectionString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The connection string.</p>
 </dd>
   </dl>
@@ -518,11 +636,50 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
 
 
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_ConnectAsync_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_ConnectAsync_System_String_System_Threading_CancellationToken_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync(System.String,System.Threading.CancellationToken)">
+  ConnectAsync(string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L264"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously connects to the database engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task ConnectAsync(string connectionString = null, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>connectionString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateCommand_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateCommand" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand">
   CreateCommand()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Create a DbCommand.</p>
@@ -536,7 +693,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">IDbCommand</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
     <dd><p>A DbCommand instance.</p>
 </dd>
   </dl>
@@ -555,7 +712,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateModule_OrpheusInterfaces_Core_IOrpheusModuleDefinition_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateModule(OrpheusInterfaces.Core.IOrpheusModuleDefinition)">
   CreateModule(IOrpheusModuleDefinition)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L191"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates an OrpheusModule.</p>
@@ -594,7 +751,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateModuleDefinition" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateModuleDefinition">
   CreateModuleDefinition()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L197"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates an OrpheusModuleDefinition.</p>
@@ -626,8 +783,8 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreatePreparedQuery_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreatePreparedQuery_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(System.String)">
-  CreatePreparedQuery(String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  CreatePreparedQuery(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L118"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a prepared query with parameters created.</p>
@@ -640,14 +797,14 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>SQL</code> <span class="xref">String</span></dt>
+    <dt><code>SQL</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>SQL for the prepared query</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">IDbCommand</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
     <dd><p>A DbCommand instance.</p>
 </dd>
   </dl>
@@ -665,8 +822,8 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreatePreparedQuery_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreatePreparedQuery_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_Object__" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
-  CreatePreparedQuery(String, List&lt;String&gt;, List&lt;Object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  CreatePreparedQuery(string, List&lt;string&gt;, List&lt;object&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L111"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a prepared query with parameters created.</p>
@@ -679,20 +836,20 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>SQL</code> <span class="xref">String</span></dt>
+    <dt><code>SQL</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>SQL for the prepared query</p>
 </dd>
-    <dt><code>parameters</code> <span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
+    <dt><code>parameters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd><p>SQL parameters</p>
 </dd>
-    <dt><code>parameterValues</code> <span class="xref">List</span>&lt;<span class="xref">Object</span>&gt;</dt>
+    <dt><code>parameterValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
     <dd><p>SQL parameter values</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">IDbCommand</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
     <dd><p>A DbCommand instance.</p>
 </dd>
   </dl>
@@ -710,8 +867,8 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateSchema_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateSchema_System_Guid_System_String_System_Double_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema(System.Guid,System.String,System.Double,System.String)">
-  CreateSchema(Guid, String, Double, String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  CreateSchema(Guid, string, double, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L184"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a schema object and sets it's database.</p>
@@ -724,16 +881,16 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>id</code> <span class="xref">Guid</span></dt>
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
     <dd><p>Schema id</p>
 </dd>
-    <dt><code>description</code> <span class="xref">String</span></dt>
+    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Schema description</p>
 </dd>
-    <dt><code>version</code> <span class="xref">Double</span></dt>
+    <dt><code>version</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
     <dd><p>Schema version</p>
 </dd>
-    <dt><code>name</code> <span class="xref">String</span></dt>
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Schema name.From the supported db engines, only SQL server has support for named schema's.</p>
 </dd>
   </dl>
@@ -755,11 +912,77 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
 
 
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableKeyField_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableKeyField" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField">
+  CreateTableKeyField()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates an OrpheusTableKeyField.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IOrpheusTableKeyField CreateTableKeyField()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a></dt>
+    <dd><p>An IOrpheusTableKeyField instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableOptions_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableOptions" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions">
+  CreateTableOptions()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates an OrpheusTableOptions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IOrpheusTableOptions CreateTableOptions()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableOptions.html">IOrpheusTableOptions</a></dt>
+    <dd><p>An IOrpheusTableOptions instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTable_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTable__1" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1">
   CreateTable&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L174"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a table and sets its database,using the type name as the table name.</p>
@@ -797,7 +1020,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTable__1_OrpheusInterfaces_Core_IOrpheusTableOptions_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1(OrpheusInterfaces.Core.IOrpheusTableOptions)">
   CreateTable&lt;T&gt;(IOrpheusTableOptions)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L158"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a table and sets its database.</p>
@@ -841,8 +1064,8 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTable_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTable__1_System_String_System_Collections_Generic_List_OrpheusInterfaces_Core_IOrpheusTableKeyField__" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})">
-  CreateTable&lt;T&gt;(String, List&lt;IOrpheusTableKeyField&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  CreateTable&lt;T&gt;(string, List&lt;IOrpheusTableKeyField&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L167"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a table and sets its database.</p>
@@ -855,10 +1078,10 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tableName</code> <span class="xref">String</span></dt>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Table name</p>
 </dd>
-    <dt><code>keyFields</code> <span class="xref">List</span>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
+    <dt><code>keyFields</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a>&gt;</dt>
     <dd><p>Table key fields</p>
 </dd>
   </dl>
@@ -886,77 +1109,11 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
 
 
-  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableKeyField_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField*"></a>
-
-  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableKeyField" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField">
-  CreateTableKeyField()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L183"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Creates an OrpheusTableKeyField.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IOrpheusTableKeyField CreateTableKeyField()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableKeyField.html">IOrpheusTableKeyField</a></dt>
-    <dd><p>An IOrpheusTableKeyField instance.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableOptions_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions*"></a>
-
-  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableOptions" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions">
-  CreateTableOptions()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L177"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Creates an OrpheusTableOptions.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IOrpheusTableOptions CreateTableOptions()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="OrpheusInterfaces.Core.IOrpheusTableOptions.html">IOrpheusTableOptions</a></dt>
-    <dd><p>An IOrpheusTableOptions instance.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_DDLHelperAs_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_DDLHelperAs__1" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs``1">
   DDLHelperAs&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Casts the DDL helper to the specified type.</p>
@@ -995,7 +1152,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_Disconnect" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.Disconnect">
   Disconnect()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Disconnects from the database engine.</p>
@@ -1018,11 +1175,43 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
 
 
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_DisconnectAsync_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_DisconnectAsync" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync">
+  DisconnectAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L269"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously disconnects from the database engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task DisconnectAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_ExecuteDDL_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_ExecuteDDL_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL(System.String)">
-  ExecuteDDL(String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  ExecuteDDL(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L234"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes a DDL command.</p>
@@ -1035,16 +1224,55 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>DDLCommand</code> <span class="xref">String</span></dt>
+    <dt><code>DDLCommand</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>DbCommand to run.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if command was successfully executed.</p>
 </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_ExecuteDDLAsync_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_ExecuteDDLAsync_System_String_System_Threading_CancellationToken_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync(System.String,System.Threading.CancellationToken)">
+  ExecuteDDLAsync(string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously executes a DDL command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; ExecuteDDLAsync(string DDLCommand, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>DDLCommand</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
   </dl>
 
 
@@ -1060,8 +1288,8 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_GetTableCount_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_GetTableCount_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount(System.String)">
-  GetTableCount(String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  GetTableCount(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L246"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1073,14 +1301,14 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tableName</code> <span class="xref">String</span></dt>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Name of the table.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Int64</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
     <dd><p>Returns the row count of a table.</p>
 </dd>
   </dl>
@@ -1099,7 +1327,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_GetTableCount__1" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount``1">
   GetTableCount&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L253"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1112,7 +1340,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Int64</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
     <dd><p>Returns the row count of a table.</p>
 </dd>
   </dl>
@@ -1137,7 +1365,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_IsNullableType_System_Type_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.IsNullableType(System.Type)">
   IsNullableType(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L131"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the type is a nullable type.</p>
@@ -1150,14 +1378,14 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>type</code> <span class="xref">Type</span></dt>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
     <dd><p>Type</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if type is nullable</p>
 </dd>
   </dl>
@@ -1176,7 +1404,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_RegisterModule_OrpheusInterfaces_Core_IOrpheusModule_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.RegisterModule(OrpheusInterfaces.Core.IOrpheusModule)">
   RegisterModule(IOrpheusModule)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Register an Orpheus module to the database.</p>
@@ -1209,7 +1437,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_RollbackTransaction_System_Data_IDbTransaction_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)">
   RollbackTransaction(IDbTransaction)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Rolls back a transaction.</p>
@@ -1222,7 +1450,7 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>transaction</code> <span class="xref">IDbTransaction</span></dt>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
     <dd><p>Transaction to be rolled-back.</p>
 </dd>
   </dl>
@@ -1238,11 +1466,142 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
 
 
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_RollbackTransactionAsync_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_RollbackTransactionAsync_System_Data_IDbTransaction_System_Threading_CancellationToken_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)">
+  RollbackTransactionAsync(IDbTransaction, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously rolls back a transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task RollbackTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_SQLAsync_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_SQLAsync__1_System_Data_IDbCommand_System_String_System_Threading_CancellationToken_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync``1(System.Data.IDbCommand,System.String,System.Threading.CancellationToken)">
+  SQLAsync&lt;T&gt;(IDbCommand, string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously executes a prepared DbCommand and returns the result as typed models.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;List&lt;T&gt;&gt; SQLAsync&lt;T&gt;(IDbCommand dbCommand, string tableName = null, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dbCommand</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusInterfaces_Core_IOrpheusDatabase_SQLAsync_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync*"></a>
+
+  <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_SQLAsync__1_System_String_System_String_System_Threading_CancellationToken_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync``1(System.String,System.String,System.Threading.CancellationToken)">
+  SQLAsync&lt;T&gt;(string, string, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L274"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously executes a SQL statement and returns the result as typed models.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;List&lt;T&gt;&gt; SQLAsync&lt;T&gt;(string SQL, string tableName = null, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>SQL</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_SQL_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.SQL*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_SQL__1_System_Data_IDbCommand_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.SQL``1(System.Data.IDbCommand,System.String)">
-  SQL&lt;T&gt;(IDbCommand, String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  SQL&lt;T&gt;(IDbCommand, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L227"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes a db command and returns it as specific model.</p>
@@ -1255,17 +1614,17 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbCommand</code> <span class="xref">IDbCommand</span></dt>
+    <dt><code>dbCommand</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbcommand">IDbCommand</a></dt>
     <dd><p>DbCommand to run.</p>
 </dd>
-    <dt><code>tableName</code> <span class="xref">String</span></dt>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Optionally set the table name, for which the query will run.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;T&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
     <dd><p>A list of 'T'</p>
 </dd>
   </dl>
@@ -1288,8 +1647,8 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
   <a id="OrpheusInterfaces_Core_IOrpheusDatabase_SQL_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.SQL*"></a>
 
   <h3 id="OrpheusInterfaces_Core_IOrpheusDatabase_SQL__1_System_String_System_String_" data-uid="OrpheusInterfaces.Core.IOrpheusDatabase.SQL``1(System.String,System.String)">
-  SQL&lt;T&gt;(String, String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  SQL&lt;T&gt;(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusDatabase.cs/#L218"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes a SQL statement and returns it as specific model.</p>
@@ -1302,17 +1661,17 @@ Interface IOrpheusDatabase  <a class="header-action link-secondary" title="View 
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>SQL</code> <span class="xref">String</span></dt>
+    <dt><code>SQL</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>SQL command to execute.</p>
 </dd>
-    <dt><code>tableName</code> <span class="xref">String</span></dt>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Table name.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">List</span>&lt;T&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;T&gt;</dt>
     <dd><p>A list of 'T'</p>
 </dd>
   </dl>

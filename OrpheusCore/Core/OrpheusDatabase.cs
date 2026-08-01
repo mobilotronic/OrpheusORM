@@ -7,7 +7,10 @@ using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 
 namespace OrpheusCore
@@ -85,7 +88,6 @@ namespace OrpheusCore
             nullableTypes.Add(typeof(DateTime?));
             typeMap[typeof(DateTimeOffset?)] = DbType.DateTimeOffset;
             nullableTypes.Add(typeof(DateTimeOffset?));
-            //typeMap[typeof(System.Data.Linq.Binary)] = DbType.Binary;
         }
 
         private List<string> createParametersList(string SQL)
@@ -109,7 +111,7 @@ namespace OrpheusCore
         {
             get
             {
-                return dbConnection.State == ConnectionState.Open;
+                return dbConnection != null && dbConnection.State == ConnectionState.Open;
             }
         }
 
@@ -162,6 +164,12 @@ namespace OrpheusCore
             }
         }
 
+        /// <summary>
+        /// The connection factory this database was constructed with, if any. Null when constructed
+        /// from a raw IDbConnection instead of a connection factory.
+        /// </summary>
+        public IOrpheusConnectionFactory ConnectionFactory => this.connectionFactory;
+
         /// <value>
         /// Gets the underlying IDbConnection connection string.
         /// </value>
@@ -169,7 +177,7 @@ namespace OrpheusCore
         {
             get
             {
-                return this.dbConnection.ConnectionString;
+                return this.dbConnection?.ConnectionString;
             }
         }
 
@@ -228,6 +236,32 @@ namespace OrpheusCore
             this.loggerFactory = loggerFactory;
             this.initializeTypeMap();
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrpheusDatabase"/> class, using a
+        /// connection factory. Connect() leases a pooled connection from the factory instead
+        /// of opening a directly-injected connection; Dispose()/Disconnect() return it to the
+        /// ADO.NET pool. The connection has the same one-per-<see cref="OrpheusDatabase"/>-instance
+        /// lifetime as the <see cref="IDbConnection"/> constructor overload — this does not lease
+        /// a new connection per operation.
+        /// </summary>
+        /// <param name="connectionFactory">The connection factory.</param>
+        /// <param name="ddlHelper">The DDL helper.</param>
+        /// <param name="logger">The logger</param>
+        /// <param name="serviceProvider">Optional service provider for resolving dependencies.</param>
+        /// <param name="loggerFactory">Optional logger factory for creating typed loggers.</param>
+        public OrpheusDatabase(IOrpheusConnectionFactory connectionFactory, IOrpheusDDLHelper ddlHelper, ILogger<IOrpheusDatabase> logger,
+            IServiceProvider serviceProvider = null, ILoggerFactory loggerFactory = null)
+        {
+            this.connectionFactory = connectionFactory;
+            this.ddlHelper = ddlHelper;
+            this.ddlHelper.DB = this;
+            this.modules = new List<IOrpheusModule>();
+            this.logger = logger;
+            this.serviceProvider = serviceProvider;
+            this.loggerFactory = loggerFactory;
+            this.initializeTypeMap();
+        }
         #endregion
 
         #region public methods
@@ -241,7 +275,10 @@ namespace OrpheusCore
         /// </returns>
         public IOrpheusModule CreateModule(IOrpheusModuleDefinition definition = null)
         {
-            return ActivatorUtilities.CreateInstance<OrpheusModule>(this.serviceProvider, this, definition, this.loggerFactory.CreateLogger<IOrpheusModule>());
+            // Not ActivatorUtilities.CreateInstance: its reflection-based constructor matching
+            // can't disambiguate overloads when an explicitly-passed argument (definition) is
+            // null, and OrpheusModule's constructors need nothing else from the DI container.
+            return new OrpheusModule(this, definition, this.loggerFactory.CreateLogger<IOrpheusModule>());
         }
 
         /// <summary>
@@ -343,8 +380,9 @@ namespace OrpheusCore
         {
             if (id == Guid.Empty)
                 id = Guid.NewGuid();
-            //return new SchemaBuilder.Schema(this,description, version, id, name);
-            return ActivatorUtilities.CreateInstance<SchemaBuilder.Schema>(this.serviceProvider, this, description, version, id, name);
+            // Not ActivatorUtilities.CreateInstance: same null-argument (name) ambiguity as
+            // CreateModule above, and Schema needs nothing else from the DI container.
+            return new SchemaBuilder.Schema(this, description, version, id, name);
         }
 
         /// <summary>
@@ -355,10 +393,13 @@ namespace OrpheusCore
         /// </returns>
         public IDbCommand CreateCommand()
         {
-            // Use a pooled connection from the factory when available; fall back
-            // to the held connection for backward compatibility.
-            var conn = this.connectionFactory?.CreateConnection() ?? this.dbConnection;
-            return conn.CreateCommand();
+            // Connect() already leased dbConnection from the factory when one is configured
+            // (see the IOrpheusConnectionFactory constructor overload) — commands are bound to
+            // that single connection for this OrpheusDatabase instance's lifetime, same as the
+            // legacy IDbConnection constructor. This intentionally does NOT lease a new
+            // connection per command; see CONNECTION_POOLING_PLAN.md for the (deferred)
+            // per-operation-leasing design that would change this.
+            return this.dbConnection.CreateCommand();
         }
 
         /// <summary>
@@ -431,11 +472,19 @@ namespace OrpheusCore
                         this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB, e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB));
                         throw;
                     }
-                    if (!String.IsNullOrEmpty(connectionString))
-                        this.dbConnection.ConnectionString = connectionString;
+                    if (this.connectionFactory != null)
+                    {
+                        this.connectionFactory.ConnectionConfiguration = this.databaseConnectionConfiguration;
+                        this.dbConnection = this.connectionFactory.CreateConnection();
+                    }
                     else
-                        this.dbConnection.ConnectionString = this.ddlHelper.ConnectionString;
-                    this.dbConnection.Open();
+                    {
+                        if (!String.IsNullOrEmpty(connectionString))
+                            this.dbConnection.ConnectionString = connectionString;
+                        else
+                            this.dbConnection.ConnectionString = this.ddlHelper.ConnectionString;
+                        this.dbConnection.Open();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -491,6 +540,7 @@ namespace OrpheusCore
                     dbConnection.Dispose();
                     dbConnection = null;
                 }
+                (this.ddlHelper as IDisposable)?.Dispose();
             }
         }
 
@@ -540,6 +590,41 @@ namespace OrpheusCore
             {
                 this.LastActiveTransaction = null;
                 transaction.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Asynchronously creates a transaction object.
+        /// </summary>
+        public async Task<IDbTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
+        {
+            this.LastActiveTransaction = await ((DbConnection)this.dbConnection).BeginTransactionAsync(cancellationToken);
+            return this.LastActiveTransaction;
+        }
+
+        /// <summary>
+        /// Asynchronously commits a transaction.
+        /// </summary>
+        public async Task CommitTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default)
+        {
+            await ((DbTransaction)transaction).CommitAsync(cancellationToken);
+            if (transaction == this.LastActiveTransaction)
+            {
+                this.LastActiveTransaction = null;
+                await ((DbTransaction)transaction).DisposeAsync();
+            }
+        }
+
+        /// <summary>
+        /// Asynchronously rolls back a transaction.
+        /// </summary>
+        public async Task RollbackTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default)
+        {
+            await ((DbTransaction)transaction).RollbackAsync(cancellationToken);
+            if (transaction == this.LastActiveTransaction)
+            {
+                this.LastActiveTransaction = null;
+                await ((DbTransaction)transaction).DisposeAsync();
             }
         }
 
@@ -658,42 +743,99 @@ namespace OrpheusCore
         /// <summary>
         /// Asynchronously connects to the database engine.
         /// </summary>
-        public async System.Threading.Tasks.Task ConnectAsync(string connectionString = null, System.Threading.CancellationToken cancellationToken = default)
+        public async Task ConnectAsync(string connectionString = null, CancellationToken cancellationToken = default)
         {
-            await System.Threading.Tasks.Task.Run(() => Connect(connectionString), cancellationToken);
+            if (!this.Connected)
+            {
+                try
+                {
+                    if (this.ddlHelper.DB == null)
+                        this.ddlHelper.DB = this;
+                    try
+                    {
+                        // DDL helper database creation has no async surface yet; it's a
+                        // one-time, comparatively cheap operation, not the per-request hot path.
+                        this.ddlHelper.CreateDatabase();
+                    }
+                    catch (Exception e)
+                    {
+                        this.logger.LogError(ErrorCodes.ERR_CANNOT_CREATE_DB, e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CREATE_DB));
+                        throw;
+                    }
+                    if (this.connectionFactory != null)
+                    {
+                        this.connectionFactory.ConnectionConfiguration = this.databaseConnectionConfiguration;
+                        this.dbConnection = await this.connectionFactory.CreateConnectionAsync(cancellationToken);
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(connectionString))
+                            this.dbConnection.ConnectionString = connectionString;
+                        else
+                            this.dbConnection.ConnectionString = this.ddlHelper.ConnectionString;
+                        await ((DbConnection)this.dbConnection).OpenAsync(cancellationToken);
+                    }
+                }
+                catch (Exception e)
+                {
+                    this.logger.LogError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB, e, ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_CONNECT_TO_DB));
+                    throw;
+                }
+            }
         }
 
         /// <summary>
         /// Asynchronously disconnects from the database engine.
         /// </summary>
-        public System.Threading.Tasks.Task DisconnectAsync()
+        public async Task DisconnectAsync()
         {
-            Disconnect();
-            return System.Threading.Tasks.Task.CompletedTask;
+            await ((DbConnection)this.dbConnection).CloseAsync();
         }
 
         /// <summary>
         /// Asynchronously executes a SQL statement and returns typed models.
         /// </summary>
-        public async System.Threading.Tasks.Task<List<T>> SQLAsync<T>(string SQL, string tableName = null, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<List<T>> SQLAsync<T>(string SQL, string tableName = null, CancellationToken cancellationToken = default)
         {
-            return await System.Threading.Tasks.Task.Run(() => SQL<T>(SQL, tableName), cancellationToken);
+            tableName = tableName == null ? typeof(T).Name : tableName;
+            var table = this.CreateTable<T>(tableName);
+            await table.LoadAsync(SQL, cancellationToken: cancellationToken);
+            return table.Data;
         }
 
         /// <summary>
         /// Asynchronously executes a prepared DbCommand and returns typed models.
         /// </summary>
-        public async System.Threading.Tasks.Task<List<T>> SQLAsync<T>(IDbCommand dbCommand, string tableName = null, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<List<T>> SQLAsync<T>(IDbCommand dbCommand, string tableName = null, CancellationToken cancellationToken = default)
         {
-            return await System.Threading.Tasks.Task.Run(() => SQL<T>(dbCommand, tableName), cancellationToken);
+            tableName = tableName == null ? typeof(T).Name : tableName;
+            var table = this.CreateTable<T>(tableName);
+            await table.LoadAsync(dbCommand, cancellationToken: cancellationToken);
+            return table.Data;
         }
 
         /// <summary>
         /// Asynchronously executes a DDL command.
         /// </summary>
-        public async System.Threading.Tasks.Task<bool> ExecuteDDLAsync(string DDLCommand, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<bool> ExecuteDDLAsync(string DDLCommand, CancellationToken cancellationToken = default)
         {
-            return await System.Threading.Tasks.Task.Run(() => ExecuteDDL(DDLCommand), cancellationToken);
+            var result = false;
+            var cmd = this.CreateCommand();
+            cmd.CommandText = DDLCommand;
+            try
+            {
+                await ((DbCommand)cmd).ExecuteNonQueryAsync(cancellationToken);
+                result = true;
+            }
+            catch (Exception e)
+            {
+                this.logger.LogError(ErrorCodes.ERR_CANNOT_RUN_DDL, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)} | {DDLCommand}");
+            }
+            finally
+            {
+                cmd.Dispose();
+            }
+            return result;
         }
         #endregion
     }

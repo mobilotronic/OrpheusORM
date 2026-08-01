@@ -79,6 +79,16 @@ namespace OrpheusCore
         #endregion
 
         #region initialization
+        /// <summary>
+        /// Registers the internal services Orpheus needs at runtime: table options, module and
+        /// schema types, a default <see cref="IDatabaseConnectionConfiguration"/>, and (only if
+        /// nothing has registered <see cref="ILoggerFactory"/> yet) a console logger fallback.
+        /// Engine-specific connection factories and DDL helpers are <b>not</b> registered here — use
+        /// the per-engine <c>AddOrpheusSqlServer</c>/<c>AddOrpheusMySql</c>/<c>AddOrpheusPostgreSql</c>
+        /// extension methods (which call this internally) instead of calling this directly.
+        /// </summary>
+        /// <param name="services">The service collection to register Orpheus's services into.</param>
+        /// <returns>The same <paramref name="services"/> instance, for chaining.</returns>
         public static IServiceCollection AddOrpheusServices(this IServiceCollection services)
         {
             initializeServices(services);
@@ -88,14 +98,35 @@ namespace OrpheusCore
 
         #region service resolution
 
+        /// <summary>
+        /// The service provider used by <see cref="Resolve{T}()"/>, <see cref="LoggerFactory"/>, and
+        /// the other static resolution helpers below. Must be assigned (typically right after
+        /// building the service collection with <c>BuildServiceProvider()</c>) before calling them.
+        /// </summary>
         [Obsolete("Prefer constructor injection of IServiceProvider. This static property is retained for backward compatibility.")]
         public static IServiceProvider ServiceProvider { get; set; }
 
+        /// <summary>
+        /// Resolves a service of type <typeparamref name="T"/> from <see cref="ServiceProvider"/>.
+        /// </summary>
         public static T Resolve<T>()
         {
             return ServiceProvider.GetService<T>();
         }
 
+        /// <summary>
+        /// Resolves a service by type from <see cref="ServiceProvider"/>. When
+        /// <paramref name="constructorParameters"/> is supplied, instead of returning the
+        /// DI-resolved instance directly, this looks up the resolved service's concrete type and
+        /// invokes whichever of its constructors' parameter types are assignable from the supplied
+        /// arguments — for constructing an instance with runtime-known arguments that aren't
+        /// themselves resolvable from the container.
+        /// </summary>
+        /// <param name="serviceType">The service type to resolve.</param>
+        /// <param name="constructorParameters">
+        /// Constructor arguments to invoke a matching constructor with, or null/empty to just return
+        /// the DI-resolved instance.
+        /// </param>
         public static object Resolve(Type serviceType, object[] constructorParameters)
         {
             if (constructorParameters == null || constructorParameters.Length == 0)
@@ -112,6 +143,13 @@ namespace OrpheusCore
             return null;
         }
 
+        /// <summary>
+        /// Generic counterpart of <see cref="Resolve(Type, object[])"/>.
+        /// </summary>
+        /// <param name="constructorParameters">
+        /// Constructor arguments to invoke a matching constructor with, or null/empty to just return
+        /// the DI-resolved instance.
+        /// </param>
         public static T Resolve<T>(object[] constructorParameters)
         {
             if (constructorParameters == null || constructorParameters.Length == 0)
@@ -128,6 +166,10 @@ namespace OrpheusCore
             return default;
         }
 
+        /// <summary>
+        /// The <see cref="ILoggerFactory"/> resolved from <see cref="ServiceProvider"/>, cached
+        /// after the first access.
+        /// </summary>
         public static ILoggerFactory LoggerFactory
         {
             get
@@ -138,11 +180,20 @@ namespace OrpheusCore
             }
         }
 
+        /// <summary>
+        /// Creates a logger for <typeparamref name="T"/> via <see cref="LoggerFactory"/>. Returns
+        /// null if no <see cref="ILoggerFactory"/> is registered in <see cref="ServiceProvider"/>.
+        /// </summary>
         public static ILogger<T> CreateLogger<T>()
         {
             return LoggerFactory?.CreateLogger<T>();
         }
 
+        /// <summary>
+        /// Resolves an arbitrary service by type from <see cref="ServiceProvider"/>. Despite the
+        /// name, this is not limited to logging-related services — it's a general-purpose lookup.
+        /// </summary>
+        /// <param name="type">The service type to resolve.</param>
         public static object GetLoggerService(Type type)
         {
             return ServiceProvider.GetService(type);

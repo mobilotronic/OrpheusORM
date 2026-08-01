@@ -1,0 +1,236 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Logging.ILogEntry
+  commentId: T:OrpheusInterfaces.Logging.ILogEntry
+  id: ILogEntry
+  parent: OrpheusInterfaces.Logging
+  children:
+  - OrpheusInterfaces.Logging.ILogEntry.Message
+  - OrpheusInterfaces.Logging.ILogEntry.StackTrace
+  - OrpheusInterfaces.Logging.ILogEntry.TimeStamp
+  - OrpheusInterfaces.Logging.ILogEntry.Type
+  langs:
+  - csharp
+  - vb
+  name: ILogEntry
+  nameWithType: ILogEntry
+  fullName: OrpheusInterfaces.Logging.ILogEntry
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Logging/ILogEntry.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ILogEntry
+    path: ../OrpheusInterfaces/Logging/ILogEntry.cs
+    startLine: 7
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Logging
+  summary: Represents a single log entry.
+  example: []
+  syntax:
+    content: public interface ILogEntry
+    content.vb: Public Interface ILogEntry
+  derivedClasses:
+  - OrpheusLogger.LogEntry
+- uid: OrpheusInterfaces.Logging.ILogEntry.Type
+  commentId: P:OrpheusInterfaces.Logging.ILogEntry.Type
+  id: Type
+  parent: OrpheusInterfaces.Logging.ILogEntry
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: ILogEntry.Type
+  fullName: OrpheusInterfaces.Logging.ILogEntry.Type
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Logging/ILogEntry.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Type
+    path: ../OrpheusInterfaces/Logging/ILogEntry.cs
+    startLine: 10
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Logging
+  summary: Log entry severity type.
+  example: []
+  syntax:
+    content: string Type { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Type As String
+  overload: OrpheusInterfaces.Logging.ILogEntry.Type*
+- uid: OrpheusInterfaces.Logging.ILogEntry.Message
+  commentId: P:OrpheusInterfaces.Logging.ILogEntry.Message
+  id: Message
+  parent: OrpheusInterfaces.Logging.ILogEntry
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: ILogEntry.Message
+  fullName: OrpheusInterfaces.Logging.ILogEntry.Message
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Logging/ILogEntry.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Message
+    path: ../OrpheusInterfaces/Logging/ILogEntry.cs
+    startLine: 12
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Logging
+  summary: Log entry message text.
+  example: []
+  syntax:
+    content: string Message { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Message As String
+  overload: OrpheusInterfaces.Logging.ILogEntry.Message*
+- uid: OrpheusInterfaces.Logging.ILogEntry.TimeStamp
+  commentId: P:OrpheusInterfaces.Logging.ILogEntry.TimeStamp
+  id: TimeStamp
+  parent: OrpheusInterfaces.Logging.ILogEntry
+  langs:
+  - csharp
+  - vb
+  name: TimeStamp
+  nameWithType: ILogEntry.TimeStamp
+  fullName: OrpheusInterfaces.Logging.ILogEntry.TimeStamp
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Logging/ILogEntry.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: TimeStamp
+    path: ../OrpheusInterfaces/Logging/ILogEntry.cs
+    startLine: 14
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Logging
+  summary: Timestamp when the entry was created.
+  example: []
+  syntax:
+    content: DateTime TimeStamp { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Property TimeStamp As Date
+  overload: OrpheusInterfaces.Logging.ILogEntry.TimeStamp*
+- uid: OrpheusInterfaces.Logging.ILogEntry.StackTrace
+  commentId: P:OrpheusInterfaces.Logging.ILogEntry.StackTrace
+  id: StackTrace
+  parent: OrpheusInterfaces.Logging.ILogEntry
+  langs:
+  - csharp
+  - vb
+  name: StackTrace
+  nameWithType: ILogEntry.StackTrace
+  fullName: OrpheusInterfaces.Logging.ILogEntry.StackTrace
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Logging/ILogEntry.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: StackTrace
+    path: ../OrpheusInterfaces/Logging/ILogEntry.cs
+    startLine: 16
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Logging
+  summary: Stack trace, if applicable.
+  example: []
+  syntax:
+    content: string StackTrace { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property StackTrace As String
+  overload: OrpheusInterfaces.Logging.ILogEntry.StackTrace*
+references:
+- uid: OrpheusInterfaces.Logging
+  commentId: N:OrpheusInterfaces.Logging
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Logging
+  nameWithType: OrpheusInterfaces.Logging
+  fullName: OrpheusInterfaces.Logging
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Logging
+    name: Logging
+    href: OrpheusInterfaces.Logging.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Logging
+    name: Logging
+    href: OrpheusInterfaces.Logging.html
+- uid: OrpheusInterfaces.Logging.ILogEntry.Type*
+  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.Type
+  href: OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_Type
+  name: Type
+  nameWithType: ILogEntry.Type
+  fullName: OrpheusInterfaces.Logging.ILogEntry.Type
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Logging.ILogEntry.Message*
+  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.Message
+  href: OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_Message
+  name: Message
+  nameWithType: ILogEntry.Message
+  fullName: OrpheusInterfaces.Logging.ILogEntry.Message
+- uid: OrpheusInterfaces.Logging.ILogEntry.TimeStamp*
+  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.TimeStamp
+  href: OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_TimeStamp
+  name: TimeStamp
+  nameWithType: ILogEntry.TimeStamp
+  fullName: OrpheusInterfaces.Logging.ILogEntry.TimeStamp
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: OrpheusInterfaces.Logging.ILogEntry.StackTrace*
+  commentId: Overload:OrpheusInterfaces.Logging.ILogEntry.StackTrace
+  href: OrpheusInterfaces.Logging.ILogEntry.html#OrpheusInterfaces_Logging_ILogEntry_StackTrace
+  name: StackTrace
+  nameWithType: ILogEntry.StackTrace
+  fullName: OrpheusInterfaces.Logging.ILogEntry.StackTrace

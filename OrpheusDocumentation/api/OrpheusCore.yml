@@ -1,0 +1,122 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore
+  commentId: N:OrpheusCore
+  id: OrpheusCore
+  children:
+  - OrpheusCore.ModelProperty
+  - OrpheusCore.ModifiedRecordAction
+  - OrpheusCore.OrpheusDatabase
+  - OrpheusCore.OrpheusModelHelper
+  - OrpheusCore.OrpheusModule
+  - OrpheusCore.OrpheusModuleDefinition
+  - OrpheusCore.OrpheusTableKeyField
+  - OrpheusCore.OrpheusTableOptions
+  - OrpheusCore.OrpheusTable`1
+  - OrpheusCore.PropertyAttribute
+  - OrpheusCore.ServiceManager
+  langs:
+  - csharp
+  - vb
+  name: OrpheusCore
+  nameWithType: OrpheusCore
+  fullName: OrpheusCore
+  type: Namespace
+  assemblies:
+  - OrpheusCore
+references:
+- uid: OrpheusCore.OrpheusDatabase
+  commentId: T:OrpheusCore.OrpheusDatabase
+  href: OrpheusCore.OrpheusDatabase.html
+  name: OrpheusDatabase
+  nameWithType: OrpheusDatabase
+  fullName: OrpheusCore.OrpheusDatabase
+- uid: OrpheusCore.ModelProperty
+  commentId: T:OrpheusCore.ModelProperty
+  parent: OrpheusCore
+  href: OrpheusCore.ModelProperty.html
+  name: ModelProperty
+  nameWithType: ModelProperty
+  fullName: OrpheusCore.ModelProperty
+- uid: OrpheusCore.PropertyAttribute
+  commentId: T:OrpheusCore.PropertyAttribute
+  parent: OrpheusCore
+  href: OrpheusCore.PropertyAttribute.html
+  name: PropertyAttribute
+  nameWithType: PropertyAttribute
+  fullName: OrpheusCore.PropertyAttribute
+- uid: OrpheusCore.OrpheusModelHelper
+  commentId: T:OrpheusCore.OrpheusModelHelper
+  parent: OrpheusCore
+  href: OrpheusCore.OrpheusModelHelper.html
+  name: OrpheusModelHelper
+  nameWithType: OrpheusModelHelper
+  fullName: OrpheusCore.OrpheusModelHelper
+- uid: OrpheusCore.OrpheusModule
+  commentId: T:OrpheusCore.OrpheusModule
+  href: OrpheusCore.OrpheusModule.html
+  name: OrpheusModule
+  nameWithType: OrpheusModule
+  fullName: OrpheusCore.OrpheusModule
+- uid: OrpheusCore.OrpheusModuleDefinition
+  commentId: T:OrpheusCore.OrpheusModuleDefinition
+  href: OrpheusCore.OrpheusModuleDefinition.html
+  name: OrpheusModuleDefinition
+  nameWithType: OrpheusModuleDefinition
+  fullName: OrpheusCore.OrpheusModuleDefinition
+- uid: OrpheusCore.OrpheusTableOptions
+  commentId: T:OrpheusCore.OrpheusTableOptions
+  href: OrpheusCore.OrpheusTableOptions.html
+  name: OrpheusTableOptions
+  nameWithType: OrpheusTableOptions
+  fullName: OrpheusCore.OrpheusTableOptions
+- uid: OrpheusCore.ModifiedRecordAction
+  commentId: T:OrpheusCore.ModifiedRecordAction
+  parent: OrpheusCore
+  href: OrpheusCore.ModifiedRecordAction.html
+  name: ModifiedRecordAction
+  nameWithType: ModifiedRecordAction
+  fullName: OrpheusCore.ModifiedRecordAction
+- uid: OrpheusCore.OrpheusTable`1
+  commentId: T:OrpheusCore.OrpheusTable`1
+  href: OrpheusCore.OrpheusTable-1.html
+  name: OrpheusTable<T>
+  nameWithType: OrpheusTable<T>
+  fullName: OrpheusCore.OrpheusTable<T>
+  nameWithType.vb: OrpheusTable(Of T)
+  fullName.vb: OrpheusCore.OrpheusTable(Of T)
+  name.vb: OrpheusTable(Of T)
+  spec.csharp:
+  - uid: OrpheusCore.OrpheusTable`1
+    name: OrpheusTable
+    href: OrpheusCore.OrpheusTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: OrpheusCore.OrpheusTable`1
+    name: OrpheusTable
+    href: OrpheusCore.OrpheusTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: OrpheusCore.OrpheusTableKeyField
+  commentId: T:OrpheusCore.OrpheusTableKeyField
+  href: OrpheusCore.OrpheusTableKeyField.html
+  name: OrpheusTableKeyField
+  nameWithType: OrpheusTableKeyField
+  fullName: OrpheusCore.OrpheusTableKeyField
+- uid: OrpheusCore.ServiceManager
+  commentId: T:OrpheusCore.ServiceManager
+  href: OrpheusCore.ServiceManager.html
+  name: ServiceManager
+  nameWithType: ServiceManager
+  fullName: OrpheusCore.ServiceManager
+- uid: OrpheusCore
+  commentId: N:OrpheusCore
+  href: OrpheusCore.html
+  name: OrpheusCore
+  nameWithType: OrpheusCore
+  fullName: OrpheusCore

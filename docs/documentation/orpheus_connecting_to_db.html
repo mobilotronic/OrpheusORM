@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/upgrade-to-net-8/OrpheusDocumentation/documentation/orpheus_connecting_to_db.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusDocumentation/documentation/orpheus_connecting_to_db.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -87,50 +87,103 @@
         <article data-uid="">
 <h1 id="connecting-to-a-database">Connecting to a database</h1>
 
-<p>With Orpheus you can multiple connections to a different (or the same) database, at the same time.</p>
-<p>You can configure multiple database connections, in the configuration file. Consider having the following configuration</p>
-<pre><code class="lang-json">  &quot;DatabaseConnections&quot;: [
-    {
-      &quot;ConfigurationName&quot;: &quot;Database1&quot;,
-      &quot;Server&quot;: &quot;Server1&quot;,
-      &quot;DatabaseName&quot;: &quot;Database1&quot;,
-      &quot;UseIntegratedSecurity&quot;: false,
-      &quot;UseIntegratedSecurityForServiceConnection&quot;: false,
-      &quot;ServiceUserName&quot;: &quot;[yourusername]&quot;,
-      &quot;ServicePassword&quot;: &quot;[yourpassword]&quot;
-    },
-    {
-      &quot;ConfigurationName&quot;: &quot;Database2&quot;,
-      &quot;Server&quot;: &quot;Server2&quot;,
-      &quot;DatabaseName&quot;: &quot;Database2&quot;,
-      &quot;UseIntegratedSecurity&quot;: false,
-      &quot;UseIntegratedSecurityForServiceConnection&quot;: false,
-      &quot;ServiceUserName&quot;: &quot;[yourusername]&quot;,
-      &quot;ServicePassword&quot;: &quot;[yourpassword]&quot;,
-      &quot;UserName&quot;: &quot;[yourusername]&quot;,
-      &quot;Password&quot;: &quot;[yourpassword]&quot;
-    }
-  ],
+<p>With Orpheus you can have multiple connections to a different (or the same) database, at the
+same time.</p>
+<p>You can configure multiple database connections in the configuration file. Consider having the
+following configuration:</p>
+<pre><code class="lang-json">{
+  &quot;OrpheusConfiguration&quot;: {
+    &quot;DatabaseConnections&quot;: [
+      {
+        &quot;ConfigurationName&quot;: &quot;Database1&quot;,
+        &quot;Server&quot;: &quot;Server1&quot;,
+        &quot;DatabaseName&quot;: &quot;Database1&quot;,
+        &quot;UseIntegratedSecurity&quot;: false,
+        &quot;UseIntegratedSecurityForServiceConnection&quot;: false,
+        &quot;ServiceUserName&quot;: &quot;[yourusername]&quot;,
+        &quot;ServicePassword&quot;: &quot;[yourpassword]&quot;
+      },
+      {
+        &quot;ConfigurationName&quot;: &quot;Database2&quot;,
+        &quot;Server&quot;: &quot;Server2&quot;,
+        &quot;DatabaseName&quot;: &quot;Database2&quot;,
+        &quot;UseIntegratedSecurity&quot;: false,
+        &quot;UseIntegratedSecurityForServiceConnection&quot;: false,
+        &quot;ServiceUserName&quot;: &quot;[yourusername]&quot;,
+        &quot;ServicePassword&quot;: &quot;[yourpassword]&quot;,
+        &quot;UserName&quot;: &quot;[yourusername]&quot;,
+        &quot;Password&quot;: &quot;[yourpassword]&quot;
+      }
+    ]
+  }
+}
 </code></pre>
-<p>First let's load the configuration</p>
-<pre><code class="lang-csharp">    //creating an IConfiguration to pass it on to Orpheus.
-    var configurationBuilder = new ConfigurationBuilder();
-    configurationBuilder.SetBasePath(&quot;YourPathHere&quot;);
-    configurationBuilder.AddJsonFile(&quot;appSettings.json&quot;, optional: false, reloadOnChange: true);
-    this.configuration = configurationBuilder.Build();
-    OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(this.configuration);
+<p>First, let's load the configuration:</p>
+<pre><code class="lang-csharp">var configurationBuilder = new ConfigurationBuilder();
+configurationBuilder.SetBasePath(&quot;YourPathHere&quot;);
+configurationBuilder.AddJsonFile(&quot;OrpheusConfig.json&quot;, optional: false, reloadOnChange: true);
+var configuration = configurationBuilder.Build();
 
-    //creating a database to connect to server1/database1
-    var database1 = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve&lt;IOrpheusDatabase&gt;();
-    var dbConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c =&gt; c.ConfigurationName.ToLower() == &quot;database1&quot;);
-    database1.Connect(dbConfiguration);
-
-    //creating a database to connect to server2/database2
-    var database2 = OrpheusCore.ServiceProvider.OrpheusServiceProvider.Resolve&lt;IOrpheusDatabase&gt;();
-    var dbConfiguration = OrpheusCore.Configuration.ConfigurationManager.Configuration.DatabaseConnections.FirstOrDefault(c =&gt; c.ConfigurationName.ToLower() == &quot;database2&quot;);
-    database2.Connect(dbConfiguration);
+var orpheusConfig = new OrpheusConfiguration();
+configuration.GetSection(&quot;OrpheusConfiguration&quot;).Bind(orpheusConfig);
 </code></pre>
-<p>For more details on each configuration option go to <a href="../api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html">Database Connection Configuration</a></p>
+<p>Since a normal DI registration (<code>AddOrpheusSqlServer(...)</code>, see <a href="orpheus_and_di.html">DI Configuration</a>)
+registers one <code>IOrpheusDatabase</code> per container, connecting to two databases <em>simultaneously</em> is
+most straightforward using each engine's static factory — each call produces its own independent,
+fully-configured database, so there's no registration to collide:</p>
+<pre><code class="lang-csharp">var db1Config = orpheusConfig.DatabaseConnections.First(c =&gt; c.ConfigurationName == &quot;Database1&quot;);
+var database1 = OrpheusSQLServerDatabase.CreateDatabase(db1Config);
+database1.Connect();
+
+var db2Config = orpheusConfig.DatabaseConnections.First(c =&gt; c.ConfigurationName == &quot;Database2&quot;);
+var database2 = OrpheusSQLServerDatabase.CreateDatabase(db2Config);
+database2.Connect();
+</code></pre>
+<p>If you only need a single connection and you're already using a DI container, prefer
+<code>services.AddOrpheusSqlServer(dbConfig)</code> instead (see <a href="orpheus_and_di.html">DI Configuration</a>) —
+it registers a pooled connection factory, DDL helper, and <code>IOrpheusDatabase</code> together, resolved
+from your container like any other service.</p>
+<h3 id="connection-pooling">Connection pooling</h3>
+<p>Every connection Orpheus opens — the main connection and the auxiliary connections the DDL
+helper uses for schema/administrative operations — goes through the same pooled ADO.NET
+connection string, built from <code>IDatabaseConnectionConfiguration</code>'s pooling settings:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Meaning</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Pooling</code></td>
+<td>Whether ADO.NET connection pooling is enabled</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>MinPoolSize</code></td>
+<td>Minimum number of connections maintained in the pool</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>MaxPoolSize</code></td>
+<td>Maximum number of connections allowed in the pool</td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>ConnectionIdleTimeout</code></td>
+<td>Seconds a connection can remain idle in the pool before being removed</td>
+<td><code>300</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>OrpheusDatabase.Connect()</code>/<code>Disconnect()</code> lease and return one connection per <code>IOrpheusDatabase</code>
+instance from the pool — this is not per-operation connection leasing, so a long-lived
+<code>IOrpheusDatabase</code> instance holds one pooled connection for its lifetime, same as before pooling
+was added.</p>
+<p>For more details on each configuration option, see
+<a href="../api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html">Database Connection Configuration</a>.</p>
 
 </article>
 

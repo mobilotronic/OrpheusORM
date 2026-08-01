@@ -1,0 +1,82 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.Configuration.Models
+  commentId: N:OrpheusCore.Configuration.Models
+  id: OrpheusCore.Configuration.Models
+  children:
+  - OrpheusCore.Configuration.Models.DIBinderOptions
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  - OrpheusCore.Configuration.Models.OrpheusConfiguration
+  - OrpheusCore.Configuration.Models.ServiceProviderItem
+  - OrpheusCore.Configuration.Models.TardigradeConfigurationBinder
+  langs:
+  - csharp
+  - vb
+  name: OrpheusCore.Configuration.Models
+  nameWithType: OrpheusCore.Configuration.Models
+  fullName: OrpheusCore.Configuration.Models
+  type: Namespace
+  assemblies:
+  - OrpheusCore
+references:
+- uid: OrpheusCore.Configuration.Models.DIBinderOptions
+  commentId: T:OrpheusCore.Configuration.Models.DIBinderOptions
+  href: OrpheusCore.Configuration.Models.DIBinderOptions.html
+  name: DIBinderOptions
+  nameWithType: DIBinderOptions
+  fullName: OrpheusCore.Configuration.Models.DIBinderOptions
+- uid: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder
+  commentId: T:OrpheusCore.Configuration.Models.TardigradeConfigurationBinder
+  href: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.html
+  name: TardigradeConfigurationBinder
+  nameWithType: TardigradeConfigurationBinder
+  fullName: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  commentId: T:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html
+  name: DatabaseConnectionConfiguration
+  nameWithType: DatabaseConnectionConfiguration
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+- uid: OrpheusCore.Configuration.Models.OrpheusConfiguration
+  commentId: T:OrpheusCore.Configuration.Models.OrpheusConfiguration
+  parent: OrpheusCore.Configuration.Models
+  href: OrpheusCore.Configuration.Models.OrpheusConfiguration.html
+  name: OrpheusConfiguration
+  nameWithType: OrpheusConfiguration
+  fullName: OrpheusCore.Configuration.Models.OrpheusConfiguration
+- uid: OrpheusCore.Configuration.Models.ServiceProviderItem
+  commentId: T:OrpheusCore.Configuration.Models.ServiceProviderItem
+  href: OrpheusCore.Configuration.Models.ServiceProviderItem.html
+  name: ServiceProviderItem
+  nameWithType: ServiceProviderItem
+  fullName: OrpheusCore.Configuration.Models.ServiceProviderItem
+- uid: OrpheusCore.Configuration.Models
+  commentId: N:OrpheusCore.Configuration.Models
+  href: OrpheusCore.html
+  name: OrpheusCore.Configuration.Models
+  nameWithType: OrpheusCore.Configuration.Models
+  fullName: OrpheusCore.Configuration.Models
+  spec.csharp:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.Configuration
+    name: Configuration
+    href: OrpheusCore.Configuration.html
+  - name: .
+  - uid: OrpheusCore.Configuration.Models
+    name: Models
+    href: OrpheusCore.Configuration.Models.html
+  spec.vb:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.Configuration
+    name: Configuration
+    href: OrpheusCore.Configuration.html
+  - name: .
+  - uid: OrpheusCore.Configuration.Models
+    name: Models
+    href: OrpheusCore.Configuration.Models.html

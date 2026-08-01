@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/upgrade-to-net-8/OrpheusDocumentation/documentation/orpheus_and_di.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusDocumentation/documentation/orpheus_and_di.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -87,59 +87,112 @@
         <article data-uid="">
 <h1 id="orpheus-and-di">Orpheus and DI</h1>
 
-<p>One of the first things that need to happen in an OrpheusORM application,
-is to initialize Orpheus's configuration.</p>
+<p>One of the first things that need to happen in an OrpheusORM application
+is registering Orpheus's services — and, for whichever database engine you're
+targeting, wiring up a connection factory and DDL helper for it.</p>
 <h3 id="why-use-di">Why use DI?</h3>
-<p>The reason for using an IoC container, is configurability and extensibility.
-Having all the configuration in a file, the consumer can define the database engine of his
-choosing as long as it implements <code>System.Data.IDbConnection</code>, or a different logger component as long as it implements <code>Microsoft.Extensions.Logging.ILogger</code>.</p>
-<p><strong>Note:</strong> At the moment only SQL Server and MySQL have been tested. Other DB engines might work, but there is no guarantee.</p>
+<p>The reason for using an IoC container is configurability and extensibility. Orpheus doesn't
+depend on, or include, any code that targets a specific database engine — the engine is
+selected entirely by which services you register.</p>
 <p>Read about Microsoft's DI <a href="https://msdn.microsoft.com/en-us/magazine/mt707534.aspx">here</a></p>
-<h3 id="agnostic-database-engine">Agnostic Database Engine</h3>
-<p>By design Orpheus, does not depend nor include any code that targets specifically a database engine.
-This means that the consumer will need to somehow configure, which database engine will Orpheus target.</p>
-<p>Here comes into play Orpheus's configuration. Either by file or by code, you can define the database engine for Orpheus.</p>
-<h4 id="configuration-by-file">Configuration by file</h4>
-<p>One easy way to configure Orpheus is by using a configuration file. The configuration file, is basically a JSON file that has the DI configuration for Orpheus.</p>
-<ul>
-<li><p>To initialize the configuration you can use the Orpheus configuration object.</p>
-<pre><code class="lang-csharp">OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(IConfiguration configuration, IServiceCollection services = null);
+<h3 id="the-easy-way-per-engine-registration">The easy way: per-engine registration</h3>
+<p>Each database engine ships its own DDL helper package (<code>OrpheusSQLServerDDLHelper</code>,
+<code>OrpheusMySQLDDLHelper</code>, <code>OrpheusPostgreSQLDDLHelper</code>), and each one provides a single
+<code>IServiceCollection</code> extension method — mirroring the <code>UseSqlServer()</code>/<code>UseNpgsql()</code> pattern
+from EF Core — that registers everything Orpheus needs for that engine in one call: a pooled
+connection factory, the engine's DDL helper, and <code>IOrpheusDatabase</code> itself, already configured.</p>
+<pre><code class="lang-csharp">var services = new ServiceCollection();
+
+services.AddOrpheusSqlServer(config =&gt;
+{
+    config.Server = &quot;YourServer&quot;;
+    config.DatabaseName = &quot;YourDatabase&quot;;
+    config.UseIntegratedSecurity = true;
+});
+
+var provider = services.BuildServiceProvider();
+var db = provider.GetRequiredService&lt;IOrpheusDatabase&gt;(); // already fully configured
+db.Connect();
 </code></pre>
-<p>If no services are defined, then Orpheus will be in self-service mode. This means that it will create its own service collection and register all required services there.</p>
-<p>Alternatively you can define a file name. This will implicitly set Orpheus to self-service mode.</p>
-<pre><code class="lang-csharp">OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(&quot;MyPath\appSettings.json&quot;);
-</code></pre>
-<p><strong>Note:</strong> You don't have to have a separate file for Orpheus's configuration. Its configuration can live inside your existing configuration file.</p>
-<h5 id="configuration-sample">Configuration Sample</h5>
-<pre><code class="lang-javascript">{
-  &quot;Services&quot;: [
-    {
-      &quot;Implementation&quot;: &quot;System.Data.SqlClient.SqlConnection, System.Data.SqlClient, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;,
-      &quot;Service&quot;: &quot;System.Data.IDbConnection, System.Data.Common, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a&quot;,
-      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
-    },
-    {
-      &quot;Implementation&quot;: &quot;OrpheusCore.OrpheusDatabase, OrpheusCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;Service&quot;: &quot;OrpheusInterfaces.Core.IOrpheusDatabase, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
-    },
-    {
-      &quot;Implementation&quot;: &quot;OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper, OrpheusSQLServerDDLHelper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;Service&quot;: &quot;OrpheusInterfaces.Core.IOrpheusDDLHelper, OrpheusInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;,
-      &quot;ServiceLifeTime&quot;: &quot;Transient&quot;
-    }
-  ],
-  &quot;DatabaseConnection&quot;: 
-    {
-      &quot;ConfigurationName&quot;: &quot;ServiceConnection&quot;,
-      &quot;Server&quot;: &quot;[YourServer]&quot;,
-      &quot;DatabaseName&quot;: &quot;[YourDatabase]&quot;,
-      &quot;UseIntegratedSecurity&quot;: true
-    }
+<p>The MySQL and PostgreSQL equivalents are <code>AddOrpheusMySql(...)</code> (in <code>OrpheusMySQLDDLHelper</code>) and
+<code>AddOrpheusPostgreSql(...)</code> (in <code>OrpheusPostgreSQLDDLHelper</code>) — same shape, same configuration
+options. You can also pass an already-built <code>IDatabaseConnectionConfiguration</code> instead of a
+configuration lambda, which is convenient when the configuration is coming from a file (see
+below).</p>
+<p>Internally, each of these calls <code>AddOrpheusServices()</code> to register Orpheus's own internal
+services (table options, module/schema types, and a console logging fallback if nothing else has
+registered <code>ILoggerFactory</code>) — you don't need to call <code>AddOrpheusServices()</code> yourself unless
+you're wiring up a database engine manually (see &quot;Registering things yourself&quot; below).</p>
+<h3 id="configuration-by-file">Configuration by file</h3>
+<p>The configuration lambda above can just as easily be filled from an <code>IConfiguration</code> section
+instead of hardcoded values. A typical <code>OrpheusConfig.json</code> looks like this:</p>
+<pre><code class="lang-json">{
+  &quot;OrpheusConfiguration&quot;: {
+    &quot;DatabaseConnections&quot;: [
+      {
+        &quot;ConfigurationName&quot;: &quot;Database1&quot;,
+        &quot;Server&quot;: &quot;YourServer&quot;,
+        &quot;DatabaseName&quot;: &quot;YourDatabase&quot;,
+        &quot;UseIntegratedSecurity&quot;: false,
+        &quot;UseIntegratedSecurityForServiceConnection&quot;: false,
+        &quot;UserName&quot;: &quot;[yourusername]&quot;,
+        &quot;Password&quot;: &quot;[yourpassword]&quot;,
+        &quot;ServiceUserName&quot;: &quot;[yourusername]&quot;,
+        &quot;ServicePassword&quot;: &quot;[yourpassword]&quot;,
+        &quot;Pooling&quot;: true,
+        &quot;MinPoolSize&quot;: 0,
+        &quot;MaxPoolSize&quot;: 100,
+        &quot;ConnectionIdleTimeout&quot;: 300
+      }
+    ]
+  }
 }
 </code></pre>
-</li>
-</ul>
+<pre><code class="lang-csharp">var configurationBuilder = new ConfigurationBuilder();
+configurationBuilder.SetBasePath(&quot;YourPathHere&quot;);
+configurationBuilder.AddJsonFile(&quot;OrpheusConfig.json&quot;, optional: false, reloadOnChange: true);
+var configuration = configurationBuilder.Build();
+
+var services = new ServiceCollection();
+services.AddOrpheusSqlServer(configuration, &quot;Database1&quot;);
+</code></pre>
+<p><code>AddOrpheusSqlServer(configuration, connectionName)</code> binds the <code>&quot;OrpheusConfiguration&quot;</code> section and
+looks up the connection whose <code>ConfigurationName</code> matches <code>connectionName</code> for you. If your settings
+live under a different section, pass it as a third argument:
+<code>services.AddOrpheusSqlServer(configuration, &quot;Database1&quot;, &quot;MyApp:Orpheus&quot;)</code>.</p>
+<p>For details on every connection option — including the pooling settings (<code>Pooling</code>,
+<code>MinPoolSize</code>, <code>MaxPoolSize</code>, <code>ConnectionIdleTimeout</code>) that get applied to the underlying ADO.NET
+connection pool — see <a href="orpheus_connecting_to_db.html">Connecting to a database</a> and
+<a href="../api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html">Database Connection Configuration</a>.</p>
+<h3 id="without-a-di-container">Without a DI container</h3>
+<p>If your application isn't using an <code>IServiceCollection</code> at all (a console app or script, for
+example), each engine's DDL helper package also ships a static factory that builds a fully
+working, pooling-aware <code>IOrpheusDatabase</code> on its own:</p>
+<pre><code class="lang-csharp">var db = OrpheusSQLServerDatabase.CreateDatabase(config =&gt; {
+    config.Server = &quot;YourServer&quot;;
+    config.DatabaseName = &quot;YourDatabase&quot;;
+    config.UseIntegratedSecurity = true;
+});
+db.Connect();
+</code></pre>
+<p><code>OrpheusMySQLServerDatabase.CreateDatabase(...)</code> and <code>OrpheusPostgreSQLServerDatabase.CreateDatabase(...)</code>
+work the same way. Internally these build their own small, private service container, so the
+result is identical to what you'd get by registering with <code>AddOrpheusSqlServer(...)</code> and
+resolving — it's just self-contained.</p>
+<h3 id="registering-things-yourself">Registering things yourself</h3>
+<p>The per-engine extension methods cover the common case, but they're a thin convenience layer —
+nothing stops you from registering <code>IOrpheusConnectionFactory</code>, <code>IOrpheusDDLHelper</code>, and
+<code>IOrpheusDatabase</code> directly, for example if you need a custom <code>IOrpheusDDLHelper</code> for a database
+engine Orpheus doesn't ship support for (see <a href="orpheus_ddl_helper.html">Orpheus DDL Helper</a>):</p>
+<pre><code class="lang-csharp">services.AddOrpheusServices();
+services.AddTransient&lt;IOrpheusConnectionFactory, MyCustomConnectionFactory&gt;();
+services.AddTransient&lt;IOrpheusDDLHelper, MyCustomDDLHelper&gt;();
+services.AddTransient&lt;IOrpheusDatabase, OrpheusDatabase&gt;();
+</code></pre>
+<p><strong>Note:</strong> The static <code>ServiceManager.ServiceProvider</code> property and <code>ServiceManager.Resolve&lt;T&gt;()</code>
+helpers are retained for backward compatibility but are obsolete — prefer resolving
+<code>IOrpheusDatabase</code> from your <code>IServiceProvider</code> (constructor injection, or
+<code>provider.GetRequiredService&lt;IOrpheusDatabase&gt;()</code>) instead.</p>
 
 </article>
 

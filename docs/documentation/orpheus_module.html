@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/upgrade-to-net-8/OrpheusDocumentation/documentation/orpheus_module.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusDocumentation/documentation/orpheus_module.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -176,7 +176,7 @@ key values manually.</p>
 <p>There are a couple of ways to instantiate an OrpheusModule, the most straight forward
 way is to use an <code>IOrpheusModuleDefinition</code>.</p>
 <h5 id="creating-the-definition-object">Creating the definition object.</h5>
-<pre><code class="lang-csharp">IOrpheusDatabase db = OrpheusCore.ServiceProvider.Provider.Resolve&lt;IOrpheusDatabase&gt;();
+<pre><code class="lang-csharp">// db is an IOrpheusDatabase instance — see [DI Configuration](orpheus_and_di.md) for how to get one.
 var moduleDefinition = db.CreateModuleDefinition();
 </code></pre>
 <h5 id="configuring-the-definition-object">Configuring the definition object.</h5>

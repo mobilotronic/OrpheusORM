@@ -102,7 +102,7 @@ way is to use an ```IOrpheusModuleDefinition```.
 
 ##### Creating the definition object.
 ```csharp
-IOrpheusDatabase db = OrpheusCore.ServiceProvider.Provider.Resolve<IOrpheusDatabase>();
+// db is an IOrpheusDatabase instance — see [DI Configuration](orpheus_and_di.md) for how to get one.
 var moduleDefinition = db.CreateModuleDefinition();
 ```
 ##### Configuring the definition object.

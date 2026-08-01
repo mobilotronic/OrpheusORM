@@ -110,6 +110,18 @@ public class Attribute
 }
 ```
 
+**Note:** `[PrimaryCompositeKey]`/`[UniqueCompositeKey]` are read by the schema builder when
+*creating* the table, but `IOrpheusTable<T>.KeyFields` (used at runtime for Load/Update/Delete)
+is only auto-populated from a single-property `[PrimaryKey]` attribute. For a model with a
+composite key, you currently need to register the key fields explicitly when creating the table:
+```csharp
+var tableOptions = db.CreateTableOptions();
+tableOptions.TableName = "Attribute";
+tableOptions.AddKeyField("Id");
+tableOptions.AddKeyField("AttributeGroupId");
+var attributeTable = db.CreateTable<Attribute>(tableOptions);
+```
+
 ### Creating an Orpheus Schema
 You can use ```IOrpheusDatabase``` to create an ```ISchema``` object.
 ```csharp
@@ -119,8 +131,9 @@ You can use ```IOrpheusDatabase``` to create an ```ISchema``` object.
 /// <param name="id">Schema id</param>
 /// <param name="description">Schema description</param>
 /// <param name="version">Schema version</param>
+/// <param name="name">Optional schema name</param>
 /// <returns>An ISchema instance</returns>
-ISchema CreateSchema(Guid id, string description, double version);
+ISchema CreateSchema(Guid id, string description, double version, string name = null);
 ```
 
 ```ISchema``` is the object were you have to register your models, that will eventually be your database schema.

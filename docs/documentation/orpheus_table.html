@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/upgrade-to-net-8/OrpheusDocumentation/documentation/orpheus_table.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusDocumentation/documentation/orpheus_table.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -137,14 +137,13 @@ when you have multiple tables, with dependencies to each other.</p>
 }
 var transactorsTable = new TransactorsTable();
 </code></pre>
-<p>or create an instance of the table using the OrpheusDatabase</p>
-<pre><code class="lang-csharp">IOrpheusDatabase db = OrpheusCore.ServiceProvider.Provider.Resolve&lt;IOrpheusDatabase&gt;();
-var transactorsTable = db.CreateTable&lt;TestModelTransactor&gt;();
+<p>or create an instance of the table using the OrpheusDatabase (see <a href="orpheus_and_di.html">DI Configuration</a>
+for how to get an <code>IOrpheusDatabase</code> instance)</p>
+<pre><code class="lang-csharp">var transactorsTable = db.CreateTable&lt;TestModelTransactor&gt;();
 </code></pre>
 <p><strong>Note: The database does not keep a reference for the created table.</strong></p>
 <p>After you have a table instance, you can add, update and delete data from your table.</p>
-<pre><code class="lang-csharp">IOrpheusDatabase db = OrpheusCore.ServiceProvider.Provider.Resolve&lt;IOrpheusDatabase&gt;();
-var transactorsTable = db.CreateTable&lt;TestModelTransactor&gt;();
+<pre><code class="lang-csharp">var transactorsTable = db.CreateTable&lt;TestModelTransactor&gt;();
 
 var transactor = new TestModelTransactor(){
 TransactorId = Guid.NewGuid(),
@@ -155,6 +154,35 @@ transactorsTable.Add(transactor);
 transactorsTable.Save();
 </code></pre>
 <p><strong>Note:The table save will be executed within a transaction, so in case of any error, changes will be rolled back.</strong></p>
+<h2 id="async">Async</h2>
+<p>Every I/O method on <code>IOrpheusTable&lt;T&gt;</code> has an async counterpart — <code>LoadAsync</code>/<code>SaveAsync</code> — backed
+by real <code>DbConnection</code>/<code>DbCommand</code>/<code>DbDataReader</code> async I/O, not a synchronous call wrapped in
+<code>Task.Run</code>. The sync methods remain fully supported; prefer the async ones for scalability in
+server-side code.</p>
+<pre><code class="lang-csharp">await transactorsTable.LoadAsync();
+
+transactorsTable.Add(transactor);
+await transactorsTable.SaveAsync(cancellationToken);
+</code></pre>
+<p><code>LoadAsync</code> has the same overloads as <code>Load</code>, including loading from a raw SQL string or an
+<code>IDbCommand</code>:</p>
+<pre><code class="lang-csharp">await transactorsTable.LoadAsync(&quot;SELECT * FROM TestModelTransactor WHERE Type = 0&quot;);
+</code></pre>
+<h2 id="batching">Batching</h2>
+<p>When you <code>Save()</code> (or <code>SaveAsync()</code>) a table with many pending Add/Update/Delete operations,
+Orpheus doesn't execute one round trip per row. Instead it chunks the pending rows into batches
+and sends one multi-row command per batch:</p>
+<ul>
+<li>Inserts (for tables without a DB-generated key) use a multi-row <code>INSERT ... VALUES (...),(...),...</code>.</li>
+<li>Deletes use a single <code>WHERE key IN (...)</code> / OR-composite command.</li>
+<li>Updates send multiple parameterized <code>UPDATE</code> statements in one batch (the same technique EF Core
+uses internally).</li>
+<li>Tables with a DB-generated key are also batched, using an engine-specific technique to retrieve
+the generated keys for the whole batch in one round trip (see <a href="orpheus_ddl_helper.html">Orpheus DDL Helper</a>).</li>
+</ul>
+<p>The batch size defaults to 100 rows and can be changed per table:</p>
+<pre><code class="lang-csharp">transactorsTable.BatchSize = 250;
+</code></pre>
 
 </article>
 

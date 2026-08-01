@@ -119,12 +119,6 @@ and that is required for a module to be functional. <a class="xref" href="Orpheu
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="OrpheusCore.OrpheusTable-1.html">OrpheusTable&lt;T&gt;</a></dt>
-      <dd><p>Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
-Holds all the data of the connected table.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
       <dt><a class="xref" href="OrpheusCore.OrpheusTableKeyField.html">OrpheusTableKeyField</a></dt>
       <dd></dd>
     </dl>
@@ -134,8 +128,16 @@ Holds all the data of the connected table.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="OrpheusCore.OrpheusTable-1.html">OrpheusTable&lt;T&gt;</a></dt>
+      <dd><p>Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.
+Holds all the data of the connected table.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="OrpheusCore.ServiceManager.html">ServiceManager</a></dt>
-      <dd><p>Class to register internal services needed by Orpheus</p>
+      <dd><p>Class to register internal services needed by Orpheus.
+In v2.0.0+, prefer constructor injection via IServiceProvider/ILoggerFactory
+over the static methods. The ServiceProvider property is deprecated.</p>
 </dd>
     </dl>
     <h3 id="enums">

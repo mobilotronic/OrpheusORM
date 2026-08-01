@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Configuration_EncyrptConnection.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Configuration.EncyrptConnection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/modernazitation-effort/apiSpec/new?filename=OrpheusInterfaces_Configuration_EncyrptConnection.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Configuration.EncyrptConnection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -90,11 +90,11 @@
 
 
   <h1 id="OrpheusInterfaces_Configuration_EncyrptConnection" data-uid="OrpheusInterfaces.Configuration.EncyrptConnection" class="text-break">
-Enum EncyrptConnection  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Enum EncyrptConnection  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.Configuration.html">OrpheusInterfaces.Configuration</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a>.<a class="xref" href="OrpheusInterfaces.Configuration.html">Configuration</a></dd></dl>
   <dl><dt>Assembly</dt><dd>OrpheusInterfaces.dll</dd></dl>
   </div>
 
@@ -118,16 +118,24 @@ Enum EncyrptConnection  <a class="header-action link-secondary" title="View sour
 </h2>
   <dl class="parameters">
     <dt id="OrpheusInterfaces_Configuration_EncyrptConnection_ecMandatory"><code>[JsonPropertyName(&quot;mandatory&quot;)]
-ecMandatory = 1</code></dt>
-    <dd><p>Enforce encrypting the connection.</p>
+ecMandatory = 2</code></dt>
+  
+  <dd><p>Enforce encrypting the connection.</p>
+</dd>
+    <dt id="OrpheusInterfaces_Configuration_EncyrptConnection_ecNone"><code>[JsonPropertyName(&quot;none&quot;)]
+ecNone = 0</code></dt>
+  
+  <dd><p>Do not encrypt the connection. Use for local dev / Docker without TLS.</p>
 </dd>
     <dt id="OrpheusInterfaces_Configuration_EncyrptConnection_ecOptional"><code>[JsonPropertyName(&quot;optional&quot;)]
-ecOptional = 0</code></dt>
-    <dd><p>Optionally encrypt the connection.</p>
+ecOptional = 1</code></dt>
+  
+  <dd><p>Optionally encrypt the connection.</p>
 </dd>
     <dt id="OrpheusInterfaces_Configuration_EncyrptConnection_ecStrict"><code>[JsonPropertyName(&quot;strict&quot;)]
-ecStrict = 2</code></dt>
-    <dd><p>Enables and requires TDS 8.0, TLS encryption to the server. If the server doesn't
+ecStrict = 3</code></dt>
+  
+  <dd><p>Enables and requires TDS 8.0, TLS encryption to the server. If the server doesn't
 support TDS 8.0, TLS encryption, the connection will fail.</p>
 </dd>
   </dl>

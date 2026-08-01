@@ -1,0 +1,762 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  commentId: T:OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  id: IOrpheusModuleDefinition
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions(System.String,System.Type)
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions(System.Type)
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.Database
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.DetailTableOptions
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom(System.IO.Stream)
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom(System.String)
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFromDB(System.String)
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.MainTableOptions
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.Name
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.ReferenceTableOptions
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo(System.IO.Stream)
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo(System.String)
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveToDB
+  langs:
+  - csharp
+  - vb
+  name: IOrpheusModuleDefinition
+  nameWithType: IOrpheusModuleDefinition
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IOrpheusModuleDefinition
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 9
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: The definition/database properties of a module.
+  example: []
+  syntax:
+    content: public interface IOrpheusModuleDefinition
+    content.vb: Public Interface IOrpheusModuleDefinition
+  derivedClasses:
+  - OrpheusCore.OrpheusModuleDefinition
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Name
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModuleDefinition.Name
+  id: Name
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: IOrpheusModuleDefinition.Name
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Name
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Name
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 15
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Module name.
+  example: []
+  syntax:
+    content: string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Module name
+    content.vb: Property Name As String
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Name*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Database
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModuleDefinition.Database
+  id: Database
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: Database
+  nameWithType: IOrpheusModuleDefinition.Database
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Database
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Database
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 21
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Orpheus database.
+  example: []
+  syntax:
+    content: IOrpheusDatabase Database { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusDatabase
+      description: Orpheus Database
+    content.vb: Property Database As IOrpheusDatabase
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Database*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.MainTableOptions
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModuleDefinition.MainTableOptions
+  id: MainTableOptions
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: MainTableOptions
+  nameWithType: IOrpheusModuleDefinition.MainTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.MainTableOptions
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: MainTableOptions
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 27
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Module's main table options.
+  example: []
+  syntax:
+    content: IOrpheusTableOptions MainTableOptions { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTableOptions
+      description: Module's main table options
+    content.vb: Property MainTableOptions As IOrpheusTableOptions
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.MainTableOptions*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.DetailTableOptions
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModuleDefinition.DetailTableOptions
+  id: DetailTableOptions
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: DetailTableOptions
+  nameWithType: IOrpheusModuleDefinition.DetailTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.DetailTableOptions
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DetailTableOptions
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 33
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: List of module's detail table options.
+  example: []
+  syntax:
+    content: List<IOrpheusTableOptions> DetailTableOptions { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableOptions}
+      description: Module's detail table options
+    content.vb: Property DetailTableOptions As List(Of IOrpheusTableOptions)
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.DetailTableOptions*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.ReferenceTableOptions
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModuleDefinition.ReferenceTableOptions
+  id: ReferenceTableOptions
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: ReferenceTableOptions
+  nameWithType: IOrpheusModuleDefinition.ReferenceTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.ReferenceTableOptions
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ReferenceTableOptions
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 39
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: List of module reference tables.
+  example: []
+  syntax:
+    content: List<IOrpheusTableOptions> ReferenceTableOptions { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableOptions}
+      description: Module's reference table options
+    content.vb: Property ReferenceTableOptions As List(Of IOrpheusTableOptions)
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.ReferenceTableOptions*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions
+  id: CreateTableOptions
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: CreateTableOptions()
+  nameWithType: IOrpheusModuleDefinition.CreateTableOptions()
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateTableOptions
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 46
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates an instance of OrpheusTableOptions.
+  example: []
+  syntax:
+    content: IOrpheusTableOptions CreateTableOptions()
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTableOptions
+      description: An IOrpheusTableOptions instance
+    content.vb: Function CreateTableOptions() As IOrpheusTableOptions
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions(System.String,System.Type)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions(System.String,System.Type)
+  id: CreateTableOptions(System.String,System.Type)
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: CreateTableOptions(string, Type)
+  nameWithType: IOrpheusModuleDefinition.CreateTableOptions(string, Type)
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions(string, System.Type)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateTableOptions
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 52
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates an instance of OrpheusTableOptions.
+  example: []
+  syntax:
+    content: IOrpheusTableOptions CreateTableOptions(string tableName, Type modelType)
+    parameters:
+    - id: tableName
+      type: System.String
+    - id: modelType
+      type: System.Type
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTableOptions
+      description: An IOrpheusTableOptions instance
+    content.vb: Function CreateTableOptions(tableName As String, modelType As Type) As IOrpheusTableOptions
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions*
+  nameWithType.vb: IOrpheusModuleDefinition.CreateTableOptions(String, Type)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions(String, System.Type)
+  name.vb: CreateTableOptions(String, Type)
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions(System.Type)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions(System.Type)
+  id: CreateTableOptions(System.Type)
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: CreateTableOptions(Type)
+  nameWithType: IOrpheusModuleDefinition.CreateTableOptions(Type)
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions(System.Type)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateTableOptions
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 58
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates an instance of OrpheusTableOptions.
+  example: []
+  syntax:
+    content: IOrpheusTableOptions CreateTableOptions(Type modelType)
+    parameters:
+    - id: modelType
+      type: System.Type
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTableOptions
+      description: An IOrpheusTableOptions instance
+    content.vb: Function CreateTableOptions(modelType As Type) As IOrpheusTableOptions
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo(System.IO.Stream)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo(System.IO.Stream)
+  id: SaveTo(System.IO.Stream)
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: SaveTo(Stream)
+  nameWithType: IOrpheusModuleDefinition.SaveTo(Stream)
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SaveTo
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 64
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Saves definition to a stream.
+  example: []
+  syntax:
+    content: void SaveTo(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: ''
+    content.vb: Sub SaveTo(stream As Stream)
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo(System.String)
+  id: SaveTo(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: SaveTo(string)
+  nameWithType: IOrpheusModuleDefinition.SaveTo(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo(string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SaveTo
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 70
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Saves definition to a file.
+  example: []
+  syntax:
+    content: void SaveTo(string fileName)
+    parameters:
+    - id: fileName
+      type: System.String
+      description: ''
+    content.vb: Sub SaveTo(fileName As String)
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo*
+  nameWithType.vb: IOrpheusModuleDefinition.SaveTo(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo(String)
+  name.vb: SaveTo(String)
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveToDB
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveToDB
+  id: SaveToDB
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: SaveToDB()
+  nameWithType: IOrpheusModuleDefinition.SaveToDB()
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveToDB()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SaveToDB
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 75
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Saves the definition the connected database.
+  example: []
+  syntax:
+    content: void SaveToDB()
+    content.vb: Sub SaveToDB()
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveToDB*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom(System.IO.Stream)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom(System.IO.Stream)
+  id: LoadFrom(System.IO.Stream)
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: LoadFrom(Stream)
+  nameWithType: IOrpheusModuleDefinition.LoadFrom(Stream)
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LoadFrom
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 81
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Load definition from stream.
+  example: []
+  syntax:
+    content: void LoadFrom(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: ''
+    content.vb: Sub LoadFrom(stream As Stream)
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom*
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom(System.String)
+  id: LoadFrom(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: LoadFrom(string)
+  nameWithType: IOrpheusModuleDefinition.LoadFrom(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom(string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LoadFrom
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 87
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Loads definition from a file.
+  example: []
+  syntax:
+    content: void LoadFrom(string fileName)
+    parameters:
+    - id: fileName
+      type: System.String
+      description: ''
+    content.vb: Sub LoadFrom(fileName As String)
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom*
+  nameWithType.vb: IOrpheusModuleDefinition.LoadFrom(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom(String)
+  name.vb: LoadFrom(String)
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFromDB(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFromDB(System.String)
+  id: LoadFromDB(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  langs:
+  - csharp
+  - vb
+  name: LoadFromDB(string)
+  nameWithType: IOrpheusModuleDefinition.LoadFromDB(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFromDB(string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LoadFromDB
+    path: ../OrpheusInterfaces/Core/IOrpheusModuleDefinition.cs
+    startLine: 92
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Loads definition from the connected database.
+  example: []
+  syntax:
+    content: void LoadFromDB(string moduleName)
+    parameters:
+    - id: moduleName
+      type: System.String
+    content.vb: Sub LoadFromDB(moduleName As String)
+  overload: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFromDB*
+  nameWithType.vb: IOrpheusModuleDefinition.LoadFromDB(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFromDB(String)
+  name.vb: LoadFromDB(String)
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Name*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.Name
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_Name
+  name: Name
+  nameWithType: IOrpheusModuleDefinition.Name
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Database*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.Database
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_Database
+  name: Database
+  nameWithType: IOrpheusModuleDefinition.Database
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.Database
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDatabase
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html
+  name: IOrpheusDatabase
+  nameWithType: IOrpheusDatabase
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.MainTableOptions*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.MainTableOptions
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_MainTableOptions
+  name: MainTableOptions
+  nameWithType: IOrpheusModuleDefinition.MainTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.MainTableOptions
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTableOptions
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html
+  name: IOrpheusTableOptions
+  nameWithType: IOrpheusTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.DetailTableOptions*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.DetailTableOptions
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_DetailTableOptions
+  name: DetailTableOptions
+  nameWithType: IOrpheusModuleDefinition.DetailTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.DetailTableOptions
+- uid: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableOptions}
+  commentId: T:System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableOptions}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<IOrpheusTableOptions>
+  nameWithType: List<IOrpheusTableOptions>
+  fullName: System.Collections.Generic.List<OrpheusInterfaces.Core.IOrpheusTableOptions>
+  nameWithType.vb: List(Of IOrpheusTableOptions)
+  fullName.vb: System.Collections.Generic.List(Of OrpheusInterfaces.Core.IOrpheusTableOptions)
+  name.vb: List(Of IOrpheusTableOptions)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: OrpheusInterfaces.Core.IOrpheusTableOptions
+    name: IOrpheusTableOptions
+    href: OrpheusInterfaces.Core.IOrpheusTableOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusInterfaces.Core.IOrpheusTableOptions
+    name: IOrpheusTableOptions
+    href: OrpheusInterfaces.Core.IOrpheusTableOptions.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.ReferenceTableOptions*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.ReferenceTableOptions
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_ReferenceTableOptions
+  name: ReferenceTableOptions
+  nameWithType: IOrpheusModuleDefinition.ReferenceTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.ReferenceTableOptions
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_CreateTableOptions
+  name: CreateTableOptions
+  nameWithType: IOrpheusModuleDefinition.CreateTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.CreateTableOptions
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_SaveTo_System_IO_Stream_
+  name: SaveTo
+  nameWithType: IOrpheusModuleDefinition.SaveTo
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveTo
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveToDB*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveToDB
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_SaveToDB
+  name: SaveToDB
+  nameWithType: IOrpheusModuleDefinition.SaveToDB
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.SaveToDB
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_LoadFrom_System_IO_Stream_
+  name: LoadFrom
+  nameWithType: IOrpheusModuleDefinition.LoadFrom
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFrom
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFromDB*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFromDB
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html#OrpheusInterfaces_Core_IOrpheusModuleDefinition_LoadFromDB_System_String_
+  name: LoadFromDB
+  nameWithType: IOrpheusModuleDefinition.LoadFromDB
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition.LoadFromDB

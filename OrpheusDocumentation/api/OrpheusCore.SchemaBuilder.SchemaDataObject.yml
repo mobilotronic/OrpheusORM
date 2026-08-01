@@ -1,0 +1,2781 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaDataObject
+  id: SchemaDataObject
+  parent: OrpheusCore.SchemaBuilder
+  children:
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.#ctor
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.Constraints
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Object)
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Type)
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel``1
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.DB
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.Drop
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.Execute
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.Fields
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.GetData``1
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(System.Data.IDbCommand)
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.modelHelper
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(System.Data.IDbTransaction)
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(System.Data.IDbCommand)
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.seedDataTable
+  - OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(System.Data.IDbTransaction)
+  langs:
+  - csharp
+  - vb
+  name: SchemaDataObject
+  nameWithType: SchemaDataObject
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject
+  type: Class
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SchemaDataObject
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 283
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Base schema data object.
+  example: []
+  syntax:
+    content: 'public class SchemaDataObject : SchemaObject, ISchemaDataObject, ISchemaObject'
+    content.vb: Public Class SchemaDataObject Inherits SchemaObject Implements ISchemaDataObject, ISchemaObject
+  inheritance:
+  - System.Object
+  - OrpheusCore.SchemaBuilder.SchemaObject
+  derivedClasses:
+  - OrpheusCore.SchemaBuilder.SchemaObjectTable
+  - OrpheusCore.SchemaBuilder.SchemaObjectView
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject
+  - OrpheusInterfaces.Schema.ISchemaObject
+  inheritedMembers:
+  - OrpheusCore.SchemaBuilder.SchemaObject.logger
+  - OrpheusCore.SchemaBuilder.SchemaObject._sqlName
+  - OrpheusCore.SchemaBuilder.SchemaObject.formatLoggerMessage(System.String)
+  - OrpheusCore.SchemaBuilder.SchemaObject.createDDLString
+  - OrpheusCore.SchemaBuilder.SchemaObject.getType
+  - OrpheusCore.SchemaBuilder.SchemaObject.formatSQLName
+  - OrpheusCore.SchemaBuilder.SchemaObject.SQLName
+  - OrpheusCore.SchemaBuilder.SchemaObject.RawDDL
+  - OrpheusCore.SchemaBuilder.SchemaObject.Schema
+  - OrpheusCore.SchemaBuilder.SchemaObject.Action
+  - OrpheusCore.SchemaBuilder.SchemaObject.UniqueKey
+  - OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatIDepend
+  - OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatDependOnMe
+  - OrpheusCore.SchemaBuilder.SchemaObject.GetSchemaType
+  - OrpheusCore.SchemaBuilder.SchemaObject.IsCreated
+  - OrpheusCore.SchemaBuilder.SchemaObject.AliasName
+  - OrpheusCore.SchemaBuilder.SchemaObject.GetDDLString
+  - OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.Schema.ISchemaObject)
+  - OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)
+  - OrpheusCore.SchemaBuilder.SchemaObject.AddDependency``1
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.modelHelper
+  commentId: F:OrpheusCore.SchemaBuilder.SchemaDataObject.modelHelper
+  id: modelHelper
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: modelHelper
+  nameWithType: SchemaDataObject.modelHelper
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.modelHelper
+  type: Field
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: modelHelper
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 292
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Schema model helper.
+  example: []
+  syntax:
+    content: protected OrpheusModelHelper modelHelper
+    return:
+      type: OrpheusCore.OrpheusModelHelper
+    content.vb: Protected modelHelper As OrpheusModelHelper
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.seedDataTable
+  commentId: F:OrpheusCore.SchemaBuilder.SchemaDataObject.seedDataTable
+  id: seedDataTable
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: seedDataTable
+  nameWithType: SchemaDataObject.seedDataTable
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.seedDataTable
+  type: Field
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: seedDataTable
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 299
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Table that holds the initial seed data for the schema.
+  example: []
+  syntax:
+    content: protected IOrpheusTable seedDataTable
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTable
+    content.vb: Protected seedDataTable As IOrpheusTable
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL
+  id: getConstraintsDDL
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: getConstraintsDDL()
+  nameWithType: SchemaDataObject.getConstraintsDDL()
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: getConstraintsDDL
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 305
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Returns the schema constraints SQL.
+  example: []
+  syntax:
+    content: protected string getConstraintsDDL()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Protected Function getConstraintsDDL() As String
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL*
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(System.Data.IDbCommand)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(System.Data.IDbCommand)
+  id: applyConstraints(System.Data.IDbCommand)
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: applyConstraints(IDbCommand)
+  nameWithType: SchemaDataObject.applyConstraints(IDbCommand)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints(System.Data.IDbCommand)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: applyConstraints
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 319
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Applies schema constraints.
+  example: []
+  syntax:
+    content: protected virtual void applyConstraints(IDbCommand cmd)
+    parameters:
+    - id: cmd
+      type: System.Data.IDbCommand
+      description: ''
+    content.vb: Protected Overridable Sub applyConstraints(cmd As IDbCommand)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints*
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(System.Data.IDbCommand)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(System.Data.IDbCommand)
+  id: seedData(System.Data.IDbCommand)
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: seedData(IDbCommand)
+  nameWithType: SchemaDataObject.seedData(IDbCommand)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData(System.Data.IDbCommand)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: seedData
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 325
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Inserts data to the DB engine, if the schema is a Table.
+  example: []
+  syntax:
+    content: protected virtual void seedData(IDbCommand cmd)
+    parameters:
+    - id: cmd
+      type: System.Data.IDbCommand
+      description: ''
+    content.vb: Protected Overridable Sub seedData(cmd As IDbCommand)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData*
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(System.Data.IDbTransaction)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(System.Data.IDbTransaction)
+  id: registerSchema(System.Data.IDbTransaction)
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: registerSchema(IDbTransaction)
+  nameWithType: SchemaDataObject.registerSchema(IDbTransaction)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema(System.Data.IDbTransaction)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: registerSchema
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 331
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Registers an Orpheus schema.
+  example: []
+  syntax:
+    content: protected override void registerSchema(IDbTransaction transaction = null)
+    parameters:
+    - id: transaction
+      type: System.Data.IDbTransaction
+      description: ''
+    content.vb: Protected Overrides Sub registerSchema(transaction As IDbTransaction = Nothing)
+  overridden: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema*
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(System.Data.IDbTransaction)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(System.Data.IDbTransaction)
+  id: unRegisterSchema(System.Data.IDbTransaction)
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: unRegisterSchema(IDbTransaction)
+  nameWithType: SchemaDataObject.unRegisterSchema(IDbTransaction)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema(System.Data.IDbTransaction)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: unRegisterSchema
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 362
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Unregisters an Orpheus schema.
+  example: []
+  syntax:
+    content: protected override void unRegisterSchema(IDbTransaction transaction = null)
+    parameters:
+    - id: transaction
+      type: System.Data.IDbTransaction
+      description: ''
+    content.vb: Protected Overrides Sub unRegisterSchema(transaction As IDbTransaction = Nothing)
+  overridden: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema*
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema
+  id: canExecuteSchema
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: canExecuteSchema()
+  nameWithType: SchemaDataObject.canExecuteSchema()
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: canExecuteSchema
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 391
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Returns true if the schema can be executed.
+  example: []
+  syntax:
+    content: protected override bool canExecuteSchema()
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Protected Overrides Function canExecuteSchema() As Boolean
+  overridden: OrpheusCore.SchemaBuilder.SchemaObject.canExecuteSchema
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema*
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.DB
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaDataObject.DB
+  id: DB
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: DB
+  nameWithType: SchemaDataObject.DB
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.DB
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DB
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 427
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: >-
+    Database that the schema object belongs to.
+
+    Taken from the <xref href="OrpheusInterfaces.Schema.ISchema" data-throw-if-not-resolved="false"></xref> property.
+  example: []
+  syntax:
+    content: public IOrpheusDatabase DB { get; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusDatabase
+    content.vb: Public ReadOnly Property DB As IOrpheusDatabase
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.DB*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.DB
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.Fields
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaDataObject.Fields
+  id: Fields
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: Fields
+  nameWithType: SchemaDataObject.Fields
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.Fields
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Fields
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 432
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: The list of fields of the schema object.
+  example: []
+  syntax:
+    content: public List<ISchemaField> Fields { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaField}
+    content.vb: Public Property Fields As List(Of ISchemaField)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.Fields*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.Fields
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.Constraints
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaDataObject.Constraints
+  id: Constraints
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: Constraints
+  nameWithType: SchemaDataObject.Constraints
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.Constraints
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Constraints
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 437
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: The list of constraints of the schema object.
+  example: []
+  syntax:
+    content: public List<ISchemaConstraint> Constraints { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaConstraint}
+    content.vb: Public Property Constraints As List(Of ISchemaConstraint)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.Constraints*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.Constraints
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Object)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Object)
+  id: CreateFieldsFromModel(System.Object)
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: CreateFieldsFromModel(object)
+  nameWithType: SchemaDataObject.CreateFieldsFromModel(object)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(object)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateFieldsFromModel
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 447
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: >-
+    Creates fields from a given model.
+
+    Supports OrpheusAttributes attributes
+
+    <param name="model">Instance of model</param>
+  example: []
+  syntax:
+    content: public void CreateFieldsFromModel(object model)
+    parameters:
+    - id: model
+      type: System.Object
+    content.vb: Public Sub CreateFieldsFromModel(model As Object)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Object)
+  nameWithType.vb: SchemaDataObject.CreateFieldsFromModel(Object)
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(Object)
+  name.vb: CreateFieldsFromModel(Object)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel``1
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel``1
+  id: CreateFieldsFromModel``1
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: CreateFieldsFromModel<T>()
+  nameWithType: SchemaDataObject.CreateFieldsFromModel<T>()
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel<T>()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateFieldsFromModel
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 457
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: >-
+    Creates fields from a given model.
+
+    Supports OrpheusAttributes attributes
+  example: []
+  syntax:
+    content: public void CreateFieldsFromModel<T>()
+    typeParameters:
+    - id: T
+      description: Model type
+    content.vb: Public Sub CreateFieldsFromModel(Of T)()
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel``1
+  nameWithType.vb: SchemaDataObject.CreateFieldsFromModel(Of T)()
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(Of T)()
+  name.vb: CreateFieldsFromModel(Of T)()
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Type)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Type)
+  id: CreateFieldsFromModel(System.Type)
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: CreateFieldsFromModel(Type)
+  nameWithType: SchemaDataObject.CreateFieldsFromModel(Type)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel(System.Type)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateFieldsFromModel
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 467
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: >-
+    Creates fields from a given model.
+
+    Supports OrpheusAttributes attributes
+
+    <param name="modelType">Model type</param>
+  example: []
+  syntax:
+    content: public void CreateFieldsFromModel(Type modelType)
+    parameters:
+    - id: modelType
+      type: System.Type
+    content.vb: Public Sub CreateFieldsFromModel(modelType As Type)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Type)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
+  id: AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: AddField(string, string, bool, string, string, string)
+  nameWithType: SchemaDataObject.AddField(string, string, bool, string, string, string)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddField(string, string, bool, string, string, string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddField
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 490
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Creates and adds a field to the field list.
+  example: []
+  syntax:
+    content: public ISchemaField AddField(string name, string dataType, bool nullable = true, string defaultValue = null, string size = null, string alias = null)
+    parameters:
+    - id: name
+      type: System.String
+      description: Field name
+    - id: dataType
+      type: System.String
+      description: Field data type
+    - id: nullable
+      type: System.Boolean
+      description: Nullable
+    - id: defaultValue
+      type: System.String
+      description: Field default value
+    - id: size
+      type: System.String
+      description: Field size
+    - id: alias
+      type: System.String
+      description: Field alias
+    return:
+      type: OrpheusInterfaces.Schema.ISchemaField
+      description: ''
+    content.vb: Public Function AddField(name As String, dataType As String, nullable As Boolean = True, defaultValue As String = Nothing, size As String = Nothing, [alias] As String = Nothing) As ISchemaField
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.AddField*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
+  nameWithType.vb: SchemaDataObject.AddField(String, String, Boolean, String, String, String)
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddField(String, String, Boolean, String, String, String)
+  name.vb: AddField(String, String, Boolean, String, String, String)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)
+  id: AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: AddPrimaryKeyConstraint(string, List<string>, SchemaSort)
+  nameWithType: SchemaDataObject.AddPrimaryKeyConstraint(string, List<string>, SchemaSort)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(string, System.Collections.Generic.List<string>, OrpheusInterfaces.Schema.SchemaSort)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddPrimaryKeyConstraint
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 513
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Adds a primary key constraint.
+  example: []
+  syntax:
+    content: public IPrimaryKeySchemaConstraint AddPrimaryKeyConstraint(string name, List<string> fields, SchemaSort sort = SchemaSort.ssAsc)
+    parameters:
+    - id: name
+      type: System.String
+      description: Constraint name
+    - id: fields
+      type: System.Collections.Generic.List{System.String}
+      description: Constraint fields
+    - id: sort
+      type: OrpheusInterfaces.Schema.SchemaSort
+      description: Constraint sort
+    return:
+      type: OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint
+      description: ''
+    content.vb: Public Function AddPrimaryKeyConstraint(name As String, fields As List(Of String), sort As SchemaSort = SchemaSort.ssAsc) As IPrimaryKeySchemaConstraint
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)
+  nameWithType.vb: SchemaDataObject.AddPrimaryKeyConstraint(String, List(Of String), SchemaSort)
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint(String, System.Collections.Generic.List(Of String), OrpheusInterfaces.Schema.SchemaSort)
+  name.vb: AddPrimaryKeyConstraint(String, List(Of String), SchemaSort)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  id: AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: AddForeignKeyConstraint(string, List<string>, string, List<string>, bool, bool)
+  nameWithType: SchemaDataObject.AddForeignKeyConstraint(string, List<string>, string, List<string>, bool, bool)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(string, System.Collections.Generic.List<string>, string, System.Collections.Generic.List<string>, bool, bool)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddForeignKeyConstraint
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 533
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Adds the foreign key constraint.
+  example: []
+  syntax:
+    content: public IForeignKeySchemaConstraint AddForeignKeyConstraint(string name, List<string> fields, string foreignKeySchemaObject, List<string> foreignKeySchemaFields, bool onCascadeDelete = true, bool onUpdateCascade = true)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name.
+    - id: fields
+      type: System.Collections.Generic.List{System.String}
+      description: The fields.
+    - id: foreignKeySchemaObject
+      type: System.String
+      description: The foreign key schema object.
+    - id: foreignKeySchemaFields
+      type: System.Collections.Generic.List{System.String}
+      description: The foreign key schema fields.
+    - id: onCascadeDelete
+      type: System.Boolean
+      description: if set to <code>true</code> [on cascade delete].
+    - id: onUpdateCascade
+      type: System.Boolean
+      description: if set to <code>true</code> [on update cascade].
+    return:
+      type: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+      description: ''
+    content.vb: Public Function AddForeignKeyConstraint(name As String, fields As List(Of String), foreignKeySchemaObject As String, foreignKeySchemaFields As List(Of String), onCascadeDelete As Boolean = True, onUpdateCascade As Boolean = True) As IForeignKeySchemaConstraint
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  nameWithType.vb: SchemaDataObject.AddForeignKeyConstraint(String, List(Of String), String, List(Of String), Boolean, Boolean)
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint(String, System.Collections.Generic.List(Of String), String, System.Collections.Generic.List(Of String), Boolean, Boolean)
+  name.vb: AddForeignKeyConstraint(String, List(Of String), String, List(Of String), Boolean, Boolean)
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
+  id: AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: AddUniqueKeyConstraint(string, List<string>)
+  nameWithType: SchemaDataObject.AddUniqueKeyConstraint(string, List<string>)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(string, System.Collections.Generic.List<string>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddUniqueKeyConstraint
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 555
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Adds a unique key constraint.
+  example: []
+  syntax:
+    content: public IUniqueKeySchemaConstraint AddUniqueKeyConstraint(string name, List<string> fields)
+    parameters:
+    - id: name
+      type: System.String
+      description: Constraint name
+    - id: fields
+      type: System.Collections.Generic.List{System.String}
+      description: Constraint fields
+    return:
+      type: OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint
+      description: An IUniqueKeySchemaConstraint
+    content.vb: Public Function AddUniqueKeyConstraint(name As String, fields As List(Of String)) As IUniqueKeySchemaConstraint
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
+  nameWithType.vb: SchemaDataObject.AddUniqueKeyConstraint(String, List(Of String))
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint(String, System.Collections.Generic.List(Of String))
+  name.vb: AddUniqueKeyConstraint(String, List(Of String))
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+  id: SetData``1(System.Collections.Generic.List{``0})
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: SetData<T>(List<T>)
+  nameWithType: SchemaDataObject.SetData<T>(List<T>)
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData<T>(System.Collections.Generic.List<T>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SetData
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 574
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Optional data to initialize a schema object. Practically applicable only to a table.
+  example: []
+  syntax:
+    content: public void SetData<T>(List<T> data)
+    parameters:
+    - id: data
+      type: System.Collections.Generic.List{{T}}
+      description: The data.
+    typeParameters:
+    - id: T
+      description: The data type.
+    content.vb: Public Sub SetData(Of T)(data As List(Of T))
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{{T}})
+  nameWithType.vb: SchemaDataObject.SetData(Of T)(List(Of T))
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData(Of T)(System.Collections.Generic.List(Of T))
+  name.vb: SetData(Of T)(List(Of T))
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.GetData``1
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.GetData``1
+  id: GetData``1
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: GetData<T>()
+  nameWithType: SchemaDataObject.GetData<T>()
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.GetData<T>()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: GetData
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 606
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Returns the seed data for the table if defined.
+  example: []
+  syntax:
+    content: public List<T> GetData<T>()
+    typeParameters:
+    - id: T
+      description: Schema object model type
+    return:
+      type: System.Collections.Generic.List{{T}}
+      description: Schema object's data
+    content.vb: Public Function GetData(Of T)() As List(Of T)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.GetData*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.GetData``1
+  nameWithType.vb: SchemaDataObject.GetData(Of T)()
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.GetData(Of T)()
+  name.vb: GetData(Of T)()
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL
+  id: GetConstraintsDDL
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: GetConstraintsDDL()
+  nameWithType: SchemaDataObject.GetConstraintsDDL()
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: GetConstraintsDDL
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 618
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Generate the schema's constraints DDL string.
+  example: []
+  syntax:
+    content: public List<string> GetConstraintsDDL()
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: Returns the DDL string ready to be executed.
+    content.vb: Public Function GetConstraintsDDL() As List(Of String)
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaDataObject.GetConstraintsDDL
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.Execute
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.Execute
+  id: Execute
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: Execute()
+  nameWithType: SchemaDataObject.Execute()
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.Execute()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Execute
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 631
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Creates the schema object in the database.
+  example: []
+  syntax:
+    content: public override void Execute()
+    content.vb: Public Overrides Sub Execute()
+  overridden: OrpheusCore.SchemaBuilder.SchemaObject.Execute
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.Execute*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaObject.Execute
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.Drop
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.Drop
+  id: Drop
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: Drop()
+  nameWithType: SchemaDataObject.Drop()
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.Drop()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Drop
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 757
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Drops the schema from the database.
+  example: []
+  syntax:
+    content: public override void Drop()
+    content.vb: Public Overrides Sub Drop()
+  overridden: OrpheusCore.SchemaBuilder.SchemaObject.Drop
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.Drop*
+  implements:
+  - OrpheusInterfaces.Schema.ISchemaObject.Drop
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.#ctor
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaDataObject.#ctor
+  id: '#ctor'
+  parent: OrpheusCore.SchemaBuilder.SchemaDataObject
+  langs:
+  - csharp
+  - vb
+  name: SchemaDataObject()
+  nameWithType: SchemaDataObject.SchemaDataObject()
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.SchemaDataObject()
+  type: Constructor
+  source:
+    remote:
+      path: OrpheusCore/SchemaBuilder/SchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: .ctor
+    path: ../OrpheusCore/SchemaBuilder/SchemaObject.cs
+    startLine: 778
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.SchemaBuilder
+  summary: Initializes a new instance of the <xref href="OrpheusCore.SchemaBuilder.SchemaDataObject" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public SchemaDataObject()
+    content.vb: Public Sub New()
+  overload: OrpheusCore.SchemaBuilder.SchemaDataObject.#ctor*
+  nameWithType.vb: SchemaDataObject.New()
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.New()
+  name.vb: New()
+references:
+- uid: OrpheusCore.SchemaBuilder
+  commentId: N:OrpheusCore.SchemaBuilder
+  href: OrpheusCore.html
+  name: OrpheusCore.SchemaBuilder
+  nameWithType: OrpheusCore.SchemaBuilder
+  fullName: OrpheusCore.SchemaBuilder
+  spec.csharp:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.SchemaBuilder
+    name: SchemaBuilder
+    href: OrpheusCore.SchemaBuilder.html
+  spec.vb:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.SchemaBuilder
+    name: SchemaBuilder
+    href: OrpheusCore.SchemaBuilder.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: OrpheusCore.SchemaBuilder.SchemaObject
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaObject
+  parent: OrpheusCore.SchemaBuilder
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html
+  name: SchemaObject
+  nameWithType: SchemaObject
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject
+  commentId: T:OrpheusInterfaces.Schema.ISchemaDataObject
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html
+  name: ISchemaDataObject
+  nameWithType: ISchemaDataObject
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject
+- uid: OrpheusInterfaces.Schema.ISchemaObject
+  commentId: T:OrpheusInterfaces.Schema.ISchemaObject
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaObject.html
+  name: ISchemaObject
+  nameWithType: ISchemaObject
+  fullName: OrpheusInterfaces.Schema.ISchemaObject
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.logger
+  commentId: F:OrpheusCore.SchemaBuilder.SchemaObject.logger
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_logger
+  name: logger
+  nameWithType: SchemaObject.logger
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.logger
+- uid: OrpheusCore.SchemaBuilder.SchemaObject._sqlName
+  commentId: F:OrpheusCore.SchemaBuilder.SchemaObject._sqlName
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject__sqlName
+  name: _sqlName
+  nameWithType: SchemaObject._sqlName
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject._sqlName
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.formatLoggerMessage(System.String)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.formatLoggerMessage(System.String)
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  isExternal: true
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_formatLoggerMessage_System_String_
+  name: formatLoggerMessage(string)
+  nameWithType: SchemaObject.formatLoggerMessage(string)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.formatLoggerMessage(string)
+  nameWithType.vb: SchemaObject.formatLoggerMessage(String)
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaObject.formatLoggerMessage(String)
+  name.vb: formatLoggerMessage(String)
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.formatLoggerMessage(System.String)
+    name: formatLoggerMessage
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_formatLoggerMessage_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.formatLoggerMessage(System.String)
+    name: formatLoggerMessage
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_formatLoggerMessage_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.createDDLString
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.createDDLString
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_createDDLString
+  name: createDDLString()
+  nameWithType: SchemaObject.createDDLString()
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.createDDLString()
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.createDDLString
+    name: createDDLString
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_createDDLString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.createDDLString
+    name: createDDLString
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_createDDLString
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.getType
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.getType
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_getType
+  name: getType()
+  nameWithType: SchemaObject.getType()
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.getType()
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.getType
+    name: getType
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_getType
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.getType
+    name: getType
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_getType
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.formatSQLName
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.formatSQLName
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_formatSQLName
+  name: formatSQLName()
+  nameWithType: SchemaObject.formatSQLName()
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.formatSQLName()
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.formatSQLName
+    name: formatSQLName
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_formatSQLName
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.formatSQLName
+    name: formatSQLName
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_formatSQLName
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.SQLName
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObject.SQLName
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_SQLName
+  name: SQLName
+  nameWithType: SchemaObject.SQLName
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.SQLName
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.RawDDL
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObject.RawDDL
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_RawDDL
+  name: RawDDL
+  nameWithType: SchemaObject.RawDDL
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.RawDDL
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.Schema
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObject.Schema
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_Schema
+  name: Schema
+  nameWithType: SchemaObject.Schema
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.Schema
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.Action
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObject.Action
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_Action
+  name: Action
+  nameWithType: SchemaObject.Action
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.Action
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.UniqueKey
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObject.UniqueKey
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_UniqueKey
+  name: UniqueKey
+  nameWithType: SchemaObject.UniqueKey
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.UniqueKey
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatIDepend
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatIDepend
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_SchemaObjectsThatIDepend
+  name: SchemaObjectsThatIDepend
+  nameWithType: SchemaObject.SchemaObjectsThatIDepend
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatIDepend
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatDependOnMe
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatDependOnMe
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_SchemaObjectsThatDependOnMe
+  name: SchemaObjectsThatDependOnMe
+  nameWithType: SchemaObject.SchemaObjectsThatDependOnMe
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.SchemaObjectsThatDependOnMe
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.GetSchemaType
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.GetSchemaType
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_GetSchemaType
+  name: GetSchemaType()
+  nameWithType: SchemaObject.GetSchemaType()
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.GetSchemaType()
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.GetSchemaType
+    name: GetSchemaType
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_GetSchemaType
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.GetSchemaType
+    name: GetSchemaType
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_GetSchemaType
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.IsCreated
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObject.IsCreated
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_IsCreated
+  name: IsCreated
+  nameWithType: SchemaObject.IsCreated
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.IsCreated
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.AliasName
+  commentId: P:OrpheusCore.SchemaBuilder.SchemaObject.AliasName
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AliasName
+  name: AliasName
+  nameWithType: SchemaObject.AliasName
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.AliasName
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.GetDDLString
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.GetDDLString
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_GetDDLString
+  name: GetDDLString()
+  nameWithType: SchemaObject.GetDDLString()
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.GetDDLString()
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.GetDDLString
+    name: GetDDLString
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_GetDDLString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.GetDDLString
+    name: GetDDLString
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_GetDDLString
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.Schema.ISchemaObject)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.Schema.ISchemaObject)
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_OrpheusInterfaces_Schema_ISchemaObject_
+  name: AddDependency(ISchemaObject)
+  nameWithType: SchemaObject.AddDependency(ISchemaObject)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.Schema.ISchemaObject)
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.Schema.ISchemaObject)
+    name: AddDependency
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_OrpheusInterfaces_Schema_ISchemaObject_
+  - name: (
+  - uid: OrpheusInterfaces.Schema.ISchemaObject
+    name: ISchemaObject
+    href: OrpheusInterfaces.Schema.ISchemaObject.html
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(OrpheusInterfaces.Schema.ISchemaObject)
+    name: AddDependency
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_OrpheusInterfaces_Schema_ISchemaObject_
+  - name: (
+  - uid: OrpheusInterfaces.Schema.ISchemaObject
+    name: ISchemaObject
+    href: OrpheusInterfaces.Schema.ISchemaObject.html
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  isExternal: true
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_System_Type_
+  name: AddDependency(Type)
+  nameWithType: SchemaObject.AddDependency(Type)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)
+    name: AddDependency
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(System.Type)
+    name: AddDependency
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency``1
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.AddDependency``1
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency__1
+  name: AddDependency<T>()
+  nameWithType: SchemaObject.AddDependency<T>()
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency<T>()
+  nameWithType.vb: SchemaObject.AddDependency(Of T)()
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency(Of T)()
+  name.vb: AddDependency(Of T)()
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency``1
+    name: AddDependency
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.AddDependency``1
+    name: AddDependency
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_AddDependency__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusCore.OrpheusModelHelper
+  commentId: T:OrpheusCore.OrpheusModelHelper
+  parent: OrpheusCore
+  href: OrpheusCore.OrpheusModelHelper.html
+  name: OrpheusModelHelper
+  nameWithType: OrpheusModelHelper
+  fullName: OrpheusCore.OrpheusModelHelper
+- uid: OrpheusCore
+  commentId: N:OrpheusCore
+  href: OrpheusCore.html
+  name: OrpheusCore
+  nameWithType: OrpheusCore
+  fullName: OrpheusCore
+- uid: OrpheusInterfaces.Core.IOrpheusTable
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTable
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusTable.html
+  name: IOrpheusTable
+  nameWithType: IOrpheusTable
+  fullName: OrpheusInterfaces.Core.IOrpheusTable
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_getConstraintsDDL
+  name: getConstraintsDDL
+  nameWithType: SchemaDataObject.getConstraintsDDL
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.getConstraintsDDL
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_applyConstraints_System_Data_IDbCommand_
+  name: applyConstraints
+  nameWithType: SchemaDataObject.applyConstraints
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.applyConstraints
+- uid: System.Data.IDbCommand
+  commentId: T:System.Data.IDbCommand
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.idbcommand
+  name: IDbCommand
+  nameWithType: IDbCommand
+  fullName: System.Data.IDbCommand
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.seedData
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_seedData_System_Data_IDbCommand_
+  name: seedData
+  nameWithType: SchemaDataObject.seedData
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.seedData
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  isExternal: true
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_System_Data_IDbTransaction_
+  name: registerSchema(IDbTransaction)
+  nameWithType: SchemaObject.registerSchema(IDbTransaction)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)
+    name: registerSchema
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.registerSchema(System.Data.IDbTransaction)
+    name: registerSchema
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_registerSchema_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_registerSchema_System_Data_IDbTransaction_
+  name: registerSchema
+  nameWithType: SchemaDataObject.registerSchema
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.registerSchema
+- uid: System.Data.IDbTransaction
+  commentId: T:System.Data.IDbTransaction
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  name: IDbTransaction
+  nameWithType: IDbTransaction
+  fullName: System.Data.IDbTransaction
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  isExternal: true
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_System_Data_IDbTransaction_
+  name: unRegisterSchema(IDbTransaction)
+  nameWithType: SchemaObject.unRegisterSchema(IDbTransaction)
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)
+    name: unRegisterSchema
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.unRegisterSchema(System.Data.IDbTransaction)
+    name: unRegisterSchema
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_unRegisterSchema_System_Data_IDbTransaction_
+  - name: (
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_unRegisterSchema_System_Data_IDbTransaction_
+  name: unRegisterSchema
+  nameWithType: SchemaDataObject.unRegisterSchema
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.unRegisterSchema
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.canExecuteSchema
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.canExecuteSchema
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_canExecuteSchema
+  name: canExecuteSchema()
+  nameWithType: SchemaObject.canExecuteSchema()
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.canExecuteSchema()
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.canExecuteSchema
+    name: canExecuteSchema
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_canExecuteSchema
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.canExecuteSchema
+    name: canExecuteSchema
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_canExecuteSchema
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_canExecuteSchema
+  name: canExecuteSchema
+  nameWithType: SchemaDataObject.canExecuteSchema
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.canExecuteSchema
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: OrpheusInterfaces.Schema.ISchema
+  commentId: T:OrpheusInterfaces.Schema.ISchema
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchema.html
+  name: ISchema
+  nameWithType: ISchema
+  fullName: OrpheusInterfaces.Schema.ISchema
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.DB*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.DB
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_DB
+  name: DB
+  nameWithType: SchemaDataObject.DB
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.DB
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.DB
+  commentId: P:OrpheusInterfaces.Schema.ISchemaDataObject.DB
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_DB
+  name: DB
+  nameWithType: ISchemaDataObject.DB
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.DB
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDatabase
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html
+  name: IOrpheusDatabase
+  nameWithType: IOrpheusDatabase
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.Fields*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.Fields
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_Fields
+  name: Fields
+  nameWithType: SchemaDataObject.Fields
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.Fields
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.Fields
+  commentId: P:OrpheusInterfaces.Schema.ISchemaDataObject.Fields
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_Fields
+  name: Fields
+  nameWithType: ISchemaDataObject.Fields
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.Fields
+- uid: System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaField}
+  commentId: T:System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaField}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ISchemaField>
+  nameWithType: List<ISchemaField>
+  fullName: System.Collections.Generic.List<OrpheusInterfaces.Schema.ISchemaField>
+  nameWithType.vb: List(Of ISchemaField)
+  fullName.vb: System.Collections.Generic.List(Of OrpheusInterfaces.Schema.ISchemaField)
+  name.vb: List(Of ISchemaField)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: OrpheusInterfaces.Schema.ISchemaField
+    name: ISchemaField
+    href: OrpheusInterfaces.Schema.ISchemaField.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusInterfaces.Schema.ISchemaField
+    name: ISchemaField
+    href: OrpheusInterfaces.Schema.ISchemaField.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.Constraints*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.Constraints
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_Constraints
+  name: Constraints
+  nameWithType: SchemaDataObject.Constraints
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.Constraints
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.Constraints
+  commentId: P:OrpheusInterfaces.Schema.ISchemaDataObject.Constraints
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_Constraints
+  name: Constraints
+  nameWithType: ISchemaDataObject.Constraints
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.Constraints
+- uid: System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaConstraint}
+  commentId: T:System.Collections.Generic.List{OrpheusInterfaces.Schema.ISchemaConstraint}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ISchemaConstraint>
+  nameWithType: List<ISchemaConstraint>
+  fullName: System.Collections.Generic.List<OrpheusInterfaces.Schema.ISchemaConstraint>
+  nameWithType.vb: List(Of ISchemaConstraint)
+  fullName.vb: System.Collections.Generic.List(Of OrpheusInterfaces.Schema.ISchemaConstraint)
+  name.vb: List(Of ISchemaConstraint)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: OrpheusInterfaces.Schema.ISchemaConstraint
+    name: ISchemaConstraint
+    href: OrpheusInterfaces.Schema.ISchemaConstraint.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusInterfaces.Schema.ISchemaConstraint
+    name: ISchemaConstraint
+    href: OrpheusInterfaces.Schema.ISchemaConstraint.html
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_CreateFieldsFromModel_System_Object_
+  name: CreateFieldsFromModel
+  nameWithType: SchemaDataObject.CreateFieldsFromModel
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.CreateFieldsFromModel
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Object)
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Object)
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  isExternal: true
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_CreateFieldsFromModel_System_Object_
+  name: CreateFieldsFromModel(object)
+  nameWithType: ISchemaDataObject.CreateFieldsFromModel(object)
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(object)
+  nameWithType.vb: ISchemaDataObject.CreateFieldsFromModel(Object)
+  fullName.vb: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(Object)
+  name.vb: CreateFieldsFromModel(Object)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Object)
+    name: CreateFieldsFromModel
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_CreateFieldsFromModel_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Object)
+    name: CreateFieldsFromModel
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_CreateFieldsFromModel_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel``1
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel``1
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_CreateFieldsFromModel__1
+  name: CreateFieldsFromModel<T>()
+  nameWithType: ISchemaDataObject.CreateFieldsFromModel<T>()
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel<T>()
+  nameWithType.vb: ISchemaDataObject.CreateFieldsFromModel(Of T)()
+  fullName.vb: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(Of T)()
+  name.vb: CreateFieldsFromModel(Of T)()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel``1
+    name: CreateFieldsFromModel
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_CreateFieldsFromModel__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel``1
+    name: CreateFieldsFromModel
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_CreateFieldsFromModel__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Type)
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Type)
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  isExternal: true
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_CreateFieldsFromModel_System_Type_
+  name: CreateFieldsFromModel(Type)
+  nameWithType: ISchemaDataObject.CreateFieldsFromModel(Type)
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Type)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Type)
+    name: CreateFieldsFromModel
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_CreateFieldsFromModel_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.CreateFieldsFromModel(System.Type)
+    name: CreateFieldsFromModel
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_CreateFieldsFromModel_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddField*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.AddField
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddField_System_String_System_String_System_Boolean_System_String_System_String_System_String_
+  name: AddField
+  nameWithType: SchemaDataObject.AddField
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddField
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  isExternal: true
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddField_System_String_System_String_System_Boolean_System_String_System_String_System_String_
+  name: AddField(string, string, bool, string, string, string)
+  nameWithType: ISchemaDataObject.AddField(string, string, bool, string, string, string)
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.AddField(string, string, bool, string, string, string)
+  nameWithType.vb: ISchemaDataObject.AddField(String, String, Boolean, String, String, String)
+  fullName.vb: OrpheusInterfaces.Schema.ISchemaDataObject.AddField(String, String, Boolean, String, String, String)
+  name.vb: AddField(String, String, Boolean, String, String, String)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
+    name: AddField
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddField_System_String_System_String_System_Boolean_System_String_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddField(System.String,System.String,System.Boolean,System.String,System.String,System.String)
+    name: AddField
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddField_System_String_System_String_System_Boolean_System_String_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusInterfaces.Schema.ISchemaField
+  commentId: T:OrpheusInterfaces.Schema.ISchemaField
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaField.html
+  name: ISchemaField
+  nameWithType: ISchemaField
+  fullName: OrpheusInterfaces.Schema.ISchemaField
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddPrimaryKeyConstraint_System_String_System_Collections_Generic_List_System_String__OrpheusInterfaces_Schema_SchemaSort_
+  name: AddPrimaryKeyConstraint
+  nameWithType: SchemaDataObject.AddPrimaryKeyConstraint
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddPrimaryKeyConstraint
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  isExternal: true
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddPrimaryKeyConstraint_System_String_System_Collections_Generic_List_System_String__OrpheusInterfaces_Schema_SchemaSort_
+  name: AddPrimaryKeyConstraint(string, List<string>, SchemaSort)
+  nameWithType: ISchemaDataObject.AddPrimaryKeyConstraint(string, List<string>, SchemaSort)
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.AddPrimaryKeyConstraint(string, System.Collections.Generic.List<string>, OrpheusInterfaces.Schema.SchemaSort)
+  nameWithType.vb: ISchemaDataObject.AddPrimaryKeyConstraint(String, List(Of String), SchemaSort)
+  fullName.vb: OrpheusInterfaces.Schema.ISchemaDataObject.AddPrimaryKeyConstraint(String, System.Collections.Generic.List(Of String), OrpheusInterfaces.Schema.SchemaSort)
+  name.vb: AddPrimaryKeyConstraint(String, List(Of String), SchemaSort)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)
+    name: AddPrimaryKeyConstraint
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddPrimaryKeyConstraint_System_String_System_Collections_Generic_List_System_String__OrpheusInterfaces_Schema_SchemaSort_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Schema.SchemaSort
+    name: SchemaSort
+    href: OrpheusInterfaces.Schema.SchemaSort.html
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddPrimaryKeyConstraint(System.String,System.Collections.Generic.List{System.String},OrpheusInterfaces.Schema.SchemaSort)
+    name: AddPrimaryKeyConstraint
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddPrimaryKeyConstraint_System_String_System_Collections_Generic_List_System_String__OrpheusInterfaces_Schema_SchemaSort_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Schema.SchemaSort
+    name: SchemaSort
+    href: OrpheusInterfaces.Schema.SchemaSort.html
+  - name: )
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusInterfaces.Schema.SchemaSort
+  commentId: T:OrpheusInterfaces.Schema.SchemaSort
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaSort.html
+  name: SchemaSort
+  nameWithType: SchemaSort
+  fullName: OrpheusInterfaces.Schema.SchemaSort
+- uid: OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint
+  commentId: T:OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint.html
+  name: IPrimaryKeySchemaConstraint
+  nameWithType: IPrimaryKeySchemaConstraint
+  fullName: OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddForeignKeyConstraint_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
+  name: AddForeignKeyConstraint
+  nameWithType: SchemaDataObject.AddForeignKeyConstraint
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddForeignKeyConstraint
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  isExternal: true
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddForeignKeyConstraint_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
+  name: AddForeignKeyConstraint(string, List<string>, string, List<string>, bool, bool)
+  nameWithType: ISchemaDataObject.AddForeignKeyConstraint(string, List<string>, string, List<string>, bool, bool)
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.AddForeignKeyConstraint(string, System.Collections.Generic.List<string>, string, System.Collections.Generic.List<string>, bool, bool)
+  nameWithType.vb: ISchemaDataObject.AddForeignKeyConstraint(String, List(Of String), String, List(Of String), Boolean, Boolean)
+  fullName.vb: OrpheusInterfaces.Schema.ISchemaDataObject.AddForeignKeyConstraint(String, System.Collections.Generic.List(Of String), String, System.Collections.Generic.List(Of String), Boolean, Boolean)
+  name.vb: AddForeignKeyConstraint(String, List(Of String), String, List(Of String), Boolean, Boolean)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+    name: AddForeignKeyConstraint
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddForeignKeyConstraint_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddForeignKeyConstraint(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Boolean,System.Boolean)
+    name: AddForeignKeyConstraint
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddForeignKeyConstraint_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_String__System_Boolean_System_Boolean_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+  commentId: T:OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.html
+  name: IForeignKeySchemaConstraint
+  nameWithType: IForeignKeySchemaConstraint
+  fullName: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_AddUniqueKeyConstraint_System_String_System_Collections_Generic_List_System_String__
+  name: AddUniqueKeyConstraint
+  nameWithType: SchemaDataObject.AddUniqueKeyConstraint
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.AddUniqueKeyConstraint
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  isExternal: true
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddUniqueKeyConstraint_System_String_System_Collections_Generic_List_System_String__
+  name: AddUniqueKeyConstraint(string, List<string>)
+  nameWithType: ISchemaDataObject.AddUniqueKeyConstraint(string, List<string>)
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.AddUniqueKeyConstraint(string, System.Collections.Generic.List<string>)
+  nameWithType.vb: ISchemaDataObject.AddUniqueKeyConstraint(String, List(Of String))
+  fullName.vb: OrpheusInterfaces.Schema.ISchemaDataObject.AddUniqueKeyConstraint(String, System.Collections.Generic.List(Of String))
+  name.vb: AddUniqueKeyConstraint(String, List(Of String))
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
+    name: AddUniqueKeyConstraint
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddUniqueKeyConstraint_System_String_System_Collections_Generic_List_System_String__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.AddUniqueKeyConstraint(System.String,System.Collections.Generic.List{System.String})
+    name: AddUniqueKeyConstraint
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_AddUniqueKeyConstraint_System_String_System_Collections_Generic_List_System_String__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint
+  commentId: T:OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint.html
+  name: IUniqueKeySchemaConstraint
+  nameWithType: IUniqueKeySchemaConstraint
+  fullName: OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.SetData
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_SetData__1_System_Collections_Generic_List___0__
+  name: SetData
+  nameWithType: SchemaDataObject.SetData
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.SetData
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{{T}})
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  definition: OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_SetData__1_System_Collections_Generic_List___0__
+  name: SetData<T>(List<T>)
+  nameWithType: ISchemaDataObject.SetData<T>(List<T>)
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.SetData<T>(System.Collections.Generic.List<T>)
+  nameWithType.vb: ISchemaDataObject.SetData(Of T)(List(Of T))
+  fullName.vb: OrpheusInterfaces.Schema.ISchemaDataObject.SetData(Of T)(System.Collections.Generic.List(Of T))
+  name.vb: SetData(Of T)(List(Of T))
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+    name: SetData
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_SetData__1_System_Collections_Generic_List___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+    name: SetData
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_SetData__1_System_Collections_Generic_List___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+  isExternal: true
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_SetData__1_System_Collections_Generic_List___0__
+  name: SetData<T>(List<T>)
+  nameWithType: ISchemaDataObject.SetData<T>(List<T>)
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.SetData<T>(System.Collections.Generic.List<T>)
+  nameWithType.vb: ISchemaDataObject.SetData(Of T)(List(Of T))
+  fullName.vb: OrpheusInterfaces.Schema.ISchemaDataObject.SetData(Of T)(System.Collections.Generic.List(Of T))
+  name.vb: SetData(Of T)(List(Of T))
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+    name: SetData
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_SetData__1_System_Collections_Generic_List___0__
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.SetData``1(System.Collections.Generic.List{``0})
+    name: SetData
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_SetData__1_System_Collections_Generic_List___0__
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.GetData*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.GetData
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_GetData__1
+  name: GetData
+  nameWithType: SchemaDataObject.GetData
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.GetData
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.GetData``1
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.GetData``1
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_GetData__1
+  name: GetData<T>()
+  nameWithType: ISchemaDataObject.GetData<T>()
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.GetData<T>()
+  nameWithType.vb: ISchemaDataObject.GetData(Of T)()
+  fullName.vb: OrpheusInterfaces.Schema.ISchemaDataObject.GetData(Of T)()
+  name.vb: GetData(Of T)()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.GetData``1
+    name: GetData
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_GetData__1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.GetData``1
+    name: GetData
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_GetData__1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_GetConstraintsDDL
+  name: GetConstraintsDDL
+  nameWithType: SchemaDataObject.GetConstraintsDDL
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.GetConstraintsDDL
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject.GetConstraintsDDL
+  commentId: M:OrpheusInterfaces.Schema.ISchemaDataObject.GetConstraintsDDL
+  parent: OrpheusInterfaces.Schema.ISchemaDataObject
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_GetConstraintsDDL
+  name: GetConstraintsDDL()
+  nameWithType: ISchemaDataObject.GetConstraintsDDL()
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject.GetConstraintsDDL()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.GetConstraintsDDL
+    name: GetConstraintsDDL
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_GetConstraintsDDL
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject.GetConstraintsDDL
+    name: GetConstraintsDDL
+    href: OrpheusInterfaces.Schema.ISchemaDataObject.html#OrpheusInterfaces_Schema_ISchemaDataObject_GetConstraintsDDL
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.Execute
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.Execute
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_Execute
+  name: Execute()
+  nameWithType: SchemaObject.Execute()
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.Execute()
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.Execute
+    name: Execute
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_Execute
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.Execute
+    name: Execute
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_Execute
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.Execute*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.Execute
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_Execute
+  name: Execute
+  nameWithType: SchemaDataObject.Execute
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.Execute
+- uid: OrpheusInterfaces.Schema.ISchemaObject.Execute
+  commentId: M:OrpheusInterfaces.Schema.ISchemaObject.Execute
+  parent: OrpheusInterfaces.Schema.ISchemaObject
+  href: OrpheusInterfaces.Schema.ISchemaObject.html#OrpheusInterfaces_Schema_ISchemaObject_Execute
+  name: Execute()
+  nameWithType: ISchemaObject.Execute()
+  fullName: OrpheusInterfaces.Schema.ISchemaObject.Execute()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaObject.Execute
+    name: Execute
+    href: OrpheusInterfaces.Schema.ISchemaObject.html#OrpheusInterfaces_Schema_ISchemaObject_Execute
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaObject.Execute
+    name: Execute
+    href: OrpheusInterfaces.Schema.ISchemaObject.html#OrpheusInterfaces_Schema_ISchemaObject_Execute
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaObject.Drop
+  commentId: M:OrpheusCore.SchemaBuilder.SchemaObject.Drop
+  parent: OrpheusCore.SchemaBuilder.SchemaObject
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_Drop
+  name: Drop()
+  nameWithType: SchemaObject.Drop()
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject.Drop()
+  spec.csharp:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.Drop
+    name: Drop
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_Drop
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject.Drop
+    name: Drop
+    href: OrpheusCore.SchemaBuilder.SchemaObject.html#OrpheusCore_SchemaBuilder_SchemaObject_Drop
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.Drop*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.Drop
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject_Drop
+  name: Drop
+  nameWithType: SchemaDataObject.Drop
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.Drop
+- uid: OrpheusInterfaces.Schema.ISchemaObject.Drop
+  commentId: M:OrpheusInterfaces.Schema.ISchemaObject.Drop
+  parent: OrpheusInterfaces.Schema.ISchemaObject
+  href: OrpheusInterfaces.Schema.ISchemaObject.html#OrpheusInterfaces_Schema_ISchemaObject_Drop
+  name: Drop()
+  nameWithType: ISchemaObject.Drop()
+  fullName: OrpheusInterfaces.Schema.ISchemaObject.Drop()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Schema.ISchemaObject.Drop
+    name: Drop
+    href: OrpheusInterfaces.Schema.ISchemaObject.html#OrpheusInterfaces_Schema_ISchemaObject_Drop
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Schema.ISchemaObject.Drop
+    name: Drop
+    href: OrpheusInterfaces.Schema.ISchemaObject.html#OrpheusInterfaces_Schema_ISchemaObject_Drop
+  - name: (
+  - name: )
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaDataObject
+  parent: OrpheusCore.SchemaBuilder
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html
+  name: SchemaDataObject
+  nameWithType: SchemaDataObject
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject.#ctor*
+  commentId: Overload:OrpheusCore.SchemaBuilder.SchemaDataObject.#ctor
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html#OrpheusCore_SchemaBuilder_SchemaDataObject__ctor
+  name: SchemaDataObject
+  nameWithType: SchemaDataObject.SchemaDataObject
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject.SchemaDataObject
+  nameWithType.vb: SchemaDataObject.New
+  fullName.vb: OrpheusCore.SchemaBuilder.SchemaDataObject.New
+  name.vb: New

@@ -93,8 +93,6 @@ namespace OrpheusCore.SchemaBuilder
 
             return String.Format(result, this.Name == null ? this.Description : this.Name, message);
         }
-
-        //private IOrpheusTable<OrpheusSchemaInfo> internalSchemaInfo;
         #endregion
 
         #region public properties
@@ -301,7 +299,6 @@ namespace OrpheusCore.SchemaBuilder
         public ISchemaTable AddSchemaTable<T, D>()
         {
             var modelInstance = Activator.CreateInstance(typeof(T));
-            //var dependencies = this.SchemaObjects.Where(obj => obj.SQLName.ToLower() == typeof(D).Name.ToLower()).ToList();
             var dependencyTypeName = typeof(D).Name;
             var dependencies = this.SchemaObjects.Where(obj =>
                       obj.Schema.Name == null ? obj.SQLName.ToLower() == dependencyTypeName.ToLower() : obj.SQLName.Split(".")[1].Trim().ToLower() == dependencyTypeName.ToLower()
@@ -394,7 +391,6 @@ namespace OrpheusCore.SchemaBuilder
         public void Drop()
         {
             this.logger.LogDebug(this.formatLoggerMessage("Begin dropping schema"));
-            //this.orpheusSchema.DropSchema();
 
             this.SchemaObjects.ForEach(schObj =>
             {
@@ -474,7 +470,17 @@ namespace OrpheusCore.SchemaBuilder
 
             if (this.schemaObjectExistsPreparedQuery == null)
             {
-                this.schemaObjectExistsPreparedQuery = this.db.CreatePreparedQuery(String.Format("SELECT ObjectId,ObjectName FROM {0} WHERE ObjectName = @OBJECT_NAME", this.SchemaObjectsTable), new List<string>() { "@OBJECT_NAME" });
+                // Columns are created with delimited (quoted) identifiers — e.g. PostgreSQL preserves
+                // "ObjectName"'s exact case only when quoted — so this query must reference them the
+                // same way; an unquoted "ObjectName" would fold to lowercase on PostgreSQL and never
+                // match, silently making this always report "not found" (the failure is swallowed by
+                // the catch below, so it looked like the row just never existed).
+                var idStart = this.db.DDLHelper.DelimitedIdentifierStart;
+                var idEnd = this.db.DDLHelper.DelimitedIdentifierEnd;
+                this.schemaObjectExistsPreparedQuery = this.db.CreatePreparedQuery(
+                    String.Format("SELECT {1}ObjectId{2},{1}ObjectName{2} FROM {0} WHERE {1}ObjectName{2} = @OBJECT_NAME",
+                        this.SchemaObjectsTable, idStart, idEnd),
+                    new List<string>() { "@OBJECT_NAME" });
             }
             var schemaInCache = this.schemaObjectCache.Find(cacheObject => { return cacheObject.SQLName.ToLowerInvariant() == schemaObject.SQLName.ToLowerInvariant(); });
 

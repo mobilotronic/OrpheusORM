@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/upgrade-to-net-8/OrpheusDocumentation/documentation/orpheus_configuring_nlog.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusDocumentation/documentation/orpheus_configuring_nlog.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -93,8 +93,11 @@
 	var logger = LogManager.GetCurrentClassLogger();
 	try
 	{
+		var configurationBuilder = new ConfigurationBuilder();
+		configurationBuilder.AddJsonFile(&quot;appSettings.json&quot;, optional: false, reloadOnChange: true);
+		var configuration = configurationBuilder.Build();
+
 		IServiceCollection serviceCollection = new ServiceCollection();
-		this.configuration = this.createConfiguration(&quot;appSettings.json&quot;);
 		serviceCollection.AddLogging((builder) =&gt;
 		{
 			builder.ClearProviders();
@@ -103,7 +106,16 @@
 			builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
 			builder.AddNLog(configuration);
 		});
-		OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
+
+		// AddOrpheusSqlServer (or AddOrpheusMySql/AddOrpheusPostgreSql) internally calls
+		// AddOrpheusServices(), which only falls back to console logging if nothing has
+		// registered ILoggerFactory yet — so register logging (as above) before this call.
+		var connectionConfig = new OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration();
+		configuration.GetSection(&quot;OrpheusConfiguration:DatabaseConnections:0&quot;).Bind(connectionConfig);
+		serviceCollection.AddOrpheusSqlServer(connectionConfig);
+
+		var provider = serviceCollection.BuildServiceProvider();
+		var db = provider.GetRequiredService&lt;IOrpheusDatabase&gt;();
 	}
 	catch (Exception e)
 	{

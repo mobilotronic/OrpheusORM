@@ -1,0 +1,76 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.ModelProperty
+  commentId: T:OrpheusCore.ModelProperty
+  id: ModelProperty
+  parent: OrpheusCore
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: ModelProperty
+  nameWithType: ModelProperty
+  fullName: OrpheusCore.ModelProperty
+  type: Delegate
+  source:
+    remote:
+      path: OrpheusCore/Core/OrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ModelProperty
+    path: ../OrpheusCore/Core/OrpheusModelHelper.cs
+    startLine: 19
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: Helper delegate, to be called when iterating through model's properties.
+  example: []
+  syntax:
+    content: public delegate void ModelProperty(PropertyInfo property)
+    parameters:
+    - id: property
+      type: System.Reflection.PropertyInfo
+      description: ''
+    content.vb: Public Delegate Sub ModelProperty([property] As PropertyInfo)
+references:
+- uid: OrpheusCore
+  commentId: N:OrpheusCore
+  href: OrpheusCore.html
+  name: OrpheusCore
+  nameWithType: OrpheusCore
+  fullName: OrpheusCore
+- uid: System.Reflection.PropertyInfo
+  commentId: T:System.Reflection.PropertyInfo
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo
+  name: PropertyInfo
+  nameWithType: PropertyInfo
+  fullName: System.Reflection.PropertyInfo
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection

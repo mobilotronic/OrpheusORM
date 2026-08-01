@@ -1,0 +1,63 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+  commentId: T:OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+  id: IUniqueKey
+  parent: OrpheusInterfaces.Interfaces.Attributes
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IUniqueKey
+  nameWithType: IUniqueKey
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IUniqueKey.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IUniqueKey
+    path: ../OrpheusInterfaces/Attributes/IUniqueKey.cs
+    startLine: 5
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  summary: Orpheus unique key attribute
+  example: []
+  syntax:
+    content: 'public interface IUniqueKey : IOrpheusBaseAttribute'
+    content.vb: Public Interface IUniqueKey Inherits IOrpheusBaseAttribute
+  derivedClasses:
+  - OrpheusAttributes.UniqueKey
+references:
+- uid: OrpheusInterfaces.Interfaces.Attributes
+  commentId: N:OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Interfaces.Attributes
+  nameWithType: OrpheusInterfaces.Interfaces.Attributes
+  fullName: OrpheusInterfaces.Interfaces.Attributes
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html

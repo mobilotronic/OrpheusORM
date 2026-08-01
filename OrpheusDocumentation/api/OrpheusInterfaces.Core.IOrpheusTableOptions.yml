@@ -1,0 +1,662 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTableOptions
+  id: IOrpheusTableOptions
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
+  - OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
+  - OrpheusInterfaces.Core.IOrpheusTableOptions.Database
+  - OrpheusInterfaces.Core.IOrpheusTableOptions.KeyFields
+  - OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTable
+  - OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableKeyFields
+  - OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableName
+  - OrpheusInterfaces.Core.IOrpheusTableOptions.ModelType
+  - OrpheusInterfaces.Core.IOrpheusTableOptions.TableName
+  langs:
+  - csharp
+  - vb
+  name: IOrpheusTableOptions
+  nameWithType: IOrpheusTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IOrpheusTableOptions
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 257
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Represents <xref href="OrpheusInterfaces.Core.IOrpheusTable" data-throw-if-not-resolved="false"></xref> options, which can be used to instantiate a table.
+  example: []
+  syntax:
+    content: public interface IOrpheusTableOptions
+    content.vb: Public Interface IOrpheusTableOptions
+  derivedClasses:
+  - OrpheusCore.OrpheusTableOptions
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.Database
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTableOptions.Database
+  id: Database
+  parent: OrpheusInterfaces.Core.IOrpheusTableOptions
+  langs:
+  - csharp
+  - vb
+  name: Database
+  nameWithType: IOrpheusTableOptions.Database
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.Database
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Database
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 263
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Database that the table is a part of.
+  example: []
+  syntax:
+    content: >-
+      [IgnoreDataMember]
+
+      IOrpheusDatabase Database { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusDatabase
+      description: Database that the table is part of
+    content.vb: >-
+      <IgnoreDataMember>
+
+      Property Database As IOrpheusDatabase
+  overload: OrpheusInterfaces.Core.IOrpheusTableOptions.Database*
+  attributes:
+  - type: System.Runtime.Serialization.IgnoreDataMemberAttribute
+    ctor: System.Runtime.Serialization.IgnoreDataMemberAttribute.#ctor
+    arguments: []
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.TableName
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTableOptions.TableName
+  id: TableName
+  parent: OrpheusInterfaces.Core.IOrpheusTableOptions
+  langs:
+  - csharp
+  - vb
+  name: TableName
+  nameWithType: IOrpheusTableOptions.TableName
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.TableName
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: TableName
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 271
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Table's name.
+  example: []
+  syntax:
+    content: string TableName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Table's name
+    content.vb: Property TableName As String
+  overload: OrpheusInterfaces.Core.IOrpheusTableOptions.TableName*
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.KeyFields
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTableOptions.KeyFields
+  id: KeyFields
+  parent: OrpheusInterfaces.Core.IOrpheusTableOptions
+  langs:
+  - csharp
+  - vb
+  name: KeyFields
+  nameWithType: IOrpheusTableOptions.KeyFields
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.KeyFields
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: KeyFields
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 277
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Table's key field(s). Can be more than one to support composite keys.
+  example: []
+  syntax:
+    content: List<IOrpheusTableKeyField> KeyFields { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField}
+      description: Table's key fields
+    content.vb: Property KeyFields As List(Of IOrpheusTableKeyField)
+  overload: OrpheusInterfaces.Core.IOrpheusTableOptions.KeyFields*
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
+  id: AddKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
+  parent: OrpheusInterfaces.Core.IOrpheusTableOptions
+  langs:
+  - csharp
+  - vb
+  name: AddKeyField(string, bool, bool, Func<string>)
+  nameWithType: IOrpheusTableOptions.AddKeyField(string, bool, bool, Func<string>)
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField(string, bool, bool, System.Func<string>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddKeyField
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 286
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates a new key field.
+  example: []
+  syntax:
+    content: void AddKeyField(string name, bool isAutoGenerated = false, bool isDBGenerated = false, Func<string> keySQLUpdate = null)
+    parameters:
+    - id: name
+      type: System.String
+      description: Field name
+    - id: isAutoGenerated
+      type: System.Boolean
+      description: Auto generate flag
+    - id: isDBGenerated
+      type: System.Boolean
+      description: DB generated flag
+    - id: keySQLUpdate
+      type: System.Func{System.String}
+      description: Function to return a custom SQL when updating the field value
+    content.vb: Sub AddKeyField(name As String, isAutoGenerated As Boolean = False, isDBGenerated As Boolean = False, keySQLUpdate As Func(Of String) = Nothing)
+  overload: OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField*
+  nameWithType.vb: IOrpheusTableOptions.AddKeyField(String, Boolean, Boolean, Func(Of String))
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField(String, Boolean, Boolean, System.Func(Of String))
+  name.vb: AddKeyField(String, Boolean, Boolean, Func(Of String))
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
+  commentId: M:OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
+  id: AddMasterKeyField(System.String,System.Boolean,System.Boolean,System.Func{System.String})
+  parent: OrpheusInterfaces.Core.IOrpheusTableOptions
+  langs:
+  - csharp
+  - vb
+  name: AddMasterKeyField(string, bool, bool, Func<string>)
+  nameWithType: IOrpheusTableOptions.AddMasterKeyField(string, bool, bool, Func<string>)
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField(string, bool, bool, System.Func<string>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddMasterKeyField
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 295
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates a new master key field
+  example: []
+  syntax:
+    content: void AddMasterKeyField(string name, bool isAutoGenerated = false, bool isDBGenerated = false, Func<string> keySQLUpdate = null)
+    parameters:
+    - id: name
+      type: System.String
+      description: Field name
+    - id: isAutoGenerated
+      type: System.Boolean
+      description: Auto generate flag
+    - id: isDBGenerated
+      type: System.Boolean
+      description: DB generated flag
+    - id: keySQLUpdate
+      type: System.Func{System.String}
+      description: Function to return a custom SQL when updating the field value
+    content.vb: Sub AddMasterKeyField(name As String, isAutoGenerated As Boolean = False, isDBGenerated As Boolean = False, keySQLUpdate As Func(Of String) = Nothing)
+  overload: OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField*
+  nameWithType.vb: IOrpheusTableOptions.AddMasterKeyField(String, Boolean, Boolean, Func(Of String))
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField(String, Boolean, Boolean, System.Func(Of String))
+  name.vb: AddMasterKeyField(String, Boolean, Boolean, Func(Of String))
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTable
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTable
+  id: MasterTable
+  parent: OrpheusInterfaces.Core.IOrpheusTableOptions
+  langs:
+  - csharp
+  - vb
+  name: MasterTable
+  nameWithType: IOrpheusTableOptions.MasterTable
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTable
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: MasterTable
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 301
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Table's master table. To support the master-detail relationship.
+  example: []
+  syntax:
+    content: >-
+      [IgnoreDataMember]
+
+      IOrpheusTable MasterTable { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTable
+      description: Table's master table
+    content.vb: >-
+      <IgnoreDataMember>
+
+      Property MasterTable As IOrpheusTable
+  overload: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTable*
+  attributes:
+  - type: System.Runtime.Serialization.IgnoreDataMemberAttribute
+    ctor: System.Runtime.Serialization.IgnoreDataMemberAttribute.#ctor
+    arguments: []
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableName
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableName
+  id: MasterTableName
+  parent: OrpheusInterfaces.Core.IOrpheusTableOptions
+  langs:
+  - csharp
+  - vb
+  name: MasterTableName
+  nameWithType: IOrpheusTableOptions.MasterTableName
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableName
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: MasterTableName
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 308
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Table's master table. To support the master-detail relationship.
+  example: []
+  syntax:
+    content: string MasterTableName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Table's master table name
+    content.vb: Property MasterTableName As String
+  overload: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableName*
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableKeyFields
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableKeyFields
+  id: MasterTableKeyFields
+  parent: OrpheusInterfaces.Core.IOrpheusTableOptions
+  langs:
+  - csharp
+  - vb
+  name: MasterTableKeyFields
+  nameWithType: IOrpheusTableOptions.MasterTableKeyFields
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableKeyFields
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: MasterTableKeyFields
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 314
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Master table's key field(s). Can be more than one to support composite keys.
+  example: []
+  syntax:
+    content: List<IOrpheusTableKeyField> MasterTableKeyFields { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField}
+      description: Master table's key field
+    content.vb: Property MasterTableKeyFields As List(Of IOrpheusTableKeyField)
+  overload: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableKeyFields*
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.ModelType
+  commentId: P:OrpheusInterfaces.Core.IOrpheusTableOptions.ModelType
+  id: ModelType
+  parent: OrpheusInterfaces.Core.IOrpheusTableOptions
+  langs:
+  - csharp
+  - vb
+  name: ModelType
+  nameWithType: IOrpheusTableOptions.ModelType
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.ModelType
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ModelType
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 320
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Model type.
+  example: []
+  syntax:
+    content: Type ModelType { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+      description: Table model type
+    content.vb: Property ModelType As Type
+  overload: OrpheusInterfaces.Core.IOrpheusTableOptions.ModelType*
+references:
+- uid: OrpheusInterfaces.Core.IOrpheusTable
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTable
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusTable.html
+  name: IOrpheusTable
+  nameWithType: IOrpheusTable
+  fullName: OrpheusInterfaces.Core.IOrpheusTable
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.Database*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTableOptions.Database
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html#OrpheusInterfaces_Core_IOrpheusTableOptions_Database
+  name: Database
+  nameWithType: IOrpheusTableOptions.Database
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.Database
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDatabase
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html
+  name: IOrpheusDatabase
+  nameWithType: IOrpheusDatabase
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.TableName*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTableOptions.TableName
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html#OrpheusInterfaces_Core_IOrpheusTableOptions_TableName
+  name: TableName
+  nameWithType: IOrpheusTableOptions.TableName
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.TableName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.KeyFields*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTableOptions.KeyFields
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html#OrpheusInterfaces_Core_IOrpheusTableOptions_KeyFields
+  name: KeyFields
+  nameWithType: IOrpheusTableOptions.KeyFields
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.KeyFields
+- uid: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField}
+  commentId: T:System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<IOrpheusTableKeyField>
+  nameWithType: List<IOrpheusTableKeyField>
+  fullName: System.Collections.Generic.List<OrpheusInterfaces.Core.IOrpheusTableKeyField>
+  nameWithType.vb: List(Of IOrpheusTableKeyField)
+  fullName.vb: System.Collections.Generic.List(Of OrpheusInterfaces.Core.IOrpheusTableKeyField)
+  name.vb: List(Of IOrpheusTableKeyField)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: OrpheusInterfaces.Core.IOrpheusTableKeyField
+    name: IOrpheusTableKeyField
+    href: OrpheusInterfaces.Core.IOrpheusTableKeyField.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusInterfaces.Core.IOrpheusTableKeyField
+    name: IOrpheusTableKeyField
+    href: OrpheusInterfaces.Core.IOrpheusTableKeyField.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html#OrpheusInterfaces_Core_IOrpheusTableOptions_AddKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__
+  name: AddKeyField
+  nameWithType: IOrpheusTableOptions.AddKeyField
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.AddKeyField
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Func{System.String}
+  commentId: T:System.Func{System.String}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<string>
+  nameWithType: Func<string>
+  fullName: System.Func<string>
+  nameWithType.vb: Func(Of String)
+  fullName.vb: System.Func(Of String)
+  name.vb: Func(Of String)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html#OrpheusInterfaces_Core_IOrpheusTableOptions_AddMasterKeyField_System_String_System_Boolean_System_Boolean_System_Func_System_String__
+  name: AddMasterKeyField
+  nameWithType: IOrpheusTableOptions.AddMasterKeyField
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.AddMasterKeyField
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTable*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTable
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html#OrpheusInterfaces_Core_IOrpheusTableOptions_MasterTable
+  name: MasterTable
+  nameWithType: IOrpheusTableOptions.MasterTable
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTable
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableName*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableName
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html#OrpheusInterfaces_Core_IOrpheusTableOptions_MasterTableName
+  name: MasterTableName
+  nameWithType: IOrpheusTableOptions.MasterTableName
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableName
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableKeyFields*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableKeyFields
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html#OrpheusInterfaces_Core_IOrpheusTableOptions_MasterTableKeyFields
+  name: MasterTableKeyFields
+  nameWithType: IOrpheusTableOptions.MasterTableKeyFields
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.MasterTableKeyFields
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions.ModelType*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusTableOptions.ModelType
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html#OrpheusInterfaces_Core_IOrpheusTableOptions_ModelType
+  name: ModelType
+  nameWithType: IOrpheusTableOptions.ModelType
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions.ModelType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

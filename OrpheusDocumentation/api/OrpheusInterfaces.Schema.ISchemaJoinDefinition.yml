@@ -1,0 +1,288 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  commentId: T:OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  id: ISchemaJoinDefinition
+  parent: OrpheusInterfaces.Schema
+  children:
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+  - OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+  langs:
+  - csharp
+  - vb
+  name: ISchemaJoinDefinition
+  nameWithType: ISchemaJoinDefinition
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ISchemaJoinDefinition
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 52
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Represents a schema join definition, which can be used by <xref href="OrpheusInterfaces.Schema.ISchemaObject" data-throw-if-not-resolved="false"></xref> when a schema is created.
+  example: []
+  syntax:
+    content: public interface ISchemaJoinDefinition
+    content.vb: Public Interface ISchemaJoinDefinition
+  derivedClasses:
+  - OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+  id: KeyField
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: KeyField
+  nameWithType: ISchemaJoinDefinition.KeyField
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: KeyField
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 58
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Key field name of the main object.
+  example: []
+  syntax:
+    content: string KeyField { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Key field name of the main object
+    content.vb: Property KeyField As String
+  overload: OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField*
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+  id: JoinKeyField
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: JoinKeyField
+  nameWithType: ISchemaJoinDefinition.JoinKeyField
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: JoinKeyField
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 64
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Key field name of the join object.
+  example: []
+  syntax:
+    content: string JoinKeyField { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Key field name of the join object
+    content.vb: Property JoinKeyField As String
+  overload: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField*
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+  id: JoinType
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: JoinType
+  nameWithType: ISchemaJoinDefinition.JoinType
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: JoinType
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 70
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Type of join <xref href="OrpheusInterfaces.Schema.SchemaJoinType" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: SchemaJoinType JoinType { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinType
+      description: Type of join
+    content.vb: Property JoinType As SchemaJoinType
+  overload: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType*
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+  id: JoinOperator
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: JoinOperator
+  nameWithType: ISchemaJoinDefinition.JoinOperator
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: JoinOperator
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 76
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Join operator <xref href="OrpheusInterfaces.Schema.SchemaJoinOperator" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: SchemaJoinOperator JoinOperator { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinOperator
+      description: Join operator
+    content.vb: Property JoinOperator As SchemaJoinOperator
+  overload: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator*
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName
+  commentId: P:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName
+  id: JoinTableName
+  parent: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+  langs:
+  - csharp
+  - vb
+  name: JoinTableName
+  nameWithType: ISchemaJoinDefinition.JoinTableName
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: JoinTableName
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 81
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Table name to perform the join.
+  example: []
+  syntax:
+    content: string JoinTableName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property JoinTableName As String
+  overload: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName*
+references:
+- uid: OrpheusInterfaces.Schema.ISchemaObject
+  commentId: T:OrpheusInterfaces.Schema.ISchemaObject
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaObject.html
+  name: ISchemaObject
+  nameWithType: ISchemaObject
+  fullName: OrpheusInterfaces.Schema.ISchemaObject
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_KeyField
+  name: KeyField
+  nameWithType: ISchemaJoinDefinition.KeyField
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.KeyField
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_JoinKeyField
+  name: JoinKeyField
+  nameWithType: ISchemaJoinDefinition.JoinKeyField
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinKeyField
+- uid: OrpheusInterfaces.Schema.SchemaJoinType
+  commentId: T:OrpheusInterfaces.Schema.SchemaJoinType
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaJoinType.html
+  name: SchemaJoinType
+  nameWithType: SchemaJoinType
+  fullName: OrpheusInterfaces.Schema.SchemaJoinType
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_JoinType
+  name: JoinType
+  nameWithType: ISchemaJoinDefinition.JoinType
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinType
+- uid: OrpheusInterfaces.Schema.SchemaJoinOperator
+  commentId: T:OrpheusInterfaces.Schema.SchemaJoinOperator
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaJoinOperator.html
+  name: SchemaJoinOperator
+  nameWithType: SchemaJoinOperator
+  fullName: OrpheusInterfaces.Schema.SchemaJoinOperator
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_JoinOperator
+  name: JoinOperator
+  nameWithType: ISchemaJoinDefinition.JoinOperator
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinOperator
+- uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName
+  href: OrpheusInterfaces.Schema.ISchemaJoinDefinition.html#OrpheusInterfaces_Schema_ISchemaJoinDefinition_JoinTableName
+  name: JoinTableName
+  nameWithType: ISchemaJoinDefinition.JoinTableName
+  fullName: OrpheusInterfaces.Schema.ISchemaJoinDefinition.JoinTableName

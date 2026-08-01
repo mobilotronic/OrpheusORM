@@ -1,15 +1,16 @@
-# OrpheusORM v2
+# OrpheusORM
 
 OrpheusORM is a module-oriented ORM with built-in schema evolution for .NET — supporting SQL Server, MySQL, and PostgreSQL with full async API, connection pooling, and aggregate-level persistence via the unique Module system.
 
 [![CI Build](https://github.com/mobilotronic/OrpheusORM/actions/workflows/buildWorkFlow.yml/badge.svg)](https://github.com/mobilotronic/OrpheusORM/actions/workflows/buildWorkFlow.yml)
 
-## v2.0.0 Highlights
+## Highlights
 
 - **Async API** — full async support across all I/O methods with `CancellationToken`
 - **Connection Pooling** — native ADO.NET connection pooling via `IOrpheusConnectionFactory`
 - **PostgreSQL Support** — new DDL helper backed by [Npgsql](https://www.npgsql.org/)
 - **Modern DI** — constructor injection replaces the static `ServiceManager` pattern
+- **Batched Insert/Update/Delete** — `Save()` sends fewer, larger round trips instead of one per row (tune via `IOrpheusTable.BatchSize`)
 - **Performance** — cached model metadata + `IDisposable` implementations throughout
 
 ## Overview

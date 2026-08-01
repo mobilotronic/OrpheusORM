@@ -3,7 +3,7 @@
     "DatabaseConnections": [
       {
         "ConfigurationName": "SQLServer",
-        "Server": "DEVPC-WIN11",
+        "Server": "localhost",
         "DatabaseName": "orpheusTestDB",
         "UseIntegratedSecurity": true,
         "UseIntegratedSecurityForServiceConnection": true

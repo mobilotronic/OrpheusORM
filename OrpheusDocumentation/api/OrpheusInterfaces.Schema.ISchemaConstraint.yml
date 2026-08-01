@@ -1,0 +1,467 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint
+  commentId: T:OrpheusInterfaces.Schema.ISchemaConstraint
+  id: ISchemaConstraint
+  parent: OrpheusInterfaces.Schema
+  children:
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  - OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  - OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  - OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  - OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  langs:
+  - csharp
+  - vb
+  name: ISchemaConstraint
+  nameWithType: ISchemaConstraint
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ISchemaConstraint
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 24
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Represents a schema constraint.
+  example: []
+  syntax:
+    content: public interface ISchemaConstraint
+    content.vb: Public Interface ISchemaConstraint
+  derivedClasses:
+  - OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint
+  - OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint
+  - OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  id: Name
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ISchemaConstraint.Name
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Name
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 30
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Constraint name.
+  example: []
+  syntax:
+    content: string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Constraint name
+    content.vb: Property Name As String
+  overload: OrpheusInterfaces.Schema.ISchemaConstraint.Name*
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  id: Fields
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: Fields
+  nameWithType: ISchemaConstraint.Fields
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Fields
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 36
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Fields which the constraint will be applied.
+  example: []
+  syntax:
+    content: List<string> Fields { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: Fields affected from the constraint
+    content.vb: Property Fields As List(Of String)
+  overload: OrpheusInterfaces.Schema.ISchemaConstraint.Fields*
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  id: Sort
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: Sort
+  nameWithType: ISchemaConstraint.Sort
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Sort
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 42
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Key's sort direction.
+  example: []
+  syntax:
+    content: SchemaSort Sort { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Schema.SchemaSort
+      description: Schema sort type
+    content.vb: Property Sort As SchemaSort
+  overload: OrpheusInterfaces.Schema.ISchemaConstraint.Sort*
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  commentId: M:OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  id: SQL
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: SQL()
+  nameWithType: ISchemaConstraint.SQL()
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.SQL()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SQL
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 48
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Returns the SQL definition of the key.
+  example: []
+  syntax:
+    content: string SQL()
+    return:
+      type: System.String
+      description: Constraint's SQL
+    content.vb: Function SQL() As String
+  overload: OrpheusInterfaces.Schema.ISchemaConstraint.SQL*
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  id: Action
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: Action
+  nameWithType: ISchemaConstraint.Action
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Action
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 54
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Returns true if the constraint needs to drop.
+  example: []
+  syntax:
+    content: DDLAction Action { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Schema.DDLAction
+      description: Constraint's DDLAction
+    content.vb: Property Action As DDLAction
+  overload: OrpheusInterfaces.Schema.ISchemaConstraint.Action*
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  id: SchemaObject
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: SchemaObject
+  nameWithType: ISchemaConstraint.SchemaObject
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SchemaObject
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 60
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Schema object were this schema constraint exists
+  example: []
+  syntax:
+    content: ISchemaDataObject SchemaObject { get; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Schema.ISchemaDataObject
+      description: The schema object where the constraint exists
+    content.vb: ReadOnly Property SchemaObject As ISchemaDataObject
+  overload: OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject*
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+  commentId: P:OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+  id: ConstraintSQLCommand
+  parent: OrpheusInterfaces.Schema.ISchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: ConstraintSQLCommand
+  nameWithType: ISchemaConstraint.ConstraintSQLCommand
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ConstraintSQLCommand
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 65
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: The constraint SQL command. UNIQUE, PRIMARY KEY etc.
+  example: []
+  syntax:
+    content: string ConstraintSQLCommand { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property ConstraintSQLCommand As String
+  overload: OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand*
+references:
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Name*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaConstraint.Name
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Name
+  name: Name
+  nameWithType: ISchemaConstraint.Name
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Fields*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Fields
+  name: Fields
+  nameWithType: ISchemaConstraint.Fields
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Fields
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Sort*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Sort
+  name: Sort
+  nameWithType: ISchemaConstraint.Sort
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Sort
+- uid: OrpheusInterfaces.Schema.SchemaSort
+  commentId: T:OrpheusInterfaces.Schema.SchemaSort
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaSort.html
+  name: SchemaSort
+  nameWithType: SchemaSort
+  fullName: OrpheusInterfaces.Schema.SchemaSort
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.SQL*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SQL
+  name: SQL
+  nameWithType: ISchemaConstraint.SQL
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.SQL
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.Action*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaConstraint.Action
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_Action
+  name: Action
+  nameWithType: ISchemaConstraint.Action
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.Action
+- uid: OrpheusInterfaces.Schema.DDLAction
+  commentId: T:OrpheusInterfaces.Schema.DDLAction
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.DDLAction.html
+  name: DDLAction
+  nameWithType: DDLAction
+  fullName: OrpheusInterfaces.Schema.DDLAction
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_SchemaObject
+  name: SchemaObject
+  nameWithType: ISchemaConstraint.SchemaObject
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.SchemaObject
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject
+  commentId: T:OrpheusInterfaces.Schema.ISchemaDataObject
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html
+  name: ISchemaDataObject
+  nameWithType: ISchemaDataObject
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject
+- uid: OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand*
+  commentId: Overload:OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand
+  href: OrpheusInterfaces.Schema.ISchemaConstraint.html#OrpheusInterfaces_Schema_ISchemaConstraint_ConstraintSQLCommand
+  name: ConstraintSQLCommand
+  nameWithType: ISchemaConstraint.ConstraintSQLCommand
+  fullName: OrpheusInterfaces.Schema.ISchemaConstraint.ConstraintSQLCommand

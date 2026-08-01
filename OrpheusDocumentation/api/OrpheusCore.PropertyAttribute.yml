@@ -1,0 +1,56 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.PropertyAttribute
+  commentId: T:OrpheusCore.PropertyAttribute
+  id: PropertyAttribute
+  parent: OrpheusCore
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: PropertyAttribute
+  nameWithType: PropertyAttribute
+  fullName: OrpheusCore.PropertyAttribute
+  type: Delegate
+  source:
+    remote:
+      path: OrpheusCore/Core/OrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: PropertyAttribute
+    path: ../OrpheusCore/Core/OrpheusModelHelper.cs
+    startLine: 25
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: Helper delegate, to be called when iterating through property's attributes.
+  example: []
+  syntax:
+    content: public delegate void PropertyAttribute(Attribute attribute)
+    parameters:
+    - id: attribute
+      type: System.Attribute
+      description: ''
+    content.vb: Public Delegate Sub PropertyAttribute(attribute As Attribute)
+references:
+- uid: OrpheusCore
+  commentId: N:OrpheusCore
+  href: OrpheusCore.html
+  name: OrpheusCore
+  nameWithType: OrpheusCore
+  fullName: OrpheusCore
+- uid: System.Attribute
+  commentId: T:System.Attribute
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.attribute
+  name: Attribute
+  nameWithType: Attribute
+  fullName: System.Attribute
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

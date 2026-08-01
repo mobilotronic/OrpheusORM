@@ -1,0 +1,1199 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  commentId: T:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  id: DatabaseConnectionConfiguration
+  parent: OrpheusCore.Configuration.Models
+  children:
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConnectionIdleTimeout
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MaxPoolSize
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MinPoolSize
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Pooling
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Port
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  - OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
+  langs:
+  - csharp
+  - vb
+  name: DatabaseConnectionConfiguration
+  nameWithType: DatabaseConnectionConfiguration
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  type: Class
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DatabaseConnectionConfiguration
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 7
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  summary: Orpheus database configuration.
+  example: []
+  syntax:
+    content: 'public class DatabaseConnectionConfiguration : IDatabaseConnectionConfiguration'
+    content.vb: Public Class DatabaseConnectionConfiguration Implements IDatabaseConnectionConfiguration
+  inheritance:
+  - System.Object
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
+  id: ConfigurationName
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationName
+  nameWithType: DatabaseConnectionConfiguration.ConfigurationName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ConfigurationName
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 12
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public string ConfigurationName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Database configuration name.
+    content.vb: Public Property ConfigurationName As String
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConfigurationName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
+  id: DatabaseName
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DatabaseName
+  nameWithType: DatabaseConnectionConfiguration.DatabaseName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DatabaseName
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 17
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public string DatabaseName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: The database name.
+    content.vb: Public Property DatabaseName As String
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.DatabaseName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
+  id: Server
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Server
+  nameWithType: DatabaseConnectionConfiguration.Server
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Server
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 22
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public string Server { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Server name or IP address.
+    content.vb: Public Property Server As String
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Server
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Port
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Port
+  id: Port
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Port
+  nameWithType: DatabaseConnectionConfiguration.Port
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Port
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Port
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 27
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public int Port { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: Port number. 0 means use the database engine default.
+    content.vb: Public Property Port As Integer
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Port*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Port
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
+  id: UserName
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: UserName
+  nameWithType: DatabaseConnectionConfiguration.UserName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: UserName
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 33
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public string UserName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: User name.
+    content.vb: Public Property UserName As String
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UserName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
+  id: Password
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Password
+  nameWithType: DatabaseConnectionConfiguration.Password
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Password
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 38
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public string Password { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Password.
+    content.vb: Public Property Password As String
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Password
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  id: UseIntegratedSecurity
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: UseIntegratedSecurity
+  nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurity
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: UseIntegratedSecurity
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 43
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public bool UseIntegratedSecurity { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: SQL Server specific. If true, any UserName/Password configured will be ignored.
+    content.vb: Public Property UseIntegratedSecurity As Boolean
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurity
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  id: UseIntegratedSecurityForServiceConnection
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: UseIntegratedSecurityForServiceConnection
+  nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: UseIntegratedSecurityForServiceConnection
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 49
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public bool UseIntegratedSecurityForServiceConnection { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: >-
+        Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
+
+        This boolean sets this second connection, integrated security setting.
+    content.vb: Public Property UseIntegratedSecurityForServiceConnection As Boolean
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
+  id: ServiceUserName
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ServiceUserName
+  nameWithType: DatabaseConnectionConfiguration.ServiceUserName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ServiceUserName
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 55
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public string ServiceUserName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: >-
+        Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
+
+        The ServiceUserName is the one that will be used for that connection.
+    content.vb: Public Property ServiceUserName As String
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
+  id: ServicePassword
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ServicePassword
+  nameWithType: DatabaseConnectionConfiguration.ServicePassword
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ServicePassword
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 61
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  example: []
+  syntax:
+    content: public string ServicePassword { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: >-
+        Implicitly Orpheus makes a second connection to the database, to perform mainly schema related/DDL functionality.
+
+        The ServicePassword is the one that will be used for that connection.
+    content.vb: Public Property ServicePassword As String
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  id: TrustServerCertificate
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: TrustServerCertificate
+  nameWithType: DatabaseConnectionConfiguration.TrustServerCertificate
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: TrustServerCertificate
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 66
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  summary: True to trust the server certificate. Default is true.
+  example: []
+  syntax:
+    content: public bool TrustServerCertificate { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property TrustServerCertificate As Boolean
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  id: EncyrptConnection
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: EncyrptConnection
+  nameWithType: DatabaseConnectionConfiguration.EncyrptConnection
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: EncyrptConnection
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 71
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  summary: Set if the connection will be encrytped or not.
+  example: []
+  syntax:
+    content: public EncyrptConnection EncyrptConnection { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Configuration.EncyrptConnection
+    content.vb: Public Property EncyrptConnection As EncyrptConnection
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Pooling
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Pooling
+  id: Pooling
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Pooling
+  nameWithType: DatabaseConnectionConfiguration.Pooling
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Pooling
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Pooling
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 76
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  summary: 'Whether ADO.NET connection pooling is enabled. Default: true.'
+  example: []
+  syntax:
+    content: public bool Pooling { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Pooling As Boolean
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Pooling*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Pooling
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MinPoolSize
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MinPoolSize
+  id: MinPoolSize
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: MinPoolSize
+  nameWithType: DatabaseConnectionConfiguration.MinPoolSize
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MinPoolSize
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: MinPoolSize
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 81
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  summary: 'Minimum number of connections maintained in the pool. Default: 0.'
+  example: []
+  syntax:
+    content: public int MinPoolSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinPoolSize As Integer
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MinPoolSize*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.MinPoolSize
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MaxPoolSize
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MaxPoolSize
+  id: MaxPoolSize
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: MaxPoolSize
+  nameWithType: DatabaseConnectionConfiguration.MaxPoolSize
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MaxPoolSize
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: MaxPoolSize
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 86
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  summary: 'Maximum number of connections allowed in the pool. Default: 100.'
+  example: []
+  syntax:
+    content: public int MaxPoolSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxPoolSize As Integer
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MaxPoolSize*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.MaxPoolSize
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConnectionIdleTimeout
+  commentId: P:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConnectionIdleTimeout
+  id: ConnectionIdleTimeout
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConnectionIdleTimeout
+  nameWithType: DatabaseConnectionConfiguration.ConnectionIdleTimeout
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConnectionIdleTimeout
+  type: Property
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ConnectionIdleTimeout
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 91
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  summary: 'Time, in seconds, a connection can remain idle in the pool before being removed. Default: 300.'
+  example: []
+  syntax:
+    content: public int ConnectionIdleTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ConnectionIdleTimeout As Integer
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConnectionIdleTimeout*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConnectionIdleTimeout
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone
+  commentId: M:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone
+  id: Clone
+  parent: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: DatabaseConnectionConfiguration.Clone()
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone()
+  type: Method
+  source:
+    remote:
+      path: OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Clone
+    path: ../OrpheusCore/Configuration/Models/DatabaseConnectionConfiguration.cs
+    startLine: 97
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore.Configuration.Models
+  summary: Creates a clone of this database configuration.
+  example: []
+  syntax:
+    content: public IDatabaseConnectionConfiguration Clone()
+    return:
+      type: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+      description: ''
+    content.vb: Public Function Clone() As IDatabaseConnectionConfiguration
+  overload: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone*
+  implements:
+  - OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Clone
+references:
+- uid: OrpheusCore.Configuration.Models
+  commentId: N:OrpheusCore.Configuration.Models
+  href: OrpheusCore.html
+  name: OrpheusCore.Configuration.Models
+  nameWithType: OrpheusCore.Configuration.Models
+  fullName: OrpheusCore.Configuration.Models
+  spec.csharp:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.Configuration
+    name: Configuration
+    href: OrpheusCore.Configuration.html
+  - name: .
+  - uid: OrpheusCore.Configuration.Models
+    name: Models
+    href: OrpheusCore.Configuration.Models.html
+  spec.vb:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.Configuration
+    name: Configuration
+    href: OrpheusCore.Configuration.html
+  - name: .
+  - uid: OrpheusCore.Configuration.Models
+    name: Models
+    href: OrpheusCore.Configuration.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  commentId: T:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  parent: OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html
+  name: IDatabaseConnectionConfiguration
+  nameWithType: IDatabaseConnectionConfiguration
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Configuration
+  commentId: N:OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Configuration
+  nameWithType: OrpheusInterfaces.Configuration
+  fullName: OrpheusInterfaces.Configuration
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ConfigurationName
+  name: ConfigurationName
+  nameWithType: DatabaseConnectionConfiguration.ConfigurationName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConfigurationName
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConfigurationName
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConfigurationName
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ConfigurationName
+  name: ConfigurationName
+  nameWithType: IDatabaseConnectionConfiguration.ConfigurationName
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConfigurationName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_DatabaseName
+  name: DatabaseName
+  nameWithType: DatabaseConnectionConfiguration.DatabaseName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.DatabaseName
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.DatabaseName
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.DatabaseName
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_DatabaseName
+  name: DatabaseName
+  nameWithType: IDatabaseConnectionConfiguration.DatabaseName
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.DatabaseName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Server
+  name: Server
+  nameWithType: DatabaseConnectionConfiguration.Server
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Server
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Server
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Server
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Server
+  name: Server
+  nameWithType: IDatabaseConnectionConfiguration.Server
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Server
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Port*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Port
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Port
+  name: Port
+  nameWithType: DatabaseConnectionConfiguration.Port
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Port
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Port
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Port
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Port
+  name: Port
+  nameWithType: IDatabaseConnectionConfiguration.Port
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Port
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UserName
+  name: UserName
+  nameWithType: DatabaseConnectionConfiguration.UserName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UserName
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UserName
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UserName
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UserName
+  name: UserName
+  nameWithType: IDatabaseConnectionConfiguration.UserName
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UserName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Password
+  name: Password
+  nameWithType: DatabaseConnectionConfiguration.Password
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Password
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Password
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Password
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Password
+  name: Password
+  nameWithType: IDatabaseConnectionConfiguration.Password
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Password
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UseIntegratedSecurity
+  name: UseIntegratedSecurity
+  nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurity
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurity
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurity
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurity
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UseIntegratedSecurity
+  name: UseIntegratedSecurity
+  nameWithType: IDatabaseConnectionConfiguration.UseIntegratedSecurity
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurity
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_UseIntegratedSecurityForServiceConnection
+  name: UseIntegratedSecurityForServiceConnection
+  nameWithType: DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_UseIntegratedSecurityForServiceConnection
+  name: UseIntegratedSecurityForServiceConnection
+  nameWithType: IDatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.UseIntegratedSecurityForServiceConnection
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ServiceUserName
+  name: ServiceUserName
+  nameWithType: DatabaseConnectionConfiguration.ServiceUserName
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServiceUserName
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServiceUserName
+  name: ServiceUserName
+  nameWithType: IDatabaseConnectionConfiguration.ServiceUserName
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServiceUserName
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ServicePassword
+  name: ServicePassword
+  nameWithType: DatabaseConnectionConfiguration.ServicePassword
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ServicePassword
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ServicePassword
+  name: ServicePassword
+  nameWithType: IDatabaseConnectionConfiguration.ServicePassword
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ServicePassword
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_TrustServerCertificate
+  name: TrustServerCertificate
+  nameWithType: DatabaseConnectionConfiguration.TrustServerCertificate
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.TrustServerCertificate
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_TrustServerCertificate
+  name: TrustServerCertificate
+  nameWithType: IDatabaseConnectionConfiguration.TrustServerCertificate
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.TrustServerCertificate
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_EncyrptConnection
+  name: EncyrptConnection
+  nameWithType: DatabaseConnectionConfiguration.EncyrptConnection
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.EncyrptConnection
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_EncyrptConnection
+  name: EncyrptConnection
+  nameWithType: IDatabaseConnectionConfiguration.EncyrptConnection
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.EncyrptConnection
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection
+  commentId: T:OrpheusInterfaces.Configuration.EncyrptConnection
+  parent: OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.Configuration.EncyrptConnection.html
+  name: EncyrptConnection
+  nameWithType: EncyrptConnection
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Pooling*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Pooling
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Pooling
+  name: Pooling
+  nameWithType: DatabaseConnectionConfiguration.Pooling
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Pooling
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Pooling
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Pooling
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Pooling
+  name: Pooling
+  nameWithType: IDatabaseConnectionConfiguration.Pooling
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Pooling
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MinPoolSize*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MinPoolSize
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_MinPoolSize
+  name: MinPoolSize
+  nameWithType: DatabaseConnectionConfiguration.MinPoolSize
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MinPoolSize
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.MinPoolSize
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.MinPoolSize
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_MinPoolSize
+  name: MinPoolSize
+  nameWithType: IDatabaseConnectionConfiguration.MinPoolSize
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.MinPoolSize
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MaxPoolSize*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MaxPoolSize
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_MaxPoolSize
+  name: MaxPoolSize
+  nameWithType: DatabaseConnectionConfiguration.MaxPoolSize
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.MaxPoolSize
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.MaxPoolSize
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.MaxPoolSize
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_MaxPoolSize
+  name: MaxPoolSize
+  nameWithType: IDatabaseConnectionConfiguration.MaxPoolSize
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.MaxPoolSize
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConnectionIdleTimeout*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConnectionIdleTimeout
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_ConnectionIdleTimeout
+  name: ConnectionIdleTimeout
+  nameWithType: DatabaseConnectionConfiguration.ConnectionIdleTimeout
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.ConnectionIdleTimeout
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConnectionIdleTimeout
+  commentId: P:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConnectionIdleTimeout
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_ConnectionIdleTimeout
+  name: ConnectionIdleTimeout
+  nameWithType: IDatabaseConnectionConfiguration.ConnectionIdleTimeout
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.ConnectionIdleTimeout
+- uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone*
+  commentId: Overload:OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone
+  href: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html#OrpheusCore_Configuration_Models_DatabaseConnectionConfiguration_Clone
+  name: Clone
+  nameWithType: DatabaseConnectionConfiguration.Clone
+  fullName: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.Clone
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Clone
+  commentId: M:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Clone
+  parent: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Clone
+  name: Clone()
+  nameWithType: IDatabaseConnectionConfiguration.Clone()
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Clone()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Clone
+    name: Clone
+    href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Clone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.Clone
+    name: Clone
+    href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html#OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_Clone
+  - name: (
+  - name: )

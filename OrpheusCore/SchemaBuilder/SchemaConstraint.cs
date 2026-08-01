@@ -1,3 +1,4 @@
+using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
 using System;
 using System.Collections.Generic;
@@ -57,15 +58,21 @@ namespace OrpheusCore.SchemaBuilder
             {
                 case DDLAction.ddlCreate:
                     {
-                        result = String.Format(" ADD CONSTRAINT {0}{1}{2} PRIMARY KEY ({3} {4})", 
+                        // PostgreSQL doesn't accept ASC/DESC inside a PRIMARY KEY/UNIQUE constraint's
+                        // column list (only CREATE INDEX supports column direction there) — SQL Server
+                        // and MySQL both accept it, so it's omitted only for PostgreSQL.
+                        var sortSuffix = this.schemaObject.DB.DDLHelper.DbEngineType == DatabaseEngineType.dbPostgreSQL
+                            ? ""
+                            : " " + (this.Sort == SchemaSort.ssAsc ? "ASC" : "DESC");
+                        result = String.Format(" ADD CONSTRAINT {0}{1}{2} PRIMARY KEY ({3}{4})",
                             this.schemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                             this.Name,
                             this.schemaObject.DB.DDLHelper.DelimitedIdentifierEnd,
                             string.Join(",", this.Fields.Select(fld => string.Format("{0}{1}{2}",
                             this.schemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                             fld,
-                            this.schemaObject.DB.DDLHelper.DelimitedIdentifierEnd)).ToArray()), 
-                            this.Sort == SchemaSort.ssAsc ? "ASC" : "DESC");
+                            this.schemaObject.DB.DDLHelper.DelimitedIdentifierEnd)).ToArray()),
+                            sortSuffix);
                         break;
                     }
                 case DDLAction.ddlDrop:

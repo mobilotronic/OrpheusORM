@@ -534,6 +534,7 @@ namespace OrpheusCore
         /// OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.
         /// </summary>
         /// <param name="modelType">Type of the model.</param>
+        /// <param name="logger">Optional logger.</param>
         public OrpheusModelHelper(Type modelType, ILogger logger = null)
         {
             this.logger = logger;
