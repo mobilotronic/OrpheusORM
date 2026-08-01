@@ -20,10 +20,16 @@ namespace OrpheusTests.ConfigurationTests
         [TestCategory(BaseTestClass.SQLServerTests)]
         public void AddOrpheusSqlServerFromConfigurationOverload()
         {
-            var configuration = new ConfigurationBuilder()
+            var configurationBuilder = new ConfigurationBuilder()
                 .SetBasePath(this.CurrentDirectory)
-                .AddJsonFile(BaseTestClass.ConfigurationFileName, optional: false)
-                .Build();
+                .AddJsonFile(BaseTestClass.ConfigurationFileName, optional: false);
+            //CI runners have no Windows/Kerberos environment, so integrated security can't work there;
+            //this overlay swaps SQL Server to SQL authentication, matching BaseTestClass.createConfiguration.
+            if (string.Equals(Environment.GetEnvironmentVariable("CI"), "true", StringComparison.OrdinalIgnoreCase))
+            {
+                configurationBuilder.AddJsonFile("OrpheusConfig.CI.json", optional: true);
+            }
+            var configuration = configurationBuilder.Build();
 
             var services = new ServiceCollection();
             services.AddOrpheusSqlServer(configuration, "SQLServer");
@@ -39,7 +45,29 @@ namespace OrpheusTests.ConfigurationTests
         [TestCategory(BaseTestClass.SQLServerTests)]
         public void AddOrpheusSqlServerFromConfigurationOverloadWithCustomSection()
         {
-            var json = @"{
+            //CI runners have no Windows/Kerberos environment, so integrated security can't work there.
+            var isCI = string.Equals(Environment.GetEnvironmentVariable("CI"), "true", StringComparison.OrdinalIgnoreCase);
+            var json = isCI
+                ? @"{
+                ""MyApp"": {
+                    ""Orpheus"": {
+                        ""DatabaseConnections"": [
+                            {
+                                ""ConfigurationName"": ""SQLServer"",
+                                ""Server"": ""localhost"",
+                                ""DatabaseName"": ""orpheusTestDB"",
+                                ""UseIntegratedSecurity"": false,
+                                ""UseIntegratedSecurityForServiceConnection"": false,
+                                ""UserName"": ""sa"",
+                                ""Password"": ""1StrongPwd!!"",
+                                ""ServiceUserName"": ""sa"",
+                                ""ServicePassword"": ""1StrongPwd!!""
+                            }
+                        ]
+                    }
+                }
+            }"
+                : @"{
                 ""MyApp"": {
                     ""Orpheus"": {
                         ""DatabaseConnections"": [
