@@ -1,0 +1,60 @@
+name: Publish NuGet Packages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 9.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build -c Release --no-restore
+
+    - name: Read package version
+      id: version
+      run: echo "version=$(dotnet msbuild OrpheusCore/OrpheusCore.csproj -getProperty:Version)" >> "$GITHUB_OUTPUT"
+
+    - name: Pack
+      run: |
+        dotnet pack OrpheusInterfaces/OrpheusInterfaces.csproj -c Release --no-build -o ./artifacts
+        dotnet pack OrpheusAttributes/OrpheusAttributes.csproj -c Release --no-build -o ./artifacts
+        dotnet pack OrpheusCore/OrpheusCore.csproj -c Release --no-build -o ./artifacts
+        dotnet pack OrpheusSQLServerDDLHelper/OrpheusSQLServerDDLHelper.csproj -c Release --no-build -o ./artifacts
+        dotnet pack OrpheusMySQLDDLHelper/OrpheusMySQLDDLHelper.csproj -c Release --no-build -o ./artifacts
+        dotnet pack OrpheusPostgreSQLDDLHelper/OrpheusPostgreSQLDDLHelper.csproj -c Release --no-build -o ./artifacts
+
+    - name: Upload package artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: nuget-packages
+        path: ./artifacts/*.nupkg
+
+    - name: NuGet login (OIDC -> temp API key)
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: ${{ secrets.NUGET_USER }}
+
+    - name: NuGet push
+      run: dotnet nuget push "./artifacts/*.nupkg" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+    - name: Tag release
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git tag -a "v${{ steps.version.outputs.version }}" -m "Release v${{ steps.version.outputs.version }}"
+        git push origin "v${{ steps.version.outputs.version }}"

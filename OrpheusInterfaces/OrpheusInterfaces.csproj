@@ -1,4 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>OrpheusORMInterfaces</PackageId>
+    <Title>OrpheusORM Abstractions</Title>
+    <Description>OrpheusORM abstractions (interfaces).</Description>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\net9.0\OrpheusInterfaces.xml</DocumentationFile>
   </PropertyGroup>

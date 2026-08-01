@@ -1,5 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>OrpheusORMSQLServerDDLHelper</PackageId>
+    <Title>OrpheusORM SQL Server DDL Helper</Title>
+    <Description>OrpheusORM SQL server DDL helper is a helper class, specifically for MS SQL Server database engines.</Description>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\net9.0\OrpheusSQLServerDDLHelper.xml</DocumentationFile>
   </PropertyGroup>

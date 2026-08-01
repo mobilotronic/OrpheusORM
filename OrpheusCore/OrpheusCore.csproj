@@ -1,5 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>OrpheusORM</PackageId>
+    <Title>OrpheusORM</Title>
+    <Description>OrpheusORM is a module-oriented ORM with built-in schema evolution for .NET. Supports SQL Server, MySQL, and PostgreSQL with full async API, connection pooling, and aggregate-level persistence via the unique Module system.</Description>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\net9.0\OrpheusCore.xml</DocumentationFile>
   </PropertyGroup>
