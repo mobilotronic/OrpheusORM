@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.ModifiedRecordAction
+  commentId: T:OrpheusCore.ModifiedRecordAction
+  id: ModifiedRecordAction
+  parent: OrpheusCore
+  children:
+  - OrpheusCore.ModifiedRecordAction.mraDelete
+  - OrpheusCore.ModifiedRecordAction.mraInsert
+  - OrpheusCore.ModifiedRecordAction.mraUpdate
+  langs:
+  - csharp
+  - vb
+  name: ModifiedRecordAction
+  nameWithType: ModifiedRecordAction
+  fullName: OrpheusCore.ModifiedRecordAction
+  type: Enum
+  source:
+    remote:
+      path: OrpheusCore/Core/OrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ModifiedRecordAction
+    path: ../OrpheusCore/Core/OrpheusTable.cs
+    startLine: 133
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: Modified record action.
+  example: []
+  syntax:
+    content: public enum ModifiedRecordAction
+    content.vb: Public Enum ModifiedRecordAction
+- uid: OrpheusCore.ModifiedRecordAction.mraInsert
+  commentId: F:OrpheusCore.ModifiedRecordAction.mraInsert
+  id: mraInsert
+  parent: OrpheusCore.ModifiedRecordAction
+  langs:
+  - csharp
+  - vb
+  name: mraInsert
+  nameWithType: ModifiedRecordAction.mraInsert
+  fullName: OrpheusCore.ModifiedRecordAction.mraInsert
+  type: Field
+  source:
+    remote:
+      path: OrpheusCore/Core/OrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: mraInsert
+    path: ../OrpheusCore/Core/OrpheusTable.cs
+    startLine: 138
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: Insert a new record.
+  example: []
+  syntax:
+    content: mraInsert = 0
+    return:
+      type: OrpheusCore.ModifiedRecordAction
+- uid: OrpheusCore.ModifiedRecordAction.mraUpdate
+  commentId: F:OrpheusCore.ModifiedRecordAction.mraUpdate
+  id: mraUpdate
+  parent: OrpheusCore.ModifiedRecordAction
+  langs:
+  - csharp
+  - vb
+  name: mraUpdate
+  nameWithType: ModifiedRecordAction.mraUpdate
+  fullName: OrpheusCore.ModifiedRecordAction.mraUpdate
+  type: Field
+  source:
+    remote:
+      path: OrpheusCore/Core/OrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: mraUpdate
+    path: ../OrpheusCore/Core/OrpheusTable.cs
+    startLine: 142
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: Update an existing record.
+  example: []
+  syntax:
+    content: mraUpdate = 1
+    return:
+      type: OrpheusCore.ModifiedRecordAction
+- uid: OrpheusCore.ModifiedRecordAction.mraDelete
+  commentId: F:OrpheusCore.ModifiedRecordAction.mraDelete
+  id: mraDelete
+  parent: OrpheusCore.ModifiedRecordAction
+  langs:
+  - csharp
+  - vb
+  name: mraDelete
+  nameWithType: ModifiedRecordAction.mraDelete
+  fullName: OrpheusCore.ModifiedRecordAction.mraDelete
+  type: Field
+  source:
+    remote:
+      path: OrpheusCore/Core/OrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: mraDelete
+    path: ../OrpheusCore/Core/OrpheusTable.cs
+    startLine: 146
+  assemblies:
+  - OrpheusCore
+  namespace: OrpheusCore
+  summary: Delete an existing record.
+  example: []
+  syntax:
+    content: mraDelete = 2
+    return:
+      type: OrpheusCore.ModifiedRecordAction
+references:
+- uid: OrpheusCore
+  commentId: N:OrpheusCore
+  href: OrpheusCore.html
+  name: OrpheusCore
+  nameWithType: OrpheusCore
+  fullName: OrpheusCore
+- uid: OrpheusCore.ModifiedRecordAction
+  commentId: T:OrpheusCore.ModifiedRecordAction
+  parent: OrpheusCore
+  href: OrpheusCore.ModifiedRecordAction.html
+  name: ModifiedRecordAction
+  nameWithType: ModifiedRecordAction
+  fullName: OrpheusCore.ModifiedRecordAction

@@ -8,8 +8,11 @@ Prerequisite is to add [NLog](https://github.com/NLog/NLog.Extensions.Logging) t
 	var logger = LogManager.GetCurrentClassLogger();
 	try
 	{
+		var configurationBuilder = new ConfigurationBuilder();
+		configurationBuilder.AddJsonFile("appSettings.json", optional: false, reloadOnChange: true);
+		var configuration = configurationBuilder.Build();
+
 		IServiceCollection serviceCollection = new ServiceCollection();
-		this.configuration = this.createConfiguration("appSettings.json");
 		serviceCollection.AddLogging((builder) =>
 		{
 			builder.ClearProviders();
@@ -18,7 +21,16 @@ Prerequisite is to add [NLog](https://github.com/NLog/NLog.Extensions.Logging) t
 			builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
 			builder.AddNLog(configuration);
 		});
-		OrpheusCore.Configuration.ConfigurationManager.InitializeConfiguration(this.configuration, serviceCollection);
+
+		// AddOrpheusSqlServer (or AddOrpheusMySql/AddOrpheusPostgreSql) internally calls
+		// AddOrpheusServices(), which only falls back to console logging if nothing has
+		// registered ILoggerFactory yet — so register logging (as above) before this call.
+		var connectionConfig = new OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration();
+		configuration.GetSection("OrpheusConfiguration:DatabaseConnections:0").Bind(connectionConfig);
+		serviceCollection.AddOrpheusSqlServer(connectionConfig);
+
+		var provider = serviceCollection.BuildServiceProvider();
+		var db = provider.GetRequiredService<IOrpheusDatabase>();
 	}
 	catch (Exception e)
 	{

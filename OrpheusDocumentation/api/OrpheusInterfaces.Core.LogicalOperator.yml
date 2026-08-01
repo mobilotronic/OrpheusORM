@@ -1,0 +1,147 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.LogicalOperator
+  commentId: T:OrpheusInterfaces.Core.LogicalOperator
+  id: LogicalOperator
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.LogicalOperator.loAND
+  - OrpheusInterfaces.Core.LogicalOperator.loNOT
+  - OrpheusInterfaces.Core.LogicalOperator.loOR
+  langs:
+  - csharp
+  - vb
+  name: LogicalOperator
+  nameWithType: LogicalOperator
+  fullName: OrpheusInterfaces.Core.LogicalOperator
+  type: Enum
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LogicalOperator
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 13
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Logical operator
+  example: []
+  syntax:
+    content: public enum LogicalOperator
+    content.vb: Public Enum LogicalOperator
+- uid: OrpheusInterfaces.Core.LogicalOperator.loAND
+  commentId: F:OrpheusInterfaces.Core.LogicalOperator.loAND
+  id: loAND
+  parent: OrpheusInterfaces.Core.LogicalOperator
+  langs:
+  - csharp
+  - vb
+  name: loAND
+  nameWithType: LogicalOperator.loAND
+  fullName: OrpheusInterfaces.Core.LogicalOperator.loAND
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: loAND
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 18
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: The AND operator displays a record if all the conditions separated by AND is TRUE.
+  example: []
+  syntax:
+    content: loAND = 0
+    return:
+      type: OrpheusInterfaces.Core.LogicalOperator
+- uid: OrpheusInterfaces.Core.LogicalOperator.loOR
+  commentId: F:OrpheusInterfaces.Core.LogicalOperator.loOR
+  id: loOR
+  parent: OrpheusInterfaces.Core.LogicalOperator
+  langs:
+  - csharp
+  - vb
+  name: loOR
+  nameWithType: LogicalOperator.loOR
+  fullName: OrpheusInterfaces.Core.LogicalOperator.loOR
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: loOR
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 23
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: The OR operator displays a record if any of the conditions separated by OR is TRUE.
+  example: []
+  syntax:
+    content: loOR = 1
+    return:
+      type: OrpheusInterfaces.Core.LogicalOperator
+- uid: OrpheusInterfaces.Core.LogicalOperator.loNOT
+  commentId: F:OrpheusInterfaces.Core.LogicalOperator.loNOT
+  id: loNOT
+  parent: OrpheusInterfaces.Core.LogicalOperator
+  langs:
+  - csharp
+  - vb
+  name: loNOT
+  nameWithType: LogicalOperator.loNOT
+  fullName: OrpheusInterfaces.Core.LogicalOperator.loNOT
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusTable.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: loNOT
+    path: ../OrpheusInterfaces/Core/IOrpheusTable.cs
+    startLine: 28
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: The NOT operator displays a record if the condition(s) is NOT TRUE.
+  example: []
+  syntax:
+    content: loNOT = 2
+    return:
+      type: OrpheusInterfaces.Core.LogicalOperator
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.LogicalOperator
+  commentId: T:OrpheusInterfaces.Core.LogicalOperator
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.LogicalOperator.html
+  name: LogicalOperator
+  nameWithType: LogicalOperator
+  fullName: OrpheusInterfaces.Core.LogicalOperator

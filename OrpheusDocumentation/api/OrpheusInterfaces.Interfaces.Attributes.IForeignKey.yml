@@ -1,0 +1,320 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  commentId: T:OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  id: IForeignKey
+  parent: OrpheusInterfaces.Interfaces.Attributes
+  children:
+  - OrpheusInterfaces.Interfaces.Attributes.IForeignKey.Field
+  - OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnDeleteCascade
+  - OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnUpdateCascade
+  - OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceField
+  - OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceTable
+  - OrpheusInterfaces.Interfaces.Attributes.IForeignKey.SchemaName
+  langs:
+  - csharp
+  - vb
+  name: IForeignKey
+  nameWithType: IForeignKey
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IForeignKey.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IForeignKey
+    path: ../OrpheusInterfaces/Attributes/IForeignKey.cs
+    startLine: 5
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  summary: Orpheus foreign key attribute
+  example: []
+  syntax:
+    content: 'public interface IForeignKey : IOrpheusBaseAttribute'
+    content.vb: Public Interface IForeignKey Inherits IOrpheusBaseAttribute
+  derivedClasses:
+  - OrpheusAttributes.ForeignKey
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.Field
+  commentId: P:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.Field
+  id: Field
+  parent: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  langs:
+  - csharp
+  - vb
+  name: Field
+  nameWithType: IForeignKey.Field
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.Field
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IForeignKey.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Field
+    path: ../OrpheusInterfaces/Attributes/IForeignKey.cs
+    startLine: 10
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  example: []
+  syntax:
+    content: string Field { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: The foreign key field name.
+    content.vb: Property Field As String
+  overload: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.Field*
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceTable
+  commentId: P:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceTable
+  id: ReferenceTable
+  parent: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  langs:
+  - csharp
+  - vb
+  name: ReferenceTable
+  nameWithType: IForeignKey.ReferenceTable
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceTable
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IForeignKey.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ReferenceTable
+    path: ../OrpheusInterfaces/Attributes/IForeignKey.cs
+    startLine: 16
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  example: []
+  syntax:
+    content: string ReferenceTable { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The reference table.
+    content.vb: ReadOnly Property ReferenceTable As String
+  overload: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceTable*
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceField
+  commentId: P:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceField
+  id: ReferenceField
+  parent: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  langs:
+  - csharp
+  - vb
+  name: ReferenceField
+  nameWithType: IForeignKey.ReferenceField
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceField
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IForeignKey.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ReferenceField
+    path: ../OrpheusInterfaces/Attributes/IForeignKey.cs
+    startLine: 22
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  example: []
+  syntax:
+    content: string ReferenceField { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The reference table key.
+    content.vb: ReadOnly Property ReferenceField As String
+  overload: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceField*
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnDeleteCascade
+  commentId: P:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnDeleteCascade
+  id: OnDeleteCascade
+  parent: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  langs:
+  - csharp
+  - vb
+  name: OnDeleteCascade
+  nameWithType: IForeignKey.OnDeleteCascade
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnDeleteCascade
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IForeignKey.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: OnDeleteCascade
+    path: ../OrpheusInterfaces/Attributes/IForeignKey.cs
+    startLine: 28
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  example: []
+  syntax:
+    content: bool OnDeleteCascade { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: Set to true to enable cascade delete.
+    content.vb: ReadOnly Property OnDeleteCascade As Boolean
+  overload: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnDeleteCascade*
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnUpdateCascade
+  commentId: P:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnUpdateCascade
+  id: OnUpdateCascade
+  parent: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  langs:
+  - csharp
+  - vb
+  name: OnUpdateCascade
+  nameWithType: IForeignKey.OnUpdateCascade
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnUpdateCascade
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IForeignKey.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: OnUpdateCascade
+    path: ../OrpheusInterfaces/Attributes/IForeignKey.cs
+    startLine: 34
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  example: []
+  syntax:
+    content: bool OnUpdateCascade { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: Set to true to enable cascade update.
+    content.vb: ReadOnly Property OnUpdateCascade As Boolean
+  overload: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnUpdateCascade*
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.SchemaName
+  commentId: P:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.SchemaName
+  id: SchemaName
+  parent: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  langs:
+  - csharp
+  - vb
+  name: SchemaName
+  nameWithType: IForeignKey.SchemaName
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.SchemaName
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IForeignKey.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SchemaName
+    path: ../OrpheusInterfaces/Attributes/IForeignKey.cs
+    startLine: 39
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  example: []
+  syntax:
+    content: string SchemaName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: Optional. Set the schema name of the reference table, if there is one.
+    content.vb: Property SchemaName As String
+  overload: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.SchemaName*
+references:
+- uid: OrpheusInterfaces.Interfaces.Attributes
+  commentId: N:OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Interfaces.Attributes
+  nameWithType: OrpheusInterfaces.Interfaces.Attributes
+  fullName: OrpheusInterfaces.Interfaces.Attributes
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.Field*
+  commentId: Overload:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.Field
+  href: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html#OrpheusInterfaces_Interfaces_Attributes_IForeignKey_Field
+  name: Field
+  nameWithType: IForeignKey.Field
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.Field
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceTable*
+  commentId: Overload:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceTable
+  href: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html#OrpheusInterfaces_Interfaces_Attributes_IForeignKey_ReferenceTable
+  name: ReferenceTable
+  nameWithType: IForeignKey.ReferenceTable
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceTable
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceField*
+  commentId: Overload:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceField
+  href: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html#OrpheusInterfaces_Interfaces_Attributes_IForeignKey_ReferenceField
+  name: ReferenceField
+  nameWithType: IForeignKey.ReferenceField
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.ReferenceField
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnDeleteCascade*
+  commentId: Overload:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnDeleteCascade
+  href: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html#OrpheusInterfaces_Interfaces_Attributes_IForeignKey_OnDeleteCascade
+  name: OnDeleteCascade
+  nameWithType: IForeignKey.OnDeleteCascade
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnDeleteCascade
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnUpdateCascade*
+  commentId: Overload:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnUpdateCascade
+  href: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html#OrpheusInterfaces_Interfaces_Attributes_IForeignKey_OnUpdateCascade
+  name: OnUpdateCascade
+  nameWithType: IForeignKey.OnUpdateCascade
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.OnUpdateCascade
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.SchemaName*
+  commentId: Overload:OrpheusInterfaces.Interfaces.Attributes.IForeignKey.SchemaName
+  href: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html#OrpheusInterfaces_Interfaces_Attributes_IForeignKey_SchemaName
+  name: SchemaName
+  nameWithType: IForeignKey.SchemaName
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.SchemaName

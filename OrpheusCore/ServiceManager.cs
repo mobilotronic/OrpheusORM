@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using OrpheusCore.Configuration.Models;
 using OrpheusCore.SchemaBuilder;
@@ -13,26 +13,22 @@ using System.Reflection;
 namespace OrpheusCore
 {
     /// <summary>
-    /// Class to register internal services needed by Orpheus
+    /// Class to register internal services needed by Orpheus.
+    /// In v2.0.0+, prefer constructor injection via IServiceProvider/ILoggerFactory
+    /// over the static methods. The ServiceProvider property is deprecated.
     /// </summary>
     public static class ServiceManager
     {
         #region private
-        private static Assembly[] assemblies;
         private static ILoggerFactory loggerFactory;
-        /// <summary>
-        /// This set of services are necessary for Orpheus to function.
-        /// </summary>
-        /// <param name="serviceCollection"></param>
+
         private static void initializeServices(IServiceCollection serviceCollection)
         {
-            //data services.
             serviceCollection.AddTransient<IOrpheusTableOptions, OrpheusTableOptions>();
             serviceCollection.AddTransient<IOrpheusModuleDefinition, OrpheusModuleDefinition>();
             serviceCollection.AddTransient<IOrpheusTableKeyField, OrpheusTableKeyField>();
             serviceCollection.AddTransient<IOrpheusModule, OrpheusModule>();
 
-            //Schema services.
             serviceCollection.AddTransient<ISchema, Schema>();
             serviceCollection.AddTransient<ISchemaView, SchemaObjectView>();
             serviceCollection.AddTransient<ISchemaViewTable, SchemaObjectViewTable>();
@@ -40,191 +36,164 @@ namespace OrpheusCore
             serviceCollection.AddTransient<ISchemaObject, SchemaObject>();
             serviceCollection.AddTransient<ISchemaJoinDefinition, SchemaJoinDefinition>();
             serviceCollection.AddTransient<ISchemaDataObject, SchemaDataObject>();
-            //configuration services
+
             serviceCollection.AddTransient<IDatabaseConnectionConfiguration, DatabaseConnectionConfiguration>();
-            //if there is no service provider registered, register at least one, so Orpheus can work.
-            var isLoggingRegistered = serviceCollection.Where((sd => sd.ServiceType == typeof(ILoggerFactory))).FirstOrDefault();
-            if (isLoggingRegistered == null)
+
+            var isLoggingRegistered = serviceCollection.Any(sd => sd.ServiceType == typeof(ILoggerFactory));
+            if (!isLoggingRegistered)
             {
-                serviceCollection.AddLogging((builder) =>
+                serviceCollection.AddLogging(builder =>
                 {
                     builder.ClearProviders();
                     builder.AddConsole();
                 });
             }
         }
+
+        /// <summary>
+        /// Finds a constructor whose parameter types are assignable from
+        /// the provided arguments (not just exact type match).
+        /// </summary>
+        private static ConstructorInfo FindMatchingConstructor(Type type, object[] args)
+        {
+            foreach (var ctor in type.GetConstructors())
+            {
+                var parameters = ctor.GetParameters();
+                if (parameters.Length != args.Length)
+                    continue;
+
+                bool match = true;
+                for (int i = 0; i < args.Length; i++)
+                {
+                    if (args[i] != null && !parameters[i].ParameterType.IsAssignableFrom(args[i].GetType()))
+                    {
+                        match = false;
+                        break;
+                    }
+                }
+                if (match)
+                    return ctor;
+            }
+            return null;
+        }
         #endregion
 
         #region initialization
         /// <summary>
-        /// Register Orpheus services
+        /// Registers the internal services Orpheus needs at runtime: table options, module and
+        /// schema types, a default <see cref="IDatabaseConnectionConfiguration"/>, and (only if
+        /// nothing has registered <see cref="ILoggerFactory"/> yet) a console logger fallback.
+        /// Engine-specific connection factories and DDL helpers are <b>not</b> registered here — use
+        /// the per-engine <c>AddOrpheusSqlServer</c>/<c>AddOrpheusMySql</c>/<c>AddOrpheusPostgreSql</c>
+        /// extension methods (which call this internally) instead of calling this directly.
         /// </summary>
-        /// <param name="services"></param>
-        /// <returns></returns>
+        /// <param name="services">The service collection to register Orpheus's services into.</param>
+        /// <returns>The same <paramref name="services"/> instance, for chaining.</returns>
         public static IServiceCollection AddOrpheusServices(this IServiceCollection services)
         {
-            ServiceManager.initializeServices(services);
+            initializeServices(services);
             return services;
         }
         #endregion
 
         #region service resolution
+
         /// <summary>
-        /// This needs to be provided as not all classes within Orpheus can have constructor dependency injection.
+        /// The service provider used by <see cref="Resolve{T}()"/>, <see cref="LoggerFactory"/>, and
+        /// the other static resolution helpers below. Must be assigned (typically right after
+        /// building the service collection with <c>BuildServiceProvider()</c>) before calling them.
         /// </summary>
+        [Obsolete("Prefer constructor injection of IServiceProvider. This static property is retained for backward compatibility.")]
         public static IServiceProvider ServiceProvider { get; set; }
 
         /// <summary>
-        /// Resolve an interface to a concrete implementation.
+        /// Resolves a service of type <typeparamref name="T"/> from <see cref="ServiceProvider"/>.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
         public static T Resolve<T>()
         {
-            T result;
-            try
-            {
-                result = ServiceProvider.GetService<T>();
-            }
-            catch
-            {
-                throw;
-            }
-            return result;
+            return ServiceProvider.GetService<T>();
         }
 
         /// <summary>
-        /// Resolve an interface to a concrete implementation, with constructor parameter support.
+        /// Resolves a service by type from <see cref="ServiceProvider"/>. When
+        /// <paramref name="constructorParameters"/> is supplied, instead of returning the
+        /// DI-resolved instance directly, this looks up the resolved service's concrete type and
+        /// invokes whichever of its constructors' parameter types are assignable from the supplied
+        /// arguments — for constructing an instance with runtime-known arguments that aren't
+        /// themselves resolvable from the container.
         /// </summary>
-        /// <param name="serviceType"></param>
-        /// <param name="constructorParameters"></param>
-        /// <returns></returns>
+        /// <param name="serviceType">The service type to resolve.</param>
+        /// <param name="constructorParameters">
+        /// Constructor arguments to invoke a matching constructor with, or null/empty to just return
+        /// the DI-resolved instance.
+        /// </param>
         public static object Resolve(Type serviceType, object[] constructorParameters)
         {
-            try
-            {
-                List<Type> parametersType = new List<Type>();
-                List<object> parameterValues = new List<object>();
-                foreach (var obj in constructorParameters)
-                {
-                    if (obj != null)
-                    {
-                        parametersType.Add(obj.GetType());
-                        parameterValues.Add(obj);
-                    }
-                }
+            if (constructorParameters == null || constructorParameters.Length == 0)
+                return ServiceProvider.GetService(serviceType);
 
-                if (assemblies == null)
-                    assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            var concreteType = ServiceProvider.GetService(serviceType)?.GetType();
+            if (concreteType == null)
+                return null;
 
-                //var concreteType = assemblies.Where(x => x.FullName.Contains("Orpheus")).SelectMany(x => x.GetTypes())
-                //                .Where(x => typeof(T).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
-                //                .ToList().FirstOrDefault();
+            var ctor = FindMatchingConstructor(concreteType, constructorParameters);
+            if (ctor != null)
+                return ctor.Invoke(constructorParameters);
 
-                var concreteType = assemblies.Where(asm => asm.IsDynamic == false).SelectMany(x => x.GetExportedTypes())
-                                .Where(x => serviceType.IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
-                                .ToList().FirstOrDefault();
-
-                if (concreteType != null)
-                {
-                    //try to find a matching constructor based on the constructor parameters.
-                    //if a constructor is found, then instantiate the class.
-                    ConstructorInfo[] constructors = concreteType.GetConstructors();
-                    ConstructorInfo constructorInfo = concreteType.GetConstructor(parametersType.ToArray());
-                    if (constructorInfo != null)
-                    {
-                        return constructorInfo.Invoke(parameterValues.ToArray());
-                    }
-                }
-            }
-            catch
-            {
-                throw;
-            }
             return null;
         }
 
         /// <summary>
-        /// Resolve an interface to a concrete implementation, with constructor parameter support.
+        /// Generic counterpart of <see cref="Resolve(Type, object[])"/>.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <param name="constructorParameters">
+        /// Constructor arguments to invoke a matching constructor with, or null/empty to just return
+        /// the DI-resolved instance.
+        /// </param>
         public static T Resolve<T>(object[] constructorParameters)
         {
-            try
-            {
-                List<Type> parametersType = new List<Type>();
-                List<object> parameterValues = new List<object>();
-                foreach (var obj in constructorParameters)
-                {
-                    if (obj != null)
-                    {
-                        parametersType.Add(obj.GetType());
-                        parameterValues.Add(obj);
-                    }
-                }
+            if (constructorParameters == null || constructorParameters.Length == 0)
+                return ServiceProvider.GetService<T>();
 
-                if (assemblies == null)
-                    assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            var concreteType = ServiceProvider.GetService<T>()?.GetType();
+            if (concreteType == null)
+                return default;
 
-                //var concreteType = assemblies.Where(x => x.FullName.Contains("Orpheus")).SelectMany(x => x.GetTypes())
-                //                .Where(x => typeof(T).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
-                //                .ToList().FirstOrDefault();
+            var ctor = FindMatchingConstructor(concreteType, constructorParameters);
+            if (ctor != null)
+                return (T)ctor.Invoke(constructorParameters);
 
-                var concreteType = assemblies.Where(asm => asm.IsDynamic == false).SelectMany(x => x.GetExportedTypes())
-                                .Where(x => typeof(T).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
-                                .ToList().FirstOrDefault();
-
-                if (concreteType != null)
-                {
-                    //try to find a matching constructor based on the constructor parameters.
-                    //if a constructor is found, then instantiate the class.
-                    ConstructorInfo[] constructors = concreteType.GetConstructors();
-                    ConstructorInfo constructorInfo = concreteType.GetConstructor(parametersType.ToArray());
-                    if (constructorInfo != null)
-                    {
-                        return (T)constructorInfo.Invoke(parameterValues.ToArray());
-                    }
-                }
-            }
-            catch
-            {
-                throw;
-            }
-            return default(T);
+            return default;
         }
 
         /// <summary>
-        /// Gets the logger factory.
+        /// The <see cref="ILoggerFactory"/> resolved from <see cref="ServiceProvider"/>, cached
+        /// after the first access.
         /// </summary>
-        /// <value>
-        /// The logger factory.
-        /// </value>
         public static ILoggerFactory LoggerFactory
         {
             get
             {
                 if (loggerFactory == null)
-                {
-                    loggerFactory = Resolve<ILoggerFactory>();
-                }
+                    loggerFactory = ServiceProvider.GetService<ILoggerFactory>();
                 return loggerFactory;
             }
         }
+
         /// <summary>
-        /// Creates a logger.
+        /// Creates a logger for <typeparamref name="T"/> via <see cref="LoggerFactory"/>. Returns
+        /// null if no <see cref="ILoggerFactory"/> is registered in <see cref="ServiceProvider"/>.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
         public static ILogger<T> CreateLogger<T>()
         {
-            return LoggerFactory.CreateLogger<T>();
+            return LoggerFactory?.CreateLogger<T>();
         }
+
         /// <summary>
-        /// Creates a logger.
+        /// Resolves an arbitrary service by type from <see cref="ServiceProvider"/>. Despite the
+        /// name, this is not limited to logging-related services — it's a general-purpose lookup.
         /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <param name="type">The service type to resolve.</param>
         public static object GetLoggerService(Type type)
         {
             return ServiceProvider.GetService(type);

@@ -1,5 +1,7 @@
 ﻿using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Schema;
+using System.Threading;
+using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,6 +12,7 @@ namespace OrpheusInterfaces.Core
     /// Orpheus database access component.
     /// </summary>
     public interface IOrpheusDatabase
+    : IDisposable
     {
         /// <summary>
         /// Connects to the database engine defined in the connection string.
@@ -33,6 +36,14 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <returns>True if database is connected</returns>
         bool Connected { get; }
+
+        /// <summary>
+        /// The connection factory this database was constructed with, if any. DDL helpers use it to
+        /// open auxiliary connections (schema introspection, administrative/system-database access)
+        /// that share the same pooling configuration as the main connection. Null if this database
+        /// was constructed from a raw <see cref="IDbConnection"/> instead of a connection factory.
+        /// </summary>
+        IOrpheusConnectionFactory ConnectionFactory { get; }
 
         /// <value>
         /// Last active transaction.
@@ -68,6 +79,21 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <param name="transaction">Transaction to be rolled-back.</param>
         void RollbackTransaction(IDbTransaction transaction);
+
+        /// <summary>
+        /// Asynchronously creates a transaction object.
+        /// </summary>
+        Task<IDbTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously commits a transaction.
+        /// </summary>
+        Task CommitTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously rolls back a transaction.
+        /// </summary>
+        Task RollbackTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create a DbCommand.
@@ -230,5 +256,32 @@ namespace OrpheusInterfaces.Core
         /// Database connection configuration.
         /// </value>
         IDatabaseConnectionConfiguration DatabaseConnectionConfiguration { get; set; }
+
+        #region Async methods
+        /// <summary>
+        /// Asynchronously connects to the database engine.
+        /// </summary>
+        Task ConnectAsync(string connectionString = null, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously disconnects from the database engine.
+        /// </summary>
+        Task DisconnectAsync();
+
+        /// <summary>
+        /// Asynchronously executes a SQL statement and returns the result as typed models.
+        /// </summary>
+        Task<List<T>> SQLAsync<T>(string SQL, string tableName = null, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously executes a prepared DbCommand and returns the result as typed models.
+        /// </summary>
+        Task<List<T>> SQLAsync<T>(IDbCommand dbCommand, string tableName = null, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously executes a DDL command.
+        /// </summary>
+        Task<bool> ExecuteDDLAsync(string DDLCommand, CancellationToken cancellationToken = default);
+        #endregion
     }
 }

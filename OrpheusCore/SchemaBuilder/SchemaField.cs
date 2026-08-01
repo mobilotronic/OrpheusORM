@@ -1,4 +1,5 @@
-﻿using OrpheusInterfaces.Schema;
+using OrpheusInterfaces.Core;
+using OrpheusInterfaces.Schema;
 using System;
 
 namespace OrpheusCore.SchemaBuilder
@@ -79,22 +80,33 @@ namespace OrpheusCore.SchemaBuilder
             var fieldName = this.Alias != null ? this.FullFieldName + " AS " + this.Alias : this.FullFieldName;
             if (this.Size != null)
                 result = String.Format("{0}{1}{2} {3} ({4}) {5}", 
-                    this.schemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                    this.schemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                     fieldName,
-                    this.schemaObject.DB.DDLHelper.DelimitedIndetifierEnd,
+                    this.schemaObject.DB.DDLHelper.DelimitedIdentifierEnd,
                     this.DataType,
                     this.Size,
                     this.Nullable ? "" :"NOT NULL");
             else
                 result = String.Format("{0}{1}{2} {3} {4}",
-                    this.schemaObject.DB.DDLHelper.DelimitedIndetifierStart,
+                    this.schemaObject.DB.DDLHelper.DelimitedIdentifierStart,
                     fieldName,
-                    this.schemaObject.DB.DDLHelper.DelimitedIndetifierEnd,
+                    this.schemaObject.DB.DDLHelper.DelimitedIdentifierEnd,
                     this.DataType, 
                     this.Nullable ? "" : "NOT NULL");
             if(this.DefaultValue != null)
             {
-                result = String.Format(result + " " + " DEFAULT {0}",this.DefaultValue);
+                // [DefaultValue] on a bool property carries its raw attribute value (e.g. the int 1),
+                // which becomes the literal "1"/"0" here regardless of the field's actual SQL type.
+                // SQL Server's BIT and MySQL's BOOL/TINYINT both accept 1/0 as a DEFAULT literal, but
+                // PostgreSQL's real BOOLEAN type doesn't — it needs TRUE/FALSE.
+                var defaultValue = this.DefaultValue;
+                if (this.schemaObject.DB.DDLHelper.DbEngineType == DatabaseEngineType.dbPostgreSQL
+                    && string.Equals(this.DataType, "BOOLEAN", StringComparison.OrdinalIgnoreCase)
+                    && (defaultValue == "1" || defaultValue == "0"))
+                {
+                    defaultValue = defaultValue == "1" ? "TRUE" : "FALSE";
+                }
+                result = String.Format(result + " " + " DEFAULT {0}", defaultValue);
             }
             return result;
         }

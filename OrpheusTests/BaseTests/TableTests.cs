@@ -26,13 +26,9 @@ namespace OrpheusTests
             usersTable.Add(this.GetRandomUsersForTesting(recordCount));
 
             IDbTransaction trans = this.Database.BeginTransaction();
-            //var deleteCommand = this.Database.CreateCommand();
             Stopwatch sw = new Stopwatch();
             try
             {
-                //deleteCommand.CommandText = "DELETE FROM TestModelUser";
-                //deleteCommand.Transaction = trans;
-                //deleteCommand.ExecuteNonQuery();
                 Trace.TraceInformation(DateTime.Now.ToString() + " Running TestCreateCommand - Creating " + recordCount.ToString() + " records");
                 sw.Start();
                 usersTable.ExecuteInserts(trans);
@@ -334,7 +330,7 @@ namespace OrpheusTests
             usersTable.Add(usersData);
             usersTable.Save();
 
-            var users = this.Database.SQL<TestModelUser>("select * from TestModelUser where email ='admin@test.com'");
+            var users = this.Database.SQL<TestModelUser>($"select * from TestModelUser where {this.Database.DDLHelper.SafeFormatField("Email")} ='admin@test.com'");
             foreach(var usr in users)
             {
                 Assert.AreEqual("admin@test.com", usr.Email);

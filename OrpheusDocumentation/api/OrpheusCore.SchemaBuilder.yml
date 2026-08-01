@@ -1,0 +1,119 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusCore.SchemaBuilder
+  commentId: N:OrpheusCore.SchemaBuilder
+  id: OrpheusCore.SchemaBuilder
+  children:
+  - OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint
+  - OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint
+  - OrpheusCore.SchemaBuilder.Schema
+  - OrpheusCore.SchemaBuilder.SchemaDataObject
+  - OrpheusCore.SchemaBuilder.SchemaField
+  - OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  - OrpheusCore.SchemaBuilder.SchemaObject
+  - OrpheusCore.SchemaBuilder.SchemaObjectTable
+  - OrpheusCore.SchemaBuilder.SchemaObjectView
+  - OrpheusCore.SchemaBuilder.SchemaObjectViewTable
+  - OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint
+  langs:
+  - csharp
+  - vb
+  name: OrpheusCore.SchemaBuilder
+  nameWithType: OrpheusCore.SchemaBuilder
+  fullName: OrpheusCore.SchemaBuilder
+  type: Namespace
+  assemblies:
+  - OrpheusCore
+references:
+- uid: OrpheusCore.SchemaBuilder.Schema
+  commentId: T:OrpheusCore.SchemaBuilder.Schema
+  href: OrpheusCore.SchemaBuilder.Schema.html
+  name: Schema
+  nameWithType: Schema
+  fullName: OrpheusCore.SchemaBuilder.Schema
+- uid: OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint
+  commentId: T:OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint
+  parent: OrpheusCore.SchemaBuilder
+  href: OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint.html
+  name: PrimaryKeySchemaConstraint
+  nameWithType: PrimaryKeySchemaConstraint
+  fullName: OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint
+- uid: OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint
+  commentId: T:OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint
+  href: OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint.html
+  name: ForeignKeySchemaConstraint
+  nameWithType: ForeignKeySchemaConstraint
+  fullName: OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint
+- uid: OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint
+  commentId: T:OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint
+  href: OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint.html
+  name: UniqueKeySchemaConstraint
+  nameWithType: UniqueKeySchemaConstraint
+  fullName: OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint
+- uid: OrpheusCore.SchemaBuilder.SchemaField
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaField
+  href: OrpheusCore.SchemaBuilder.SchemaField.html
+  name: SchemaField
+  nameWithType: SchemaField
+  fullName: OrpheusCore.SchemaBuilder.SchemaField
+- uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+  href: OrpheusCore.SchemaBuilder.SchemaJoinDefinition.html
+  name: SchemaJoinDefinition
+  nameWithType: SchemaJoinDefinition
+  fullName: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+- uid: OrpheusCore.SchemaBuilder.SchemaObject
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaObject
+  parent: OrpheusCore.SchemaBuilder
+  href: OrpheusCore.SchemaBuilder.SchemaObject.html
+  name: SchemaObject
+  nameWithType: SchemaObject
+  fullName: OrpheusCore.SchemaBuilder.SchemaObject
+- uid: OrpheusCore.SchemaBuilder.SchemaDataObject
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaDataObject
+  parent: OrpheusCore.SchemaBuilder
+  href: OrpheusCore.SchemaBuilder.SchemaDataObject.html
+  name: SchemaDataObject
+  nameWithType: SchemaDataObject
+  fullName: OrpheusCore.SchemaBuilder.SchemaDataObject
+- uid: OrpheusCore.SchemaBuilder.SchemaObjectTable
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaObjectTable
+  parent: OrpheusCore.SchemaBuilder
+  href: OrpheusCore.SchemaBuilder.SchemaObjectTable.html
+  name: SchemaObjectTable
+  nameWithType: SchemaObjectTable
+  fullName: OrpheusCore.SchemaBuilder.SchemaObjectTable
+- uid: OrpheusCore.SchemaBuilder.SchemaObjectViewTable
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaObjectViewTable
+  href: OrpheusCore.SchemaBuilder.SchemaObjectViewTable.html
+  name: SchemaObjectViewTable
+  nameWithType: SchemaObjectViewTable
+  fullName: OrpheusCore.SchemaBuilder.SchemaObjectViewTable
+- uid: OrpheusCore.SchemaBuilder.SchemaObjectView
+  commentId: T:OrpheusCore.SchemaBuilder.SchemaObjectView
+  href: OrpheusCore.SchemaBuilder.SchemaObjectView.html
+  name: SchemaObjectView
+  nameWithType: SchemaObjectView
+  fullName: OrpheusCore.SchemaBuilder.SchemaObjectView
+- uid: OrpheusCore.SchemaBuilder
+  commentId: N:OrpheusCore.SchemaBuilder
+  href: OrpheusCore.html
+  name: OrpheusCore.SchemaBuilder
+  nameWithType: OrpheusCore.SchemaBuilder
+  fullName: OrpheusCore.SchemaBuilder
+  spec.csharp:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.SchemaBuilder
+    name: SchemaBuilder
+    href: OrpheusCore.SchemaBuilder.html
+  spec.vb:
+  - uid: OrpheusCore
+    name: OrpheusCore
+    href: OrpheusCore.html
+  - name: .
+  - uid: OrpheusCore.SchemaBuilder
+    name: SchemaBuilder
+    href: OrpheusCore.SchemaBuilder.html

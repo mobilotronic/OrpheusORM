@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/upgrade-to-net-8/OrpheusDocumentation/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusDocumentation/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -81,6 +81,18 @@
 <p>By default Orpheus assumes that your table names will match your model class names. But you can override this assumption, by decorating your model classes with the [TableName] attribute and essentially map your model to the database table.</p>
 <h2 id="nested-data">Nested Data</h2>
 <p>Using an OrpheusModule you can save nested data (master-detail-subdetail) with just one Save. All master-detail relationships and keys will be updated automatically.</p>
+<h2 id="multiple-database-engines">Multiple Database Engines</h2>
+<p>Orpheus supports SQL Server, MySQL, and PostgreSQL out of the box, each via its own DDL helper
+package. See <a href="documentation/orpheus_ddl_helper.html">Orpheus DDL Helper</a>.</p>
+<h2 id="async">Async</h2>
+<p>Every I/O method has an async counterpart (<code>LoadAsync</code>/<code>SaveAsync</code>) backed by real async ADO.NET
+I/O. See <a href="documentation/orpheus_table.html">Orpheus Table</a>.</p>
+<h2 id="batching">Batching</h2>
+<p>Save() chunks pending Add/Update/Delete operations into multi-row commands instead of one round
+trip per row. See <a href="documentation/orpheus_table.html">Orpheus Table</a>.</p>
+<h2 id="connection-pooling">Connection Pooling</h2>
+<p>Connections are leased from the ADO.NET connection pool, with pool size and idle timeout
+configurable per connection. See <a href="documentation/orpheus_connecting_to_db.html">Connecting to a database</a>.</p>
 
 </article>
 

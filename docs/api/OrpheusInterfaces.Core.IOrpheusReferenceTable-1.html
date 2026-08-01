@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusReferenceTable_1.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusReferenceTable%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/modernazitation-effort/apiSpec/new?filename=OrpheusInterfaces_Core_IOrpheusReferenceTable_1.md&amp;value=---%0Auid%3A%20OrpheusInterfaces.Core.IOrpheusReferenceTable%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,11 +89,11 @@
 
 
   <h1 id="OrpheusInterfaces_Core_IOrpheusReferenceTable_1" data-uid="OrpheusInterfaces.Core.IOrpheusReferenceTable`1" class="text-break">
-Interface IOrpheusReferenceTable&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusInterfaces/Core/IOrpheusTable.cs/#L298"><i class="bi bi-code-slash"></i></a>
+Interface IOrpheusReferenceTable&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusInterfaces/Core/IOrpheusTable.cs/#L334"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.Core.html">OrpheusInterfaces.Core</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="OrpheusInterfaces.html">OrpheusInterfaces</a>.<a class="xref" href="OrpheusInterfaces.Core.html">Core</a></dd></dl>
   <dl><dt>Assembly</dt><dd>OrpheusInterfaces.dll</dd></dl>
   </div>
 
@@ -102,7 +102,7 @@ Interface IOrpheusReferenceTable&lt;T&gt;  <a class="header-action link-secondar
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IOrpheusReferenceTable&lt;T&gt; : IOrpheusReferenceTable, IOrpheusTable</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IOrpheusReferenceTable&lt;T&gt; : IOrpheusReferenceTable, IOrpheusTable, IDisposable</code></pre>
   </div>
 
 
@@ -145,6 +145,9 @@ Interface IOrpheusReferenceTable&lt;T&gt;  <a class="header-action link-secondar
       <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Level">IOrpheusTable.Level</a>
     </div>
     <div>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_BatchSize">IOrpheusTable.BatchSize</a>
+    </div>
+    <div>
       <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteDeletes_System_Data_IDbTransaction_">IOrpheusTable.ExecuteDeletes(IDbTransaction)</a>
     </div>
     <div>
@@ -154,16 +157,16 @@ Interface IOrpheusReferenceTable&lt;T&gt;  <a class="header-action link-secondar
       <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ExecuteInserts_System_Data_IDbTransaction_">IOrpheusTable.ExecuteInserts(IDbTransaction)</a>
     </div>
     <div>
-      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_List_System_Object__System_Boolean_">IOrpheusTable.Load(List&lt;Object&gt;, Boolean)</a>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_List_System_Object__System_Boolean_">IOrpheusTable.Load(List&lt;object&gt;, bool)</a>
     </div>
     <div>
-      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_">IOrpheusTable.Load(Dictionary&lt;String, List&lt;Object&gt;&gt;, LogicalOperator, Boolean)</a>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_Object___OrpheusInterfaces_Core_LogicalOperator_System_Boolean_">IOrpheusTable.Load(Dictionary&lt;string, List&lt;object&gt;&gt;, LogicalOperator, bool)</a>
     </div>
     <div>
-      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_String_System_Boolean_">IOrpheusTable.Load(String, Boolean)</a>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_String_System_Boolean_">IOrpheusTable.Load(string, bool)</a>
     </div>
     <div>
-      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Data_IDbCommand_System_Boolean_">IOrpheusTable.Load(IDbCommand, Boolean)</a>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Load_System_Data_IDbCommand_System_Boolean_">IOrpheusTable.Load(IDbCommand, bool)</a>
     </div>
     <div>
       <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_ClearData">IOrpheusTable.ClearData()</a>
@@ -172,13 +175,16 @@ Interface IOrpheusReferenceTable&lt;T&gt;  <a class="header-action link-secondar
       <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_GetKeyValues">IOrpheusTable.GetKeyValues()</a>
     </div>
     <div>
-      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Save_System_Data_IDbTransaction_System_Boolean_">IOrpheusTable.Save(IDbTransaction, Boolean)</a>
+      <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_Save_System_Data_IDbTransaction_System_Boolean_">IOrpheusTable.Save(IDbTransaction, bool)</a>
     </div>
     <div>
       <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_OnBeforeSave">IOrpheusTable.OnBeforeSave</a>
     </div>
     <div>
       <a class="xref" href="OrpheusInterfaces.Core.IOrpheusTable.html#OrpheusInterfaces_Core_IOrpheusTable_OnAfterSave">IOrpheusTable.OnAfterSave</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable.dispose">IDisposable.Dispose()</a>
     </div>
   </dd></dl>
 

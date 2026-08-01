@@ -14,7 +14,7 @@ usersTable.Add(new TestModelUser()
     UserName = "Admin",
     PasswordHash = "!@##%$#%$%#DFSDasdf43w3re",
     PasswordSalt = "$%TG*(sdfsfr687",
-    Email = admin@test.com,
+    Email = "admin@test.com",
     Active = 1,
     UserProfileId = Guid.Parse("3C9EA0CB-885E-476F-A919-6E97484CE633"),
     UserGroupId = Guid.Parse("ABA227B9-1E82-4FFB-9A50-94AED2D41869")
@@ -39,3 +39,4 @@ purpose and how to use them.
 * [Orpheus Module](orpheus_module.md)
 * [Orpheus DI Configuration](orpheus_and_di.md)
 * [Orpheus DDL Helper](orpheus_ddl_helper.md)
+* [Connecting to a database](orpheus_connecting_to_db.md)

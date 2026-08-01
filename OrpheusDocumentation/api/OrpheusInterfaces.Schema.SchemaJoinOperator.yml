@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Schema.SchemaJoinOperator
+  commentId: T:OrpheusInterfaces.Schema.SchemaJoinOperator
+  id: SchemaJoinOperator
+  parent: OrpheusInterfaces.Schema
+  children:
+  - OrpheusInterfaces.Schema.SchemaJoinOperator.joEquals
+  - OrpheusInterfaces.Schema.SchemaJoinOperator.joNotEquals
+  langs:
+  - csharp
+  - vb
+  name: SchemaJoinOperator
+  nameWithType: SchemaJoinOperator
+  fullName: OrpheusInterfaces.Schema.SchemaJoinOperator
+  type: Enum
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SchemaJoinOperator
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 36
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Join operator type.
+  example: []
+  syntax:
+    content: public enum SchemaJoinOperator
+    content.vb: Public Enum SchemaJoinOperator
+- uid: OrpheusInterfaces.Schema.SchemaJoinOperator.joEquals
+  commentId: F:OrpheusInterfaces.Schema.SchemaJoinOperator.joEquals
+  id: joEquals
+  parent: OrpheusInterfaces.Schema.SchemaJoinOperator
+  langs:
+  - csharp
+  - vb
+  name: joEquals
+  nameWithType: SchemaJoinOperator.joEquals
+  fullName: OrpheusInterfaces.Schema.SchemaJoinOperator.joEquals
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: joEquals
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 41
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Equals.
+  example: []
+  syntax:
+    content: joEquals = 0
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinOperator
+- uid: OrpheusInterfaces.Schema.SchemaJoinOperator.joNotEquals
+  commentId: F:OrpheusInterfaces.Schema.SchemaJoinOperator.joNotEquals
+  id: joNotEquals
+  parent: OrpheusInterfaces.Schema.SchemaJoinOperator
+  langs:
+  - csharp
+  - vb
+  name: joNotEquals
+  nameWithType: SchemaJoinOperator.joNotEquals
+  fullName: OrpheusInterfaces.Schema.SchemaJoinOperator.joNotEquals
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: joNotEquals
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 46
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Not equals.
+  example: []
+  syntax:
+    content: joNotEquals = 1
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinOperator
+references:
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Schema.SchemaJoinOperator
+  commentId: T:OrpheusInterfaces.Schema.SchemaJoinOperator
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaJoinOperator.html
+  name: SchemaJoinOperator
+  nameWithType: SchemaJoinOperator
+  fullName: OrpheusInterfaces.Schema.SchemaJoinOperator

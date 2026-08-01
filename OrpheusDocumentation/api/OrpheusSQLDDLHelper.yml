@@ -1,0 +1,44 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusSQLDDLHelper
+  commentId: N:OrpheusSQLDDLHelper
+  id: OrpheusSQLDDLHelper
+  children:
+  - OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper
+  - OrpheusSQLDDLHelper.OrpheusSQLServerDatabase
+  - OrpheusSQLDDLHelper.ServiceCollectionExtensions
+  - OrpheusSQLDDLHelper.SqlConnectionFactory
+  langs:
+  - csharp
+  - vb
+  name: OrpheusSQLDDLHelper
+  nameWithType: OrpheusSQLDDLHelper
+  fullName: OrpheusSQLDDLHelper
+  type: Namespace
+  assemblies:
+  - OrpheusSQLServerDDLHelper
+references:
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase
+  commentId: T:OrpheusSQLDDLHelper.OrpheusSQLServerDatabase
+  href: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.html
+  name: OrpheusSQLServerDatabase
+  nameWithType: OrpheusSQLServerDatabase
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase
+- uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper
+  commentId: T:OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper
+  href: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html
+  name: OrpheusSQLServerDDLHelper
+  nameWithType: OrpheusSQLServerDDLHelper
+  fullName: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper
+- uid: OrpheusSQLDDLHelper.ServiceCollectionExtensions
+  commentId: T:OrpheusSQLDDLHelper.ServiceCollectionExtensions
+  href: OrpheusSQLDDLHelper.ServiceCollectionExtensions.html
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: OrpheusSQLDDLHelper.ServiceCollectionExtensions
+- uid: OrpheusSQLDDLHelper.SqlConnectionFactory
+  commentId: T:OrpheusSQLDDLHelper.SqlConnectionFactory
+  href: OrpheusSQLDDLHelper.SqlConnectionFactory.html
+  name: SqlConnectionFactory
+  nameWithType: SqlConnectionFactory
+  fullName: OrpheusSQLDDLHelper.SqlConnectionFactory

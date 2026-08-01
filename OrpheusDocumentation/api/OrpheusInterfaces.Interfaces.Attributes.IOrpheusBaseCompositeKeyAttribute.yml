@@ -1,0 +1,184 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+  commentId: T:OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+  id: IOrpheusBaseCompositeKeyAttribute
+  parent: OrpheusInterfaces.Interfaces.Attributes
+  children:
+  - OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Fields
+  - OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Sort
+  langs:
+  - csharp
+  - vb
+  name: IOrpheusBaseCompositeKeyAttribute
+  nameWithType: IOrpheusBaseCompositeKeyAttribute
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IOrpheusBaseCompositeKeyAttribute.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IOrpheusBaseCompositeKeyAttribute
+    path: ../OrpheusInterfaces/Attributes/IOrpheusBaseCompositeKeyAttribute.cs
+    startLine: 5
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  summary: Orpheus composite key attribute
+  example: []
+  syntax:
+    content: 'public interface IOrpheusBaseCompositeKeyAttribute : IOrpheusBaseAttribute'
+    content.vb: Public Interface IOrpheusBaseCompositeKeyAttribute Inherits IOrpheusBaseAttribute
+  derivedClasses:
+  - OrpheusAttributes.OrpheusCompositeKeyBaseAttribute
+  - OrpheusAttributes.PrimaryCompositeKey
+  - OrpheusAttributes.UniqueCompositeKey
+- uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Fields
+  commentId: P:OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Fields
+  id: Fields
+  parent: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+  langs:
+  - csharp
+  - vb
+  name: Fields
+  nameWithType: IOrpheusBaseCompositeKeyAttribute.Fields
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Fields
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IOrpheusBaseCompositeKeyAttribute.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Fields
+    path: ../OrpheusInterfaces/Attributes/IOrpheusBaseCompositeKeyAttribute.cs
+    startLine: 11
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  summary: List of fields that are the key.
+  example: []
+  syntax:
+    content: string[] Fields { get; }
+    parameters: []
+    return:
+      type: System.String[]
+      description: Array of field names
+    content.vb: ReadOnly Property Fields As String()
+  overload: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Fields*
+- uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Sort
+  commentId: P:OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Sort
+  id: Sort
+  parent: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+  langs:
+  - csharp
+  - vb
+  name: Sort
+  nameWithType: IOrpheusBaseCompositeKeyAttribute.Sort
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Sort
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Attributes/IOrpheusBaseCompositeKeyAttribute.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Sort
+    path: ../OrpheusInterfaces/Attributes/IOrpheusBaseCompositeKeyAttribute.cs
+    startLine: 17
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Interfaces.Attributes
+  summary: Sort for the key.
+  example: []
+  syntax:
+    content: string Sort { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: Sort direction
+    content.vb: ReadOnly Property Sort As String
+  overload: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Sort*
+references:
+- uid: OrpheusInterfaces.Interfaces.Attributes
+  commentId: N:OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Interfaces.Attributes
+  nameWithType: OrpheusInterfaces.Interfaces.Attributes
+  fullName: OrpheusInterfaces.Interfaces.Attributes
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html
+- uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Fields*
+  commentId: Overload:OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Fields
+  href: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html#OrpheusInterfaces_Interfaces_Attributes_IOrpheusBaseCompositeKeyAttribute_Fields
+  name: Fields
+  nameWithType: IOrpheusBaseCompositeKeyAttribute.Fields
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Fields
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Sort*
+  commentId: Overload:OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Sort
+  href: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html#OrpheusInterfaces_Interfaces_Attributes_IOrpheusBaseCompositeKeyAttribute_Sort
+  name: Sort
+  nameWithType: IOrpheusBaseCompositeKeyAttribute.Sort
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.Sort
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

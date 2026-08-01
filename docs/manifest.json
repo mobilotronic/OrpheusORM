@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Workspaces/Github/OrpheusORM/OrpheusDocumentation",
+  "source_base_path": "C:/Development/Github/OrpheusORM/OrpheusDocumentation",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -41,7 +41,11 @@
           "relative_path": "api/OrpheusAttributes.DataTypeAttribute.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.DataTypeAttribute",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.DataTypeAttribute.yml\" sourcestartlinenumber=\"1\">Annotate a property with attribute to set it's DbType</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -51,7 +55,11 @@
           "relative_path": "api/OrpheusAttributes.DefaultValue.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.DefaultValue",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.DefaultValue.yml\" sourcestartlinenumber=\"1\">Default value attribute.\nDecorate a property with attribute to set it's default value.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -61,7 +69,11 @@
           "relative_path": "api/OrpheusAttributes.FieldName.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.FieldName",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.FieldName.yml\" sourcestartlinenumber=\"1\">FieldName attribute. Decorate a model property with this attribute,\nto explicitly define the corresponding field name in the db table.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -71,7 +83,11 @@
           "relative_path": "api/OrpheusAttributes.ForeignKey.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.ForeignKey",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.ForeignKey.yml\" sourcestartlinenumber=\"1\">Primary key constraint attribute.\nDecorate a property with attribute to create a foreign key constraint on a schema object.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -81,7 +97,11 @@
           "relative_path": "api/OrpheusAttributes.Length.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.Length",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.Length.yml\" sourcestartlinenumber=\"1\">Length attribute.\nDecorate a property with attribute to set a maximum length value.\nApplies only to string types.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -91,7 +111,11 @@
           "relative_path": "api/OrpheusAttributes.OrpheusBaseAttribute.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.OrpheusBaseAttribute",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.OrpheusBaseAttribute.yml\" sourcestartlinenumber=\"1\">Orpheus base attribute.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -101,7 +125,11 @@
           "relative_path": "api/OrpheusAttributes.OrpheusCompositeKeyBaseAttribute.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.OrpheusCompositeKeyBaseAttribute",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.OrpheusCompositeKeyBaseAttribute.yml\" sourcestartlinenumber=\"1\">Composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -111,7 +139,11 @@
           "relative_path": "api/OrpheusAttributes.PrimaryCompositeKey.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.PrimaryCompositeKey",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.PrimaryCompositeKey.yml\" sourcestartlinenumber=\"1\">Primary composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -121,7 +153,11 @@
           "relative_path": "api/OrpheusAttributes.PrimaryKey.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.PrimaryKey",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.PrimaryKey.yml\" sourcestartlinenumber=\"1\">Primary key constraint attribute.\nDecorate a property with attribute to create a primary key constraint on a schema object.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -131,7 +167,11 @@
           "relative_path": "api/OrpheusAttributes.RequiredField.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.RequiredField",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.RequiredField.yml\" sourcestartlinenumber=\"1\">Required field attribute.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -141,7 +181,11 @@
           "relative_path": "api/OrpheusAttributes.SQLServerSchemaName.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.SQLServerSchemaName",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.SQLServerSchemaName.yml\" sourcestartlinenumber=\"1\">Schema name attribute. Decorate a class with this attribute, to define to which schema the model exists.\nIt's only applicable when the underlying database engine is SQL server, as it's the only one, from the supported database engines, that has this functionality.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -151,7 +195,11 @@
           "relative_path": "api/OrpheusAttributes.SchemaIgnore.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.SchemaIgnore",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.SchemaIgnore.yml\" sourcestartlinenumber=\"1\">SchemaIgnore attribute. Decorate a model property to indicate\nthat it's not part of the actual db table schema.\nUseful for dynamically calculated/defined model properties.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -161,7 +209,11 @@
           "relative_path": "api/OrpheusAttributes.TableName.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.TableName",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.TableName.yml\" sourcestartlinenumber=\"1\">TableName attribute. Decorate a model with this attribute to\nto explicitly define the corresponding db table name.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -171,7 +223,11 @@
           "relative_path": "api/OrpheusAttributes.UniqueCompositeKey.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.UniqueCompositeKey",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.UniqueCompositeKey.yml\" sourcestartlinenumber=\"1\">Unique composite key attribute, to decorate models that have primary or unique keys that are comprised from than one field.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -181,7 +237,11 @@
           "relative_path": "api/OrpheusAttributes.UniqueKey.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes.UniqueKey",
+      "Summary": "<p sourcefile=\"api/OrpheusAttributes.UniqueKey.yml\" sourcestartlinenumber=\"1\">Unique key constraint attribute.\nDecorate a property with attribute to create a unique key constraint on a schema object.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -191,7 +251,11 @@
           "relative_path": "api/OrpheusAttributes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusAttributes",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -201,7 +265,25 @@
           "relative_path": "api/OrpheusCore.Configuration.ConfigurationManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration.ConfigurationManager",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.Configuration.ConfigurationManager.yml\" sourcestartlinenumber=\"1\">Orpheus configuration manager.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.LoggingConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.LoggingConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration.LoggingConfiguration",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.Configuration.LoggingConfiguration.yml\" sourcestartlinenumber=\"1\">Logging configuration model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -211,7 +293,11 @@
           "relative_path": "api/OrpheusCore.Configuration.Models.DIBinderOptions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration.Models.DIBinderOptions",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.Configuration.Models.DIBinderOptions.yml\" sourcestartlinenumber=\"1\">Binder options with dependency injection type resolution support.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -221,7 +307,11 @@
           "relative_path": "api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration.yml\" sourcestartlinenumber=\"1\">Orpheus database configuration.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -231,7 +321,11 @@
           "relative_path": "api/OrpheusCore.Configuration.Models.OrpheusConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration.Models.OrpheusConfiguration",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.Configuration.Models.OrpheusConfiguration.yml\" sourcestartlinenumber=\"1\">Orpheus's configuration.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -241,7 +335,11 @@
           "relative_path": "api/OrpheusCore.Configuration.Models.ServiceProviderItem.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration.Models.ServiceProviderItem",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.Configuration.Models.ServiceProviderItem.yml\" sourcestartlinenumber=\"1\">Service DI configuration item.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -251,7 +349,11 @@
           "relative_path": "api/OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration.Models.TardigradeConfigurationBinder",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.Configuration.Models.TardigradeConfigurationBinder.yml\" sourcestartlinenumber=\"1\">Configuration extensions, with DI support.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -261,7 +363,25 @@
           "relative_path": "api/OrpheusCore.Configuration.Models.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusCore.Configuration.OrpheusConfigurationExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusCore.Configuration.OrpheusConfigurationExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration.OrpheusConfigurationExtensions",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.Configuration.OrpheusConfigurationExtensions.yml\" sourcestartlinenumber=\"1\">Extension methods for resolving an <xref href=\"OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration\" data-throw-if-not-resolved=\"false\"></xref> out of\nan <xref href=\"Microsoft.Extensions.Configuration.IConfiguration\" data-throw-if-not-resolved=\"false\"></xref> (e.g. an appsettings/OrpheusConfig.json file).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -271,7 +391,11 @@
           "relative_path": "api/OrpheusCore.Configuration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Configuration",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -281,7 +405,11 @@
           "relative_path": "api/OrpheusCore.Errors.ErrorCodes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Errors.ErrorCodes",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.Errors.ErrorCodes.yml\" sourcestartlinenumber=\"1\">List of known Orpheus error codes.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -291,7 +419,11 @@
           "relative_path": "api/OrpheusCore.Errors.ErrorDictionary.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Errors.ErrorDictionary",
+      "Summary": ""
     },
     {
       "type": "ManagedReference",
@@ -301,7 +433,11 @@
           "relative_path": "api/OrpheusCore.Errors.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.Errors",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -311,7 +447,11 @@
           "relative_path": "api/OrpheusCore.ModelProperty.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.ModelProperty",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.ModelProperty.yml\" sourcestartlinenumber=\"1\">Helper delegate, to be called when iterating through model's properties.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -321,7 +461,11 @@
           "relative_path": "api/OrpheusCore.ModifiedRecordAction.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.ModifiedRecordAction",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.ModifiedRecordAction.yml\" sourcestartlinenumber=\"1\">Modified record action.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -331,7 +475,11 @@
           "relative_path": "api/OrpheusCore.OrpheusDatabase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.OrpheusDatabase",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.OrpheusDatabase.yml\" sourcestartlinenumber=\"1\">Orpheus database.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -341,7 +489,11 @@
           "relative_path": "api/OrpheusCore.OrpheusModelHelper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.OrpheusModelHelper",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.OrpheusModelHelper.yml\" sourcestartlinenumber=\"1\">OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -351,7 +503,11 @@
           "relative_path": "api/OrpheusCore.OrpheusModule.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.OrpheusModule",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.OrpheusModule.yml\" sourcestartlinenumber=\"1\">OrpheusModule class represents a logical division and grouping of a set of tables.\nFor example you can an OrdersModule, which will be comprised from many different tables.\nOrders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,\nwill be saved as well. All master-detail relationships and keys will be updated automatically.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -361,7 +517,11 @@
           "relative_path": "api/OrpheusCore.OrpheusModuleDefinition.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.OrpheusModuleDefinition",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.OrpheusModuleDefinition.yml\" sourcestartlinenumber=\"1\">The OrpheusModuleDefinition can save and load a module definition. A module definition, includes relationship between the module tables\nand that is required for a module to be functional. <xref href=\"OrpheusInterfaces.Core.IOrpheusModule\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -371,7 +531,11 @@
           "relative_path": "api/OrpheusCore.OrpheusTable-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.OrpheusTable<T>",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.OrpheusTable-1.yml\" sourcestartlinenumber=\"1\">Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.\nHolds all the data of the connected table.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -381,7 +545,11 @@
           "relative_path": "api/OrpheusCore.OrpheusTableKeyField.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.OrpheusTableKeyField",
+      "Summary": ""
     },
     {
       "type": "ManagedReference",
@@ -391,7 +559,11 @@
           "relative_path": "api/OrpheusCore.OrpheusTableOptions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.OrpheusTableOptions",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.OrpheusTableOptions.yml\" sourcestartlinenumber=\"1\">Represents <xref href=\"OrpheusInterfaces.Core.IOrpheusTable\" data-throw-if-not-resolved=\"false\"></xref> options, which can be used to instantiate a table.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -401,7 +573,11 @@
           "relative_path": "api/OrpheusCore.PropertyAttribute.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.PropertyAttribute",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.PropertyAttribute.yml\" sourcestartlinenumber=\"1\">Helper delegate, to be called when iterating through property's attributes.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -411,7 +587,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint.yml\" sourcestartlinenumber=\"1\">A foreign key constraint.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -421,7 +601,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint.yml\" sourcestartlinenumber=\"1\">A primary key constraint.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -431,7 +615,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.Schema.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.Schema",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.Schema.yml\" sourcestartlinenumber=\"1\">Represents an Orpheus Schema.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -441,7 +629,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaDataObject.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.SchemaDataObject",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.SchemaDataObject.yml\" sourcestartlinenumber=\"1\">Base schema data object.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -451,7 +643,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaField.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.SchemaField",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.SchemaField.yml\" sourcestartlinenumber=\"1\">Represents a schema field.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -461,7 +657,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaJoinDefinition.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.SchemaJoinDefinition",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.SchemaJoinDefinition.yml\" sourcestartlinenumber=\"1\">Represents a schema join definition, which can be used by <xref href=\"OrpheusInterfaces.Schema.ISchemaObject\" data-throw-if-not-resolved=\"false\"></xref> when a schema is created.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -471,7 +671,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObject.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.SchemaObject",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.SchemaObject.yml\" sourcestartlinenumber=\"1\">Base schema object.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -481,7 +685,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectTable.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.SchemaObjectTable",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.SchemaObjectTable.yml\" sourcestartlinenumber=\"1\">Derived class to specifically handle TABLE type schema objects.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -491,7 +699,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectView.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.SchemaObjectView",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.SchemaObjectView.yml\" sourcestartlinenumber=\"1\">Derived class to specifically handle VIEW type schema objects.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -501,7 +713,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.SchemaObjectViewTable.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.SchemaObjectViewTable",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.SchemaObjectViewTable.yml\" sourcestartlinenumber=\"1\">Derived class to specifically handle data tables that are part of a view.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -511,7 +727,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint.yml\" sourcestartlinenumber=\"1\">A unique key constraint.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -521,7 +741,11 @@
           "relative_path": "api/OrpheusCore.SchemaBuilder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.SchemaBuilder",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -531,7 +755,11 @@
           "relative_path": "api/OrpheusCore.ServiceManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore.ServiceManager",
+      "Summary": "<p sourcefile=\"api/OrpheusCore.ServiceManager.yml\" sourcestartlinenumber=\"1\">Class to register internal services needed by Orpheus.\nIn v2.0.0+, prefer constructor injection via IServiceProvider/ILoggerFactory\nover the static methods. The ServiceProvider property is deprecated.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -541,7 +769,11 @@
           "relative_path": "api/OrpheusCore.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusCore",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -551,7 +783,11 @@
           "relative_path": "api/OrpheusInterfaces.Configuration.EncyrptConnection.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Configuration.EncyrptConnection",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Configuration.EncyrptConnection.yml\" sourcestartlinenumber=\"1\">Database encryption connection mode</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -561,7 +797,11 @@
           "relative_path": "api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.yml\" sourcestartlinenumber=\"1\">Database connection configuration.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -571,7 +811,11 @@
           "relative_path": "api/OrpheusInterfaces.Configuration.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Configuration",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -581,7 +825,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.DatabaseEngineType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.DatabaseEngineType",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.DatabaseEngineType.yml\" sourcestartlinenumber=\"1\">Database engine type.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -591,7 +839,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.ExtendedDbTypes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.ExtendedDbTypes",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.ExtendedDbTypes.yml\" sourcestartlinenumber=\"1\">Extended DbTypes enumeration, for types that are not listed in the generic DbType enumeration.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -601,7 +853,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IModifyRecordEventArguments<T>",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IModifyRecordEventArguments-1.yml\" sourcestartlinenumber=\"1\">Orpheus record modify event. Occurs when data are processed in memory.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -611,7 +867,25 @@
           "relative_path": "api/OrpheusInterfaces.Core.IMySQLServerDDLHelper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IMySQLServerDDLHelper",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IMySQLServerDDLHelper.yml\" sourcestartlinenumber=\"1\">MySQL Server specific DDL helper definition.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Core.IOrpheusConnectionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Core.IOrpheusConnectionFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusConnectionFactory",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusConnectionFactory.yml\" sourcestartlinenumber=\"1\">Factory that creates database connections from the ADO.NET connection pool.\nImplementations are specific to each database engine (SQL Server, MySQL, PostgreSQL).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -621,7 +895,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusDDLHelper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusDDLHelper",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusDDLHelper.yml\" sourcestartlinenumber=\"1\">Abstract definition of DDL helper.\nDDL helper is used to execute DB engine specific DDL commands.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -631,7 +909,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusDatabase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusDatabase",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusDatabase.yml\" sourcestartlinenumber=\"1\">Orpheus database access component.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -641,7 +923,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusModelHelper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusModelHelper",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusModelHelper.yml\" sourcestartlinenumber=\"1\">Orpheus model helper</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -651,7 +937,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusModule.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusModule",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusModule.yml\" sourcestartlinenumber=\"1\">OrpheusModule represents a logical division and grouping of a set of tables.\nFor example you can an OrdersModule, which will be comprised from many different tables.\nOrders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,\nwill be saved as well. All master-detail relationships and keys will be updated automatically.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -661,7 +951,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusModuleDefinition.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusModuleDefinition",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusModuleDefinition.yml\" sourcestartlinenumber=\"1\">The definition/database properties of a module.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -671,7 +965,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusReferenceTable-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusReferenceTable<T>",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusReferenceTable-1.yml\" sourcestartlinenumber=\"1\">Orpheus reference table.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -681,7 +979,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusReferenceTable.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusReferenceTable",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusReferenceTable.yml\" sourcestartlinenumber=\"1\">Orpheus reference table.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -691,7 +993,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTable-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusTable<T>",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusTable-1.yml\" sourcestartlinenumber=\"1\">Orpheus table is the core component of an Orpheus module. Every module needs to have at least 1 table.\nHolds all the data of the connected table.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -701,7 +1007,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTable.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusTable",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusTable.yml\" sourcestartlinenumber=\"1\">Orpheus table is the core Orpheus data object. It is responsible for performing data operations.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -711,7 +1021,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTableKeyField.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusTableKeyField",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusTableKeyField.yml\" sourcestartlinenumber=\"1\">Represents an Orpheus table key field.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -721,7 +1035,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.IOrpheusTableOptions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.IOrpheusTableOptions",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.IOrpheusTableOptions.yml\" sourcestartlinenumber=\"1\">Represents <xref href=\"OrpheusInterfaces.Core.IOrpheusTable\" data-throw-if-not-resolved=\"false\"></xref> options, which can be used to instantiate a table.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -731,7 +1049,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.ISQLServerDDLHelper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.ISQLServerDDLHelper",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.ISQLServerDDLHelper.yml\" sourcestartlinenumber=\"1\">SQL Server specific DDL helper definition.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -741,7 +1063,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.ISaveEventArguments.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.ISaveEventArguments",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.ISaveEventArguments.yml\" sourcestartlinenumber=\"1\">Orpheus save event arguments. Occurs when data are actually being save to the database.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -751,7 +1077,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.LogicalOperator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core.LogicalOperator",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Core.LogicalOperator.yml\" sourcestartlinenumber=\"1\">Logical operator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -761,7 +1091,11 @@
           "relative_path": "api/OrpheusInterfaces.Core.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Core",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -771,7 +1105,11 @@
           "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Interfaces.Attributes.IForeignKey",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Interfaces.Attributes.IForeignKey.yml\" sourcestartlinenumber=\"1\">Orpheus foreign key attribute</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -781,7 +1119,11 @@
           "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.yml\" sourcestartlinenumber=\"1\">Orpheus base attribute.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -791,7 +1133,11 @@
           "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.yml\" sourcestartlinenumber=\"1\">Orpheus composite key attribute</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -801,7 +1147,11 @@
           "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.yml\" sourcestartlinenumber=\"1\">Orpheus primary key attribute</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -811,7 +1161,11 @@
           "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Interfaces.Attributes.IUniqueKey",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.yml\" sourcestartlinenumber=\"1\">Orpheus unique key attribute</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -821,7 +1175,67 @@
           "relative_path": "api/OrpheusInterfaces.Interfaces.Attributes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Interfaces.Attributes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Logging.IFileLoggingConfiguration",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Logging.IFileLoggingConfiguration.yml\" sourcestartlinenumber=\"1\">File logging configuration contract.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Logging.ILogEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Logging.ILogEntry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Logging.ILogEntry",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Logging.ILogEntry.yml\" sourcestartlinenumber=\"1\">Represents a single log entry.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Logging.IOrpheusLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Logging.IOrpheusLogger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Logging.IOrpheusLogger",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Logging.IOrpheusLogger.yml\" sourcestartlinenumber=\"1\">Orpheus logger contract.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusInterfaces.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusInterfaces.Logging.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Logging",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -831,7 +1245,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.DDLAction.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.DDLAction",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.DDLAction.yml\" sourcestartlinenumber=\"1\">DDL action.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -841,7 +1259,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.IForeignKeySchemaConstraint",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.IForeignKeySchemaConstraint.yml\" sourcestartlinenumber=\"1\">A foreign key constraint.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -851,7 +1273,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint.yml\" sourcestartlinenumber=\"1\">A primary key constraint.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -861,7 +1287,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.ISchema.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.ISchema",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.ISchema.yml\" sourcestartlinenumber=\"1\">Represents an Orpheus Schema.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -871,7 +1301,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.ISchemaConstraint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.ISchemaConstraint",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.ISchemaConstraint.yml\" sourcestartlinenumber=\"1\">Represents a schema constraint.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -881,7 +1315,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.ISchemaDataObject.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.ISchemaDataObject",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.ISchemaDataObject.yml\" sourcestartlinenumber=\"1\">Base schema data object interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -891,7 +1329,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.ISchemaField.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.ISchemaField",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.ISchemaField.yml\" sourcestartlinenumber=\"1\">Represents a schema field.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -901,7 +1343,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.ISchemaJoinDefinition.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.ISchemaJoinDefinition",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.ISchemaJoinDefinition.yml\" sourcestartlinenumber=\"1\">Represents a schema join definition, which can be used by <xref href=\"OrpheusInterfaces.Schema.ISchemaObject\" data-throw-if-not-resolved=\"false\"></xref> when a schema is created.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -911,7 +1357,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.ISchemaObject.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.ISchemaObject",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.ISchemaObject.yml\" sourcestartlinenumber=\"1\">Base schema object interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -921,7 +1371,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.ISchemaTable.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.ISchemaTable",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.ISchemaTable.yml\" sourcestartlinenumber=\"1\">Create table schema interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -931,7 +1385,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.ISchemaView.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.ISchemaView",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.ISchemaView.yml\" sourcestartlinenumber=\"1\">Create view schema object.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -941,7 +1399,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.ISchemaViewTable.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.ISchemaViewTable",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.ISchemaViewTable.yml\" sourcestartlinenumber=\"1\">A data table that is used in a View.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -951,7 +1413,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint.yml\" sourcestartlinenumber=\"1\">A unique key constraint.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -961,7 +1427,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.SchemaJoinOperator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.SchemaJoinOperator",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.SchemaJoinOperator.yml\" sourcestartlinenumber=\"1\">Join operator type.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -971,7 +1441,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.SchemaJoinType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.SchemaJoinType",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.SchemaJoinType.yml\" sourcestartlinenumber=\"1\">Schema join types.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -981,7 +1455,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.SchemaObjectType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.SchemaObjectType",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.SchemaObjectType.yml\" sourcestartlinenumber=\"1\">Type of a schema object.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -991,7 +1469,11 @@
           "relative_path": "api/OrpheusInterfaces.Schema.SchemaSort.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema.SchemaSort",
+      "Summary": "<p sourcefile=\"api/OrpheusInterfaces.Schema.SchemaSort.yml\" sourcestartlinenumber=\"1\">Schema sort type.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1001,7 +1483,67 @@
           "relative_path": "api/OrpheusInterfaces.Schema.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusInterfaces.Schema",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusLogger.LogEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusLogger.LogEntry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusLogger.LogEntry",
+      "Summary": "<p sourcefile=\"api/OrpheusLogger.LogEntry.yml\" sourcestartlinenumber=\"1\">Log entry model.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusLogger.OrpheusFileLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusLogger.OrpheusFileLogger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusLogger.OrpheusFileLogger",
+      "Summary": "<p sourcefile=\"api/OrpheusLogger.OrpheusFileLogger.yml\" sourcestartlinenumber=\"1\">Orpheus default logger implementation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusLogger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusLogger",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusMySQLDDLHelper.MySqlConnectionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusMySQLDDLHelper.MySqlConnectionFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusMySQLDDLHelper.MySqlConnectionFactory",
+      "Summary": "<p sourcefile=\"api/OrpheusMySQLDDLHelper.MySqlConnectionFactory.yml\" sourcestartlinenumber=\"1\">Creates pooled MySQL connections from an <xref href=\"OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1011,7 +1553,39 @@
           "relative_path": "api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper",
+      "Summary": "<p sourcefile=\"api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.yml\" sourcestartlinenumber=\"1\">MySQL Server definition of DDL helper.\nDDL helper is used to execute DB engine specific DDL commands.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase",
+      "Summary": "<p sourcefile=\"api/OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase.yml\" sourcestartlinenumber=\"1\">Factory for creating an OrpheusDatabase backed by a pooled MySQL connection,\nwithout requiring a dependency injection container.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusMySQLDDLHelper.ServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusMySQLDDLHelper.ServiceCollectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusMySQLDDLHelper.ServiceCollectionExtensions",
+      "Summary": "<p sourcefile=\"api/OrpheusMySQLDDLHelper.ServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">Registers the services needed for an <xref href=\"OrpheusInterfaces.Core.IOrpheusDatabase\" data-throw-if-not-resolved=\"false\"></xref> backed by MySQL,\nmirroring the EF Core &quot;UseMySql&quot; provider-registration pattern.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1021,7 +1595,81 @@
           "relative_path": "api/OrpheusMySQLDDLHelper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusMySQLDDLHelper",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory",
+      "Summary": "<p sourcefile=\"api/OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory.yml\" sourcestartlinenumber=\"1\">Creates pooled PostgreSQL connections from an <xref href=\"OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper",
+      "Summary": "<p sourcefile=\"api/OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper.yml\" sourcestartlinenumber=\"1\">PostgreSQL DDL helper — generates and executes PostgreSQL-specific DDL commands.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase",
+      "Summary": "<p sourcefile=\"api/OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase.yml\" sourcestartlinenumber=\"1\">Factory for creating an OrpheusDatabase backed by a pooled PostgreSQL connection,\nwithout requiring a dependency injection container.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions",
+      "Summary": "<p sourcefile=\"api/OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">Registers the services needed for an <xref href=\"OrpheusInterfaces.Core.IOrpheusDatabase\" data-throw-if-not-resolved=\"false\"></xref> backed by PostgreSQL,\nmirroring the EF Core &quot;UseNpgsql&quot; provider-registration pattern.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusPostgreSQLDDLHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusPostgreSQLDDLHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusPostgreSQLDDLHelper",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1031,7 +1679,53 @@
           "relative_path": "api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper",
+      "Summary": "<p sourcefile=\"api/OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper.yml\" sourcestartlinenumber=\"1\">SQL Server definition of DDL helper.\nDDL helper is used to execute DB engine specific DDL commands.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusSQLDDLHelper.OrpheusSQLServerDatabase",
+      "Summary": "<p sourcefile=\"api/OrpheusSQLDDLHelper.OrpheusSQLServerDatabase.yml\" sourcestartlinenumber=\"1\">Factory for creating an OrpheusDatabase backed by a pooled SQL Server connection,\nwithout requiring a dependency injection container.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusSQLDDLHelper.ServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusSQLDDLHelper.ServiceCollectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusSQLDDLHelper.ServiceCollectionExtensions",
+      "Summary": "<p sourcefile=\"api/OrpheusSQLDDLHelper.ServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">Registers the services needed for an <xref href=\"OrpheusInterfaces.Core.IOrpheusDatabase\" data-throw-if-not-resolved=\"false\"></xref> backed by SQL Server,\nmirroring the EF Core &quot;UseSqlServer&quot; provider-registration pattern.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OrpheusSQLDDLHelper.SqlConnectionFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OrpheusSQLDDLHelper.SqlConnectionFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusSQLDDLHelper.SqlConnectionFactory",
+      "Summary": "<p sourcefile=\"api/OrpheusSQLDDLHelper.SqlConnectionFactory.yml\" sourcestartlinenumber=\"1\">Creates pooled SQL Server connections from an <xref href=\"OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1041,17 +1735,11 @@
           "relative_path": "api/OrpheusSQLDDLHelper.html"
         }
       },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "api/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "api/index.html"
-        }
-      },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "OrpheusSQLDDLHelper",
+      "Summary": null
     },
     {
       "type": "Toc",
@@ -1102,6 +1790,16 @@
       "output": {
         ".html": {
           "relative_path": "documentation/benchmarks/orpheus_benchmarking_results_1.4.0.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "documentation/benchmarks/orpheus_benchmarking_results_2.0.0.md",
+      "output": {
+        ".html": {
+          "relative_path": "documentation/benchmarks/orpheus_benchmarking_results_2.0.0.html"
         }
       },
       "version": ""

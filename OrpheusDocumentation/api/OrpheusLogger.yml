@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusLogger
+  commentId: N:OrpheusLogger
+  id: OrpheusLogger
+  children:
+  - OrpheusLogger.LogEntry
+  - OrpheusLogger.OrpheusFileLogger
+  langs:
+  - csharp
+  - vb
+  name: OrpheusLogger
+  nameWithType: OrpheusLogger
+  fullName: OrpheusLogger
+  type: Namespace
+  assemblies:
+  - OrpheusLogger
+references:
+- uid: OrpheusLogger.LogEntry
+  commentId: T:OrpheusLogger.LogEntry
+  href: OrpheusLogger.LogEntry.html
+  name: LogEntry
+  nameWithType: LogEntry
+  fullName: OrpheusLogger.LogEntry
+- uid: OrpheusLogger.OrpheusFileLogger
+  commentId: T:OrpheusLogger.OrpheusFileLogger
+  href: OrpheusLogger.OrpheusFileLogger.html
+  name: OrpheusFileLogger
+  nameWithType: OrpheusFileLogger
+  fullName: OrpheusLogger.OrpheusFileLogger

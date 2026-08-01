@@ -1,8 +1,7 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using MySql.Data.MySqlClient;
+using OrpheusPostgreSQLDDLHelper;
 using NLog;
 using NLog.Extensions.Logging;
 using OrpheusCore;
@@ -34,7 +33,8 @@ namespace OrpheusTests
     public enum DbEngine
     {
         dbSQLServer,
-        dbMySQL
+        dbMySQL,
+        dbPostgreSQL
     }
 
     public class BaseTestClass
@@ -55,7 +55,6 @@ namespace OrpheusTests
                 if (_assemblyDirectory == null)
                 {
                     string codeBase = Assembly.GetExecutingAssembly().Location;
-                    //Console.WriteLine($"Assembly path is: {codeBase}");
                     _assemblyDirectory = Path.GetDirectoryName(codeBase);
                 }
 
@@ -71,6 +70,12 @@ namespace OrpheusTests
                 var configurationBuilder = new ConfigurationBuilder();
                 configurationBuilder.SetBasePath(Path.GetDirectoryName(configurationFile));
                 configurationBuilder.AddJsonFile(configurationFile, optional: false, reloadOnChange: true);
+                //CI runners have no Windows/Kerberos environment, so integrated security can't work there;
+                //this overlay swaps SQL Server to SQL authentication only when running under GitHub Actions.
+                if (string.Equals(Environment.GetEnvironmentVariable("CI"), "true", StringComparison.OrdinalIgnoreCase))
+                {
+                    configurationBuilder.AddJsonFile("OrpheusConfig.CI.json", optional: true, reloadOnChange: true);
+                }
                 this.configuration = configurationBuilder.Build();
             }
             return this.configuration;
@@ -81,6 +86,7 @@ namespace OrpheusTests
         #region public declarations
         public const string SQLServerTests = "SQLServer";
         public const string MySQLServerTests = "MySQLServerTests";
+        public const string PostgreSQLTests = "PostgreSQLTests";
         public const string LoggerTests = "LoggerTests";
         public const string ConfigurationTests = "ConfigurationTests";
         public const string ConfigurationFileName = "OrpheusConfig.json";
@@ -111,33 +117,32 @@ namespace OrpheusTests
             //we only need to initialize once.
             if (this.configuration == null)
             {
+                // Load config before try so it always succeeds or throws clearly.
+                this.configuration = this.createConfiguration($"{this.assemblyDirectory}/{ConfigurationFileName}");
                 LogManager.Setup().LoadConfigurationFromFile($"{this.assemblyDirectory}/nlog.config");
                 var logger = LogManager.GetCurrentClassLogger();
                 try
                 {
                     if (configurationFileName == null)
                         configurationFileName = $"{this.assemblyDirectory}/{ConfigurationFileName}";
-                    //Console.WriteLine($"Configuration file is: {configurationFileName}");
                     IServiceCollection serviceCollection = new ServiceCollection();
-                    this.configuration = this.createConfiguration($"{this.assemblyDirectory}/{ConfigurationFileName}");
-                    serviceCollection.AddTransient<IOrpheusDatabase, OrpheusDatabase>();
                     serviceCollection.Configure<OrpheusConfiguration>(this.configuration.GetSection("OrpheusConfiguration"));
+
+                    string databaseConnectionName = this.DatabaseEngine switch { DbEngine.dbSQLServer => "SQLServer", DbEngine.dbMySQL => "MySQL", DbEngine.dbPostgreSQL => "PostgreSQL", _ => "SQLServer" };
+                    var orpheusConfig = new OrpheusConfiguration();
+                    this.configuration.GetSection("OrpheusConfiguration").Bind(orpheusConfig);
+                    var dbConnectionConfig = orpheusConfig.DatabaseConnections.FirstOrDefault(c => string.Equals(c.ConfigurationName, databaseConnectionName));
                     switch (this.DatabaseEngine)
                     {
                         case DbEngine.dbSQLServer:
-                            {
-                                serviceCollection.AddTransient<IDbConnection, SqlConnection>();
-                                serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusSQLServerDDLHelper>();
-                                //Console.WriteLine($"SQL services configured");
-                                break;
-                            }
+                            serviceCollection.AddOrpheusSqlServer(dbConnectionConfig);
+                            break;
                         case DbEngine.dbMySQL:
-                            {
-                                serviceCollection.AddTransient<IDbConnection, MySqlConnection>();
-                                serviceCollection.AddTransient<IOrpheusDDLHelper, OrpheusMySQLServerDDLHelper>();
-                                //Console.WriteLine($"MySQL services configured");
-                                break;
-                            }
+                            serviceCollection.AddOrpheusMySql(dbConnectionConfig);
+                            break;
+                        case DbEngine.dbPostgreSQL:
+                            serviceCollection.AddOrpheusPostgreSql(dbConnectionConfig);
+                            break;
                     }
                     serviceCollection.AddLogging((builder) =>
                     {
@@ -151,11 +156,11 @@ namespace OrpheusTests
                     this.configuration.InitializeOrpheusConfiguration();
                     var serviceProvider = serviceCollection.BuildServiceProvider();
                     ServiceManager.ServiceProvider = serviceProvider;
-                    //Console.WriteLine($"Configuration initialized");
                 }
                 catch (Exception e)
                 {
-                    logger.Log(NLog.LogLevel.Error, e);
+                    Console.Error.WriteLine($"Configuration initialization failed: {e}");
+                    throw;
                 }
             }
         }
@@ -171,11 +176,7 @@ namespace OrpheusTests
                 if (this.db == null)
                 {
                     this.InitializeConfiguration();
-                    string databaseConnectionName = this.DatabaseEngine == DbEngine.dbSQLServer ? "SQLServer" : "MySQL";
-                    var config = new OrpheusConfiguration();
-                    this.configuration.GetSection("OrpheusConfiguration").Bind(config);
                     this.db = ServiceManager.Resolve<IOrpheusDatabase>();
-                    this.db.DatabaseConnectionConfiguration = config.DatabaseConnections.FirstOrDefault(c => string.Equals(c.ConfigurationName, databaseConnectionName));
                 }
                 return this.db;
             }
@@ -189,7 +190,14 @@ namespace OrpheusTests
         public void ReCreateSchema()
         {
             var schema = this.CreateSchema();
-            schema.Drop();
+            try
+            {
+                schema.Drop();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Warning: schema drop failed (may not exist yet): {ex.Message}");
+            }
             schema.Execute();
         }
         #endregion

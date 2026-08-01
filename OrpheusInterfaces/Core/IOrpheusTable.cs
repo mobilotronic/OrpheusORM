@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Data;
 using System.Runtime.Serialization;
@@ -31,6 +33,7 @@ namespace OrpheusInterfaces.Core
     /// Orpheus table is the core Orpheus data object. It is responsible for performing data operations.
     /// </summary>
     public interface IOrpheusTable
+    : IDisposable
     {
         /// <summary>
         /// The table name.
@@ -78,6 +81,12 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         /// <returns>Table's level</returns>
         int Level { get; }
+
+        /// <summary>
+        /// Maximum number of rows batched into a single round trip when executing
+        /// queued inserts/updates/deletes. Default: 100.
+        /// </summary>
+        int BatchSize { get; set; }
         
         /// <summary>
         /// Executes any delete changes that the table has.
@@ -214,6 +223,33 @@ namespace OrpheusInterfaces.Core
         /// </summary>
         event EventHandler<IModifyRecordEventArguments<T>> OnAfterModify;
 
+
+        #region Async methods
+        /// <summary>
+        /// Asynchronously loads data from the database into the table.
+        /// </summary>
+        Task LoadAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously loads data using a key-value pair filter.
+        /// </summary>
+        Task LoadAsync(List<object> keyValues, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously loads table data by executing a SQL command.
+        /// </summary>
+        Task LoadAsync(string SQL, bool clearExistingData = true, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously loads table data by executing a db command.
+        /// </summary>
+        Task LoadAsync(IDbCommand dbCommand, bool clearExistingData = true, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Asynchronously saves all pending changes (adds, updates, deletes) to the database.
+        /// </summary>
+        Task SaveAsync(CancellationToken cancellationToken = default);
+        #endregion
     }
 
     /// <summary>

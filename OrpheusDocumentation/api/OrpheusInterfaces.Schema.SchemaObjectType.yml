@@ -1,0 +1,176 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Schema.SchemaObjectType
+  commentId: T:OrpheusInterfaces.Schema.SchemaObjectType
+  id: SchemaObjectType
+  parent: OrpheusInterfaces.Schema
+  children:
+  - OrpheusInterfaces.Schema.SchemaObjectType.sotTable
+  - OrpheusInterfaces.Schema.SchemaObjectType.sotUniqueIndex
+  - OrpheusInterfaces.Schema.SchemaObjectType.sotUnknown
+  - OrpheusInterfaces.Schema.SchemaObjectType.sotView
+  langs:
+  - csharp
+  - vb
+  name: SchemaObjectType
+  nameWithType: SchemaObjectType
+  fullName: OrpheusInterfaces.Schema.SchemaObjectType
+  type: Enum
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SchemaObjectType
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+    startLine: 10
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Type of a schema object.
+  example: []
+  syntax:
+    content: public enum SchemaObjectType
+    content.vb: Public Enum SchemaObjectType
+- uid: OrpheusInterfaces.Schema.SchemaObjectType.sotUnknown
+  commentId: F:OrpheusInterfaces.Schema.SchemaObjectType.sotUnknown
+  id: sotUnknown
+  parent: OrpheusInterfaces.Schema.SchemaObjectType
+  langs:
+  - csharp
+  - vb
+  name: sotUnknown
+  nameWithType: SchemaObjectType.sotUnknown
+  fullName: OrpheusInterfaces.Schema.SchemaObjectType.sotUnknown
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: sotUnknown
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+    startLine: 15
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Unknown type. This is the default.
+  example: []
+  syntax:
+    content: sotUnknown = 0
+    return:
+      type: OrpheusInterfaces.Schema.SchemaObjectType
+- uid: OrpheusInterfaces.Schema.SchemaObjectType.sotTable
+  commentId: F:OrpheusInterfaces.Schema.SchemaObjectType.sotTable
+  id: sotTable
+  parent: OrpheusInterfaces.Schema.SchemaObjectType
+  langs:
+  - csharp
+  - vb
+  name: sotTable
+  nameWithType: SchemaObjectType.sotTable
+  fullName: OrpheusInterfaces.Schema.SchemaObjectType.sotTable
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: sotTable
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+    startLine: 20
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Table.
+  example: []
+  syntax:
+    content: sotTable = 1
+    return:
+      type: OrpheusInterfaces.Schema.SchemaObjectType
+- uid: OrpheusInterfaces.Schema.SchemaObjectType.sotView
+  commentId: F:OrpheusInterfaces.Schema.SchemaObjectType.sotView
+  id: sotView
+  parent: OrpheusInterfaces.Schema.SchemaObjectType
+  langs:
+  - csharp
+  - vb
+  name: sotView
+  nameWithType: SchemaObjectType.sotView
+  fullName: OrpheusInterfaces.Schema.SchemaObjectType.sotView
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: sotView
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+    startLine: 25
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: View.
+  example: []
+  syntax:
+    content: sotView = 2
+    return:
+      type: OrpheusInterfaces.Schema.SchemaObjectType
+- uid: OrpheusInterfaces.Schema.SchemaObjectType.sotUniqueIndex
+  commentId: F:OrpheusInterfaces.Schema.SchemaObjectType.sotUniqueIndex
+  id: sotUniqueIndex
+  parent: OrpheusInterfaces.Schema.SchemaObjectType
+  langs:
+  - csharp
+  - vb
+  name: sotUniqueIndex
+  nameWithType: SchemaObjectType.sotUniqueIndex
+  fullName: OrpheusInterfaces.Schema.SchemaObjectType.sotUniqueIndex
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: sotUniqueIndex
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaObject.cs
+    startLine: 30
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Unique index
+  example: []
+  syntax:
+    content: sotUniqueIndex = 3
+    return:
+      type: OrpheusInterfaces.Schema.SchemaObjectType
+references:
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Schema.SchemaObjectType
+  commentId: T:OrpheusInterfaces.Schema.SchemaObjectType
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaObjectType.html
+  name: SchemaObjectType
+  nameWithType: SchemaObjectType
+  fullName: OrpheusInterfaces.Schema.SchemaObjectType

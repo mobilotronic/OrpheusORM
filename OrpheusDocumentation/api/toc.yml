@@ -1,0 +1,384 @@
+### YamlMime:TableOfContent
+items:
+- uid: OrpheusAttributes
+  name: OrpheusAttributes
+  type: Namespace
+  items:
+  - uid: OrpheusAttributes.DataTypeAttribute
+    name: DataTypeAttribute
+    type: Class
+  - uid: OrpheusAttributes.DefaultValue
+    name: DefaultValue
+    type: Class
+  - uid: OrpheusAttributes.FieldName
+    name: FieldName
+    type: Class
+  - uid: OrpheusAttributes.ForeignKey
+    name: ForeignKey
+    type: Class
+  - uid: OrpheusAttributes.Length
+    name: Length
+    type: Class
+  - uid: OrpheusAttributes.OrpheusBaseAttribute
+    name: OrpheusBaseAttribute
+    type: Class
+  - uid: OrpheusAttributes.OrpheusCompositeKeyBaseAttribute
+    name: OrpheusCompositeKeyBaseAttribute
+    type: Class
+  - uid: OrpheusAttributes.PrimaryCompositeKey
+    name: PrimaryCompositeKey
+    type: Class
+  - uid: OrpheusAttributes.PrimaryKey
+    name: PrimaryKey
+    type: Class
+  - uid: OrpheusAttributes.RequiredField
+    name: RequiredField
+    type: Class
+  - uid: OrpheusAttributes.SQLServerSchemaName
+    name: SQLServerSchemaName
+    type: Class
+  - uid: OrpheusAttributes.SchemaIgnore
+    name: SchemaIgnore
+    type: Class
+  - uid: OrpheusAttributes.TableName
+    name: TableName
+    type: Class
+  - uid: OrpheusAttributes.UniqueCompositeKey
+    name: UniqueCompositeKey
+    type: Class
+  - uid: OrpheusAttributes.UniqueKey
+    name: UniqueKey
+    type: Class
+- uid: OrpheusCore
+  name: OrpheusCore
+  type: Namespace
+  items:
+  - uid: OrpheusCore.ModelProperty
+    name: ModelProperty
+    type: Delegate
+  - uid: OrpheusCore.ModifiedRecordAction
+    name: ModifiedRecordAction
+    type: Enum
+  - uid: OrpheusCore.OrpheusDatabase
+    name: OrpheusDatabase
+    type: Class
+  - uid: OrpheusCore.OrpheusModelHelper
+    name: OrpheusModelHelper
+    type: Class
+  - uid: OrpheusCore.OrpheusModule
+    name: OrpheusModule
+    type: Class
+  - uid: OrpheusCore.OrpheusModuleDefinition
+    name: OrpheusModuleDefinition
+    type: Class
+  - uid: OrpheusCore.OrpheusTableKeyField
+    name: OrpheusTableKeyField
+    type: Class
+  - uid: OrpheusCore.OrpheusTableOptions
+    name: OrpheusTableOptions
+    type: Class
+  - uid: OrpheusCore.OrpheusTable`1
+    name: OrpheusTable<T>
+    type: Class
+  - uid: OrpheusCore.PropertyAttribute
+    name: PropertyAttribute
+    type: Delegate
+  - uid: OrpheusCore.ServiceManager
+    name: ServiceManager
+    type: Class
+- uid: OrpheusCore.Configuration
+  name: OrpheusCore.Configuration
+  type: Namespace
+  items:
+  - uid: OrpheusCore.Configuration.ConfigurationManager
+    name: ConfigurationManager
+    type: Class
+  - uid: OrpheusCore.Configuration.LoggingConfiguration
+    name: LoggingConfiguration
+    type: Class
+  - uid: OrpheusCore.Configuration.OrpheusConfigurationExtensions
+    name: OrpheusConfigurationExtensions
+    type: Class
+- uid: OrpheusCore.Configuration.Models
+  name: OrpheusCore.Configuration.Models
+  type: Namespace
+  items:
+  - uid: OrpheusCore.Configuration.Models.DIBinderOptions
+    name: DIBinderOptions
+    type: Class
+  - uid: OrpheusCore.Configuration.Models.DatabaseConnectionConfiguration
+    name: DatabaseConnectionConfiguration
+    type: Class
+  - uid: OrpheusCore.Configuration.Models.OrpheusConfiguration
+    name: OrpheusConfiguration
+    type: Class
+  - uid: OrpheusCore.Configuration.Models.ServiceProviderItem
+    name: ServiceProviderItem
+    type: Class
+  - uid: OrpheusCore.Configuration.Models.TardigradeConfigurationBinder
+    name: TardigradeConfigurationBinder
+    type: Class
+- uid: OrpheusCore.Errors
+  name: OrpheusCore.Errors
+  type: Namespace
+  items:
+  - uid: OrpheusCore.Errors.ErrorCodes
+    name: ErrorCodes
+    type: Class
+  - uid: OrpheusCore.Errors.ErrorDictionary
+    name: ErrorDictionary
+    type: Class
+- uid: OrpheusCore.SchemaBuilder
+  name: OrpheusCore.SchemaBuilder
+  type: Namespace
+  items:
+  - uid: OrpheusCore.SchemaBuilder.ForeignKeySchemaConstraint
+    name: ForeignKeySchemaConstraint
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.PrimaryKeySchemaConstraint
+    name: PrimaryKeySchemaConstraint
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.Schema
+    name: Schema
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.SchemaDataObject
+    name: SchemaDataObject
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.SchemaField
+    name: SchemaField
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.SchemaJoinDefinition
+    name: SchemaJoinDefinition
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.SchemaObject
+    name: SchemaObject
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.SchemaObjectTable
+    name: SchemaObjectTable
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.SchemaObjectView
+    name: SchemaObjectView
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.SchemaObjectViewTable
+    name: SchemaObjectViewTable
+    type: Class
+  - uid: OrpheusCore.SchemaBuilder.UniqueKeySchemaConstraint
+    name: UniqueKeySchemaConstraint
+    type: Class
+- uid: OrpheusInterfaces.Configuration
+  name: OrpheusInterfaces.Configuration
+  type: Namespace
+  items:
+  - uid: OrpheusInterfaces.Configuration.EncyrptConnection
+    name: EncyrptConnection
+    type: Enum
+  - uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+    name: IDatabaseConnectionConfiguration
+    type: Interface
+- uid: OrpheusInterfaces.Core
+  name: OrpheusInterfaces.Core
+  type: Namespace
+  items:
+  - uid: OrpheusInterfaces.Core.DatabaseEngineType
+    name: DatabaseEngineType
+    type: Enum
+  - uid: OrpheusInterfaces.Core.ExtendedDbTypes
+    name: ExtendedDbTypes
+    type: Enum
+  - uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+    name: IModifyRecordEventArguments<T>
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IMySQLServerDDLHelper
+    name: IMySQLServerDDLHelper
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+    name: IOrpheusConnectionFactory
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper
+    name: IOrpheusDDLHelper
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusDatabase
+    name: IOrpheusDatabase
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusModelHelper
+    name: IOrpheusModelHelper
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusModule
+    name: IOrpheusModule
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+    name: IOrpheusModuleDefinition
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusReferenceTable
+    name: IOrpheusReferenceTable
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusReferenceTable`1
+    name: IOrpheusReferenceTable<T>
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusTable
+    name: IOrpheusTable
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusTableKeyField
+    name: IOrpheusTableKeyField
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusTableOptions
+    name: IOrpheusTableOptions
+    type: Interface
+  - uid: OrpheusInterfaces.Core.IOrpheusTable`1
+    name: IOrpheusTable<T>
+    type: Interface
+  - uid: OrpheusInterfaces.Core.ISQLServerDDLHelper
+    name: ISQLServerDDLHelper
+    type: Interface
+  - uid: OrpheusInterfaces.Core.ISaveEventArguments
+    name: ISaveEventArguments
+    type: Interface
+  - uid: OrpheusInterfaces.Core.LogicalOperator
+    name: LogicalOperator
+    type: Enum
+- uid: OrpheusInterfaces.Interfaces.Attributes
+  name: OrpheusInterfaces.Interfaces.Attributes
+  type: Namespace
+  items:
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+    name: IForeignKey
+    type: Interface
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute
+    name: IOrpheusBaseAttribute
+    type: Interface
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+    name: IOrpheusBaseCompositeKeyAttribute
+    type: Interface
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey
+    name: IPrimaryKey
+    type: Interface
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+    name: IUniqueKey
+    type: Interface
+- uid: OrpheusInterfaces.Logging
+  name: OrpheusInterfaces.Logging
+  type: Namespace
+  items:
+  - uid: OrpheusInterfaces.Logging.IFileLoggingConfiguration
+    name: IFileLoggingConfiguration
+    type: Interface
+  - uid: OrpheusInterfaces.Logging.ILogEntry
+    name: ILogEntry
+    type: Interface
+  - uid: OrpheusInterfaces.Logging.IOrpheusLogger
+    name: IOrpheusLogger
+    type: Interface
+- uid: OrpheusInterfaces.Schema
+  name: OrpheusInterfaces.Schema
+  type: Namespace
+  items:
+  - uid: OrpheusInterfaces.Schema.DDLAction
+    name: DDLAction
+    type: Enum
+  - uid: OrpheusInterfaces.Schema.IForeignKeySchemaConstraint
+    name: IForeignKeySchemaConstraint
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.IPrimaryKeySchemaConstraint
+    name: IPrimaryKeySchemaConstraint
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.ISchema
+    name: ISchema
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.ISchemaConstraint
+    name: ISchemaConstraint
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.ISchemaDataObject
+    name: ISchemaDataObject
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.ISchemaField
+    name: ISchemaField
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.ISchemaJoinDefinition
+    name: ISchemaJoinDefinition
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.ISchemaObject
+    name: ISchemaObject
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.ISchemaTable
+    name: ISchemaTable
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.ISchemaView
+    name: ISchemaView
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.ISchemaViewTable
+    name: ISchemaViewTable
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.IUniqueKeySchemaConstraint
+    name: IUniqueKeySchemaConstraint
+    type: Interface
+  - uid: OrpheusInterfaces.Schema.SchemaJoinOperator
+    name: SchemaJoinOperator
+    type: Enum
+  - uid: OrpheusInterfaces.Schema.SchemaJoinType
+    name: SchemaJoinType
+    type: Enum
+  - uid: OrpheusInterfaces.Schema.SchemaObjectType
+    name: SchemaObjectType
+    type: Enum
+  - uid: OrpheusInterfaces.Schema.SchemaSort
+    name: SchemaSort
+    type: Enum
+- uid: OrpheusLogger
+  name: OrpheusLogger
+  type: Namespace
+  items:
+  - uid: OrpheusLogger.LogEntry
+    name: LogEntry
+    type: Class
+  - uid: OrpheusLogger.OrpheusFileLogger
+    name: OrpheusFileLogger
+    type: Class
+- uid: OrpheusMySQLDDLHelper
+  name: OrpheusMySQLDDLHelper
+  type: Namespace
+  items:
+  - uid: OrpheusMySQLDDLHelper.MySqlConnectionFactory
+    name: MySqlConnectionFactory
+    type: Class
+  - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper
+    name: OrpheusMySQLServerDDLHelper
+    type: Class
+  - uid: OrpheusMySQLDDLHelper.OrpheusMySQLServerDatabase
+    name: OrpheusMySQLServerDatabase
+    type: Class
+  - uid: OrpheusMySQLDDLHelper.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions
+    type: Class
+- uid: OrpheusPostgreSQLDDLHelper
+  name: OrpheusPostgreSQLDDLHelper
+  type: Namespace
+  items:
+  - uid: OrpheusPostgreSQLDDLHelper.NpgsqlConnectionFactory
+    name: NpgsqlConnectionFactory
+    type: Class
+  - uid: OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLDDLHelper
+    name: OrpheusPostgreSQLDDLHelper
+    type: Class
+  - uid: OrpheusPostgreSQLDDLHelper.OrpheusPostgreSQLServerDatabase
+    name: OrpheusPostgreSQLServerDatabase
+    type: Class
+  - uid: OrpheusPostgreSQLDDLHelper.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions
+    type: Class
+- uid: OrpheusSQLDDLHelper
+  name: OrpheusSQLDDLHelper
+  type: Namespace
+  items:
+  - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDDLHelper
+    name: OrpheusSQLServerDDLHelper
+    type: Class
+  - uid: OrpheusSQLDDLHelper.OrpheusSQLServerDatabase
+    name: OrpheusSQLServerDatabase
+    type: Class
+  - uid: OrpheusSQLDDLHelper.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions
+    type: Class
+  - uid: OrpheusSQLDDLHelper.SqlConnectionFactory
+    name: SqlConnectionFactory
+    type: Class
+memberLayout: SamePage

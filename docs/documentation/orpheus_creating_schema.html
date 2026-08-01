@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/upgrade-to-net-8/OrpheusDocumentation/documentation/orpheus_creating_schema.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusDocumentation/documentation/orpheus_creating_schema.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -193,6 +193,16 @@ public class Attribute
     public Guid AttributeGroupId { get; set; }
 }
 </code></pre>
+<p><strong>Note:</strong> <code>[PrimaryCompositeKey]</code>/<code>[UniqueCompositeKey]</code> are read by the schema builder when
+<em>creating</em> the table, but <code>IOrpheusTable&lt;T&gt;.KeyFields</code> (used at runtime for Load/Update/Delete)
+is only auto-populated from a single-property <code>[PrimaryKey]</code> attribute. For a model with a
+composite key, you currently need to register the key fields explicitly when creating the table:</p>
+<pre><code class="lang-csharp">var tableOptions = db.CreateTableOptions();
+tableOptions.TableName = &quot;Attribute&quot;;
+tableOptions.AddKeyField(&quot;Id&quot;);
+tableOptions.AddKeyField(&quot;AttributeGroupId&quot;);
+var attributeTable = db.CreateTable&lt;Attribute&gt;(tableOptions);
+</code></pre>
 <h3 id="creating-an-orpheus-schema">Creating an Orpheus Schema</h3>
 <p>You can use <code>IOrpheusDatabase</code> to create an <code>ISchema</code> object.</p>
 <pre><code class="lang-csharp">/// &lt;summary&gt;
@@ -201,8 +211,9 @@ public class Attribute
 /// &lt;param name=&quot;id&quot;&gt;Schema id&lt;/param&gt;
 /// &lt;param name=&quot;description&quot;&gt;Schema description&lt;/param&gt;
 /// &lt;param name=&quot;version&quot;&gt;Schema version&lt;/param&gt;
+/// &lt;param name=&quot;name&quot;&gt;Optional schema name&lt;/param&gt;
 /// &lt;returns&gt;An ISchema instance&lt;/returns&gt;
-ISchema CreateSchema(Guid id, string description, double version);
+ISchema CreateSchema(Guid id, string description, double version, string name = null);
 </code></pre>
 <p><code>ISchema</code> is the object were you have to register your models, that will eventually be your database schema.
 There are a couple of different ways to register a model into a schema, but the most straight forward one, is to

@@ -1,0 +1,205 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Schema.SchemaJoinType
+  commentId: T:OrpheusInterfaces.Schema.SchemaJoinType
+  id: SchemaJoinType
+  parent: OrpheusInterfaces.Schema
+  children:
+  - OrpheusInterfaces.Schema.SchemaJoinType.jtInner
+  - OrpheusInterfaces.Schema.SchemaJoinType.jtLeftInner
+  - OrpheusInterfaces.Schema.SchemaJoinType.jtLeftOuter
+  - OrpheusInterfaces.Schema.SchemaJoinType.jtRightInner
+  - OrpheusInterfaces.Schema.SchemaJoinType.jtRightOuter
+  langs:
+  - csharp
+  - vb
+  name: SchemaJoinType
+  nameWithType: SchemaJoinType
+  fullName: OrpheusInterfaces.Schema.SchemaJoinType
+  type: Enum
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SchemaJoinType
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 5
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Schema join types.
+  example: []
+  syntax:
+    content: public enum SchemaJoinType
+    content.vb: Public Enum SchemaJoinType
+- uid: OrpheusInterfaces.Schema.SchemaJoinType.jtLeftOuter
+  commentId: F:OrpheusInterfaces.Schema.SchemaJoinType.jtLeftOuter
+  id: jtLeftOuter
+  parent: OrpheusInterfaces.Schema.SchemaJoinType
+  langs:
+  - csharp
+  - vb
+  name: jtLeftOuter
+  nameWithType: SchemaJoinType.jtLeftOuter
+  fullName: OrpheusInterfaces.Schema.SchemaJoinType.jtLeftOuter
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: jtLeftOuter
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 10
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Left out join
+  example: []
+  syntax:
+    content: jtLeftOuter = 0
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinType
+- uid: OrpheusInterfaces.Schema.SchemaJoinType.jtLeftInner
+  commentId: F:OrpheusInterfaces.Schema.SchemaJoinType.jtLeftInner
+  id: jtLeftInner
+  parent: OrpheusInterfaces.Schema.SchemaJoinType
+  langs:
+  - csharp
+  - vb
+  name: jtLeftInner
+  nameWithType: SchemaJoinType.jtLeftInner
+  fullName: OrpheusInterfaces.Schema.SchemaJoinType.jtLeftInner
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: jtLeftInner
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 15
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Left inner join.
+  example: []
+  syntax:
+    content: jtLeftInner = 1
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinType
+- uid: OrpheusInterfaces.Schema.SchemaJoinType.jtInner
+  commentId: F:OrpheusInterfaces.Schema.SchemaJoinType.jtInner
+  id: jtInner
+  parent: OrpheusInterfaces.Schema.SchemaJoinType
+  langs:
+  - csharp
+  - vb
+  name: jtInner
+  nameWithType: SchemaJoinType.jtInner
+  fullName: OrpheusInterfaces.Schema.SchemaJoinType.jtInner
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: jtInner
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 20
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Inner join.
+  example: []
+  syntax:
+    content: jtInner = 2
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinType
+- uid: OrpheusInterfaces.Schema.SchemaJoinType.jtRightOuter
+  commentId: F:OrpheusInterfaces.Schema.SchemaJoinType.jtRightOuter
+  id: jtRightOuter
+  parent: OrpheusInterfaces.Schema.SchemaJoinType
+  langs:
+  - csharp
+  - vb
+  name: jtRightOuter
+  nameWithType: SchemaJoinType.jtRightOuter
+  fullName: OrpheusInterfaces.Schema.SchemaJoinType.jtRightOuter
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: jtRightOuter
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 25
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Right outer join.
+  example: []
+  syntax:
+    content: jtRightOuter = 3
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinType
+- uid: OrpheusInterfaces.Schema.SchemaJoinType.jtRightInner
+  commentId: F:OrpheusInterfaces.Schema.SchemaJoinType.jtRightInner
+  id: jtRightInner
+  parent: OrpheusInterfaces.Schema.SchemaJoinType
+  langs:
+  - csharp
+  - vb
+  name: jtRightInner
+  nameWithType: SchemaJoinType.jtRightInner
+  fullName: OrpheusInterfaces.Schema.SchemaJoinType.jtRightInner
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: jtRightInner
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaJoinDefinition.cs
+    startLine: 30
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Right inner join.
+  example: []
+  syntax:
+    content: jtRightInner = 4
+    return:
+      type: OrpheusInterfaces.Schema.SchemaJoinType
+references:
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Schema.SchemaJoinType
+  commentId: T:OrpheusInterfaces.Schema.SchemaJoinType
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaJoinType.html
+  name: SchemaJoinType
+  nameWithType: SchemaJoinType
+  fullName: OrpheusInterfaces.Schema.SchemaJoinType

@@ -8,6 +8,12 @@ namespace OrpheusInterfaces.Configuration
     public enum EncyrptConnection
     {
         /// <summary>
+        /// Do not encrypt the connection. Use for local dev / Docker without TLS.
+        /// </summary>
+        [JsonPropertyName("none")]
+        ecNone,
+
+        /// <summary>
         /// Optionally encrypt the connection.
         /// </summary>
         [JsonPropertyName("optional")]
@@ -29,6 +35,11 @@ namespace OrpheusInterfaces.Configuration
     /// </summary>
     public interface IDatabaseConnectionConfiguration
     {
+        /// <value>
+        /// Port number. Optional — uses the DB engine default when 0.
+        /// </value>
+        int Port { get; set; }
+
         /// <value>
         /// Database configuration name.
         /// </value>
@@ -92,5 +103,25 @@ namespace OrpheusInterfaces.Configuration
         /// Set if the connection will be encrytped or not.
         /// </summary>
         EncyrptConnection EncyrptConnection { get; set; }
+
+        /// <summary>
+        /// Whether ADO.NET connection pooling is enabled. Default: true.
+        /// </summary>
+        bool Pooling { get; set; }
+
+        /// <summary>
+        /// Minimum number of connections maintained in the pool. Default: 0.
+        /// </summary>
+        int MinPoolSize { get; set; }
+
+        /// <summary>
+        /// Maximum number of connections allowed in the pool. Default: 100.
+        /// </summary>
+        int MaxPoolSize { get; set; }
+
+        /// <summary>
+        /// Time, in seconds, a connection can remain idle in the pool before being removed. Default: 300.
+        /// </summary>
+        int ConnectionIdleTimeout { get; set; }
     }
 }

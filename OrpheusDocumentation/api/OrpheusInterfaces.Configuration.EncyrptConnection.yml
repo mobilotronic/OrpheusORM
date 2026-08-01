@@ -1,0 +1,231 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection
+  commentId: T:OrpheusInterfaces.Configuration.EncyrptConnection
+  id: EncyrptConnection
+  parent: OrpheusInterfaces.Configuration
+  children:
+  - OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory
+  - OrpheusInterfaces.Configuration.EncyrptConnection.ecNone
+  - OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional
+  - OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict
+  langs:
+  - csharp
+  - vb
+  name: EncyrptConnection
+  nameWithType: EncyrptConnection
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection
+  type: Enum
+  source:
+    remote:
+      path: OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: EncyrptConnection
+    path: ../OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+    startLine: 7
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Configuration
+  summary: Database encryption connection mode
+  example: []
+  syntax:
+    content: public enum EncyrptConnection
+    content.vb: Public Enum EncyrptConnection
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection.ecNone
+  commentId: F:OrpheusInterfaces.Configuration.EncyrptConnection.ecNone
+  id: ecNone
+  parent: OrpheusInterfaces.Configuration.EncyrptConnection
+  langs:
+  - csharp
+  - vb
+  name: ecNone
+  nameWithType: EncyrptConnection.ecNone
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection.ecNone
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ecNone
+    path: ../OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+    startLine: 12
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Configuration
+  summary: Do not encrypt the connection. Use for local dev / Docker without TLS.
+  example: []
+  syntax:
+    content: >-
+      [JsonPropertyName("none")]
+
+      ecNone = 0
+    return:
+      type: OrpheusInterfaces.Configuration.EncyrptConnection
+    content.vb: >-
+      <JsonPropertyName("none")>
+
+      ecNone = 0
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: none
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional
+  commentId: F:OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional
+  id: ecOptional
+  parent: OrpheusInterfaces.Configuration.EncyrptConnection
+  langs:
+  - csharp
+  - vb
+  name: ecOptional
+  nameWithType: EncyrptConnection.ecOptional
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ecOptional
+    path: ../OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+    startLine: 18
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Configuration
+  summary: Optionally encrypt the connection.
+  example: []
+  syntax:
+    content: >-
+      [JsonPropertyName("optional")]
+
+      ecOptional = 1
+    return:
+      type: OrpheusInterfaces.Configuration.EncyrptConnection
+    content.vb: >-
+      <JsonPropertyName("optional")>
+
+      ecOptional = 1
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: optional
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory
+  commentId: F:OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory
+  id: ecMandatory
+  parent: OrpheusInterfaces.Configuration.EncyrptConnection
+  langs:
+  - csharp
+  - vb
+  name: ecMandatory
+  nameWithType: EncyrptConnection.ecMandatory
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ecMandatory
+    path: ../OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+    startLine: 23
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Configuration
+  summary: Enforce encrypting the connection.
+  example: []
+  syntax:
+    content: >-
+      [JsonPropertyName("mandatory")]
+
+      ecMandatory = 2
+    return:
+      type: OrpheusInterfaces.Configuration.EncyrptConnection
+    content.vb: >-
+      <JsonPropertyName("mandatory")>
+
+      ecMandatory = 2
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: mandatory
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict
+  commentId: F:OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict
+  id: ecStrict
+  parent: OrpheusInterfaces.Configuration.EncyrptConnection
+  langs:
+  - csharp
+  - vb
+  name: ecStrict
+  nameWithType: EncyrptConnection.ecStrict
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ecStrict
+    path: ../OrpheusInterfaces/Configuration/IDatabaseConnectionConfiguration.cs
+    startLine: 29
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Configuration
+  summary: >-
+    Enables and requires TDS 8.0, TLS encryption to the server. If the server doesn't
+
+    support TDS 8.0, TLS encryption, the connection will fail.
+  example: []
+  syntax:
+    content: >-
+      [JsonPropertyName("strict")]
+
+      ecStrict = 3
+    return:
+      type: OrpheusInterfaces.Configuration.EncyrptConnection
+    content.vb: >-
+      <JsonPropertyName("strict")>
+
+      ecStrict = 3
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: strict
+references:
+- uid: OrpheusInterfaces.Configuration
+  commentId: N:OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Configuration
+  nameWithType: OrpheusInterfaces.Configuration
+  fullName: OrpheusInterfaces.Configuration
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+- uid: OrpheusInterfaces.Configuration.EncyrptConnection
+  commentId: T:OrpheusInterfaces.Configuration.EncyrptConnection
+  parent: OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.Configuration.EncyrptConnection.html
+  name: EncyrptConnection
+  nameWithType: EncyrptConnection
+  fullName: OrpheusInterfaces.Configuration.EncyrptConnection

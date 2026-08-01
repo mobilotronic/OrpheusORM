@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/master/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/mobilotronic/OrpheusORM/new/feature/modernazitation-effort/apiSpec/new?filename=OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper.md&amp;value=---%0Auid%3A%20OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper" class="text-break">
-Class OrpheusMySQLServerDDLHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L17"><i class="bi bi-code-slash"></i></a>
+Class OrpheusMySQLServerDDLHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +103,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class OrpheusMySQLServerDDLHelper : IMySQLServerDDLHelper, IOrpheusDDLHelper</code></pre>
+    <pre><code class="lang-csharp hljs">public class OrpheusMySQLServerDDLHelper : IMySQLServerDDLHelper, IOrpheusDDLHelper, IDisposable</code></pre>
   </div>
 
 
@@ -112,7 +112,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><span class="xref">Object</span></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><span class="xref">OrpheusMySQLServerDDLHelper</span></div>
     </dd>
   </dl>
@@ -122,6 +122,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <dd>
       <div><a class="xref" href="OrpheusInterfaces.Core.IMySQLServerDDLHelper.html">IMySQLServerDDLHelper</a></div>
       <div><a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html">IOrpheusDDLHelper</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
     </dd>
   </dl>
 
@@ -130,25 +131,25 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <span class="xref">Object.Equals(Object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
     <div>
-      <span class="xref">Object.Equals(Object, Object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <span class="xref">Object.GetHashCode()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <span class="xref">Object.GetType()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <span class="xref">Object.MemberwiseClone()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <span class="xref">Object.ReferenceEquals(Object, Object)</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <span class="xref">Object.ToString()</span>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </dd></dl>
 
@@ -163,9 +164,9 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor*"></a>
 
-  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor">
-  OrpheusMySQLServerDDLHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L573"><i class="bi bi-code-slash"></i></a>
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__ctor_Microsoft_Extensions_Logging_ILogger_OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper__" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.#ctor(Microsoft.Extensions.Logging.ILogger{OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper})">
+  OrpheusMySQLServerDDLHelper(ILogger&lt;OrpheusMySQLServerDDLHelper&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L600"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>MySQL Server DDL helper constructor.</p>
@@ -173,9 +174,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OrpheusMySQLServerDDLHelper()</code></pre>
+    <pre><code class="lang-csharp hljs">public OrpheusMySQLServerDDLHelper(ILogger&lt;OrpheusMySQLServerDDLHelper&gt; logger)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.html">OrpheusMySQLServerDDLHelper</a>&gt;</dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -196,7 +202,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ConnectionString" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ConnectionString">
   ConnectionString
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L538"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L541"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Builds the connection string.</p>
@@ -213,39 +219,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseName_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseName*"></a>
-
-  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseName" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseName">
-  DatabaseName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L525"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets the database name.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string DatabaseName { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -260,7 +234,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DB" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DB">
   DB
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L432"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L435"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Database for the DDL helper.</p>
@@ -289,11 +263,43 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
 
 
+  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseName_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseName*"></a>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseName" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseName">
+  DatabaseName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L528"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the database name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DatabaseName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbEngineType_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbEngineType*"></a>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbEngineType" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbEngineType">
   DbEngineType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L498"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L501"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the underlying database engine type.</p>
@@ -321,11 +327,11 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
 
 
-  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierEnd_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierEnd*"></a>
+  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIdentifierEnd_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIdentifierEnd*"></a>
 
-  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierEnd" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierEnd">
-  DelimitedIndetifierEnd
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L481"><i class="bi bi-code-slash"></i></a>
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIdentifierEnd" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIdentifierEnd">
+  DelimitedIdentifierEnd
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L484"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.</p>
@@ -333,7 +339,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public char DelimitedIndetifierEnd { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public char DelimitedIdentifierEnd { get; }</code></pre>
   </div>
 
 
@@ -342,7 +348,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Char</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
     <dd><p>Char</p>
 </dd>
   </dl>
@@ -354,11 +360,11 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
 
 
-  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierStart_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierStart*"></a>
+  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIdentifierStart_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIdentifierStart*"></a>
 
-  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIndetifierStart" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIndetifierStart">
-  DelimitedIndetifierStart
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L475"><i class="bi bi-code-slash"></i></a>
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DelimitedIdentifierStart" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DelimitedIdentifierStart">
+  DelimitedIdentifierStart
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L478"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.</p>
@@ -366,7 +372,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public char DelimitedIndetifierStart { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public char DelimitedIdentifierStart { get; }</code></pre>
   </div>
 
 
@@ -375,7 +381,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Char</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
     <dd><p>Char</p>
 </dd>
   </dl>
@@ -391,7 +397,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ModifyColumnCommand" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ModifyColumnCommand">
   ModifyColumnCommand
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L493"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L496"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the DB specific modify table command.</p>
@@ -408,7 +414,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -423,10 +429,12 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SSLMode" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SSLMode">
   SSLMode
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L568"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L595"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>SSL connection mode.</p>
+  <div class="markdown level1 summary"><p>SSL connection mode. Retained for IMySQLServerDDLHelper interface compatibility; the
+administrative/secondary connections now derive SSL mode from
+IDatabaseConnectionConfiguration.EncyrptConnection via MySqlConnectionFactory instead.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -440,7 +448,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -455,7 +463,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsGuidType" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsGuidType">
   SupportsGuidType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L122"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the DBEngine supports natively the Guid type.</p>
@@ -472,7 +480,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if the DBEngine supports natively the Guid type</p>
 </dd>
   </dl>
@@ -488,7 +496,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SupportsSchemaNameSpace" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SupportsSchemaNameSpace">
   SupportsSchemaNameSpace
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L127"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the DBEngine supports having schema name spaces. From the currently supported databases, only SQL has this feature.</p>
@@ -505,7 +513,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -524,7 +532,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase">
   CreateDatabase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L133"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the underlying db engine settings.</p>
@@ -538,7 +546,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if database was created successfully</p>
 </dd>
   </dl>
@@ -556,8 +564,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase*"></a>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabase_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabase(System.String)">
-  CreateDatabase(String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  CreateDatabase(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L172"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the underlying db engine settings.</p>
@@ -570,14 +578,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbName</code> <span class="xref">String</span></dt>
+    <dt><code>dbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Database name</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if the database was created successfully</p>
 </dd>
   </dl>
@@ -595,8 +603,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabaseWithDDL_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabaseWithDDL*"></a>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_CreateDatabaseWithDDL_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.CreateDatabaseWithDDL(System.String)">
-  CreateDatabaseWithDDL(String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  CreateDatabaseWithDDL(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L207"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if a database is successfully created using the passed DDL script.</p>
@@ -609,14 +617,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>ddlString</code> <span class="xref">String</span></dt>
+    <dt><code>ddlString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>DDL command</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if the database was created successfully</p>
 </dd>
   </dl>
@@ -634,8 +642,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseExists_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseExists*"></a>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DatabaseExists_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DatabaseExists(System.String)">
-  DatabaseExists(String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L245"><i class="bi bi-code-slash"></i></a>
+  DatabaseExists(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L248"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true the database exists.</p>
@@ -648,14 +656,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbName</code> <span class="xref">String</span></dt>
+    <dt><code>dbName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Database name</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if the database exists</p>
 </dd>
   </dl>
@@ -674,7 +682,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_DbTypeToString_System_Data_DbType_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.DbTypeToString(System.Data.DbType)">
   DbTypeToString(DbType)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L461"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L464"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the db engine specific string equivalent, for a DbType enumeration.</p>
@@ -687,16 +695,159 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dataType</code> <span class="xref">DbType</span></dt>
+    <dt><code>dataType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.dbtype">DbType</a></dt>
     <dd><p>DbType</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>String value for the DbType</p>
 </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_Dispose_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.Dispose*"></a>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_Dispose" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L613"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disposes the auxiliary administrative connection, if created.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ExecuteBatchedInsertWithKeyRetrieval*"></a>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction)">
+  ExecuteBatchedInsertWithKeyRetrieval(string, List&lt;string&gt;, string, List&lt;List&lt;object&gt;&gt;, IDbTransaction)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L635"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Executes a batched INSERT of <code class="paramref">rows</code> and returns the DB-generated key
+value for each row, in the same order the rows were passed in. There is no ADO.NET-
+portable way to retrieve generated keys from a multi-row insert, so implementations are
+engine-specific (e.g. SQL Server uses MERGE+OUTPUT with a correlation column since plain
+multi-row OUTPUT doesn't preserve input order; PostgreSQL uses INSERT...RETURNING, which
+does preserve order; MySQL has no RETURNING and instead derives the range from
+LAST_INSERT_ID()).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;object&gt; ExecuteBatchedInsertWithKeyRetrieval(string tableName, List&lt;string&gt; columns, string keyColumnName, List&lt;List&lt;object&gt;&gt; rows, IDbTransaction transaction)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Fully-qualified table name.</p>
+</dd>
+    <dt><code>columns</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Editable column names, in the order each row's values are provided.</p>
+</dd>
+    <dt><code>keyColumnName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The DB-generated key column to retrieve.</p>
+</dd>
+    <dt><code>rows</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd><p>Each row's values, in column order, matching <code class="paramref">columns</code>.</p>
+</dd>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd><p>Transaction to execute within.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>MySQL implementation note: MySQL has no RETURNING clause (that's a MariaDB-only
+extension). Instead, MySQL guarantees the AUTO_INCREMENT values assigned within a single
+multi-row INSERT are contiguous, starting at LAST_INSERT_ID(), in the same row order as
+the VALUES list (default &quot;consecutive&quot; auto-increment lock mode) — so the per-row keys can
+be derived client-side without a correlation column.</p>
+<p>
+NOT VERIFIED against a real MySQL instance: no reachable MySQL server was available in the
+environment this was implemented in (only SQL Server was reachable, and that path IS
+verified — see SQLServerBatchedInsertKeyRetrievalTests). Verify this against a real
+instance before relying on it in production.
+</p>
+</div>
+
+
+
+
+  <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ExecuteBatchedInsertWithKeyRetrievalAsync_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync*"></a>
+
+  <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_ExecuteBatchedInsertWithKeyRetrievalAsync_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_System_Threading_CancellationToken_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction,System.Threading.CancellationToken)">
+  ExecuteBatchedInsertWithKeyRetrievalAsync(string, List&lt;string&gt;, string, List&lt;List&lt;object&gt;&gt;, IDbTransaction, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L646"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronous counterpart of <a class="xref" href="OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_">ExecuteBatchedInsertWithKeyRetrieval(string, List&lt;string&gt;, string, List&lt;List&lt;object&gt;&gt;, IDbTransaction)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;List&lt;object&gt;&gt; ExecuteBatchedInsertWithKeyRetrievalAsync(string tableName, List&lt;string&gt; columns, string keyColumnName, List&lt;List&lt;object&gt;&gt; rows, IDbTransaction transaction, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>columns</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>keyColumnName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>rows</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+    <dt><code>transaction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
   </dl>
 
 
@@ -712,8 +863,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableAddColumn_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn*"></a>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})">
-  SafeFormatAlterTableAddColumn(String, List&lt;String&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L517"><i class="bi bi-code-slash"></i></a>
+  SafeFormatAlterTableAddColumn(string, List&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L520"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE ADD COLUMN command for the underlying database engine.</p>
@@ -726,17 +877,17 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tableName</code> <span class="xref">String</span></dt>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Table's name that schema is going to change</p>
 </dd>
-    <dt><code>columnsToAdd</code> <span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
+    <dt><code>columnsToAdd</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd><p>Columns for creation</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -753,8 +904,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableDropColumn_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn*"></a>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})">
-  SafeFormatAlterTableDropColumn(String, List&lt;String&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L506"><i class="bi bi-code-slash"></i></a>
+  SafeFormatAlterTableDropColumn(string, List&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L509"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.</p>
@@ -767,17 +918,17 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tableName</code> <span class="xref">String</span></dt>
+    <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Table's name that schema is going to change</p>
 </dd>
-    <dt><code>columnsToDelete</code> <span class="xref">List</span>&lt;<span class="xref">String</span>&gt;</dt>
+    <dt><code>columnsToDelete</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd><p>Columns for deletion</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -794,8 +945,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatField_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatField*"></a>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SafeFormatField_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SafeFormatField(System.String)">
-  SafeFormatField(String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L488"><i class="bi bi-code-slash"></i></a>
+  SafeFormatField(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L491"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Properly formats a field name, to be used in a SQL statement, in case the field name is a reserved word.</p>
@@ -808,13 +959,13 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>fieldName</code> <span class="xref">String</span></dt>
+    <dt><code>fieldName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -832,7 +983,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)">
   SchemaObjectExists(ISchemaConstraint)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L295"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L298"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database.</p>
@@ -851,7 +1002,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -869,7 +1020,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)">
   SchemaObjectExists(ISchemaObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L353"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L356"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.</p>
@@ -888,7 +1039,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -905,8 +1056,8 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
   <a id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists*"></a>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectExists_System_String_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectExists(System.String)">
-  SchemaObjectExists(String)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L363"><i class="bi bi-code-slash"></i></a>
+  SchemaObjectExists(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L366"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true if the schema object exists in the database. A schema object can be a table,view,primary key, stored procedure, etc.</p>
@@ -919,14 +1070,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>schemaObjectName</code> <span class="xref">String</span></dt>
+    <dt><code>schemaObjectName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>Schema object name</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Boolean</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>True if the object exists</p>
 </dd>
   </dl>
@@ -945,7 +1096,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)">
   SchemaObjectId&lt;T&gt;(ISchemaObject)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L423"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L426"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the schema object, db engine assigned/generated, identifier.</p>
@@ -988,7 +1139,7 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h3 id="OrpheusMySQLDDLHelper_OrpheusMySQLServerDDLHelper_TypeToString_System_Type_" data-uid="OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper.TypeToString(System.Type)">
   TypeToString(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/master/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L446"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/mobilotronic/OrpheusORM/blob/feature/modernazitation-effort/OrpheusMySQLDDLHelper/OrpheusMySQLServerDDLHelper.cs/#L449"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the db engine specific string equivalent, for a .net type</p>
@@ -1001,14 +1152,14 @@ DDL helper is used to execute DB engine specific DDL commands.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>type</code> <span class="xref">Type</span></dt>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
     <dd><p>Type</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">String</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>String value for the mapped DbType</p>
 </dd>
   </dl>

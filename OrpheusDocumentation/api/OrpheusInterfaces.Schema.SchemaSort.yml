@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Schema.SchemaSort
+  commentId: T:OrpheusInterfaces.Schema.SchemaSort
+  id: SchemaSort
+  parent: OrpheusInterfaces.Schema
+  children:
+  - OrpheusInterfaces.Schema.SchemaSort.ssAsc
+  - OrpheusInterfaces.Schema.SchemaSort.ssDesc
+  langs:
+  - csharp
+  - vb
+  name: SchemaSort
+  nameWithType: SchemaSort
+  fullName: OrpheusInterfaces.Schema.SchemaSort
+  type: Enum
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SchemaSort
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 8
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Schema sort type.
+  example: []
+  syntax:
+    content: public enum SchemaSort
+    content.vb: Public Enum SchemaSort
+- uid: OrpheusInterfaces.Schema.SchemaSort.ssAsc
+  commentId: F:OrpheusInterfaces.Schema.SchemaSort.ssAsc
+  id: ssAsc
+  parent: OrpheusInterfaces.Schema.SchemaSort
+  langs:
+  - csharp
+  - vb
+  name: ssAsc
+  nameWithType: SchemaSort.ssAsc
+  fullName: OrpheusInterfaces.Schema.SchemaSort.ssAsc
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ssAsc
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 13
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Sort ascending.
+  example: []
+  syntax:
+    content: ssAsc = 0
+    return:
+      type: OrpheusInterfaces.Schema.SchemaSort
+- uid: OrpheusInterfaces.Schema.SchemaSort.ssDesc
+  commentId: F:OrpheusInterfaces.Schema.SchemaSort.ssDesc
+  id: ssDesc
+  parent: OrpheusInterfaces.Schema.SchemaSort
+  langs:
+  - csharp
+  - vb
+  name: ssDesc
+  nameWithType: SchemaSort.ssDesc
+  fullName: OrpheusInterfaces.Schema.SchemaSort.ssDesc
+  type: Field
+  source:
+    remote:
+      path: OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ssDesc
+    path: ../OrpheusInterfaces/SchemaBuilder/ISchemaConstraint.cs
+    startLine: 18
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Schema
+  summary: Sort descending.
+  example: []
+  syntax:
+    content: ssDesc = 1
+    return:
+      type: OrpheusInterfaces.Schema.SchemaSort
+references:
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Schema.SchemaSort
+  commentId: T:OrpheusInterfaces.Schema.SchemaSort
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.SchemaSort.html
+  name: SchemaSort
+  nameWithType: SchemaSort
+  fullName: OrpheusInterfaces.Schema.SchemaSort

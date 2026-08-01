@@ -19,14 +19,44 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 9.0.x
+
     - name: Start SQL Server
-      run: docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=1StrongPwd!!" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+      run: docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=1StrongPwd!!" -p 1433:1433 -d --name sqlserver mcr.microsoft.com/mssql/server:2022-latest
     - name: Start MySQL
       run: sudo systemctl start mysql.service
+    - name: Start PostgreSQL
+      run: |
+        sudo systemctl start postgresql.service
+        sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+
+    - name: Wait for SQL Server
+      run: |
+        for i in $(seq 1 30); do
+          docker exec sqlserver /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P '1StrongPwd!!' -Q "SELECT 1" > /dev/null 2>&1 && break
+          sleep 3
+        done
+    - name: Wait for MySQL
+      run: |
+        for i in $(seq 1 30); do
+          mysqladmin ping -h127.0.0.1 -uroot -proot --silent > /dev/null 2>&1 && break
+          sleep 3
+        done
+    - name: Wait for PostgreSQL
+      run: |
+        for i in $(seq 1 20); do
+          pg_isready -h 127.0.0.1 -U postgres > /dev/null 2>&1 && break
+          sleep 3
+        done
+
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --logger "console;verbosity=detailed"
+
+    - name: Test SQL Server
+      run: dotnet test --no-build --filter "TestCategory=SQLServer" --logger "console;verbosity=detailed"
+    - name: Test MySQL
+      run: dotnet test --no-build --filter "TestCategory=MySQLServerTests" --logger "console;verbosity=detailed"
+    - name: Test PostgreSQL
+      run: dotnet test --no-build --filter "TestCategory=PostgreSQLTests" --logger "console;verbosity=detailed"

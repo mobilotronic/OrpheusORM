@@ -345,7 +345,7 @@ namespace OrpheusCore.SchemaBuilder
                     ObjectName = this.SQLName,
                     DDL = string.Join(",", this.GetDDLString().ToArray()),
                     ConstraintsDDL = string.Join(",", this.GetConstraintsDDL().ToArray()),
-                    CreatedOn = DateTime.Now,
+                    CreatedOn = DateTime.UtcNow,
                     ObjectType = (int)this.GetSchemaType(),
                     SchemaId = this.Schema.Id,
                     DbEngineObjectId = this.DB.DDLHelper.SchemaObjectId<int?>(this)
@@ -376,7 +376,7 @@ namespace OrpheusCore.SchemaBuilder
                     ObjectName = this.SQLName,
                     DDL = string.Join(",", this.GetDDLString().ToArray()),
                     ConstraintsDDL = string.Join(",", this.GetConstraintsDDL().ToArray()),
-                    CreatedOn = DateTime.Now,
+                    CreatedOn = DateTime.UtcNow,
                     ObjectType = (int)this.GetSchemaType(),
                     SchemaId = this.Schema.Id
                 });
@@ -413,7 +413,6 @@ namespace OrpheusCore.SchemaBuilder
                     this.Action = DDLAction.ddlAlter;
                 else
                     this.Action = DDLAction.ddlCreate;
-                //this.Action = this.objectExistsInDatabase ? DDLAction.ddlAlter : DDLAction.ddlCreate;
             }
             return true;
         }
@@ -468,7 +467,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public void CreateFieldsFromModel(Type modelType)
         {
-            this.modelHelper = new OrpheusModelHelper(modelType);
+            this.modelHelper = new OrpheusModelHelper(modelType, this.logger);
             //if the schema has no name, set it to the type name.
             if (this.SQLName == null)
                 this.SQLName = modelType.Name;
@@ -476,9 +475,6 @@ namespace OrpheusCore.SchemaBuilder
 
             if (this.SQLName != null && (this.SQLName.ToLower() != this.modelHelper.SQLName.ToLower()))
                 this.logger.LogWarning($"The table name {this.SQLName} passed into the constructor is not the same as the associated model's {this.modelHelper.SQLName}");
-            ////if there was a [TableName] attribute set, then it takes precedence.
-            //if (this.modelHelper.SQLName != null)
-            //    this.SQLName = this.modelHelper.SQLName;
         }
 
 
@@ -594,9 +590,6 @@ namespace OrpheusCore.SchemaBuilder
             });
 
             this.seedDataTable = new OrpheusTable<T>(this.DB, tableKeys, ServiceManager.CreateLogger<IOrpheusTable<T>>(), this.SQLName);
-            //
-            //if (this.seedDataTable.Name != this.SQLName)
-            //    this.seedDataTable.Name = this.SQLName;
             data.ForEach(dataRow =>
             {
                 ((IOrpheusTable<T>)this.seedDataTable).Add(dataRow);
@@ -664,16 +657,6 @@ namespace OrpheusCore.SchemaBuilder
                             }
                             break;
                         }
-                        //case DDLAction.ddlAlter:
-                        //    {
-                        //        if (this.SchemaObjectsThatDependOnMe.Count > 0)
-                        //        {
-                        //            this.logger.LogDebug(this.formatLoggerMessage("Begin altering dependencies"));
-                        //            this.SchemaObjectsThatDependOnMe.ForEach(dep => dep.Execute());
-                        //            this.logger.LogDebug(this.formatLoggerMessage("End altering dependencies"));
-                        //        }
-                        //        break;
-                        //    }
                 }
                 //if there was a direct DDL SQL then ignore any other configuration and run it.
                 var DDLString = this.RawDDL == null ? this.createDDLString() : new List<string>() { this.RawDDL };
@@ -759,7 +742,6 @@ namespace OrpheusCore.SchemaBuilder
                         }
                         finally
                         {
-                            //transaction.Dispose();
                             cmd.Dispose();
                         }
                     }
@@ -834,7 +816,14 @@ namespace OrpheusCore.SchemaBuilder
                     }
                 case DDLAction.ddlDrop:
                     {
-                        result.Add(String.Format("DROP TABLE {0}", this.SQLName));
+                        // PostgreSQL enforces FK referential integrity on DROP TABLE unless CASCADE
+                        // is specified — without it, dropping a table other (not-yet-dropped) tables
+                        // still reference throws and aborts the whole schema drop partway through,
+                        // leaving stale tables and OrpheusSchemaObject bookkeeping rows behind. SQL
+                        // Server/MySQL don't support CASCADE on DROP TABLE the same way, so this is
+                        // PostgreSQL-only.
+                        var cascade = this.DB.DDLHelper.DbEngineType == DatabaseEngineType.dbPostgreSQL ? " CASCADE" : "";
+                        result.Add(String.Format("DROP TABLE {0}{1}", this.SQLName, cascade));
                         break;
                     }
                 case DDLAction.ddlAlter:
@@ -1000,15 +989,6 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         /// <returns></returns>
         protected override SchemaObjectType getType() { return SchemaObjectType.sotView; }
-
-        ///// <summary>
-        ///// Overriding the default behavior, for view objects.
-        ///// </summary>
-        ///// <returns></returns>
-        //protected override string formatSQLName()
-        //{
-        //    return this._sqlName;
-        //}
 
         /// <summary>
         /// Creates the DDL string for the schema object.

@@ -276,7 +276,6 @@ namespace OrpheusTests
             for (var i = 2; i <= 10; i++)
             {
                 moduleDefinition.DetailTableOptions.Where(t => t.TableName == "TestDetailModelLevel" + i.ToString()).First().MasterTableName = "TestDetailModelLevel" + (i - 1).ToString();
-                //detailTableOptions.MasterTableName =;
             }
 
             var module = this.Database.CreateModule(moduleDefinition);

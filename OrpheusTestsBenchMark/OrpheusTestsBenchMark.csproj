@@ -4,12 +4,18 @@
 		<OutputType>Exe</OutputType>
 	</PropertyGroup>
   <ItemGroup>
+    <None Include="..\OrpheusTests\OrpheusConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>OrpheusConfig.json</Link>
+    </None>
     <None Remove="OrpheusSQLServer.config" />
     <None Remove="OrpheusSQLServerConfig.json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" />
+    <PackageReference Include="Dapper" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
   </ItemGroup>
 
   <ItemGroup>

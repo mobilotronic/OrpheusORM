@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Interfaces.Attributes
+  commentId: N:OrpheusInterfaces.Interfaces.Attributes
+  id: OrpheusInterfaces.Interfaces.Attributes
+  children:
+  - OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  - OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute
+  - OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+  - OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey
+  - OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+  langs:
+  - csharp
+  - vb
+  name: OrpheusInterfaces.Interfaces.Attributes
+  nameWithType: OrpheusInterfaces.Interfaces.Attributes
+  fullName: OrpheusInterfaces.Interfaces.Attributes
+  type: Namespace
+  assemblies:
+  - OrpheusInterfaces
+references:
+- uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  commentId: T:OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+  parent: OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html
+  name: IForeignKey
+  nameWithType: IForeignKey
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+- uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute
+  commentId: T:OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute
+  parent: OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute.html
+  name: IOrpheusBaseAttribute
+  nameWithType: IOrpheusBaseAttribute
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseAttribute
+- uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+  commentId: T:OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+  parent: OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html
+  name: IOrpheusBaseCompositeKeyAttribute
+  nameWithType: IOrpheusBaseCompositeKeyAttribute
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+- uid: OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey
+  commentId: T:OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey
+  parent: OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.html
+  name: IPrimaryKey
+  nameWithType: IPrimaryKey
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey
+- uid: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+  commentId: T:OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+  parent: OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.html
+  name: IUniqueKey
+  nameWithType: IUniqueKey
+  fullName: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+- uid: OrpheusInterfaces.Interfaces.Attributes
+  commentId: N:OrpheusInterfaces.Interfaces.Attributes
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Interfaces.Attributes
+  nameWithType: OrpheusInterfaces.Interfaces.Attributes
+  fullName: OrpheusInterfaces.Interfaces.Attributes
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces
+    name: Interfaces
+    href: OrpheusInterfaces.Interfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Interfaces.Attributes
+    name: Attributes
+    href: OrpheusInterfaces.Interfaces.Attributes.html

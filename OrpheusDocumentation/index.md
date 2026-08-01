@@ -10,3 +10,19 @@ By default Orpheus assumes that your table names will match your model class nam
 
 ## Nested Data
 Using an OrpheusModule you can save nested data (master-detail-subdetail) with just one Save. All master-detail relationships and keys will be updated automatically.
+
+## Multiple Database Engines
+Orpheus supports SQL Server, MySQL, and PostgreSQL out of the box, each via its own DDL helper
+package. See [Orpheus DDL Helper](documentation/orpheus_ddl_helper.md).
+
+## Async
+Every I/O method has an async counterpart (`LoadAsync`/`SaveAsync`) backed by real async ADO.NET
+I/O. See [Orpheus Table](documentation/orpheus_table.md).
+
+## Batching
+Save() chunks pending Add/Update/Delete operations into multi-row commands instead of one round
+trip per row. See [Orpheus Table](documentation/orpheus_table.md).
+
+## Connection Pooling
+Connections are leased from the ADO.NET connection pool, with pool size and idle timeout
+configurable per connection. See [Connecting to a database](documentation/orpheus_connecting_to_db.md).

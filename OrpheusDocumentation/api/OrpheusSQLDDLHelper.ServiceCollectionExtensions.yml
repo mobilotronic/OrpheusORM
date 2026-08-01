@@ -1,0 +1,669 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusSQLDDLHelper.ServiceCollectionExtensions
+  commentId: T:OrpheusSQLDDLHelper.ServiceCollectionExtensions
+  id: ServiceCollectionExtensions
+  parent: OrpheusSQLDDLHelper
+  children:
+  - OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
+  - OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  - OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration})
+  langs:
+  - csharp
+  - vb
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: OrpheusSQLDDLHelper.ServiceCollectionExtensions
+  type: Class
+  source:
+    remote:
+      path: OrpheusSQLServerDDLHelper/ServiceCollectionExtensions.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ServiceCollectionExtensions
+    path: ../OrpheusSQLServerDDLHelper/ServiceCollectionExtensions.cs
+    startLine: 16
+  assemblies:
+  - OrpheusSQLServerDDLHelper
+  namespace: OrpheusSQLDDLHelper
+  summary: >-
+    Registers the services needed for an <xref href="OrpheusInterfaces.Core.IOrpheusDatabase" data-throw-if-not-resolved="false"></xref> backed by SQL Server,
+
+    mirroring the EF Core "UseSqlServer" provider-registration pattern.
+  example: []
+  syntax:
+    content: public static class ServiceCollectionExtensions
+    content.vb: Public Module ServiceCollectionExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  commentId: M:OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  id: AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  isExtensionMethod: true
+  parent: OrpheusSQLDDLHelper.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddOrpheusSqlServer(IServiceCollection, IDatabaseConnectionConfiguration)
+  nameWithType: ServiceCollectionExtensions.AddOrpheusSqlServer(IServiceCollection, IDatabaseConnectionConfiguration)
+  fullName: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  type: Method
+  source:
+    remote:
+      path: OrpheusSQLServerDDLHelper/ServiceCollectionExtensions.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddOrpheusSqlServer
+    path: ../OrpheusSQLServerDDLHelper/ServiceCollectionExtensions.cs
+    startLine: 23
+  assemblies:
+  - OrpheusSQLServerDDLHelper
+  namespace: OrpheusSQLDDLHelper
+  summary: >-
+    Registers a pooled SQL Server <xref href="OrpheusInterfaces.Core.IOrpheusConnectionFactory" data-throw-if-not-resolved="false"></xref>, the SQL Server
+
+    <xref href="OrpheusInterfaces.Core.IOrpheusDDLHelper" data-throw-if-not-resolved="false"></xref>, and <xref href="OrpheusInterfaces.Core.IOrpheusDatabase" data-throw-if-not-resolved="false"></xref> itself, using the
+
+    supplied connection configuration.
+  example: []
+  syntax:
+    content: public static IServiceCollection AddOrpheusSqlServer(this IServiceCollection services, IDatabaseConnectionConfiguration connectionConfiguration)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    - id: connectionConfiguration
+      type: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    content.vb: Public Shared Function AddOrpheusSqlServer(services As IServiceCollection, connectionConfiguration As IDatabaseConnectionConfiguration) As IServiceCollection
+  overload: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer*
+- uid: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration})
+  commentId: M:OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration})
+  id: AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration})
+  isExtensionMethod: true
+  parent: OrpheusSQLDDLHelper.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddOrpheusSqlServer(IServiceCollection, Action<IDatabaseConnectionConfiguration>)
+  nameWithType: ServiceCollectionExtensions.AddOrpheusSqlServer(IServiceCollection, Action<IDatabaseConnectionConfiguration>)
+  fullName: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusSQLServerDDLHelper/ServiceCollectionExtensions.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddOrpheusSqlServer
+    path: ../OrpheusSQLServerDDLHelper/ServiceCollectionExtensions.cs
+    startLine: 48
+  assemblies:
+  - OrpheusSQLServerDDLHelper
+  namespace: OrpheusSQLDDLHelper
+  summary: Registers Orpheus for SQL Server, building the connection configuration inline.
+  example: []
+  syntax:
+    content: public static IServiceCollection AddOrpheusSqlServer(this IServiceCollection services, Action<IDatabaseConnectionConfiguration> configureConnection)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    - id: configureConnection
+      type: System.Action{OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration}
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    content.vb: Public Shared Function AddOrpheusSqlServer(services As IServiceCollection, configureConnection As Action(Of IDatabaseConnectionConfiguration)) As IServiceCollection
+  overload: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer*
+  nameWithType.vb: ServiceCollectionExtensions.AddOrpheusSqlServer(IServiceCollection, Action(Of IDatabaseConnectionConfiguration))
+  fullName.vb: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration))
+  name.vb: AddOrpheusSqlServer(IServiceCollection, Action(Of IDatabaseConnectionConfiguration))
+- uid: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
+  commentId: M:OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
+  id: AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
+  isExtensionMethod: true
+  parent: OrpheusSQLDDLHelper.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddOrpheusSqlServer(IServiceCollection, IConfiguration, string, string)
+  nameWithType: ServiceCollectionExtensions.AddOrpheusSqlServer(IServiceCollection, IConfiguration, string, string)
+  fullName: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, string, string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusSQLServerDDLHelper/ServiceCollectionExtensions.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: AddOrpheusSqlServer
+    path: ../OrpheusSQLServerDDLHelper/ServiceCollectionExtensions.cs
+    startLine: 67
+  assemblies:
+  - OrpheusSQLServerDDLHelper
+  namespace: OrpheusSQLDDLHelper
+  summary: >-
+    Registers Orpheus for SQL Server, resolving the named connection out of an
+
+    <xref href="Microsoft.Extensions.Configuration.IConfiguration" data-throw-if-not-resolved="false"></xref> (e.g. an OrpheusConfig.json file bound via
+
+    <xref href="Microsoft.Extensions.Configuration.ConfigurationBuilder" data-throw-if-not-resolved="false"></xref>).
+  example: []
+  syntax:
+    content: public static IServiceCollection AddOrpheusSqlServer(this IServiceCollection services, IConfiguration configuration, string connectionName, string sectionName = "OrpheusConfiguration")
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection to register into.
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: The root configuration (e.g. loaded from OrpheusConfig.json).
+    - id: connectionName
+      type: System.String
+      description: The <code>ConfigurationName</code> of the connection to use.
+    - id: sectionName
+      type: System.String
+      description: The section Orpheus's settings live under. Defaults to "OrpheusConfiguration".
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    content.vb: Public Shared Function AddOrpheusSqlServer(services As IServiceCollection, configuration As IConfiguration, connectionName As String, sectionName As String = "OrpheusConfiguration") As IServiceCollection
+  overload: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer*
+  nameWithType.vb: ServiceCollectionExtensions.AddOrpheusSqlServer(IServiceCollection, IConfiguration, String, String)
+  fullName.vb: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, String, String)
+  name.vb: AddOrpheusSqlServer(IServiceCollection, IConfiguration, String, String)
+references:
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDatabase
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html
+  name: IOrpheusDatabase
+  nameWithType: IOrpheusDatabase
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase
+- uid: OrpheusSQLDDLHelper
+  commentId: N:OrpheusSQLDDLHelper
+  href: OrpheusSQLDDLHelper.html
+  name: OrpheusSQLDDLHelper
+  nameWithType: OrpheusSQLDDLHelper
+  fullName: OrpheusSQLDDLHelper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  commentId: T:OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html
+  name: IOrpheusConnectionFactory
+  nameWithType: IOrpheusConnectionFactory
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDDLHelper
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html
+  name: IOrpheusDDLHelper
+  nameWithType: IOrpheusDDLHelper
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper
+- uid: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer*
+  commentId: Overload:OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer
+  href: OrpheusSQLDDLHelper.ServiceCollectionExtensions.html#OrpheusSQLDDLHelper_ServiceCollectionExtensions_AddOrpheusSqlServer_Microsoft_Extensions_DependencyInjection_IServiceCollection_OrpheusInterfaces_Configuration_IDatabaseConnectionConfiguration_
+  name: AddOrpheusSqlServer
+  nameWithType: ServiceCollectionExtensions.AddOrpheusSqlServer
+  fullName: OrpheusSQLDDLHelper.ServiceCollectionExtensions.AddOrpheusSqlServer
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  commentId: T:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  parent: OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html
+  name: IDatabaseConnectionConfiguration
+  nameWithType: IDatabaseConnectionConfiguration
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+- uid: OrpheusInterfaces.Configuration
+  commentId: N:OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Configuration
+  nameWithType: OrpheusInterfaces.Configuration
+  fullName: OrpheusInterfaces.Configuration
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+- uid: System.Action{OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration}
+  commentId: T:System.Action{OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<IDatabaseConnectionConfiguration>
+  nameWithType: Action<IDatabaseConnectionConfiguration>
+  fullName: System.Action<OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration>
+  nameWithType.vb: Action(Of IDatabaseConnectionConfiguration)
+  fullName.vb: System.Action(Of OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  name.vb: Action(Of IDatabaseConnectionConfiguration)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+    name: IDatabaseConnectionConfiguration
+    href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+    name: IDatabaseConnectionConfiguration
+    href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: Microsoft.Extensions.Configuration.ConfigurationBuilder
+  commentId: T:Microsoft.Extensions.Configuration.ConfigurationBuilder
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.configurationbuilder
+  name: ConfigurationBuilder
+  nameWithType: ConfigurationBuilder
+  fullName: Microsoft.Extensions.Configuration.ConfigurationBuilder
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration

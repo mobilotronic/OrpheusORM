@@ -1,0 +1,1132 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper
+  commentId: T:OrpheusInterfaces.Core.IOrpheusModelHelper
+  id: IOrpheusModelHelper
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.CreateInstance``1
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.CreateSchemaFields(OrpheusInterfaces.Schema.ISchemaDataObject)
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.CustomFieldNameProperties
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.ForeignKeys
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.Schema.ISchemaDataObject,OrpheusInterfaces.Core.IOrpheusDDLHelper)
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.ModelProperties
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryCompositeKeys
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryKeys
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.SQLName
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.SQLServerSchemaName
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.SchemaIgnoreProperties
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueCompositeKeys
+  - OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueKeys
+  langs:
+  - csharp
+  - vb
+  name: IOrpheusModelHelper
+  nameWithType: IOrpheusModelHelper
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IOrpheusModelHelper
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 10
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Orpheus model helper
+  example: []
+  syntax:
+    content: public interface IOrpheusModelHelper
+    content.vb: Public Interface IOrpheusModelHelper
+  derivedClasses:
+  - OrpheusCore.OrpheusModelHelper
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryKeys
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryKeys
+  id: PrimaryKeys
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: PrimaryKeys
+  nameWithType: IOrpheusModelHelper.PrimaryKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryKeys
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: PrimaryKeys
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 15
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: Dictionary<string, IPrimaryKey> PrimaryKeys { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey}
+      description: Model's primary keys.
+    content.vb: ReadOnly Property PrimaryKeys As Dictionary(Of String, IPrimaryKey)
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryKeys*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.ForeignKeys
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.ForeignKeys
+  id: ForeignKeys
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: ForeignKeys
+  nameWithType: IOrpheusModelHelper.ForeignKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.ForeignKeys
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ForeignKeys
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 20
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: Dictionary<string, IForeignKey> ForeignKeys { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,OrpheusInterfaces.Interfaces.Attributes.IForeignKey}
+      description: Model's foreign keys.
+    content.vb: ReadOnly Property ForeignKeys As Dictionary(Of String, IForeignKey)
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.ForeignKeys*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueKeys
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueKeys
+  id: UniqueKeys
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: UniqueKeys
+  nameWithType: IOrpheusModelHelper.UniqueKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueKeys
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: UniqueKeys
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 25
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: Dictionary<string, IUniqueKey> UniqueKeys { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,OrpheusInterfaces.Interfaces.Attributes.IUniqueKey}
+      description: Model's unique keys.
+    content.vb: ReadOnly Property UniqueKeys As Dictionary(Of String, IUniqueKey)
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueKeys*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryCompositeKeys
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryCompositeKeys
+  id: PrimaryCompositeKeys
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: PrimaryCompositeKeys
+  nameWithType: IOrpheusModelHelper.PrimaryCompositeKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryCompositeKeys
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: PrimaryCompositeKeys
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 30
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: List<IOrpheusBaseCompositeKeyAttribute> PrimaryCompositeKeys { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute}
+      description: Model's composite primary keys.
+    content.vb: ReadOnly Property PrimaryCompositeKeys As List(Of IOrpheusBaseCompositeKeyAttribute)
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryCompositeKeys*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueCompositeKeys
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueCompositeKeys
+  id: UniqueCompositeKeys
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: UniqueCompositeKeys
+  nameWithType: IOrpheusModelHelper.UniqueCompositeKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueCompositeKeys
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: UniqueCompositeKeys
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 35
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: List<IOrpheusBaseCompositeKeyAttribute> UniqueCompositeKeys { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute}
+      description: Model's composite unique keys.
+    content.vb: ReadOnly Property UniqueCompositeKeys As List(Of IOrpheusBaseCompositeKeyAttribute)
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueCompositeKeys*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.SchemaIgnoreProperties
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.SchemaIgnoreProperties
+  id: SchemaIgnoreProperties
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: SchemaIgnoreProperties
+  nameWithType: IOrpheusModelHelper.SchemaIgnoreProperties
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.SchemaIgnoreProperties
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SchemaIgnoreProperties
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 40
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: List<string> SchemaIgnoreProperties { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: Model properties that are not part of the schema.
+    content.vb: ReadOnly Property SchemaIgnoreProperties As List(Of String)
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.SchemaIgnoreProperties*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.CustomFieldNameProperties
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.CustomFieldNameProperties
+  id: CustomFieldNameProperties
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: CustomFieldNameProperties
+  nameWithType: IOrpheusModelHelper.CustomFieldNameProperties
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.CustomFieldNameProperties
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CustomFieldNameProperties
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 45
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: Dictionary<string, string> CustomFieldNameProperties { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: Model properties that have an explicitly set field name.
+    content.vb: ReadOnly Property CustomFieldNameProperties As Dictionary(Of String, String)
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.CustomFieldNameProperties*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.ModelProperties
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.ModelProperties
+  id: ModelProperties
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: ModelProperties
+  nameWithType: IOrpheusModelHelper.ModelProperties
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.ModelProperties
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ModelProperties
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 50
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: PropertyInfo[] ModelProperties { get; }
+    parameters: []
+    return:
+      type: System.Reflection.PropertyInfo[]
+      description: Model's properties.
+    content.vb: ReadOnly Property ModelProperties As PropertyInfo()
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.ModelProperties*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLName
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.SQLName
+  id: SQLName
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: SQLName
+  nameWithType: IOrpheusModelHelper.SQLName
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLName
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SQLName
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 55
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: string SQLName { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: Model's SQLName. Defaults to the model's type name.
+    content.vb: ReadOnly Property SQLName As String
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLName*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLServerSchemaName
+  commentId: P:OrpheusInterfaces.Core.IOrpheusModelHelper.SQLServerSchemaName
+  id: SQLServerSchemaName
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: SQLServerSchemaName
+  nameWithType: IOrpheusModelHelper.SQLServerSchemaName
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLServerSchemaName
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SQLServerSchemaName
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 60
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: string SQLServerSchemaName { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: SQL server's schema name.
+    content.vb: ReadOnly Property SQLServerSchemaName As String
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLServerSchemaName*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)
+  id: IsSchemaProperty(System.Reflection.PropertyInfo)
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: IsSchemaProperty(PropertyInfo)
+  nameWithType: IOrpheusModelHelper.IsSchemaProperty(PropertyInfo)
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.IsSchemaProperty(System.Reflection.PropertyInfo)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IsSchemaProperty
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 67
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Helper function that returns true if the property is not actually part of the schema.
+  example: []
+  syntax:
+    content: bool IsSchemaProperty(PropertyInfo property)
+    parameters:
+    - id: property
+      type: System.Reflection.PropertyInfo
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Function IsSchemaProperty([property] As PropertyInfo) As Boolean
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.IsSchemaProperty*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)
+  id: GetFieldNameForProperty(System.Reflection.PropertyInfo)
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: GetFieldNameForProperty(PropertyInfo)
+  nameWithType: IOrpheusModelHelper.GetFieldNameForProperty(PropertyInfo)
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.GetFieldNameForProperty(System.Reflection.PropertyInfo)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: GetFieldNameForProperty
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 74
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Helper function that returns the corresponding field name for a property.
+  example: []
+  syntax:
+    content: string GetFieldNameForProperty(PropertyInfo prop)
+    parameters:
+    - id: prop
+      type: System.Reflection.PropertyInfo
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Function GetFieldNameForProperty(prop As PropertyInfo) As String
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.GetFieldNameForProperty*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateInstance``1
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModelHelper.CreateInstance``1
+  id: CreateInstance``1
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: CreateInstance<T>()
+  nameWithType: IOrpheusModelHelper.CreateInstance<T>()
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateInstance<T>()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateInstance
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 81
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates an instance of the model and typecasts it to the given type.
+  example: []
+  syntax:
+    content: T CreateInstance<T>()
+    typeParameters:
+    - id: T
+      description: Type to cast the model
+    return:
+      type: '{T}'
+      description: ''
+    content.vb: Function CreateInstance(Of T)() As T
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateInstance*
+  nameWithType.vb: IOrpheusModelHelper.CreateInstance(Of T)()
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateInstance(Of T)()
+  name.vb: CreateInstance(Of T)()
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateSchemaFields(OrpheusInterfaces.Schema.ISchemaDataObject)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModelHelper.CreateSchemaFields(OrpheusInterfaces.Schema.ISchemaDataObject)
+  id: CreateSchemaFields(OrpheusInterfaces.Schema.ISchemaDataObject)
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: CreateSchemaFields(ISchemaDataObject)
+  nameWithType: IOrpheusModelHelper.CreateSchemaFields(ISchemaDataObject)
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateSchemaFields(OrpheusInterfaces.Schema.ISchemaDataObject)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateSchemaFields
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 87
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates schema fields and constraints for a model.
+  example: []
+  syntax:
+    content: void CreateSchemaFields(ISchemaDataObject schemaObj)
+    parameters:
+    - id: schemaObj
+      type: OrpheusInterfaces.Schema.ISchemaDataObject
+      description: ''
+    content.vb: Sub CreateSchemaFields(schemaObj As ISchemaDataObject)
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateSchemaFields*
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.Schema.ISchemaDataObject,OrpheusInterfaces.Core.IOrpheusDDLHelper)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.Schema.ISchemaDataObject,OrpheusInterfaces.Core.IOrpheusDDLHelper)
+  id: GetAlterDDLCommands(OrpheusInterfaces.Schema.ISchemaDataObject,OrpheusInterfaces.Core.IOrpheusDDLHelper)
+  parent: OrpheusInterfaces.Core.IOrpheusModelHelper
+  langs:
+  - csharp
+  - vb
+  name: GetAlterDDLCommands(ISchemaDataObject, IOrpheusDDLHelper)
+  nameWithType: IOrpheusModelHelper.GetAlterDDLCommands(ISchemaDataObject, IOrpheusDDLHelper)
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.GetAlterDDLCommands(OrpheusInterfaces.Schema.ISchemaDataObject, OrpheusInterfaces.Core.IOrpheusDDLHelper)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: GetAlterDDLCommands
+    path: ../OrpheusInterfaces/Core/IOrpheusModelHelper.cs
+    startLine: 96
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: >-
+    Creates a list of SQL ALTER commands, based on the differences between the current version of the model
+
+    and the current version of the corresponding db table.
+  example: []
+  syntax:
+    content: List<string> GetAlterDDLCommands(ISchemaDataObject schemaObj, IOrpheusDDLHelper ddlHelper)
+    parameters:
+    - id: schemaObj
+      type: OrpheusInterfaces.Schema.ISchemaDataObject
+      description: ''
+    - id: ddlHelper
+      type: OrpheusInterfaces.Core.IOrpheusDDLHelper
+      description: ''
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: ''
+    content.vb: Function GetAlterDDLCommands(schemaObj As ISchemaDataObject, ddlHelper As IOrpheusDDLHelper) As List(Of String)
+  overload: OrpheusInterfaces.Core.IOrpheusModelHelper.GetAlterDDLCommands*
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryKeys*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryKeys
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_PrimaryKeys
+  name: PrimaryKeys
+  nameWithType: IOrpheusModelHelper.PrimaryKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryKeys
+- uid: System.Collections.Generic.Dictionary{System.String,OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, IPrimaryKey>
+  nameWithType: Dictionary<string, IPrimaryKey>
+  fullName: System.Collections.Generic.Dictionary<string, OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey>
+  nameWithType.vb: Dictionary(Of String, IPrimaryKey)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey)
+  name.vb: Dictionary(Of String, IPrimaryKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey
+    name: IPrimaryKey
+    href: OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey
+    name: IPrimaryKey
+    href: OrpheusInterfaces.Interfaces.Attributes.IPrimaryKey.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.ForeignKeys*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.ForeignKeys
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_ForeignKeys
+  name: ForeignKeys
+  nameWithType: IOrpheusModelHelper.ForeignKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.ForeignKeys
+- uid: System.Collections.Generic.Dictionary{System.String,OrpheusInterfaces.Interfaces.Attributes.IForeignKey}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,OrpheusInterfaces.Interfaces.Attributes.IForeignKey}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, IForeignKey>
+  nameWithType: Dictionary<string, IForeignKey>
+  fullName: System.Collections.Generic.Dictionary<string, OrpheusInterfaces.Interfaces.Attributes.IForeignKey>
+  nameWithType.vb: Dictionary(Of String, IForeignKey)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, OrpheusInterfaces.Interfaces.Attributes.IForeignKey)
+  name.vb: Dictionary(Of String, IForeignKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+    name: IForeignKey
+    href: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IForeignKey
+    name: IForeignKey
+    href: OrpheusInterfaces.Interfaces.Attributes.IForeignKey.html
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueKeys*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueKeys
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_UniqueKeys
+  name: UniqueKeys
+  nameWithType: IOrpheusModelHelper.UniqueKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueKeys
+- uid: System.Collections.Generic.Dictionary{System.String,OrpheusInterfaces.Interfaces.Attributes.IUniqueKey}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,OrpheusInterfaces.Interfaces.Attributes.IUniqueKey}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, IUniqueKey>
+  nameWithType: Dictionary<string, IUniqueKey>
+  fullName: System.Collections.Generic.Dictionary<string, OrpheusInterfaces.Interfaces.Attributes.IUniqueKey>
+  nameWithType.vb: Dictionary(Of String, IUniqueKey)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, OrpheusInterfaces.Interfaces.Attributes.IUniqueKey)
+  name.vb: Dictionary(Of String, IUniqueKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+    name: IUniqueKey
+    href: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey
+    name: IUniqueKey
+    href: OrpheusInterfaces.Interfaces.Attributes.IUniqueKey.html
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryCompositeKeys*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryCompositeKeys
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_PrimaryCompositeKeys
+  name: PrimaryCompositeKeys
+  nameWithType: IOrpheusModelHelper.PrimaryCompositeKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.PrimaryCompositeKeys
+- uid: System.Collections.Generic.List{OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute}
+  commentId: T:System.Collections.Generic.List{OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<IOrpheusBaseCompositeKeyAttribute>
+  nameWithType: List<IOrpheusBaseCompositeKeyAttribute>
+  fullName: System.Collections.Generic.List<OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute>
+  nameWithType.vb: List(Of IOrpheusBaseCompositeKeyAttribute)
+  fullName.vb: System.Collections.Generic.List(Of OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute)
+  name.vb: List(Of IOrpheusBaseCompositeKeyAttribute)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+    name: IOrpheusBaseCompositeKeyAttribute
+    href: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute
+    name: IOrpheusBaseCompositeKeyAttribute
+    href: OrpheusInterfaces.Interfaces.Attributes.IOrpheusBaseCompositeKeyAttribute.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueCompositeKeys*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueCompositeKeys
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_UniqueCompositeKeys
+  name: UniqueCompositeKeys
+  nameWithType: IOrpheusModelHelper.UniqueCompositeKeys
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.UniqueCompositeKeys
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.SchemaIgnoreProperties*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.SchemaIgnoreProperties
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_SchemaIgnoreProperties
+  name: SchemaIgnoreProperties
+  nameWithType: IOrpheusModelHelper.SchemaIgnoreProperties
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.SchemaIgnoreProperties
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.CustomFieldNameProperties*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.CustomFieldNameProperties
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_CustomFieldNameProperties
+  name: CustomFieldNameProperties
+  nameWithType: IOrpheusModelHelper.CustomFieldNameProperties
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.CustomFieldNameProperties
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string>
+  nameWithType: Dictionary<string, string>
+  fullName: System.Collections.Generic.Dictionary<string, string>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.ModelProperties*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.ModelProperties
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_ModelProperties
+  name: ModelProperties
+  nameWithType: IOrpheusModelHelper.ModelProperties
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.ModelProperties
+- uid: System.Reflection.PropertyInfo[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo
+  name: PropertyInfo[]
+  nameWithType: PropertyInfo[]
+  fullName: System.Reflection.PropertyInfo[]
+  nameWithType.vb: PropertyInfo()
+  fullName.vb: System.Reflection.PropertyInfo()
+  name.vb: PropertyInfo()
+  spec.csharp:
+  - uid: System.Reflection.PropertyInfo
+    name: PropertyInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Reflection.PropertyInfo
+    name: PropertyInfo
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLName*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.SQLName
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_SQLName
+  name: SQLName
+  nameWithType: IOrpheusModelHelper.SQLName
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLServerSchemaName*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.SQLServerSchemaName
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_SQLServerSchemaName
+  name: SQLServerSchemaName
+  nameWithType: IOrpheusModelHelper.SQLServerSchemaName
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.SQLServerSchemaName
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.IsSchemaProperty*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.IsSchemaProperty
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_IsSchemaProperty_System_Reflection_PropertyInfo_
+  name: IsSchemaProperty
+  nameWithType: IOrpheusModelHelper.IsSchemaProperty
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.IsSchemaProperty
+- uid: System.Reflection.PropertyInfo
+  commentId: T:System.Reflection.PropertyInfo
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.propertyinfo
+  name: PropertyInfo
+  nameWithType: PropertyInfo
+  fullName: System.Reflection.PropertyInfo
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.GetFieldNameForProperty*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.GetFieldNameForProperty
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_GetFieldNameForProperty_System_Reflection_PropertyInfo_
+  name: GetFieldNameForProperty
+  nameWithType: IOrpheusModelHelper.GetFieldNameForProperty
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.GetFieldNameForProperty
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateInstance*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.CreateInstance
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_CreateInstance__1
+  name: CreateInstance
+  nameWithType: IOrpheusModelHelper.CreateInstance
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateInstance
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateSchemaFields*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.CreateSchemaFields
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_CreateSchemaFields_OrpheusInterfaces_Schema_ISchemaDataObject_
+  name: CreateSchemaFields
+  nameWithType: IOrpheusModelHelper.CreateSchemaFields
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.CreateSchemaFields
+- uid: OrpheusInterfaces.Schema.ISchemaDataObject
+  commentId: T:OrpheusInterfaces.Schema.ISchemaDataObject
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchemaDataObject.html
+  name: ISchemaDataObject
+  nameWithType: ISchemaDataObject
+  fullName: OrpheusInterfaces.Schema.ISchemaDataObject
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper.GetAlterDDLCommands*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusModelHelper.GetAlterDDLCommands
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html#OrpheusInterfaces_Core_IOrpheusModelHelper_GetAlterDDLCommands_OrpheusInterfaces_Schema_ISchemaDataObject_OrpheusInterfaces_Core_IOrpheusDDLHelper_
+  name: GetAlterDDLCommands
+  nameWithType: IOrpheusModelHelper.GetAlterDDLCommands
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper.GetAlterDDLCommands
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDDLHelper
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html
+  name: IOrpheusDDLHelper
+  nameWithType: IOrpheusDDLHelper
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper

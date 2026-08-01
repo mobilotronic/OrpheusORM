@@ -1,0 +1,2638 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDatabase
+  id: IOrpheusDatabase
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransaction
+  - OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync(System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.Connect(OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.Connect(System.String)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync(System.String,System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.Connected
+  - OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory
+  - OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionString
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreateModule(OrpheusInterfaces.Core.IOrpheusModuleDefinition)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreateModuleDefinition
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(System.String)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema(System.Guid,System.String,System.Double,System.String)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1(OrpheusInterfaces.Core.IOrpheusTableOptions)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})
+  - OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper
+  - OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs``1
+  - OrpheusInterfaces.Core.IOrpheusDatabase.DatabaseConnectionConfiguration
+  - OrpheusInterfaces.Core.IOrpheusDatabase.DbConnection
+  - OrpheusInterfaces.Core.IOrpheusDatabase.Disconnect
+  - OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync
+  - OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL(System.String)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync(System.String,System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount(System.String)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount``1
+  - OrpheusInterfaces.Core.IOrpheusDatabase.IsNullableType(System.Type)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction
+  - OrpheusInterfaces.Core.IOrpheusDatabase.Modules
+  - OrpheusInterfaces.Core.IOrpheusDatabase.RegisterModule(OrpheusInterfaces.Core.IOrpheusModule)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync``1(System.Data.IDbCommand,System.String,System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync``1(System.String,System.String,System.Threading.CancellationToken)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.SQL``1(System.Data.IDbCommand,System.String)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.SQL``1(System.String,System.String)
+  - OrpheusInterfaces.Core.IOrpheusDatabase.TypeMap
+  langs:
+  - csharp
+  - vb
+  name: IOrpheusDatabase
+  nameWithType: IOrpheusDatabase
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IOrpheusDatabase
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 13
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Orpheus database access component.
+  example: []
+  syntax:
+    content: 'public interface IOrpheusDatabase : IDisposable'
+    content.vb: Public Interface IOrpheusDatabase Inherits IDisposable
+  derivedClasses:
+  - OrpheusCore.OrpheusDatabase
+  inheritedMembers:
+  - System.IDisposable.Dispose
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Connect(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.Connect(System.String)
+  id: Connect(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: Connect(string)
+  nameWithType: IOrpheusDatabase.Connect(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Connect(string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Connect
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 20
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Connects to the database engine defined in the connection string.
+  example: []
+  syntax:
+    content: void Connect(string connectionString = null)
+    parameters:
+    - id: connectionString
+      type: System.String
+      description: The connection string.
+    content.vb: Sub Connect(connectionString As String = Nothing)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.Connect*
+  nameWithType.vb: IOrpheusDatabase.Connect(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.Connect(String)
+  name.vb: Connect(String)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Connect(OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.Connect(OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  id: Connect(OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: Connect(IDatabaseConnectionConfiguration)
+  nameWithType: IOrpheusDatabase.Connect(IDatabaseConnectionConfiguration)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Connect(OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Connect
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 26
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Connects to the database engine defined in the configuration object.
+  example: []
+  syntax:
+    content: void Connect(IDatabaseConnectionConfiguration databaseConnectionConfiguration)
+    parameters:
+    - id: databaseConnectionConfiguration
+      type: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+      description: The database connection configuration.
+    content.vb: Sub Connect(databaseConnectionConfiguration As IDatabaseConnectionConfiguration)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.Connect*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Disconnect
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.Disconnect
+  id: Disconnect
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: Disconnect()
+  nameWithType: IOrpheusDatabase.Disconnect()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Disconnect()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Disconnect
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 31
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Disconnects from the database engine.
+  example: []
+  syntax:
+    content: void Disconnect()
+    content.vb: Sub Disconnect()
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.Disconnect*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Connected
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.Connected
+  id: Connected
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: Connected
+  nameWithType: IOrpheusDatabase.Connected
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Connected
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Connected
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 37
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: State of the database. Connected or not.
+  example: []
+  syntax:
+    content: bool Connected { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: True if database is connected
+    content.vb: ReadOnly Property Connected As Boolean
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.Connected*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory
+  id: ConnectionFactory
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: ConnectionFactory
+  nameWithType: IOrpheusDatabase.ConnectionFactory
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ConnectionFactory
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 45
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: >-
+    The connection factory this database was constructed with, if any. DDL helpers use it to
+
+    open auxiliary connections (schema introspection, administrative/system-database access)
+
+    that share the same pooling configuration as the main connection. Null if this database
+
+    was constructed from a raw <xref href="System.Data.IDbConnection" data-throw-if-not-resolved="false"></xref> instead of a connection factory.
+  example: []
+  syntax:
+    content: IOrpheusConnectionFactory ConnectionFactory { get; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+    content.vb: ReadOnly Property ConnectionFactory As IOrpheusConnectionFactory
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction
+  id: LastActiveTransaction
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: LastActiveTransaction
+  nameWithType: IOrpheusDatabase.LastActiveTransaction
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: LastActiveTransaction
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 50
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: IDbTransaction LastActiveTransaction { get; }
+    parameters: []
+    return:
+      type: System.Data.IDbTransaction
+      description: Last active transaction.
+    content.vb: ReadOnly Property LastActiveTransaction As IDbTransaction
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Modules
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.Modules
+  id: Modules
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: Modules
+  nameWithType: IOrpheusDatabase.Modules
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Modules
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: Modules
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 56
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: List of registered Orpheus modules.
+  example: []
+  syntax:
+    content: List<IOrpheusModule> Modules { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusModule}
+      description: Modules that are part in the database
+    content.vb: ReadOnly Property Modules As List(Of IOrpheusModule)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.Modules*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.RegisterModule(OrpheusInterfaces.Core.IOrpheusModule)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.RegisterModule(OrpheusInterfaces.Core.IOrpheusModule)
+  id: RegisterModule(OrpheusInterfaces.Core.IOrpheusModule)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: RegisterModule(IOrpheusModule)
+  nameWithType: IOrpheusDatabase.RegisterModule(IOrpheusModule)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.RegisterModule(OrpheusInterfaces.Core.IOrpheusModule)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: RegisterModule
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 62
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Register an Orpheus module to the database.
+  example: []
+  syntax:
+    content: void RegisterModule(IOrpheusModule module)
+    parameters:
+    - id: module
+      type: OrpheusInterfaces.Core.IOrpheusModule
+      description: Module to be registered
+    content.vb: Sub RegisterModule([module] As IOrpheusModule)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.RegisterModule*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransaction
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransaction
+  id: BeginTransaction
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: BeginTransaction()
+  nameWithType: IOrpheusDatabase.BeginTransaction()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransaction()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: BeginTransaction
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 68
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates a transaction object.
+  example: []
+  syntax:
+    content: IDbTransaction BeginTransaction()
+    return:
+      type: System.Data.IDbTransaction
+      description: Returns a transaction instance
+    content.vb: Function BeginTransaction() As IDbTransaction
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransaction*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
+  id: CommitTransaction(System.Data.IDbTransaction)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CommitTransaction(IDbTransaction)
+  nameWithType: IOrpheusDatabase.CommitTransaction(IDbTransaction)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransaction(System.Data.IDbTransaction)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CommitTransaction
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 74
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Commits a transaction.
+  example: []
+  syntax:
+    content: void CommitTransaction(IDbTransaction transaction)
+    parameters:
+    - id: transaction
+      type: System.Data.IDbTransaction
+      description: Transaction to be committed.
+    content.vb: Sub CommitTransaction(transaction As IDbTransaction)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransaction*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
+  id: RollbackTransaction(System.Data.IDbTransaction)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: RollbackTransaction(IDbTransaction)
+  nameWithType: IOrpheusDatabase.RollbackTransaction(IDbTransaction)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransaction(System.Data.IDbTransaction)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: RollbackTransaction
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 80
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Rolls back a transaction.
+  example: []
+  syntax:
+    content: void RollbackTransaction(IDbTransaction transaction)
+    parameters:
+    - id: transaction
+      type: System.Data.IDbTransaction
+      description: Transaction to be rolled-back.
+    content.vb: Sub RollbackTransaction(transaction As IDbTransaction)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransaction*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync(System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync(System.Threading.CancellationToken)
+  id: BeginTransactionAsync(System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: BeginTransactionAsync(CancellationToken)
+  nameWithType: IOrpheusDatabase.BeginTransactionAsync(CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: BeginTransactionAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 85
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously creates a transaction object.
+  example: []
+  syntax:
+    content: Task<IDbTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Data.IDbTransaction}
+    content.vb: Function BeginTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IDbTransaction)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)
+  id: CommitTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CommitTransactionAsync(IDbTransaction, CancellationToken)
+  nameWithType: IOrpheusDatabase.CommitTransactionAsync(IDbTransaction, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync(System.Data.IDbTransaction, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CommitTransactionAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 90
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously commits a transaction.
+  example: []
+  syntax:
+    content: Task CommitTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default)
+    parameters:
+    - id: transaction
+      type: System.Data.IDbTransaction
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function CommitTransactionAsync(transaction As IDbTransaction, cancellationToken As CancellationToken = Nothing) As Task
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)
+  id: RollbackTransactionAsync(System.Data.IDbTransaction,System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: RollbackTransactionAsync(IDbTransaction, CancellationToken)
+  nameWithType: IOrpheusDatabase.RollbackTransactionAsync(IDbTransaction, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync(System.Data.IDbTransaction, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: RollbackTransactionAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 95
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously rolls back a transaction.
+  example: []
+  syntax:
+    content: Task RollbackTransactionAsync(IDbTransaction transaction, CancellationToken cancellationToken = default)
+    parameters:
+    - id: transaction
+      type: System.Data.IDbTransaction
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function RollbackTransactionAsync(transaction As IDbTransaction, cancellationToken As CancellationToken = Nothing) As Task
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand
+  id: CreateCommand
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreateCommand()
+  nameWithType: IOrpheusDatabase.CreateCommand()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateCommand
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 101
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Create a DbCommand.
+  example: []
+  syntax:
+    content: IDbCommand CreateCommand()
+    return:
+      type: System.Data.IDbCommand
+      description: A DbCommand instance.
+    content.vb: Function CreateCommand() As IDbCommand
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})
+  id: CreatePreparedQuery(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreatePreparedQuery(string, List<string>, List<object>)
+  nameWithType: IOrpheusDatabase.CreatePreparedQuery(string, List<string>, List<object>)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(string, System.Collections.Generic.List<string>, System.Collections.Generic.List<object>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreatePreparedQuery
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 110
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Returns a prepared query with parameters created.
+  example: []
+  syntax:
+    content: IDbCommand CreatePreparedQuery(string SQL, List<string> parameters, List<object> parameterValues = null)
+    parameters:
+    - id: SQL
+      type: System.String
+      description: SQL for the prepared query
+    - id: parameters
+      type: System.Collections.Generic.List{System.String}
+      description: SQL parameters
+    - id: parameterValues
+      type: System.Collections.Generic.List{System.Object}
+      description: SQL parameter values
+    return:
+      type: System.Data.IDbCommand
+      description: A DbCommand instance.
+    content.vb: Function CreatePreparedQuery(SQL As String, parameters As List(Of String), parameterValues As List(Of Object) = Nothing) As IDbCommand
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery*
+  nameWithType.vb: IOrpheusDatabase.CreatePreparedQuery(String, List(Of String), List(Of Object))
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(String, System.Collections.Generic.List(Of String), System.Collections.Generic.List(Of Object))
+  name.vb: CreatePreparedQuery(String, List(Of String), List(Of Object))
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(System.String)
+  id: CreatePreparedQuery(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreatePreparedQuery(string)
+  nameWithType: IOrpheusDatabase.CreatePreparedQuery(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreatePreparedQuery
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 117
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Returns a prepared query with parameters created.
+  example: []
+  syntax:
+    content: IDbCommand CreatePreparedQuery(string SQL)
+    parameters:
+    - id: SQL
+      type: System.String
+      description: SQL for the prepared query
+    return:
+      type: System.Data.IDbCommand
+      description: A DbCommand instance.
+    content.vb: Function CreatePreparedQuery(SQL As String) As IDbCommand
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery*
+  nameWithType.vb: IOrpheusDatabase.CreatePreparedQuery(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery(String)
+  name.vb: CreatePreparedQuery(String)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.TypeMap
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.TypeMap
+  id: TypeMap
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: TypeMap
+  nameWithType: IOrpheusDatabase.TypeMap
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.TypeMap
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: TypeMap
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 123
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Mapping dictionary of types to data types.
+  example: []
+  syntax:
+    content: Dictionary<Type, DbType> TypeMap { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.Type,System.Data.DbType}
+      description: Type map dictionary between types and DbType.
+    content.vb: ReadOnly Property TypeMap As Dictionary(Of Type, DbType)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.TypeMap*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.IsNullableType(System.Type)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.IsNullableType(System.Type)
+  id: IsNullableType(System.Type)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: IsNullableType(Type)
+  nameWithType: IOrpheusDatabase.IsNullableType(Type)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.IsNullableType(System.Type)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IsNullableType
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 130
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Returns true if the type is a nullable type.
+  example: []
+  syntax:
+    content: bool IsNullableType(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+      description: Type
+    return:
+      type: System.Boolean
+      description: True if type is nullable
+    content.vb: Function IsNullableType(type As Type) As Boolean
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.IsNullableType*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper
+  id: DDLHelper
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: DDLHelper
+  nameWithType: IOrpheusDatabase.DDLHelper
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DDLHelper
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 136
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Helps execute DDL specific commands for the underlying db engine.
+  example: []
+  syntax:
+    content: IOrpheusDDLHelper DDLHelper { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusDDLHelper
+      description: An OrpheusDDLHelper instance.
+    content.vb: Property DDLHelper As IOrpheusDDLHelper
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs``1
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs``1
+  id: DDLHelperAs``1
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: DDLHelperAs<T>()
+  nameWithType: IOrpheusDatabase.DDLHelperAs<T>()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs<T>()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DDLHelperAs
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 143
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Casts the DDL helper to the specified type.
+  example: []
+  syntax:
+    content: T DDLHelperAs<T>()
+    typeParameters:
+    - id: T
+      description: Type in which to cast the DDLHelper. Must be a descendant of IOrpheusDDLHelper.
+    return:
+      type: '{T}'
+      description: An instance of T.
+    content.vb: Function DDLHelperAs(Of T)() As T
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs*
+  nameWithType.vb: IOrpheusDatabase.DDLHelperAs(Of T)()
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs(Of T)()
+  name.vb: DDLHelperAs(Of T)()
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionString
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionString
+  id: ConnectionString
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: ConnectionString
+  nameWithType: IOrpheusDatabase.ConnectionString
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionString
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ConnectionString
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 149
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Gets the underlying IDbConnection connection string.
+  example: []
+  syntax:
+    content: string ConnectionString { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The database connection string.
+    content.vb: ReadOnly Property ConnectionString As String
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionString*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1(OrpheusInterfaces.Core.IOrpheusTableOptions)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1(OrpheusInterfaces.Core.IOrpheusTableOptions)
+  id: CreateTable``1(OrpheusInterfaces.Core.IOrpheusTableOptions)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreateTable<T>(IOrpheusTableOptions)
+  nameWithType: IOrpheusDatabase.CreateTable<T>(IOrpheusTableOptions)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable<T>(OrpheusInterfaces.Core.IOrpheusTableOptions)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateTable
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 157
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates a table and sets its database.
+  example: []
+  syntax:
+    content: IOrpheusTable<T> CreateTable<T>(IOrpheusTableOptions options)
+    parameters:
+    - id: options
+      type: OrpheusInterfaces.Core.IOrpheusTableOptions
+      description: Table options
+    typeParameters:
+    - id: T
+      description: Model type for table
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTable{{T}}
+      description: An Orpheus table instance.
+    content.vb: Function CreateTable(Of T)(options As IOrpheusTableOptions) As IOrpheusTable(Of T)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable*
+  nameWithType.vb: IOrpheusDatabase.CreateTable(Of T)(IOrpheusTableOptions)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable(Of T)(OrpheusInterfaces.Core.IOrpheusTableOptions)
+  name.vb: CreateTable(Of T)(IOrpheusTableOptions)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})
+  id: CreateTable``1(System.String,System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField})
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreateTable<T>(string, List<IOrpheusTableKeyField>)
+  nameWithType: IOrpheusDatabase.CreateTable<T>(string, List<IOrpheusTableKeyField>)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable<T>(string, System.Collections.Generic.List<OrpheusInterfaces.Core.IOrpheusTableKeyField>)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateTable
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 166
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates a table and sets its database.
+  example: []
+  syntax:
+    content: IOrpheusTable<T> CreateTable<T>(string tableName, List<IOrpheusTableKeyField> keyFields = null)
+    parameters:
+    - id: tableName
+      type: System.String
+      description: Table name
+    - id: keyFields
+      type: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField}
+      description: Table key fields
+    typeParameters:
+    - id: T
+      description: Model type for the table
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTable{{T}}
+      description: An Orpheus table instance.
+    content.vb: Function CreateTable(Of T)(tableName As String, keyFields As List(Of IOrpheusTableKeyField) = Nothing) As IOrpheusTable(Of T)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable*
+  nameWithType.vb: IOrpheusDatabase.CreateTable(Of T)(String, List(Of IOrpheusTableKeyField))
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable(Of T)(String, System.Collections.Generic.List(Of OrpheusInterfaces.Core.IOrpheusTableKeyField))
+  name.vb: CreateTable(Of T)(String, List(Of IOrpheusTableKeyField))
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable``1
+  id: CreateTable``1
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreateTable<T>()
+  nameWithType: IOrpheusDatabase.CreateTable<T>()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable<T>()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateTable
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 173
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates a table and sets its database,using the type name as the table name.
+  example: []
+  syntax:
+    content: IOrpheusTable<T> CreateTable<T>()
+    typeParameters:
+    - id: T
+      description: Table model type.
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTable{{T}}
+      description: ''
+    content.vb: Function CreateTable(Of T)() As IOrpheusTable(Of T)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable*
+  nameWithType.vb: IOrpheusDatabase.CreateTable(Of T)()
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable(Of T)()
+  name.vb: CreateTable(Of T)()
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema(System.Guid,System.String,System.Double,System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema(System.Guid,System.String,System.Double,System.String)
+  id: CreateSchema(System.Guid,System.String,System.Double,System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreateSchema(Guid, string, double, string)
+  nameWithType: IOrpheusDatabase.CreateSchema(Guid, string, double, string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema(System.Guid, string, double, string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateSchema
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 183
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates a schema object and sets it's database.
+  example: []
+  syntax:
+    content: ISchema CreateSchema(Guid id, string description, double version, string name = null)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: Schema id
+    - id: description
+      type: System.String
+      description: Schema description
+    - id: version
+      type: System.Double
+      description: Schema version
+    - id: name
+      type: System.String
+      description: Schema name.From the supported db engines, only SQL server has support for named schema's.
+    return:
+      type: OrpheusInterfaces.Schema.ISchema
+      description: An ISchema instance.
+    content.vb: Function CreateSchema(id As Guid, description As String, version As Double, name As String = Nothing) As ISchema
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema*
+  nameWithType.vb: IOrpheusDatabase.CreateSchema(Guid, String, Double, String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema(System.Guid, String, Double, String)
+  name.vb: CreateSchema(Guid, String, Double, String)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModule(OrpheusInterfaces.Core.IOrpheusModuleDefinition)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreateModule(OrpheusInterfaces.Core.IOrpheusModuleDefinition)
+  id: CreateModule(OrpheusInterfaces.Core.IOrpheusModuleDefinition)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreateModule(IOrpheusModuleDefinition)
+  nameWithType: IOrpheusDatabase.CreateModule(IOrpheusModuleDefinition)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModule(OrpheusInterfaces.Core.IOrpheusModuleDefinition)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateModule
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 190
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates an OrpheusModule.
+  example: []
+  syntax:
+    content: IOrpheusModule CreateModule(IOrpheusModuleDefinition definition = null)
+    parameters:
+    - id: definition
+      type: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+      description: Module definition
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusModule
+      description: An IOrpheusModule instance
+    content.vb: Function CreateModule(definition As IOrpheusModuleDefinition = Nothing) As IOrpheusModule
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModule*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModuleDefinition
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreateModuleDefinition
+  id: CreateModuleDefinition
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreateModuleDefinition()
+  nameWithType: IOrpheusDatabase.CreateModuleDefinition()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModuleDefinition()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateModuleDefinition
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 196
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates an OrpheusModuleDefinition.
+  example: []
+  syntax:
+    content: IOrpheusModuleDefinition CreateModuleDefinition()
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+      description: An IOrpheusModuleDefinition instance.
+    content.vb: Function CreateModuleDefinition() As IOrpheusModuleDefinition
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModuleDefinition*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions
+  id: CreateTableOptions
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreateTableOptions()
+  nameWithType: IOrpheusDatabase.CreateTableOptions()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateTableOptions
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 202
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates an OrpheusTableOptions.
+  example: []
+  syntax:
+    content: IOrpheusTableOptions CreateTableOptions()
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTableOptions
+      description: An IOrpheusTableOptions instance.
+    content.vb: Function CreateTableOptions() As IOrpheusTableOptions
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField
+  id: CreateTableKeyField
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: CreateTableKeyField()
+  nameWithType: IOrpheusDatabase.CreateTableKeyField()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: CreateTableKeyField
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 208
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Creates an OrpheusTableKeyField.
+  example: []
+  syntax:
+    content: IOrpheusTableKeyField CreateTableKeyField()
+    return:
+      type: OrpheusInterfaces.Core.IOrpheusTableKeyField
+      description: An IOrpheusTableKeyField instance.
+    content.vb: Function CreateTableKeyField() As IOrpheusTableKeyField
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.SQL``1(System.String,System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.SQL``1(System.String,System.String)
+  id: SQL``1(System.String,System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: SQL<T>(string, string)
+  nameWithType: IOrpheusDatabase.SQL<T>(string, string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.SQL<T>(string, string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SQL
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 217
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Executes a SQL statement and returns it as specific model.
+  example: []
+  syntax:
+    content: List<T> SQL<T>(string SQL, string tableName = null)
+    parameters:
+    - id: SQL
+      type: System.String
+      description: SQL command to execute.
+    - id: tableName
+      type: System.String
+      description: Table name.
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Collections.Generic.List{{T}}
+      description: A list of 'T'
+    content.vb: Function SQL(Of T)(SQL As String, tableName As String = Nothing) As List(Of T)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.SQL*
+  nameWithType.vb: IOrpheusDatabase.SQL(Of T)(String, String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.SQL(Of T)(String, String)
+  name.vb: SQL(Of T)(String, String)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.SQL``1(System.Data.IDbCommand,System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.SQL``1(System.Data.IDbCommand,System.String)
+  id: SQL``1(System.Data.IDbCommand,System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: SQL<T>(IDbCommand, string)
+  nameWithType: IOrpheusDatabase.SQL<T>(IDbCommand, string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.SQL<T>(System.Data.IDbCommand, string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SQL
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 226
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Executes a db command and returns it as specific model.
+  example: []
+  syntax:
+    content: List<T> SQL<T>(IDbCommand dbCommand, string tableName = null)
+    parameters:
+    - id: dbCommand
+      type: System.Data.IDbCommand
+      description: DbCommand to run.
+    - id: tableName
+      type: System.String
+      description: Optionally set the table name, for which the query will run.
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: System.Collections.Generic.List{{T}}
+      description: A list of 'T'
+    content.vb: Function SQL(Of T)(dbCommand As IDbCommand, tableName As String = Nothing) As List(Of T)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.SQL*
+  nameWithType.vb: IOrpheusDatabase.SQL(Of T)(IDbCommand, String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.SQL(Of T)(System.Data.IDbCommand, String)
+  name.vb: SQL(Of T)(IDbCommand, String)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL(System.String)
+  id: ExecuteDDL(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: ExecuteDDL(string)
+  nameWithType: IOrpheusDatabase.ExecuteDDL(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL(string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ExecuteDDL
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 233
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Executes a DDL command.
+  example: []
+  syntax:
+    content: bool ExecuteDDL(string DDLCommand)
+    parameters:
+    - id: DDLCommand
+      type: System.String
+      description: DbCommand to run.
+    return:
+      type: System.Boolean
+      description: True if command was successfully executed.
+    content.vb: Function ExecuteDDL(DDLCommand As String) As Boolean
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL*
+  nameWithType.vb: IOrpheusDatabase.ExecuteDDL(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL(String)
+  name.vb: ExecuteDDL(String)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DbConnection
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.DbConnection
+  id: DbConnection
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: DbConnection
+  nameWithType: IOrpheusDatabase.DbConnection
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DbConnection
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DbConnection
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 238
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: IDbConnection DbConnection { get; }
+    parameters: []
+    return:
+      type: System.Data.IDbConnection
+      description: Exposing the underlying IDbConnection instance.
+    content.vb: ReadOnly Property DbConnection As IDbConnection
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.DbConnection*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount(System.String)
+  id: GetTableCount(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: GetTableCount(string)
+  nameWithType: IOrpheusDatabase.GetTableCount(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount(string)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: GetTableCount
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 245
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: long GetTableCount(string tableName)
+    parameters:
+    - id: tableName
+      type: System.String
+      description: Name of the table.
+    return:
+      type: System.Int64
+      description: Returns the row count of a table.
+    content.vb: Function GetTableCount(tableName As String) As Long
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount*
+  nameWithType.vb: IOrpheusDatabase.GetTableCount(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount(String)
+  name.vb: GetTableCount(String)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount``1
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount``1
+  id: GetTableCount``1
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: GetTableCount<T>()
+  nameWithType: IOrpheusDatabase.GetTableCount<T>()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount<T>()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: GetTableCount
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 252
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: long GetTableCount<T>()
+    typeParameters:
+    - id: T
+      description: The table type name, will be used as the table name.
+    return:
+      type: System.Int64
+      description: Returns the row count of a table.
+    content.vb: Function GetTableCount(Of T)() As Long
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount*
+  nameWithType.vb: IOrpheusDatabase.GetTableCount(Of T)()
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount(Of T)()
+  name.vb: GetTableCount(Of T)()
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DatabaseConnectionConfiguration
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDatabase.DatabaseConnectionConfiguration
+  id: DatabaseConnectionConfiguration
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: DatabaseConnectionConfiguration
+  nameWithType: IOrpheusDatabase.DatabaseConnectionConfiguration
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DatabaseConnectionConfiguration
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DatabaseConnectionConfiguration
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 257
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  example: []
+  syntax:
+    content: IDatabaseConnectionConfiguration DatabaseConnectionConfiguration { get; set; }
+    parameters: []
+    return:
+      type: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+      description: Database connection configuration.
+    content.vb: Property DatabaseConnectionConfiguration As IDatabaseConnectionConfiguration
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.DatabaseConnectionConfiguration*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync(System.String,System.Threading.CancellationToken)
+  id: ConnectAsync(System.String,System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: ConnectAsync(string, CancellationToken)
+  nameWithType: IOrpheusDatabase.ConnectAsync(string, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ConnectAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 263
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously connects to the database engine.
+  example: []
+  syntax:
+    content: Task ConnectAsync(string connectionString = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: connectionString
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function ConnectAsync(connectionString As String = Nothing, cancellationToken As CancellationToken = Nothing) As Task
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync*
+  nameWithType.vb: IOrpheusDatabase.ConnectAsync(String, CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync(String, System.Threading.CancellationToken)
+  name.vb: ConnectAsync(String, CancellationToken)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync
+  id: DisconnectAsync
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: DisconnectAsync()
+  nameWithType: IOrpheusDatabase.DisconnectAsync()
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync()
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: DisconnectAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 268
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously disconnects from the database engine.
+  example: []
+  syntax:
+    content: Task DisconnectAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function DisconnectAsync() As Task
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync*
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync``1(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync``1(System.String,System.String,System.Threading.CancellationToken)
+  id: SQLAsync``1(System.String,System.String,System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: SQLAsync<T>(string, string, CancellationToken)
+  nameWithType: IOrpheusDatabase.SQLAsync<T>(string, string, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync<T>(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SQLAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 273
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously executes a SQL statement and returns the result as typed models.
+  example: []
+  syntax:
+    content: Task<List<T>> SQLAsync<T>(string SQL, string tableName = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: SQL
+      type: System.String
+    - id: tableName
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{{T}}}
+    content.vb: Function SQLAsync(Of T)(SQL As String, tableName As String = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of List(Of T))
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync*
+  nameWithType.vb: IOrpheusDatabase.SQLAsync(Of T)(String, String, CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync(Of T)(String, String, System.Threading.CancellationToken)
+  name.vb: SQLAsync(Of T)(String, String, CancellationToken)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync``1(System.Data.IDbCommand,System.String,System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync``1(System.Data.IDbCommand,System.String,System.Threading.CancellationToken)
+  id: SQLAsync``1(System.Data.IDbCommand,System.String,System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: SQLAsync<T>(IDbCommand, string, CancellationToken)
+  nameWithType: IOrpheusDatabase.SQLAsync<T>(IDbCommand, string, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync<T>(System.Data.IDbCommand, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SQLAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 278
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously executes a prepared DbCommand and returns the result as typed models.
+  example: []
+  syntax:
+    content: Task<List<T>> SQLAsync<T>(IDbCommand dbCommand, string tableName = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: dbCommand
+      type: System.Data.IDbCommand
+    - id: tableName
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{{T}}}
+    content.vb: Function SQLAsync(Of T)(dbCommand As IDbCommand, tableName As String = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of List(Of T))
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync*
+  nameWithType.vb: IOrpheusDatabase.SQLAsync(Of T)(IDbCommand, String, CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync(Of T)(System.Data.IDbCommand, String, System.Threading.CancellationToken)
+  name.vb: SQLAsync(Of T)(IDbCommand, String, CancellationToken)
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync(System.String,System.Threading.CancellationToken)
+  id: ExecuteDDLAsync(System.String,System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusDatabase
+  langs:
+  - csharp
+  - vb
+  name: ExecuteDDLAsync(string, CancellationToken)
+  nameWithType: IOrpheusDatabase.ExecuteDDLAsync(string, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDatabase.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: ExecuteDDLAsync
+    path: ../OrpheusInterfaces/Core/IOrpheusDatabase.cs
+    startLine: 283
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: Asynchronously executes a DDL command.
+  example: []
+  syntax:
+    content: Task<bool> ExecuteDDLAsync(string DDLCommand, CancellationToken cancellationToken = default)
+    parameters:
+    - id: DDLCommand
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function ExecuteDDLAsync(DDLCommand As String, cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)
+  overload: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync*
+  nameWithType.vb: IOrpheusDatabase.ExecuteDDLAsync(String, CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync(String, System.Threading.CancellationToken)
+  name.vb: ExecuteDDLAsync(String, CancellationToken)
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Connect*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.Connect
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Connect_System_String_
+  name: Connect
+  nameWithType: IOrpheusDatabase.Connect
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Connect
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  commentId: T:OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+  parent: OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration.html
+  name: IDatabaseConnectionConfiguration
+  nameWithType: IDatabaseConnectionConfiguration
+  fullName: OrpheusInterfaces.Configuration.IDatabaseConnectionConfiguration
+- uid: OrpheusInterfaces.Configuration
+  commentId: N:OrpheusInterfaces.Configuration
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Configuration
+  nameWithType: OrpheusInterfaces.Configuration
+  fullName: OrpheusInterfaces.Configuration
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Configuration
+    name: Configuration
+    href: OrpheusInterfaces.Configuration.html
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Disconnect*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.Disconnect
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Disconnect
+  name: Disconnect
+  nameWithType: IOrpheusDatabase.Disconnect
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Disconnect
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Connected*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.Connected
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Connected
+  name: Connected
+  nameWithType: IOrpheusDatabase.Connected
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Connected
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Data.IDbConnection
+  commentId: T:System.Data.IDbConnection
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.idbconnection
+  name: IDbConnection
+  nameWithType: IDbConnection
+  fullName: System.Data.IDbConnection
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_ConnectionFactory
+  name: ConnectionFactory
+  nameWithType: IOrpheusDatabase.ConnectionFactory
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionFactory
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  commentId: T:OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html
+  name: IOrpheusConnectionFactory
+  nameWithType: IOrpheusConnectionFactory
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+- uid: System.Data
+  commentId: N:System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Data
+  nameWithType: System.Data
+  fullName: System.Data
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Data
+    name: Data
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_LastActiveTransaction
+  name: LastActiveTransaction
+  nameWithType: IOrpheusDatabase.LastActiveTransaction
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.LastActiveTransaction
+- uid: System.Data.IDbTransaction
+  commentId: T:System.Data.IDbTransaction
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  name: IDbTransaction
+  nameWithType: IDbTransaction
+  fullName: System.Data.IDbTransaction
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.Modules*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.Modules
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_Modules
+  name: Modules
+  nameWithType: IOrpheusDatabase.Modules
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.Modules
+- uid: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusModule}
+  commentId: T:System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusModule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<IOrpheusModule>
+  nameWithType: List<IOrpheusModule>
+  fullName: System.Collections.Generic.List<OrpheusInterfaces.Core.IOrpheusModule>
+  nameWithType.vb: List(Of IOrpheusModule)
+  fullName.vb: System.Collections.Generic.List(Of OrpheusInterfaces.Core.IOrpheusModule)
+  name.vb: List(Of IOrpheusModule)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: OrpheusInterfaces.Core.IOrpheusModule
+    name: IOrpheusModule
+    href: OrpheusInterfaces.Core.IOrpheusModule.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusInterfaces.Core.IOrpheusModule
+    name: IOrpheusModule
+    href: OrpheusInterfaces.Core.IOrpheusModule.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.RegisterModule*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.RegisterModule
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_RegisterModule_OrpheusInterfaces_Core_IOrpheusModule_
+  name: RegisterModule
+  nameWithType: IOrpheusDatabase.RegisterModule
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.RegisterModule
+- uid: OrpheusInterfaces.Core.IOrpheusModule
+  commentId: T:OrpheusInterfaces.Core.IOrpheusModule
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusModule.html
+  name: IOrpheusModule
+  nameWithType: IOrpheusModule
+  fullName: OrpheusInterfaces.Core.IOrpheusModule
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransaction*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransaction
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_BeginTransaction
+  name: BeginTransaction
+  nameWithType: IOrpheusDatabase.BeginTransaction
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransaction
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransaction*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransaction
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CommitTransaction_System_Data_IDbTransaction_
+  name: CommitTransaction
+  nameWithType: IOrpheusDatabase.CommitTransaction
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransaction
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransaction*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransaction
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_RollbackTransaction_System_Data_IDbTransaction_
+  name: RollbackTransaction
+  nameWithType: IOrpheusDatabase.RollbackTransaction
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransaction
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_BeginTransactionAsync_System_Threading_CancellationToken_
+  name: BeginTransactionAsync
+  nameWithType: IOrpheusDatabase.BeginTransactionAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.BeginTransactionAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Data.IDbTransaction}
+  commentId: T:System.Threading.Tasks.Task{System.Data.IDbTransaction}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IDbTransaction>
+  nameWithType: Task<IDbTransaction>
+  fullName: System.Threading.Tasks.Task<System.Data.IDbTransaction>
+  nameWithType.vb: Task(Of IDbTransaction)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Data.IDbTransaction)
+  name.vb: Task(Of IDbTransaction)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CommitTransactionAsync_System_Data_IDbTransaction_System_Threading_CancellationToken_
+  name: CommitTransactionAsync
+  nameWithType: IOrpheusDatabase.CommitTransactionAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CommitTransactionAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_RollbackTransactionAsync_System_Data_IDbTransaction_System_Threading_CancellationToken_
+  name: RollbackTransactionAsync
+  nameWithType: IOrpheusDatabase.RollbackTransactionAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.RollbackTransactionAsync
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CreateCommand
+  name: CreateCommand
+  nameWithType: IOrpheusDatabase.CreateCommand
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateCommand
+- uid: System.Data.IDbCommand
+  commentId: T:System.Data.IDbCommand
+  parent: System.Data
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.data.idbcommand
+  name: IDbCommand
+  nameWithType: IDbCommand
+  fullName: System.Data.IDbCommand
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CreatePreparedQuery_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_List_System_Object__
+  name: CreatePreparedQuery
+  nameWithType: IOrpheusDatabase.CreatePreparedQuery
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreatePreparedQuery
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.List{System.Object}
+  commentId: T:System.Collections.Generic.List{System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<object>
+  nameWithType: List<object>
+  fullName: System.Collections.Generic.List<object>
+  nameWithType.vb: List(Of Object)
+  fullName.vb: System.Collections.Generic.List(Of Object)
+  name.vb: List(Of Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.TypeMap*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.TypeMap
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_TypeMap
+  name: TypeMap
+  nameWithType: IOrpheusDatabase.TypeMap
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.TypeMap
+- uid: System.Collections.Generic.Dictionary{System.Type,System.Data.DbType}
+  commentId: T:System.Collections.Generic.Dictionary{System.Type,System.Data.DbType}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<Type, DbType>
+  nameWithType: Dictionary<Type, DbType>
+  fullName: System.Collections.Generic.Dictionary<System.Type, System.Data.DbType>
+  nameWithType.vb: Dictionary(Of Type, DbType)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, System.Data.DbType)
+  name.vb: Dictionary(Of Type, DbType)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Data.DbType
+    name: DbType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.dbtype
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Data.DbType
+    name: DbType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.dbtype
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.IsNullableType*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.IsNullableType
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_IsNullableType_System_Type_
+  name: IsNullableType
+  nameWithType: IOrpheusDatabase.IsNullableType
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.IsNullableType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_DDLHelper
+  name: DDLHelper
+  nameWithType: IOrpheusDatabase.DDLHelper
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelper
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDDLHelper
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html
+  name: IOrpheusDDLHelper
+  nameWithType: IOrpheusDDLHelper
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_DDLHelperAs__1
+  name: DDLHelperAs
+  nameWithType: IOrpheusDatabase.DDLHelperAs
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DDLHelperAs
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionString*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionString
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_ConnectionString
+  name: ConnectionString
+  nameWithType: IOrpheusDatabase.ConnectionString
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectionString
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CreateTable__1_OrpheusInterfaces_Core_IOrpheusTableOptions_
+  name: CreateTable
+  nameWithType: IOrpheusDatabase.CreateTable
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTable
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTableOptions
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html
+  name: IOrpheusTableOptions
+  nameWithType: IOrpheusTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions
+- uid: OrpheusInterfaces.Core.IOrpheusTable{{T}}
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTable{``0}
+  parent: OrpheusInterfaces.Core
+  definition: OrpheusInterfaces.Core.IOrpheusTable`1
+  href: OrpheusInterfaces.Core.IOrpheusTable-1.html
+  name: IOrpheusTable<T>
+  nameWithType: IOrpheusTable<T>
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>
+  nameWithType.vb: IOrpheusTable(Of T)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T)
+  name.vb: IOrpheusTable(Of T)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable`1
+    name: IOrpheusTable
+    href: OrpheusInterfaces.Core.IOrpheusTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable`1
+    name: IOrpheusTable
+    href: OrpheusInterfaces.Core.IOrpheusTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTable`1
+  href: OrpheusInterfaces.Core.IOrpheusTable-1.html
+  name: IOrpheusTable<T>
+  nameWithType: IOrpheusTable<T>
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>
+  nameWithType.vb: IOrpheusTable(Of T)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T)
+  name.vb: IOrpheusTable(Of T)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable`1
+    name: IOrpheusTable
+    href: OrpheusInterfaces.Core.IOrpheusTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable`1
+    name: IOrpheusTable
+    href: OrpheusInterfaces.Core.IOrpheusTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField}
+  commentId: T:System.Collections.Generic.List{OrpheusInterfaces.Core.IOrpheusTableKeyField}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<IOrpheusTableKeyField>
+  nameWithType: List<IOrpheusTableKeyField>
+  fullName: System.Collections.Generic.List<OrpheusInterfaces.Core.IOrpheusTableKeyField>
+  nameWithType.vb: List(Of IOrpheusTableKeyField)
+  fullName.vb: System.Collections.Generic.List(Of OrpheusInterfaces.Core.IOrpheusTableKeyField)
+  name.vb: List(Of IOrpheusTableKeyField)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: OrpheusInterfaces.Core.IOrpheusTableKeyField
+    name: IOrpheusTableKeyField
+    href: OrpheusInterfaces.Core.IOrpheusTableKeyField.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: OrpheusInterfaces.Core.IOrpheusTableKeyField
+    name: IOrpheusTableKeyField
+    href: OrpheusInterfaces.Core.IOrpheusTableKeyField.html
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CreateSchema_System_Guid_System_String_System_Double_System_String_
+  name: CreateSchema
+  nameWithType: IOrpheusDatabase.CreateSchema
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateSchema
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: OrpheusInterfaces.Schema.ISchema
+  commentId: T:OrpheusInterfaces.Schema.ISchema
+  parent: OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.Schema.ISchema.html
+  name: ISchema
+  nameWithType: ISchema
+  fullName: OrpheusInterfaces.Schema.ISchema
+- uid: OrpheusInterfaces.Schema
+  commentId: N:OrpheusInterfaces.Schema
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Schema
+  nameWithType: OrpheusInterfaces.Schema
+  fullName: OrpheusInterfaces.Schema
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Schema
+    name: Schema
+    href: OrpheusInterfaces.Schema.html
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModule*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CreateModule
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CreateModule_OrpheusInterfaces_Core_IOrpheusModuleDefinition_
+  name: CreateModule
+  nameWithType: IOrpheusDatabase.CreateModule
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModule
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  commentId: T:OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html
+  name: IOrpheusModuleDefinition
+  nameWithType: IOrpheusModuleDefinition
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModuleDefinition*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CreateModuleDefinition
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CreateModuleDefinition
+  name: CreateModuleDefinition
+  nameWithType: IOrpheusDatabase.CreateModuleDefinition
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateModuleDefinition
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableOptions
+  name: CreateTableOptions
+  nameWithType: IOrpheusDatabase.CreateTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableOptions
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_CreateTableKeyField
+  name: CreateTableKeyField
+  nameWithType: IOrpheusDatabase.CreateTableKeyField
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.CreateTableKeyField
+- uid: OrpheusInterfaces.Core.IOrpheusTableKeyField
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTableKeyField
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusTableKeyField.html
+  name: IOrpheusTableKeyField
+  nameWithType: IOrpheusTableKeyField
+  fullName: OrpheusInterfaces.Core.IOrpheusTableKeyField
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.SQL*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.SQL
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_SQL__1_System_String_System_String_
+  name: SQL
+  nameWithType: IOrpheusDatabase.SQL
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.SQL
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_ExecuteDDL_System_String_
+  name: ExecuteDDL
+  nameWithType: IOrpheusDatabase.ExecuteDDL
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDL
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DbConnection*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.DbConnection
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_DbConnection
+  name: DbConnection
+  nameWithType: IOrpheusDatabase.DbConnection
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DbConnection
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_GetTableCount_System_String_
+  name: GetTableCount
+  nameWithType: IOrpheusDatabase.GetTableCount
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.GetTableCount
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DatabaseConnectionConfiguration*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.DatabaseConnectionConfiguration
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_DatabaseConnectionConfiguration
+  name: DatabaseConnectionConfiguration
+  nameWithType: IOrpheusDatabase.DatabaseConnectionConfiguration
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DatabaseConnectionConfiguration
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_ConnectAsync_System_String_System_Threading_CancellationToken_
+  name: ConnectAsync
+  nameWithType: IOrpheusDatabase.ConnectAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ConnectAsync
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_DisconnectAsync
+  name: DisconnectAsync
+  nameWithType: IOrpheusDatabase.DisconnectAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.DisconnectAsync
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_SQLAsync__1_System_String_System_String_System_Threading_CancellationToken_
+  name: SQLAsync
+  nameWithType: IOrpheusDatabase.SQLAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.SQLAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{{T}}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{``0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<List<T>>
+  nameWithType: Task<List<T>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<T>>
+  nameWithType.vb: Task(Of List(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of T))
+  name.vb: Task(Of List(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync*
+  commentId: Overload:OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html#OrpheusInterfaces_Core_IOrpheusDatabase_ExecuteDDLAsync_System_String_System_Threading_CancellationToken_
+  name: ExecuteDDLAsync
+  nameWithType: IOrpheusDatabase.ExecuteDDLAsync
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase.ExecuteDDLAsync
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )

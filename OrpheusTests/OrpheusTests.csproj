@@ -18,6 +18,7 @@
     <ProjectReference Include="..\OrpheusCore\OrpheusCore.csproj" />
     <ProjectReference Include="..\OrpheusInterfaces\OrpheusInterfaces.csproj" />
     <ProjectReference Include="..\OrpheusMySQLDDLHelper\OrpheusMySQLDDLHelper.csproj" />
+    <ProjectReference Include="..\OrpheusPostgreSQLDDLHelper\OrpheusPostgreSQLDDLHelper.csproj" />
     <ProjectReference Include="..\OrpheusSQLServerDDLHelper\OrpheusSQLServerDDLHelper.csproj" />
     <ProjectReference Include="..\OrpheusTestModels\OrpheusTestModels.csproj" />
   </ItemGroup>
@@ -36,6 +37,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="OrpheusConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="OrpheusConfig.CI.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

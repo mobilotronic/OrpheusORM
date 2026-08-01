@@ -1,0 +1,890 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core.IMySQLServerDDLHelper
+  commentId: T:OrpheusInterfaces.Core.IMySQLServerDDLHelper
+  id: IMySQLServerDDLHelper
+  parent: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  langs:
+  - csharp
+  - vb
+  name: IMySQLServerDDLHelper
+  nameWithType: IMySQLServerDDLHelper
+  fullName: OrpheusInterfaces.Core.IMySQLServerDDLHelper
+  type: Interface
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: IMySQLServerDDLHelper
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 405
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: MySQL Server specific DDL helper definition.
+  example: []
+  syntax:
+    content: 'public interface IMySQLServerDDLHelper : IOrpheusDDLHelper'
+    content.vb: Public Interface IMySQLServerDDLHelper Inherits IOrpheusDDLHelper
+  derivedClasses:
+  - OrpheusMySQLDDLHelper.OrpheusMySQLServerDDLHelper
+  inheritedMembers:
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseExists(System.String)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(System.String)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase(System.String)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabaseWithDDL(System.String)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.DB
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.TypeToString(System.Type)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIdentifierStart
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIdentifierEnd
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsGuidType
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsSchemaNameSpace
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatField(System.String)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.ModifyColumnCommand
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseName
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.DbEngineType
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.ConnectionString
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction)
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction,System.Threading.CancellationToken)
+- uid: OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  commentId: P:OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  id: SSLMode
+  parent: OrpheusInterfaces.Core.IMySQLServerDDLHelper
+  langs:
+  - csharp
+  - vb
+  name: SSLMode
+  nameWithType: IMySQLServerDDLHelper.SSLMode
+  fullName: OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  type: Property
+  source:
+    remote:
+      path: OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+      branch: feature/modernazitation-effort
+      repo: git@github.com:mobilotronic/OrpheusORM.git
+    id: SSLMode
+    path: ../OrpheusInterfaces/Core/IOrpheusDDLHelper.cs
+    startLine: 410
+  assemblies:
+  - OrpheusInterfaces
+  namespace: OrpheusInterfaces.Core
+  summary: SSL connection mode.
+  example: []
+  syntax:
+    content: string SSLMode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property SSLMode As String
+  overload: OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode*
+references:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseExists(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseExists(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseExists_System_String_
+  name: DatabaseExists(string)
+  nameWithType: IOrpheusDDLHelper.DatabaseExists(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseExists(string)
+  nameWithType.vb: IOrpheusDDLHelper.DatabaseExists(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseExists(String)
+  name.vb: DatabaseExists(String)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseExists(System.String)
+    name: DatabaseExists
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseExists_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseExists(System.String)
+    name: DatabaseExists
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseExists_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_
+  name: SchemaObjectExists(ISchemaObject)
+  nameWithType: IOrpheusDDLHelper.SchemaObjectExists(ISchemaObject)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)
+    name: SchemaObjectExists
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_
+  - name: (
+  - uid: OrpheusInterfaces.Schema.ISchemaObject
+    name: ISchemaObject
+    href: OrpheusInterfaces.Schema.ISchemaObject.html
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaObject)
+    name: SchemaObjectExists
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaObject_
+  - name: (
+  - uid: OrpheusInterfaces.Schema.ISchemaObject
+    name: ISchemaObject
+    href: OrpheusInterfaces.Schema.ISchemaObject.html
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_System_String_
+  name: SchemaObjectExists(string)
+  nameWithType: IOrpheusDDLHelper.SchemaObjectExists(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(string)
+  nameWithType.vb: IOrpheusDDLHelper.SchemaObjectExists(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(String)
+  name.vb: SchemaObjectExists(String)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(System.String)
+    name: SchemaObjectExists
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(System.String)
+    name: SchemaObjectExists
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_
+  name: SchemaObjectExists(ISchemaConstraint)
+  nameWithType: IOrpheusDDLHelper.SchemaObjectExists(ISchemaConstraint)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)
+    name: SchemaObjectExists
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_
+  - name: (
+  - uid: OrpheusInterfaces.Schema.ISchemaConstraint
+    name: ISchemaConstraint
+    href: OrpheusInterfaces.Schema.ISchemaConstraint.html
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectExists(OrpheusInterfaces.Schema.ISchemaConstraint)
+    name: SchemaObjectExists
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectExists_OrpheusInterfaces_Schema_ISchemaConstraint_
+  - name: (
+  - uid: OrpheusInterfaces.Schema.ISchemaConstraint
+    name: ISchemaConstraint
+    href: OrpheusInterfaces.Schema.ISchemaConstraint.html
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_
+  name: SchemaObjectId<T>(ISchemaObject)
+  nameWithType: IOrpheusDDLHelper.SchemaObjectId<T>(ISchemaObject)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId<T>(OrpheusInterfaces.Schema.ISchemaObject)
+  nameWithType.vb: IOrpheusDDLHelper.SchemaObjectId(Of T)(ISchemaObject)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId(Of T)(OrpheusInterfaces.Schema.ISchemaObject)
+  name.vb: SchemaObjectId(Of T)(ISchemaObject)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+    name: SchemaObjectId
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: OrpheusInterfaces.Schema.ISchemaObject
+    name: ISchemaObject
+    href: OrpheusInterfaces.Schema.ISchemaObject.html
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SchemaObjectId``1(OrpheusInterfaces.Schema.ISchemaObject)
+    name: SchemaObjectId
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SchemaObjectId__1_OrpheusInterfaces_Schema_ISchemaObject_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: OrpheusInterfaces.Schema.ISchemaObject
+    name: ISchemaObject
+    href: OrpheusInterfaces.Schema.ISchemaObject.html
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase
+  name: CreateDatabase()
+  nameWithType: IOrpheusDDLHelper.CreateDatabase()
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase()
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase
+    name: CreateDatabase
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase
+    name: CreateDatabase
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase
+  - name: (
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase_System_String_
+  name: CreateDatabase(string)
+  nameWithType: IOrpheusDDLHelper.CreateDatabase(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase(string)
+  nameWithType.vb: IOrpheusDDLHelper.CreateDatabase(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase(String)
+  name.vb: CreateDatabase(String)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase(System.String)
+    name: CreateDatabase
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabase(System.String)
+    name: CreateDatabase
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabase_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabaseWithDDL(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabaseWithDDL(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabaseWithDDL_System_String_
+  name: CreateDatabaseWithDDL(string)
+  nameWithType: IOrpheusDDLHelper.CreateDatabaseWithDDL(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabaseWithDDL(string)
+  nameWithType.vb: IOrpheusDDLHelper.CreateDatabaseWithDDL(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabaseWithDDL(String)
+  name.vb: CreateDatabaseWithDDL(String)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabaseWithDDL(System.String)
+    name: CreateDatabaseWithDDL
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabaseWithDDL_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.CreateDatabaseWithDDL(System.String)
+    name: CreateDatabaseWithDDL
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_CreateDatabaseWithDDL_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DB
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDDLHelper.DB
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DB
+  name: DB
+  nameWithType: IOrpheusDDLHelper.DB
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.DB
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.TypeToString(System.Type)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.TypeToString(System.Type)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_TypeToString_System_Type_
+  name: TypeToString(Type)
+  nameWithType: IOrpheusDDLHelper.TypeToString(Type)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.TypeToString(System.Type)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.TypeToString(System.Type)
+    name: TypeToString
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_TypeToString_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.TypeToString(System.Type)
+    name: TypeToString
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_TypeToString_System_Type_
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DbTypeToString_System_Data_DbType_
+  name: DbTypeToString(DbType)
+  nameWithType: IOrpheusDDLHelper.DbTypeToString(DbType)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)
+    name: DbTypeToString
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DbTypeToString_System_Data_DbType_
+  - name: (
+  - uid: System.Data.DbType
+    name: DbType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.dbtype
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DbTypeToString(System.Data.DbType)
+    name: DbTypeToString
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DbTypeToString_System_Data_DbType_
+  - name: (
+  - uid: System.Data.DbType
+    name: DbType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.dbtype
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIdentifierStart
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIdentifierStart
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DelimitedIdentifierStart
+  name: DelimitedIdentifierStart
+  nameWithType: IOrpheusDDLHelper.DelimitedIdentifierStart
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIdentifierStart
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIdentifierEnd
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIdentifierEnd
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DelimitedIdentifierEnd
+  name: DelimitedIdentifierEnd
+  nameWithType: IOrpheusDDLHelper.DelimitedIdentifierEnd
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.DelimitedIdentifierEnd
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsGuidType
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsGuidType
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SupportsGuidType
+  name: SupportsGuidType
+  nameWithType: IOrpheusDDLHelper.SupportsGuidType
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsGuidType
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsSchemaNameSpace
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsSchemaNameSpace
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SupportsSchemaNameSpace
+  name: SupportsSchemaNameSpace
+  nameWithType: IOrpheusDDLHelper.SupportsSchemaNameSpace
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SupportsSchemaNameSpace
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatField(System.String)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatField(System.String)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatField_System_String_
+  name: SafeFormatField(string)
+  nameWithType: IOrpheusDDLHelper.SafeFormatField(string)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatField(string)
+  nameWithType.vb: IOrpheusDDLHelper.SafeFormatField(String)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatField(String)
+  name.vb: SafeFormatField(String)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatField(System.String)
+    name: SafeFormatField
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatField_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatField(System.String)
+    name: SafeFormatField
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatField_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.ModifyColumnCommand
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDDLHelper.ModifyColumnCommand
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ModifyColumnCommand
+  name: ModifyColumnCommand
+  nameWithType: IOrpheusDDLHelper.ModifyColumnCommand
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.ModifyColumnCommand
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__
+  name: SafeFormatAlterTableDropColumn(string, List<string>)
+  nameWithType: IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(string, List<string>)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(string, System.Collections.Generic.List<string>)
+  nameWithType.vb: IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(String, List(Of String))
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(String, System.Collections.Generic.List(Of String))
+  name.vb: SafeFormatAlterTableDropColumn(String, List(Of String))
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
+    name: SafeFormatAlterTableDropColumn
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableDropColumn(System.String,System.Collections.Generic.List{System.String})
+    name: SafeFormatAlterTableDropColumn
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableDropColumn_System_String_System_Collections_Generic_List_System_String__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__
+  name: SafeFormatAlterTableAddColumn(string, List<string>)
+  nameWithType: IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(string, List<string>)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(string, System.Collections.Generic.List<string>)
+  nameWithType.vb: IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(String, List(Of String))
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(String, System.Collections.Generic.List(Of String))
+  name.vb: SafeFormatAlterTableAddColumn(String, List(Of String))
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
+    name: SafeFormatAlterTableAddColumn
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.SafeFormatAlterTableAddColumn(System.String,System.Collections.Generic.List{System.String})
+    name: SafeFormatAlterTableAddColumn
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_SafeFormatAlterTableAddColumn_System_String_System_Collections_Generic_List_System_String__
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseName
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseName
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DatabaseName
+  name: DatabaseName
+  nameWithType: IOrpheusDDLHelper.DatabaseName
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.DatabaseName
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.DbEngineType
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDDLHelper.DbEngineType
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_DbEngineType
+  name: DbEngineType
+  nameWithType: IOrpheusDDLHelper.DbEngineType
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.DbEngineType
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.ConnectionString
+  commentId: P:OrpheusInterfaces.Core.IOrpheusDDLHelper.ConnectionString
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ConnectionString
+  name: ConnectionString
+  nameWithType: IOrpheusDDLHelper.ConnectionString
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.ConnectionString
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_
+  name: ExecuteBatchedInsertWithKeyRetrieval(string, List<string>, string, List<List<object>>, IDbTransaction)
+  nameWithType: IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(string, List<string>, string, List<List<object>>, IDbTransaction)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(string, System.Collections.Generic.List<string>, string, System.Collections.Generic.List<System.Collections.Generic.List<object>>, System.Data.IDbTransaction)
+  nameWithType.vb: IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(String, List(Of String), String, List(Of List(Of Object)), IDbTransaction)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(String, System.Collections.Generic.List(Of String), String, System.Collections.Generic.List(Of System.Collections.Generic.List(Of Object)), System.Data.IDbTransaction)
+  name.vb: ExecuteBatchedInsertWithKeyRetrieval(String, List(Of String), String, List(Of List(Of Object)), IDbTransaction)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction)
+    name: ExecuteBatchedInsertWithKeyRetrieval
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrieval(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction)
+    name: ExecuteBatchedInsertWithKeyRetrieval
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ExecuteBatchedInsertWithKeyRetrieval_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction,System.Threading.CancellationToken)
+  commentId: M:OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction,System.Threading.CancellationToken)
+  parent: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  isExternal: true
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ExecuteBatchedInsertWithKeyRetrievalAsync_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_System_Threading_CancellationToken_
+  name: ExecuteBatchedInsertWithKeyRetrievalAsync(string, List<string>, string, List<List<object>>, IDbTransaction, CancellationToken)
+  nameWithType: IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(string, List<string>, string, List<List<object>>, IDbTransaction, CancellationToken)
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(string, System.Collections.Generic.List<string>, string, System.Collections.Generic.List<System.Collections.Generic.List<object>>, System.Data.IDbTransaction, System.Threading.CancellationToken)
+  nameWithType.vb: IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(String, List(Of String), String, List(Of List(Of Object)), IDbTransaction, CancellationToken)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(String, System.Collections.Generic.List(Of String), String, System.Collections.Generic.List(Of System.Collections.Generic.List(Of Object)), System.Data.IDbTransaction, System.Threading.CancellationToken)
+  name.vb: ExecuteBatchedInsertWithKeyRetrievalAsync(String, List(Of String), String, List(Of List(Of Object)), IDbTransaction, CancellationToken)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction,System.Threading.CancellationToken)
+    name: ExecuteBatchedInsertWithKeyRetrievalAsync
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ExecuteBatchedInsertWithKeyRetrievalAsync_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusDDLHelper.ExecuteBatchedInsertWithKeyRetrievalAsync(System.String,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.Object}},System.Data.IDbTransaction,System.Threading.CancellationToken)
+    name: ExecuteBatchedInsertWithKeyRetrievalAsync
+    href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html#OrpheusInterfaces_Core_IOrpheusDDLHelper_ExecuteBatchedInsertWithKeyRetrievalAsync_System_String_System_Collections_Generic_List_System_String__System_String_System_Collections_Generic_List_System_Collections_Generic_List_System_Object___System_Data_IDbTransaction_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Data.IDbTransaction
+    name: IDbTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.data.idbtransaction
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDDLHelper
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html
+  name: IOrpheusDDLHelper
+  nameWithType: IOrpheusDDLHelper
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper
+- uid: OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode*
+  commentId: Overload:OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+  href: OrpheusInterfaces.Core.IMySQLServerDDLHelper.html#OrpheusInterfaces_Core_IMySQLServerDDLHelper_SSLMode
+  name: SSLMode
+  nameWithType: IMySQLServerDDLHelper.SSLMode
+  fullName: OrpheusInterfaces.Core.IMySQLServerDDLHelper.SSLMode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

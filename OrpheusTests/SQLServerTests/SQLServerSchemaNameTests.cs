@@ -58,27 +58,6 @@ namespace OrpheusTests.SQLServerTests
             }
         }
 
-        //[TestMethod]
-        //public void SQLNamedSchemaDrop()
-        //{
-        //    this.Initialize();
-        //    var schemaName = "TestSchema";
-
-        //    var schemaCommand = this.Database.CreateCommand();
-
-
-
-        //    var schema = new TestSchema(this.Database, "Named Test Schema", 1.1, Guid.Parse("331503CC-10EC-4639-8BB7-4A4609BDF7EB"), schemaName);
-        //    if (this.Database.DDLHelperAs<ISQLServerDDLHelper>().SchemaExists(schemaName))
-        //    {
-        //        schema.Drop();
-        //        foreach (ISchemaObject shemaObj in schema.SchemaObjects)
-        //        {
-        //            Assert.AreEqual(false, this.Database.DDLHelper.SchemaObjectExists(shemaObj));
-        //        }
-        //    }
-        //}
-
         public SQLServerSchemaNameTests()
         {
             this.DatabaseEngine = DbEngine.dbSQLServer;

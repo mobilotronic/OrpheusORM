@@ -10,6 +10,18 @@ namespace OrpheusTestsBenchMark
             base.initializeBenchMark();
         }
 
+        // BenchmarkDotNet invokes each [Benchmark] method many times (pilot + warmup + actual
+        // stages) to calibrate and measure. TransactorId is a randomly-ordered Guid clustered
+        // primary key, so without resetting between invocations the table keeps growing across
+        // the run and later invocations pay increasing index page-split cost, skewing the
+        // reported Mean upward. Reset before every invocation so each one measures against the
+        // same, bounded table size.
+        [IterationSetup]
+        public void IterationSetup()
+        {
+            this.Database.ExecuteDDL("DELETE FROM TestModelTransactor");
+        }
+
         [Benchmark(Baseline = true)]
         public void Insert10Rows()
         {

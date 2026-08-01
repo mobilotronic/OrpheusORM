@@ -15,13 +15,12 @@ namespace OrpheusSQLDDLHelper
     /// SQL Server definition of DDL helper.
     /// DDL helper is used to execute DB engine specific DDL commands.
     /// </summary>
-    public class OrpheusSQLServerDDLHelper : ISQLServerDDLHelper
+    public class OrpheusSQLServerDDLHelper : ISQLServerDDLHelper, IDisposable
     {
         #region private properties
         private Dictionary<Type, string> typeMap = new Dictionary<Type, string>();
         private Dictionary<int, string> dbTypeMap = new Dictionary<int, string>();
         private string schemaSeparator = ".";
-        //private ISchemaObject dummySchemaObject;
 
         private SqlConnection _secondConnection;
         private SqlConnection _masterConnection;
@@ -34,6 +33,21 @@ namespace OrpheusSQLDDLHelper
 
         #region auxiliary connections
         /// <summary>
+        /// The connection factory backing this database, required to build the auxiliary connections
+        /// below. Only null if the database was constructed from a raw IDbConnection instead of a
+        /// connection factory, which isn't supported for schema/DDL operations.
+        /// </summary>
+        private IOrpheusConnectionFactory connectionFactory
+        {
+            get
+            {
+                if (this.db?.ConnectionFactory == null)
+                    throw new InvalidOperationException("Schema/DDL operations require a database constructed with an IOrpheusConnectionFactory.");
+                return this.db.ConnectionFactory;
+            }
+        }
+
+        /// <summary>
         /// A second connection is required to perform database related actions, without affecting the connected state of the main database object.
         /// </summary>
         private SqlConnection secondConnection
@@ -41,10 +55,7 @@ namespace OrpheusSQLDDLHelper
             get
             {
                 if (this._secondConnection == null)
-                {
-                    var sqlConnBuilder = new SqlConnectionStringBuilder(this.ConnectionString);
-                    this._secondConnection = new SqlConnection(sqlConnBuilder.ConnectionString);
-                }
+                    this._secondConnection = (SqlConnection)this.connectionFactory.CreateSecondaryConnection();
                 return this._secondConnection;
             }
         }
@@ -54,47 +65,7 @@ namespace OrpheusSQLDDLHelper
             get
             {
                 if (this._masterConnection == null)
-                {
-                    if (this.db.DatabaseConnectionConfiguration != null)
-                    {
-
-                        SqlConnectionStringBuilder masterConnectionString = new SqlConnectionStringBuilder();
-                        var masterConnectionConfiguration = this.db.DatabaseConnectionConfiguration;
-                        if (masterConnectionConfiguration == null)
-                            throw new Exception("Missing database configuration.\r\nThis is required so Orpheus can connect to the database.Configuration will be infer from the connection string.");
-                        masterConnectionString = new SqlConnectionStringBuilder();
-                        masterConnectionString.DataSource = masterConnectionConfiguration.Server;
-                        masterConnectionString.InitialCatalog = "master";
-                        masterConnectionString.IntegratedSecurity = masterConnectionConfiguration.UseIntegratedSecurityForServiceConnection;
-                        masterConnectionString.TrustServerCertificate = masterConnectionConfiguration.TrustServerCertificate;
-                        switch (masterConnectionConfiguration.EncyrptConnection)
-                        {
-                            case OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional:
-                                {
-                                    masterConnectionString.Encrypt = SqlConnectionEncryptOption.Optional; break;
-                                }
-                            case OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory:
-                                {
-                                    masterConnectionString.Encrypt = SqlConnectionEncryptOption.Mandatory; break;
-                                }
-                            case OrpheusInterfaces.Configuration.EncyrptConnection.ecStrict:
-                                {
-                                    masterConnectionString.Encrypt = SqlConnectionEncryptOption.Strict; break;
-                                }
-                        }
-                        masterConnectionString.Encrypt = SqlConnectionEncryptOption.Optional;
-                        if (!masterConnectionString.IntegratedSecurity)
-                        {
-
-                            if (masterConnectionConfiguration.ServiceUserName != null)
-                                masterConnectionString.UserID = masterConnectionConfiguration.ServiceUserName;
-
-                            if (masterConnectionConfiguration.ServicePassword != null)
-                                masterConnectionString.Password = masterConnectionConfiguration.ServicePassword;
-                        }
-                        this._masterConnection = new SqlConnection(masterConnectionString.ConnectionString);
-                    }
-                }
+                    this._masterConnection = (SqlConnection)this.connectionFactory.CreateAdministrativeConnection();
                 return this._masterConnection;
             }
         }
@@ -238,8 +209,6 @@ namespace OrpheusSQLDDLHelper
             IDbCommand result = null;
             if (isNamedSchema)
             {
-                //this.selectSchemaObjectQuery = this.db.CreatePreparedQuery(String.Format("SELECT OBJECT_ID FROM {0}.SYS.OBJECTS WHERE NAME = @NAME",this.DatabaseName),
-                //    new List<string>() { "@NAME" });
                 result = this.secondConnection.CreateCommand();
                 var SQL = new StringBuilder();
                 SQL.AppendFormat("SELECT OBJECT_ID,{0}.SYS.SCHEMAS.NAME FROM {1}.SYS.OBJECTS ", this.DatabaseName, this.DatabaseName);
@@ -413,13 +382,13 @@ namespace OrpheusSQLDDLHelper
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
         /// <returns>Char</returns>
-        public char DelimitedIndetifierStart { get { return '['; } }
+        public char DelimitedIdentifierStart { get { return '['; } }
 
         /// <summary>
         /// Identifiers that do not comply with all of the rules for identifiers must be delimited in a SQL statement, enclosed in the DelimitedIdentifier char.
         /// </summary>
         /// <returns>Char</returns>
-        public char DelimitedIndetifierEnd { get { return ']'; } }
+        public char DelimitedIdentifierEnd { get { return ']'; } }
 
         /// <summary>
         /// Returns the underlying database engine type.
@@ -459,6 +428,7 @@ namespace OrpheusSQLDDLHelper
                 {
                     DataSource = dataConnectionConfiguration.Server,
                     InitialCatalog = dataConnectionConfiguration.DatabaseName,
+                    TrustServerCertificate = dataConnectionConfiguration.TrustServerCertificate,
                     IntegratedSecurity = dataConnectionConfiguration.UseIntegratedSecurity
                 };
                 if (dataConnectionConfiguration.UserName != null)
@@ -470,7 +440,7 @@ namespace OrpheusSQLDDLHelper
                 {
                     case OrpheusInterfaces.Configuration.EncyrptConnection.ecOptional:
                         {
-                            connBuilder.Encrypt = SqlConnectionEncryptOption.Optional; break;
+                            connBuilder["Encrypt"] = "false"; break;
                         }
                     case OrpheusInterfaces.Configuration.EncyrptConnection.ecMandatory:
                         {
@@ -687,7 +657,7 @@ namespace OrpheusSQLDDLHelper
         /// </summary>
         /// <param name="fieldName"></param>
         /// <returns></returns>
-        public string SafeFormatField(string fieldName) { return String.Format("{0}{1}{2}", this.DelimitedIndetifierStart, fieldName, this.DelimitedIndetifierEnd); }
+        public string SafeFormatField(string fieldName) { return String.Format("{0}{1}{2}", this.DelimitedIdentifierStart, fieldName, this.DelimitedIdentifierEnd); }
 
         /// <summary>
         /// Properly formats an ALTER TABLE DROP COLUMN command for the underlying database engine.
@@ -724,6 +694,20 @@ namespace OrpheusSQLDDLHelper
             this.SupportsSchemaNameSpace = true;
             this.DbEngineType = DatabaseEngineType.dbSQLServer;
             this.logger = logger;
+        }
+        #endregion
+
+        #region IDisposable
+        /// <summary>
+        /// Disposes the auxiliary secondary/administrative connections, if created.
+        /// </summary>
+        public void Dispose()
+        {
+            this._secondConnection?.Dispose();
+            this._secondConnection = null;
+            this._masterConnection?.Dispose();
+            this._masterConnection = null;
+            GC.SuppressFinalize(this);
         }
         #endregion
 
@@ -1107,6 +1091,81 @@ namespace OrpheusSQLDDLHelper
         {
             foreach (var p in permissions)
                 this.Revoke(p, schemaObject, databasePrincipal);
+        }
+        #endregion
+
+        #region batched insert with key retrieval
+        /// <inheritdoc/>
+        /// <remarks>
+        /// SQL Server implementation note: plain OUTPUT on a multi-row INSERT does NOT guarantee the
+        /// output row order matches the input VALUES order (documented SQL Server behavior) — using
+        /// it naively would silently mis-map generated keys back to the wrong source rows. MERGE's
+        /// OUTPUT, by contrast, can reference the source row via a correlation column, so each output
+        /// row is deterministically tied back to the row that produced it, regardless of any internal
+        /// reordering.
+        /// </remarks>
+        public List<object> ExecuteBatchedInsertWithKeyRetrieval(string tableName, List<string> columns, string keyColumnName, List<List<object>> rows, IDbTransaction transaction)
+        {
+            using var cmd = this.buildBatchedInsertWithKeyRetrievalCommand(tableName, columns, keyColumnName, rows, transaction);
+            var byCorrelation = new Dictionary<int, object>();
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                    byCorrelation[Convert.ToInt32(reader.GetValue(0))] = reader.GetValue(1);
+            }
+            return Enumerable.Range(0, rows.Count).Select(i => byCorrelation[i]).ToList();
+        }
+
+        /// <inheritdoc/>
+        public async System.Threading.Tasks.Task<List<object>> ExecuteBatchedInsertWithKeyRetrievalAsync(string tableName, List<string> columns, string keyColumnName, List<List<object>> rows, IDbTransaction transaction, System.Threading.CancellationToken cancellationToken = default)
+        {
+            using var cmd = (System.Data.Common.DbCommand)this.buildBatchedInsertWithKeyRetrievalCommand(tableName, columns, keyColumnName, rows, transaction);
+            var byCorrelation = new Dictionary<int, object>();
+            using (var reader = await cmd.ExecuteReaderAsync(cancellationToken))
+            {
+                while (await reader.ReadAsync(cancellationToken))
+                    byCorrelation[Convert.ToInt32(reader.GetValue(0))] = reader.GetValue(1);
+            }
+            return Enumerable.Range(0, rows.Count).Select(i => byCorrelation[i]).ToList();
+        }
+
+        private IDbCommand buildBatchedInsertWithKeyRetrievalCommand(string tableName, List<string> columns, string keyColumnName, List<List<object>> rows, IDbTransaction transaction)
+        {
+            var cmd = this.DB.CreateCommand();
+            cmd.Transaction = transaction;
+            // Generic src column aliases (c0, c1, ...) avoid any collision with real target column names.
+            var sourceColumnAliases = Enumerable.Range(0, columns.Count).Select(i => $"[c{i}]").ToList();
+            var targetColumnList = string.Join(",", columns.Select(this.SafeFormatField));
+            var insertValueList = string.Join(",", sourceColumnAliases.Select(a => $"src.{a}"));
+
+            var rowValueLists = new List<string>();
+            for (var rowIndex = 0; rowIndex < rows.Count; rowIndex++)
+            {
+                var placeholders = new List<string> { $"@corr_{rowIndex}" };
+                var corrParam = cmd.CreateParameter();
+                corrParam.ParameterName = $"@corr_{rowIndex}";
+                corrParam.Value = rowIndex;
+                cmd.Parameters.Add(corrParam);
+
+                for (var colIndex = 0; colIndex < columns.Count; colIndex++)
+                {
+                    var paramName = $"@p_{rowIndex}_{colIndex}";
+                    placeholders.Add(paramName);
+                    var param = cmd.CreateParameter();
+                    param.ParameterName = paramName;
+                    param.Value = rows[rowIndex][colIndex] ?? DBNull.Value;
+                    cmd.Parameters.Add(param);
+                }
+                rowValueLists.Add($"({string.Join(",", placeholders)})");
+            }
+
+            cmd.CommandText =
+                $"MERGE INTO {tableName} AS tgt " +
+                $"USING (VALUES {string.Join(",", rowValueLists)}) AS src([__corr],{string.Join(",", sourceColumnAliases)}) " +
+                $"ON 1 = 0 " +
+                $"WHEN NOT MATCHED THEN INSERT ({targetColumnList}) VALUES ({insertValueList}) " +
+                $"OUTPUT src.[__corr], INSERTED.{this.SafeFormatField(keyColumnName)};";
+            return cmd;
         }
         #endregion
     }

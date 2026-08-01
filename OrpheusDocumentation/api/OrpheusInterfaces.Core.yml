@@ -1,0 +1,242 @@
+### YamlMime:ManagedReference
+items:
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  id: OrpheusInterfaces.Core
+  children:
+  - OrpheusInterfaces.Core.DatabaseEngineType
+  - OrpheusInterfaces.Core.ExtendedDbTypes
+  - OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+  - OrpheusInterfaces.Core.IMySQLServerDDLHelper
+  - OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  - OrpheusInterfaces.Core.IOrpheusDDLHelper
+  - OrpheusInterfaces.Core.IOrpheusDatabase
+  - OrpheusInterfaces.Core.IOrpheusModelHelper
+  - OrpheusInterfaces.Core.IOrpheusModule
+  - OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  - OrpheusInterfaces.Core.IOrpheusReferenceTable
+  - OrpheusInterfaces.Core.IOrpheusReferenceTable`1
+  - OrpheusInterfaces.Core.IOrpheusTable
+  - OrpheusInterfaces.Core.IOrpheusTableKeyField
+  - OrpheusInterfaces.Core.IOrpheusTableOptions
+  - OrpheusInterfaces.Core.IOrpheusTable`1
+  - OrpheusInterfaces.Core.ISQLServerDDLHelper
+  - OrpheusInterfaces.Core.ISaveEventArguments
+  - OrpheusInterfaces.Core.LogicalOperator
+  langs:
+  - csharp
+  - vb
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  type: Namespace
+  assemblies:
+  - OrpheusInterfaces
+references:
+- uid: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  commentId: T:OrpheusInterfaces.Core.IOrpheusConnectionFactory
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusConnectionFactory.html
+  name: IOrpheusConnectionFactory
+  nameWithType: IOrpheusConnectionFactory
+  fullName: OrpheusInterfaces.Core.IOrpheusConnectionFactory
+- uid: OrpheusInterfaces.Core.IOrpheusDatabase
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDatabase
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDatabase.html
+  name: IOrpheusDatabase
+  nameWithType: IOrpheusDatabase
+  fullName: OrpheusInterfaces.Core.IOrpheusDatabase
+- uid: OrpheusInterfaces.Core.ExtendedDbTypes
+  commentId: T:OrpheusInterfaces.Core.ExtendedDbTypes
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.ExtendedDbTypes.html
+  name: ExtendedDbTypes
+  nameWithType: ExtendedDbTypes
+  fullName: OrpheusInterfaces.Core.ExtendedDbTypes
+- uid: OrpheusInterfaces.Core.DatabaseEngineType
+  commentId: T:OrpheusInterfaces.Core.DatabaseEngineType
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.DatabaseEngineType.html
+  name: DatabaseEngineType
+  nameWithType: DatabaseEngineType
+  fullName: OrpheusInterfaces.Core.DatabaseEngineType
+- uid: OrpheusInterfaces.Core.IOrpheusDDLHelper
+  commentId: T:OrpheusInterfaces.Core.IOrpheusDDLHelper
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusDDLHelper.html
+  name: IOrpheusDDLHelper
+  nameWithType: IOrpheusDDLHelper
+  fullName: OrpheusInterfaces.Core.IOrpheusDDLHelper
+- uid: OrpheusInterfaces.Core.ISQLServerDDLHelper
+  commentId: T:OrpheusInterfaces.Core.ISQLServerDDLHelper
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.ISQLServerDDLHelper.html
+  name: ISQLServerDDLHelper
+  nameWithType: ISQLServerDDLHelper
+  fullName: OrpheusInterfaces.Core.ISQLServerDDLHelper
+- uid: OrpheusInterfaces.Core.IMySQLServerDDLHelper
+  commentId: T:OrpheusInterfaces.Core.IMySQLServerDDLHelper
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IMySQLServerDDLHelper.html
+  name: IMySQLServerDDLHelper
+  nameWithType: IMySQLServerDDLHelper
+  fullName: OrpheusInterfaces.Core.IMySQLServerDDLHelper
+- uid: OrpheusInterfaces.Core.ISaveEventArguments
+  commentId: T:OrpheusInterfaces.Core.ISaveEventArguments
+  href: OrpheusInterfaces.Core.ISaveEventArguments.html
+  name: ISaveEventArguments
+  nameWithType: ISaveEventArguments
+  fullName: OrpheusInterfaces.Core.ISaveEventArguments
+- uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+  commentId: T:OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+  href: OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html
+  name: IModifyRecordEventArguments<T>
+  nameWithType: IModifyRecordEventArguments<T>
+  fullName: OrpheusInterfaces.Core.IModifyRecordEventArguments<T>
+  nameWithType.vb: IModifyRecordEventArguments(Of T)
+  fullName.vb: OrpheusInterfaces.Core.IModifyRecordEventArguments(Of T)
+  name.vb: IModifyRecordEventArguments(Of T)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+    name: IModifyRecordEventArguments
+    href: OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IModifyRecordEventArguments`1
+    name: IModifyRecordEventArguments
+    href: OrpheusInterfaces.Core.IModifyRecordEventArguments-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusModelHelper
+  commentId: T:OrpheusInterfaces.Core.IOrpheusModelHelper
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusModelHelper.html
+  name: IOrpheusModelHelper
+  nameWithType: IOrpheusModelHelper
+  fullName: OrpheusInterfaces.Core.IOrpheusModelHelper
+- uid: OrpheusInterfaces.Core.IOrpheusModule
+  commentId: T:OrpheusInterfaces.Core.IOrpheusModule
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusModule.html
+  name: IOrpheusModule
+  nameWithType: IOrpheusModule
+  fullName: OrpheusInterfaces.Core.IOrpheusModule
+- uid: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  commentId: T:OrpheusInterfaces.Core.IOrpheusModuleDefinition
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusModuleDefinition.html
+  name: IOrpheusModuleDefinition
+  nameWithType: IOrpheusModuleDefinition
+  fullName: OrpheusInterfaces.Core.IOrpheusModuleDefinition
+- uid: OrpheusInterfaces.Core.LogicalOperator
+  commentId: T:OrpheusInterfaces.Core.LogicalOperator
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.LogicalOperator.html
+  name: LogicalOperator
+  nameWithType: LogicalOperator
+  fullName: OrpheusInterfaces.Core.LogicalOperator
+- uid: OrpheusInterfaces.Core.IOrpheusTable
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTable
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusTable.html
+  name: IOrpheusTable
+  nameWithType: IOrpheusTable
+  fullName: OrpheusInterfaces.Core.IOrpheusTable
+- uid: OrpheusInterfaces.Core.IOrpheusTable`1
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTable`1
+  href: OrpheusInterfaces.Core.IOrpheusTable-1.html
+  name: IOrpheusTable<T>
+  nameWithType: IOrpheusTable<T>
+  fullName: OrpheusInterfaces.Core.IOrpheusTable<T>
+  nameWithType.vb: IOrpheusTable(Of T)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusTable(Of T)
+  name.vb: IOrpheusTable(Of T)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable`1
+    name: IOrpheusTable
+    href: OrpheusInterfaces.Core.IOrpheusTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusTable`1
+    name: IOrpheusTable
+    href: OrpheusInterfaces.Core.IOrpheusTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTableOptions
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTableOptions
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusTableOptions.html
+  name: IOrpheusTableOptions
+  nameWithType: IOrpheusTableOptions
+  fullName: OrpheusInterfaces.Core.IOrpheusTableOptions
+- uid: OrpheusInterfaces.Core.IOrpheusReferenceTable
+  commentId: T:OrpheusInterfaces.Core.IOrpheusReferenceTable
+  href: OrpheusInterfaces.Core.IOrpheusReferenceTable.html
+  name: IOrpheusReferenceTable
+  nameWithType: IOrpheusReferenceTable
+  fullName: OrpheusInterfaces.Core.IOrpheusReferenceTable
+- uid: OrpheusInterfaces.Core.IOrpheusReferenceTable`1
+  commentId: T:OrpheusInterfaces.Core.IOrpheusReferenceTable`1
+  href: OrpheusInterfaces.Core.IOrpheusReferenceTable-1.html
+  name: IOrpheusReferenceTable<T>
+  nameWithType: IOrpheusReferenceTable<T>
+  fullName: OrpheusInterfaces.Core.IOrpheusReferenceTable<T>
+  nameWithType.vb: IOrpheusReferenceTable(Of T)
+  fullName.vb: OrpheusInterfaces.Core.IOrpheusReferenceTable(Of T)
+  name.vb: IOrpheusReferenceTable(Of T)
+  spec.csharp:
+  - uid: OrpheusInterfaces.Core.IOrpheusReferenceTable`1
+    name: IOrpheusReferenceTable
+    href: OrpheusInterfaces.Core.IOrpheusReferenceTable-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: OrpheusInterfaces.Core.IOrpheusReferenceTable`1
+    name: IOrpheusReferenceTable
+    href: OrpheusInterfaces.Core.IOrpheusReferenceTable-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: OrpheusInterfaces.Core.IOrpheusTableKeyField
+  commentId: T:OrpheusInterfaces.Core.IOrpheusTableKeyField
+  parent: OrpheusInterfaces.Core
+  href: OrpheusInterfaces.Core.IOrpheusTableKeyField.html
+  name: IOrpheusTableKeyField
+  nameWithType: IOrpheusTableKeyField
+  fullName: OrpheusInterfaces.Core.IOrpheusTableKeyField
+- uid: OrpheusInterfaces.Core
+  commentId: N:OrpheusInterfaces.Core
+  href: OrpheusInterfaces.html
+  name: OrpheusInterfaces.Core
+  nameWithType: OrpheusInterfaces.Core
+  fullName: OrpheusInterfaces.Core
+  spec.csharp:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
+  spec.vb:
+  - uid: OrpheusInterfaces
+    name: OrpheusInterfaces
+    href: OrpheusInterfaces.html
+  - name: .
+  - uid: OrpheusInterfaces.Core
+    name: Core
+    href: OrpheusInterfaces.Core.html
