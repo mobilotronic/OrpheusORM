@@ -20,20 +20,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusDocumentation", "Orp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrpheusTestsBenchMark", "OrpheusTestsBenchMark\OrpheusTestsBenchMark.csproj", "{472EA0A3-9A2C-4164-BF6F-905E5FEE8747}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{B2F48277-3D65-4431-BAD0-B4A5C8B7ED00}"
-	ProjectSection(SolutionItems) = preProject
-		Nuget\CreatePackage.cmd = Nuget\CreatePackage.cmd
-		Nuget\nuget.exe = Nuget\nuget.exe
-		Nuget\OrpheusIcon.png = Nuget\OrpheusIcon.png
-		Nuget\OrpheusORM.nuspec = Nuget\OrpheusORM.nuspec
-		Nuget\OrpheusORMAttributes.nuspec = Nuget\OrpheusORMAttributes.nuspec
-		Nuget\OrpheusORMInterfaces.nuspec = Nuget\OrpheusORMInterfaces.nuspec
-		Nuget\OrpheusORMMySQLServerHelper.nuspec = Nuget\OrpheusORMMySQLServerHelper.nuspec
-		Nuget\OrpheusORMPostgreSQLServerHelper.nuspec = Nuget\OrpheusORMPostgreSQLServerHelper.nuspec
-		Nuget\OrpheusORMSQLServerHelper.nuspec = Nuget\OrpheusORMSQLServerHelper.nuspec
-		Nuget\PublishPackage.cmd = Nuget\PublishPackage.cmd
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Git", "Git", "{1F27E8E9-4A7E-41B5-A06A-0E9458F1C7E7}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -49,6 +35,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectManagement", "Projec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrpheusPostgreSQLDDLHelper", "OrpheusPostgreSQLDDLHelper\OrpheusPostgreSQLDDLHelper.csproj", "{0E5C8C14-76EF-3870-7C9F-6F768F1E0BC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github", "Github", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\buildWorkFlow.yml = .github\workflows\buildWorkFlow.yml
+		.github\workflows\publishWorkFlow.yml = .github\workflows\publishWorkFlow.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
