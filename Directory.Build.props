@@ -15,9 +15,11 @@
 	   <RepositoryUrl>https://github.com/mobilotronic/OrpheusORM</RepositoryUrl>
 	   <RepositoryType>git</RepositoryType>
 	   <PackageIcon>OrpheusIcon.png</PackageIcon>
+	   <PackageReadmeFile>README.md</PackageReadmeFile>
    </PropertyGroup>
 
    <ItemGroup>
 	   <None Include="$(MSBuildThisFileDirectory)Nuget\OrpheusIcon.png" Pack="true" PackagePath="\" Visible="false" Condition="Exists('$(MSBuildThisFileDirectory)Nuget\OrpheusIcon.png')" />
+	   <None Include="$(MSBuildThisFileDirectory)ReadMe.md" Pack="true" PackagePath="README.md" Visible="false" Condition="Exists('$(MSBuildThisFileDirectory)ReadMe.md')" />
    </ItemGroup>
 </Project>
