@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Core;
@@ -32,7 +33,11 @@ namespace OrpheusCore
         private IDatabaseConnectionConfiguration databaseConnectionConfiguration;
         private IServiceProvider serviceProvider;
         private ILoggerFactory loggerFactory;
+        private IOrpheusKeyGenerator keyGenerator;
         #endregion
+
+        // Dependencies are assigned exactly once, in initializeDependencies, called from every
+        // constructor. Nothing in this class resolves a collaborator on first access.
 
         #region private methods
         private void initializeTypeMap()
@@ -213,6 +218,15 @@ namespace OrpheusCore
         /// Logger instance.
         /// </value>
         public ILogger Logger => this.logger;
+
+        /// <inheritdoc/>
+        public IServiceProvider ServiceProvider => this.serviceProvider;
+
+        /// <inheritdoc/>
+        public ILoggerFactory LoggerFactory => this.loggerFactory;
+
+        /// <inheritdoc/>
+        public IOrpheusKeyGenerator KeyGenerator => this.keyGenerator;
         #endregion
 
         #region constructors        
@@ -227,14 +241,8 @@ namespace OrpheusCore
         public OrpheusDatabase(IDbConnection connection, IOrpheusDDLHelper ddlHelper, ILogger<IOrpheusDatabase> logger,
             IServiceProvider serviceProvider = null, ILoggerFactory loggerFactory = null)
         {
-            this.dbConnection = connection;
-            this.ddlHelper = ddlHelper;
-            this.ddlHelper.DB = this;
-            this.modules = new List<IOrpheusModule>();
-            this.logger = logger;
-            this.serviceProvider = serviceProvider;
-            this.loggerFactory = loggerFactory;
-            this.initializeTypeMap();
+            this.dbConnection = connection ?? throw new ArgumentNullException(nameof(connection));
+            this.initializeDependencies(ddlHelper, logger, serviceProvider, loggerFactory);
         }
 
         /// <summary>
@@ -253,13 +261,29 @@ namespace OrpheusCore
         public OrpheusDatabase(IOrpheusConnectionFactory connectionFactory, IOrpheusDDLHelper ddlHelper, ILogger<IOrpheusDatabase> logger,
             IServiceProvider serviceProvider = null, ILoggerFactory loggerFactory = null)
         {
-            this.connectionFactory = connectionFactory;
-            this.ddlHelper = ddlHelper;
+            this.connectionFactory = connectionFactory ?? throw new ArgumentNullException(nameof(connectionFactory));
+            this.initializeDependencies(ddlHelper, logger, serviceProvider, loggerFactory);
+        }
+
+        /// <summary>
+        /// The part of construction both overloads share: every dependency is resolved once, here,
+        /// so that <see cref="LoggerFactory"/> and <see cref="KeyGenerator"/> are plain readonly
+        /// fields rather than something computed on first access.
+        /// </summary>
+        private void initializeDependencies(IOrpheusDDLHelper ddlHelper, ILogger<IOrpheusDatabase> logger,
+            IServiceProvider serviceProvider, ILoggerFactory loggerFactory)
+        {
+            this.ddlHelper = ddlHelper ?? throw new ArgumentNullException(nameof(ddlHelper));
             this.ddlHelper.DB = this;
             this.modules = new List<IOrpheusModule>();
-            this.logger = logger;
             this.serviceProvider = serviceProvider;
-            this.loggerFactory = loggerFactory;
+
+            // A missing logger is never a reason to fail: fall back to the no-op implementations so
+            // callers can log unconditionally.
+            this.loggerFactory = loggerFactory ?? serviceProvider?.GetService<ILoggerFactory>() ?? NullLoggerFactory.Instance;
+            this.logger = logger ?? this.loggerFactory.CreateLogger<IOrpheusDatabase>();
+            this.keyGenerator = serviceProvider?.GetService<IOrpheusKeyGenerator>() ?? new SequentialGuidKeyGenerator();
+
             this.initializeTypeMap();
         }
         #endregion
@@ -278,7 +302,7 @@ namespace OrpheusCore
             // Not ActivatorUtilities.CreateInstance: its reflection-based constructor matching
             // can't disambiguate overloads when an explicitly-passed argument (definition) is
             // null, and OrpheusModule's constructors need nothing else from the DI container.
-            return new OrpheusModule(this, definition, this.loggerFactory.CreateLogger<IOrpheusModule>());
+            return new OrpheusModule(this, definition, this.LoggerFactory.CreateLogger<IOrpheusModule>());
         }
 
         /// <summary>
@@ -330,7 +354,7 @@ namespace OrpheusCore
             if (options != null)
             {
                 options.Database = this;
-                return new OrpheusTable<T>(options, this.loggerFactory.CreateLogger<IOrpheusTable<T>>());
+                return new OrpheusTable<T>(options, this.LoggerFactory.CreateLogger<IOrpheusTable<T>>());
             }
             return null;
         }
@@ -379,7 +403,7 @@ namespace OrpheusCore
         public ISchema CreateSchema(Guid id, string description, double version, string name = null)
         {
             if (id == Guid.Empty)
-                id = Guid.NewGuid();
+                id = this.KeyGenerator.NewKey();
             // Not ActivatorUtilities.CreateInstance: same null-argument (name) ambiguity as
             // CreateModule above, and Schema needs nothing else from the DI container.
             return new SchemaBuilder.Schema(this, description, version, id, name);

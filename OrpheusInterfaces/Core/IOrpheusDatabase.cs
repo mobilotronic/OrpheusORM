@@ -1,4 +1,5 @@
-﻿using OrpheusInterfaces.Configuration;
+﻿using Microsoft.Extensions.Logging;
+using OrpheusInterfaces.Configuration;
 using OrpheusInterfaces.Schema;
 using System.Threading;
 using System.Threading.Tasks;
@@ -44,6 +45,26 @@ namespace OrpheusInterfaces.Core
         /// was constructed from a raw <see cref="IDbConnection"/> instead of a connection factory.
         /// </summary>
         IOrpheusConnectionFactory ConnectionFactory { get; }
+
+        /// <summary>
+        /// The service provider this database was constructed with, used by the schema builder and
+        /// the module system to resolve their collaborators. Null when the database was constructed
+        /// without one, in which case those components fall back to their defaults.
+        /// </summary>
+        IServiceProvider ServiceProvider { get; }
+
+        /// <summary>
+        /// The logger factory this database was constructed with. Components created by this
+        /// database (schema objects, module tables) use it to build their own typed loggers. Never
+        /// null — a no-op factory is returned when none was supplied.
+        /// </summary>
+        ILoggerFactory LoggerFactory { get; }
+
+        /// <summary>
+        /// Generates values for auto-generated Guid keys. Resolved from <see cref="ServiceProvider"/>,
+        /// falling back to the default UUIDv7 generator when none is registered. Never null.
+        /// </summary>
+        IOrpheusKeyGenerator KeyGenerator { get; }
 
         /// <value>
         /// Last active transaction.

@@ -1,6 +1,9 @@
-using System.Collections.Concurrent;
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Collections.Concurrent;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using OrpheusAttributes;
+using OrpheusCore.Configuration.Models;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Interfaces.Attributes;
@@ -37,29 +40,28 @@ namespace OrpheusCore
         //caching in memory of properties and attributes, to improve performance.
         private PropertyInfo[] modelProperties;
         private Dictionary<PropertyInfo, object[]> propertyAttributes;
-        private ILogger logger;
+        /// <summary>
+        /// The logger for work done on behalf of a schema object. Taken from the object's own
+        /// database rather than held as state.
+        /// </summary>
+        /// <remarks>
+        /// Helpers are cached per model type and therefore shared across databases and threads, so
+        /// they must not own a logger: whichever caller touched one last would have decided where
+        /// every other caller's output went. Deriving it from the schema object being worked on
+        /// keeps the logging attributed to the right database and keeps this type immutable.
+        /// </remarks>
+        private static ILogger loggerFor(ISchemaDataObject schemaObj) =>
+            schemaObj.DB.LoggerFactory.CreateLogger<OrpheusModelHelper>();
 
         /// <summary>
         /// Returns a cached <see cref="OrpheusModelHelper"/> for the given model type.
-        /// The cached instance has no logger; use the overload with ILogger if logging is needed.
         /// </summary>
         public static OrpheusModelHelper GetOrAdd(Type modelType)
         {
-            return _cache.GetOrAdd(modelType, t => new OrpheusModelHelper(t, null));
+            return _cache.GetOrAdd(modelType, t => new OrpheusModelHelper(t));
         }
         #endregion
 
-        /// <summary>
-        /// Returns a cached <see cref="OrpheusModelHelper"/> for the given model type,
-        /// with the provided logger attached.
-        /// </summary>
-        public static OrpheusModelHelper GetOrAdd(Type modelType, ILogger logger)
-        {
-            var helper = _cache.GetOrAdd(modelType, t => new OrpheusModelHelper(t, null));
-            if (logger != null)
-                helper.logger = logger;
-            return helper;
-        }
         #region private methods
         private PropertyInfo[] getModelProperties()
         {
@@ -79,6 +81,24 @@ namespace OrpheusCore
         private object[] getPropertyAttributes(PropertyInfo prop)
         {
             return this.propertyAttributes[prop];
+        }
+
+        /// <summary>
+        /// The size given to a string column that carries no explicit <c>[Length]</c>.
+        /// </summary>
+        /// <remarks>
+        /// Read from the schema object's database on every call rather than cached on this helper:
+        /// helpers are shared per model type across databases (see <see cref="GetOrAdd(Type)"/>), so the
+        /// value must follow the database whose schema is being generated. Falls back to
+        /// <see cref="OrpheusConfiguration"/>'s own default when nothing is registered, so schema
+        /// generation never depends on configuration having been wired up.
+        /// </remarks>
+        private static int getDefaultStringSize(ISchemaDataObject schemaObj)
+        {
+            // schemaObj.DB is already dereferenced unconditionally by the caller; only the service
+            // provider is genuinely optional, since OrpheusDatabase can be built without one.
+            var options = schemaObj.DB.ServiceProvider?.GetService<IOptions<OrpheusConfiguration>>();
+            return (options?.Value ?? new OrpheusConfiguration()).DefaultStringSize;
         }
 
         /// <summary>
@@ -135,7 +155,7 @@ namespace OrpheusCore
                         {
                             if (!fk.ReferenceTable.Contains(schemaObj.Schema.Name))
                             {
-                                this.logger.LogWarning($"Table {schemaObj.SQLName} references a table in foreign key constraint, which doesn't belong to the same schema. {fk.ReferenceTable}");
+                                loggerFor(schemaObj).LogWarning($"Table {schemaObj.SQLName} references a table in foreign key constraint, which doesn't belong to the same schema. {fk.ReferenceTable}");
                             }
                         }
                     }
@@ -173,7 +193,7 @@ namespace OrpheusCore
                 var isStringType = false;
                 if (prop.PropertyType == typeof(string))
                 {
-                    size = Configuration.ConfigurationManager.Configuration.DefaultStringSize.ToString();
+                    size = getDefaultStringSize(schemaObj).ToString();
                     isStringType = true;
                 }
                 if (prop.PropertyType == typeof(char) || prop.PropertyType == typeof(char?))
@@ -514,7 +534,7 @@ namespace OrpheusCore
             }
             catch (Exception e)
             {
-                this.logger.LogError(ErrorCodes.ERR_CANNOT_RUN_DDL, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)}");
+                loggerFor(schemaObj).LogError(ErrorCodes.ERR_CANNOT_RUN_DDL, e, $"{ErrorDictionary.GetError(ErrorCodes.ERR_CANNOT_RUN_DDL)}");
                 throw;
             }
             finally
@@ -534,10 +554,8 @@ namespace OrpheusCore
         /// OrpheusModelHelper is a helper class that analyzes a model and can create primary-foreign keys and/or schema fields, when creating a schema.
         /// </summary>
         /// <param name="modelType">Type of the model.</param>
-        /// <param name="logger">Optional logger.</param>
-        public OrpheusModelHelper(Type modelType, ILogger logger = null)
+        public OrpheusModelHelper(Type modelType)
         {
-            this.logger = logger;
             this.modelType = modelType;
             this.SQLName = this.modelType.Name;
             this.PrimaryKeys = new Dictionary<string, IPrimaryKey>();

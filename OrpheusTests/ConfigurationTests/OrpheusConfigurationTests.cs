@@ -106,7 +106,7 @@ namespace OrpheusTests.ConfigurationTests
             var traceId = Guid.NewGuid().ToString();
             var logFileContentsName = $"{this.CurrentDirectory}/nlog-all-{DateTime.Now.ToString("yyyy-MM-dd")}.log";
 
-            var logger = ServiceManager.CreateLogger<OrpheusConfigurationTests>();
+            var logger = this.ServiceProvider.GetRequiredService<ILoggerFactory>().CreateLogger<OrpheusConfigurationTests>();
             logger.LogError($"ErrorId {errorId} test Error log entry");
 
             //loading the log file content.

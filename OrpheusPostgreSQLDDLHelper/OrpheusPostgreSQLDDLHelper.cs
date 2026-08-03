@@ -1,4 +1,5 @@
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Npgsql;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
@@ -19,7 +20,7 @@ namespace OrpheusPostgreSQLDDLHelper
         #region private fields
         private Dictionary<Type, string> typeMap = new();
         private Dictionary<int, string> dbTypeMap = new();
-        private ILogger logger;
+        private readonly ILogger logger;
         private NpgsqlConnection secondConnection;
         private NpgsqlConnection masterConnection;
         #endregion
@@ -68,7 +69,7 @@ namespace OrpheusPostgreSQLDDLHelper
         /// <param name="logger">Logger used for database-creation and DDL-execution failures.</param>
         public OrpheusPostgreSQLDDLHelper(ILogger<OrpheusPostgreSQLDDLHelper> logger)
         {
-            this.logger = logger;
+            this.logger = logger ?? NullLogger<OrpheusPostgreSQLDDLHelper>.Instance;
             initializeTypeMap();
         }
 

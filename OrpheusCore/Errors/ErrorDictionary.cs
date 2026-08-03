@@ -70,7 +70,7 @@ namespace OrpheusCore.Errors
     /// </summary>
     public static class ErrorDictionary
     {
-        private static Dictionary<int, string> orpheusErrors = new Dictionary<int, string>()
+        private static readonly Dictionary<int, string> orpheusErrors = new Dictionary<int, string>()
         {
             {ErrorCodes.ERR_CANNOT_CONNECT_TO_DB,"Orpheus could not connect to the database engine." },
             {ErrorCodes.ERR_CANNOT_CREATE_DB,"Orpheus could not validate the existance of or create database name." },

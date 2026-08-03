@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using OrpheusCore.Configuration.Models;
 using OrpheusInterfaces.Configuration;
 using System;
@@ -33,6 +34,25 @@ namespace OrpheusCore.Configuration
                 throw new InvalidOperationException($"No database connection named '{connectionName}' was found in configuration section '{sectionName}'.");
 
             return connectionConfig;
+        }
+
+        /// <summary>
+        /// Binds Orpheus's own settings (currently <see cref="Models.OrpheusConfiguration.DefaultStringSize"/>)
+        /// from the given configuration section, so components that need them can resolve
+        /// <c>IOptions&lt;OrpheusConfiguration&gt;</c> from the service provider.
+        /// </summary>
+        /// <remarks>
+        /// Called for you by the <c>AddOrpheusSqlServer</c>/<c>AddOrpheusMySql</c>/<c>AddOrpheusPostgreSql</c>
+        /// overloads that take an <see cref="IConfiguration"/>. Everything has a working default, so
+        /// applications that never call this still generate schema correctly.
+        /// </remarks>
+        public static IServiceCollection AddOrpheusConfiguration(this IServiceCollection services, IConfiguration configuration, string sectionName = "OrpheusConfiguration")
+        {
+            if (configuration == null)
+                throw new ArgumentNullException(nameof(configuration));
+
+            services.Configure<OrpheusConfiguration>(configuration.GetSection(sectionName));
+            return services;
         }
     }
 }

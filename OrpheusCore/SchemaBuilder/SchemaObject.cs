@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
@@ -25,11 +26,19 @@ namespace OrpheusCore.SchemaBuilder
 
         #region protected properties
         /// <summary>
-        /// 
+        /// The schema object's logger.
         /// </summary>
-        protected ILogger logger;
+        /// <remarks>
+        /// Assigned by the <see cref="Schema"/> setter rather than by a constructor. Schema objects
+        /// are created before they know which schema they belong to — either by the DI container
+        /// through the parameterless constructor, or directly by <c>Schema.AddSchemaTable</c> — and
+        /// the logger factory lives on that schema's database. Starts as a no-op logger so it is
+        /// never null.
+        /// </remarks>
+        protected ILogger logger = NullLogger<SchemaObject>.Instance;
+
         /// <summary>
-        /// 
+        ///
         /// </summary>
         protected string _sqlName;
         #endregion
@@ -135,7 +144,21 @@ namespace OrpheusCore.SchemaBuilder
         /// <value>
         /// The Schema where the schema object belongs to.
         /// </value>
-        public ISchema Schema { get; set; }
+        /// <summary>
+        /// The schema this object belongs to. Setting it is also what gives the object its
+        /// <see cref="logger"/>, since the logger factory hangs off the schema's database.
+        /// </summary>
+        public ISchema Schema
+        {
+            get => this._schema;
+            set
+            {
+                this._schema = value;
+                if (value?.DB != null)
+                    this.logger = value.DB.LoggerFactory.CreateLogger<SchemaObject>();
+            }
+        }
+        private ISchema _schema;
 
         /// <value>
         /// Defines the behavior of execute. <see cref="DDLAction"/>
@@ -270,7 +293,6 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public SchemaObject()
         {
-            this.logger = ServiceManager.CreateLogger<SchemaObject>();
             this.IsCreated = false;
             this.SchemaObjectsThatDependOnMe = new List<ISchemaObject>();
             this.SchemaObjectsThatIDepend = new List<ISchemaObject>();
@@ -467,7 +489,7 @@ namespace OrpheusCore.SchemaBuilder
         /// </summary>
         public void CreateFieldsFromModel(Type modelType)
         {
-            this.modelHelper = new OrpheusModelHelper(modelType, this.logger);
+            this.modelHelper = new OrpheusModelHelper(modelType);
             //if the schema has no name, set it to the type name.
             if (this.SQLName == null)
                 this.SQLName = modelType.Name;
@@ -589,7 +611,7 @@ namespace OrpheusCore.SchemaBuilder
                 });
             });
 
-            this.seedDataTable = new OrpheusTable<T>(this.DB, tableKeys, ServiceManager.CreateLogger<IOrpheusTable<T>>(), this.SQLName);
+            this.seedDataTable = new OrpheusTable<T>(this.DB, tableKeys, this.DB.LoggerFactory.CreateLogger<IOrpheusTable<T>>(), this.SQLName);
             data.ForEach(dataRow =>
             {
                 ((IOrpheusTable<T>)this.seedDataTable).Add(dataRow);
@@ -681,7 +703,7 @@ namespace OrpheusCore.SchemaBuilder
                                         case DDLAction.ddlCreate:
                                             {
                                                 if (this.UniqueKey == Guid.Empty)
-                                                    this.UniqueKey = Guid.NewGuid();
+                                                    this.UniqueKey = this.DB.KeyGenerator.NewKey();
                                                 //apply constraints primary,foreign keys
                                                 this.applyConstraints(cmd);
                                                 //seeding any data if set.

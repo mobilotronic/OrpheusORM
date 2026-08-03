@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!--
+    TargetFramework is not declared here on purpose. It is set centrally, for every project in this
+    repository, in Directory.Packages.props. IsPackable defaults to false via Directory.Build.props,
+    so this sample is never packed by the publish workflow.
+  -->
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>OrpheusDemoApi</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Scalar.AspNetCore" />
+  </ItemGroup>
+
+  <!--
+    A real application would reference the published NuGet packages instead:
+      OrpheusORM, OrpheusORMPostgreSQLServerHelper
+    This sample uses project references so it is compiled against the sources in this repository and
+    breaks loudly in CI if the public API changes.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\OrpheusAttributes\OrpheusAttributes.csproj" />
+    <ProjectReference Include="..\OrpheusCore\OrpheusCore.csproj" />
+    <ProjectReference Include="..\OrpheusInterfaces\OrpheusInterfaces.csproj" />
+    <ProjectReference Include="..\OrpheusPostgreSQLDDLHelper\OrpheusPostgreSQLDDLHelper.csproj" />
+  </ItemGroup>
+
+</Project>

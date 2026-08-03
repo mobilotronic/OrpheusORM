@@ -310,6 +310,34 @@ namespace OrpheusTestModels
     }
     #endregion
 
+    /// <summary>
+    /// A projection target with no key of any kind, used to verify that a model which only ever
+    /// receives query results does not need a [PrimaryKey]. Has no corresponding table.
+    /// </summary>
+    public class TestModelProjection
+    {
+        public string Code { get; set; }
+        public string Description { get; set; }
+
+        /// <summary>
+        /// long rather than int: COUNT(*) comes back as a 64-bit integer on all three engines.
+        /// </summary>
+        public long RowCount { get; set; }
+    }
+
+    /// <summary>
+    /// Model whose string property carries no [Length], so the schema builder has to fall back to
+    /// the configured DefaultStringSize.
+    /// </summary>
+    public class TestModelUnsizedString
+    {
+        [PrimaryKey]
+        public Guid Id { get; set; }
+
+        /// <summary>No [Length] on purpose.</summary>
+        public string Description { get; set; }
+    }
+
     #region dynamic models
     public class TestDynamicModel1
     {
