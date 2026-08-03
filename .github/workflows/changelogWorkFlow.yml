@@ -1,0 +1,127 @@
+# Generates release notes from the commits on master and publishes them to both
+# CHANGELOG.md and a GitHub Release.
+#
+# Three ways in:
+#
+#   workflow_call     publishWorkFlow.yml calls this as a dependent job once it
+#                     has tagged the release. This is the normal path, and it
+#                     has to be a call rather than a tag trigger: the publish
+#                     workflow pushes its tag with GITHUB_TOKEN, and GitHub
+#                     suppresses workflow triggers for token-created events, so
+#                     an `on: push: tags` rule would silently never fire.
+#   push (tags)       Covers tags pushed by a human, which do trigger normally.
+#   workflow_dispatch Regenerate notes for an existing tag by hand.
+
+name: Changelog
+
+on:
+  workflow_call:
+    inputs:
+      tag:
+        description: 'Tag to generate notes for (e.g. v2.1.0)'
+        required: true
+        type: string
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to generate notes for (e.g. v2.1.0)'
+        required: true
+        type: string
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      # Full history and all tags: the generator needs to walk master between
+      # two tags. Checking out master rather than the tag ref, because the
+      # CHANGELOG.md commit has to land on the branch — a tag push leaves you
+      # on a detached HEAD otherwise.
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Resolve tag
+        id: tag
+        run: |
+          TAG="${{ inputs.tag || github.ref_name }}"
+          if ! git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+            echo "::error::Tag $TAG does not exist."
+            exit 1
+          fi
+          if ! git merge-base --is-ancestor "$TAG" master; then
+            echo "::error::Tag $TAG is not on master; nothing to generate."
+            exit 1
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Generate release notes
+        run: |
+          bash .github/scripts/generate-release-notes.sh "${{ steps.tag.outputs.tag }}" > /tmp/notes.md
+          echo "--- generated notes ---"
+          cat /tmp/notes.md
+
+      - name: Update CHANGELOG.md
+        id: changelog
+        run: |
+          VERSION="${{ steps.tag.outputs.version }}"
+          MARKER='<!-- new releases are inserted below this line -->'
+
+          if [ ! -f CHANGELOG.md ]; then
+            echo "::error::CHANGELOG.md is missing; it should be committed with the insertion marker."
+            exit 1
+          fi
+
+          # Re-running for the same version replaces its section rather than
+          # stacking a duplicate on top.
+          if grep -qF "## [$VERSION] - " CHANGELOG.md; then
+            echo "Section for $VERSION already present, rewriting it."
+            awk -v ver="## [$VERSION] - " '
+              index($0, ver) == 1 { skip = 1; next }
+              skip && /^## \[/     { skip = 0 }
+              !skip                { print }
+            ' CHANGELOG.md > /tmp/changelog.stripped
+            mv /tmp/changelog.stripped CHANGELOG.md
+          fi
+
+          awk -v marker="$MARKER" '
+            { print }
+            index($0, marker) == 1 { print ""; while ((getline line < "/tmp/notes.md") > 0) print line }
+          ' CHANGELOG.md > /tmp/changelog.new
+          mv /tmp/changelog.new CHANGELOG.md
+
+          if git diff --quiet -- CHANGELOG.md; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # [skip ci] keeps this docs-only commit from re-triggering the build
+      # workflow, which also runs on pushes to master.
+      - name: Commit CHANGELOG.md
+        if: steps.changelog.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "docs: update changelog for ${{ steps.tag.outputs.tag }} [skip ci]"
+          git push origin master
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --notes-file /tmp/notes.md
+          else
+            gh release create "$TAG" --title "$TAG" --notes-file /tmp/notes.md
+          fi
