@@ -13,6 +13,9 @@ jobs:
       id-token: write
       contents: write
 
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -59,3 +62,15 @@ jobs:
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git tag -a "v${{ steps.version.outputs.version }}" -m "Release v${{ steps.version.outputs.version }}"
         git push origin "v${{ steps.version.outputs.version }}"
+
+  # Called rather than left to the tag trigger: the tag above is pushed with
+  # GITHUB_TOKEN, and GitHub does not start workflow runs for token-created
+  # events, so an `on: push: tags` rule in the changelog workflow would never
+  # fire from here.
+  changelog:
+    needs: publish
+    uses: ./.github/workflows/changelogWorkFlow.yml
+    permissions:
+      contents: write
+    with:
+      tag: v${{ needs.publish.outputs.version }}
