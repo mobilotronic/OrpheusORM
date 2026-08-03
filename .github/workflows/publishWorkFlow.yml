@@ -17,7 +17,11 @@ jobs:
       version: ${{ steps.version.outputs.version }}
 
     steps:
+    # Full history and tags: the changelog generator walks master back to the
+    # previous tag, which a shallow clone cannot see.
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
@@ -31,6 +35,16 @@ jobs:
     - name: Read package version
       id: version
       run: echo "version=$(dotnet msbuild OrpheusCore/OrpheusCore.csproj -getProperty:Version)" >> "$GITHUB_OUTPUT"
+
+    # Ahead of Pack on purpose: the packages ship CHANGELOG.md, so the notes for
+    # the version being released have to exist before packing or every package
+    # would carry the previous release's changelog. The tag does not exist yet
+    # at this point; the generator falls back to HEAD for exactly this case.
+    - name: Generate changelog for this release
+      run: |
+        bash .github/scripts/generate-release-notes.sh "v${{ steps.version.outputs.version }}" > /tmp/notes.md
+        bash .github/scripts/update-changelog.sh "${{ steps.version.outputs.version }}" /tmp/notes.md
+        cat CHANGELOG.md
 
     - name: Pack
       run: |
