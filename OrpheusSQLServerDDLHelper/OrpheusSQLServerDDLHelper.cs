@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
 using OrpheusInterfaces.Schema;
@@ -28,7 +29,7 @@ namespace OrpheusSQLDDLHelper
         private List<string> builtInSchemas = new List<string>() { "dbo", "sys", "information_schema", "guest" };
         private delegate void DDLCommandCallback(IDbCommand dbCommand);
         private delegate void ErrorCallback(Exception exception);
-        private ILogger<OrpheusSQLServerDDLHelper> logger;
+        private readonly ILogger<OrpheusSQLServerDDLHelper> logger;
         #endregion
 
         #region auxiliary connections
@@ -693,7 +694,7 @@ namespace OrpheusSQLDDLHelper
             this.SupportsGuidType = true;
             this.SupportsSchemaNameSpace = true;
             this.DbEngineType = DatabaseEngineType.dbSQLServer;
-            this.logger = logger;
+            this.logger = logger ?? NullLogger<OrpheusSQLServerDDLHelper>.Instance;
         }
         #endregion
 

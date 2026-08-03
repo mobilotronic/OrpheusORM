@@ -468,7 +468,9 @@ namespace OrpheusTests
         public ISchema Schema { get { return this.schema; } }
         public TestSchema(IOrpheusDatabase db, string description, double version, Guid id, string name = null)
         {
-            this.schema = ServiceManager.Resolve<ISchema>(new object[] { db, description, version, id, name });
+            // Built through the database rather than the static ServiceManager, so the fixture does
+            // not reintroduce the service-locator dependency the library dropped in 2.1.0.
+            this.schema = db.CreateSchema(id, description, version, name);
             this.createSchema();
         }
     }

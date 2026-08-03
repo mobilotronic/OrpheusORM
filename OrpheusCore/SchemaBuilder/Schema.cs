@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using OrpheusAttributes;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
@@ -58,11 +60,11 @@ namespace OrpheusCore.SchemaBuilder
 
     internal class OrpheusSchemaConstants
     {
-        public static string SchemaObjectPrefix = "Orpheus";
-        public static string SchemaObjectsTable = "SchemaObject";
-        public static string SchemaInfoTable = "SchemaInfo";
-        public static string SchemaModulesTable = "SchemaModule";
-        public static Guid SchemaId = Guid.Parse("249074F8-FB81-4115-BADB-6D425D9BE069");
+        public const string SchemaObjectPrefix = "Orpheus";
+        public const string SchemaObjectsTable = "SchemaObject";
+        public const string SchemaInfoTable = "SchemaInfo";
+        public const string SchemaModulesTable = "SchemaModule";
+        public static readonly Guid SchemaId = Guid.Parse("249074F8-FB81-4115-BADB-6D425D9BE069");
     }
 
     /// <summary>
@@ -72,11 +74,33 @@ namespace OrpheusCore.SchemaBuilder
     {
         #region private properties
         private OrpheusSchema _orpheusSchema;
-        private IOrpheusDatabase db;
+        private readonly IOrpheusDatabase db;
         private Guid id;
         private List<ISchemaObject> schemaObjectCache;
         private IDbCommand schemaObjectExistsPreparedQuery;
-        private ILogger logger;
+        private readonly ILogger logger;
+
+        /// <summary>
+        /// Resolves one of the schema's collaborator types from the database's service provider.
+        /// </summary>
+        /// <remarks>
+        /// Checked here rather than in the constructor on purpose. <see cref="OrpheusDatabase"/> may
+        /// legitimately be built without a service provider, and the common path through this class
+        /// — <see cref="AddSchemaTable(string, List{ISchemaObject}, object)"/> and friends —
+        /// instantiates its schema objects directly and needs no container at all. Validating
+        /// eagerly would refuse to create a schema for a provider-less database that was never going
+        /// to resolve anything. Only the public CreateSchemaXxx factory methods land here.
+        /// </remarks>
+        private TService resolve<TService>()
+        {
+            if (this.db?.ServiceProvider == null)
+                throw new InvalidOperationException(
+                    $"Cannot resolve {typeof(TService).Name}: the database was created without a service provider. " +
+                    "Register Orpheus with AddOrpheusSqlServer/AddOrpheusMySql/AddOrpheusPostgreSql, or pass an " +
+                    "IServiceProvider to the OrpheusDatabase constructor.");
+            return this.db.ServiceProvider.GetRequiredService<TService>();
+        }
+
         private OrpheusSchema orpheusSchema
         {
             get
@@ -175,14 +199,6 @@ namespace OrpheusCore.SchemaBuilder
         /// <summary>
         /// Initializes a new instance of the <see cref="Schema"/> class.
         /// </summary>
-        public Schema()
-        {
-            this.logger = ServiceManager.CreateLogger<Schema>();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Schema"/> class.
-        /// </summary>
         /// <param name="db">The database.</param>
         /// <param name="description">The description.</param>
         /// <param name="version">The version.</param>
@@ -202,11 +218,11 @@ namespace OrpheusCore.SchemaBuilder
         /// <param name="id">The identifier.</param>
         public Schema(IOrpheusDatabase db, string description, double version, Guid id)
         {
-            this.db = db;
+            this.db = db ?? throw new ArgumentNullException(nameof(db));
+            this.logger = db.LoggerFactory.CreateLogger<Schema>();
             this.Description = description;
             this.Version = version;
             this.id = id;
-            this.logger = ServiceManager.CreateLogger<Schema>();
             this.SchemaObjects = new List<ISchemaObject>();
             this.ReferencedSchemas = new List<ISchema>();
         }
@@ -312,7 +328,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaView CreateSchemaView()
         {
-            var result = ServiceManager.Resolve<ISchemaView>();
+            var result = this.resolve<ISchemaView>();
             result.Schema = this;
             return result;
         }
@@ -323,7 +339,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaViewTable CreateSchemaViewTable()
         {
-            var result = ServiceManager.Resolve<ISchemaViewTable>();
+            var result = this.resolve<ISchemaViewTable>();
             result.Schema = this;
             return result;
         }
@@ -334,7 +350,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaTable CreateSchemaTable()
         {
-            var result = ServiceManager.Resolve<ISchemaTable>();
+            var result = this.resolve<ISchemaTable>();
             result.Schema = this;
             return result;
         }
@@ -345,7 +361,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaObject CreateSchemaObject()
         {
-            var result = ServiceManager.Resolve<ISchemaObject>();
+            var result = this.resolve<ISchemaObject>();
             result.Schema = this;
             return result;
         }
@@ -356,7 +372,7 @@ namespace OrpheusCore.SchemaBuilder
         /// <returns></returns>
         public ISchemaJoinDefinition CreateSchemaJoinDefinition()
         {
-            return ServiceManager.Resolve<ISchemaJoinDefinition>();
+            return this.resolve<ISchemaJoinDefinition>();
         }
 
         /// <summary>
@@ -620,11 +636,6 @@ namespace OrpheusCore.SchemaBuilder
         }
         #endregion
 
-        public OrpheusSchema()
-        {
-            this.Name = OrpheusSchemaConstants.SchemaObjectPrefix;
-            this.initializeOrpheusSchema();
-        }
 
         /// <summary>
         /// Creates an Orpheus schema.

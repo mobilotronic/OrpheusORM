@@ -67,6 +67,7 @@ namespace OrpheusMySQLDDLHelper
         /// <param name="sectionName">The section Orpheus's settings live under. Defaults to "OrpheusConfiguration".</param>
         public static IServiceCollection AddOrpheusMySql(this IServiceCollection services, IConfiguration configuration, string connectionName, string sectionName = "OrpheusConfiguration")
         {
+            services.AddOrpheusConfiguration(configuration, sectionName);
             return services.AddOrpheusMySql(configuration.GetOrpheusConnection(connectionName, sectionName));
         }
     }

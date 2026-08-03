@@ -67,6 +67,7 @@ namespace OrpheusSQLDDLHelper
         /// <param name="sectionName">The section Orpheus's settings live under. Defaults to "OrpheusConfiguration".</param>
         public static IServiceCollection AddOrpheusSqlServer(this IServiceCollection services, IConfiguration configuration, string connectionName, string sectionName = "OrpheusConfiguration")
         {
+            services.AddOrpheusConfiguration(configuration, sectionName);
             return services.AddOrpheusSqlServer(configuration.GetOrpheusConnection(connectionName, sectionName));
         }
     }

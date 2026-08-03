@@ -9,7 +9,8 @@ OrpheusORM is a module-oriented ORM with built-in schema evolution for .NET — 
 - **Async API** — full async support across all I/O methods with `CancellationToken`
 - **Connection Pooling** — native ADO.NET connection pooling via `IOrpheusConnectionFactory`
 - **PostgreSQL Support** — new DDL helper backed by [Npgsql](https://www.npgsql.org/)
-- **Modern DI** — constructor injection replaces the static `ServiceManager` pattern
+- **Modern DI** — constructor injection throughout, with no global state: register with `AddOrpheusSqlServer`/`AddOrpheusMySql`/`AddOrpheusPostgreSql` and everything resolves from your own container
+- **Time-ordered keys** — auto-generated Guid keys are UUIDv7 by default, and the generator is swappable via `IOrpheusKeyGenerator`
 - **Batched Insert/Update/Delete** — `Save()` sends fewer, larger round trips instead of one per row (tune via `IOrpheusTable.BatchSize`)
 - **Performance** — cached model metadata + `IDisposable` implementations throughout
 
@@ -31,6 +32,17 @@ Using an OrpheusModule you can save nested data (master-detail-subdetail) with j
 | SQL Server  | [OrpheusORMSQLServerDDLHelper](https://www.nuget.org/packages/OrpheusORMSQLServerDDLHelper/) |
 | MySQL       | [OrpheusORMMySQLServerDDLHelper](https://www.nuget.org/packages/OrpheusORMMySQLServerDDLHelper/) |
 | PostgreSQL  | [OrpheusORMPostgreSQLServerHelper](https://www.nuget.org/packages/OrpheusORMPostgreSQLServerHelper/) |
+
+## Try it
+
+[`OrpheusDemoApi`](OrpheusDemoApi/README.md) is a runnable ASP.NET Core Minimal API that exercises
+the schema engine, the Module system, async CRUD and batching against PostgreSQL. It creates its own
+database and tables on first start:
+
+```bash
+docker compose -f dockerDevDB.yml up -d postgres
+dotnet run --project OrpheusDemoApi
+```
 
 ## Documentation
 To get started, visit [Orpheus documentation](https://mobilotronic.github.io/OrpheusORM/).

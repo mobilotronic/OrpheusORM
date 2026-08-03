@@ -44,6 +44,7 @@ namespace OrpheusTests
         private string schemaId = "6E8653BE-CB9C-4855-8909-2846AFBB72E1";
         private IConfiguration configuration;
         private IOrpheusDatabase db;
+        private ServiceProvider serviceProvider;
         private string fileName;
         private byte[] currentAppsettingsHash = new byte[0];
         private string _assemblyDirectory = null;
@@ -153,9 +154,9 @@ namespace OrpheusTests
                         builder.AddNLog(configuration);
                     });
                     serviceCollection.AddOrpheusServices();
-                    this.configuration.InitializeOrpheusConfiguration();
-                    var serviceProvider = serviceCollection.BuildServiceProvider();
-                    ServiceManager.ServiceProvider = serviceProvider;
+                    // The provider is held on the fixture rather than published to a static: as of
+                    // 2.1.0 nothing in Orpheus reads one, so everything is resolved from here.
+                    this.serviceProvider = serviceCollection.BuildServiceProvider();
                 }
                 catch (Exception e)
                 {
@@ -167,6 +168,19 @@ namespace OrpheusTests
 
         public IConfiguration Configuration => this.configuration;
 
+        /// <summary>
+        /// The fixture's own service provider. Orpheus no longer exposes a global one, so tests that
+        /// need to resolve something go through here.
+        /// </summary>
+        public IServiceProvider ServiceProvider
+        {
+            get
+            {
+                this.InitializeConfiguration();
+                return this.serviceProvider;
+            }
+        }
+
         public DbEngine DatabaseEngine { get; set; }
 
         public IOrpheusDatabase Database
@@ -176,7 +190,7 @@ namespace OrpheusTests
                 if (this.db == null)
                 {
                     this.InitializeConfiguration();
-                    this.db = ServiceManager.Resolve<IOrpheusDatabase>();
+                    this.db = this.serviceProvider.GetRequiredService<IOrpheusDatabase>();
                 }
                 return this.db;
             }
@@ -209,7 +223,8 @@ namespace OrpheusTests
             {
                 if (this.logger == null)
                 {
-                    this.logger = ServiceManager.CreateLogger<BaseTestClass>();
+                    this.InitializeConfiguration();
+                    this.logger = this.serviceProvider.GetRequiredService<ILoggerFactory>().CreateLogger<BaseTestClass>();
                 }
                 return this.logger;
             }

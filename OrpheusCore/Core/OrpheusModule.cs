@@ -17,7 +17,7 @@ namespace OrpheusCore
     public class OrpheusModule : IOrpheusModule
     {
         private IOrpheusTable mainTable;
-        private ILogger<IOrpheusModule> logger;
+        private readonly ILogger<IOrpheusModule> logger;
 
         #region private methods
         /// <summary>
@@ -83,8 +83,12 @@ namespace OrpheusCore
             Type tableInterface = typeof(IOrpheusTable<>).MakeGenericType(options.ModelType);
             Type constructedLoggerType = genericLogger.MakeGenericType(tableInterface);
 
-            // Resolve the logger
-            object logger = ServiceManager.GetLoggerService(constructedLoggerType);
+            // Logger<T> over the database's factory is exactly what the container would resolve for
+            // ILogger<T>, so build it directly rather than going through the provider and needing a
+            // fallback for the case where there isn't one.
+            object logger = Activator.CreateInstance(
+                typeof(Logger<>).MakeGenericType(tableInterface),
+                this.Database.LoggerFactory);
 
             // Find the specific constructor with the matching parameters
             var constructor = constructedType.GetConstructor(new[] { typeof(IOrpheusTableOptions), constructedLoggerType });
@@ -377,12 +381,8 @@ namespace OrpheusCore
         /// <param name="database">The database.</param>
         /// <param name="logger">The logger</param>
         public OrpheusModule(IOrpheusDatabase database, ILogger<IOrpheusModule> logger)
+            : this(database, null, logger)
         {
-            this.Database = database;
-            this.Tables = new List<IOrpheusTable>();
-            this.ReferenceTables = new List<IOrpheusTable>();
-            this.initializeModuleDefinition();
-            this.logger = logger;
         }
 
         /// <summary>
@@ -392,11 +392,21 @@ namespace OrpheusCore
         /// Orders,Customers,OrderLines etc. When you Save from the module level, all pending records in tables that belong to the module,
         /// will be saved as well. All master-detail relationships and keys will be updated automatically.
         /// </summary>
+        /// <remarks>
+        /// Every overload funnels through here, so the module is initialised exactly once, and only
+        /// after all of its dependencies are in place. The previous arrangement chained the other
+        /// way round: it ran initializeModuleDefinition() before assigning the logger, and then a
+        /// second time once the definition was set.
+        /// </remarks>
         /// <param name="database">The database.</param>
-        /// <param name="definition">The definition.</param>
+        /// <param name="definition">The definition. May be null for a module assembled by hand.</param>
         /// <param name="logger">The logger</param>
-        public OrpheusModule(IOrpheusDatabase database, IOrpheusModuleDefinition definition, ILogger<IOrpheusModule> logger) : this(database, logger)
+        public OrpheusModule(IOrpheusDatabase database, IOrpheusModuleDefinition definition, ILogger<IOrpheusModule> logger)
         {
+            this.Database = database ?? throw new ArgumentNullException(nameof(database));
+            this.logger = logger ?? database.LoggerFactory.CreateLogger<IOrpheusModule>();
+            this.Tables = new List<IOrpheusTable>();
+            this.ReferenceTables = new List<IOrpheusTable>();
             this.Definition = definition;
             this.initializeModuleDefinition();
         }

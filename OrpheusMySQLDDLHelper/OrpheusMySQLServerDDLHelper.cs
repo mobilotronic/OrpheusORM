@@ -1,4 +1,5 @@
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using MySql.Data.MySqlClient;
 using OrpheusCore.Errors;
 using OrpheusInterfaces.Core;
@@ -25,7 +26,7 @@ namespace OrpheusMySQLDDLHelper
         private IDbCommand selectSchemaObjectPrimaryConstraint;
         private MySqlConnection _secondConnection;
         private IOrpheusDatabase db;
-        private ILogger<OrpheusMySQLServerDDLHelper> logger;
+        private readonly ILogger<OrpheusMySQLServerDDLHelper> logger;
 
         private void initializeTypeMap()
         {
@@ -604,7 +605,7 @@ namespace OrpheusMySQLDDLHelper
             this.SupportsSchemaNameSpace = false;
             this.DbEngineType = DatabaseEngineType.dbMySQL;
             this.SSLMode = MySqlSslMode.Required.ToString();
-            this.logger = logger;
+            this.logger = logger ?? NullLogger<OrpheusMySQLServerDDLHelper>.Instance;
         }
 
         /// <summary>

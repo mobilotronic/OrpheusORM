@@ -1,0 +1,90 @@
+@host = http://localhost:5266
+
+# Seeded ids — stable across runs, see Data/DemoDataSeeder.cs
+@acme = 1b7e4e52-9d0a-4c1e-8f3a-6c5d2e9b4a71
+@widget = 4ea17185-c03d-4f41-bc6d-9f80512e7da4
+@gadget = 5fb28296-d14e-4052-cd7e-a091623f8eb5
+
+### Describe the schema Orpheus generated from the model classes
+GET {{host}}/api/schema
+
+### Seeded customers
+GET {{host}}/api/customers
+
+### Seeded products
+GET {{host}}/api/products
+
+### ---------------------------------------------------------------------------
+### The module system. Note that the lines carry no order id — the module assigns
+### it during Save(). Copy the salesOrderId out of the response for the next call.
+### ---------------------------------------------------------------------------
+POST {{host}}/api/orders
+Content-Type: application/json
+
+{
+  "customerId": "{{acme}}",
+  "orderNumber": "SO-1001",
+  "lines": [
+    { "productId": "{{widget}}", "quantity": 3, "price": 9.99 },
+    { "productId": "{{gadget}}", "quantity": 2, "price": 24.50 }
+  ]
+}
+
+### Paste the id from the response above
+@orderId = 00000000-0000-0000-0000-000000000000
+
+### Load the whole aggregate — header and lines — with one module.Load()
+GET {{host}}/api/orders/{{orderId}}
+
+### Order headers only (a plain table load, no module)
+GET {{host}}/api/orders
+
+### Delete the order and its lines
+DELETE {{host}}/api/orders/{{orderId}}
+
+### ---------------------------------------------------------------------------
+### Raw SQL materialised into a typed projection
+### ---------------------------------------------------------------------------
+GET {{host}}/api/reports/customer-totals
+
+### ---------------------------------------------------------------------------
+### Batching. Run both and compare elapsedMilliseconds.
+### ---------------------------------------------------------------------------
+POST {{host}}/api/products/bulk?count=2000&batchSize=1
+
+###
+POST {{host}}/api/products/bulk?count=2000&batchSize=500
+
+### ---------------------------------------------------------------------------
+### Async CRUD
+### ---------------------------------------------------------------------------
+POST {{host}}/api/customers
+Content-Type: application/json
+
+{
+  "code": "UMBRELLA",
+  "name": "Umbrella Corp",
+  "email": "hq@umbrella.example"
+}
+
+### Paste the customerId from the response above
+@customerId = 00000000-0000-0000-0000-000000000000
+
+###
+GET {{host}}/api/customers/{{customerId}}
+
+###
+PUT {{host}}/api/customers/{{customerId}}
+Content-Type: application/json
+
+{
+  "code": "UMBRELLA",
+  "name": "Umbrella Corporation",
+  "email": "hq@umbrella.example"
+}
+
+###
+DELETE {{host}}/api/customers/{{customerId}}
+
+### Re-apply the schema. A no-op when no model has changed.
+POST {{host}}/api/schema/apply

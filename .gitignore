@@ -44,6 +44,9 @@ OrpheusPostgreSQLDDLHelper/obj
 .vs
 *.dll
 OrpheusPostgreSQLDDLHelper/bin
+OrpheusDemoApi/obj
+OrpheusDemoApi/bin
+CONTEXT.MD
 Nuget/2.0.0/lib/netstandard2.0/OrpheusAttributes.xml
 Nuget/2.0.0/lib/netstandard2.0/OrpheusCore.xml
 Nuget/2.0.0/lib/netstandard2.0/OrpheusInterfaces.xml
